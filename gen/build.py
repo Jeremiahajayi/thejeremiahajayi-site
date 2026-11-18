@@ -5,6 +5,8 @@ Usage: python3 build.py <page-id> [...]
 Each page lives in pages/<id>.html (markup) and pages/<id>.js (renderVals body).
 """
 import sys, pathlib, re
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+from chrome import header, SHARED_CSS
 
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT.parent / 'project'
@@ -47,7 +49,6 @@ CAL = 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremia
 MAIL = 'jeremiah@thejeremiahajayi.com'
 
 EXTRA_CSS = """
-.nav-on{color:#FF5A2A !important}
 .chip{font:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .chip:hover{border-color:#111}
 .card-l{text-decoration:none;color:#111;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -58,34 +59,16 @@ EXTRA_CSS = """
 """
 
 
-def header(active):
-    links = []
-    for label, href in NAV:
-        cls = 'nl nav-on' if label == active else 'nl'
-        cur = ' aria-current="page"' if label == active else ''
-        links.append(f'<a class="{cls}" href="{href}"{cur}>{label}</a>')
-    return f'''<header style="position: sticky; top: 0; z-index: 40; background: rgba(17,17,17,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #2B2A27">
-<div style="max-width: 1360px; margin: 0 auto; padding: 12px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
-<a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -0.04em">
-<span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #FF5A2A; color: #111; font-size: 16px; letter-spacing: -0.06em">JA</span>Jeremiah Ajayi</a>
-<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px; font-weight: 500">
-{chr(10).join(links)}
-<a class="btn-o" href="Site-Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700">Book a call ↗</a>
-</nav>
-</div>
-</header>'''
-
-
 def contact_band(title_html):
     return f'''<section id="contact" style="background: #111; color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 152px) 28px clamp(48px, 6vw, 72px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 152px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">{title_html}</h2>
 <div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
-<a class="btn-o" href="{CAL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
-<a class="btn-l" href="mailto:{MAIL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; font-size: 17px; font-weight: 600">{MAIL}</a>
-<a class="btn-l" href="https://www.linkedin.com/in/jeremiah-ajayi/" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; font-size: 17px; font-weight: 600">LinkedIn</a>
+<a class="btn-o" href="{CAL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
+<a class="btn-l" href="mailto:{MAIL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">{MAIL}</a>
+<a class="btn-l" href="https://www.linkedin.com/in/jeremiah-ajayi/" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">LinkedIn</a>
 </div>
-<footer style="margin-top: clamp(72px, 9vw, 112px); padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
+<footer style="margin-top: clamp(50px, 9vw, 112px); padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
 <a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
 <span style="display: flex; flex-wrap: wrap; gap: 8px 22px">{''.join(f'<a class="nl" href="{h}">{l}</a>' for l, h in FOOT)}<span>Lagos · {{{{time}}}} · © 2026</span></span>
 </footer>
@@ -95,7 +78,7 @@ def contact_band(title_html):
 
 def footer_only():
     return f'''<section style="background: #111; color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: 0 28px clamp(40px, 5vw, 64px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 28px) clamp(40px, 5vw, 64px)">
 <footer style="padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
 <a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
 <span style="display: flex; flex-wrap: wrap; gap: 8px 22px">{''.join(f'<a class="nl" href="{h}">{l}</a>' for l, h in FOOT)}<span>Lagos · {{{{time}}}} · © 2026</span></span>
@@ -108,7 +91,7 @@ def build(pid):
     fname, title, active, height = PAGES[pid]
     body = (ROOT / 'pages' / f'{TEMPLATE.get(pid, pid)}.html').read_text()
     js = (ROOT / 'pages' / f'{pid}.js').read_text()
-    helmet = (ROOT / 'helmet.html').read_text().replace('</style>', EXTRA_CSS + '</style>')
+    helmet = (ROOT / 'helmet.html').read_text().replace('</style>', EXTRA_CSS + SHARED_CSS + '</style>')
     m = re.search(r'<!--CONTACT:(.*?)-->', body, re.S)
     if '<!--NOBAND-->' in body:
         band = footer_only()

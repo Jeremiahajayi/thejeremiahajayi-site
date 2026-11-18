@@ -67,6 +67,81 @@ html{scroll-behavior:smooth}
 @keyframes rise{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
 @media (prefers-reduced-motion: reduce){.l1,.l2,.l3,.photo-in,.reveal,.marquee{animation:none !important}.lift,.lift2,.sheet{transition:none}}
+/*shared:start*/
+.site-h{position:sticky;top:0;z-index:50;background:rgba(17,17,17,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #2B2A27}
+.h-in{max-width:1360px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.04em;text-decoration:none;color:#F2EFE8}
+.logo:hover{color:#F2EFE8}
+.logo-m{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#FF5A2A;color:#111;font-size:16px;letter-spacing:-.06em}
+.nav-t{display:none;position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
+.nav-btn{display:none}
+.nav-main{display:flex;align-items:center;gap:4px;font-size:15px;font-weight:500}
+.nav-main>a.nl,.dd-top{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 12px;border-radius:999px;text-decoration:none;color:#F2EFE8;transition:background .25s,color .25s}
+.nav-main>a.nl:hover,.dd-top:hover{background:#262523;color:#F2EFE8}
+.nav-on{color:#FF5A2A !important}
+.dd{position:relative}
+.chev{flex:none;width:20px;height:20px;border-radius:50%;background:#2E2D2A;color:#F2EFE8;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s,background .3s,color .3s}
+.chev svg{width:10px;height:10px}
+.dd:hover .chev,.dd:focus-within .chev{transform:rotate(180deg);background:#FF5A2A;color:#111}
+.dd-p{position:absolute;top:calc(100% + 12px);left:-8px;width:360px;padding:10px;box-sizing:border-box;border-radius:16px;background:#1A1A19;border:1px solid #33322E;box-shadow:0 28px 64px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .22s,visibility 0s .22s}
+.dd-p::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.dd:hover .dd-p,.dd:focus-within .dd-p{opacity:1;visibility:visible;transform:none;transition:opacity .22s,transform .22s}
+.dd-h{margin:6px 12px 4px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A867E}
+.dd-l{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-radius:10px;text-decoration:none;color:#F2EFE8;transition:background .2s}
+.dd-l:hover{background:#272624;color:#F2EFE8}
+.dd-l b{font-size:15px;font-weight:600;transition:color .2s}
+.dd-l span{font-size:13px;line-height:1.4;color:#B5B0A6}
+.dd-l:hover b{color:#FF5A2A}
+.dd-all{display:block;margin-top:6px;padding:12px 12px 8px;border-top:1px solid #33322E;font-size:14px;font-weight:700;color:#FF5A2A;text-decoration:none}
+.dd-all:hover{color:#F2EFE8}
+.nav-cta{margin-left:12px;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;font-weight:700}
+@media (max-width: 1000px){
+.site-h{background:#111;-webkit-backdrop-filter:none;backdrop-filter:none}
+.h-in{height:62px;padding:0 20px}
+.logo{font-size:19px}.logo-m{width:30px;height:30px;font-size:14px;border-radius:8px}
+.nav-t{display:block}
+.nav-btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 6px 0 16px;border-radius:999px;border:1px solid #3A3934;color:#F2EFE8;font-size:14px;font-weight:600;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.burger{position:relative;flex:none;width:32px;height:32px;border-radius:50%;background:#FF5A2A}
+.burger::before,.burger::after{content:"";position:absolute;left:9px;right:9px;height:2px;border-radius:2px;background:#111;transition:transform .3s,top .3s}
+.burger::before{top:12px}.burger::after{top:18px}
+.nav-t:checked~.nav-btn .burger::before{top:15px;transform:rotate(45deg)}
+.nav-t:checked~.nav-btn .burger::after{top:15px;transform:rotate(-45deg)}
+.nav-t:focus-visible~.nav-btn{outline:2px solid #FF5A2A;outline-offset:2px}
+.nav-main{position:fixed;left:0;right:0;top:62px;bottom:0;z-index:49;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 40px;background:#111;overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.nav-t:checked~.nav-main{opacity:1;visibility:visible;transition:opacity .3s}
+.nav-main>a.nl,.dd-top{justify-content:space-between;min-height:64px;padding:0;border-radius:0;border-bottom:1px solid #2B2A27;font-family:'Space Grotesk',system-ui,sans-serif;font-size:30px;font-weight:600;letter-spacing:-.045em}
+.nav-main>a.nl:hover,.dd-top:hover{background:none}
+.dd-top{border-bottom:0}
+.chev{display:none}
+.dd-p{position:static;width:auto;padding:0 0 14px;border:0;border-bottom:1px solid #2B2A27;border-radius:0;background:none;box-shadow:none;opacity:1;visibility:visible;transform:none;transition:none}
+.dd-p::before{display:none}
+.dd-h{display:none}
+.dd-l{padding:9px 0 9px 14px;border-left:2px solid #2B2A27;border-radius:0}
+.dd-l:hover{background:none;border-left-color:#FF5A2A}
+.dd-l b{font-size:16px}
+.dd-all{margin:6px 0 0;padding:8px 0 0 14px;border-top:0}
+.nav-cta{margin:28px 0 0;justify-content:center;min-height:58px;font-size:17px}
+.nav-main>*{opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.2,.8,.2,1),transform .45s cubic-bezier(.2,.8,.2,1)}
+.nav-t:checked~.nav-main>*{opacity:1;transform:none}
+.nav-t:checked~.nav-main>*:nth-child(2){transition-delay:.05s}
+.nav-t:checked~.nav-main>*:nth-child(3){transition-delay:.1s}
+.nav-t:checked~.nav-main>*:nth-child(4){transition-delay:.15s}
+.nav-t:checked~.nav-main>*:nth-child(5){transition-delay:.2s}
+.nav-t:checked~.nav-main>*:nth-child(6){transition-delay:.25s}
+body:has(.nav-t:checked){overflow:hidden}
+}
+@media (max-width: 640px){
+.mswipe{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px !important;margin-right:-20px !important;padding-right:20px !important;padding-bottom:8px;scrollbar-width:none}
+.mswipe::-webkit-scrollbar{display:none}
+.mswipe>*{flex:0 0 84% !important;scroll-snap-align:start;min-width:0}
+.m2{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.mhint{display:flex !important}
+}
+.mhint{display:none;align-items:center;gap:8px;margin-top:14px;font-size:13px;font-weight:600;opacity:.65}
+.js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js-rv .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.js-rv .rv{opacity:1;transform:none;transition:none}.nav-main>*,.nav-main,.dd-p,.chev,.burger::before,.burger::after{transition:none !important}}
+/*shared:end*/
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://www.thejeremiahajayi.com/#person","name":"Jeremiah Ajayi","url":"https://www.thejeremiahajayi.com/","jobTitle":"Marketing consultant for B2B SaaS and technology companies","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"sameAs":["https://www.linkedin.com/in/jeremiah-ajayi/"],"knowsAbout":["Positioning and messaging","Product launches","Go-to-market strategy","Product marketing","Content marketing","SEO","Generative engine optimization","AI search"],"founder":{"@id":"https://www.thejeremiahajayi.com/empowerq/#org"}},{"@type":"WebSite","@id":"https://www.thejeremiahajayi.com/#website","url":"https://www.thejeremiahajayi.com/","name":"Jeremiah Ajayi","publisher":{"@id":"https://www.thejeremiahajayi.com/#person"}}]}</script>
 </head>
@@ -74,23 +149,24 @@ html{scroll-behavior:smooth}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQCD7V7B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
 
-<header style="position: sticky; top: 0; z-index: 40; background: rgba(17,17,17,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #2B2A27">
-<div style="max-width: 1360px; margin: 0 auto; padding: 12px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
-<a href="#top" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -0.04em">
-<span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #FF5A2A; color: #111; font-size: 16px; letter-spacing: -0.06em">JA</span>Jeremiah Ajayi</a>
-<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px; font-weight: 500">
-<a class="nl" href="/work/">Work</a>
-<a class="nl" href="/services/">Expertise</a>
+<header class="site-h">
+<div class="h-in">
+<a href="#top" class="logo sg"><span aria-hidden="true" class="logo-m">JA</span>Jeremiah Ajayi</a>
+<input type="checkbox" id="navt" class="nav-t" aria-label="Open the menu" aria-controls="nav-main">
+<label for="navt" class="nav-btn" aria-hidden="true"><span class="nav-btn-t">Menu</span><span class="burger"></span></label>
+<nav id="nav-main" class="nav-main" aria-label="Primary">
+<div class="dd"><a class="dd-top" href="/work/" aria-haspopup="true">Work<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Case studies</p><a class="dd-l" href="/work/#stears"><b>Stears Elections</b><span>How a new election tracker beat the BBC on Google</span></a><a class="dd-l" href="/work/#certn"><b>RemotePass × Certn</b><span>A partnership launch with 270+ media pickups</span></a><a class="dd-l" href="/work/#askai"><b>RemotePass Ask AI</b><span>Selling the answer, not the AI: record MQLs</span></a><a class="dd-l" href="/work/#engine"><b>RemotePass content engine</b><span>174% organic growth and an English–Arabic hub</span></a><a class="dd-l" href="/work/#xofu"><b>Xofu</b><span>One clear question for a new AI product</span></a><a class="dd-all" href="/work/#index">All work and projects →</a></div></div>
+<div class="dd"><a class="dd-top" href="/services/" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="/services/positioning-messaging/"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="/services/product-launch-gtm/"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="/services/content-growth/"><b>Content & organic growth</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="/services/">All services →</a></div></div>
 <a class="nl" href="/empowerq/">EmpowerQ</a>
 <a class="nl" href="/blog/">Writing</a>
 <a class="nl" href="/about/">About</a>
-<a class="btn-o" href="/contact/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700">Book a call ↗</a>
+<a class="btn-o nav-cta" href="/contact/">Book a call ↗</a>
 </nav>
 </div>
 </header>
 
 <section id="top" class="grid-bg">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) 28px 0; display: flex; flex-wrap: wrap; gap: 48px 56px; align-items: flex-start">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 28px) 0; display: flex; flex-wrap: wrap; gap: 48px 56px; align-items: flex-start">
 <div style="flex: 1 1 700px; min-width: 0">
 <div style="margin: 0 0 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; font-size: 15px; font-weight: 500; color: #B5B0A6">
 <h1 style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.5; color: #B5B0A6"><span style="color: #F2EFE8; font-weight: 600">Ẹ káàbọ̀.</span> I’m Jeremiah Ajayi, a marketing consultant for B2B SaaS and technology companies, based in Lagos.</h1>
@@ -103,15 +179,15 @@ html{scroll-behavior:smooth}
 </p>
 <p style="margin: 40px 0 0; max-width: 540px; font-size: 20px; line-height: 1.55; color: #D8D3C9">I help ambitious brands get understood, launched and chosen. Eight years of work for teams in Europe, North America, the Middle East and Africa.</p>
 <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px">
-<a class="btn-o" href="/contact/" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; font-size: 16px; font-weight: 700">Book a call ↗</a>
-<a class="btn-l" href="#work" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; font-size: 16px; font-weight: 600">See the work</a>
+<a class="btn-o" href="/contact/" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 16px; font-weight: 700">Book a call ↗</a>
+<a class="btn-l" href="#work" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 16px; font-weight: 600">See the work</a>
 </div>
 <p style="margin: 28px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; font-size: 14px; line-height: 1.5; color: #B5B0A6"><span style="font-weight: 700; color: #FF5A2A">Recently</span><a class="nl" href="#research" style="color: #D8D3C9">Co-authored Nigeria’s first State of AI Search report</a><span aria-hidden="true">·</span><a class="nl" href="#empowerq" style="color: #D8D3C9">EmpowerQ’s Lavender Ladder is a Social Shifters 2026 finalist</a></p>
 </div>
 
 <figure style="flex: 0 1 440px; min-width: 300px; margin: 0; position: relative">
 <div aria-hidden="true" style="position: absolute; left: 22px; top: 22px; right: -22px; bottom: 70px; background: #FF5A2A; border-radius: 4px"></div>
-<img class="photo-in" src="/img/portrait.webp" alt="Jeremiah Ajayi, standing outside in Lagos" loading="lazy" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 4px; background: #2A2926">
+<img class="photo-in" src="/img/headshot.webp" alt="Jeremiah Ajayi" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; border-radius: 4px; background: #FFFFFF">
 
 
 
@@ -119,9 +195,9 @@ html{scroll-behavior:smooth}
 </figure>
 </div>
 
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) 28px clamp(56px, 6vw, 88px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 28px) clamp(56px, 6vw, 88px)">
 <p style="margin: 0 0 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; font-weight: 600; color: #B5B0A6"><span>Contact sheet · recent work</span><span>Select a frame →</span></p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div class="mswipe" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
 
 <a class="sheet" href="#stears" style="display: flex; flex-direction: column; gap: 10px">
 <div style="position: relative; aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden; background-color: #232220; border: 1px solid #2B2A27"><img src="/img/stears-serp.webp" alt="Google results with Stears ranked first for 2023 election results" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block">
@@ -166,19 +242,19 @@ html{scroll-behavior:smooth}
 </div>
 
 <section id="work" style="background: #F2EFE8; color: #111; margin-top: -24px; padding-top: 24px">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 160px) 28px 0">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 160px) clamp(20px, 5vw, 28px) 0">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(48px, 6.4vw, 100px); line-height: 0.9; letter-spacing: -0.055em">Selected work</h2>
-<p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.6; color: #45423C">Four projects. For each: what I was responsible for, what I made, and what happened.</p>
+<p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.6; color: #45423C">Five projects. For each: what I was responsible for, what I made, and what happened.</p>
 </div>
-<dl aria-label="Results in brief" style="margin: 48px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding: 28px 0; border-top: 2px solid #111; border-bottom: 1px solid #C9C3B6">
+<dl class="m2" aria-label="Results in brief" style="margin: 48px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding: 28px 0; border-top: 2px solid #111; border-bottom: 1px solid #C9C3B6">
 <div><dt class="sg" style="font-weight: 700; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.86; letter-spacing: -0.06em">$3M+</dt><dd style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #45423C">pipeline influenced</dd></div>
 <div><dt class="sg" style="font-weight: 700; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.86; letter-spacing: -0.06em; color: #C23A0E">20+</dt><dd style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #45423C">product launches led</dd></div>
 <div><dt class="sg" style="font-weight: 700; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.86; letter-spacing: -0.06em">#1</dt><dd style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #45423C">above the BBC on Google for Stears</dd></div>
 <div><dt class="sg" style="font-weight: 700; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.86; letter-spacing: -0.06em; color: #C23A0E">174%</dt><dd style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #45423C">organic user growth at RemotePass</dd></div>
 </dl>
 
-<article id="stears" class="case reveal" style="margin-top: clamp(64px, 8vw, 112px)">
+<article id="stears" class="case reveal" style="margin-top: clamp(45px, 8vw, 112px)">
 <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; padding-bottom: 18px; border-bottom: 2px solid #111">
 <span class="sg" style="font-size: 15px; font-weight: 700">01</span>
 <span style="font-size: 15px; font-weight: 600">Stears · Elections 2023</span>
@@ -207,7 +283,7 @@ html{scroll-behavior:smooth}
 </div>
 </article>
 
-<article id="certn" class="case reveal" style="margin-top: clamp(96px, 12vw, 160px)">
+<article id="certn" class="case reveal" style="margin-top: clamp(67px, 12vw, 160px)">
 <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; padding-bottom: 18px; border-bottom: 2px solid #111">
 <span class="sg" style="font-size: 15px; font-weight: 700">02</span>
 <span style="font-size: 15px; font-weight: 600">RemotePass × Certn · 2024</span>
@@ -239,9 +315,38 @@ html{scroll-behavior:smooth}
 </div>
 </article>
 
-<article id="xofu" class="case reveal" style="margin-top: clamp(96px, 12vw, 160px)">
+<article id="askai" class="case reveal" style="margin-top: clamp(67px, 12vw, 160px)">
 <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; padding-bottom: 18px; border-bottom: 2px solid #111">
 <span class="sg" style="font-size: 15px; font-weight: 700">03</span>
+<span style="font-size: 15px; font-weight: 600">RemotePass · Ask AI</span>
+<span style="font-size: 15px; color: #6B675F">Launches &amp; go-to-market</span>
+</div>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<h3 class="sg" style="margin: 0; font-size: clamp(32px, 3.2vw, 46px); font-weight: 600; line-height: 1.02; letter-spacing: -0.045em">Everyone was selling AI. <span style="color: #C23A0E">We sold the answer.</span></h3>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 13px; font-weight: 700; color: #C23A0E">My role</dt><dd style="margin: 4px 0 0; font-size: 16px; line-height: 1.6">Led the launch campaign for Ask AI, RemotePass’s newest feature, at the peak of the AI craze.</dd></div>
+<div><dt style="font-size: 13px; font-weight: 700; color: #C23A0E">The angle</dt><dd style="margin: 4px 0 0; font-size: 16px; line-height: 1.6">HR leaders told us they never had time to explore their workforce data. So the story was how easy it is to simply ask it a question, carried from the landing page to the launch video to sales enablement.</dd></div>
+<div><dt style="font-size: 13px; font-weight: 700; color: #C23A0E">Result</dt><dd class="sg" style="margin: 4px 0 0; font-size: 22px; font-weight: 600; line-height: 1.25; letter-spacing: -0.02em">Record MQL performance, and a sales team flooded with enquiries about the product.</dd></div>
+</dl>
+<a class="nd" href="/work/#askai" style="font-size: 15px; font-weight: 700">See the case →</a>
+</div>
+<div class="lift" style="flex: 1 1 520px; min-width: 0; border-radius: 18px; background: #FF5A2A; padding: clamp(18px, 3vw, 36px)">
+<div style="border-radius: 14px; background: #111; color: #F2EFE8; padding: clamp(18px, 2.4vw, 28px)">
+<p style="margin: 0; padding-bottom: 14px; border-bottom: 1px solid #2B2A27; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #B5B0A6"><span style="display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #F2EFE8"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #FF5A2A"></span>Ask AI</span><span>From the launch page</span></p>
+<ul style="margin: 0; padding: 18px 0 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<li style="align-self: flex-end; max-width: 90%; padding: 12px 16px; border-radius: 16px 16px 4px 16px; background: #F2EFE8; color: #111; font-size: 15px; line-height: 1.45; font-weight: 500">Which contracts expire next month? Draft the renewals.</li>
+<li style="align-self: flex-end; max-width: 90%; padding: 12px 16px; border-radius: 16px 16px 4px 16px; background: #F2EFE8; color: #111; font-size: 15px; line-height: 1.45; font-weight: 500">What are our top expenses this quarter?</li>
+</ul>
+<p class="sg" style="margin: 18px 0 0; font-size: clamp(22px, 2.4vw, 32px); font-weight: 600; line-height: 1.05; letter-spacing: -0.04em">“Skip the dashboards <span style="color: #FF5A2A">and spreadsheets.</span>”</p>
+</div>
+</div>
+</div>
+</article>
+
+<article id="xofu" class="case reveal" style="margin-top: clamp(67px, 12vw, 160px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; padding-bottom: 18px; border-bottom: 2px solid #111">
+<span class="sg" style="font-size: 15px; font-weight: 700">04</span>
 <span style="font-size: 15px; font-weight: 600">Xofu · 2026</span>
 <span style="font-size: 15px; color: #6B675F">Positioning &amp; messaging</span>
 </div>
@@ -272,10 +377,10 @@ html{scroll-behavior:smooth}
 </div>
 </article>
 
-<article id="remotepass" class="case reveal" style="margin-top: clamp(96px, 12vw, 160px)">
+<article id="remotepass" class="case reveal" style="margin-top: clamp(67px, 12vw, 160px)">
 <div style="background: #111; color: #F2EFE8; border-radius: 14px; padding: clamp(28px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 40px 56px">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<span style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg" style="color: #F2EFE8">04</span><span>RemotePass · 2024–25</span><span>Content &amp; organic growth</span></span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg" style="color: #F2EFE8">05</span><span>RemotePass · 2024–25</span><span>Content &amp; organic growth</span></span>
 <h3 class="sg" style="margin: 0; font-size: clamp(32px, 3.2vw, 46px); font-weight: 600; line-height: 1.02; letter-spacing: -0.045em">Launches and a content engine built to reach pipeline</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #D8D3C9"><span style="font-weight: 700; color: #FF5A2A">My role</span> · Joined after a $5.5M raise to lead GTM and positioning. Built the content strategy from zero and ran a team of freelance writers.</p>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #D8D3C9"><span style="font-weight: 700; color: #FF5A2A">What we made</span> · Around 40 country guides, an English–Arabic hub for MENA, and content built from the objections in sales calls.</p>
@@ -285,17 +390,16 @@ html{scroll-behavior:smooth}
 <div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(56px, 6vw, 88px); line-height: 0.85; letter-spacing: -0.06em; color: #FF5A2A">134%</p><p style="margin: 8px 0 0; font-size: 14px; color: #D8D3C9; max-width: 220px">company revenue growth in 2024 ($1.1M to $2.57M), the year I led GTM</p></div>
 </div>
 </div>
-<div style="flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
-<div class="ph-d lift" style="grid-row: span 2; border-radius: 10px; background-color: #2A2926; padding: 14px; box-sizing: border-box; display: flex; align-items: flex-end; min-height: 380px"><span style="font-size: 12px; line-height: 1.45; color: #B5B0A6">Screenshot · the MENA HR and payroll hub, Arabic version</span></div>
-<div class="ph-d" style="aspect-ratio: 4 / 3; border-radius: 10px; background-color: #2A2926; padding: 14px; box-sizing: border-box; display: flex; align-items: flex-end"><span style="font-size: 12px; line-height: 1.45; color: #B5B0A6">Screenshot · a country hiring guide</span></div>
-<div class="ph-d" style="aspect-ratio: 4 / 3; border-radius: 10px; background-color: #3A2A22; padding: 14px; box-sizing: border-box; display: flex; align-items: flex-end"><span style="font-size: 12px; line-height: 1.45; color: #D8D3C9">Chart · organic growth, from your analytics</span></div>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px; justify-content: center">
+<figure class="lift" style="margin: 0"><img src="/img/mena-hub.webp" alt="The RemotePass MENA hub: Automated Payroll and HRIS for MENA, with country options from Tunisia to Morocco" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1600 / 787; object-fit: cover; border-radius: 10px; background: #F4F6FC"><figcaption style="margin-top: 8px; font-size: 13px; color: #B5B0A6"><span style="color: #F2EFE8; font-weight: 600">The MENA hub</span> · payroll and HR for the region, in English and Arabic</figcaption></figure>
+<figure class="lift2" style="margin: 0"><img src="/img/country-guides.webp" alt="The RemotePass country guides hub: Your guide to global employment, with guides filtered by region" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1600 / 995; object-fit: cover; object-position: top; border-radius: 10px; background: #0B1340"><figcaption style="margin-top: 8px; font-size: 13px; color: #B5B0A6"><span style="color: #F2EFE8; font-weight: 600">Country guides</span> · around 40 guides to hiring, payroll and tax</figcaption></figure>
 </div>
 </div>
 </article>
 
-<div style="margin-top: clamp(80px, 10vw, 128px); padding: 28px 0 clamp(96px, 12vw, 152px); border-top: 2px solid #111; display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: flex-start">
+<div style="margin-top: clamp(56px, 10vw, 128px); padding: 28px 0 clamp(67px, 12vw, 152px); border-top: 2px solid #111; display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: flex-start">
 <p class="sg" style="margin: 0; flex: 0 0 200px; font-size: 22px; font-weight: 600; letter-spacing: -0.03em">More work</p>
-<div style="flex: 1 1 760px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px">
+<div class="mswipe" style="flex: 1 1 760px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px">
 
 <div>
 <p class="sg" style="margin: 0; font-weight: 700; font-size: 48px; line-height: 0.9; letter-spacing: -0.05em; color: #C23A0E">100+</p>
@@ -328,7 +432,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <section id="expertise" style="background: #111; color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 160px) 28px">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 160px) clamp(20px, 5vw, 28px)">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; margin-bottom: 48px">
 <h2 class="sg" style="margin: 0; flex: 1 1 640px; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.98; letter-spacing: -0.05em">Three disciplines. One job: helping good products get chosen.</h2>
 <p style="margin: 0; flex: 1 1 300px; max-width: 400px; font-size: 16px; line-height: 1.6; color: #B5B0A6">Research, SEO, AI search and sales enablement are how I do the work. These three are what the work is for.</p>
@@ -354,7 +458,7 @@ html{scroll-behavior:smooth}
 <span class="rx-sub" style="display: block; font-size: 17px; line-height: 1.6; color: #D8D3C9">Launches planned end to end, from narrative and timing to press, partners and the material sales needs on day one.</span>
 </span>
 <span class="rx-sub" style="flex: 1 1 300px; display: block; font-size: 14px; line-height: 1.6; color: #B5B0A6">
-<span style="display: block; margin-bottom: 8px"><strong>See it in</strong> · RemotePass × Certn, and 20+ launches I’ve led</span>
+<span style="display: block; margin-bottom: 8px"><strong>See it in</strong> · RemotePass × Certn, the Ask AI launch, and 20+ launches I’ve led</span>
 <span style="display: block"><strong>Supported by</strong> · launch planning, PR and partnerships, sales enablement</span>
 <span style="display: block; margin-top: 10px; font-weight: 700; color: #FF5A2A">See the service →</span>
 </span>
@@ -377,16 +481,17 @@ html{scroll-behavior:smooth}
 </section>
 
 <section id="research" style="background: #E6E1D6; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 160px) 28px; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-start">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 160px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-start">
 <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <p style="margin: 0; font-size: 14px; font-weight: 700; color: #C23A0E">Writing &amp; research</p>
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">I write about how buyers find, judge and choose.</h2>
 <a href="https://stateofaisearchinnigeria.eo.page/download" class="case" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 14px">
-<div class="lift" role="img" aria-label="The State of AI Search in Nigeria, a 2026 report" style="aspect-ratio: 4 / 3; border-radius: 10px; background-color: #111; padding: 22px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 30px 60px rgba(17,17,17,.18)">
-<span style="align-self: flex-start; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #FF5A2A; color: #111">A first for Nigeria</span>
-<span class="sg" style="font-weight: 700; font-size: clamp(30px, 3vw, 44px); line-height: 0.98; letter-spacing: -0.045em; color: #F2EFE8">The State of AI Search in Nigeria</span>
-<span style="font-size: 12px; color: #B5B0A6">How Nigerians use AI to search, and which brands it recommends</span>
+<div class="lift" style="position: relative; aspect-ratio: 4 / 3; border-radius: 10px; background-color: #111; overflow: hidden; box-shadow: 0 30px 60px rgba(17,17,17,.2)">
+<img src="/img/report-contents.webp" alt="Contents page of the report, with six chapters" loading="lazy" style="position: absolute; right: 7%; top: 13%; width: 40%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; transform: rotate(5deg); box-shadow: 0 18px 40px rgba(0,0,0,.45); background: #FBF7D9">
+<img src="/img/report-cover.webp" alt="Cover of The State of AI Search in Nigeria, written and researched by Jeremiah Ajayi and Felix Akinnibi" loading="lazy" style="position: absolute; left: 9%; top: 7%; width: 45%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; transform: rotate(-4deg); box-shadow: 0 24px 50px rgba(0,0,0,.5); background: #FBF7D9">
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #FF5A2A; color: #111">A first for Nigeria · 71 pages</span>
 </div>
+<span class="sg" style="font-size: 24px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em">The State of AI Search in Nigeria <span style="color: #C23A0E">→</span></span>
 <span style="font-size: 15px; line-height: 1.55; color: #2D2B27">Co-authored with Felix Akinnibi, in partnership with the Freelance Coalition for Developing Countries. The country’s first study of how AI assistants surface Nigerian brands.</span>
 </a>
 </div>
@@ -430,7 +535,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <section id="about" style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 160px) 28px">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 160px) clamp(20px, 5vw, 28px)">
 <div style="display: flex; flex-wrap: wrap; gap: 40px 72px; align-items: flex-end">
 <div style="flex: 1 1 560px; min-width: 0">
 <p style="margin: 0 0 16px; font-size: 14px; font-weight: 700; color: #C23A0E">The short version</p>
@@ -497,7 +602,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <section id="empowerq" style="background: #B9A6FF; color: #1C1430">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 160px) 28px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 160px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
 <div style="flex: 1 1 560px; min-width: 0">
 <p style="margin: 0 0 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; font-size: 15px; font-weight: 700"><span>The work I care about most</span><span style="font-size: 13px; padding: 7px 14px; border-radius: 999px; background: #1C1430; color: #F1ECFF">Finalist · Social Shifters Global Innovation Challenge 2026</span></p>
 <h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(72px, 10vw, 168px); line-height: 0.82; letter-spacing: -0.07em">EmpowerQ</h2>
@@ -522,7 +627,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 <div style="flex: 0 1 440px; min-width: 280px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
-<img src="/img/out-of-office.webp" alt="The Out of Office banner: Nigeria’s first queer career conference, by EmpowerQ" loading="lazy" style="grid-column: span 2; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; border-radius: 10px; background: #1C1430">
+<img src="/img/ooo-tags.webp" alt="Name tags and lanyards for Out of Office, EmpowerQ’s queer career conference" loading="lazy" style="grid-column: span 2; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 60% center; border-radius: 10px; background: #1C1430">
 <div style="aspect-ratio: 1 / 1; border-radius: 50%; background: #1C1430; color: #F1ECFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 18px; box-sizing: border-box"><span class="sg" style="font-weight: 700; font-size: 48px; line-height: 1; letter-spacing: -0.06em; color: #B9A6FF">100+</span><span style="margin-top: 6px; font-size: 12px; font-weight: 600; line-height: 1.3">at our first Out of Office</span></div>
 <img src="/img/lavender-ladder-poster.webp" alt="The Lavender Ladder app home screen" loading="lazy" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: top; border-radius: 10px; background: #CFC2FF">
 </div>
@@ -530,7 +635,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <section id="contact" style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 168px) 28px clamp(48px, 6vw, 72px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 168px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(56px, 8.4vw, 136px); line-height: 0.88; letter-spacing: -0.065em">What are you<br><span style="color: #C23A0E">working on?</span></h2>
 <div style="margin-top: clamp(40px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: flex-start">
 <div role="radiogroup" aria-label="What you need" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
@@ -569,7 +674,7 @@ html{scroll-behavior:smooth}
 <p style="margin: 8px 0 0; padding-top: 18px; border-top: 1px solid #2B2A27; font-size: 14px; color: #B5B0A6">Or write to me directly: <a class="nl" href="mailto:jeremiah@thejeremiahajayi.com" style="font-weight: 700; text-decoration: underline; text-underline-offset: 4px">jeremiah@thejeremiahajayi.com</a></p>
 </div>
 </div>
-<footer style="margin-top: clamp(80px, 10vw, 128px); padding-top: 22px; border-top: 2px solid #111; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #45423C">
+<footer style="margin-top: clamp(56px, 10vw, 128px); padding-top: 22px; border-top: 2px solid #111; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #45423C">
 <span class="sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em; color: #111"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</span>
 <span style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a class="nd" href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><a class="nd" href="/work/">Work</a><a class="nd" href="/blog/">Writing</a><a class="nd" href="/about/">About</a><a class="nd" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call</a><span>Lagos · <span data-time></span> · © 2026</span></span>
 </footer>
@@ -613,6 +718,34 @@ html{scroll-behavior:smooth}
         s('cta').textContent = d.cta; s('cta').setAttribute('href', d.href);
       });
     });
+  }
+  // Close the mobile menu when a same-page link is used.
+  var navT = document.getElementById('navt');
+  if (navT) document.querySelectorAll('.nav-main a').forEach(function (a) { a.addEventListener('click', function () { navT.checked = false; }); });
+  // Escape closes the mobile menu.
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && navT && navT.checked) navT.checked = false; });
+  // Scroll reveals: content eases up as it enters the screen.
+  if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var SEL = 'section h2, section h3, section blockquote, section figure, section article, section li, section dl > div, section .card-l, section .path, section .row-x, section .door, section img';
+    var SKIP = '.site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k]';
+    var picked = [];
+    document.querySelectorAll(SEL).forEach(function (el) {
+      if (el.closest(SKIP)) return;
+      if (el.parentElement && el.parentElement.closest('.rv')) return;
+      if (el.getBoundingClientRect().top < innerHeight * 0.9) return; // already on screen: leave it be
+      el.classList.add('rv'); picked.push(el);
+    });
+    document.documentElement.classList.add('js-rv');
+    var io = new IntersectionObserver(function (entries) {
+      var batch = entries.filter(function (e) { return e.isIntersecting; });
+      batch.forEach(function (e, i) {
+        var el = e.target, d = Math.min(i * 70, 350);
+        el.style.transitionDelay = d + 'ms'; el.classList.add('in'); io.unobserve(el);
+        // hand the element back to its own hover transitions once it has arrived
+        setTimeout(function () { el.classList.remove('rv', 'in'); el.style.transitionDelay = ''; }, 900 + d);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    picked.forEach(function (el) { io.observe(el); });
   }
 })();
 </script>

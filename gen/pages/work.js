@@ -28,6 +28,7 @@
       { k: 'content', client: 'Stears', year: '2023', big: '#1', bigLabel: 'on Google for “2023 election results”, above the BBC, CNN and INEC', title: 'How a new election tracker beat the BBC on Google', href: '#stears', deep: true, dark: true },
       { k: 'launch', client: 'RemotePass × Certn', year: '2024', big: '270+', bigLabel: 'media pickups, including Yahoo Finance, Fox and NBC', title: 'The partnership launch that went global', href: '#certn', deep: true, orange: true },
       { k: 'launch', client: 'RemotePass', year: '2024–25', big: '15+', bigLabel: 'launches, in a year company revenue grew 134%', title: 'A launch program built for pipeline', href: '#launches', deep: true },
+      { k: 'launch', client: 'RemotePass', year: 'Ask AI', big: 'Record', bigLabel: 'MQL performance after launch, with sales flooded with enquiries', title: 'Everyone was selling AI. We sold the answer.', href: '#askai', deep: true, orange: true },
       { k: 'content', client: 'RemotePass', year: '2024–25', big: '174%', bigLabel: 'organic user acquisition, year on year, and $500K+ pipeline in under a year', title: 'A content engine for global hiring, with an English–Arabic hub for MENA', href: '#engine', deep: true },
       { k: 'pos', client: 'Xofu', year: '2026', big: '3.7%', bigLabel: 'launch email click-through, double the previous best', title: 'Giving a new AI product one clear question to answer', href: '#xofu', deep: true, dark: true },
       { k: 'launch', client: 'RemotePass × Wafeq', year: '2025', big: '103', bigLabel: 'pieces of coverage in the UAE and Saudi Arabia, 56 of them in Arabic', title: 'A regional integration, launched in two languages', href: '#launches' },
@@ -53,8 +54,9 @@
         { n: '01', href: '#stears', t: 'Stears Elections', s: 'Content' },
         { n: '02', href: '#certn', t: 'RemotePass × Certn', s: 'Launch' },
         { n: '03', href: '#launches', t: 'RemotePass launches', s: 'Launch' },
-        { n: '04', href: '#engine', t: 'RemotePass content engine', s: 'Content' },
-        { n: '05', href: '#xofu', t: 'Xofu', s: 'Positioning' }
+        { n: '04', href: '#askai', t: 'RemotePass Ask AI', s: 'Launch' },
+        { n: '05', href: '#engine', t: 'RemotePass content engine', s: 'Content' },
+        { n: '06', href: '#xofu', t: 'Xofu', s: 'Positioning' }
       ],
       stears: {
         did: [
@@ -90,7 +92,7 @@
           { src: img.ksaLaptop, alt: 'KSA Payroll product visual on a laptop', name: 'KSA Payroll', when: '2025', w: 420 },
           { src: img.dfs, alt: 'Dubai Fintech Summit countdown post', name: 'Dubai Fintech Summit', when: 'May 2025', w: 240 }
         ],
-        log: [ { t: 'Background checks (Certn)' }, { t: 'Time-Off Policies' }, { t: 'Org Chart' }, { t: 'Local Payroll' }, { t: 'KSA Payroll' }, { t: 'Open APIs' }, { t: 'Automations' }, { t: 'Bill Pay' }, { t: 'Bulk Actions' }, { t: 'Calendar revamp' }, { t: 'Contractor of Record' }, { t: 'Direct Employees' }, { t: 'QuickBooks' }, { t: 'Zapier' }, { t: 'Slack' }, { t: 'Wafeq' } ],
+        log: [ { t: 'Ask AI' }, { t: 'Background checks (Certn)' }, { t: 'Time-Off Policies' }, { t: 'Org Chart' }, { t: 'Local Payroll' }, { t: 'KSA Payroll' }, { t: 'Open APIs' }, { t: 'Automations' }, { t: 'Bill Pay' }, { t: 'Bulk Actions' }, { t: 'Calendar revamp' }, { t: 'Contractor of Record' }, { t: 'Direct Employees' }, { t: 'QuickBooks' }, { t: 'Zapier' }, { t: 'Slack' }, { t: 'Wafeq' } ],
         steps: [
           { n: '1', h: 'Brief', t: 'Turned product specs into a customer story and a launch tier.' },
           { n: '2', h: 'Enable', t: 'Gave sales one-pagers, decks, FAQs and talk tracks before launch day.' },
@@ -113,6 +115,23 @@
           { t: 'Wrote the GEO playbook and tracked AI answers across ChatGPT, Perplexity, Gemini and Google AI Overviews.' }
         ],
         results: [ { big: '174%', label: 'organic user acquisition, year on year' }, { big: '$500K+', label: 'pipeline influenced by content, in under a year' } ]
+      },
+      askai: {
+        story: [
+          { h: 'The insight', t: 'HR leaders, our customers and prospects, kept telling us they never had time to explore their own workforce data. Most competitors had not built a story on that.' },
+          { h: 'What we made', t: 'One story from the landing page to the announcement video to the sales enablement documents, so buyers heard the same promise at every step.' },
+          { h: 'My role', t: 'Led the campaign as Content Marketing Manager: the angle, the story and keeping it consistent across every channel.' }
+        ],
+        prompts: [
+          { t: 'Where is my team located and how much are we spending by country?' },
+          { t: 'Which contracts expire next month? Draft the renewals.' },
+          { t: 'What are our top expenses this quarter?' }
+        ],
+        touch: [
+          { n: '01', h: 'Landing page', s: 'remotepass.com/ai', href: 'https://www.remotepass.com/ai', go: '↗', bg: '#111', fg: '#F2EFE8' },
+          { n: '02', h: 'Announcement video', s: 'Watch it on LinkedIn', href: 'https://lnkd.in/p/gMXYb4hH', go: '↗', bg: '#111', fg: '#F2EFE8' },
+          { n: '03', h: 'Sales enablement', s: 'Documents for the sales team, built on the same story', href: 'Site-Service-Launch.dc.html', go: '→', bg: 'rgba(17,17,17,.12)', fg: '#111' }
+        ]
       },
       xofu: {
         did: [

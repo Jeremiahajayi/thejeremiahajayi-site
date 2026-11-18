@@ -1,5 +1,5 @@
 <section class="grid-bg" style="background-color: #111; color: #F2EFE8; overflow: hidden">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 28px clamp(72px, 9vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(45px, 8vw, 112px) clamp(20px, 5vw, 28px) clamp(50px, 9vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
 <div>
 <h1 style="margin: 0 0 24px; font-size: 15px; font-weight: 500; line-height: 1.5; color: #B5B0A6"><span style="color: #F2EFE8; font-weight: 700">Jeremiah Ajayi.</span> Marketing consultant for B2B SaaS and technology companies, based in Lagos.</h1>
 <p class="sg l1" style="margin: 0; font-weight: 600; font-size: clamp(48px, 6.4vw, 100px); line-height: 0.92; letter-spacing: -0.058em">I studied how to win an argument.</p>
@@ -14,7 +14,7 @@
 </section>
 
 <section style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 136px) 28px; position: relative">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px); position: relative">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">The story so far</p>
 <h2 class="sg" style="margin: 0 0 clamp(48px, 6vw, 80px); max-width: 860px; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">The chapters a summary skips.</h2>
 <sc-for list="{{chapters}}" as="c" hint-placeholder-count="3">
@@ -48,7 +48,7 @@
 </section>
 
 <section id="empowerq" style="background: #1C1430; color: #F1ECFF; overflow: hidden">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 144px) 28px">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #B9A6FF">05</span><span style="color: #CFC4F5">Now</span></p>
 <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px 72px; align-items: start">
 <div class="reveal">
@@ -59,7 +59,7 @@
 </div>
 </div>
 <div>
-<figure style="margin: 0"><img class="shot" src="/_blob/0fe41496a3d98ea1e46a9745fbb85f69" alt="Members of the EmpowerQ community together at an event" loading="lazy" style="width: 100%; aspect-ratio: 1600 / 1066; object-fit: cover; background: #2A2145"><figcaption style="margin-top: 12px; font-size: 13px; color: #CFC4F5">At an EmpowerQ community event</figcaption></figure>
+<figure style="margin: 0"><img class="shot" src="/_blob/2887802b6b670e13694193452b911747" alt="Name tags and lanyards for Out of Office, EmpowerQ’s queer career conference" loading="lazy" style="width: 100%; aspect-ratio: 1600 / 1066; object-fit: cover; background: #2A2145"><figcaption style="margin-top: 12px; font-size: 13px; color: #CFC4F5">Name tags for Out of Office, our first conference. We keep attendees’ faces off the web.</figcaption></figure>
 <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding-top: 20px; border-top: 1px solid #3A2F5C">
 <sc-for list="{{empowerq}}" as="e" hint-placeholder-count="2"><div><p class="sg" style="margin: 0; font-size: clamp(32px, 3.2vw, 48px); font-weight: 700; line-height: .9; letter-spacing: -0.05em; color: #B9A6FF">{{e.big}}</p><p style="margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: #E4DDFB">{{e.label}}</p></div></sc-for>
 </div>
@@ -72,9 +72,9 @@
 </section>
 
 <section style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
-<div class="qgrid">
+<div class="qgrid mswipe">
 <sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
 <blockquote class="reveal" style="margin: 0; grid-column: {{q.col}}; padding: clamp(28px, 3vw, 44px); border-radius: 16px; background: {{q.bg}}; color: {{q.fg}}; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
 <p class="sg" style="margin: 0; font-size: {{q.size}}; font-weight: 500; line-height: 1.12; letter-spacing: -0.035em">“{{q.text}}”</p>
@@ -94,7 +94,7 @@
 </section>
 
 <section id="now" style="background: #111; color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 144px) 28px clamp(48px, 6vw, 72px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 class="sg" style="margin: 0; max-width: 980px; font-weight: 700; font-size: clamp(48px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.065em">Let’s work out <span style="color: #FF5A2A">the next chapter.</span></h2>
 <div style="margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
 <a class="path" href="Site-Contact.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #F2EFE8; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #C23A0E">For employers and hiring managers</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">I’m open to senior product marketing, content and growth roles, remote or with relocation.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Get my CV →</span></a>

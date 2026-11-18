@@ -30,7 +30,7 @@
         ],
         proofTitle: 'Content that reached buyers, and pipeline.',
         cases: [
-          { client: 'RemotePass', year: '2024–25', big: '174%', title: 'A content engine built for pipeline', result: 'About 40 country guides and an English–Arabic MENA hub; $500K+ pipeline in under a year.', href: 'Site-Work.dc.html#remotepass', bg: '#111', fg: '#F2EFE8' },
+          { client: 'RemotePass', year: '2024–25', big: '174%', title: 'A content engine built for pipeline', result: 'About 40 country guides and an English–Arabic MENA hub; $500K+ pipeline in under a year.', href: 'Site-Work.dc.html#engine', bg: '#111', fg: '#F2EFE8' },
           { client: 'Stears', year: '2023', big: '#1', title: 'How a new election tracker beat the BBC on Google', result: '10,000+ programmatic candidate pages and 1.9M+ users, 52% from search.', href: 'Site-Work.dc.html#stears', bg: '#FF5A2A', fg: '#111' }
         ],
         hasQuote: true, quote: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', quoteName: 'Adetoro Adeniran', quoteOrg: 'Stears',

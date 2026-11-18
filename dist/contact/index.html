@@ -90,7 +90,6 @@ html{scroll-behavior:smooth}
 .wrow{transition:padding .35s cubic-bezier(.2,.8,.2,1)}
 .wrow:hover{padding-left:14px !important}
 
-.nav-on{color:#FF5A2A !important}
 .chip{font:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .chip:hover{border-color:#111}
 .card-l{text-decoration:none;color:#111;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -98,28 +97,105 @@ html{scroll-behavior:smooth}
 .card-l:hover .card-t{color:#C23A0E}
 .anch{text-decoration:none;color:inherit;transition:color .25s}
 .anch:hover{color:#FF5A2A}
+
+/*shared:start*/
+.site-h{position:sticky;top:0;z-index:50;background:rgba(17,17,17,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #2B2A27}
+.h-in{max-width:1360px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.04em;text-decoration:none;color:#F2EFE8}
+.logo:hover{color:#F2EFE8}
+.logo-m{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#FF5A2A;color:#111;font-size:16px;letter-spacing:-.06em}
+.nav-t{display:none;position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
+.nav-btn{display:none}
+.nav-main{display:flex;align-items:center;gap:4px;font-size:15px;font-weight:500}
+.nav-main>a.nl,.dd-top{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 12px;border-radius:999px;text-decoration:none;color:#F2EFE8;transition:background .25s,color .25s}
+.nav-main>a.nl:hover,.dd-top:hover{background:#262523;color:#F2EFE8}
+.nav-on{color:#FF5A2A !important}
+.dd{position:relative}
+.chev{flex:none;width:20px;height:20px;border-radius:50%;background:#2E2D2A;color:#F2EFE8;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s,background .3s,color .3s}
+.chev svg{width:10px;height:10px}
+.dd:hover .chev,.dd:focus-within .chev{transform:rotate(180deg);background:#FF5A2A;color:#111}
+.dd-p{position:absolute;top:calc(100% + 12px);left:-8px;width:360px;padding:10px;box-sizing:border-box;border-radius:16px;background:#1A1A19;border:1px solid #33322E;box-shadow:0 28px 64px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .22s,visibility 0s .22s}
+.dd-p::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.dd:hover .dd-p,.dd:focus-within .dd-p{opacity:1;visibility:visible;transform:none;transition:opacity .22s,transform .22s}
+.dd-h{margin:6px 12px 4px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A867E}
+.dd-l{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-radius:10px;text-decoration:none;color:#F2EFE8;transition:background .2s}
+.dd-l:hover{background:#272624;color:#F2EFE8}
+.dd-l b{font-size:15px;font-weight:600;transition:color .2s}
+.dd-l span{font-size:13px;line-height:1.4;color:#B5B0A6}
+.dd-l:hover b{color:#FF5A2A}
+.dd-all{display:block;margin-top:6px;padding:12px 12px 8px;border-top:1px solid #33322E;font-size:14px;font-weight:700;color:#FF5A2A;text-decoration:none}
+.dd-all:hover{color:#F2EFE8}
+.nav-cta{margin-left:12px;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;font-weight:700}
+@media (max-width: 1000px){
+.site-h{background:#111;-webkit-backdrop-filter:none;backdrop-filter:none}
+.h-in{height:62px;padding:0 20px}
+.logo{font-size:19px}.logo-m{width:30px;height:30px;font-size:14px;border-radius:8px}
+.nav-t{display:block}
+.nav-btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 6px 0 16px;border-radius:999px;border:1px solid #3A3934;color:#F2EFE8;font-size:14px;font-weight:600;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.burger{position:relative;flex:none;width:32px;height:32px;border-radius:50%;background:#FF5A2A}
+.burger::before,.burger::after{content:"";position:absolute;left:9px;right:9px;height:2px;border-radius:2px;background:#111;transition:transform .3s,top .3s}
+.burger::before{top:12px}.burger::after{top:18px}
+.nav-t:checked~.nav-btn .burger::before{top:15px;transform:rotate(45deg)}
+.nav-t:checked~.nav-btn .burger::after{top:15px;transform:rotate(-45deg)}
+.nav-t:focus-visible~.nav-btn{outline:2px solid #FF5A2A;outline-offset:2px}
+.nav-main{position:fixed;left:0;right:0;top:62px;bottom:0;z-index:49;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 40px;background:#111;overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.nav-t:checked~.nav-main{opacity:1;visibility:visible;transition:opacity .3s}
+.nav-main>a.nl,.dd-top{justify-content:space-between;min-height:64px;padding:0;border-radius:0;border-bottom:1px solid #2B2A27;font-family:'Space Grotesk',system-ui,sans-serif;font-size:30px;font-weight:600;letter-spacing:-.045em}
+.nav-main>a.nl:hover,.dd-top:hover{background:none}
+.dd-top{border-bottom:0}
+.chev{display:none}
+.dd-p{position:static;width:auto;padding:0 0 14px;border:0;border-bottom:1px solid #2B2A27;border-radius:0;background:none;box-shadow:none;opacity:1;visibility:visible;transform:none;transition:none}
+.dd-p::before{display:none}
+.dd-h{display:none}
+.dd-l{padding:9px 0 9px 14px;border-left:2px solid #2B2A27;border-radius:0}
+.dd-l:hover{background:none;border-left-color:#FF5A2A}
+.dd-l b{font-size:16px}
+.dd-all{margin:6px 0 0;padding:8px 0 0 14px;border-top:0}
+.nav-cta{margin:28px 0 0;justify-content:center;min-height:58px;font-size:17px}
+.nav-main>*{opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.2,.8,.2,1),transform .45s cubic-bezier(.2,.8,.2,1)}
+.nav-t:checked~.nav-main>*{opacity:1;transform:none}
+.nav-t:checked~.nav-main>*:nth-child(2){transition-delay:.05s}
+.nav-t:checked~.nav-main>*:nth-child(3){transition-delay:.1s}
+.nav-t:checked~.nav-main>*:nth-child(4){transition-delay:.15s}
+.nav-t:checked~.nav-main>*:nth-child(5){transition-delay:.2s}
+.nav-t:checked~.nav-main>*:nth-child(6){transition-delay:.25s}
+body:has(.nav-t:checked){overflow:hidden}
+}
+@media (max-width: 640px){
+.mswipe{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px !important;margin-right:-20px !important;padding-right:20px !important;padding-bottom:8px;scrollbar-width:none}
+.mswipe::-webkit-scrollbar{display:none}
+.mswipe>*{flex:0 0 84% !important;scroll-snap-align:start;min-width:0}
+.m2{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.mhint{display:flex !important}
+}
+.mhint{display:none;align-items:center;gap:8px;margin-top:14px;font-size:13px;font-weight:600;opacity:.65}
+.js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js-rv .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.js-rv .rv{opacity:1;transform:none;transition:none}.nav-main>*,.nav-main,.dd-p,.chev,.burger::before,.burger::after{transition:none !important}}
+/*shared:end*/
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","url":"https://www.thejeremiahajayi.com/contact/","name":"Contact · Jeremiah Ajayi","author":{"@id":"https://www.thejeremiahajayi.com/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thejeremiahajayi.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.thejeremiahajayi.com/contact/"}]}]}</script>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQCD7V7B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
-<header style="position: sticky; top: 0; z-index: 40; background: rgba(17,17,17,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #2B2A27">
-<div style="max-width: 1360px; margin: 0 auto; padding: 12px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
-<a href="/" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -0.04em">
-<span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #FF5A2A; color: #111; font-size: 16px; letter-spacing: -0.06em">JA</span>Jeremiah Ajayi</a>
-<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px; font-weight: 500">
-<a class="nl" href="/work/">Work</a>
-<a class="nl" href="/services/">Expertise</a>
+<header class="site-h">
+<div class="h-in">
+<a href="/" class="logo sg"><span aria-hidden="true" class="logo-m">JA</span>Jeremiah Ajayi</a>
+<input type="checkbox" id="navt" class="nav-t" aria-label="Open the menu" aria-controls="nav-main">
+<label for="navt" class="nav-btn" aria-hidden="true"><span class="nav-btn-t">Menu</span><span class="burger"></span></label>
+<nav id="nav-main" class="nav-main" aria-label="Primary">
+<div class="dd"><a class="dd-top" href="/work/" aria-haspopup="true">Work<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Case studies</p><a class="dd-l" href="/work/#stears"><b>Stears Elections</b><span>How a new election tracker beat the BBC on Google</span></a><a class="dd-l" href="/work/#certn"><b>RemotePass × Certn</b><span>A partnership launch with 270+ media pickups</span></a><a class="dd-l" href="/work/#askai"><b>RemotePass Ask AI</b><span>Selling the answer, not the AI: record MQLs</span></a><a class="dd-l" href="/work/#engine"><b>RemotePass content engine</b><span>174% organic growth and an English–Arabic hub</span></a><a class="dd-l" href="/work/#xofu"><b>Xofu</b><span>One clear question for a new AI product</span></a><a class="dd-all" href="/work/#index">All work and projects →</a></div></div>
+<div class="dd"><a class="dd-top" href="/services/" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="/services/positioning-messaging/"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="/services/product-launch-gtm/"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="/services/content-growth/"><b>Content & organic growth</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="/services/">All services →</a></div></div>
 <a class="nl" href="/empowerq/">EmpowerQ</a>
 <a class="nl" href="/blog/">Writing</a>
 <a class="nl" href="/about/">About</a>
-<a class="btn-o" href="/contact/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700">Book a call ↗</a>
+<a class="btn-o nav-cta" href="/contact/">Book a call ↗</a>
 </nav>
 </div>
 </header>
 <section style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 9vw, 120px) 28px clamp(80px, 10vw, 128px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 120px) clamp(20px, 5vw, 28px) clamp(56px, 10vw, 128px)">
 <p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #C23A0E">Contact</p>
 <h1 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(56px, 8.4vw, 136px); line-height: 0.88; letter-spacing: -0.065em">What are you<br><span style="color: #C23A0E">working on?</span></h1>
 <p style="margin: 28px 0 0; max-width: 600px; font-size: 19px; line-height: 1.6; color: #2D2B27">Pick what fits and I’ll point you to the right next step. Most conversations start with a 30-minute call.</p>
@@ -170,7 +246,7 @@ html{scroll-behavior:smooth}
 
 
 <section style="background: #111; color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: 0 28px clamp(40px, 5vw, 64px)">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 28px) clamp(40px, 5vw, 64px)">
 <footer style="padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
 <a href="/" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
 <span style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a class="nl" href="/services/positioning-messaging/">Positioning</a><a class="nl" href="/services/product-launch-gtm/">Launches & GTM</a><a class="nl" href="/services/content-growth/">Content & growth</a><a class="nl" href="/work/">Work</a><a class="nl" href="/blog/">Writing</a><a class="nl" href="/about/">About</a><a class="nl" href="/empowerq/">EmpowerQ</a><a class="nl" href="/contact/">Contact</a><a class="nl" href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><span>Lagos · <span data-time></span> · © 2026</span></span>
@@ -214,6 +290,34 @@ html{scroll-behavior:smooth}
         s('cta').textContent = d.cta; s('cta').setAttribute('href', d.href);
       });
     });
+  }
+  // Close the mobile menu when a same-page link is used.
+  var navT = document.getElementById('navt');
+  if (navT) document.querySelectorAll('.nav-main a').forEach(function (a) { a.addEventListener('click', function () { navT.checked = false; }); });
+  // Escape closes the mobile menu.
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && navT && navT.checked) navT.checked = false; });
+  // Scroll reveals: content eases up as it enters the screen.
+  if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var SEL = 'section h2, section h3, section blockquote, section figure, section article, section li, section dl > div, section .card-l, section .path, section .row-x, section .door, section img';
+    var SKIP = '.site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k]';
+    var picked = [];
+    document.querySelectorAll(SEL).forEach(function (el) {
+      if (el.closest(SKIP)) return;
+      if (el.parentElement && el.parentElement.closest('.rv')) return;
+      if (el.getBoundingClientRect().top < innerHeight * 0.9) return; // already on screen: leave it be
+      el.classList.add('rv'); picked.push(el);
+    });
+    document.documentElement.classList.add('js-rv');
+    var io = new IntersectionObserver(function (entries) {
+      var batch = entries.filter(function (e) { return e.isIntersecting; });
+      batch.forEach(function (e, i) {
+        var el = e.target, d = Math.min(i * 70, 350);
+        el.style.transitionDelay = d + 'ms'; el.classList.add('in'); io.unobserve(el);
+        // hand the element back to its own hover transitions once it has arrived
+        setTimeout(function () { el.classList.remove('rv', 'in'); el.style.transitionDelay = ''; }, 900 + d);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    picked.forEach(function (el) { io.observe(el); });
   }
 })();
 </script>

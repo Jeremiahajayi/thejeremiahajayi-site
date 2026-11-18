@@ -335,6 +335,7 @@ console.log('done');
     const urls = [];
     for (const p of posts) {
       let body = p.html.replace(/<\/(p|h2|h3|h4|ul|ol|figure|blockquote|table)><br>/g, '</$1>').replace(/^(<br>)+|(<br>)+$/g, '').replace(/<a([^>]*)><u>([\s\S]*?)<\/u><\/a>/g, '<a$1>$2</a>');
+      body = body.replace(/<a [^>]*href="\/blog\/hashtags\/[^"]*"[^>]*>([\s\S]*?)<\/a>/g, '$1'); // Wix hashtag pages no longer exist
       body = body.replace(/<a href="(https?:\/\/(?!www\.thejeremiahajayi\.com|thejeremiahajayi\.com)[^"]+)"/g, '<a href="$1" rel="noopener" target="_blank"');
       // Wix table-of-contents links point at heading ids that were not exported: match each link to its heading by text.
       { const strip = (h) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim().toLowerCase();
