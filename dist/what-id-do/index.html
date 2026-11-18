@@ -344,6 +344,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
 .sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
 @media (prefers-reduced-motion: reduce){.tiles-rot>*,.btn-k{transition:none}}
+@media print{.rv,.img-rv,.js-rv .rv,.js-rv .img-rv{opacity:1 !important;transform:none !important;clip-path:none !important}.site-h,.gd-launch,.gd-peek,.gd-panel,.mbar,.rp{display:none !important}}
 /*shared:end*/
 
 /*home:start*/
@@ -1108,436 +1109,280 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 </nav>
 </div>
 </header>
-<!--guide:start-->
-<div class="gd" data-gd-root>
-<div class="gd-peek" data-gd-peek hidden>
-<button type="button" class="gd-peek-x" data-gd-dismiss aria-label="Dismiss">×</button>
-<div class="gd-peek-top"><img class="gd-av" src="/img/headshot.webp" alt="" width="40" height="40"><p><b>Hi, I’m Jeremiah 👋</b><br>What brings you here today?</p></div>
-<div class="gd-peek-chips"><button type="button" class="gd-chip" data-gd="positioning"><span aria-hidden="true">🧭</span> Our product is hard to explain</button><button type="button" class="gd-chip" data-gd="launch"><span aria-hidden="true">🚀</span> We have a launch coming up</button><button type="button" class="gd-chip" data-gd="content"><span aria-hidden="true">📈</span> We need content that ranks and converts</button><button type="button" class="gd-chip gd-chip-more" data-gd-open>Something else →</button></div>
-</div>
-<button type="button" class="gd-launch" data-gd-open aria-expanded="false" aria-controls="gd-panel"><img class="gd-av" src="/img/headshot.webp" alt="" width="40" height="40"><span>Ask me anything</span><span class="gd-wave" aria-hidden="true">👋</span></button>
-<div class="gd-panel" id="gd-panel" role="dialog" aria-label="Chat with Jeremiah’s site guide" hidden>
-<div class="gd-head"><img class="gd-av" src="/img/headshot.webp" alt="" width="40" height="40"><div class="gd-who"><b>Jeremiah</b><span>Here to point you the right way</span></div><button type="button" class="gd-ic" data-gd-restart aria-label="Start over" title="Start over">↺</button><button type="button" class="gd-ic" data-gd-close aria-label="Close the chat">×</button></div>
-<div class="gd-thread" data-gd-thread aria-live="polite"></div>
-<form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Type a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Type a question…"><button type="submit" aria-label="Send">↑</button></form>
-</div>
-</div>
-<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call <span class="arr" aria-hidden="true">↗</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
-<!--guide:end-->
+
 
 <style>
-.wd{--paper:#F4F0E6;--ink:#141414;--pen:#C23A0E;--orange:#FF5A2A;--rule:rgba(20,20,20,.18);background:var(--paper);color:var(--ink)}
-.wd-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wd ::selection{background:#141414;color:#F4F0E6}
-.wd .wrap{max-width:1240px}
-
-.wd-note{font:600 15px/1.45 'DM Sans',system-ui,sans-serif;color:var(--pen)}
-.wd-kick{margin:0;font:700 12px/1.4 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.wd-rule{border:0;border-top:1.5px solid var(--ink);margin:0}
-.wd-link{display:inline-flex;align-items:center;gap:8px;color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--orange);transition:text-decoration-color .25s,gap .25s}
-.wd-link:hover{color:inherit;gap:12px;text-decoration-color:currentColor}
-.wd-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;font-size:16px;text-decoration:none;box-shadow:3px 3px 0 var(--orange);transition:transform .2s,box-shadow .2s}
-.wd-btn:hover{color:var(--paper);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--orange)}
-.wd-btn-o{background:var(--orange);color:#111;box-shadow:3px 3px 0 #111}
-.wd-btn-o:hover{color:#111;box-shadow:5px 5px 0 #111}
-.wd-dot{color:var(--orange)}
-/* red-pen marks: drawn, not highlighted */
-.wd-ul{position:relative;white-space:nowrap}
-.wd-ul svg{position:absolute;left:-2%;bottom:-.22em;width:104%;height:.36em;overflow:visible;pointer-events:none}
-.wd-ul path{fill:none;stroke:var(--orange);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:wdpen 1.1s .5s cubic-bezier(.6,0,.2,1) forwards}
-.wd-circ{position:relative;display:inline-block}
-.wd-circ svg{position:absolute;left:-14%;top:-22%;width:128%;height:144%;overflow:visible;pointer-events:none}
-.wd-circ path{fill:none;stroke:var(--orange);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
-.wd-circ.inked path,.wd-call.inked .wd-circ path{animation:wdpen 1.2s .2s cubic-bezier(.6,0,.2,1) forwards}
-@keyframes wdpen{to{stroke-dashoffset:0}}
-/* ── masthead / hero ── */
-.wd-hero .wrap{position:relative}
-.wd-hero{position:relative;padding:clamp(26px,3vw,40px) 0 clamp(72px,8vw,112px);overflow:hidden}
-.wd-mast{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 24px;padding:12px 0;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--ink);box-shadow:0 4px 0 -3px var(--ink)}
-
-.wd-word{position:relative;margin:clamp(28px,4vw,56px) 0 0;font:700 clamp(68px,13.6vw,210px)/.86 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.065em;white-space:nowrap}
-.wd-i{position:relative;display:inline-block;padding:0 .08em;margin:0 .02em;border:.045em solid var(--ink);border-radius:.06em;line-height:.9;transform:rotate(-2deg)}
-.wd-who{position:absolute;left:50%;top:100%;margin-top:.32em;transform:translateX(-50%) rotate(2deg);white-space:nowrap;font:600 clamp(12px,1vw,15px)/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em;color:var(--pen)}
-.wd-who b{font-weight:500;display:inline-block;transition:opacity .35s,transform .35s}
-.wd-who b.out{opacity:0;transform:translateY(6px)}
-.wd-note-i{position:relative;margin:clamp(30px,3vw,44px) 0 0 auto;max-width:300px;text-align:left;padding-left:96px}
-.wd-note-i svg{position:absolute;left:0;top:-14px;width:84px;height:52px;color:var(--pen)}
-.wd-hero-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);margin-top:clamp(32px,4vw,56px);align-items:start}
-.wd-sub{margin:0;font:600 clamp(28px,3vw,44px)/1.08 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em;max-width:20ch}
-.wd-body{margin-top:28px;max-width:58ch}
-.wd-body p{margin:0 0 16px;font-size:18px;line-height:1.7}
-.wd-body .wd-q{font:700 26px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em;margin:22px 0}
-.wd-hero-cta{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
-/* subscribe slip */
-.wd-slip{position:relative;padding:28px 26px 26px;background:#FFFDF8;border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
-.wd-slip::before{content:"";position:absolute;left:50%;top:-14px;width:84px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,90,42,.28);border:1px solid rgba(255,90,42,.35)}
-.wd-slip h2,.wd-slip h3{margin:6px 0 10px;font:700 26px/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
-.wd-slip p{margin:0;font-size:15.5px;line-height:1.6}
-.wd-slip iframe{display:block;width:100%;min-height:140px;margin-top:16px;border:0;background:transparent}
-.wd-slip-meta{margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule);font-size:13.5px;color:#4A4741}
-.wd-soon{margin-top:16px;padding:14px 16px;border:1.5px dashed var(--pen);font-size:15px;line-height:1.55}
-.wd-soon b{color:var(--pen)}
-.wd-soon .wd-link{margin-top:8px}
-/* ── premise: the case file ── */
-.wd-sec{position:relative;padding:clamp(80px,9vw,132px) 0}
-.wd-h2{margin:0;font:700 clamp(40px,5vw,80px)/.98 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.055em;max-width:16ch}
-.wd-premise-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,88px);align-items:start}
-.wd-premise-g .wd-body{margin-top:26px}
-.wd-file{position:relative;background:#FFFDF8;border:1.5px solid var(--ink);padding:clamp(24px,3vw,40px);box-shadow:8px 8px 0 rgba(20,20,20,.12)}
-.wd-file::before{content:"";position:absolute;left:clamp(56px,6vw,76px);top:0;bottom:0;border-left:1.5px solid rgba(255,90,42,.45)}
-.wd-tab{position:absolute;left:-1.5px;top:-34px;padding:7px 16px 8px;background:#FFFDF8;border:1.5px solid var(--ink);border-bottom:0;font:700 12px 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
-.wd-stamp{position:absolute;right:clamp(18px,3vw,34px);top:clamp(16px,2.4vw,28px);padding:6px 12px;border:2px solid var(--pen);color:var(--pen);font:700 12px 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;transform:rotate(6deg);opacity:.9}
-.wd-file-in{padding-left:clamp(40px,4.4vw,56px)}
-.wd-situ{margin:0;font:500 clamp(20px,1.7vw,24px)/1.45 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.015em;max-width:40ch;padding-right:90px}
-.wd-situ b{font-weight:700}
-.wd-opts{margin-top:28px;border-top:1px solid var(--rule)}
-.wd-opt{border-bottom:1px solid var(--rule)}
-.wd-opt summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:center;padding:20px 0;font:700 clamp(18px,1.6vw,22px)/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
-.wd-opt summary::-webkit-details-marker{display:none}
-.wd-opt summary:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
-.wd-letter{position:relative;display:grid;place-items:center;width:40px;height:40px;font:700 20px 'Space Grotesk',system-ui,sans-serif}
-.wd-letter svg{position:absolute;inset:-6px;width:52px;height:52px;overflow:visible}
-.wd-letter path{fill:none;stroke:var(--orange);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .7s cubic-bezier(.6,0,.2,1)}
-.wd-opt[open] .wd-letter path,.wd-opt summary:hover .wd-letter path{stroke-dashoffset:0}
-.wd-opt summary i{font:600 13px 'DM Sans',system-ui,sans-serif;font-style:normal;color:var(--pen);white-space:nowrap}
-.wd-opt[open] summary i{color:transparent;position:relative}
-.wd-opt[open] summary i::after{content:"close";position:absolute;right:0;color:var(--pen)}
-.wd-why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:0 0 24px 60px}
-.wd-why div{font-size:15.5px;line-height:1.6}
-.wd-why b{display:block;margin-bottom:4px;font:700 11.5px 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#4A4741}
-.wd-opt[open] .wd-why{animation:wdin .45s cubic-bezier(.2,.8,.2,1)}
-@keyframes wdin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.wd-verdict{margin:24px 0 0;font-size:17px;line-height:1.6;max-width:56ch}
-.wd-verdict b{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700}
-/* ── two ways: a spread ── */
-.wd-spread{display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
-.wd-page{position:relative;padding:clamp(40px,5vw,76px) clamp(24px,4vw,64px) clamp(44px,5vw,72px)}
-.wd-page+.wd-page{border-left:1.5px solid var(--ink)}
-.wd-page.dark{background:var(--ink);color:var(--paper)}
-.wd-num{display:block;font:700 clamp(80px,9vw,136px)/.8 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.06em;color:var(--orange);margin-bottom:22px}
-.wd-page h3{margin:0 0 6px;font:700 clamp(34px,3.6vw,56px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.05em}
-.wd-page .wd-kick{margin-bottom:16px;opacity:.75}
-.wd-page p{margin:16px 0 0;font-size:17.5px;line-height:1.7;max-width:46ch}
-.wd-sched{display:flex;flex-wrap:wrap;gap:8px 18px;margin:26px 0 30px;padding:14px 0;border-top:1px solid currentColor;border-bottom:1px solid currentColor;font:600 14.5px/1.4 'DM Sans',system-ui,sans-serif}
-.wd-page.dark .wd-sched{border-color:rgba(244,240,230,.35)}
-.wd-page.dark .wd-link{color:var(--paper)}
-/* ── featured event ── */
-.wd-event{background:var(--ink);color:var(--paper);overflow:hidden}
-.wd-event .wd-kick{color:var(--orange)}
-.wd-ev-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(36px,5vw,88px);align-items:end;margin-top:26px}
-.wd-ev-t{margin:0;font:700 clamp(40px,5.4vw,88px)/.98 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.055em;max-width:15ch}
-.wd-ev-t span{display:block;font:500 .6em/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em;color:#D9D4CA;margin-top:.25em}
-.wd-guest{display:flex;align-items:center;gap:16px;margin:30px 0 0;font-size:16px}
-.wd-guest b{display:block;font:700 22px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
-.wd-guest span{color:#B5B0A6}
-.wd-ev-d{margin:26px 0 0;max-width:56ch;font-size:17.5px;line-height:1.7;color:#D9D4CA}
-.wd-ev-d+.wd-ev-d{margin-top:14px}
-.wd-port{position:relative;margin:0}
-.wd-port-f{position:relative;aspect-ratio:4/5;background:#232220;border:1.5px solid #3A3934;display:grid;place-items:center;overflow:hidden}
-.wd-port-f img{width:100%;height:100%;object-fit:cover}
-.wd-mono{font:700 clamp(96px,11vw,170px)/1 'Space Grotesk',system-ui,sans-serif;color:#3F3D38;letter-spacing:-.04em}
-.wd-port figcaption{margin-top:10px;font-size:14px;color:#B5B0A6}
-.wd-tba{position:absolute;right:-14px;top:22px;padding:10px 16px;border:2px solid var(--orange);color:var(--orange);background:var(--ink);font:700 13px 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;transform:rotate(7deg)}
-.wd-ev-cta{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
-.wd-ev-cta .wd-link{color:var(--paper)}
-.wd-cal{margin-top:clamp(56px,7vw,96px);padding-top:28px;border-top:1px solid #3A3934}
-.wd-cal iframe{display:block;width:100%;height:520px;border:1.5px solid #3A3934;border-radius:8px;background:#fff}
-.wd-cal-empty{display:grid;grid-template-columns:auto 1fr;gap:16px 28px;align-items:center;margin-top:18px}
-.wd-cal-empty p{margin:0;font-size:17px;line-height:1.6;color:#D9D4CA;max-width:52ch}
-.wd-cal-empty .wd-blank{display:flex;gap:8px}
-.wd-cal-empty .wd-blank i{width:44px;height:52px;border:1.5px dashed #5A5852;border-radius:4px}
-/* ── how it works: a marked-up page ── */
-.wd-how-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px 64px;align-items:end;margin-bottom:clamp(36px,4vw,56px)}
-.wd-steps{margin:0;padding:0;list-style:none;border-top:1.5px solid var(--ink)}
-.wd-step{display:grid;grid-template-columns:110px minmax(0,5fr) minmax(0,5fr) minmax(0,3fr);gap:20px 36px;align-items:baseline;padding:clamp(26px,3vw,40px) 0;border-bottom:1px solid var(--rule)}
-.wd-step-n{font:700 40px/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.05em;color:var(--pen)}
-.wd-step h3{margin:0;font:700 clamp(34px,3.8vw,60px)/.95 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.05em}
-.wd-step p{margin:0;font-size:17.5px;line-height:1.65}
-.wd-step .wd-note{font-size:16px}
-.wd-call h3{color:var(--ink)}
-/* ── the decision files ── */
-.wd-files{border-top:1.5px solid var(--ink)}
-.wd-fr{display:grid;grid-template-columns:180px minmax(0,1fr) 180px;gap:8px 40px;padding:26px 0;border-bottom:1px solid var(--rule);color:inherit;text-decoration:none}
-.wd-fr:hover .wd-fr-t{color:var(--pen)}
-.wd-fr-c{font:700 12px/1.6 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
-.wd-fr-t{display:block;font:700 clamp(22px,2vw,28px)/1.15 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.025em;transition:color .2s}
-.wd-fr-d{display:block;margin-top:8px;font-size:16px;line-height:1.6;max-width:62ch}
-.wd-fr-m{font-size:14px;line-height:1.6;color:#4A4741;text-align:right}
-.wd-drawer{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center;padding:clamp(36px,4vw,56px) 0;border-bottom:1px solid var(--rule)}
-.wd-tabs{position:relative;height:220px}
-.wd-tabs span{position:absolute;left:0;right:0;height:150px;border:1.5px solid var(--ink);background:#FFFDF8;box-shadow:0 -1px 0 rgba(20,20,20,.04)}
-.wd-tabs span::before{content:attr(data-l);position:absolute;top:-30px;left:var(--tx);padding:5px 14px;background:#FFFDF8;border:1.5px solid var(--ink);border-bottom:0;font:700 11.5px 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
-.wd-tabs span:nth-child(1){top:20px;--tx:0%;opacity:.55}
-.wd-tabs span:nth-child(2){top:46px;--tx:34%;opacity:.8}
-.wd-tabs span:nth-child(3){top:72px;--tx:66%}
-.wd-tabs em{position:absolute;right:16px;bottom:30px;z-index:2;padding:6px 12px;border:2px solid var(--pen);color:var(--pen);font:700 12px 'DM Sans',system-ui,sans-serif;font-style:normal;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-6deg)}
-.wd-drawer p{margin:0 0 14px;font:500 clamp(20px,1.8vw,24px)/1.4 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;max-width:34ch}
-/* ── submit a problem ── */
-.wd-sub-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(36px,5vw,88px);align-items:start}
-.wd-quote{margin:0;font:700 clamp(40px,5vw,80px)/.98 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.055em;max-width:15ch}
-.wd-quote em{font-style:normal;color:var(--pen)}
-.wd-card{position:relative;padding:30px 28px;background:#FFFDF8;border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--orange);transform:rotate(1.2deg)}
-.wd-card ol{margin:16px 0 22px;padding:0;list-style:none;counter-reset:c}
-.wd-card li{counter-increment:c;display:grid;grid-template-columns:30px 1fr;padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.5}
-.wd-card li::before{content:counter(c);font:700 16px 'Space Grotesk',system-ui,sans-serif;color:var(--pen)}
-.wd-card small{display:block;margin-top:14px;font-size:13.5px;line-height:1.5;color:#4A4741}
-/* ── host ── */
-.wd-host-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(36px,5vw,88px);align-items:center}
-.wd-host-ph{position:relative;margin:0}
-.wd-host-ph img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;border:1.5px solid var(--ink);filter:grayscale(.15) contrast(1.02)}
-.wd-host-ph figcaption{margin-top:10px}
-.wd-host-ph::after{content:"";position:absolute;left:-14px;top:-14px;right:14px;bottom:44px;border:1.5px solid var(--orange);z-index:-1}
-.wd-host p{margin:18px 0 0;font-size:18px;line-height:1.7;max-width:56ch}
-/* ── final ── */
-.wd-final{background:var(--ink);color:var(--paper);text-align:center}
-.wd-final .wd-h2{margin:0 auto;max-width:14ch;font-size:clamp(46px,6.4vw,104px)}
-.wd-final p.wd-lead{margin:24px auto 0;max-width:46ch;font-size:19px;line-height:1.55;color:#D9D4CA}
-.wd-final .wd-slip{max-width:520px;margin:44px auto 0;text-align:left;color:var(--ink);box-shadow:6px 6px 0 var(--orange)}
-.wd-micro{margin:20px 0 0;font:600 13px 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B5B0A6}
-.wd-back{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin-top:56px;padding-top:24px;border-top:1px solid #3A3934;font-size:15px}
-.wd-back a{color:#D9D4CA}
-
-/* the one signup section */
-.wd-signup{background:#FFFDF8;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
-.wd-signup-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(36px,5vw,88px);align-items:center}
-.wd-signup-p{margin:22px 0 14px;font-size:18px;line-height:1.65;max-width:44ch}
-.wd-form{padding:0;overflow:hidden;background:#fff;box-shadow:8px 8px 0 var(--orange)}
-.wd-form::before{z-index:2}
-.wd-bh{min-height:180px;display:flex;flex-direction:column;justify-content:center}
-.wd-bh iframe{display:block;width:100% !important;max-width:100% !important;border:0}
-.wd-bh-wait{margin:0;padding:28px;font-size:15px;color:#4A4741}
-.wd-bh-fail{padding:28px;font-size:15.5px;line-height:1.6}
-.wd-signup.flash .wd-form{animation:wdflash 1.2s ease-out}
-@keyframes wdflash{0%{box-shadow:8px 8px 0 var(--orange),0 0 0 0 rgba(255,90,42,.55)}100%{box-shadow:8px 8px 0 var(--orange),0 0 0 22px rgba(255,90,42,0)}}
-.wd-ed-l{margin:14px 0 0;padding:0;list-style:none;counter-reset:e}
-.wd-ed-l li{counter-increment:e;display:grid;grid-template-columns:34px 1fr;padding:14px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.45;color:#4A4741}
-.wd-ed-l li::before{content:counter(e);grid-row:span 2;font:700 18px 'Space Grotesk',system-ui,sans-serif;color:var(--pen)}
-.wd-ed-l b{display:block;font:700 19px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink)}
-@media (max-width:1080px){.wd-signup-g{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.wd-signup.flash .wd-form{animation:none}}
+/* ── A. hero ── */
+.wx-hero{position:relative;background:#FFF5D9;color:#111;overflow:hidden;isolation:isolate}
+.wx-hero-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:center;padding-top:clamp(36px,4.4vw,64px);padding-bottom:clamp(96px,10vw,140px)}
+.wx-h1{margin:0;font:700 clamp(64px,9vw,148px)/.88 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.065em;white-space:nowrap}
+.wx-i{display:inline-block;color:var(--who,#FF5A2A);transition:color .5s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.wx-hero[data-who="guest"] .wx-i{transform:translateY(-.06em) rotate(-4deg)}
+.wx-tag{margin:clamp(22px,2.4vw,30px) 0 0;max-width:20ch;font:600 clamp(26px,2.6vw,40px)/1.08 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em}
+.wx-lede{margin:20px 0 0;max-width:46ch;font-size:18px;line-height:1.65;color:#2D2B27}
+.wx-cta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+/* the speaker stage */
+.wx-stage{position:relative;justify-self:center;width:min(100%,480px)}
+.wx-switch{position:relative;z-index:3;display:inline-flex;gap:4px;padding:5px;margin:0 0 18px;border:1.5px solid #111;border-radius:999px;background:#FFFDF6;box-shadow:3px 3px 0 #111}
+.wx-switch button{min-height:42px;padding:0 16px;border:0;border-radius:999px;background:none;color:#111;font:700 14px 'DM Sans',system-ui,sans-serif;cursor:pointer;transition:background .3s,color .3s}
+.wx-switch button[aria-selected="true"]{background:#111;color:#FFF5D9}
+.wx-switch button:focus-visible{outline:3px solid #FF5A2A;outline-offset:2px}
+.wx-faces{position:relative;aspect-ratio:1/1}
+.wx-face{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transform:scale(.86) rotate(-8deg);transition:opacity .5s,transform .7s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.wx-face.is-on{opacity:1;transform:none;pointer-events:auto}
+.wx-face .shp{position:absolute;inset:3%;animation:spin 60s linear infinite}
+.wx-face-ph{position:relative;width:64%;aspect-ratio:1;overflow:hidden;border-radius:50%;background:#FFFDF6}
+.wx-face-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform:scale(1.06)}
+.wx-mono{position:relative;display:grid;place-items:center;width:64%;aspect-ratio:1;border-radius:50%;background:#0E2A2E;color:#8FE3B0;font:700 clamp(64px,8vw,110px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.06em}
+.wx-label{position:absolute;right:0;bottom:12%;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border:1.5px solid #111;border-radius:999px;background:#FFFDF6;font:600 13px/1.2 'DM Sans',system-ui,sans-serif}
+.wx-label b{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#111;color:#FFF5D9;font:700 11px 'Space Grotesk',system-ui,sans-serif}
+.wx-bub{position:relative;z-index:2;display:block;width:100%;margin:-18px 0 0;padding:16px 18px 14px;border:1.5px solid #111;border-radius:20px 20px 20px 4px;background:#FFFDF6;box-shadow:4px 4px 0 #111;color:#111;text-align:left;cursor:pointer;font:inherit;transition:transform .2s,box-shadow .2s}
+.wx-bub:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}
+.wx-bub:focus-visible{outline:3px solid #FF5A2A;outline-offset:3px}
+.wx-bub-k{display:block;margin-bottom:6px;font:700 11.5px 'DM Sans',system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#6B675F}
+.wx-bub-t{display:block;font:600 clamp(18px,1.6vw,21px)/1.35 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+.wx-bub-m{display:block;margin-top:8px;font-size:12.5px;font-weight:700;color:#C23A0E}
+.wx-bub.pop .wx-bub-t{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
+.wx-hero[data-who="guest"] .wx-bub{border-radius:20px 20px 4px 20px}
+/* ── B. the conversation: the dark sheet rises over the hero ── */
+.wx-sheet{position:relative;z-index:2;margin-top:-40px;border-radius:clamp(24px,3.4vw,48px) clamp(24px,3.4vw,48px) 0 0;background:#0E2A2E;color:#EAF6F1;padding:clamp(64px,7vw,104px) 0 clamp(72px,8vw,112px)}
+.wx-sheet .eyebrow{color:#8FBFB0}
+.wx-conv{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,80px);align-items:start;margin-top:clamp(28px,3vw,40px)}
+.wx-ct{margin:0;font:700 clamp(40px,5.2vw,84px)/.96 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.055em;max-width:14ch}
+.wx-ct span{display:block;margin-top:.18em;color:#8FE3B0}
+.wx-guest{position:relative;max-width:380px}
+.wx-guest-f{position:relative;aspect-ratio:1}
+.wx-guest-f .shp{position:absolute;inset:0;background:#8FE3B0;animation:spin 70s linear infinite}
+.wx-guest-f .wx-mono,.wx-guest-f .wx-face-ph{position:absolute;left:18%;top:18%;width:64%}
+.wx-guest-f .wx-mono{background:#111}
+.wx-tba{position:absolute;right:-6px;top:4%;display:grid;place-items:center;width:104px;height:104px;border-radius:50%;border:1.5px solid #111;background:#FFC83D;color:#111;font:700 15px/1.05 'Space Grotesk',system-ui,sans-serif;text-align:center;transform:rotate(10deg);box-shadow:3px 3px 0 #111}
+.wx-who{margin:22px 0 0}
+.wx-who b{display:block;font:700 26px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
+.wx-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.wx-pills span{padding:6px 12px;border-radius:999px;border:1.5px solid rgba(234,246,241,.4);font-size:13.5px;font-weight:600}
+.wx-pills span:first-child{background:#8FE3B0;border-color:#8FE3B0;color:#0E2A2E}
+.wx-conv p.wx-p{margin:22px 0 0;max-width:52ch;font-size:18px;line-height:1.65;color:#CFE3DC}
+.wx-notes{margin:clamp(30px,3.4vw,44px) 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.wx-notes li{padding:18px 18px 20px;border:1.5px solid #111;border-radius:18px;color:#111;box-shadow:4px 4px 0 #111;font:600 17px/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.015em;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.wx-notes li small{display:block;margin-bottom:10px;font:700 11px 'DM Sans',system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;opacity:.7}
+.wx-notes li:nth-child(1){background:#FFC83D;transform:rotate(-1.6deg)}
+.wx-notes li:nth-child(2){background:#FF8FB6;transform:rotate(1.2deg) translateY(14px)}
+.wx-notes li:nth-child(3){background:#FFFDF6;transform:rotate(-.8deg)}
+.wx-notes li:hover{transform:rotate(0) translateY(-6px)}
+.wx-conv-cta{margin-top:clamp(40px,4.4vw,56px);display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.wx-conv-cta .wx-small{font-size:14.5px;color:#9DB8B0}
+.wx-cal{margin-top:40px}
+.wx-cal iframe{display:block;width:100%;height:460px;border:0;border-radius:18px;background:#fff}
+/* ── C. read it / join it: one month, two rhythms ── */
+.wx-rhythm{background:#F2EFE8;color:#111;padding:clamp(80px,9vw,128px) 0}
+.wx-h2{margin:0;font:700 clamp(40px,5vw,80px)/.96 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.055em}
+.wx-month{position:relative;margin-top:clamp(40px,5vw,64px)}
+.wx-month::before{content:"";position:absolute;left:0;right:0;top:27px;height:4px;border-radius:4px;background:#111}
+.wx-month ol{position:relative;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.wx-stop{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.wx-dot{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;border:1.5px solid #111;box-shadow:3px 3px 0 #111;font-size:24px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.wx-stop:hover .wx-dot{transform:translateY(-5px) rotate(-8deg)}
+.wx-stop.read .wx-dot{background:#FFC83D}.wx-stop.live .wx-dot{background:#FF5A2A}
+.wx-stop b{margin-top:10px;font:700 22px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
+.wx-stop span{font-size:14.5px;color:#45423C}
+.wx-two{margin-top:clamp(48px,5vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,72px);border-top:1.5px solid #111;padding-top:clamp(28px,3vw,40px)}
+.wx-two h3{margin:0;display:flex;align-items:center;gap:12px;font:700 clamp(30px,3vw,44px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.045em}
+.wx-two h3 i{display:inline-block;width:18px;height:18px;border-radius:50%;border:1.5px solid #111}
+.wx-two .read h3 i{background:#FFC83D}.wx-two .live h3 i{background:#FF5A2A}
+.wx-two p{margin:14px 0 18px;max-width:44ch;font-size:17.5px;line-height:1.65;color:#2D2B27}
+.wx-two p.wx-when{margin:0 0 18px;font-weight:700;color:#111}
+/* ── D. the thinking ── */
+.wx-think{background:#FFF5D9;color:#111;padding:clamp(80px,9vw,128px) 0 clamp(110px,11vw,160px)}
+.wx-think-h{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:16px 48px;align-items:end}
+.wx-think-h p{margin:0;font-size:17px;line-height:1.65;color:#45423C;max-width:42ch}
+.wx-think .qt-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+.wx-think .qt{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:#111}
+.wx-up{align-self:flex-start;padding:4px 10px;border-radius:999px;border:1.5px solid #111;background:#FFFDF6;font:700 11.5px 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.wx-think .qt b{font:700 clamp(20px,1.7vw,24px)/1.18 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.025em}
+.wx-think .qt span{font-size:15px;line-height:1.5;color:#2D2B27}
+.wx-think .qt.q-ink{background:#111;color:#FFF5D9;box-shadow:5px 5px 0 #FF5A2A}
+.wx-think .qt.q-ink span{color:#D9D4CA}
+.wx-think .qt.q-ink .wx-up{background:#FF5A2A;border-color:#FF5A2A;color:#111}
+.wx-think .qt .wx-go{margin-top:auto;font-weight:700;font-size:15px}
+.wx-files{margin:clamp(36px,4vw,56px) 0 0;padding:0;list-style:none;border-top:2px solid #111}
+.wx-files a{display:grid;grid-template-columns:160px minmax(0,1fr) 150px;gap:6px 28px;padding:22px 0;border-bottom:1px solid #E3D6B0;color:#111;text-decoration:none}
+.wx-files a:hover b{color:#C23A0E}
+.wx-files b{font:700 22px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+/* ── E. join ── */
+.wx-join{position:relative;z-index:2;margin-top:-40px;border-radius:clamp(24px,3.4vw,48px) clamp(24px,3.4vw,48px) 0 0;background:#111;color:#F2EFE8;padding:clamp(80px,9vw,128px) 0 clamp(32px,4vw,48px);overflow:hidden}
+.wx-join-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(36px,5vw,80px);align-items:center}
+.wx-join>.shp-flower{position:absolute;right:-90px;top:-90px;width:300px;height:300px;background:#FF5A2A;animation:spin 60s linear infinite}
+.wx-join-t{margin:0;font:700 clamp(46px,5.4vw,88px)/.92 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.06em}
+.wx-join-t .wx-i{color:#FF5A2A}
+.wx-join p.wx-p{margin:22px 0 0;max-width:42ch;font-size:18px;line-height:1.65;color:#C9C4BA}
+.wx-join ul{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.wx-join li{display:flex;gap:12px;align-items:center;font-size:16px;color:#D9D4CA}
+.wx-join li i{display:inline-block;width:12px;height:12px;border-radius:50%;flex:none}
+.wx-form{position:relative;background:#fff;color:#111;border:1.5px solid #111;border-radius:24px;box-shadow:8px 8px 0 #FF5A2A;padding:clamp(22px,2.6vw,32px)}
+.wx-form h3{margin:0;font:700 26px/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
+.wx-form > p{margin:8px 0 0;font-size:15px;color:#45423C}
+.wx-bh{margin-top:14px;min-height:120px;display:flex;flex-direction:column;justify-content:center}
+.wx-bh iframe{display:block;width:100% !important;max-width:100% !important;border:0}
+.wx-bh-wait{margin:0;font-size:15px;color:#6B675F}
+.wx-fall{margin:14px 0 0;padding-top:14px;border-top:1px solid #E5E0D6;font-size:14px;line-height:1.55;color:#45423C}
+.wx-fall a{color:#111;font-weight:700;text-underline-offset:4px;text-decoration-color:#FF5A2A}
+.wx-join.flash .wx-form{animation:wxflash 1.2s ease-out}
+@keyframes wxflash{0%{box-shadow:8px 8px 0 #FF5A2A,0 0 0 0 rgba(255,90,42,.6)}100%{box-shadow:8px 8px 0 #FF5A2A,0 0 0 24px rgba(255,90,42,0)}}
+.wx-join .k-foot{margin-top:clamp(64px,8vw,104px)}
 /* ── responsive ── */
 @media (max-width:1080px){
-.wd-hero-g,.wd-premise-g,.wd-ev-g,.wd-how-head,.wd-sub-g,.wd-host-g,.wd-drawer{grid-template-columns:1fr}
-.wd-note-i{margin-top:52px;padding-left:0;max-width:34ch}
-.wd-note-i svg{display:none}
-.wd-step{grid-template-columns:80px minmax(0,1fr);}
-.wd-step p,.wd-step .wd-note{grid-column:2}
-.wd-port{max-width:420px}
-.wd-host-ph{max-width:360px}
+.wx-hero-g,.wx-conv,.wx-join-g,.wx-think-h{grid-template-columns:1fr}
+.wx-stage{justify-self:start;width:min(100%,440px)}
+.wx-think .qt-row{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:760px){
-.wd-spread{grid-template-columns:1fr}
-.wd-page+.wd-page{border-left:0;border-top:1.5px solid var(--ink)}
-.wd-why{grid-template-columns:1fr;padding-left:0}
-.wd-fr{grid-template-columns:1fr}
-.wd-fr-m{text-align:left}
+.wx-guest{order:2;display:grid;grid-template-columns:120px 1fr;gap:4px 18px;align-items:center;max-width:none}
+.wx-guest .wx-guest-f{grid-row:span 2}
+.wx-guest .wx-who{margin:0}
+.wx-guest .wx-tba{width:64px;height:64px;font-size:11px;right:-10px;top:-6px}
+.wx-guest .wx-mono{font-size:34px}
+.wx-notes{grid-template-columns:1fr}
+.wx-notes li:nth-child(2){transform:rotate(1.2deg)}
+.wx-two{grid-template-columns:1fr}
+.wx-month::before{left:27px;right:auto;top:0;bottom:0;width:4px;height:auto}
+.wx-month ol{grid-template-columns:1fr;gap:22px}
+.wx-stop{display:grid;grid-template-columns:58px 1fr;column-gap:18px;align-items:center}
+.wx-stop .wx-dot{grid-row:span 2}
+.wx-stop b{margin:0}
+.wx-files a{grid-template-columns:1fr}
 }
 @media (max-width:640px){
-.wd .wrap{padding-left:24px;padding-right:24px}
-.wd-word{font-size:clamp(54px,17.4vw,80px)}
-.wd-mast{font-size:11px}
-.wd-sub{font-size:30px}
-.wd-body p{font-size:17px}
-.wd-situ{padding-right:0;padding-top:40px}
-.wd-file::before{display:none}
-.wd-file-in{padding-left:0}
-.wd-opt summary{grid-template-columns:40px minmax(0,1fr);gap:12px}
-.wd-opt summary i{display:none}
-.wd-step{grid-template-columns:1fr;gap:12px}
-.wd-step p,.wd-step .wd-note{grid-column:auto}
-.wd-tba{right:8px}
-.wd-cal-empty{grid-template-columns:1fr}
-.wd-slip{padding:26px 22px 22px}
-.wd-page{padding:48px 24px 52px}
-.wd-sec{padding:88px 0}
-.wd-card{transform:none}
+.wx-h1{font-size:clamp(56px,17vw,78px)}
+.wx-tag{font-size:28px}
+.wx-lede,.wx-conv p.wx-p,.wx-two p,.wx-join p.wx-p{font-size:17px}
+.wx-switch{display:flex;width:100%}
+.wx-switch button{flex:1;padding:0 10px}
+.wx-think .qt-row{grid-template-columns:1fr}
+.wx-tba{width:88px;height:88px;font-size:13px}
+.wx-join>.shp-flower{width:180px;height:180px;right:-60px;top:-60px}
 }
 @media (prefers-reduced-motion:reduce){
-.wd-ul path,.wd-circ path{animation:none !important;stroke-dashoffset:0}
-.wd-letter path{transition:none}
-.wd-who b{transition:none}
-.wd-opt[open] .wd-why{animation:none}
+.wx-face,.wx-i,.wx-notes li,.wx-dot{transition:none}
+.wx-face .shp,.wx-guest-f .shp,.wx-join>.shp-flower{animation:none}
+.wx-join.flash .wx-form{animation:none}
 }
 </style>
-<main class="wd" id="what-id-do">
+<main id="what-id-do">
 
-<section class="wd-hero" aria-labelledby="wd-title">
+<section class="wx-hero" data-wx-hero data-who="me" style="--who: #FF5A2A" aria-labelledby="wx-title">
+<div class="wrap wx-hero-g">
+<div>
+<p class="eyebrow">A newsletter and live series by Jeremiah Ajayi</p>
+<h1 id="wx-title" class="wx-h1">What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h1>
+<p class="wx-tag">Marketing is full of hard calls. Let’s work through them.</p>
+<p class="wx-lede">Twice a month, one real marketing problem, taken apart: what’s happening, the options, and the call. Twice a month, we talk it through live with people who’ve had to make it.</p>
+<div class="wx-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Subscribe free <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#conversation">See the next conversation <span class="arr" aria-hidden="true">→</span></a></div>
+</div>
+<div class="wx-stage">
+<div class="wx-switch" role="tablist" aria-label="Whose call is it?">
+<button type="button" role="tab" id="wx-t0" aria-selected="true" aria-controls="wx-stage-p" data-who-tab="me">Jeremiah’s call</button>
+<button type="button" role="tab" id="wx-t1" aria-selected="false" aria-controls="wx-stage-p" tabindex="-1" data-who-tab="guest">A guest’s call</button>
+</div>
+<div id="wx-stage-p" role="tabpanel" aria-labelledby="wx-t0">
+<div class="wx-faces">
+<div class="wx-face is-on" data-face="me"><span class="shp shp-flower" style="background: #FF5A2A" aria-hidden="true"></span><span class="wx-face-ph"><img src="/img/headshot.webp" alt="Jeremiah Ajayi"></span><span class="wx-label"><b>I</b>Jeremiah · independent analysis</span></div>
+<div class="wx-face" data-face="guest" aria-hidden="true">
+<span class="shp shp-flower" style="background: #8FE3B0" aria-hidden="true"></span>
+
+<span class="wx-mono" aria-hidden="true">JI</span>
+<span class="wx-label"><b>I</b>John Iwuozor · guest case</span></div>
+</div>
+<button type="button" class="wx-bub" data-wx-bub aria-live="polite"><span class="wx-bub-k" data-wx-bub-k>The dilemma</span><span class="wx-bub-t" data-wx-bub-t>The launch got attention. Sales got nothing. What would you do?</span><span class="wx-bub-m" data-wx-bub-m>Another one ↻</span></button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="wx-sheet" id="conversation" aria-labelledby="wx-conv-t">
 <div class="wrap">
-<p class="wd-mast wd-kick"><span>A newsletter + live conversation series</span><span>Hosted by Jeremiah Ajayi</span></p>
-<h1 id="wd-title" class="wd-word" aria-label="What I’d Do.">What <span class="wd-i" aria-hidden="true">I<span class="wd-who" data-who><b>says Jeremiah</b></span></span>’d Do<span class="wd-dot" aria-hidden="true">.</span></h1>
-<p class="wd-note wd-note-i">The “I” is whoever’s speaking: Jeremiah in an analysis, the guest in a case.<svg viewBox="0 0 90 52" aria-hidden="true"><path d="M84 30 C 60 34, 26 30, 8 6 M8 6 L 22 10 M8 6 L 10 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p>
-<div class="wd-hero-g">
+<p class="eyebrow">The next conversation · What I’d Do: Live</p>
+<div class="wx-conv">
+<div class="wx-guest">
+<div class="wx-guest-f"><span class="shp shp-flower" aria-hidden="true"></span>
+
+<span class="wx-mono" aria-hidden="true">JI</span>
+<span class="wx-tba" aria-hidden="true">Date<br>TBA</span></div>
+<p class="wx-who"><b>John Iwuozor</b>Content Lead, DualEntry</p>
+<div class="wx-pills"><span>Guest case</span><span>Online</span><span>45–50 min</span><span>Date to be announced</span></div>
+</div>
 <div>
-<p class="wd-sub">Marketing is full of hard calls. <span class="wd-ul">Let’s work through them.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 8 C 50 3, 120 10, 198 4"/></svg></span></p>
-<div class="wd-body">
-<p>The campaign gets attention but no pipeline. Users sign up, then vanish. Five priorities, budget for two.</p>
-<p class="wd-q">What would you do?</p>
-<p>Twice a month, we take one real marketing problem apart: the situation, the options, and how experienced founders and marketing leaders would call it. Twice a month, we do it live.</p>
+<h2 id="wx-conv-t" class="wx-ct">Your first 90 days as Content Lead.<span>What do you fix first?</span></h2>
+<p class="wx-p">A new company, a new team, and everyone has an opinion about what marketing needs. John walks through his first 90 days at DualEntry: what he looked at, what he fixed first, and what he left alone.</p>
+<ul class="wx-notes" aria-label="Questions we’ll put to John">
+<li><small>On the table</small>Where do you look first?</li>
+<li><small>On the table</small>Whose opinion do you act on?</li>
+<li><small>On the table</small>What do you leave alone for now?</li>
+</ul>
+<div class="wx-conv-cta">
+
+<a class="btn-o h-btn" href="#join" data-scroll-form>Get the date first <span class="arr arr-d" aria-hidden="true">↓</span></a><span class="wx-small">Registration opens on Luma once the date is set.</span>
 </div>
-<div class="wd-hero-cta"><a class="wd-btn wd-btn-o" href="#subscribe" data-scroll-form>Subscribe for free <span aria-hidden="true">↓</span></a><a class="wd-link" href="#live">Explore live sessions <span aria-hidden="true">→</span></a></div>
 </div>
-<aside class="wd-slip wd-ed" aria-label="In each edition">
-<p class="wd-kick">In each edition</p>
-<ol class="wd-ed-l"><li><b>The situation</b>what’s happening and what’s at stake</li><li><b>The options</b>the real alternatives</li><li><b>The call</b>what to do, and why</li></ol>
-<p class="wd-slip-meta">First and third Wednesdays · 3 PM WAT · Free</p>
-</aside>
 </div>
+
 </div>
 </section>
 
-<section class="wd-sec" aria-labelledby="wd-premise" style="padding-top: clamp(40px, 5vw, 72px)">
-<div class="wrap wd-premise-g">
-<div>
-<p class="wd-kick" style="margin-bottom: 18px">The premise</p>
-<h2 id="wd-premise" class="wd-h2">Every decision comes with a trade-off<span class="wd-dot">.</span></h2>
-<div class="wd-body">
-<p>Change the message or the audience? Spend on acquisition or fix retention? Defend the campaign or kill it?</p>
-<p>There’s rarely one right answer. There’s context, evidence and a call. That’s what we examine.</p>
-</div>
-</div>
-<article class="wd-file" aria-labelledby="wd-case">
-<span class="wd-tab">Case file · example</span>
-<span class="wd-stamp">Hypothetical</span>
-<div class="wd-file-in">
-<h3 id="wd-case" class="wd-kick" style="margin-bottom: 14px">The situation</h3>
-<p class="wd-situ">Your launch got attention. Sales says it produced <b>zero qualified leads</b>. Next quarter’s budget is due Friday.</p>
-<p class="wd-kick" style="margin: 30px 0 0">Three options. Open one.</p>
-<div class="wd-opts"><details class="wd-opt" name="wd-dilemma"><summary><span class="wd-letter" aria-hidden="true">A<svg viewBox="0 0 52 52" aria-hidden="true"><path pathLength="1" d="M38 6 C 22 -2, 2 10, 4 28 C 6 46, 30 52, 44 40 C 54 30, 50 12, 34 8"/></svg></span><span><span class="wd-sr">Option A: </span>Rewrite the message</span><i>see the reasoning</i></summary><div class="wd-why"><div><b>Why you might</b>The right buyers saw it and didn’t get why it matters to them.</div><div><b>What it costs</b>New pages, new sales talk, weeks of testing. The launch moment passes.</div><div><b>Wrong call if</b>Sales calls show buyers understood the pitch and still said no.</div></div></details><details class="wd-opt" name="wd-dilemma"><summary><span class="wd-letter" aria-hidden="true">B<svg viewBox="0 0 52 52" aria-hidden="true"><path pathLength="1" d="M38 6 C 22 -2, 2 10, 4 28 C 6 46, 30 52, 44 40 C 54 30, 50 12, 34 8"/></svg></span><span><span class="wd-sr">Option B: </span>Change who you’re talking to</span><i>see the reasoning</i></summary><div class="wd-why"><div><b>Why you might</b>The attention came from people who like the idea but won’t buy it.</div><div><b>What it costs</b>Smaller numbers for a while, which looks like failure from the outside.</div><div><b>Wrong call if</b>The few real buyers who saw it didn’t respond either.</div></div></details><details class="wd-opt" name="wd-dilemma"><summary><span class="wd-letter" aria-hidden="true">C<svg viewBox="0 0 52 52" aria-hidden="true"><path pathLength="1" d="M38 6 C 22 -2, 2 10, 4 28 C 6 46, 30 52, 44 40 C 54 30, 50 12, 34 8"/></svg></span><span><span class="wd-sr">Option C: </span>Fix the hand-off to sales</span><i>see the reasoning</i></summary><div class="wd-why"><div><b>Why you might</b>Interest was real but went nowhere: no follow-up, no next step.</div><div><b>What it costs</b>A month of process work instead of new campaigns.</div><div><b>Wrong call if</b>Sales followed up fast with good material, and nobody converted.</div></div></details></div>
-<p class="wd-verdict"><b>The call</b> turns on one question: did the right people see it and pass, or did the wrong people see it and cheer?</p>
-</div>
-</article>
-</div>
-</section>
-
-<section aria-label="Two ways to take part" id="formats">
-<div class="wd-spread">
-<article class="wd-page">
-<span class="wd-num" aria-hidden="true">01</span>
-<p class="wd-kick">The newsletter</p>
-<h3>Read the thinking<span class="wd-dot">.</span></h3>
-<p>Independent analyses, case studies and guest perspectives. Each one lays out the circumstances, the choices and the reasoning behind a recommendation.</p>
-<p class="wd-sched"><span>First and third Wednesdays</span><span>3 PM WAT</span><span>Free</span></p>
-<a class="wd-link" href="#subscribe" data-scroll-form>Get the newsletter <span aria-hidden="true">↓</span></a>
-</article>
-<article class="wd-page dark" id="live">
-<span class="wd-num" aria-hidden="true">02</span>
-<p class="wd-kick">What I’d Do: Live</p>
-<h3>Join the conversation<span class="wd-dot">.</span></h3>
-<p>A founder or marketing operator walks through a decision they made, or we work a real problem together. Candid, specific, 45 to 50 minutes.</p>
-<p class="wd-sched"><span>Second and fourth Tuesdays</span><span>7 PM WAT</span><span>Online</span></p>
-<a class="wd-link" href="#next">Explore upcoming sessions <span aria-hidden="true">↓</span></a>
-</article>
-</div>
-</section>
-
-<section class="wd-sec wd-signup" id="subscribe" aria-labelledby="wd-sub-t">
-<div class="wrap wd-signup-g">
-<div>
-<p class="wd-kick" style="margin-bottom: 18px">The newsletter</p>
-<h2 id="wd-sub-t" class="wd-h2">One hard call, twice a month<span class="wd-dot">.</span></h2>
-<p class="wd-signup-p">The situation, the options, the call and why. First and third Wednesdays, 3 PM WAT. Free.</p>
-<p class="wd-note">Newsletter only. Live sessions have their own sign-up.</p>
-</div>
-<div class="wd-slip wd-form">
-<div class="wd-bh" data-beehiiv-slot="486dd20f-f759-4e17-a148-6ae63a258dcf" aria-live="polite"><p class="wd-bh-wait">Loading the sign-up form…</p><noscript><p>The sign-up form needs JavaScript. Email <a href="mailto:jeremiah@thejeremiahajayi.com?subject=Subscribe%20me%20to%20What%20I%E2%80%99d%20Do">jeremiah@thejeremiahajayi.com</a> and you’ll be added.</p></noscript></div>
-
-</div>
-</div>
-</section>
-
-<section class="wd-sec wd-event" id="next" aria-labelledby="wd-next">
+<section class="wx-rhythm" aria-labelledby="wx-rh-t">
 <div class="wrap">
-<p class="wd-kick">The next conversation · What I’d Do: Live</p>
-<div class="wd-ev-g">
-<div>
-<h2 id="wd-next" class="wd-ev-t">Your first 90 days as Content Lead<span>What do you fix first?</span></h2>
-<p class="wd-guest"><span><b>John Iwuozor</b><span>Content Lead, DualEntry</span></span></p>
-<p class="wd-ev-d">New company. Everyone has an opinion about what marketing needs. Not much time to set priorities.</p>
-<p class="wd-ev-d">John walks through his first 90 days at DualEntry: what he looked at first, what he chose to fix, and what he left alone.</p>
-<div class="wd-ev-cta">
-
-<a class="wd-btn wd-btn-o" href="#subscribe" data-scroll-form>Get the date by email <span aria-hidden="true">↑</span></a><span class="wd-note" style="color: #D9D4CA">Registration opens when the date is set.</span>
+<p class="eyebrow">Two ways in</p>
+<h2 id="wx-rh-t" class="wx-h2">Read it. Join it<span class="k-dot">.</span></h2>
+<div class="wx-month" aria-label="A month of What I’d Do">
+<ol>
+<li class="wx-stop read"><span class="wx-dot" aria-hidden="true">✉️</span><b>1st Wednesday</b><span>New issue · 3 PM WAT</span></li>
+<li class="wx-stop live"><span class="wx-dot" aria-hidden="true">🎙️</span><b>2nd Tuesday</b><span>Live session · 7 PM WAT</span></li>
+<li class="wx-stop read"><span class="wx-dot" aria-hidden="true">✉️</span><b>3rd Wednesday</b><span>New issue · 3 PM WAT</span></li>
+<li class="wx-stop live"><span class="wx-dot" aria-hidden="true">🎙️</span><b>4th Tuesday</b><span>Live session · 7 PM WAT</span></li>
+</ol>
 </div>
-</div>
-<figure class="wd-port">
-<div class="wd-port-f">
-
-<span class="wd-mono" aria-hidden="true">J.I.</span>
-</div>
-<span class="wd-tba">Date to be announced</span>
-<figcaption>John Iwuozor, Content Lead at DualEntry</figcaption>
-</figure>
-</div>
-<div class="wd-cal" aria-labelledby="wd-up">
-<p id="wd-up" class="wd-kick" style="color: #B5B0A6">Upcoming sessions</p>
-
-<div class="wd-cal-empty"><span class="wd-blank" aria-hidden="true"><i></i><i></i></span><p>No sessions open yet. Subscribers hear the dates first.</p></div>
+<div class="wx-two">
+<div class="read"><h3><i aria-hidden="true"></i>Read it</h3><p>A problem, the options on the table, and the reasoning behind a call. Sometimes it’s my analysis. Sometimes it’s a guest’s decision, in their words.</p><p class="wx-when">Free · in your inbox</p><a class="h-link" href="#join" data-scroll-form>Get the newsletter <span class="arr" aria-hidden="true">→</span></a></div>
+<div class="live"><h3><i aria-hidden="true"></i>Join it</h3><p>A founder or marketing operator walks through a decision they made, or we work a real problem together. Candid, specific, under an hour.</p><p class="wx-when">Online · 45 to 50 minutes</p><a class="h-link" href="#conversation">See the next conversation <span class="arr" aria-hidden="true">→</span></a></div>
 </div>
 </div>
 </section>
 
-<section class="wd-sec" aria-labelledby="wd-how">
+<section class="wx-think" aria-labelledby="wx-th-t">
 <div class="wrap">
-<div class="wd-how-head"><div><p class="wd-kick" style="margin-bottom: 18px">How it works</p><h2 id="wd-how" class="wd-h2">Put the problem on the table<span class="wd-dot">.</span></h2></div>
-<p class="wd-note" style="font-size: 17px; color: var(--ink); max-width: 36ch">Every edition and every session follows the same four steps.</p></div>
-<ol class="wd-steps"><li class="wd-step " ><span class="wd-step-n" aria-hidden="true">1</span><h3>The Situation</h3><p>The problem and the constraints: market, team, budget, deadline.</p><p class="wd-note">What do we know?</p></li><li class="wd-step " ><span class="wd-step-n" aria-hidden="true">2</span><h3>The Options</h3><p>The real alternatives, including doing nothing.</p><p class="wd-note">What else could work?</p></li><li class="wd-step wd-call" data-pen><span class="wd-step-n" aria-hidden="true">3</span><h3><span class=wd-circ>The Call<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M150 12 C 110 -2, 30 4, 10 40 C -6 72, 60 98, 120 92 C 176 86, 204 56, 186 30 C 176 16, 150 8, 128 10"/></svg></span></h3><p>The decision, the evidence behind it and what it gave up.</p><p class="wd-note">Commit, and say why.</p></li><li class="wd-step " ><span class="wd-step-n" aria-hidden="true">4</span><h3>The Aftermath</h3><p>What happened, what was learned, what would change the call.</p><p class="wd-note">Would we make it again?</p></li></ol>
+<div class="wx-think-h"><div><p class="eyebrow">The thinking</p><h2 id="wx-th-t" class="wx-h2">Problems on the table<span class="k-dot">.</span></h2></div>
+<p>The first issues are being written now. These are the calls they work through.</p></div>
+
+<div class="qt-row">
+<div class="qt q-sun"><span class="wx-up">Upcoming</span><b>The launch got attention. Sales got nothing.</b><span>Rewrite the message, change the audience, or fix the hand-off to sales?</span></div><div class="qt q-mint"><span class="wx-up">Upcoming</span><b>They sign up, then disappear.</b><span>Spend on acquisition, or fix retention first?</span></div><div class="qt q-blush"><span class="wx-up">Upcoming</span><b>Five priorities. Budget for two.</b><span>What gets cut, and how do you defend it?</span></div>
+<a class="qt q-ink" href="mailto:jeremiah@thejeremiahajayi.com?subject=What%20I%E2%80%99d%20Do%3A%20a%20problem%20to%20work%20through&amp;body=What%E2%80%99s%20happening%3A%0A%0AWhat%20you%E2%80%99ve%20tried%20or%20considered%3A%0A%0AWhat%E2%80%99s%20at%20stake%2C%20and%20by%20when%3A%0A%0ACan%20we%20share%20identifying%20details%3F%20(We%E2%80%99ll%20always%20ask%20first.)%0A"><span class="wx-up">Your turn</span><b>Got a hard call of your own?</b><span>Send it in. We may take it apart in an issue or live, anonymised if you like.</span><span class="wx-go">Send a problem <span aria-hidden="true">↗</span></span></a>
+</div>
 </div>
 </section>
 
-<section class="wd-sec" aria-labelledby="wd-files" style="padding-top: 0">
+<section class="wx-join" id="join" aria-labelledby="wx-join-t">
+<span class="shp shp-flower" aria-hidden="true"></span>
 <div class="wrap">
-<div class="wd-how-head"><div><p class="wd-kick" style="margin-bottom: 18px">Recent thinking</p><h2 id="wd-files" class="wd-h2">The Decision Files<span class="wd-dot">.</span></h2></div>
-<p style="margin: 0; font-size: 17px; line-height: 1.65; max-width: 44ch">Every analysis, guest case and live-session takeaway, in one place.</p></div>
-<div class="wd-files">
-
-<div class="wd-drawer"><div class="wd-tabs" aria-hidden="true"><span data-l="Analysis"></span><span data-l="Guest case"></span><span data-l="Live takeaway"></span><em>Opening soon</em></div><div><p>Empty for now. The first file lands with the first issue.</p><a class="wd-link" href="#subscribe" data-scroll-form>Get it when it’s filed <span aria-hidden="true">↑</span></a></div></div>
-</div>
-</div>
-</section>
-
-
-<section class="wd-sec" aria-labelledby="wd-shoes" style="background: #EDE7DA">
-<div class="wrap wd-sub-g">
+<div class="wx-join-g">
 <div>
-<p class="wd-kick" style="margin-bottom: 22px">Submit a problem</p>
-<h2 id="wd-shoes" class="wd-quote">What would you do if you were <em>in my shoes?</em></h2>
-<div class="wd-body"><p>Stuck on a marketing problem? Send it in. We may take it apart in an issue or a live session.</p><p>We can anonymise it, and we ask before sharing anything that identifies you.</p></div>
+<p class="eyebrow" style="color: #8A867E">Free · twice a month</p>
+<h2 id="wx-join-t" class="wx-join-t">Join What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h2>
+<p class="wx-p">One hard call in your inbox on the first and third Wednesday, and first word on every live session.</p>
+<ul><li><i style="background: #FFC83D" aria-hidden="true"></i>Real problems, not hot takes</li><li><i style="background: #8FE3B0" aria-hidden="true"></i>The options and the reasoning, not just the answer</li><li><i style="background: #FF8FB6" aria-hidden="true"></i>Unsubscribe in one click</li></ul>
 </div>
-<div class="wd-card">
-<p class="wd-kick">What to include</p>
-<ol><li>What’s happening</li><li>What you’ve tried or are considering</li><li>What’s at stake, and by when</li></ol>
-
-<a class="wd-btn" href="mailto:jeremiah@thejeremiahajayi.com?subject=What%20I%E2%80%99d%20Do%3A%20a%20problem%20to%20work%20through&amp;body=What%E2%80%99s%20happening%3A%0A%0AWhat%20you%E2%80%99ve%20tried%20or%20considered%3A%0A%0AWhat%E2%80%99s%20at%20stake%2C%20and%20by%20when%3A%0A%0ACan%20we%20share%20identifying%20details%3F%20(We%E2%80%99ll%20always%20ask%20first.)%0A">Submit a problem by email <span aria-hidden="true">↗</span></a><small>Opens your email app with these prompts filled in.</small>
-</div>
-</div>
-</section>
-
-<section class="wd-sec wd-host" aria-labelledby="wd-host">
-<div class="wrap wd-host-g">
-<figure class="wd-host-ph"><img src="/img/headshot.webp" alt="Portrait of Jeremiah Ajayi" loading="lazy"><figcaption class="wd-note">Your host</figcaption></figure>
-<div>
-<p class="wd-kick" style="margin-bottom: 18px">About the host</p>
-<h2 id="wd-host" class="wd-h2">The person asking the questions<span class="wd-dot">.</span></h2>
-<p>Jeremiah Ajayi is a marketing strategist working on positioning, product launches and growth for technology companies, including RemotePass and Stears.</p>
-<p>What I’d Do comes from one question he keeps asking: how did they decide? The assumptions, the alternatives, and what happens when the plan doesn’t work.</p>
-<p style="margin-top: 26px"><a class="wd-link" href="/about/">More about Jeremiah <span aria-hidden="true">→</span></a></p>
+<div class="wx-form">
+<h3>Subscribe</h3>
+<p>Newsletter only. Live sessions have their own sign-up.</p>
+<div class="wx-bh" data-beehiiv-slot="486dd20f-f759-4e17-a148-6ae63a258dcf" aria-live="polite"><p class="wx-bh-wait">Loading the sign-up form…</p></div>
+<p class="wx-fall">Form not showing? <a href="mailto:jeremiah@thejeremiahajayi.com?subject=What%20I%E2%80%99d%20Do%3A%20tell%20me%20when%20issue%20one%20is%20out">email me</a> and you’ll be added.</p>
 </div>
 </div>
-</section>
-
-<section class="wd-sec wd-final" aria-labelledby="wd-final">
-<div class="wrap">
-<h2 id="wd-final" class="wd-h2">A good question deserves a better answer<span class="wd-dot">.</span></h2>
-<p class="wd-lead">Real problems, real reasoning, twice a month.</p>
-<p style="margin-top: 34px"><a class="wd-btn wd-btn-o" href="#subscribe" data-scroll-form>Subscribe for free <span aria-hidden="true">↑</span></a></p>
-<p class="wd-micro">Twice monthly. No noise.</p>
-<nav class="wd-back" aria-label="Back to the main site"><a href="/">Home</a><a href="/work/">Work</a><a href="/blog/">Writing</a><a href="/about/">About</a></nav>
+<footer class="k-foot"><a class="sg k-brand" href="/"><span aria-hidden="true" class="ct-mark">JA</span>Jeremiah Ajayi</a><span class="k-fnav"><a href="/services/positioning-messaging/">Positioning</a><a href="/services/product-launch-gtm/">Launches & GTM</a><a href="/services/content-growth/">Content & storytelling</a><a href="/work/">Work</a><a href="/what-id-do/">What I’d Do</a><a href="/blog/">Writing</a><a href="/about/">About</a><a href="/empowerq/">EmpowerQ</a><a href="/contact/">Contact</a><a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><span>Lagos 🇳🇬 · <span data-time></span> · © 2026</span></span></footer>
 </div>
 </section>
 </main>
 
 
-<section class="k-end k-end-min" aria-label="Footer"><div class="wrap"><footer class="k-foot"><a class="sg k-brand" href="/"><span aria-hidden="true" class="ct-mark">JA</span>Jeremiah Ajayi</a><span class="k-fnav"><a href="/services/positioning-messaging/">Positioning</a><a href="/services/product-launch-gtm/">Launches & GTM</a><a href="/services/content-growth/">Content & storytelling</a><a href="/work/">Work</a><a href="/what-id-do/">What I’d Do</a><a href="/blog/">Writing</a><a href="/about/">About</a><a href="/empowerq/">EmpowerQ</a><a href="/contact/">Contact</a><a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><span>Lagos 🇳🇬 · <span data-time></span> · © 2026</span></span></footer></div></section>
+
 </div>
 
 <script>(function () {
@@ -1966,11 +1811,33 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
       });
     }
   }
-  // 10. What I'd Do: the red pen circles "The Call" once it comes into view.
-  var pens = document.querySelectorAll('[data-pen]');
-  if (pens.length) {
-    if (CALM || !('IntersectionObserver' in window)) pens.forEach(function (el) { el.classList.add('inked'); });
-    else { var po = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('inked'); po.unobserve(e.target); } }); }, { threshold: 0.6 }); pens.forEach(function (el) { po.observe(el); }); }
+  // 10. What I'd Do: "Whose call is it?" The switch hands the speech bubble (and the "I") to a different speaker.
+  var wx = document.querySelector('[data-wx-hero]');
+  if (wx) {
+    var WXS = {
+      me: { color: '#FF5A2A', k: 'The dilemma · Jeremiah’s call', lines: ['The launch got attention. Sales got nothing. What would you do?', 'Users sign up, then vanish. Acquisition or retention?', 'Five priorities. Budget for two. What gets cut?'] },
+      guest: { color: '#1FA463', k: 'The dilemma · John Iwuozor’s call', lines: ['Day one as Content Lead at DualEntry. Everyone wants something. What do you fix first?'] }
+    };
+    var wxWho = 'me', wxLi = 0, wxTouched = false;
+    var wxTabs = [].slice.call(wx.querySelectorAll('[data-who-tab]')), wxFaces = [].slice.call(wx.querySelectorAll('[data-face]'));
+    var wxBub = wx.querySelector('[data-wx-bub]'), wxBk = wx.querySelector('[data-wx-bub-k]'), wxBt = wx.querySelector('[data-wx-bub-t]'), wxPanel = document.getElementById('wx-stage-p');
+    var wxPaint = function () {
+      var wxSp = WXS[wxWho];
+      wx.setAttribute('data-who', wxWho); wx.style.setProperty('--who', wxSp.color);
+      wxTabs.forEach(function (t) { var on = t.getAttribute('data-who-tab') === wxWho; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && wxPanel) wxPanel.setAttribute('aria-labelledby', t.id); });
+      wxFaces.forEach(function (f) { var on = f.getAttribute('data-face') === wxWho; f.classList.toggle('is-on', on); f.setAttribute('aria-hidden', on ? 'false' : 'true'); });
+      wxBk.textContent = wxSp.k; wxBt.textContent = wxSp.lines[wxLi % wxSp.lines.length];
+      var wxM = wxBub.querySelector('[data-wx-bub-m]'); if (wxM) wxM.textContent = wxSp.lines.length > 1 ? 'Another one ↻' : 'Back to Jeremiah ↻';
+      wxBub.classList.remove('pop'); void wxBub.offsetWidth; wxBub.classList.add('pop');
+    };
+    var wxSet = function (w, focus) { wxTouched = true; if (w !== wxWho) { wxWho = w; wxLi = 0; wxPaint(); } if (focus) wxTabs.filter(function (t) { return t.getAttribute('data-who-tab') === w; })[0].focus(); };
+    wxTabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { wxSet(t.getAttribute('data-who-tab')); });
+      t.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); wxSet(wxTabs[(k + 1) % wxTabs.length].getAttribute('data-who-tab'), true); } });
+    });
+    wxBub.addEventListener('click', function () { wxTouched = true; var wxSp = WXS[wxWho]; if (wxSp.lines.length > 1) { wxLi = (wxLi + 1) % wxSp.lines.length; wxPaint(); } else { wxSet(wxWho === 'me' ? 'guest' : 'me'); } });
+    // Until someone interacts, the stage hands the bubble back and forth on its own.
+    if (!CALM) setInterval(function () { if (wxTouched || document.hidden || scrollY > innerHeight * 0.6) return; wxWho = wxWho === 'me' ? 'guest' : 'me'; wxLi = 0; wxPaint(); }, 5200);
   }
   // beehiiv: the official v3 loader, added only where a form slot exists (the What I'd Do page),
   // and only when the slot is near the viewport or someone asks to subscribe. One form on the page;
@@ -1984,33 +1851,27 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
       sc.async = true; sc.src = 'https://subscribe-forms.beehiiv.com/v3/loader.js';
       sc.setAttribute('data-beehiiv-form', bhSlot.getAttribute('data-beehiiv-slot'));
       bhSlot.appendChild(sc);
-      var wait = bhSlot.querySelector('.wd-bh-wait');
+      var wait = bhSlot.querySelector('.wd-bh-wait, .wx-bh-wait');
       var done = function () { return [].some.call(bhSlot.children, function (c) { return c.tagName !== 'SCRIPT' && c !== wait && c.tagName !== 'NOSCRIPT'; }); };
       if ('MutationObserver' in window) { var bmo = new MutationObserver(function () { if (done()) { if (wait) wait.remove(); bmo.disconnect(); } }); bmo.observe(bhSlot, { childList: true, subtree: true }); }
       setTimeout(function () {
         if (done()) { if (wait && wait.parentNode) wait.remove(); return; }
-        if (wait) wait.outerHTML = '<p class="wd-bh-fail">The sign-up form didn’t load (an ad blocker can do this). Email <a href="mailto:jeremiah@thejeremiahajayi.com?subject=Subscribe%20me%20to%20What%20I%E2%80%99d%20Do">jeremiah@thejeremiahajayi.com</a> and you’ll be added.</p>';
+        if (wait) wait.textContent = 'The form didn’t load here (an ad blocker can do this). Use the link below instead.';
       }, 12000);
     };
     if ('IntersectionObserver' in window) { var bio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { bhLoad(); bio.disconnect(); } }, { rootMargin: '900px 0px' }); bio.observe(bhSlot); }
     else bhLoad();
-    var sec = document.getElementById('subscribe');
+    var sec = document.getElementById('join') || document.getElementById('subscribe');
     document.querySelectorAll('[data-scroll-form]').forEach(function (a) {
       a.addEventListener('mouseenter', bhLoad, { once: true });
       a.addEventListener('click', function (e) {
         if (!sec) return; e.preventDefault(); bhLoad();
         sec.scrollIntoView({ behavior: CALM ? 'auto' : 'smooth', block: 'center' });
-        if (history.replaceState) history.replaceState(null, '', '#subscribe');
+        if (history.replaceState) history.replaceState(null, '', '#' + sec.id);
         sec.classList.remove('flash'); void sec.offsetWidth; sec.classList.add('flash');
         setTimeout(function () { var f = bhSlot.querySelector('iframe, input[type="email"]'); try { (f || sec.querySelector('h2')).focus({ preventScroll: true }); } catch (x) {} }, CALM ? 50 : 650);
       });
     });
-  }
-  // The "I" changes depending on who's speaking.
-  var who = document.querySelector('[data-who] b');
-  if (who && !CALM) {
-    var whos = ['says Jeremiah', 'says the guest', 'says you'], wi = 0;
-    setInterval(function () { if (document.hidden) return; who.classList.add('out'); setTimeout(function () { wi = (wi + 1) % whos.length; who.textContent = whos[wi]; who.classList.remove('out'); }, 350); }, 2800);
   }
   // 8. Images unveil once as they come into view.
   if (!CALM && 'IntersectionObserver' in window) {

@@ -338,5 +338,6 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
 .sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
 @media (prefers-reduced-motion: reduce){.tiles-rot>*,.btn-k{transition:none}}
+@media print{.rv,.img-rv,.js-rv .rv,.js-rv .img-rv{opacity:1 !important;transform:none !important;clip-path:none !important}.site-h,.gd-launch,.gd-peek,.gd-panel,.mbar,.rp{display:none !important}}
 /*shared:end*/
 """

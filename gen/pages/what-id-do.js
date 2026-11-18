@@ -7,6 +7,9 @@
       // beehiiv subscribe form ID: the data-beehiiv-form value from beehiiv's embed code.
       // The page loads beehiiv's official loader (subscribe-forms.beehiiv.com/v3/loader.js) for it.
       beehiivFormId: '486dd20f-f759-4e17-a148-6ae63a258dcf',
+      // The publication's hosted subscribe page, shown as a fallback if the embed is blocked.
+      // e.g. https://whatiddo.beehiiv.com/subscribe (use the What I'd Do publication's address).
+      beehiivSubscribeUrl: '',
       // Luma → Calendar → Settings → Embed. The calendar ID looks like cal-XXXXXXXX.
       lumaCalendarId: '',
       // The featured event's ID on Luma (evt-XXXXXXXX). Set it only once the real event exists.
@@ -21,6 +24,12 @@
     // { cat: 'Independent analysis', title: '…', by: 'Jeremiah Ajayi', date: '2026-12-02',
     //   dateLabel: '2 Dec 2026', read: '7 min read', dek: '…', href: 'https://…' }
     const FILES = [];
+    // ── Problems on the table (shown as "Upcoming" until issues are published) ──
+    const TOPICS = [
+      { title: 'The launch got attention. Sales got nothing.', q: 'Rewrite the message, change the audience, or fix the hand-off to sales?', cls: 'q-sun' },
+      { title: 'They sign up, then disappear.', q: 'Spend on acquisition, or fix retention first?', cls: 'q-mint' },
+      { title: 'Five priorities. Budget for two.', q: 'What gets cut, and how do you defend it?', cls: 'q-blush' }
+    ];
 
     const mail = 'mailto:jeremiah@thejeremiahajayi.com';
     const submitMail = mail + '?subject=' + encodeURIComponent('What I’d Do: a problem to work through') + '&body=' + encodeURIComponent('What’s happening:\n\nWhat you’ve tried or considered:\n\nWhat’s at stake, and by when:\n\nCan we share identifying details? (We’ll always ask first.)\n');
@@ -44,6 +53,9 @@
       noSubmitUrl: !CONFIG.submitUrl,
       submitMail,
       files: FILES,
+      topics: TOPICS,
+      hasSubPage: !!CONFIG.beehiivSubscribeUrl,
+      submitHref: CONFIG.submitUrl || submitMail,
       hasFiles: FILES.length > 0,
       noFiles: FILES.length === 0
     };

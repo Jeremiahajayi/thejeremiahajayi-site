@@ -1600,11 +1600,33 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
       });
     }
   }
-  // 10. What I'd Do: the red pen circles "The Call" once it comes into view.
-  var pens = document.querySelectorAll('[data-pen]');
-  if (pens.length) {
-    if (CALM || !('IntersectionObserver' in window)) pens.forEach(function (el) { el.classList.add('inked'); });
-    else { var po = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('inked'); po.unobserve(e.target); } }); }, { threshold: 0.6 }); pens.forEach(function (el) { po.observe(el); }); }
+  // 10. What I'd Do: "Whose call is it?" The switch hands the speech bubble (and the "I") to a different speaker.
+  var wx = document.querySelector('[data-wx-hero]');
+  if (wx) {
+    var WXS = {
+      me: { color: '#FF5A2A', k: 'The dilemma · Jeremiah’s call', lines: ['The launch got attention. Sales got nothing. What would you do?', 'Users sign up, then vanish. Acquisition or retention?', 'Five priorities. Budget for two. What gets cut?'] },
+      guest: { color: '#1FA463', k: 'The dilemma · John Iwuozor’s call', lines: ['Day one as Content Lead at DualEntry. Everyone wants something. What do you fix first?'] }
+    };
+    var wxWho = 'me', wxLi = 0, wxTouched = false;
+    var wxTabs = [].slice.call(wx.querySelectorAll('[data-who-tab]')), wxFaces = [].slice.call(wx.querySelectorAll('[data-face]'));
+    var wxBub = wx.querySelector('[data-wx-bub]'), wxBk = wx.querySelector('[data-wx-bub-k]'), wxBt = wx.querySelector('[data-wx-bub-t]'), wxPanel = document.getElementById('wx-stage-p');
+    var wxPaint = function () {
+      var wxSp = WXS[wxWho];
+      wx.setAttribute('data-who', wxWho); wx.style.setProperty('--who', wxSp.color);
+      wxTabs.forEach(function (t) { var on = t.getAttribute('data-who-tab') === wxWho; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && wxPanel) wxPanel.setAttribute('aria-labelledby', t.id); });
+      wxFaces.forEach(function (f) { var on = f.getAttribute('data-face') === wxWho; f.classList.toggle('is-on', on); f.setAttribute('aria-hidden', on ? 'false' : 'true'); });
+      wxBk.textContent = wxSp.k; wxBt.textContent = wxSp.lines[wxLi % wxSp.lines.length];
+      var wxM = wxBub.querySelector('[data-wx-bub-m]'); if (wxM) wxM.textContent = wxSp.lines.length > 1 ? 'Another one ↻' : 'Back to Jeremiah ↻';
+      wxBub.classList.remove('pop'); void wxBub.offsetWidth; wxBub.classList.add('pop');
+    };
+    var wxSet = function (w, focus) { wxTouched = true; if (w !== wxWho) { wxWho = w; wxLi = 0; wxPaint(); } if (focus) wxTabs.filter(function (t) { return t.getAttribute('data-who-tab') === w; })[0].focus(); };
+    wxTabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { wxSet(t.getAttribute('data-who-tab')); });
+      t.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); wxSet(wxTabs[(k + 1) % wxTabs.length].getAttribute('data-who-tab'), true); } });
+    });
+    wxBub.addEventListener('click', function () { wxTouched = true; var wxSp = WXS[wxWho]; if (wxSp.lines.length > 1) { wxLi = (wxLi + 1) % wxSp.lines.length; wxPaint(); } else { wxSet(wxWho === 'me' ? 'guest' : 'me'); } });
+    // Until someone interacts, the stage hands the bubble back and forth on its own.
+    if (!CALM) setInterval(function () { if (wxTouched || document.hidden || scrollY > innerHeight * 0.6) return; wxWho = wxWho === 'me' ? 'guest' : 'me'; wxLi = 0; wxPaint(); }, 5200);
   }
   // beehiiv: the official v3 loader, added only where a form slot exists (the What I'd Do page),
   // and only when the slot is near the viewport or someone asks to subscribe. One form on the page;
@@ -1618,33 +1640,27 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
       sc.async = true; sc.src = 'https://subscribe-forms.beehiiv.com/v3/loader.js';
       sc.setAttribute('data-beehiiv-form', bhSlot.getAttribute('data-beehiiv-slot'));
       bhSlot.appendChild(sc);
-      var wait = bhSlot.querySelector('.wd-bh-wait');
+      var wait = bhSlot.querySelector('.wd-bh-wait, .wx-bh-wait');
       var done = function () { return [].some.call(bhSlot.children, function (c) { return c.tagName !== 'SCRIPT' && c !== wait && c.tagName !== 'NOSCRIPT'; }); };
       if ('MutationObserver' in window) { var bmo = new MutationObserver(function () { if (done()) { if (wait) wait.remove(); bmo.disconnect(); } }); bmo.observe(bhSlot, { childList: true, subtree: true }); }
       setTimeout(function () {
         if (done()) { if (wait && wait.parentNode) wait.remove(); return; }
-        if (wait) wait.outerHTML = '<p class="wd-bh-fail">The sign-up form didn’t load (an ad blocker can do this). Email <a href="mailto:jeremiah@thejeremiahajayi.com?subject=Subscribe%20me%20to%20What%20I%E2%80%99d%20Do">jeremiah@thejeremiahajayi.com</a> and you’ll be added.</p>';
+        if (wait) wait.textContent = 'The form didn’t load here (an ad blocker can do this). Use the link below instead.';
       }, 12000);
     };
     if ('IntersectionObserver' in window) { var bio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { bhLoad(); bio.disconnect(); } }, { rootMargin: '900px 0px' }); bio.observe(bhSlot); }
     else bhLoad();
-    var sec = document.getElementById('subscribe');
+    var sec = document.getElementById('join') || document.getElementById('subscribe');
     document.querySelectorAll('[data-scroll-form]').forEach(function (a) {
       a.addEventListener('mouseenter', bhLoad, { once: true });
       a.addEventListener('click', function (e) {
         if (!sec) return; e.preventDefault(); bhLoad();
         sec.scrollIntoView({ behavior: CALM ? 'auto' : 'smooth', block: 'center' });
-        if (history.replaceState) history.replaceState(null, '', '#subscribe');
+        if (history.replaceState) history.replaceState(null, '', '#' + sec.id);
         sec.classList.remove('flash'); void sec.offsetWidth; sec.classList.add('flash');
         setTimeout(function () { var f = bhSlot.querySelector('iframe, input[type="email"]'); try { (f || sec.querySelector('h2')).focus({ preventScroll: true }); } catch (x) {} }, CALM ? 50 : 650);
       });
     });
-  }
-  // The "I" changes depending on who's speaking.
-  var who = document.querySelector('[data-who] b');
-  if (who && !CALM) {
-    var whos = ['says Jeremiah', 'says the guest', 'says you'], wi = 0;
-    setInterval(function () { if (document.hidden) return; who.classList.add('out'); setTimeout(function () { wi = (wi + 1) % whos.length; who.textContent = whos[wi]; who.classList.remove('out'); }, 350); }, 2800);
   }
   // 8. Images unveil once as they come into view.
   if (!CALM && 'IntersectionObserver' in window) {

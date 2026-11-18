@@ -116,7 +116,7 @@ def build(pid):
 {helmet}
 <div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: clip">
 {header(active)}
-{guide()}
+{'' if pid == 'what-id-do' else guide()}
 {body}
 {band}
 </div>
