@@ -263,6 +263,66 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(6deg)}}
 @media (prefers-reduced-motion: reduce){.spin,.spin-r,.floaty{animation:none}}
+/* results bento */
+.bento{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.bt{position:relative;overflow:hidden;border-radius:22px;padding:clamp(22px,2.6vw,34px);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;color:#111}
+.bt-n{position:relative;margin:0;font-weight:700;font-size:clamp(56px,6vw,96px);line-height:.85;letter-spacing:-.06em}
+.bt-l{position:relative;margin:10px 0 0;font-size:15px;line-height:1.45;font-weight:600;max-width:260px}
+.bt-1{grid-row:span 2;background:var(--sun);min-height:380px}
+.bt-1 .bt-n{font-size:clamp(80px,9vw,150px)}
+.bt-2{background:var(--leaf);color:#FFFFFF}
+.bt-3{background:var(--mint)}
+.bt-4{grid-column:span 2;background:var(--orange)}
+.bt-rays{position:absolute;right:-30%;top:-40%;width:110%;aspect-ratio:1;color:rgba(255,90,42,.55);border-radius:50%}
+.bt-sh{position:absolute;right:-26px;top:-26px;width:120px;aspect-ratio:1}
+.bt-2 .bt-sh{background:rgba(255,255,255,.22)}
+.bt-3 .bt-sh{background:var(--leaf);opacity:.35;width:90px;right:16px;top:16px}
+.bt-tri{position:absolute;right:0;top:0;width:46%;height:100%;background:var(--sun);opacity:.9}
+@media (max-width: 760px){.bento{grid-template-columns:1fr 1fr}.bt-1{grid-row:auto;grid-column:span 2;min-height:220px}.bt-4{grid-column:span 2}.bt{min-height:150px}.bt-n{font-size:52px}.bt-1 .bt-n{font-size:84px}.bt-tri{width:34%}}
+/* case number badges */
+.num-b{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;font-size:14px;font-weight:700;color:#111}
+/* disciplines as tiles */
+.xp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.xp{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;min-height:440px;padding:clamp(24px,2.6vw,34px);border-radius:24px;text-decoration:none;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.xp:hover{transform:translateY(-8px) rotate(-.6deg);color:#111}
+.xp-art{position:relative;width:110px;height:110px;margin-bottom:auto}
+.xp-shape{position:absolute;inset:0}
+.xp-emo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:46px;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.xp:hover .xp-emo{transform:scale(1.18) rotate(-10deg)}
+.xp-verb{font-size:clamp(56px,5.6vw,88px);font-weight:700;line-height:.85;letter-spacing:-.06em}
+.xp-name{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.xp-long{font-size:16px;line-height:1.55;color:#2D2B27}
+.xp-proof{font-size:13.5px;line-height:1.5;color:#2D2B27}
+.xp-go{margin-top:6px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:46px;padding:0 18px;border-radius:999px;background:#111;color:#F2EFE8;font-weight:700;font-size:15px}
+.xp:hover .xp-go .arr{transform:translateX(5px)}
+@media (max-width: 900px){.xp-grid{grid-template-columns:1fr}.xp{min-height:0}.xp-art{width:84px;height:84px}.xp-emo{font-size:36px}}
+/* contact doors */
+.door-e{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;font-size:20px;background:var(--sun)}
+.door:nth-of-type(2) .door-e{background:var(--orange)}
+.door:nth-of-type(3) .door-e{background:var(--mint)}
+.door:nth-of-type(4) .door-e{background:var(--lav)}
+.door:nth-of-type(5) .door-e{background:var(--blush)}
+
+/* rollout helpers */
+.has-deco{position:relative;overflow:hidden}
+.has-deco>*:not(.deco){position:relative;z-index:1}
+.deco{position:absolute;pointer-events:none;z-index:0}
+.dot-bg{background-image:radial-gradient(rgba(17,17,17,.09) 1.4px,transparent 1.6px);background-size:22px 22px}
+.btn-d{text-decoration:none;color:#111;border:1.5px solid #111;transition:background .3s,color .3s}
+.btn-d:hover{background:#111;color:#F2EFE8}
+.tiles-rot>*:nth-child(6n+1){background:var(--sun) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+2){background:var(--mint) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+3){background:var(--blush) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+4){background:var(--lav) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+5){background:var(--night) !important;color:#F2EFE8 !important}
+.tiles-rot>*:nth-child(6n+6){background:var(--cream) !important;color:#111 !important}
+.chips-rot>*:nth-child(5n+1){background:var(--sun) !important}
+.chips-rot>*:nth-child(5n+2){background:var(--mint) !important}
+.chips-rot>*:nth-child(5n+3){background:var(--blush) !important}
+.chips-rot>*:nth-child(5n+4){background:var(--lav) !important}
+.chips-rot>*:nth-child(5n+5){background:#FFFFFF !important}
+@media (max-width: 760px){.deco-dsk{display:none}}
+.vpill{display:inline-block;padding:0 .14em;border-radius:.12em;color:#111}
 /*shared:end*/
 </style>
 </helmet>
@@ -299,12 +359,14 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 <div class="mbar" aria-label="Quick actions"><a class="btn-o" href="Site-Contact.dc.html">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
 <!--guide:end-->
-<section style="background: #E6E1D6; color: #111">
+<section class="has-deco" style="background: var(--orange); color: #111">
+<span class="deco shp shp-star spin" aria-hidden="true" style="right: -80px; top: -90px; width: 300px; aspect-ratio: 1; background: var(--sun)"></span>
+<span class="deco pat-tri" aria-hidden="true" style="left: 0; right: 0; bottom: 0; height: 18px; background: var(--sun)"></span>
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(20px, 5vw, 28px) clamp(45px, 8vw, 104px)">
-<nav aria-label="Breadcrumb" style="font-size: 14px; color: #45423C; margin-bottom: 28px"><a class="nd" href="Site-Services.dc.html">Expertise</a> <span aria-hidden="true">/</span> <span style="color: #111">{{svc.name}}</span></nav>
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #1F120C; margin-bottom: 28px"><a class="nd" href="Site-Services.dc.html">Expertise</a> <span aria-hidden="true">/</span> <span style="color: #111">{{svc.name}}</span></nav>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 48px 72px; align-items: start">
 <div>
-<p class="sg" style="margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.03em">Make it <span style="color: #F2EFE8; background: #111; padding: 0 10px; border-radius: 6px">land.</span></p>
+<p class="sg" style="margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.03em">Make it <span style="color: #F2EFE8; background: #111; padding: 0 10px; border-radius: 6px">land. 🚀</span></p>
 <h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(46px, 6vw, 92px); line-height: 0.94; letter-spacing: -0.055em">{{svc.title}}</h1>
 <p style="margin: 30px 0 0; max-width: 600px; font-size: 20px; line-height: 1.55">{{svc.intro}}</p>
 <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
@@ -347,7 +409,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 </div>
 </section>
-<section style="background: #111; color: #F2EFE8; overflow: hidden">
+<section style="background: var(--night); color: #F2EFE8; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px) 0">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">Launch day, in creative</p>
 <h2 class="sg reveal" style="margin: 0; max-width: 980px; font-weight: 600; font-size: clamp(40px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">Real launches, shipped with product, sales and partners.</h2>
@@ -392,7 +454,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 </section>
 
-<section style="background: #111; color: #F2EFE8">
+<section style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">How it works</p>
 <h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
@@ -425,7 +487,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 </section>
 
-<section style="background: #E6E1D6; color: #111">
+<section style="background: var(--cream); color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 112px) clamp(20px, 5vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
 <sc-if value="{{svc.tool}}" hint-placeholder-val="{{ true }}">
 <a class="card-l" href="{{svc.tool.href}}" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 14px; background: #111; color: #F2EFE8; box-sizing: border-box">
@@ -525,9 +587,9 @@ class Component extends DCLogic {
         ],
         proofTitle: 'Launches that reached sales, not just the news.',
         cases: [
-          { client: 'RemotePass × Certn', year: '2024', big: '270+', title: 'The partnership launch that went global', result: 'Media pickups including Yahoo Finance, Fox and NBC, and enterprise conversations in regulated industries.', href: 'Site-Work.dc.html#certn', bg: '#111', fg: '#F2EFE8' },
-          { client: 'RemotePass', year: '2024–25', big: '134%', title: 'A launch program built for pipeline', result: 'GTM for 15+ launches, including Org Chart, Time-Off, Local Payroll, Open APIs and Wafeq.', href: 'Site-Work.dc.html#launches', bg: '#E6E1D6', fg: '#111' },
-          { client: 'RemotePass · Ask AI', year: 'Feature launch', big: 'Record', title: 'Everyone was selling AI. We sold the answer.', result: 'MQL performance after the launch, from one story carried across the landing page, video and sales enablement.', href: 'Site-Work.dc.html#askai', bg: '#E6E1D6', fg: '#111' }
+          { client: 'RemotePass × Certn', year: '2024', big: '270+', title: 'The partnership launch that went global', result: 'Media pickups including Yahoo Finance, Fox and NBC, and enterprise conversations in regulated industries.', href: 'Site-Work.dc.html#certn', bg: 'var(--night)', fg: '#F2EFE8' },
+          { client: 'RemotePass', year: '2024–25', big: '134%', title: 'A launch program built for pipeline', result: 'GTM for 15+ launches, including Org Chart, Time-Off, Local Payroll, Open APIs and Wafeq.', href: 'Site-Work.dc.html#launches', bg: 'var(--blush)', fg: '#111' },
+          { client: 'RemotePass · Ask AI', year: 'Feature launch', big: 'Record', title: 'Everyone was selling AI. We sold the answer.', result: 'MQL performance after the launch, from one story carried across the landing page, video and sales enablement.', href: 'Site-Work.dc.html#askai', bg: 'var(--blush)', fg: '#111' }
         ],
         hasQuote: true, quote: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', quoteName: 'Wesley Hattingh', quoteOrg: 'RemotePass',
         note: 'My Product Marketing Alliance piece covers the systems I built to coordinate the first 15 of these launches.',

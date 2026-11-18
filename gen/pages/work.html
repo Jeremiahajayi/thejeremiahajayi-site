@@ -1,12 +1,15 @@
-<section style="background: #F2EFE8; color: #111; overflow: hidden">
+<section class="has-deco dot-bg" style="background-color: var(--cream); color: #111; overflow: hidden">
+<span class="deco shp shp-flower spin" aria-hidden="true" style="right: -110px; top: -110px; width: 340px; aspect-ratio: 1; background: var(--sun)"></span>
+<span class="deco deco-dsk shp shp-star floaty" aria-hidden="true" style="right: 22%; top: 70px; width: 64px; aspect-ratio: 1; background: var(--mint)"></span>
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 120px) clamp(20px, 5vw, 28px) clamp(40px, 5vw, 64px)">
 <p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #111">Work · 2018 to 2026</p>
-<h1 class="sg" style="margin: 0; max-width: 1120px; font-weight: 600; font-size: clamp(52px, 7.4vw, 116px); line-height: 0.92; letter-spacing: -0.058em">Eight years of making good products <span style="color: #C23A0E">easier to choose.</span></h1>
+<h1 class="sg" style="margin: 0; max-width: 1120px; font-weight: 600; font-size: clamp(52px, 7.4vw, 116px); line-height: 0.92; letter-spacing: -0.058em">Eight years of making good products <span class="vpill" style="background: var(--sun)">easier to choose.</span></h1>
 <p style="margin: 32px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #2D2B27">Six projects in depth, then the rest. For each one: what I was responsible for, what I made, and what changed.</p>
-<div class="m2" style="margin-top: clamp(44px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 28px; border-top: 2px solid #111; padding-top: 26px">
-<sc-for list="{{headline}}" as="h" hint-placeholder-count="4">
-<div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 76px); line-height: 0.86; letter-spacing: -0.06em; color: {{h.color}}">{{h.big}}</p><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #2D2B27">{{h.label}}</p></div>
-</sc-for>
+<div class="bento" role="list" aria-label="Results in brief">
+<div class="bt bt-1" role="listitem"><span class="pat-rays bt-rays" aria-hidden="true"></span><p class="sg bt-n">$3M+</p><p class="bt-l">pipeline influenced across my work</p></div>
+<div class="bt bt-2" role="listitem"><span class="shp shp-flower spin bt-sh" aria-hidden="true"></span><p class="sg bt-n">20+</p><p class="bt-l">product launches led</p></div>
+<div class="bt bt-3" role="listitem"><span class="shp shp-star floaty bt-sh" aria-hidden="true"></span><p class="sg bt-n">#1</p><p class="bt-l">above the BBC on Google for Stears</p></div>
+<div class="bt bt-4" role="listitem"><span class="pat-tri bt-tri" aria-hidden="true"></span><p class="sg bt-n">270+</p><p class="bt-l">media pickups for one launch</p></div>
 </div>
 </div>
 <div class="wall-wrap" style="padding: 8px 0 clamp(56px, 7vw, 88px); overflow: hidden">
@@ -28,9 +31,9 @@
 </div>
 </nav>
 
-<section id="stears" style="background: #111; color: #F2EFE8; scroll-margin-top: 56px">
+<section id="stears" style="background: var(--night); color: #F2EFE8; scroll-margin-top: 56px">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg" style="color: #F2EFE8; font-weight: 700">01</span><span style="color: #F2EFE8">Stears Elections · 2023</span><span>Content & organic growth</span><a class="nl" href="Site-Service-Content.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg num-b shp shp-flower" style="background: var(--sun); color: #111">01</span><span style="color: #F2EFE8">Stears Elections · 2023</span><span>Content & organic growth</span><a class="nl" href="Site-Service-Content.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px 72px; align-items: start">
 <div class="reveal">
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(42px, 5vw, 78px); line-height: 0.95; letter-spacing: -0.055em">How a new election tracker <span style="color: #F2EFE8">beat the BBC</span> on Google.</h2>
@@ -67,7 +70,7 @@
 </section>
 <section id="certn" style="background: #F2EFE8; color: #111; scroll-margin-top: 56px">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg" style="color: #111; font-weight: 700">02</span><span style="color: #111">RemotePass × Certn · 2024</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--mint); color: #111">02</span><span style="color: #111">RemotePass × Certn · 2024</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; padding: 28px 0 32px; border-top: 6px solid #111; border-bottom: 1px solid #111">
 <p style="margin: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase"><span>Press release</span><span style="color: #6B675F">Dubai, UAE</span><span style="color: #6B675F">Global release</span></p>
 <h2 class="sg reveal" style="margin: 18px 0 0; max-width: 1180px; font-weight: 600; font-size: clamp(36px, 4.8vw, 72px); line-height: 0.98; letter-spacing: -0.05em">RemotePass partners with Certn to launch employee background checks in over 190 countries</h2>
@@ -99,7 +102,7 @@
 
 <section id="launches" style="background: #FFFFFF; color: #111; scroll-margin-top: 56px; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px) 0">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #E6E1D6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg" style="color: #111; font-weight: 700">03</span><span style="color: #111">RemotePass · 2024–25</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #E6E1D6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--blush); color: #111">03</span><span style="color: #111">RemotePass · 2024–25</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 28px 72px; align-items: end; justify-content: space-between">
 <h2 class="sg reveal" style="margin: 0; max-width: 820px; font-weight: 600; font-size: clamp(42px, 5vw, 78px); line-height: 0.95; letter-spacing: -0.055em">After Certn, a launch <span style="color: #111">every few weeks.</span></h2>
 <p style="margin: 0; max-width: 440px; font-size: 18px; line-height: 1.6; color: #2D2B27">I led GTM and product positioning across EMEA, North America and APAC, and turned launches into a repeatable system that product, sales and partners could rely on.</p>
@@ -117,7 +120,7 @@
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 72px">
 <div>
 <p style="margin: 0 0 16px; font-size: 14px; font-weight: 700; color: #111">Launch log</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<div class="chips-rot" style="display: flex; flex-wrap: wrap; gap: 8px">
 <sc-for list="{{launches.log}}" as="g" hint-placeholder-count="16"><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">{{g.t}}</span></sc-for>
 </div>
 <p style="margin: 18px 0 0; font-size: 15px; line-height: 1.6; color: #45423C">Features, integrations and market launches, in a year company revenue grew 134%, from $1.1M to $2.57M.</p>
@@ -138,9 +141,9 @@
 </ol>
 </div>
 </section>
-<section id="askai" style="background: #E6E1D6; color: #111; scroll-margin-top: 56px; overflow: hidden">
+<section id="askai" style="background: var(--cream); color: #111; scroll-margin-top: 56px; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid rgba(17,17,17,.3); font-size: 14px; font-weight: 600; color: #3A1C10"><span class="sg" style="color: #111; font-weight: 700">04</span><span style="color: #111">RemotePass · Ask AI</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid rgba(17,17,17,.3); font-size: 14px; font-weight: 600; color: #3A1C10"><span class="sg num-b shp shp-flower" style="background: var(--lav); color: #111">04</span><span style="color: #111">RemotePass · Ask AI</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
 <div>
 <h2 class="sg reveal" style="margin: 0; font-weight: 600; font-size: clamp(44px, 5.4vw, 84px); line-height: 1.04; letter-spacing: -0.055em">Everyone was selling AI. <span style="background: #111; color: #F2EFE8; padding: 0 0.1em; border-radius: 0.08em; -webkit-box-decoration-break: clone; box-decoration-break: clone">We sold the answer.</span></h2>
@@ -175,9 +178,9 @@
 </div>
 </div>
 </section>
-<section id="engine" style="background: #111; color: #F2EFE8; scroll-margin-top: 56px; overflow: hidden">
+<section id="engine" style="background: var(--night); color: #F2EFE8; scroll-margin-top: 56px; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg" style="color: #F2EFE8; font-weight: 700">05</span><span style="color: #F2EFE8">RemotePass · 2024–25</span><span>Content & organic growth</span><a class="nl" href="Site-Service-Content.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg num-b shp shp-flower" style="background: var(--leaf); color: #FFFFFF">05</span><span style="color: #F2EFE8">RemotePass · 2024–25</span><span>Content & organic growth</span><a class="nl" href="Site-Service-Content.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 56px 72px; align-items: center">
 <div class="reveal">
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(42px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">A content engine for global hiring, with <span style="color: #F2EFE8">an English–Arabic hub</span> for MENA.</h2>
@@ -226,7 +229,7 @@
 
 <section id="xofu" style="background: #F2EFE8; color: #111; scroll-margin-top: 56px">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg" style="color: #111; font-weight: 700">06</span><span style="color: #111">Xofu · 2026</span><span>Positioning & messaging</span><a class="nd" href="Site-Service-Positioning.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--orange); color: #111">06</span><span style="color: #111">Xofu · 2026</span><span>Positioning & messaging</span><a class="nd" href="Site-Service-Positioning.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <p style="margin: 48px 0 0; max-width: 680px; font-size: 18px; line-height: 1.65; color: #2D2B27">Xofu tracks how ChatGPT, Perplexity, Claude and Gemini cite and recommend brands. It was a new category, and buyers had no simple way to see why it mattered to them. I gave the whole story one question to answer.</p>
 <h2 class="sg reveal" style="margin: 28px 0 0; font-weight: 700; font-size: clamp(56px, 9.4vw, 152px); line-height: 0.88; letter-spacing: -0.07em">“Does AI <span style="color: #C23A0E">recommend us?</span>”</h2>
 <div style="margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; align-items: start">
@@ -258,7 +261,7 @@
 </sc-for>
 </div>
 </div>
-<div class="mswipe" style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
+<div class="mswipe tiles-rot" style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
 <sc-for list="{{shown}}" as="p" hint-placeholder-count="9">
 <a class="card-l" data-k="{{p.k}}" href="{{p.href}}" style="display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 260px; padding: 24px; border-radius: 12px; background: {{p.bg}}; color: {{p.fg}}; box-sizing: border-box">
 <span style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700"><span>{{p.client}}</span><span style="opacity: .75">{{p.year}}</span></span>
@@ -274,7 +277,7 @@
 </sc-for>
 </div>
 </div>
-</section><section aria-labelledby="next-h" style="background: #111; color: #F2EFE8">
+</section><section aria-labelledby="next-h" style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 id="next-h" class="sg" style="margin: 0; max-width: 900px; font-weight: 700; font-size: clamp(48px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.065em">Seen the work? <span style="color: #F2EFE8">Here’s what’s next.</span></h2>
 <div style="margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">

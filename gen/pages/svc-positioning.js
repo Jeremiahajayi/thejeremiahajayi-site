@@ -29,8 +29,8 @@
         ],
         proofTitle: 'Clearer stories, measurable results.',
         cases: [
-          { client: 'Xofu', year: '2026', big: '2x', title: 'Giving a new AI product one clear question to answer', result: 'Repositioned around “Does AI recommend us?”; the launch email hit a 3.7% click-through rate.', href: 'Site-Work.dc.html#xofu', bg: '#111', fg: '#F2EFE8' },
-          { client: 'VEC Studio', year: '2021–22', big: '+49%', title: 'Product-led stories for SEON, Kittl and Blackthorn', result: 'Monthly organic traffic growth for a B2B SaaS client.', href: 'Site-Work.dc.html#index', bg: '#E6E1D6', fg: '#111' }
+          { client: 'Xofu', year: '2026', big: '2x', title: 'Giving a new AI product one clear question to answer', result: 'Repositioned around “Does AI recommend us?”; the launch email hit a 3.7% click-through rate.', href: 'Site-Work.dc.html#xofu', bg: 'var(--night)', fg: '#F2EFE8' },
+          { client: 'VEC Studio', year: '2021–22', big: '+49%', title: 'Product-led stories for SEON, Kittl and Blackthorn', result: 'Monthly organic traffic growth for a B2B SaaS client.', href: 'Site-Work.dc.html#index', bg: 'var(--sun)', fg: '#111' }
         ],
         hasQuote: false, quote: '', quoteName: '', quoteOrg: '', note: '',
         tool: null,

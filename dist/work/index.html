@@ -275,6 +275,66 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(6deg)}}
 @media (prefers-reduced-motion: reduce){.spin,.spin-r,.floaty{animation:none}}
+/* results bento */
+.bento{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.bt{position:relative;overflow:hidden;border-radius:22px;padding:clamp(22px,2.6vw,34px);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;color:#111}
+.bt-n{position:relative;margin:0;font-weight:700;font-size:clamp(56px,6vw,96px);line-height:.85;letter-spacing:-.06em}
+.bt-l{position:relative;margin:10px 0 0;font-size:15px;line-height:1.45;font-weight:600;max-width:260px}
+.bt-1{grid-row:span 2;background:var(--sun);min-height:380px}
+.bt-1 .bt-n{font-size:clamp(80px,9vw,150px)}
+.bt-2{background:var(--leaf);color:#FFFFFF}
+.bt-3{background:var(--mint)}
+.bt-4{grid-column:span 2;background:var(--orange)}
+.bt-rays{position:absolute;right:-30%;top:-40%;width:110%;aspect-ratio:1;color:rgba(255,90,42,.55);border-radius:50%}
+.bt-sh{position:absolute;right:-26px;top:-26px;width:120px;aspect-ratio:1}
+.bt-2 .bt-sh{background:rgba(255,255,255,.22)}
+.bt-3 .bt-sh{background:var(--leaf);opacity:.35;width:90px;right:16px;top:16px}
+.bt-tri{position:absolute;right:0;top:0;width:46%;height:100%;background:var(--sun);opacity:.9}
+@media (max-width: 760px){.bento{grid-template-columns:1fr 1fr}.bt-1{grid-row:auto;grid-column:span 2;min-height:220px}.bt-4{grid-column:span 2}.bt{min-height:150px}.bt-n{font-size:52px}.bt-1 .bt-n{font-size:84px}.bt-tri{width:34%}}
+/* case number badges */
+.num-b{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;font-size:14px;font-weight:700;color:#111}
+/* disciplines as tiles */
+.xp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.xp{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;min-height:440px;padding:clamp(24px,2.6vw,34px);border-radius:24px;text-decoration:none;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.xp:hover{transform:translateY(-8px) rotate(-.6deg);color:#111}
+.xp-art{position:relative;width:110px;height:110px;margin-bottom:auto}
+.xp-shape{position:absolute;inset:0}
+.xp-emo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:46px;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.xp:hover .xp-emo{transform:scale(1.18) rotate(-10deg)}
+.xp-verb{font-size:clamp(56px,5.6vw,88px);font-weight:700;line-height:.85;letter-spacing:-.06em}
+.xp-name{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.xp-long{font-size:16px;line-height:1.55;color:#2D2B27}
+.xp-proof{font-size:13.5px;line-height:1.5;color:#2D2B27}
+.xp-go{margin-top:6px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:46px;padding:0 18px;border-radius:999px;background:#111;color:#F2EFE8;font-weight:700;font-size:15px}
+.xp:hover .xp-go .arr{transform:translateX(5px)}
+@media (max-width: 900px){.xp-grid{grid-template-columns:1fr}.xp{min-height:0}.xp-art{width:84px;height:84px}.xp-emo{font-size:36px}}
+/* contact doors */
+.door-e{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;font-size:20px;background:var(--sun)}
+.door:nth-of-type(2) .door-e{background:var(--orange)}
+.door:nth-of-type(3) .door-e{background:var(--mint)}
+.door:nth-of-type(4) .door-e{background:var(--lav)}
+.door:nth-of-type(5) .door-e{background:var(--blush)}
+
+/* rollout helpers */
+.has-deco{position:relative;overflow:hidden}
+.has-deco>*:not(.deco){position:relative;z-index:1}
+.deco{position:absolute;pointer-events:none;z-index:0}
+.dot-bg{background-image:radial-gradient(rgba(17,17,17,.09) 1.4px,transparent 1.6px);background-size:22px 22px}
+.btn-d{text-decoration:none;color:#111;border:1.5px solid #111;transition:background .3s,color .3s}
+.btn-d:hover{background:#111;color:#F2EFE8}
+.tiles-rot>*:nth-child(6n+1){background:var(--sun) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+2){background:var(--mint) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+3){background:var(--blush) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+4){background:var(--lav) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+5){background:var(--night) !important;color:#F2EFE8 !important}
+.tiles-rot>*:nth-child(6n+6){background:var(--cream) !important;color:#111 !important}
+.chips-rot>*:nth-child(5n+1){background:var(--sun) !important}
+.chips-rot>*:nth-child(5n+2){background:var(--mint) !important}
+.chips-rot>*:nth-child(5n+3){background:var(--blush) !important}
+.chips-rot>*:nth-child(5n+4){background:var(--lav) !important}
+.chips-rot>*:nth-child(5n+5){background:#FFFFFF !important}
+@media (max-width: 760px){.deco-dsk{display:none}}
+.vpill{display:inline-block;padding:0 .14em;border-radius:.12em;color:#111}
 /*shared:end*/
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","url":"https://www.thejeremiahajayi.com/work/","name":"Work and case studies · Jeremiah Ajayi","author":{"@id":"https://www.thejeremiahajayi.com/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thejeremiahajayi.com/"},{"@type":"ListItem","position":2,"name":"Work","item":"https://www.thejeremiahajayi.com/work/"}]}]}</script>
@@ -313,21 +373,18 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 <div class="mbar" aria-label="Quick actions"><a class="btn-o" href="/contact/">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
 <!--guide:end-->
-<section style="background: #F2EFE8; color: #111; overflow: hidden">
+<section class="has-deco dot-bg" style="background-color: var(--cream); color: #111; overflow: hidden">
+<span class="deco shp shp-flower spin" aria-hidden="true" style="right: -110px; top: -110px; width: 340px; aspect-ratio: 1; background: var(--sun)"></span>
+<span class="deco deco-dsk shp shp-star floaty" aria-hidden="true" style="right: 22%; top: 70px; width: 64px; aspect-ratio: 1; background: var(--mint)"></span>
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 120px) clamp(20px, 5vw, 28px) clamp(40px, 5vw, 64px)">
 <p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #111">Work · 2018 to 2026</p>
-<h1 class="sg" style="margin: 0; max-width: 1120px; font-weight: 600; font-size: clamp(52px, 7.4vw, 116px); line-height: 0.92; letter-spacing: -0.058em">Eight years of making good products <span style="color: #C23A0E">easier to choose.</span></h1>
+<h1 class="sg" style="margin: 0; max-width: 1120px; font-weight: 600; font-size: clamp(52px, 7.4vw, 116px); line-height: 0.92; letter-spacing: -0.058em">Eight years of making good products <span class="vpill" style="background: var(--sun)">easier to choose.</span></h1>
 <p style="margin: 32px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #2D2B27">Six projects in depth, then the rest. For each one: what I was responsible for, what I made, and what changed.</p>
-<div class="m2" style="margin-top: clamp(44px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 28px; border-top: 2px solid #111; padding-top: 26px">
-
-<div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 76px); line-height: 0.86; letter-spacing: -0.06em; color: #111">$3M+</p><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #2D2B27">pipeline influenced across my work</p></div>
-
-<div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 76px); line-height: 0.86; letter-spacing: -0.06em; color: #111">20+</p><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #2D2B27">product launches led</p></div>
-
-<div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 76px); line-height: 0.86; letter-spacing: -0.06em; color: #111">#1</p><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #2D2B27">above the BBC on Google for Stears</p></div>
-
-<div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 76px); line-height: 0.86; letter-spacing: -0.06em; color: #111">270+</p><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #2D2B27">media pickups for one launch</p></div>
-
+<div class="bento" role="list" aria-label="Results in brief">
+<div class="bt bt-1" role="listitem"><span class="pat-rays bt-rays" aria-hidden="true"></span><p class="sg bt-n">$3M+</p><p class="bt-l">pipeline influenced across my work</p></div>
+<div class="bt bt-2" role="listitem"><span class="shp shp-flower spin bt-sh" aria-hidden="true"></span><p class="sg bt-n">20+</p><p class="bt-l">product launches led</p></div>
+<div class="bt bt-3" role="listitem"><span class="shp shp-star floaty bt-sh" aria-hidden="true"></span><p class="sg bt-n">#1</p><p class="bt-l">above the BBC on Google for Stears</p></div>
+<div class="bt bt-4" role="listitem"><span class="pat-tri bt-tri" aria-hidden="true"></span><p class="sg bt-n">270+</p><p class="bt-l">media pickups for one launch</p></div>
 </div>
 </div>
 <div class="wall-wrap" style="padding: 8px 0 clamp(56px, 7vw, 88px); overflow: hidden">
@@ -405,9 +462,9 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 </nav>
 
-<section id="stears" style="background: #111; color: #F2EFE8; scroll-margin-top: 56px">
+<section id="stears" style="background: var(--night); color: #F2EFE8; scroll-margin-top: 56px">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg" style="color: #F2EFE8; font-weight: 700">01</span><span style="color: #F2EFE8">Stears Elections · 2023</span><span>Content & organic growth</span><a class="nl" href="/services/content-growth/" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg num-b shp shp-flower" style="background: var(--sun); color: #111">01</span><span style="color: #F2EFE8">Stears Elections · 2023</span><span>Content & organic growth</span><a class="nl" href="/services/content-growth/" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px 72px; align-items: start">
 <div class="reveal">
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(42px, 5vw, 78px); line-height: 0.95; letter-spacing: -0.055em">How a new election tracker <span style="color: #F2EFE8">beat the BBC</span> on Google.</h2>
@@ -444,7 +501,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </section>
 <section id="certn" style="background: #F2EFE8; color: #111; scroll-margin-top: 56px">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg" style="color: #111; font-weight: 700">02</span><span style="color: #111">RemotePass × Certn · 2024</span><span>Launches & go-to-market</span><a class="nd" href="/services/product-launch-gtm/" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--mint); color: #111">02</span><span style="color: #111">RemotePass × Certn · 2024</span><span>Launches & go-to-market</span><a class="nd" href="/services/product-launch-gtm/" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; padding: 28px 0 32px; border-top: 6px solid #111; border-bottom: 1px solid #111">
 <p style="margin: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase"><span>Press release</span><span style="color: #6B675F">Dubai, UAE</span><span style="color: #6B675F">Global release</span></p>
 <h2 class="sg reveal" style="margin: 18px 0 0; max-width: 1180px; font-weight: 600; font-size: clamp(36px, 4.8vw, 72px); line-height: 0.98; letter-spacing: -0.05em">RemotePass partners with Certn to launch employee background checks in over 190 countries</h2>
@@ -480,7 +537,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 <section id="launches" style="background: #FFFFFF; color: #111; scroll-margin-top: 56px; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px) 0">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #E6E1D6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg" style="color: #111; font-weight: 700">03</span><span style="color: #111">RemotePass · 2024–25</span><span>Launches & go-to-market</span><a class="nd" href="/services/product-launch-gtm/" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #E6E1D6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--blush); color: #111">03</span><span style="color: #111">RemotePass · 2024–25</span><span>Launches & go-to-market</span><a class="nd" href="/services/product-launch-gtm/" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 28px 72px; align-items: end; justify-content: space-between">
 <h2 class="sg reveal" style="margin: 0; max-width: 820px; font-weight: 600; font-size: clamp(42px, 5vw, 78px); line-height: 0.95; letter-spacing: -0.055em">After Certn, a launch <span style="color: #111">every few weeks.</span></h2>
 <p style="margin: 0; max-width: 440px; font-size: 18px; line-height: 1.6; color: #2D2B27">I led GTM and product positioning across EMEA, North America and APAC, and turned launches into a repeatable system that product, sales and partners could rely on.</p>
@@ -523,7 +580,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 72px">
 <div>
 <p style="margin: 0 0 16px; font-size: 14px; font-weight: 700; color: #111">Launch log</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<div class="chips-rot" style="display: flex; flex-wrap: wrap; gap: 8px">
 <span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Ask AI</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Background checks (Certn)</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Time-Off Policies</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Org Chart</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Local Payroll</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">KSA Payroll</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Open APIs</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Automations</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Bill Pay</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Bulk Actions</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Calendar revamp</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Contractor of Record</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Direct Employees</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">QuickBooks</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Zapier</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Slack</span><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">Wafeq</span>
 </div>
 <p style="margin: 18px 0 0; font-size: 15px; line-height: 1.6; color: #45423C">Features, integrations and market launches, in a year company revenue grew 134%, from $1.1M to $2.57M.</p>
@@ -544,9 +601,9 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </ol>
 </div>
 </section>
-<section id="askai" style="background: #E6E1D6; color: #111; scroll-margin-top: 56px; overflow: hidden">
+<section id="askai" style="background: var(--cream); color: #111; scroll-margin-top: 56px; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid rgba(17,17,17,.3); font-size: 14px; font-weight: 600; color: #3A1C10"><span class="sg" style="color: #111; font-weight: 700">04</span><span style="color: #111">RemotePass · Ask AI</span><span>Launches & go-to-market</span><a class="nd" href="/services/product-launch-gtm/" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid rgba(17,17,17,.3); font-size: 14px; font-weight: 600; color: #3A1C10"><span class="sg num-b shp shp-flower" style="background: var(--lav); color: #111">04</span><span style="color: #111">RemotePass · Ask AI</span><span>Launches & go-to-market</span><a class="nd" href="/services/product-launch-gtm/" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
 <div>
 <h2 class="sg reveal" style="margin: 0; font-weight: 600; font-size: clamp(44px, 5.4vw, 84px); line-height: 1.04; letter-spacing: -0.055em">Everyone was selling AI. <span style="background: #111; color: #F2EFE8; padding: 0 0.1em; border-radius: 0.08em; -webkit-box-decoration-break: clone; box-decoration-break: clone">We sold the answer.</span></h2>
@@ -581,9 +638,9 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 </div>
 </section>
-<section id="engine" style="background: #111; color: #F2EFE8; scroll-margin-top: 56px; overflow: hidden">
+<section id="engine" style="background: var(--night); color: #F2EFE8; scroll-margin-top: 56px; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg" style="color: #F2EFE8; font-weight: 700">05</span><span style="color: #F2EFE8">RemotePass · 2024–25</span><span>Content & organic growth</span><a class="nl" href="/services/content-growth/" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg num-b shp shp-flower" style="background: var(--leaf); color: #FFFFFF">05</span><span style="color: #F2EFE8">RemotePass · 2024–25</span><span>Content & organic growth</span><a class="nl" href="/services/content-growth/" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 56px 72px; align-items: center">
 <div class="reveal">
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(42px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">A content engine for global hiring, with <span style="color: #F2EFE8">an English–Arabic hub</span> for MENA.</h2>
@@ -636,7 +693,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 <section id="xofu" style="background: #F2EFE8; color: #111; scroll-margin-top: 56px">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg" style="color: #111; font-weight: 700">06</span><span style="color: #111">Xofu · 2026</span><span>Positioning & messaging</span><a class="nd" href="/services/positioning-messaging/" style="margin-left: auto; font-weight: 700">The service →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--orange); color: #111">06</span><span style="color: #111">Xofu · 2026</span><span>Positioning & messaging</span><a class="nd" href="/services/positioning-messaging/" style="margin-left: auto; font-weight: 700">The service →</a></div>
 <p style="margin: 48px 0 0; max-width: 680px; font-size: 18px; line-height: 1.65; color: #2D2B27">Xofu tracks how ChatGPT, Perplexity, Claude and Gemini cite and recommend brands. It was a new category, and buyers had no simple way to see why it mattered to them. I gave the whole story one question to answer.</p>
 <h2 class="sg reveal" style="margin: 28px 0 0; font-weight: 700; font-size: clamp(56px, 9.4vw, 152px); line-height: 0.88; letter-spacing: -0.07em">“Does AI <span style="color: #C23A0E">recommend us?</span>”</h2>
 <div style="margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; align-items: start">
@@ -674,7 +731,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 </div>
 </div>
-<div class="mswipe" style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
+<div class="mswipe tiles-rot" style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
 
 <a class="card-l" data-k="content" href="#stears" style="display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 260px; padding: 24px; border-radius: 12px; background: #111; color: #F2EFE8; box-sizing: border-box">
 <span style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700"><span>Stears</span><span style="opacity: .75">2023</span></span>
@@ -834,7 +891,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 </div>
 </div>
-</section><section aria-labelledby="next-h" style="background: #111; color: #F2EFE8">
+</section><section aria-labelledby="next-h" style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 id="next-h" class="sg" style="margin: 0; max-width: 900px; font-weight: 700; font-size: clamp(48px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.065em">Seen the work? <span style="color: #F2EFE8">Here’s what’s next.</span></h2>
 <div style="margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">

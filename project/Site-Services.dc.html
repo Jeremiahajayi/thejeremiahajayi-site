@@ -263,6 +263,66 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(6deg)}}
 @media (prefers-reduced-motion: reduce){.spin,.spin-r,.floaty{animation:none}}
+/* results bento */
+.bento{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.bt{position:relative;overflow:hidden;border-radius:22px;padding:clamp(22px,2.6vw,34px);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;color:#111}
+.bt-n{position:relative;margin:0;font-weight:700;font-size:clamp(56px,6vw,96px);line-height:.85;letter-spacing:-.06em}
+.bt-l{position:relative;margin:10px 0 0;font-size:15px;line-height:1.45;font-weight:600;max-width:260px}
+.bt-1{grid-row:span 2;background:var(--sun);min-height:380px}
+.bt-1 .bt-n{font-size:clamp(80px,9vw,150px)}
+.bt-2{background:var(--leaf);color:#FFFFFF}
+.bt-3{background:var(--mint)}
+.bt-4{grid-column:span 2;background:var(--orange)}
+.bt-rays{position:absolute;right:-30%;top:-40%;width:110%;aspect-ratio:1;color:rgba(255,90,42,.55);border-radius:50%}
+.bt-sh{position:absolute;right:-26px;top:-26px;width:120px;aspect-ratio:1}
+.bt-2 .bt-sh{background:rgba(255,255,255,.22)}
+.bt-3 .bt-sh{background:var(--leaf);opacity:.35;width:90px;right:16px;top:16px}
+.bt-tri{position:absolute;right:0;top:0;width:46%;height:100%;background:var(--sun);opacity:.9}
+@media (max-width: 760px){.bento{grid-template-columns:1fr 1fr}.bt-1{grid-row:auto;grid-column:span 2;min-height:220px}.bt-4{grid-column:span 2}.bt{min-height:150px}.bt-n{font-size:52px}.bt-1 .bt-n{font-size:84px}.bt-tri{width:34%}}
+/* case number badges */
+.num-b{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;font-size:14px;font-weight:700;color:#111}
+/* disciplines as tiles */
+.xp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.xp{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;min-height:440px;padding:clamp(24px,2.6vw,34px);border-radius:24px;text-decoration:none;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.xp:hover{transform:translateY(-8px) rotate(-.6deg);color:#111}
+.xp-art{position:relative;width:110px;height:110px;margin-bottom:auto}
+.xp-shape{position:absolute;inset:0}
+.xp-emo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:46px;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.xp:hover .xp-emo{transform:scale(1.18) rotate(-10deg)}
+.xp-verb{font-size:clamp(56px,5.6vw,88px);font-weight:700;line-height:.85;letter-spacing:-.06em}
+.xp-name{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.xp-long{font-size:16px;line-height:1.55;color:#2D2B27}
+.xp-proof{font-size:13.5px;line-height:1.5;color:#2D2B27}
+.xp-go{margin-top:6px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:46px;padding:0 18px;border-radius:999px;background:#111;color:#F2EFE8;font-weight:700;font-size:15px}
+.xp:hover .xp-go .arr{transform:translateX(5px)}
+@media (max-width: 900px){.xp-grid{grid-template-columns:1fr}.xp{min-height:0}.xp-art{width:84px;height:84px}.xp-emo{font-size:36px}}
+/* contact doors */
+.door-e{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;font-size:20px;background:var(--sun)}
+.door:nth-of-type(2) .door-e{background:var(--orange)}
+.door:nth-of-type(3) .door-e{background:var(--mint)}
+.door:nth-of-type(4) .door-e{background:var(--lav)}
+.door:nth-of-type(5) .door-e{background:var(--blush)}
+
+/* rollout helpers */
+.has-deco{position:relative;overflow:hidden}
+.has-deco>*:not(.deco){position:relative;z-index:1}
+.deco{position:absolute;pointer-events:none;z-index:0}
+.dot-bg{background-image:radial-gradient(rgba(17,17,17,.09) 1.4px,transparent 1.6px);background-size:22px 22px}
+.btn-d{text-decoration:none;color:#111;border:1.5px solid #111;transition:background .3s,color .3s}
+.btn-d:hover{background:#111;color:#F2EFE8}
+.tiles-rot>*:nth-child(6n+1){background:var(--sun) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+2){background:var(--mint) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+3){background:var(--blush) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+4){background:var(--lav) !important;color:#111 !important}
+.tiles-rot>*:nth-child(6n+5){background:var(--night) !important;color:#F2EFE8 !important}
+.tiles-rot>*:nth-child(6n+6){background:var(--cream) !important;color:#111 !important}
+.chips-rot>*:nth-child(5n+1){background:var(--sun) !important}
+.chips-rot>*:nth-child(5n+2){background:var(--mint) !important}
+.chips-rot>*:nth-child(5n+3){background:var(--blush) !important}
+.chips-rot>*:nth-child(5n+4){background:var(--lav) !important}
+.chips-rot>*:nth-child(5n+5){background:#FFFFFF !important}
+@media (max-width: 760px){.deco-dsk{display:none}}
+.vpill{display:inline-block;padding:0 .14em;border-radius:.12em;color:#111}
 /*shared:end*/
 </style>
 </helmet>
@@ -299,15 +359,18 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 <div class="mbar" aria-label="Quick actions"><a class="btn-o" href="Site-Contact.dc.html">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
 <!--guide:end-->
-<section class="grid-bg">
+<section class="has-deco" style="background: var(--night); color: #F2EFE8">
+<span class="deco shp shp-flower spin" aria-hidden="true" style="right: -120px; top: -120px; width: 360px; aspect-ratio: 1; background: var(--sun); opacity: .95"></span>
+<span class="deco deco-dsk shp shp-clover floaty" aria-hidden="true" style="right: 26%; top: 90px; width: 70px; aspect-ratio: 1; background: var(--blush)"></span>
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 128px) clamp(20px, 5vw, 28px) clamp(45px, 8vw, 104px)">
 <p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #F2EFE8">Expertise</p>
-<h1 class="sg" style="margin: 0; max-width: 1140px; font-weight: 600; font-size: clamp(50px, 7vw, 112px); line-height: 0.92; letter-spacing: -0.058em">Marketing for B2B SaaS and technology companies: <span style="color: #FF5A2A">three services, one practice.</span></h1>
+<h1 class="sg" style="margin: 0; max-width: 1140px; font-weight: 600; font-size: clamp(50px, 7vw, 112px); line-height: 0.92; letter-spacing: -0.058em">Marketing for B2B SaaS and technology companies: <span class="vpill" style="background: var(--mint)">three services, one practice.</span></h1>
 <p style="margin: 32px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #D8D3C9">Choose by the problem you have, then by how you want to work. Research, SEO, AI search and sales enablement are how I do the work. These three are what the work is for.</p>
 <div style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
 <sc-for list="{{services}}" as="d" hint-placeholder-count="3">
-<a class="card-l" href="{{d.href}}" style="display: flex; flex-direction: column; gap: 16px; min-height: 340px; padding: 28px; border-radius: 14px; background: {{d.bg}}; color: {{d.fg}}; box-sizing: border-box">
-<span class="sg" style="font-weight: 700; font-size: clamp(52px, 5vw, 76px); line-height: 0.88; letter-spacing: -0.065em">{{d.verb}}</span>
+<a class="card-l" href="{{d.href}}" style="position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 16px; min-height: 380px; padding: 28px; border-radius: 22px; background: {{d.bg}}; color: {{d.fg}}; box-sizing: border-box">
+<span class="xp-art" aria-hidden="true" style="width: 84px; height: 84px; margin-bottom: 6px"><span class="shp xp-shape spin {{d.shp}}" style="background: {{d.shpc}}"></span><span class="xp-emo" style="font-size: 36px">{{d.emo}}</span></span>
+<span class="sg" style="font-weight: 700; font-size: clamp(52px, 5vw, 76px); line-height: 0.88; letter-spacing: -0.065em">{{d.verb}}.</span>
 <span class="card-t sg" style="font-size: 26px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; transition: color .3s">{{d.name}}</span>
 <span style="font-size: 15px; line-height: 1.55; opacity: .9"><strong>Choose this when</strong> {{d.when}}</span>
 <span style="margin-top: auto; display: flex; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid {{d.rule}}; font-size: 14px; font-weight: 700"><span>{{d.proof}}</span><span>See the service →</span></span>
@@ -351,7 +414,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 </section>
 
-<section style="background: #111; color: #F2EFE8">
+<section style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">How an engagement runs</p>
 <h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">From first call to measured result.</h2>
@@ -417,9 +480,9 @@ class Component extends DCLogic {
     return {
       time: this.state.time,
       services: [
-        { verb: 'Clear', name: 'Positioning & messaging', when: 'buyers can’t explain what you do, or a launch, raise or new market is coming.', proof: 'Xofu: 2x click-through', href: 'Site-Service-Positioning.dc.html', bg: '#F2EFE8', fg: '#111', rule: 'rgba(17,17,17,.2)' },
-        { verb: 'Land', name: 'Launches & go-to-market', when: 'releases get attention but don’t reach sales conversations.', proof: '20+ launches led', href: 'Site-Service-Launch.dc.html', bg: '#E6E1D6', fg: '#111', rule: 'rgba(17,17,17,.25)' },
-        { verb: 'Travel', name: 'Content & organic growth', when: 'content isn’t turning into pipeline, or AI answers recommend competitors.', proof: '174% organic growth', href: 'Site-Service-Content.dc.html', bg: '#F2EFE8', fg: '#111', rule: 'rgba(17,17,17,.2)' }
+        { verb: 'Clear', name: 'Positioning & messaging', when: 'buyers can’t explain what you do, or a launch, raise or new market is coming.', proof: 'Xofu: 2x click-through', href: 'Site-Service-Positioning.dc.html', bg: 'var(--sun)', fg: '#111', shp: 'shp-flower', shpc: 'var(--mint)', emo: '🔍', rule: 'rgba(17,17,17,.2)' },
+        { verb: 'Land', name: 'Launches & go-to-market', when: 'releases get attention but don’t reach sales conversations.', proof: '20+ launches led', href: 'Site-Service-Launch.dc.html', bg: 'var(--orange)', fg: '#111', shp: 'shp-star', shpc: 'var(--sun)', emo: '🚀', rule: 'rgba(17,17,17,.25)' },
+        { verb: 'Travel', name: 'Content & organic growth', when: 'content isn’t turning into pipeline, or AI answers recommend competitors.', proof: '174% organic growth', href: 'Site-Service-Content.dc.html', bg: 'var(--mint)', fg: '#111', shp: 'shp-clover', shpc: 'var(--leaf)', emo: '✈️', rule: 'rgba(17,17,17,.2)' }
       ],
       forWho: [ { t: 'B2B SaaS and technology companies, from seed to growth stage' }, { t: 'Founders who need senior marketing judgment before a full-time hire' }, { t: 'Marketing and product leaders who need a hands-on partner for a launch, a repositioning or a content engine' }, { t: 'Teams in Europe, North America, the Middle East and Africa' } ],
       notFor: [ { t: 'Teams looking for volume content without a strategy behind it' }, { t: 'Paid ads management as a standalone service' }, { t: 'Projects where success can’t be tied to a business outcome' } ],

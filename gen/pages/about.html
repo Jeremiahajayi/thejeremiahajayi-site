@@ -1,4 +1,5 @@
-<section class="grid-bg" style="background-color: #111; color: #F2EFE8; overflow: hidden">
+<section class="has-deco" style="background: var(--night); color: #F2EFE8; overflow: hidden">
+<span class="deco pat-rays" aria-hidden="true" style="right: -14%; top: -30%; width: 70%; aspect-ratio: 1; border-radius: 50%; color: rgba(255,200,61,.18)"></span>
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(45px, 8vw, 112px) clamp(20px, 5vw, 28px) clamp(50px, 9vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
 <div>
 <h1 style="margin: 0 0 24px; font-size: 15px; font-weight: 500; line-height: 1.5; color: #B5B0A6"><span style="color: #F2EFE8; font-weight: 700">Jeremiah Ajayi.</span> Marketing consultant for B2B SaaS and technology companies, based in Lagos.</h1>
@@ -7,8 +8,10 @@
 <p class="l3" style="margin: 32px 0 0; max-width: 560px; font-size: 19px; line-height: 1.6; color: #D8D3C9">Eight years of positioning, launches and content for companies in fintech, HR tech, AI and media. Before that, a law student who couldn’t stop writing. Now also the co-founder of EmpowerQ.</p>
 </div>
 <div style="position: relative; justify-self: center; width: min(100%, 460px)">
-<div aria-hidden="true" style="position: absolute; inset: 28px -18px -18px 28px; border-radius: 14px; background: #2B2A27"></div>
+<span class="shp shp-flower spin" aria-hidden="true" style="position: absolute; right: -64px; top: -64px; width: 230px; aspect-ratio: 1; background: var(--sun)"></span>
+<span class="shp shp-clover spin-r" aria-hidden="true" style="position: absolute; left: -40px; bottom: 18%; width: 96px; aspect-ratio: 1; background: var(--blush)"></span>
 <img class="photo-in" src="/_blob/ed98487bc78b8be08bddc3d53416cc60" alt="Jeremiah Ajayi, standing outside in Lagos" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 14px; background: #1C1C1B">
+<span class="shp shp-star floaty" aria-hidden="true" style="position: absolute; right: 8%; bottom: -26px; width: 66px; aspect-ratio: 1; background: var(--mint)"></span>
 </div>
 </div>
 </section>
@@ -74,7 +77,7 @@
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
-<div class="qgrid mswipe">
+<div class="qgrid mswipe tiles-rot">
 <sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
 <blockquote class="reveal" style="margin: 0; grid-column: {{q.col}}; padding: clamp(28px, 3vw, 44px); border-radius: 16px; background: {{q.bg}}; color: {{q.fg}}; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
 <p class="sg" style="margin: 0; font-size: {{q.size}}; font-weight: 500; line-height: 1.12; letter-spacing: -0.035em">“{{q.text}}”</p>
@@ -93,12 +96,12 @@
 </div>
 </section>
 
-<section id="now" style="background: #111; color: #F2EFE8">
+<section id="now" style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 class="sg" style="margin: 0; max-width: 980px; font-weight: 700; font-size: clamp(48px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.065em">Let’s work out <span style="color: #F2EFE8">the next chapter.</span></h2>
 <div style="margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
-<a class="path" href="Site-Contact.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #F2EFE8; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #111">💼 For employers and hiring managers</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">I’m open to senior product marketing, content and growth roles, remote or with relocation.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Get my CV →</span></a>
-<a class="path" href="Site-Services.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #E6E1D6; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700">🧭 For companies</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">Select consulting projects in positioning, launches and content.</span><span style="margin-top: auto; font-weight: 700">See the services →</span></a>
+<a class="path" href="Site-Contact.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 22px; background: var(--mint); color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #111">💼 For employers and hiring managers</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">I’m open to senior product marketing, content and growth roles, remote or with relocation.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Get my CV →</span></a>
+<a class="path" href="Site-Services.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 22px; background: var(--sun); color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700">🧭 For companies</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">Select consulting projects in positioning, launches and content.</span><span style="margin-top: auto; font-weight: 700">See the services →</span></a>
 <a class="path" href="Site-EmpowerQ.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #1C1430; color: #F1ECFF; border: 1px solid #3A2F5C; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #B9A6FF">🌈 For funders and partners</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">Help EmpowerQ open more doors.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Support EmpowerQ →</span></a>
 </div>
 <details style="margin-top: 48px; border-top: 1px solid #3A3934">

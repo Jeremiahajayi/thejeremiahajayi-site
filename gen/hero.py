@@ -40,13 +40,16 @@ CSS = r"""
 /*hero:start*/
 .jg{display:none}
 .hero-anim .jg{display:block;position:absolute;inset:0 -2% -4% 0;pointer-events:none;z-index:3}
-.jg span{position:absolute;left:var(--x);top:var(--y);font-family:'DM Sans',system-ui,sans-serif;font-size:var(--s);font-weight:600;letter-spacing:-.02em;line-height:1;white-space:nowrap;color:#8A867E;transform:rotate(var(--r));opacity:0;animation:jg-in .45s var(--d) cubic-bezier(.2,.8,.2,1) both,jg-fall 1s var(--o) cubic-bezier(.55,0,.85,.35) forwards}
+.jg span{position:absolute;left:var(--x);top:var(--y);font-family:'DM Sans',system-ui,sans-serif;font-size:var(--s);font-weight:600;letter-spacing:-.02em;line-height:1;white-space:nowrap;color:#7A756B;transform:rotate(var(--r));opacity:0;animation:jg-in .45s var(--d) cubic-bezier(.2,.8,.2,1) both,jg-fall 1s var(--o) cubic-bezier(.55,0,.85,.35) forwards}
 .jg span::after{content:"";position:absolute;left:-4%;right:-4%;top:54%;height:max(2px,.1em);border-radius:2px;background:#FF5A2A;transform:scaleX(0);transform-origin:left center;animation:jg-strike .3s var(--k) cubic-bezier(.6,0,.2,1) forwards}
-.jg .jg-cap{left:0;top:0;font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:#B5B0A6;transform:none;--r:0deg;--d:0s;--k:1.15s;--o:1.95s;--sp:-8deg;--fy:300px}
+.jg .jg-cap{left:0;top:0;font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:#45423C;transform:none;--r:0deg;--d:0s;--k:1.15s;--o:1.95s;--sp:-8deg;--fy:300px}
 @keyframes jg-in{from{opacity:0;transform:translateY(16px) rotate(var(--r)) scale(.9)}to{opacity:1;transform:rotate(var(--r))}}
 @keyframes jg-strike{to{transform:scaleX(1)}}
 @keyframes jg-fall{from{opacity:1;transform:rotate(var(--r))}to{opacity:0;transform:translateY(var(--fy)) rotate(var(--sp))}}
-.hl-mute{color:#6B675F}
+.hl-mute{color:#111}
+.vpill .v-dot{color:#111}
+#top .sheet{color:#111}
+#top .sheet:hover .sh-t{color:#C23A0E}
 .v-dot{color:#FF5A2A}
 .v-clear,.v-land,.v-travel{display:inline-block}
 .hero-anim .l1{animation-delay:2.15s}
@@ -58,8 +61,8 @@ CSS = r"""
 @keyframes v-clear{from{opacity:0;filter:blur(18px)}40%{opacity:1}to{opacity:1;filter:blur(0)}}
 @keyframes v-land{0%{opacity:0;transform:translateY(-150%)}55%{opacity:1;transform:translateY(7%)}72%{transform:translateY(-5%)}86%{transform:translateY(2%)}100%{opacity:1;transform:none}}
 @keyframes v-travel{from{opacity:0;transform:translateX(70vw) skewX(-12deg);filter:blur(4px)}70%{filter:blur(0)}to{opacity:1;transform:none;filter:none}}
-.jg-replay{display:none;align-items:center;gap:8px;margin-top:18px;padding:6px 12px 6px 10px;border:1px solid #3A3934;border-radius:999px;background:none;color:#B5B0A6;font:600 13px 'DM Sans',system-ui,sans-serif;cursor:pointer;transition:color .25s,border-color .25s}
-.jg-replay:hover{color:#F2EFE8;border-color:#F2EFE8}
+.jg-replay{display:none;align-items:center;gap:8px;margin-top:18px;padding:6px 12px 6px 10px;border:1px solid rgba(17,17,17,.3);border-radius:999px;background:#FFFFFF;color:#45423C;font:600 13px 'DM Sans',system-ui,sans-serif;cursor:pointer;transition:color .25s,border-color .25s}
+.jg-replay:hover{color:#111;border-color:#111}
 .js-on .jg-replay{display:inline-flex}
 /* returning visitors in the same session: no replay of the intro */
 .jg-skip .hero-anim .jg{display:none}
@@ -145,11 +148,11 @@ CSS = r"""
 @media (prefers-reduced-motion: reduce){.rt-plane{display:none}}
 /* hero portrait in a flower frame */
 .hf-stage{position:relative;aspect-ratio:1/1;width:100%}
-.hf-flower{position:absolute;inset:-4%;background:var(--sun)}
+.hf-flower{position:absolute;inset:-4%;background:var(--orange)}
 .hf-photo{position:absolute;inset:9%;background:#FFFFFF}
 .hf-s1{position:absolute;left:-6%;top:-2%;width:22%;aspect-ratio:1;background:var(--mint)}
-.hf-s2{position:absolute;right:-3%;top:8%;width:15%;aspect-ratio:1;background:var(--blush)}
-.hf-s3{position:absolute;right:4%;bottom:6%;width:14%;aspect-ratio:1;background:var(--orange)}
+.hf-s2{position:absolute;right:-3%;top:8%;width:15%;aspect-ratio:1;background:var(--lav)}
+.hf-s3{position:absolute;right:4%;bottom:6%;width:14%;aspect-ratio:1;background:var(--leaf)}
 .hf-badge{position:absolute;left:-4%;bottom:2%;max-width:78%;padding:9px 14px;border-radius:999px;background:#111;color:#F2EFE8;font-size:12.5px;font-weight:700;line-height:1.3;transform:rotate(-5deg);box-shadow:0 12px 28px rgba(0,0,0,.35)}
 .hero-anim .hf-flower{animation:pop-in .9s .2s cubic-bezier(.3,1.5,.5,1) both,spin 40s 1.1s linear infinite}
 .hero-anim .hf-s1,.hero-anim .hf-s2,.hero-anim .hf-s3,.hero-anim .hf-badge{animation:pop-in .7s cubic-bezier(.3,1.6,.5,1) both}
@@ -157,45 +160,6 @@ CSS = r"""
 @keyframes pop-in{from{opacity:0;transform:scale(.3) rotate(-30deg)}to{opacity:1}}
 .hero-anim .hf-badge{animation-name:pop-badge}
 @keyframes pop-badge{from{opacity:0;transform:scale(.5) rotate(-20deg)}to{opacity:1;transform:rotate(-5deg)}}
-/* results bento */
-.bento{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
-.bt{position:relative;overflow:hidden;border-radius:22px;padding:clamp(22px,2.6vw,34px);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;color:#111}
-.bt-n{position:relative;margin:0;font-weight:700;font-size:clamp(56px,6vw,96px);line-height:.85;letter-spacing:-.06em}
-.bt-l{position:relative;margin:10px 0 0;font-size:15px;line-height:1.45;font-weight:600;max-width:260px}
-.bt-1{grid-row:span 2;background:var(--sun);min-height:380px}
-.bt-1 .bt-n{font-size:clamp(80px,9vw,150px)}
-.bt-2{background:var(--leaf);color:#FFFFFF}
-.bt-3{background:var(--mint)}
-.bt-4{grid-column:span 2;background:var(--orange)}
-.bt-rays{position:absolute;right:-30%;top:-40%;width:110%;aspect-ratio:1;color:rgba(255,90,42,.55);border-radius:50%}
-.bt-sh{position:absolute;right:-26px;top:-26px;width:120px;aspect-ratio:1}
-.bt-2 .bt-sh{background:rgba(255,255,255,.22)}
-.bt-3 .bt-sh{background:var(--leaf);opacity:.35;width:90px;right:16px;top:16px}
-.bt-tri{position:absolute;right:0;top:0;width:46%;height:100%;background:var(--sun);opacity:.9}
-@media (max-width: 760px){.bento{grid-template-columns:1fr 1fr}.bt-1{grid-row:auto;grid-column:span 2;min-height:220px}.bt-4{grid-column:span 2}.bt{min-height:150px}.bt-n{font-size:52px}.bt-1 .bt-n{font-size:84px}.bt-tri{width:34%}}
-/* case number badges */
-.num-b{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;font-size:14px;font-weight:700;color:#111}
-/* disciplines as tiles */
-.xp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.xp{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;min-height:440px;padding:clamp(24px,2.6vw,34px);border-radius:24px;text-decoration:none;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.xp:hover{transform:translateY(-8px) rotate(-.6deg);color:#111}
-.xp-art{position:relative;width:110px;height:110px;margin-bottom:auto}
-.xp-shape{position:absolute;inset:0}
-.xp-emo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:46px;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
-.xp:hover .xp-emo{transform:scale(1.18) rotate(-10deg)}
-.xp-verb{font-size:clamp(56px,5.6vw,88px);font-weight:700;line-height:.85;letter-spacing:-.06em}
-.xp-name{font-size:22px;font-weight:600;letter-spacing:-.02em}
-.xp-long{font-size:16px;line-height:1.55;color:#2D2B27}
-.xp-proof{font-size:13.5px;line-height:1.5;color:#2D2B27}
-.xp-go{margin-top:6px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:46px;padding:0 18px;border-radius:999px;background:#111;color:#F2EFE8;font-weight:700;font-size:15px}
-.xp:hover .xp-go .arr{transform:translateX(5px)}
-@media (max-width: 900px){.xp-grid{grid-template-columns:1fr}.xp{min-height:0}.xp-art{width:84px;height:84px}.xp-emo{font-size:36px}}
-/* contact doors */
-.door-e{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;font-size:20px;background:var(--sun)}
-.door:nth-of-type(2) .door-e{background:var(--orange)}
-.door:nth-of-type(3) .door-e{background:var(--mint)}
-.door:nth-of-type(4) .door-e{background:var(--lav)}
-.door:nth-of-type(5) .door-e{background:var(--blush)}
 /* route pins in colour */
 .rt-stop:nth-child(5n+1) .rt-pin{background:var(--sun)}
 .rt-stop:nth-child(5n+2) .rt-pin{background:var(--mint)}
@@ -212,7 +176,7 @@ CSS = r"""
 
 def tag(href, label):
     return (f'<a href="{href}" style="text-decoration: none; font-family: \'DM Sans\', sans-serif; font-size: 14px; font-weight: 600; '
-            f'letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">{label}</a>')
+            f'letter-spacing: 0; padding: 6px 12px; border: 1.5px solid #111; border-radius: 999px; background: #FFFFFF; color: #111">{label}</a>')
 
 def headline():
     return f'''<div class="hero-stage" style="position: relative">
@@ -221,9 +185,9 @@ def headline():
 {words()}
 </div>
 <p class="sg" style="margin: 0; font-weight: 600; font-size: clamp(56px, 7.8vw, 120px); line-height: 0.95; letter-spacing: -0.055em">
-<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px"><span><span class="hl-mute">Make it</span> <span class="v-clear">clear<span class="v-dot">.</span><span class="ve ve-lens" aria-hidden="true">🔍</span><span class="ve ve-spark" aria-hidden="true">✨</span></span></span>{tag('Site-Service-Positioning.dc.html', 'Positioning &amp; messaging')}</span>
-<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 5vw, 80px)"><span><span class="hl-mute">Make it</span> <span class="v-land">land<span class="v-dot">.</span><span class="ve ve-rocket" aria-hidden="true">🚀</span><span class="ve ve-puff" aria-hidden="true">💨</span></span></span>{tag('Site-Service-Launch.dc.html', 'Launches &amp; go-to-market')}</span>
-<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 10vw, 160px)"><span><span class="hl-mute">Make it</span> <span class="v-travel">travel<span class="v-dot">.</span><span class="ve ve-trail" aria-hidden="true"></span><span class="ve ve-plane" aria-hidden="true">✈️</span></span></span>{tag('Site-Service-Content.dc.html', 'Content &amp; organic growth')}</span>
+<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px"><span><span class="hl-mute">Make it</span> <span class="v-clear vpill" style="background: var(--sun)">clear<span class="v-dot">.</span><span class="ve ve-lens" aria-hidden="true">🔍</span><span class="ve ve-spark" aria-hidden="true">✨</span></span></span>{tag('Site-Service-Positioning.dc.html', 'Positioning &amp; messaging')}</span>
+<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 5vw, 80px)"><span><span class="hl-mute">Make it</span> <span class="v-land vpill" style="background: var(--orange)">land<span class="v-dot">.</span><span class="ve ve-rocket" aria-hidden="true">🚀</span><span class="ve ve-puff" aria-hidden="true">💨</span></span></span>{tag('Site-Service-Launch.dc.html', 'Launches &amp; go-to-market')}</span>
+<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 10vw, 160px)"><span><span class="hl-mute">Make it</span> <span class="v-travel vpill" style="background: var(--mint)">travel<span class="v-dot">.</span><span class="ve ve-trail" aria-hidden="true"></span><span class="ve ve-plane" aria-hidden="true">✈️</span></span></span>{tag('Site-Service-Content.dc.html', 'Content &amp; organic growth')}</span>
 </p>
 <button class="jg-replay" type="button" data-jg-replay>↺ Replay the edit</button>
 </div>'''

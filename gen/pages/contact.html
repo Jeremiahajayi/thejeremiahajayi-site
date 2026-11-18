@@ -1,4 +1,6 @@
-<section style="background: #F2EFE8; color: #111">
+<section class="has-deco dot-bg" style="background-color: var(--cream); color: #111">
+<span class="deco shp shp-flower spin" aria-hidden="true" style="right: -120px; top: -120px; width: 340px; aspect-ratio: 1; background: var(--sun)"></span>
+<span class="deco shp shp-clover floaty" aria-hidden="true" style="left: -50px; bottom: 80px; width: 120px; aspect-ratio: 1; background: var(--blush)"></span>
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 120px) clamp(20px, 5vw, 28px) clamp(56px, 10vw, 128px)">
 <p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #111">Contact</p>
 <h1 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(56px, 8.4vw, 136px); line-height: 0.88; letter-spacing: -0.065em">What are you<br><span style="color: #C23A0E">working on?</span></h1>
@@ -7,7 +9,7 @@
 <div role="radiogroup" aria-label="What you need" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
 <sc-for list="{{doors}}" as="d" hint-placeholder-count="5">
 <button class="door" data-door="{{$index}}" role="radio" aria-checked="{{d.selected}}" onClick="{{d.pick}}" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding: 14px 22px; border-radius: 14px; border: 1.5px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}">
-<span class="sg" style="display: inline-flex; align-items: center; gap: 12px; font-size: clamp(19px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em"><span aria-hidden="true" style="font-size: 0.95em">{{d.e}}</span>{{d.label}}</span>
+<span class="sg" style="display: inline-flex; align-items: center; gap: 12px; font-size: clamp(19px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em"><span class="door-e" aria-hidden="true">{{d.e}}</span>{{d.label}}</span>
 <span style="font-size: 13px; font-weight: 600; opacity: .8">{{d.who}}</span>
 </button>
 </sc-for>
