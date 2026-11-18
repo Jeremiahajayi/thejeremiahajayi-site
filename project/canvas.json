@@ -1,0 +1,240 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-06T00:40:00Z"
+ },
+ "title": "The World of Jeremiah — Website Redesign",
+ "launch": {
+  "view": "canvas"
+ },
+ "pages": [],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 9800,
+   "title": "Home",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Work.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 7600,
+   "title": "Case studies",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Portfolio.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 5200,
+   "title": "Portfolio",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Services.dc.html": {
+   "x": 4560,
+   "y": 0,
+   "w": 1440,
+   "h": 6200,
+   "title": "Services",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Writing.dc.html": {
+   "x": 6080,
+   "y": 0,
+   "w": 1440,
+   "h": 4800,
+   "title": "Writing",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Tools.dc.html": {
+   "x": 7600,
+   "y": 0,
+   "w": 1440,
+   "h": 3600,
+   "title": "Tools",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Explore-A.dc.html": {
+   "x": 0,
+   "y": 10300,
+   "w": 1440,
+   "h": 6200,
+   "title": "Exploration A · The Index · General Sans + Inter",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Explore-B.dc.html": {
+   "x": 1520,
+   "y": 10300,
+   "w": 1440,
+   "h": 6400,
+   "title": "Exploration B · The Launch Board · Space Grotesk + DM Sans",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Explore-C.dc.html": {
+   "x": 3040,
+   "y": 10300,
+   "w": 1440,
+   "h": 6400,
+   "title": "Exploration C · Two Chapters · Satoshi + Newsreader",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Home-Concept.dc.html": {
+   "x": 4560,
+   "y": 10300,
+   "w": 1440,
+   "h": 8200,
+   "title": "Earlier concept · Bricolage Grotesque",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Home-B2.dc.html": {
+   "x": 6080,
+   "y": 10300,
+   "w": 1440,
+   "h": 12000,
+   "title": "Exploration B, refined · Homepage v2",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Work.dc.html": {
+   "x": 0,
+   "y": 28400,
+   "w": 1440,
+   "h": 8800,
+   "title": "Site · Work",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-EmpowerQ.dc.html": {
+   "x": 4560,
+   "y": 28400,
+   "w": 1440,
+   "h": 5000,
+   "title": "Site · EmpowerQ",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Writing.dc.html": {
+   "x": 1520,
+   "y": 28400,
+   "w": 1440,
+   "h": 5600,
+   "title": "Site · Writing",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-About.dc.html": {
+   "x": 3040,
+   "y": 28400,
+   "w": 1440,
+   "h": 6200,
+   "title": "Site · About",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Services.dc.html": {
+   "x": 0,
+   "y": 21900,
+   "w": 1440,
+   "h": 5000,
+   "title": "Site · Services hub (/services)",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Service-Positioning.dc.html": {
+   "x": 1520,
+   "y": 21900,
+   "w": 1440,
+   "h": 5500,
+   "title": "Site · Positioning & messaging",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Service-Launch.dc.html": {
+   "x": 3040,
+   "y": 21900,
+   "w": 1440,
+   "h": 5900,
+   "title": "Site · Launches & GTM",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Service-Content.dc.html": {
+   "x": 4560,
+   "y": 21900,
+   "w": 1440,
+   "h": 5900,
+   "title": "Site · Content & organic growth",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Site-Contact.dc.html": {
+   "x": 6080,
+   "y": 21900,
+   "w": 1440,
+   "h": 1400,
+   "title": "Site · Contact",
+   "expand": "fill",
+   "is_interactive": true
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Work.dc.html",
+  "Portfolio.dc.html",
+  "Services.dc.html",
+  "Writing.dc.html",
+  "Tools.dc.html",
+  "Explore-A.dc.html",
+  "Explore-B.dc.html",
+  "Explore-C.dc.html",
+  "Home-Concept.dc.html",
+  "Home-B2.dc.html",
+  "Site-Work.dc.html",
+  "Site-EmpowerQ.dc.html",
+  "Site-Writing.dc.html",
+  "Site-About.dc.html",
+  "Site-Services.dc.html",
+  "Site-Service-Positioning.dc.html",
+  "Site-Service-Launch.dc.html",
+  "Site-Service-Content.dc.html",
+  "Site-Contact.dc.html"
+ ],
+ "notes": {
+  "explorations": {
+   "x": 0,
+   "y": 10020,
+   "text": "Homepage explorations: positioning, composition and type",
+   "kind": "title1",
+   "maxW": 7520
+  },
+  "sitepages": {
+   "x": 0,
+   "y": 21640,
+   "text": "Site pages: services and contact",
+   "kind": "title1",
+   "maxW": 7520
+  },
+  "sitepages2": {
+   "x": 0,
+   "y": 28140,
+   "text": "Site pages: work, writing, about and EmpowerQ",
+   "kind": "title1",
+   "maxW": 7520
+  }
+ },
+ "designSystems": []
+}

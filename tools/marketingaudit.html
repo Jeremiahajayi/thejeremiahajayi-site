@@ -1,0 +1,816 @@
+<style>
+.tool *, .tool *::before, .tool *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: 'DM Sans', sans-serif; }
+
+.tool {
+  max-width: 860px; margin: 0 auto;
+  background: #F2EFE8;
+  color: #111111;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  padding: 40px 28px 64px;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* ── HEADER ── */
+.t-header {
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #D0CEC9;
+}
+.t-header-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.t-header-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #9D9D9D;
+}
+.t-header-title {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+  color: #111111;
+  margin-bottom: 16px;
+}
+.t-header-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: #6B6B6B;
+}
+.t-header-desc {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #6B6B6B;
+  max-width: 480px;
+}
+
+/* ── PROGRESS ── */
+.progress-wrap {
+  margin-bottom: 32px;
+}
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: #9D9D9D;
+  margin-bottom: 8px;
+}
+.progress-track {
+  height: 2px;
+  background: #D0CEC9;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #111111;
+  border-radius: 99px;
+  transition: width .35s ease;
+  width: 0%;
+}
+
+/* ── SECTION CARDS ── */
+.section-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid #E4E2DD;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #F0EDEA;
+  background: #FAFAF8;
+}
+.card-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #BEBBB5;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -.01em;
+}
+.card-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: #BEBBB5;
+}
+
+/* ── QUESTIONS ── */
+.q-list {}
+.q-row {
+  padding: 16px 20px;
+  border-bottom: 1px solid #F2F0EC;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.q-row:last-child { border-bottom: none; }
+.q-text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1C1C1C;
+}
+.q-buttons {
+  display: flex;
+  gap: 6px;
+}
+.q-btn {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 9px 4px;
+  border-radius: 8px;
+  border: 1.5px solid #D8D6D1;
+  background: transparent;
+  color: #9D9D9D;
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.q-btn:active { transform: scale(0.97); }
+.q-btn.active-yes {
+  background: #E8F5E0;
+  color: #2E6B0E;
+  border-color: #7CC44A;
+}
+.q-btn.active-partial {
+  background: #FFF4E0;
+  color: #8A5200;
+  border-color: #F0B030;
+}
+.q-btn.active-no {
+  background: #FDECEC;
+  color: #A02020;
+  border-color: #E88888;
+}
+
+/* ── SCORE ── */
+.score-section {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px 20px;
+  border: 1px solid #E4E2DD;
+  margin-top: 4px;
+}
+.score-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #BEBBB5;
+  margin-bottom: 18px;
+}
+.score-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.score-pill {
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+}
+.score-pill.yes     { background: #E8F5E0; }
+.score-pill.partial { background: #FFF4E0; }
+.score-pill.no      { background: #FDECEC; }
+.pill-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.score-pill.yes     .pill-label { color: #4A8A1A; }
+.score-pill.partial .pill-label { color: #8A5200; }
+.score-pill.no      .pill-label { color: #A02020; }
+.pill-val {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+.score-pill.yes     .pill-val { color: #2E6B0E; }
+.score-pill.partial .pill-val { color: #8A5200; }
+.score-pill.no      .pill-val { color: #A02020; }
+
+.diagnosis-box {
+  background: #F2EFE8;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.diagnosis-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #BEBBB5;
+  margin-bottom: 8px;
+}
+.diagnosis-text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #3A3A3A;
+  min-height: 40px;
+}
+.reset-btn {
+  display: block;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #BEBBB5;
+  background: none;
+  border: 1.5px solid #E4E2DD;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .15s;
+  text-transform: uppercase;
+}
+.reset-btn:hover { border-color: #111111; color: #111111; }
+
+/* ── NEXT STEPS ── */
+.next-steps {
+  margin-top: 12px;
+  display: none;
+}
+.next-steps.visible { display: block; }
+.next-steps-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.next-steps-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: #111111;
+}
+.next-steps-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: #9D9D9D;
+}
+.step-card {
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid #E4E2DD;
+  padding: 20px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: transform .15s, box-shadow .15s;
+}
+.step-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.step-priority {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.step-priority.urgent {
+  background: #FDECEC;
+  color: #A02020;
+}
+.step-priority.moderate {
+  background: #FFF4E0;
+  color: #8A5200;
+}
+.step-body {}
+.step-section-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #BEBBB5;
+  margin-bottom: 5px;
+}
+.step-headline {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -.01em;
+  margin-bottom: 5px;
+  line-height: 1.35;
+}
+.step-body-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B6B6B;
+  line-height: 1.7;
+}
+.no-steps-msg {
+  background: #E8F5E0;
+  border: 1px solid #7CC44A;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+.no-steps-msg p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #2E6B0E;
+  line-height: 1.7;
+}
+
+/* ── CTA ── */
+.cta-block {
+  margin-top: 12px;
+  background: #111111;
+  border-radius: 16px;
+  padding: 40px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+.cta-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-bottom: 14px;
+  position: relative;
+}
+.cta-heading {
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  position: relative;
+}
+.cta-heading em {
+  font-style: italic;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+}
+.cta-body {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,.45);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  position: relative;
+}
+.cta-btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #111111;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .15s, transform .15s;
+  position: relative;
+}
+.cta-btn:hover { background: #F0ECE6; transform: translateY(-2px); }
+.cta-fine {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,.22);
+  margin-top: 14px;
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .tool { padding: 28px 16px 56px; }
+  .t-header-title { font-size: 26px; }
+}
+
+.tool .t-header-title, .tool .cta-heading, .tool .footer-heading, .tool .total-num, .tool .pill-val, .tool .next-steps-title { font-family: 'Space Grotesk', sans-serif; letter-spacing: -.04em; }
+.tool .t-header-title em, .tool .cta-heading em { font-style: normal; color: #C23A0E; }
+.tool .footer-btn, .tool .cta-btn { background: #FF5A2A; color: #111111; border-radius: 999px; }
+.tool .btn-cta { border-radius: 999px; }
+.tool-wrap { background: #F2EFE8; }
+</style>
+<section class="tool-wrap"><div class="tool">
+
+<div class="t-header">
+  <div class="t-header-eyebrow">Founder self-diagnostic</div>
+  <h1 class="t-header-title">The Marketing<br>Function <em>Audit</em></h1>
+  <p class="t-header-desc">16 questions across four areas. Answer honestly to find out exactly what is broken — and what to do about it — before you hire anyone.</p>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-meta">
+    <span id="progress-label">0 of 16 answered</span>
+    <span id="progress-pct">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+</div>
+
+<div id="sections-container"></div>
+
+<div class="score-section">
+  <div class="score-eyebrow">Your score</div>
+  <div class="score-row">
+    <div class="score-pill yes">
+      <div class="pill-label">Yes</div>
+      <div class="pill-val" id="score-yes">0</div>
+    </div>
+    <div class="score-pill partial">
+      <div class="pill-label">Partial</div>
+      <div class="pill-val" id="score-partial">0</div>
+    </div>
+    <div class="score-pill no">
+      <div class="pill-label">No</div>
+      <div class="pill-val" id="score-no">0</div>
+    </div>
+  </div>
+  <div class="diagnosis-box">
+    <div class="diagnosis-label">Diagnosis</div>
+    <div class="diagnosis-text" id="diagnosis">Answer the questions above to generate your diagnosis.</div>
+  </div>
+  <button class="reset-btn" onclick="resetAll()">↺ Reset audit</button>
+</div>
+
+<div class="next-steps" id="next-steps">
+  <div style="margin-bottom:16px; padding-top:8px;">
+    <div class="next-steps-title" id="next-steps-title">Your next steps</div>
+    <div class="next-steps-sub" id="next-steps-sub"></div>
+  </div>
+  <div id="next-steps-list"></div>
+</div>
+
+<div class="cta-block" style="margin-top:12px;">
+  <div class="cta-eyebrow">Work with Jeremiah</div>
+  <h2 class="cta-heading">Ready to fix<br><em>what the audit found?</em></h2>
+  <p class="cta-body">If the audit surfaced gaps, let's discuss what fixing them would actually look like for your business.</p>
+  <a class="cta-btn" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" target="_blank" rel="noopener">Book a GTM diagnostic</a>
+  <p class="cta-fine">30 minutes · No pitch · No obligation</p>
+</div>
+
+<script>
+const sections = [
+  {
+    id: "strategy",
+    num: "01",
+    title: "Strategy",
+    questions: [
+      "Do you have a documented ICP beyond job title and company size?",
+      "Can your team state your positioning in one sentence without hedging?",
+      "Do you know which channels are driving qualified pipeline right now?",
+      "Is there a 90-day marketing plan with measurable outcomes attached to it?"
+    ]
+  },
+  {
+    id: "execution",
+    num: "02",
+    title: "Execution",
+    questions: [
+      "Is content being produced on a consistent cadence with a clear owner?",
+      "Do you have a repeatable outbound motion, even a basic one?",
+      "Are you showing up where your buyers actually search — Google, LLMs, communities?",
+      "Is your website converting visitors into pipeline, or just traffic?"
+    ]
+  },
+  {
+    id: "alignment",
+    num: "03",
+    title: "Alignment",
+    questions: [
+      "Does your sales team have the collateral they need to close deals?",
+      "Does leadership agree on what marketing is supposed to deliver this quarter?",
+      "Is there a shared definition of what a qualified lead looks like?",
+      "Are marketing and product talking regularly about what buyers actually say?"
+    ]
+  },
+  {
+    id: "measurement",
+    num: "04",
+    title: "Measurement",
+    questions: [
+      "Do you know your CAC, even roughly?",
+      "Can you attribute closed revenue to a specific marketing source?",
+      "Are you tracking leading indicators, not just traffic and follower counts?",
+      "Is there a weekly marketing metric that tells you if things are working?"
+    ]
+  }
+];
+
+// Next-step recommendations keyed by question
+const nextStepMap = {
+  "strategy-0": {
+    section: "Strategy",
+    headline: "Build a real ICP — beyond job title and company size",
+    body: "Map the triggers, fears, alternatives and success criteria of your actual buyers. Interview 3–5 current customers this week. The ICP you have is likely a persona, not a profile."
+  },
+  "strategy-1": {
+    section: "Strategy",
+    headline: "Run a positioning sprint before any execution",
+    body: "If your team cannot state your positioning in one sentence, your buyers certainly cannot. Spend two hours answering: who is this for, what does it do, and why does it beat the status quo?"
+  },
+  "strategy-2": {
+    section: "Strategy",
+    headline: "Audit your pipeline sources before adding any new channels",
+    body: "Pull your last 20 closed deals and trace how each one originally found you. That one exercise will tell you more than any attribution tool."
+  },
+  "strategy-3": {
+    section: "Strategy",
+    headline: "Build a 90-day marketing plan with one outcome goal",
+    body: "Pick one commercial outcome, three leading metrics and a weekly review cadence. Plans without measurable outcomes are just intentions."
+  },
+  "execution-0": {
+    section: "Execution",
+    headline: "Appoint a content owner and commit to one format",
+    body: "Consistency beats volume every time. Pick one content format, set a realistic frequency and assign a single owner with editorial authority. Start before it feels ready."
+  },
+  "execution-1": {
+    section: "Execution",
+    headline: "Build a minimal outbound sequence for your top 20 accounts",
+    body: "You do not need a complex playbook to start. A three-touch sequence — personalised connection, insight, offer to help — run against 20 ICP accounts per week is a real motion."
+  },
+  "execution-2": {
+    section: "Execution",
+    headline: "Map where your buyers actually discover solutions like yours",
+    body: "What do they Google? Which communities are they in? What do they ask AI tools? Your presence should follow their journey, not your preference for channels."
+  },
+  "execution-3": {
+    section: "Execution",
+    headline: "Run a conversion audit on your homepage and primary landing page",
+    body: "Check whether your copy speaks to buyer problems or product features. Check your CTA placement. Check whether a first-time visitor can understand what you do in under 10 seconds."
+  },
+  "alignment-0": {
+    section: "Alignment",
+    headline: "Build a minimal sales enablement kit this week",
+    body: "One one-pager, one battlecard, two to three case studies and a discovery question guide. Ask your sales team what they wish they had — then build that first."
+  },
+  "alignment-1": {
+    section: "Alignment",
+    headline: "Run a 60-minute marketing objectives session with leadership",
+    body: "Get one shared outcome in writing. Until leadership agrees on what marketing is supposed to deliver, everything else is noise."
+  },
+  "alignment-2": {
+    section: "Alignment",
+    headline: "Define and document your lead qualification criteria",
+    body: "Get marketing and sales in the same room. Agree on what makes a lead qualified. Write it down. Share it. Review it in 30 days. This single exercise fixes more pipeline problems than most tactics."
+  },
+  "alignment-3": {
+    section: "Alignment",
+    headline: "Set up a monthly 30-minute marketing-product sync",
+    body: "The goal is simple: what are buyers saying during sales calls, and how does it change how we talk about the product? That feedback loop is one of your highest-leverage conversations."
+  },
+  "measurement-0": {
+    section: "Measurement",
+    headline: "Calculate your CAC today — even a rough number",
+    body: "Divide last quarter's total marketing spend by the number of new customers acquired. That number will tell you more about your business model than most board slides."
+  },
+  "measurement-1": {
+    section: "Measurement",
+    headline: "Set up basic revenue attribution before your next campaign",
+    body: "UTM parameters on all links and a source field in your CRM is the minimum. You cannot improve what you cannot trace."
+  },
+  "measurement-2": {
+    section: "Measurement",
+    headline: "Replace two vanity metrics with two leading indicators",
+    body: "Followers and traffic tell you almost nothing. MQLs, demo requests and pipeline value created tell you if marketing is working. Make that swap in your weekly review."
+  },
+  "measurement-3": {
+    section: "Measurement",
+    headline: "Choose one weekly number that tells you if marketing is working",
+    body: "Pipeline created is usually the right choice. Put it in a weekly Slack message or email. The act of tracking it publicly changes how the team prioritises."
+  }
+};
+
+const TOTAL = 16;
+const answers = {};
+
+function buildSections() {
+  const container = document.getElementById('sections-container');
+  sections.forEach(sec => {
+    const card = document.createElement('div');
+    card.className = 'section-card';
+    const qs = sec.questions.map((q, i) => {
+      const key = `${sec.id}-${i}`;
+      return `<div class="q-row" id="row-${key}">
+        <span class="q-text">${q}</span>
+        <div class="q-buttons">
+          <button class="q-btn" data-key="${key}" data-val="yes" onclick="pick(this)" ontouchend="pickTouch(event,this)">Yes</button>
+          <button class="q-btn" data-key="${key}" data-val="partial" onclick="pick(this)" ontouchend="pickTouch(event,this)">Partial</button>
+          <button class="q-btn" data-key="${key}" data-val="no" onclick="pick(this)" ontouchend="pickTouch(event,this)">No</button>
+        </div>
+      </div>`;
+    }).join('');
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="card-num">${sec.num}</span>
+        <span class="card-title">${sec.title}</span>
+        <span class="card-count" id="count-${sec.id}">0 / 4</span>
+      </div>
+      <div class="q-list">${qs}</div>`;
+    container.appendChild(card);
+  });
+}
+
+function pickTouch(e, btn) {
+  e.preventDefault();
+  pick(btn);
+}
+
+function pick(btn) {
+  const key = btn.getAttribute('data-key');
+  const val = btn.getAttribute('data-val');
+  const row = document.getElementById(`row-${key}`);
+  row.querySelectorAll('.q-btn').forEach(b => b.classList.remove('active-yes','active-partial','active-no'));
+  btn.classList.add(`active-${val}`);
+  answers[key] = val;
+  updateAll();
+}
+
+function updateAll() {
+  const vals = Object.values(answers);
+  const total = vals.length;
+  const yes     = vals.filter(v => v === 'yes').length;
+  const partial = vals.filter(v => v === 'partial').length;
+  const no      = vals.filter(v => v === 'no').length;
+
+  document.getElementById('score-yes').textContent     = yes;
+  document.getElementById('score-partial').textContent = partial;
+  document.getElementById('score-no').textContent      = no;
+
+  const pct = Math.round((total / TOTAL) * 100);
+  document.getElementById('progress-label').textContent = `${total} of ${TOTAL} answered`;
+  document.getElementById('progress-pct').textContent   = `${pct}%`;
+  document.getElementById('progress-fill').style.width  = `${pct}%`;
+
+  sections.forEach(sec => {
+    const n = sec.questions.filter((_,i) => answers[`${sec.id}-${i}`]).length;
+    const el = document.getElementById(`count-${sec.id}`);
+    if (el) el.textContent = `${n} / 4`;
+  });
+
+  updateDiagnosis(total, yes, partial, no);
+  if (total >= 8) updateNextSteps();
+}
+
+function updateDiagnosis(total, yes, partial, no) {
+  const diag = document.getElementById('diagnosis');
+  if (total < 6) {
+    diag.textContent = 'Keep going to generate your diagnosis.';
+    return;
+  }
+  const weak = no + partial * 0.5;
+  const weakPct = Math.round((weak / total) * 100);
+
+  if (weakPct < 25) {
+    diag.textContent = "Your marketing function is largely in order. The gaps are tactical — focus on the areas where you answered 'partial' and ensure you have the right person executing against the right priorities.";
+  } else if (weakPct < 55) {
+    diag.textContent = "You have working pieces but no connected system. Strategy and measurement are most likely the weak points. More execution without fixing those first will produce diminishing returns.";
+  } else {
+    diag.textContent = "Your marketing function has foundational gaps. Hiring a full-time marketer right now would mean onboarding someone into structural confusion. The first move is getting the infrastructure right.";
+  }
+}
+
+function updateNextSteps() {
+  const nsEl = document.getElementById('next-steps');
+  const listEl = document.getElementById('next-steps-list');
+  const titleEl = document.getElementById('next-steps-title');
+  const subEl = document.getElementById('next-steps-sub');
+
+  // Collect answered questions that need work, priority: no > partial
+  const noKeys      = Object.keys(answers).filter(k => answers[k] === 'no');
+  const partialKeys = Object.keys(answers).filter(k => answers[k] === 'partial');
+
+  if (noKeys.length === 0 && partialKeys.length === 0) {
+    // All yes
+    listEl.innerHTML = `<div class="no-steps-msg"><p>Your marketing function appears to be in strong shape. Keep the fundamentals consistent and focus on refining what is already working.</p></div>`;
+    titleEl.textContent = 'Your audit results';
+    subEl.textContent = '';
+    nsEl.classList.add('visible');
+    reportHeight(); return;
+  }
+
+  // Combine, up to 5 steps: all no's first, then partials
+  const priorityKeys = [...noKeys, ...partialKeys].slice(0, 5);
+  const total = Object.keys(answers).length;
+
+  titleEl.textContent = `Your ${priorityKeys.length > 1 ? priorityKeys.length + ' ' : ''}immediate next step${priorityKeys.length !== 1 ? 's' : ''}`;
+  subEl.textContent = total < TOTAL
+    ? `Based on ${total} of 16 answers — complete the audit for the full picture`
+    : 'Based on all 16 answers';
+
+  listEl.innerHTML = priorityKeys.map((key, idx) => {
+    const step = nextStepMap[key];
+    if (!step) return '';
+    const isUrgent = answers[key] === 'no';
+    return `
+      <div class="step-card">
+        <div class="step-priority ${isUrgent ? 'urgent' : 'moderate'}">${idx + 1}</div>
+        <div class="step-body">
+          <div class="step-section-tag">${step.section}</div>
+          <div class="step-headline">${step.headline}</div>
+          <div class="step-body-text">${step.body}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  nsEl.classList.add('visible');
+  reportHeight();
+}
+
+function resetAll() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  document.querySelectorAll('.q-btn').forEach(b => b.classList.remove('active-yes','active-partial','active-no'));
+  ['score-yes','score-partial','score-no'].forEach(id => document.getElementById(id).textContent = '0');
+  document.getElementById('progress-label').textContent = '0 of 16 answered';
+  document.getElementById('progress-pct').textContent   = '0%';
+  document.getElementById('progress-fill').style.width  = '0%';
+  document.getElementById('diagnosis').textContent = 'Answer the questions above to generate your diagnosis.';
+  document.getElementById('next-steps').classList.remove('visible');
+  document.getElementById('next-steps-list').innerHTML = '';
+  sections.forEach(sec => {
+    const el = document.getElementById(`count-${sec.id}`);
+    if (el) el.textContent = '0 / 4';
+  });
+  reportHeight();
+}
+
+// Wix resize — aggressive multi-format pulse
+function reportHeight() {}
+
+function startPulse(ms, duration) {
+  var end = Date.now() + duration;
+  var t = setInterval(function() { reportHeight(); if (Date.now() >= end) clearInterval(t); }, ms);
+}
+
+buildSections();
+reportHeight();
+
+window.addEventListener('load', function() {
+  reportHeight();
+  startPulse(150, 8000);
+});
+
+window.addEventListener('resize', reportHeight);
+
+// Re-pulse whenever DOM grows (next steps appearing, etc.)
+if (window.MutationObserver) {
+  new MutationObserver(function() { reportHeight(); startPulse(150, 2000); })
+    .observe(document.body, { childList: true, subtree: true, attributes: true });
+}
+
+if (window.ResizeObserver) {
+  new ResizeObserver(reportHeight).observe(document.body);
+}
+</script>
+</div></section>

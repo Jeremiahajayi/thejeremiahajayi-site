@@ -1,0 +1,1002 @@
+<style>
+.tool *, .tool *::before, .tool *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: 'DM Sans', sans-serif; }
+
+.tool {
+  max-width: 860px; margin: 0 auto;
+  background: #F2EFE8;
+  color: #111111;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  padding: 40px 28px 64px;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* ── HEADER ── */
+.t-header {
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #D0CEC9;
+}
+.t-header-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.t-header-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #9D9D9D;
+}
+.t-header-title {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+  color: #111111;
+  margin-bottom: 16px;
+}
+.t-header-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: #6B6B6B;
+}
+.t-header-desc {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #6B6B6B;
+  max-width: 500px;
+}
+
+/* ── PROGRESS ── */
+.progress-wrap {
+  margin-bottom: 32px;
+}
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: #9D9D9D;
+  margin-bottom: 8px;
+}
+.progress-track {
+  height: 2px;
+  background: #D0CEC9;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #111111;
+  border-radius: 99px;
+  transition: width .35s ease;
+  width: 0%;
+}
+
+/* ── DIMENSION CARDS ── */
+.dim-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid #E4E2DD;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #F0EDEA;
+  background: #FAFAF8;
+}
+.card-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #BEBBB5;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -.01em;
+  flex: 1;
+}
+.card-desc {
+  display: none;
+}
+.card-score {
+  font-size: 11px;
+  font-weight: 600;
+  color: #BEBBB5;
+  white-space: nowrap;
+}
+
+/* ── QUESTIONS ── */
+.q-list {}
+.q-row {
+  padding: 16px 20px;
+  border-bottom: 1px solid #F2F0EC;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.q-row:last-child { border-bottom: none; }
+.q-text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1C1C1C;
+}
+.q-buttons {
+  display: flex;
+  gap: 6px;
+}
+.q-btn {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 9px 4px;
+  border-radius: 8px;
+  border: 1.5px solid #D8D6D1;
+  background: transparent;
+  color: #9D9D9D;
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.q-btn:active { transform: scale(0.97); }
+.q-btn.active-yes {
+  background: #E8F5E0;
+  color: #2E6B0E;
+  border-color: #7CC44A;
+}
+.q-btn.active-partial {
+  background: #FFF4E0;
+  color: #8A5200;
+  border-color: #F0B030;
+}
+.q-btn.active-no {
+  background: #FDECEC;
+  color: #A02020;
+  border-color: #E88888;
+}
+
+/* ── SCORE PANEL ── */
+.score-section {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 28px 24px;
+  border: 1px solid #E4E2DD;
+  margin-top: 12px;
+}
+.score-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+  margin-bottom: 24px;
+}
+
+/* Dimension score bars */
+.dim-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 28px;
+}
+.dim-bar-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 36px;
+  gap: 12px;
+  align-items: center;
+}
+.dim-bar-name {
+  font-size: 11px;
+  font-weight: 400;
+  color: #4A4A4A;
+  line-height: 1.3;
+}
+.dim-bar-track {
+  background: #F0EDEA;
+  border-radius: 3px;
+  height: 4px;
+  overflow: hidden;
+}
+.dim-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0%;
+  background: #111111;
+  transition: width .4s ease, background .4s ease;
+}
+.dim-bar-pct {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9D9D9D;
+  text-align: right;
+}
+
+/* Total score block */
+.total-block {
+  background: #F2EFE8;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.total-num {
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: -.05em;
+  line-height: 1;
+  color: #111111;
+  transition: color .3s ease;
+}
+.total-right {}
+.total-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+  margin-bottom: 8px;
+}
+.total-track {
+  background: #D0CEC9;
+  border-radius: 4px;
+  height: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.total-fill {
+  height: 100%;
+  border-radius: 4px;
+  width: 0%;
+  background: #111111;
+  transition: width .4s ease, background .4s ease;
+}
+.total-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B6B6B;
+  line-height: 1.5;
+}
+
+/* Verdict */
+.verdict {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #1C1C1C;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: #F2EFE8;
+  margin-bottom: 24px;
+  display: none;
+}
+.verdict.visible { display: block; }
+
+/* Action plan */
+.action-plan {
+  display: none;
+  margin-bottom: 24px;
+}
+.action-plan-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 14px;
+}
+.action-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.action-item {
+  border-radius: 12px;
+  padding: 20px;
+}
+.action-item.urgent {
+  background: #FDECEC;
+  border: 1px solid #E8BBBB;
+}
+.action-item.moderate {
+  background: #FFF4E0;
+  border: 1px solid #F0D090;
+}
+.action-item-dim {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  margin-bottom: 6px;
+}
+.action-item.urgent .action-item-dim { color: #A02020; }
+.action-item.moderate .action-item-dim { color: #8A5200; }
+.action-diagnosis {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.action-item.urgent .action-diagnosis { color: #7A1818; }
+.action-item.moderate .action-diagnosis { color: #6B3E00; }
+.action-steps-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.action-item.urgent .action-steps-label { color: #A02020; }
+.action-item.moderate .action-steps-label { color: #8A5200; }
+.action-step {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+.action-step-num {
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 1px;
+}
+.action-item.urgent .action-step-num { color: #A02020; }
+.action-item.moderate .action-step-num { color: #8A5200; }
+.action-step-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+.action-item.urgent .action-step-text { color: #7A1818; }
+.action-item.moderate .action-step-text { color: #6B3E00; }
+.action-resource {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.action-resource-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #3A3A3A;
+  line-height: 1.5;
+}
+.action-resource-link {
+  font-size: 11px;
+  font-weight: 600;
+  color: #111111;
+  white-space: nowrap;
+  text-decoration: none;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #D0CEC9;
+  transition: background .15s;
+}
+.action-resource-link:hover { background: #F2EFE8; }
+
+/* CTA */
+.cta-block {
+  padding-top: 24px;
+  border-top: 1px solid #E4E2DD;
+}
+.cta-text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #6B6B6B;
+  margin-bottom: 18px;
+}
+.cta-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 2px;
+}
+.cta-role {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B6B6B;
+  margin-bottom: 18px;
+}
+.btn-cta {
+  display: inline-block;
+  background: #111111;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  transition: opacity .2s ease;
+}
+.btn-cta:hover { opacity: 0.8; }
+.reset-btn {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #9D9D9D;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* ── FOOTER ── */
+.page-footer {
+  margin-top: 16px;
+  background: #111111;
+  border-radius: 16px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.page-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+.footer-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+.footer-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #5A5A5A;
+  margin-bottom: 8px;
+}
+.footer-heading {
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.footer-sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: #7A7A7A;
+  line-height: 1.6;
+  max-width: 340px;
+}
+.footer-btn {
+  display: inline-block;
+  background: #FFFFFF;
+  color: #111111;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+.footer-btn:hover { opacity: 0.88; }
+.footer-fine {
+  font-size: 11px;
+  font-weight: 400;
+  color: #4A4A4A;
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .tool { padding: 28px 16px 48px; }
+  .dim-bar-row { grid-template-columns: 110px 1fr 30px; }
+  .total-block { grid-template-columns: 1fr; gap: 12px; }
+  .total-num { font-size: 56px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-btn { width: 100%; text-align: center; }
+  .footer-fine { text-align: left; }
+}
+
+.tool .t-header-title, .tool .cta-heading, .tool .footer-heading, .tool .total-num, .tool .pill-val, .tool .next-steps-title { font-family: 'Space Grotesk', sans-serif; letter-spacing: -.04em; }
+.tool .t-header-title em, .tool .cta-heading em { font-style: normal; color: #C23A0E; }
+.tool .footer-btn, .tool .cta-btn { background: #FF5A2A; color: #111111; border-radius: 999px; }
+.tool .btn-cta { border-radius: 999px; }
+.tool-wrap { background: #F2EFE8; }
+</style>
+<section class="tool-wrap"><div class="tool">
+
+<!-- Header -->
+<div class="t-header">
+  <div class="t-header-eyebrow">GTM self-assessment</div>
+  <h1 class="t-header-title">GTM Readiness<br><em>Scorecard</em></h1>
+  <p class="t-header-desc">Are you ready to scale? Score yourself across five dimensions of go-to-market readiness. Answer honestly — this scorecard is most useful when the answers are uncomfortable.</p>
+</div>
+
+<!-- Progress -->
+<div class="progress-wrap">
+  <div class="progress-meta">
+    <span id="progress-label">0 of 15 answered</span>
+    <span id="progress-pct">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+</div>
+
+<!-- Dimension cards injected by JS -->
+<div id="dims-container"></div>
+
+<!-- Score panel -->
+<div class="score-section">
+  <div class="score-eyebrow">Your GTM Readiness Score</div>
+
+  <!-- Dim bars -->
+  <div class="dim-bars" id="dim-bars">
+    <div class="dim-bar-row">
+      <div class="dim-bar-name">Positioning Clarity</div>
+      <div class="dim-bar-track"><div class="dim-bar-fill" id="bar-0"></div></div>
+      <div class="dim-bar-pct" id="pct-0">—</div>
+    </div>
+    <div class="dim-bar-row">
+      <div class="dim-bar-name">Sales + Marketing</div>
+      <div class="dim-bar-track"><div class="dim-bar-fill" id="bar-1"></div></div>
+      <div class="dim-bar-pct" id="pct-1">—</div>
+    </div>
+    <div class="dim-bar-row">
+      <div class="dim-bar-name">Content to Pipeline</div>
+      <div class="dim-bar-track"><div class="dim-bar-fill" id="bar-2"></div></div>
+      <div class="dim-bar-pct" id="pct-2">—</div>
+    </div>
+    <div class="dim-bar-row">
+      <div class="dim-bar-name">Launch Readiness</div>
+      <div class="dim-bar-track"><div class="dim-bar-fill" id="bar-3"></div></div>
+      <div class="dim-bar-pct" id="pct-3">—</div>
+    </div>
+    <div class="dim-bar-row">
+      <div class="dim-bar-name">Team Capability</div>
+      <div class="dim-bar-track"><div class="dim-bar-fill" id="bar-4"></div></div>
+      <div class="dim-bar-pct" id="pct-4">—</div>
+    </div>
+  </div>
+
+  <!-- Total -->
+  <div class="total-block">
+    <div class="total-num" id="total-num">0</div>
+    <div class="total-right">
+      <div class="total-label">Overall score, out of 30</div>
+      <div class="total-track"><div class="total-fill" id="total-fill"></div></div>
+      <div class="total-desc" id="total-desc">Answer the questions above to generate your score.</div>
+    </div>
+  </div>
+
+  <!-- Verdict -->
+  <div class="verdict" id="verdict"></div>
+
+  <!-- Action plan -->
+  <div class="action-plan" id="action-plan">
+    <div class="action-plan-label">Your action plan</div>
+    <div class="action-items" id="action-items"></div>
+  </div>
+
+  <!-- Reset -->
+  <div style="padding-top:20px;border-top:1px solid #E4E2DD;text-align:right;">
+    <button class="reset-btn" onclick="resetAll()">Reset scorecard</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-eyebrow">Work with Jeremiah</div>
+      <div class="footer-heading">Ready to close what the scorecard found?</div>
+      <div class="footer-sub">If the results surfaced real gaps, let's spend 30 minutes on what fixing them would look like.</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-btn" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" target="_blank" rel="noopener noreferrer">Book a call →</a>
+      <div class="footer-fine">30 min · No pitch · No obligation</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+
+const DIMS = [
+  {
+    num: 'Dimension 01',
+    name: 'Positioning Clarity',
+    questions: [
+      'Your team can describe what the product does and who it is for in one sentence, without hedging, jargon, or multiple qualifiers.',
+      'You have a clear, documented answer to why a buyer would choose you over the most credible alternative, and it is one that your sales team actually uses.',
+      'Your website homepage communicates your positioning clearly enough that a new visitor understands who you serve and what you do within ten seconds.'
+    ]
+  },
+  {
+    num: 'Dimension 02',
+    name: 'Sales and Marketing Alignment',
+    questions: [
+      'Sales and marketing agree on the definition of a qualified lead, and that definition is written down somewhere both teams actively reference.',
+      'Your sales team uses the marketing assets that exist — including battlecards, one-pagers, and decks — in real conversations with prospects.',
+      'Marketing knows what sales is hearing from prospects right now, including objections, buying triggers, and competitive questions, and uses that intelligence to inform content and messaging.'
+    ]
+  },
+  {
+    num: 'Dimension 03',
+    name: 'Content-to-Pipeline Connection',
+    questions: [
+      'You can name at least one content asset that has directly contributed to a closed deal or a qualified inbound lead in the last 90 days.',
+      'Your content is distributed in the places your buyers actually search and spend time, not just published on your blog and shared once on LinkedIn.',
+      'Each piece of content you produce has a clear intention: which buyer it is for, what stage of their journey it serves, and what action it is designed to prompt.'
+    ]
+  },
+  {
+    num: 'Dimension 04',
+    name: 'Launch Readiness',
+    questions: [
+      'You have a repeatable launch process — a brief, a timeline, assigned owners, and a definition of success — that your team follows every time you ship something new.',
+      'Your last product or feature launch produced measurable pipeline or adoption, not just social engagement and internal celebration.',
+      'Marketing is informed about what is being built well before it ships, not briefed in the week of launch.'
+    ]
+  },
+  {
+    num: 'Dimension 05',
+    name: 'Team Capability',
+    questions: [
+      'Your marketing team has the right skills for what the business needs right now, not what it needed 12 months ago.',
+      'Your team has enough capacity to execute the marketing plan — they are not stretched across too many priorities to do any of them well.',
+      'There is someone in the organisation who owns marketing strategy, not just marketing tasks, and has the authority to make decisions.'
+    ]
+  }
+];
+
+const VERDICTS = {
+  high: 'Your GTM is in strong shape. The foundations are in place across positioning, alignment, content, launches, and team capability. The work now is optimisation and scaling what is already working, not rebuilding what is broken.',
+  mid: 'Your GTM has real strengths but meaningful gaps. Some dimensions are working well while others are quietly costing you pipeline. Review the dimension breakdown above and focus on the lowest-scoring area before adding more activity.',
+  low: 'Your GTM has structural problems that will limit growth regardless of how much you spend on marketing or how good your product is. The gaps revealed here need to be resolved before you scale anything — because scaling a broken GTM only makes the problems more expensive.'
+};
+
+const GAPS = [
+  {
+    diagnosis: 'Positioning is your biggest gap. Until your team can describe what you do and why it matters in one clear sentence, every other marketing effort will underperform because it is built on an unclear foundation.',
+    steps: [
+      'Run a positioning exercise with your leadership team. Write down: who specifically this is for, what they are trying to do, what alternatives exist, and why yours is different. Do this before touching any copy or campaigns.',
+      'Test your current positioning by asking three people outside your company to read your homepage and describe back what you do. If their description does not match what you intended, your positioning is unclear — not your homepage.',
+      'Write a single positioning sentence in this format: We help [specific ICP] do [specific outcome] without [the main alternative or pain]. Put it on a shared doc and make every marketing decision against it for 90 days.'
+    ],
+    resource: { label: 'Use the One-Page Positioning Brief to complete this exercise', url: 'https://docs.google.com/spreadsheets/d/1VNMMY4WZzhQIipRqS0eiOpAAV4-e0A6wSUAl6AhXWfc/edit?usp=sharing' }
+  },
+  {
+    diagnosis: 'Sales and marketing alignment is your biggest gap. When these two functions are not operating from the same brief, pipeline leaks at the handoff and the marketing work that does get done rarely makes it into a sales conversation.',
+    steps: [
+      'Schedule a 60-minute session with your sales lead this week. Ask them to name the three most common objections they hear, the question that most often kills a deal, and what one piece of marketing content would actually help them close. Build your next month of content around those answers.',
+      'Write a shared definition of a qualified lead. What company size, role, trigger event, and intent signals make someone worth a sales conversation? Get marketing and sales to agree on this in writing before the next campaign goes out.',
+      'Audit your existing marketing assets. For each one, ask your sales team honestly: have you used this in the last 30 days? If the answer is no for more than half of them, stop producing new assets and fix the ones that already exist.'
+    ],
+    resource: { label: 'Work through the Sales and Marketing Alignment Checklist with both teams', url: 'https://docs.google.com/spreadsheets/d/1CUrSuMNEkVqsTglsV92GF99SiaTJsAwYrWU5RZIk8aw/edit?usp=sharing' }
+  },
+  {
+    diagnosis: 'Content-to-pipeline connection is your biggest gap. Content that does not contribute to qualified pipeline is a cost centre, not a growth engine. Producing more of the same content will not fix this — the strategy needs to change before the output does.',
+    steps: [
+      'Stop publishing for 30 days and audit what you already have. For each piece of content, ask: has this contributed to a lead, a demo booking, or a closed deal? If you cannot answer that question, you do not have a content attribution problem — you have a content strategy problem.',
+      'Pick one buyer decision stage — awareness, consideration, or decision — and build three pieces of content specifically designed to move a buyer through that stage. Measure whether it generates pipeline before expanding to other stages.',
+      'Add a single conversion point to every piece of content you publish. Not a generic newsletter signup — a specific next step tied to the content topic. A guide on pricing should link to a pricing conversation. A case study should link to a similar-company discovery call.'
+    ],
+    resource: null
+  },
+  {
+    diagnosis: 'Launch readiness is your biggest gap. Without a repeatable launch process, every product release starts from scratch and the learnings from previous launches are never captured or applied.',
+    steps: [
+      'Build a one-page launch brief template. Every launch should start with: what this does, who it is for, what problem it solves, how we describe it differently from what we already offer, and what success looks like in 30 days. Use it for every release, however small.',
+      'Set a rule: marketing is informed about anything shipping in the next six weeks. Not briefed the week before — six weeks gives enough time to build positioning, create assets, and brief sales before the launch date.',
+      'Run a post-mortem on your last launch. What did you expect to happen? What actually happened? What would you do differently? Write it down in a shared doc. The next launch brief should open with the lessons from the last one.'
+    ],
+    resource: { label: 'Use the Product Launch Checklist to run your next launch properly', url: 'https://docs.google.com/spreadsheets/d/1tc5D6OiqQL2zXt9rMkBP1Prcp5-7TuXidiqlIaL6g38/edit?usp=sharing' }
+  },
+  {
+    diagnosis: 'Team capability is your biggest gap. Having the wrong skills, insufficient capacity, or no clear strategic owner in the marketing function means it cannot perform at the level the business needs — regardless of how much activity is happening.',
+    steps: [
+      'Write down the three most important marketing outcomes for the next 90 days. Then ask honestly: does the current team have the skills to achieve those outcomes, or are you hoping activity will produce results without the right people to drive them?',
+      'Identify the one role or skill that would have the biggest impact on pipeline if it were added or improved. That is your hiring or development priority. Everything else waits.',
+      'If nobody currently owns marketing strategy as a dedicated responsibility, address that before anything else. A team of executors without a strategist will produce a lot of output and very little pipeline. Ownership and authority matter more than headcount.'
+    ],
+    resource: null
+  }
+];
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+
+const answers = {}; // key: "dimIndex-qIndex", val: 2|1|0
+
+// ── BUILD UI ─────────────────────────────────────────────────────────────────
+
+function buildDims() {
+  const container = document.getElementById('dims-container');
+  DIMS.forEach((dim, di) => {
+    const qs = dim.questions.map((q, qi) => {
+      const key = `${di}-${qi}`;
+      return `<div class="q-row" id="row-${key}">
+        <span class="q-text">${q}</span>
+        <div class="q-buttons">
+          <button class="q-btn" data-key="${key}" data-val="2" onclick="pick(this)" ontouchend="pickTouch(event,this)">Yes</button>
+          <button class="q-btn" data-key="${key}" data-val="1" onclick="pick(this)" ontouchend="pickTouch(event,this)">Partial</button>
+          <button class="q-btn" data-key="${key}" data-val="0" onclick="pick(this)" ontouchend="pickTouch(event,this)">No</button>
+        </div>
+      </div>`;
+    }).join('');
+
+    const card = document.createElement('div');
+    card.className = 'dim-card';
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="card-num">${dim.num}</span>
+        <span class="card-title">${dim.name}</span>
+        <span class="card-score" id="dscore-${di}">0 / 6</span>
+      </div>
+      <div class="q-list">${qs}</div>`;
+    container.appendChild(card);
+  });
+}
+
+// ── INTERACTIONS ─────────────────────────────────────────────────────────────
+
+function pickTouch(e, btn) {
+  e.preventDefault();
+  pick(btn);
+}
+
+function pick(btn) {
+  const key = btn.getAttribute('data-key');
+  const val = parseInt(btn.getAttribute('data-val'));
+  const row = document.getElementById(`row-${key}`);
+
+  row.querySelectorAll('.q-btn').forEach(b => {
+    b.classList.remove('active-yes', 'active-partial', 'active-no');
+  });
+
+  const cls = val === 2 ? 'active-yes' : val === 1 ? 'active-partial' : 'active-no';
+  btn.classList.add(cls);
+  answers[key] = val;
+  updateAll();
+}
+
+// ── UPDATE ────────────────────────────────────────────────────────────────────
+
+function updateAll() {
+  const answeredKeys = Object.keys(answers);
+  const totalAnswered = answeredKeys.length;
+
+  // Progress
+  const progPct = Math.round((totalAnswered / 15) * 100);
+  document.getElementById('progress-label').textContent = `${totalAnswered} of 15 answered`;
+  document.getElementById('progress-pct').textContent   = `${progPct}%`;
+  document.getElementById('progress-fill').style.width  = `${progPct}%`;
+
+  // Per-dimension
+  let totalScore = 0;
+  let lowestDim = -1, lowestPct = 101;
+
+  DIMS.forEach((dim, di) => {
+    let dimScore = 0, dimAnswered = 0;
+    dim.questions.forEach((_, qi) => {
+      const k = `${di}-${qi}`;
+      if (answers[k] !== undefined) { dimScore += answers[k]; dimAnswered++; }
+    });
+    totalScore += dimScore;
+
+    const maxScore = dim.questions.length * 2;
+    document.getElementById(`dscore-${di}`).textContent = `${dimScore} / ${maxScore}`;
+
+    if (dimAnswered > 0) {
+      const pct = Math.round((dimScore / maxScore) * 100);
+      const bar = document.getElementById(`bar-${di}`);
+      bar.style.width = pct + '%';
+      bar.style.background = pct >= 67 ? '#2E6B0E' : pct >= 34 ? '#8A5200' : '#A02020';
+      document.getElementById(`pct-${di}`).textContent = pct + '%';
+      if (dimAnswered === dim.questions.length && pct < lowestPct) {
+        lowestPct = pct;
+        lowestDim = di;
+      }
+    } else {
+      document.getElementById(`bar-${di}`).style.width = '0%';
+      document.getElementById(`pct-${di}`).textContent = '—';
+    }
+  });
+
+  // Total
+  const totalPct = Math.round((totalScore / 30) * 100);
+  document.getElementById('total-num').textContent = totalScore;
+  const totalFill = document.getElementById('total-fill');
+  const totalDesc = document.getElementById('total-desc');
+  const totalNum  = document.getElementById('total-num');
+
+  if (totalAnswered > 0) {
+    totalFill.style.width = totalPct + '%';
+    if (totalPct >= 67) {
+      totalFill.style.background = '#2E6B0E';
+      totalNum.style.color = '#2E6B0E';
+      totalDesc.textContent = 'Strong GTM readiness';
+    } else if (totalPct >= 34) {
+      totalFill.style.background = '#8A5200';
+      totalNum.style.color = '#8A5200';
+      totalDesc.textContent = 'Moderate GTM readiness — gaps present';
+    } else {
+      totalFill.style.background = '#A02020';
+      totalNum.style.color = '#A02020';
+      totalDesc.textContent = 'Significant GTM gaps — address before scaling';
+    }
+  } else {
+    totalFill.style.width = '0%';
+    totalNum.style.color = '#0A0A0A';
+    totalDesc.textContent = 'Answer the questions above to generate your score.';
+  }
+
+  // Verdict (all 15 answered)
+  const verdict = document.getElementById('verdict');
+  if (totalAnswered === 15) {
+    verdict.classList.add('visible');
+    if (totalPct >= 67) {
+      verdict.style.background = '#E8F5E0';
+      verdict.style.color = '#2E6B0E';
+      verdict.textContent = VERDICTS.high;
+    } else if (totalPct >= 34) {
+      verdict.style.background = '#FFF4E0';
+      verdict.style.color = '#6B3E00';
+      verdict.textContent = VERDICTS.mid;
+    } else {
+      verdict.style.background = '#FDECEC';
+      verdict.style.color = '#7A1818';
+      verdict.textContent = VERDICTS.low;
+    }
+  } else {
+    verdict.classList.remove('visible');
+  }
+
+  // Action plan (all 15 answered, show weak dims)
+  const actionPlan  = document.getElementById('action-plan');
+  const actionItems = document.getElementById('action-items');
+
+  if (totalAnswered === 15) {
+    const weakDims = DIMS
+      .map((dim, di) => {
+        let s = 0;
+        dim.questions.forEach((_, qi) => { s += answers[`${di}-${qi}`] || 0; });
+        return { di, pct: Math.round((s / (dim.questions.length * 2)) * 100) };
+      })
+      .filter(d => d.pct < 67)
+      .sort((a, b) => a.pct - b.pct);
+
+    if (weakDims.length > 0) {
+      actionPlan.style.display = 'block';
+      actionItems.innerHTML = weakDims.map(({ di, pct }) => {
+        const gap = GAPS[di];
+        const dim = DIMS[di];
+        const cls = pct < 34 ? 'urgent' : 'moderate';
+        const steps = gap.steps.map((s, i) =>
+          `<div class="action-step">
+            <div class="action-step-num">0${i+1}</div>
+            <div class="action-step-text">${s}</div>
+          </div>`
+        ).join('');
+        const resource = gap.resource
+          ? `<div class="action-resource">
+              <span class="action-resource-text">${gap.resource.label}</span>
+              <a href="${gap.resource.url}" target="_blank" rel="noopener noreferrer" class="action-resource-link">Open template →</a>
+             </div>`
+          : '';
+        return `<div class="action-item ${cls}">
+          <div class="action-item-dim">${dim.name} (${pct}%)</div>
+          <div class="action-diagnosis">${gap.diagnosis}</div>
+          <div class="action-steps-label">What to do</div>
+          ${steps}
+          ${resource}
+        </div>`;
+      }).join('');
+    } else {
+      actionPlan.style.display = 'none';
+    }
+  } else {
+    actionPlan.style.display = 'none';
+  }
+
+  reportHeight();
+}
+
+function resetAll() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  document.querySelectorAll('.q-btn').forEach(b =>
+    b.classList.remove('active-yes','active-partial','active-no')
+  );
+  document.getElementById('progress-label').textContent = '0 of 15 answered';
+  document.getElementById('progress-pct').textContent   = '0%';
+  document.getElementById('progress-fill').style.width  = '0%';
+  for (let i = 0; i < 5; i++) {
+    document.getElementById(`bar-${i}`).style.width = '0%';
+    document.getElementById(`bar-${i}`).style.background = '#0A0A0A';
+    document.getElementById(`pct-${i}`).textContent = '—';
+    document.getElementById(`dscore-${i}`).textContent = '0 / 6';
+  }
+  document.getElementById('total-num').textContent = '0';
+  document.getElementById('total-num').style.color = '#0A0A0A';
+  document.getElementById('total-fill').style.width = '0%';
+  document.getElementById('total-desc').textContent = 'Answer the questions above to generate your score.';
+  document.getElementById('verdict').classList.remove('visible');
+  document.getElementById('action-plan').style.display = 'none';
+  document.getElementById('action-items').innerHTML = '';
+  reportHeight();
+}
+
+// ── WIX RESIZE ───────────────────────────────────────────────────────────────
+
+function reportHeight() {}
+
+function startPulse(ms, duration) {
+  var end = Date.now() + duration;
+  var t = setInterval(function() { reportHeight(); if (Date.now() >= end) clearInterval(t); }, ms);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+
+buildDims();
+reportHeight();
+
+window.addEventListener('load', function() {
+  reportHeight();
+  startPulse(150, 8000);
+});
+
+window.addEventListener('resize', reportHeight);
+
+if (window.MutationObserver) {
+  new MutationObserver(function() { reportHeight(); startPulse(150, 2000); })
+    .observe(document.body, { childList: true, subtree: true, attributes: true });
+}
+
+if (window.ResizeObserver) {
+  new ResizeObserver(reportHeight).observe(document.body);
+}
+</script>
+</div></section>

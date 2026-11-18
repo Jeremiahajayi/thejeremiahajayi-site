@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Case studies — The World of Jeremiah</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Geist+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#EFEBE3}
+a{color:#111}a:hover{color:#C2360E}
+html{scroll-behavior:smooth}
+::selection{background:#FF4A1C;color:#111}
+.grain{background-image:radial-gradient(rgba(17,17,17,.05) 1px,transparent 1px);background-size:3px 3px}
+.navlink{text-decoration:none;color:#111}.navlink:hover{color:#C2360E}
+.navlink.on{color:#C2360E}
+.btn-ink{text-decoration:none;background:#111;color:#EFEBE3}.btn-ink:hover{background:#FF4A1C;color:#111}
+.btn-orange{text-decoration:none;background:#FF4A1C;color:#111}.btn-orange:hover{background:#111;color:#EFEBE3}
+.btn-line{text-decoration:none;color:#111;border:1.5px solid #111}.btn-line:hover{background:#111;color:#EFEBE3}
+.jump:hover .jump-name{color:#C2360E}
+@keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+@media (prefers-reduced-motion: reduce){.reveal{animation:none !important}}
+</style>
+</helmet>
+<div class="grain" style="width: 100%; min-height: 100vh; background-color: #EFEBE3; color: #111; font-family: 'Manrope', system-ui, sans-serif">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(239,235,227,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #CFC7B8">
+<div style="max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="Main.dc.html" class="navlink" style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1">The world of <em style="color: #C2360E">Jeremiah</em></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Vol. 08 · Case studies</span>
+</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+<a class="navlink on" href="Work.dc.html" aria-current="page">Case studies</a>
+<a class="navlink" href="Portfolio.dc.html">Portfolio</a>
+<a class="navlink" href="Services.dc.html">Services</a>
+<a class="navlink" href="Writing.dc.html">Writing</a>
+<a class="navlink" href="Tools.dc.html">Tools</a>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600">Book a call</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 24px clamp(48px, 6vw, 80px)">
+<p style="margin: 0 0 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Case studies</p>
+<h1 style="margin: 0; max-width: 1100px; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 8.5vw, 132px); line-height: 0.92; letter-spacing: -0.02em">Four companies. <em style="color: #C2360E">Four different problems.</em></h1>
+<p style="margin: 28px 0 0; max-width: 620px; font-size: 19px; line-height: 1.65; color: #2C2823">What the work involved in each one, and what it produced.</p>
+<nav aria-label="Case studies" style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-top: 1px solid #111">
+<sc-for list="{{cases}}" as="c" hint-placeholder-count="4">
+<a class="jump" href="#{{c.id}}" style="display: flex; flex-direction: column; gap: 6px; padding: 18px 16px 20px 0; border-bottom: 1px solid #CFC7B8; text-decoration: none; color: #111">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">{{c.no}} · {{c.role}}</span>
+<span class="jump-name" style="font-family: 'Instrument Serif', serif; font-size: 34px; line-height: 1; transition: color .3s">{{c.name}}</span>
+<span style="font-size: 14px; font-weight: 600; color: #C2360E">{{c.headline}}</span>
+</a>
+</sc-for>
+</nav>
+</section>
+
+<sc-for list="{{cases}}" as="c" hint-placeholder-count="4">
+<article id="{{c.id}}" style="background: {{c.bg}}; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid #111">
+<div>
+<p style="margin: 0 0 14px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">{{c.no}} · {{c.role}}</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 8vw, 120px); line-height: 0.9; letter-spacing: -0.02em">{{c.name}}</h2>
+</div>
+<p style="margin: 0; max-width: 420px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px; line-height: 1.3; color: #3A352E">{{c.about}}</p>
+</div>
+
+<div class="reveal" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+<sc-for list="{{c.results}}" as="r" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6vw, 84px); line-height: 0.9; color: #FF4A1C; letter-spacing: -0.02em">{{r.v}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #2C2823">{{r.l}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="margin-top: clamp(48px, 6vw, 80px); display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 260px">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 30px; line-height: 1.1">The situation</p>
+</div>
+<p style="flex: 2.4 1 520px; margin: 0; max-width: 720px; font-size: 18px; line-height: 1.75; color: #1E1B17">{{c.situation}}</p>
+</div>
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 260px">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 30px; line-height: 1.1">The work</p>
+</div>
+<div style="flex: 2.4 1 520px; max-width: 720px; display: flex; flex-direction: column; gap: 20px">
+<sc-for list="{{c.work}}" as="w" hint-placeholder-count="3">
+<p style="margin: 0; font-size: 18px; line-height: 1.75; color: #1E1B17">{{w}}</p>
+</sc-for>
+<sc-if value="{{c.hasQuote}}" hint-placeholder-val="{{ false }}">
+<blockquote style="margin: 16px 0 0; padding-left: 22px; border-left: 3px solid #FF4A1C; font-family: 'Instrument Serif', serif; font-style: italic; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.25">“{{c.quote}}”<span style="display: block; margin-top: 10px; font-family: 'Manrope', sans-serif; font-style: normal; font-size: 14px; font-weight: 600; color: #5C564C">{{c.quoteBy}}</span></blockquote>
+</sc-if>
+</div>
+</div>
+</div>
+</article>
+</sc-for>
+
+<section style="background: #FF4A1C; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="max-width: 760px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(48px, 6.5vw, 96px); line-height: 0.95; letter-spacing: -0.02em">Want results like these <em>for your company?</em></h2>
+<p style="margin: 22px 0 0; max-width: 560px; font-size: 18px; line-height: 1.65">Start with a free 30-minute diagnostic. I'll tell you where I think the breakdown is happening, and whether working together makes sense.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; font-weight: 600">Book the free diagnostic →</a>
+<a class="btn-line" href="Portfolio.dc.html" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; font-weight: 600; box-sizing: border-box">See the portfolio</a>
+</div>
+</div>
+<div style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<a href="Main.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 20px; text-decoration: none">The world of <em>Jeremiah</em></a>
+<span style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+<a href="mailto:jeremiahajayi245@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a>
+<a href="Writing.dc.html">Writing</a>
+</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px">Lagos · © 2026</span>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const cases = [
+      {
+        id: 'xofu', name: 'Xofu', role: 'Fractional marketing lead', headline: 'A marketing function from zero, in six weeks',
+        about: 'AI visibility platform tracking how brands appear in LLM-generated recommendations. Part of Citation Labs.',
+        results: [
+          { v: '6 wks', l: 'Full marketing function built from zero, ahead of the 90-day brief' },
+          { v: '#1', l: 'Highest click-through rate in the platform’s history on the first newsletter send' },
+          { v: '90-day', l: 'Roadmap delivered within six weeks of the engagement starting' },
+          { v: '0→1', l: 'Brand, content, email, positioning and dashboard built from scratch' }
+        ],
+        situation: 'Xofu had a product but no marketing function: no brand voice, no content infrastructure, no email programme, no positioning document, and no way to measure what future marketing was producing. The engagement was fractional, with a clear brief: build the foundation in 90 days.',
+        work: [
+          'I started with positioning. Before writing any copy, I needed to understand who Xofu’s buyer was, what they already used, and how to describe the product in the language of the problem it solved rather than the technology behind it. That took two weeks and shaped everything that followed.',
+          'From there I built the function in sequence: brand voice and messaging, website copy, a content strategy tied to the search and LLM queries Xofu’s buyers were using, and an email programme starting with the newsletter. The newsletter launched before the 90-day mark and hit the platform’s best click-through rate on its first send, because the audience strategy came before the content.',
+          'A performance dashboard gave the team visibility into what was working and what to build next. The engagement was designed so the function could run without me the day it ended.'
+        ],
+        quote: '', quoteBy: ''
+      },
+      {
+        id: 'remotepass', name: 'RemotePass', role: 'Content engine + GTM', headline: '174% YoY organic growth, $500K+ pipeline',
+        about: 'End-to-end HR tech platform for hiring, onboarding, paying and managing remote teams in 150+ countries.',
+        results: [
+          { v: '174%', l: 'Increase in organic user acquisition, year on year' },
+          { v: '159%', l: 'Growth in organic traffic within 12 months' },
+          { v: '$500K+', l: 'Content-attributed inbound pipeline in H1 2025' },
+          { v: '270+', l: 'Global press pickups across thought leadership and product coverage' }
+        ],
+        situation: 'RemotePass had a marketing function in name but not in practice. Content was being produced, but it had no relationship to lead generation, product adoption or revenue. The team was publishing into a void.',
+        work: [
+          'I rebuilt the content strategy around one question every piece had to answer before it was written: what decision does this help a buyer make, and where does that buyer sit in the sales cycle?',
+          'The strategy ran across four connected areas. For acquisition, I targeted high-intent search terms, built a GEO-ready content architecture for AI search, and distributed content where buyers spent time. For thought leadership, I developed a consistent point of view and placed features in outlets including Wamda. For product education, I built a Help Centre and feature content that reduced time to activation. For sales, I produced the decks, case studies and objection handlers the team used in live deals.',
+          'Product launches across EMEA, APAC and North America ran through the same framework: positioning brief, content plan, launch assets, post-launch review. The Global Contractor Rate Index written in this period ranked #1 on Google for “global contractor rates”, appeared in the AI Overview, and still brings in leads from more than 20 markets.'
+        ],
+        quote: 'Working with Jeremiah transformed our marketing. He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', quoteBy: 'Wesley Hattingh, RemotePass'
+      },
+      {
+        id: 'stears', name: 'Stears', role: 'SEO + GTM strategy', headline: '#1 on Google, above the BBC and CNN',
+        about: 'Financial intelligence platform for global funds investing in Africa.',
+        results: [
+          { v: '1.9M+', l: 'Users accessed the Elections Tracker during Nigeria’s 2023 general election' },
+          { v: '#1', l: 'Outranked the BBC, CNN and INEC for “2023 election results” on Google' },
+          { v: 'FT', l: 'The Financial Times, Quartz and Al Jazeera cited Stears as a primary data source' },
+          { v: 'Live', l: 'Blog adopted by journalists, civil society groups and election observers' }
+        ],
+        situation: 'Nigeria’s 2023 general election was the most contested in years. Stears had an Elections Tracker with real data value but limited organic reach and no SEO infrastructure to match the moment. The challenge: get millions of Nigerians to find and trust Stears over global outlets and the electoral commission itself.',
+        work: [
+          'I built the SEO roadmap from scratch, mapping the exact searches Nigerians would make before and on election night, from candidate names to constituency queries to live results. I trained the analyst team on the workflow and editorial standards needed to publish at election-night pace without losing accuracy.',
+          'The live blog launched inside the Elections Tracker, built to update in real time and hold up under traffic spikes. I led the research and publication of candidate profiles for every major office, so Stears had content ready before the searches began.',
+          'Across engineering, design and editorial, it ran as one coordinated launch. Stears outperformed outlets with decades of international infrastructure because the content was built around exactly what voters were searching for, exactly when they searched.'
+        ],
+        quote: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', quoteBy: 'Adetoro Adeniran, Stears'
+      },
+      {
+        id: 'piggyvest', name: 'PiggyVest', role: 'Content + brand storytelling', headline: '40,000+ app downloads from storytelling',
+        about: 'Nigeria’s leading digital savings and investment platform, with over 4 million users.',
+        results: [
+          { v: '40K+', l: 'App downloads driven directly by campaign content' },
+          { v: '100K+', l: 'Unique readers across the Six Figures series' },
+          { v: '12%', l: 'Increase in new account sign-ups during campaign windows' },
+          { v: 'Top 3', l: 'Content initiative by engagement and share rate on PiggyVest’s blog' }
+        ],
+        situation: 'PiggyVest had an engaged user base but needed to deepen adoption of its core savings products, Piggybank and Safelock. The challenge was making financial products feel personal to people who understood saving in principle but hadn’t built the habit.',
+        work: [
+          'The approach was storytelling first, product second. The Six Figures series documented real Nigerians building financial discipline with PiggyVest. The Grown Ups campaign widened that into a story about managing money well at different stages of life. Neither led with the product, and both drove adoption because readers saw themselves in the people featured.',
+          'I worked across video, design and product to keep the campaigns cohesive on every channel, and wrote search-friendly explainers that shortened the gap between discovering a feature and knowing how to use it.',
+          'The content worked because it respected the reader. It didn’t explain Safelock. It showed what life looked like when someone used it consistently.'
+        ],
+        quote: '', quoteBy: ''
+      }
+    ];
+    return {
+      cases: cases.map((c, i) => ({ ...c, no: String(i + 1).padStart(2, '0'), bg: i % 2 ? '#E4DED2' : '#EFEBE3', hasQuote: !!c.quote }))
+    };
+  }
+}
+</script>
+</body>
+</html>

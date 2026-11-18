@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio — The World of Jeremiah</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Geist+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#EFEBE3}
+a{color:#111}a:hover{color:#C2360E}
+::selection{background:#FF4A1C;color:#111}
+.grain{background-image:radial-gradient(rgba(17,17,17,.05) 1px,transparent 1px);background-size:3px 3px}
+.navlink{text-decoration:none;color:#111}.navlink:hover{color:#C2360E}.navlink.on{color:#C2360E}
+.btn-ink{text-decoration:none;background:#111;color:#EFEBE3}.btn-ink:hover{background:#FF4A1C;color:#111}
+.chip{cursor:pointer;font:inherit;border:1.5px solid #111;background:transparent;color:#111}
+.chip:hover{background:#E4DED2}
+.chip.on{background:#111;color:#EFEBE3}
+.piece{transition:transform .3s ease,box-shadow .3s ease}
+.piece:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,17,17,.10)}
+.plink{font-weight:700;text-decoration:none;border-bottom:1.5px solid #FF4A1C}
+.plink:hover{color:#C2360E}
+</style>
+</helmet>
+<div class="grain" style="width: 100%; min-height: 100vh; background-color: #EFEBE3; color: #111; font-family: 'Manrope', system-ui, sans-serif">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(239,235,227,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #CFC7B8">
+<div style="max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="Main.dc.html" class="navlink" style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1">The world of <em style="color: #C2360E">Jeremiah</em></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Vol. 08 · Portfolio</span>
+</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+<a class="navlink" href="Work.dc.html">Case studies</a>
+<a class="navlink on" href="Portfolio.dc.html" aria-current="page">Portfolio</a>
+<a class="navlink" href="Services.dc.html">Services</a>
+<a class="navlink" href="Writing.dc.html">Writing</a>
+<a class="navlink" href="Tools.dc.html">Tools</a>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600">Book a call</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 24px clamp(40px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end">
+<div style="flex: 999 1 640px; min-width: 0">
+<p style="margin: 0 0 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Portfolio · {{total}} pieces</p>
+<h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(52px, 7.5vw, 116px); line-height: 0.94; letter-spacing: -0.02em">Work that helped products <em style="color: #C2360E">launch, rank, sell</em> and get remembered.</h1>
+</div>
+<div style="flex: 1 1 280px; border-top: 1px solid #111; padding-top: 14px">
+<p style="margin: 0 0 10px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Published in</p>
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1.25">Product Marketing Alliance, <em>Buffer</em>, ProductLed, <em>The Condia</em></p>
+</div>
+</section>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: 0 24px clamp(72px, 10vw, 140px)">
+<div role="group" aria-label="Filter by type" style="position: sticky; top: 69px; z-index: 5; padding: 14px 0; background: rgba(239,235,227,0.96); display: flex; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid #111">
+<sc-for list="{{filters}}" as="fl" hint-placeholder-count="6">
+<button type="button" class="chip {{fl.cls}}" onClick="{{fl.pick}}" aria-pressed="{{fl.pressed}}" style="min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 600">{{fl.label}} <span style="opacity: .6; font-weight: 500">{{fl.count}}</span></button>
+</sc-for>
+</div>
+
+<div style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px">
+<sc-for list="{{shown}}" as="p" hint-placeholder-count="9">
+<article class="piece" style="background: #F6F3EC; border: 1px solid #CFC7B8; border-radius: 6px; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-family: 'Geist Mono', monospace; font-size: 12px">
+<span style="color: #C2360E">{{p.catLabel}}</span>
+<span style="color: #5C564C">{{p.pub}}</span>
+</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 27px; line-height: 1.12">{{p.title}}</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3A352E; flex-grow: 1">{{p.desc}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 18px; padding-top: 12px; border-top: 1px dashed #CFC7B8; font-size: 14px">
+<sc-for list="{{p.links}}" as="l" hint-placeholder-count="1">
+<a class="plink" href="{{l.href}}">{{l.label}} ↗</a>
+</sc-for>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #111; color: #EFEBE3">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 128px) 24px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
+<h2 style="margin: 0; max-width: 760px; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.98; letter-spacing: -0.02em">Is this the right fit? <em style="color: #FF4A1C">Let's find out in 30 minutes.</em></h2>
+<a href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; background: #FF4A1C; color: #111; text-decoration: none; font-weight: 600">Book a free diagnostic →</a>
+</div>
+<div style="border-top: 1px solid #3A352E">
+<div style="max-width: 1320px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<a href="Main.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 20px; text-decoration: none; color: #EFEBE3">The world of <em>Jeremiah</em></a>
+<span style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+<a href="mailto:jeremiahajayi245@gmail.com" style="color: #EFEBE3">Email</a>
+<a href="https://www.linkedin.com/in/jeremiah-ajayi/" style="color: #EFEBE3">LinkedIn</a>
+<a href="Work.dc.html" style="color: #EFEBE3">Case studies</a>
+</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px">Lagos · © 2026</span>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'all' }; }
+  renderVals() {
+    const L = (label, href) => ({ label, href });
+    const items = [
+      { cat: 'gtm', pub: 'Xofu', title: 'Xofu website and product messaging system', desc: 'Website and product-page copy for an AI visibility platform. The homepage establishes the category and connects buyer-prompt tracking, competitor benchmarking and citation gaps to pipeline.', links: [L('Homepage', 'https://xofu.com/'), L('Free BOFU snapshot', 'https://xofu.com/bofu'), L('How Xofu works', 'https://xofu.com/how-xofu-works')] },
+      { cat: 'gtm', pub: 'RemotePass', title: 'RemotePass Ask AI', desc: 'Landing-page messaging positioning Ask AI as a secure workforce intelligence layer, not another chatbot, built around speed, privacy and better decisions for HR and finance teams.', links: [L('Read', 'https://www.remotepass.com/ai')] },
+      { cat: 'gtm', pub: 'RemotePass', title: 'RemotePass APIs: connect your global workforce stack', desc: 'Positions API infrastructure around its outcome: fewer disconnected systems, less repetitive data entry and more reliable workforce data. Technical credibility for buyers who may never read the docs.', links: [L('Read', 'https://www.remotepass.com/apis')] },
+      { cat: 'gtm', pub: 'RemotePass', title: 'How RemotePass solves the global hiring headache for HR, finance and legal', desc: 'A solution-led piece that handles three buyer functions at once, giving sales a shareable asset that answers multi-stakeholder objections before the first call.', links: [L('Read', 'https://www.remotepass.com/blog/how-remotepass-solves-the-global-hiring-headache-for-hr-finance-and-legal-teams')] },
+      { cat: 'gtm', pub: 'RemotePass', title: 'What the RemotePass EOR platform can and can’t do', desc: 'An explainer addressing common sales objections about EOR scope. By naming what the platform doesn’t cover, it improved lead quality before prospects reached sales.', links: [L('Read', 'https://www.remotepass.com/blog/what-remotepass-eor-platform-can-and-cant-do')] },
+      { cat: 'seo', pub: 'RemotePass', title: 'Global Contractor Rate Index', desc: 'Ranks #1 on Google for “global contractor rates” and appears in the AI Overview for the same query. Generated inbound leads from more than 20 markets.', links: [L('Read', 'https://www.remotepass.com/blog/global-contractor-rates-2025')] },
+      { cat: 'seo', pub: 'RemotePass', title: 'RemotePass country guides', desc: 'A repeatable content system explaining local hiring, payroll, tax, benefits and compliance, with a direct path to RemotePass’s EOR and payroll products.', links: [L('Read', 'https://www.remotepass.com/countryguide')] },
+      { cat: 'seo', pub: 'Africa Fintech Summit', title: 'Fintech Marketing Outlook: Nigeria', desc: 'Co-authored the first industry report analysing marketing strategy across Nigeria’s fintech sector. Featured in 30+ national and international media outlets.', links: [L('Read the report', 'https://bitcoinke.io/wp-content/uploads/2024/03/Fintech-Marketing-Outlook-Nigeria-2024-BitKE.pdf')] },
+      { cat: 'seo', pub: 'RemotePass', title: 'MENA HR & Payroll Hub', desc: 'Strategy, information architecture and technical SEO for a hub mapping high-intent questions across the UAE, Saudi Arabia, DIFC and ADGM. Helped grow blog traffic to 50,000 monthly visits and doubled organic leads.', links: [L('Read', 'https://www.remotepass.com/mena-hr-payroll-hub')] },
+      { cat: 'seo', pub: 'RemotePass', title: 'Remote work glossary', desc: 'An A–Z of payroll, compliance and employment terms built to win definition searches and strengthen topical authority across EOR, payroll and contractor management.', links: [L('Read', 'https://www.remotepass.com/remote-work-glossary')] },
+      { cat: 'seo', pub: 'RemotePass', title: 'Hybrid work content cluster', desc: 'Two connected articles that move HR leaders from debating remote versus office to designing a hybrid system: models and foundations, then an execution framework.', links: [L('Part 1', 'https://www.remotepass.com/blog/remote-vs-in-office-bridging-the-divide-with-a-winning-hybrid-work-strategy'), L('Part 2', 'https://www.remotepass.com/blog/how-to-create-a-win-win-hybrid-work-policy-for-your-team')] },
+      { cat: 'tl', pub: 'Product Marketing Alliance', title: '7 systems that let me coordinate 15+ launches without burnout', desc: 'The operational systems behind cross-functional launches across EMEA, APAC and North America, without constant escalation.', links: [L('Read', 'https://www.productmarketingalliance.com/7-systems-that-let-me-coordinate-15-launches/')] },
+      { cat: 'tl', pub: 'Product Marketing Alliance', title: 'How I turned sales call chaos into GTM gold', desc: 'A three-step framework for mining sales calls for buyer language, objections and positioning gaps.', links: [L('Read', 'https://www.productmarketingalliance.com/how-i-turned-sales-call-chaos-into-gtm-gold/')] },
+      { cat: 'tl', pub: 'Product Marketing Alliance', title: 'The Compete or Carve framework', desc: 'Four questions for deciding whether to compete in an existing category or carve out a new one.', links: [L('Read', 'https://www.productmarketingalliance.com/the-compete-or-carve-framework/')] },
+      { cat: 'tl', pub: 'ProductLed', title: 'Product-led marketing in a downturn', desc: 'Using the product itself to drive acquisition, activation and retention when budgets tighten.', links: [L('Read', 'https://productled.com/blog/product-led-marketing-gtm-strategy')] },
+      { cat: 'tl', pub: 'Buffer', title: '5 tips that made me a consistent content creator', desc: 'A personal, systems-led essay on building a sustainable content practice alongside a full-time job.', links: [L('Read', 'https://buffer.com/resources/consistent-content-creator/')] },
+      { cat: 'tl', pub: 'Product Marketing Alliance', title: 'Messaging for multi-product companies', desc: 'How to keep one clear story when multiple products and ICPs pull the narrative in different directions.', links: [L('Read', 'https://www.productmarketingalliance.com/messaging-for-multi-product-companies/')] },
+      { cat: 'tl', pub: 'Product Marketing Alliance', title: 'The 5 steps that took me from content marketer to PMM', desc: 'A practitioner’s account of the content-to-PMM transition, and one of the most-shared career pieces in the PMA community.', links: [L('Read', 'https://www.productmarketingalliance.com/the-5-steps-that-helped-me-go-from-content-marketer-to-pmm/')] },
+      { cat: 'tl', pub: 'RemotePass', title: 'How SMBs can compete for top talent in a global market', desc: 'Positions RemotePass as a strategic partner for smaller companies competing with bigger compensation packages.', links: [L('Read', 'https://www.remotepass.com/blog/how-smbs-can-compete-for-top-talent-in-a-global-hiring-market-in-2025')] },
+      { cat: 'tl', pub: 'RemotePass', title: 'The new $100K H1B fee: a founder’s guide', desc: 'Timely thought leadership on a major US visa change, published within the news cycle to capture founder searches.', links: [L('Read', 'https://www.remotepass.com/blog/the-new-100k-h1b-fee-a-founders-guide-to-global-talent-without-it')] },
+      { cat: 'tl', pub: 'Standalone guide', title: 'Hiring global talent without Bay Area salaries', desc: 'The case for global hiring as a default strategy, written for early-stage founders.', links: [L('Read', 'https://docs.google.com/document/d/1a_hWTNfAElKTLxcfhaSn74NzRteaix8n/edit')] },
+      { cat: 'tl', pub: 'VEC Studio', title: 'VC content marketing: First Round Capital’s playbook', desc: 'How First Round uses long-form content to earn founder trust, produced for a B2B SaaS client copying the model.', links: [L('Read', 'https://victoreduoh.com/vc-content-marketing-first-round-capital-content-playbook/')] },
+      { cat: 'tl', pub: 'The Condia', title: 'How to execute community-led growth', desc: 'A tactical playbook for Nigerian startups building community as an acquisition and retention engine.', links: [L('Read', 'https://thecondia.com/nigerian-startups-community-led-growth/')] },
+      { cat: 'guide', pub: '50+ pages', title: 'Contractor Hiring Toolkit', desc: 'Classification, compliance, onboarding, payments and tax considerations for hiring international contractors, with templates and checklists.', links: [L('Open', 'https://drive.google.com/file/d/1pNuYLGgN9QxatTP4CMc3oOvbB8V3AZpI/view')] },
+      { cat: 'guide', pub: 'Playbook', title: 'A founder’s playbook for hiring global talent', desc: 'Where, when and how to hire internationally, comparing contractors, EOR, Contractor of Record and a local entity.', links: [L('Open', 'https://drive.google.com/file/d/1-T2xq4Wrd4cA5wELzKu0v-OhR_jaoI8r/view')] },
+      { cat: 'guide', pub: 'Template', title: 'Strategic HR plan template', desc: 'An eight-step planning resource connecting people priorities to business goals.', links: [L('Open', 'https://docs.google.com/document/d/1z6KgU_a2PijIEPuH4UCoTwZjMSYIzmxV/edit')] },
+      { cat: 'guide', pub: 'Reference report', title: 'The Annual Leave Guide', desc: 'Statutory leave requirements across 150+ countries. Still brings in organic traffic from HR teams.', links: [L('Open', 'https://drive.google.com/file/d/1VgkJhZ2X4i8tOGpQaAVP6wRilZtwx_Co/view')] },
+      { cat: 'cs', pub: 'RemotePass', title: 'RemotePass customer case study series', desc: 'Problem, solution and impact stories that gave sales credible proof for buyers evaluating the platform.', links: [L('Podeo: 32% headcount growth', 'https://www.remotepass.com/case-studies/podeo'), L('Pemo: 7× team growth', 'https://www.remotepass.com/case-studies/pemo'), L('Moniepoint: payroll in one day', 'https://www.remotepass.com/case-studies/moniepoint')] }
+    ];
+    const cats = [
+      { id: 'all', label: 'All' }, { id: 'gtm', label: 'GTM & launches' }, { id: 'seo', label: 'Content & SEO' },
+      { id: 'tl', label: 'Thought leadership' }, { id: 'guide', label: 'Guides & toolkits' }, { id: 'cs', label: 'Customer stories' }
+    ];
+    const labelOf = {}; cats.forEach(c => { labelOf[c.id] = c.label; });
+    const cur = this.state.cat;
+    return {
+      total: items.length,
+      filters: cats.map(c => ({
+        label: c.label,
+        count: c.id === 'all' ? items.length : items.filter(i => i.cat === c.id).length,
+        cls: c.id === cur ? 'on' : '',
+        pressed: c.id === cur ? 'true' : 'false',
+        pick: () => this.setState({ cat: c.id })
+      })),
+      shown: items.filter(i => cur === 'all' || i.cat === cur).map(i => ({ ...i, catLabel: labelOf[i.cat] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

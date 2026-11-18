@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Free diagnostics — The World of Jeremiah</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Geist+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#EFEBE3}
+a{color:#111}a:hover{color:#C2360E}
+::selection{background:#FF4A1C;color:#111}
+.grain{background-image:radial-gradient(rgba(17,17,17,.05) 1px,transparent 1px);background-size:3px 3px}
+.navlink{text-decoration:none;color:#111}.navlink:hover{color:#C2360E}.navlink.on{color:#C2360E}
+.btn-ink{text-decoration:none;background:#111;color:#EFEBE3}.btn-ink:hover{background:#FF4A1C;color:#111}
+.btn-orange{text-decoration:none;background:#FF4A1C;color:#111}.btn-orange:hover{background:#EFEBE3;color:#111}
+.ans{cursor:pointer;font:inherit;border:1.5px solid #5C564C;background:transparent;color:#EFEBE3}
+.ans:hover{border-color:#EFEBE3}
+.ans.on{background:#FF4A1C;border-color:#FF4A1C;color:#111}
+.tool{transition:transform .3s ease}.tool:hover{transform:translateY(-4px)}
+</style>
+</helmet>
+<div class="grain" style="width: 100%; min-height: 100vh; background-color: #EFEBE3; color: #111; font-family: 'Manrope', system-ui, sans-serif">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(239,235,227,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #CFC7B8">
+<div style="max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="Main.dc.html" class="navlink" style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1">The world of <em style="color: #C2360E">Jeremiah</em></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Vol. 08 · Tools</span>
+</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+<a class="navlink" href="Work.dc.html">Case studies</a>
+<a class="navlink" href="Portfolio.dc.html">Portfolio</a>
+<a class="navlink" href="Services.dc.html">Services</a>
+<a class="navlink" href="Writing.dc.html">Writing</a>
+<a class="navlink on" href="Tools.dc.html" aria-current="page">Tools</a>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600">Book a call</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 24px clamp(48px, 6vw, 80px)">
+<p style="margin: 0 0 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Free diagnostics</p>
+<h1 style="margin: 0; max-width: 1150px; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 8.5vw, 128px); line-height: 0.92; letter-spacing: -0.02em">Find where growth is leaking <em style="color: #C2360E">before you spend another dollar.</em></h1>
+<p style="margin: 28px 0 0; max-width: 620px; font-size: 19px; line-height: 1.65; color: #2C2823">Three self-assessments I built for founders and marketing leads. Answer honestly: they're most useful when the answers are uncomfortable.</p>
+</section>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: 0 24px clamp(72px, 9vw, 120px)">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+<sc-for list="{{tools}}" as="t" hint-placeholder-count="3">
+<a class="tool" href="{{t.href}}" style="display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 6px; background: {{t.bg}}; color: {{t.fg}}; text-decoration: none; min-height: 440px; box-sizing: border-box">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; opacity: .8">{{t.meta}}</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 44px; line-height: 1">{{t.name}}</span>
+<span style="font-size: 16px; line-height: 1.65; opacity: .9">{{t.body}}</span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 1px solid currentColor; font-size: 14px; line-height: 1.5; flex-grow: 1">
+<sc-for list="{{t.parts}}" as="pt" hint-placeholder-count="4"><span>— {{pt}}</span></sc-for>
+</span>
+<span style="font-size: 15px; font-weight: 700">{{t.cta}} →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #111; color: #EFEBE3">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px; display: flex; flex-wrap: wrap; gap: 48px 72px">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #FF4A1C">Try it here · positioning clarity</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5.5vw, 80px); line-height: 0.95">Three questions. <em style="color: #FF4A1C">Ten seconds each.</em></h2>
+<p style="margin: 22px 0 0; max-width: 440px; font-size: 17px; line-height: 1.65; color: #D8D1C5">The first section of the GTM Readiness Scorecard. If your score is low here, everything downstream (sales, content, launches) has to work harder.</p>
+<div style="margin-top: 36px; padding: 26px; border: 1px solid #5C564C; border-radius: 6px">
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; color: #A9A194">Your score</p>
+<p style="margin: 6px 0 0; font-family: 'Instrument Serif', serif; font-size: 88px; line-height: 0.9"><span style="color: #FF4A1C">{{score}}</span><span style="font-size: 36px; color: #A9A194"> / 6</span></p>
+<p style="margin: 14px 0 0; font-size: 16px; line-height: 1.6">{{verdict}}</p>
+<a class="btn-orange" href="https://www.thejeremiahajayi.com/gtm-scorecard" style="margin-top: 18px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 700">Take the full scorecard →</a>
+</div>
+</div>
+<ol style="flex: 1.4 1 480px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; border-top: 1px solid #5C564C">
+<sc-for list="{{questions}}" as="q" hint-placeholder-count="3">
+<li style="padding: 28px 0; border-bottom: 1px solid #5C564C; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(22px, 2vw, 27px); line-height: 1.3"><span style="color: #FF4A1C">0{{q.n}}</span> {{q.text}}</p>
+<div role="group" aria-label="Answer" style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3">
+<button type="button" class="ans {{o.cls}}" onClick="{{o.pick}}" aria-pressed="{{o.pressed}}" style="min-height: 44px; min-width: 96px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 600">{{o.label}}</button>
+</sc-for>
+</div>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<section style="background: #FF4A1C; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 9vw, 120px) 24px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
+<h2 style="margin: 0; max-width: 760px; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.96; letter-spacing: -0.02em">Found a gap? <em>Let's talk about closing it.</em></h2>
+<div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; font-weight: 600">Book a free diagnostic →</a>
+<span style="font-size: 14px">30 minutes · No pitch · No obligation</span>
+</div>
+</div>
+<div style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<a href="Main.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 20px; text-decoration: none">The world of <em>Jeremiah</em></a>
+<span style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+<a href="mailto:jeremiahajayi245@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a>
+<a href="Services.dc.html">Services</a>
+</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px">Lagos · © 2026</span>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { a: [null, null, null] }; }
+  renderVals() {
+    const texts = [
+      'Your team can describe what the product does and who it is for in one sentence, without hedging, jargon or qualifiers.',
+      'You have a documented answer to why a buyer would choose you over the most credible alternative, and sales actually uses it.',
+      'Your homepage makes clear who you serve and what you do within ten seconds.'
+    ];
+    const vals = { Yes: 2, Partial: 1, No: 0 };
+    const a = this.state.a;
+    const answered = a.filter(x => x !== null).length;
+    const score = a.reduce((s, x) => s + (x === null ? 0 : vals[x]), 0);
+    let verdict = 'Answer all three to see where you stand.';
+    if (answered === 3) {
+      verdict = score >= 5 ? 'Strong. Your story is clear; the gaps are probably further down the funnel.'
+        : score >= 3 ? 'Partly there. Buyers are likely filling in the blanks themselves, and not always in your favour.'
+        : 'This is where to start. Until the story is clear, every other channel has to work harder.';
+    }
+    return {
+      score,
+      verdict,
+      questions: texts.map((text, i) => ({
+        n: i + 1, text,
+        opts: ['Yes', 'Partial', 'No'].map(label => ({
+          label,
+          cls: a[i] === label ? 'on' : '',
+          pressed: a[i] === label ? 'true' : 'false',
+          pick: () => { const next = this.state.a.slice(); next[i] = label; this.setState({ a: next }); }
+        }))
+      })),
+      tools: [
+        { name: 'GTM Readiness Scorecard', meta: '15 questions · score out of 30', body: 'Are you ready to scale? Score yourself across five dimensions of go-to-market readiness.', parts: ['Positioning clarity', 'Sales and marketing alignment', 'Content-to-pipeline connection', 'Launch readiness', 'Team capability'], cta: 'Take the scorecard', href: 'https://www.thejeremiahajayi.com/gtm-scorecard', bg: '#FF4A1C', fg: '#111' },
+        { name: 'Category Visibility Audit', meta: '20 questions · score out of 60', body: 'Is your brand showing up where buyers look? Score your visibility across AI search, content, positioning and category authority.', parts: ['AI search presence', 'Content and thought leadership', 'Positioning clarity', 'Pipeline and distribution'], cta: 'Run the audit', href: 'https://www.thejeremiahajayi.com/categoryvisibilityaudit', bg: '#111', fg: '#EFEBE3' },
+        { name: 'Marketing Audit', meta: 'Marketing function health', body: 'For founders and CMOs unsure who to hire or why content isn’t turning into pipeline: check the health of the marketing function itself.', parts: ['Who should own marketing', 'Why content isn’t reaching pipeline', 'Where the function needs help'], cta: 'Start the audit', href: 'https://www.thejeremiahajayi.com/marketingaudit', bg: '#E4DED2', fg: '#111' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

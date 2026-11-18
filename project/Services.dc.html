@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Services — The World of Jeremiah</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Geist+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#EFEBE3}
+a{color:#111}a:hover{color:#C2360E}
+::selection{background:#FF4A1C;color:#111}
+.grain{background-image:radial-gradient(rgba(17,17,17,.05) 1px,transparent 1px);background-size:3px 3px}
+.navlink{text-decoration:none;color:#111}.navlink:hover{color:#C2360E}.navlink.on{color:#C2360E}
+.btn-ink{text-decoration:none;background:#111;color:#EFEBE3}.btn-ink:hover{background:#FF4A1C;color:#111}
+.btn-orange{text-decoration:none;background:#FF4A1C;color:#111}.btn-orange:hover{background:#EFEBE3;color:#111}
+.btn-line{text-decoration:none;color:#111;border:1.5px solid #111}.btn-line:hover{background:#111;color:#EFEBE3}
+.svc{transition:background .3s,color .3s}
+.svc:hover{background:#111;color:#EFEBE3}
+.svc:hover .svc-sub{color:#D8D1C5}
+</style>
+</helmet>
+<div class="grain" style="width: 100%; min-height: 100vh; background-color: #EFEBE3; color: #111; font-family: 'Manrope', system-ui, sans-serif">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(239,235,227,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #CFC7B8">
+<div style="max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="Main.dc.html" class="navlink" style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1">The world of <em style="color: #C2360E">Jeremiah</em></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Vol. 08 · Services</span>
+</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+<a class="navlink" href="Work.dc.html">Case studies</a>
+<a class="navlink" href="Portfolio.dc.html">Portfolio</a>
+<a class="navlink on" href="Services.dc.html" aria-current="page">Services</a>
+<a class="navlink" href="Writing.dc.html">Writing</a>
+<a class="navlink" href="Tools.dc.html">Tools</a>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600">Book a call</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 24px clamp(56px, 7vw, 96px)">
+<p style="margin: 0 0 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">GTM messaging and content</p>
+<h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(64px, 10vw, 160px); line-height: 0.9; letter-spacing: -0.025em">Your product has evolved. <em style="color: #FF4A1C">Has your story?</em></h1>
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between">
+<p style="margin: 0; max-width: 620px; font-size: 19px; line-height: 1.65; color: #2C2823">I help B2B SaaS companies turn product launches, repositioning and market expansion into clear messaging, useful sales enablement and content that reaches buyers.</p>
+<a class="btn-orange" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; font-weight: 600">Let's discuss your GTM · 30 min, no pitch →</a>
+</div>
+</section>
+
+<section aria-label="Track record" style="background: #111; color: #EFEBE3">
+<div style="max-width: 1320px; margin: 0 auto; padding: 36px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="5">
+<div>
+<span style="display: block; font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 1; color: #FF4A1C">{{s.v}}</span>
+<span style="display: block; margin-top: 8px; font-size: 14px; line-height: 1.5; color: #D8D1C5">{{s.l}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 72px">
+<h2 style="flex: 1 1 340px; margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 62px); line-height: 1.02">Make your next GTM move easier to <em style="color: #C2360E">understand, sell and distribute</em></h2>
+<div style="flex: 1.3 1 480px; display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.7; color: #1E1B17">
+<p style="margin: 0">Launching a product takes more than announcing that it exists. Repositioning takes more than changing the homepage headline. Entering a new market takes more than repurposing the story that worked elsewhere.</p>
+<p style="margin: 0">I connect the three parts companies often treat separately: the message buyers encounter, the materials sales uses, and the content that carries the story into the market.</p>
+</div>
+</div>
+<div style="margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border-top: 1px solid #111">
+<sc-for list="{{pillars}}" as="p" hint-placeholder-count="3">
+<div style="padding: 28px 28px 32px 0; border-bottom: 1px solid #CFC7B8">
+<p style="margin: 0 0 12px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">{{p.n}} · {{p.who}}</p>
+<h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 34px; line-height: 1.05">{{p.name}}</h3>
+<p style="margin: 12px 0 0; font-size: 16px; line-height: 1.65; color: #3A352E">{{p.body}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #E4DED2; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px">
+<p style="margin: 0 0 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Primary engagement · limited to two clients at a time</p>
+<div style="display: flex; flex-wrap: wrap; gap: 40px 72px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 7.5vw, 112px); line-height: 0.9; letter-spacing: -0.02em">Embedded <em>GTM partner</em></h2>
+<p style="margin: 28px 0 0; max-width: 560px; font-size: 18px; line-height: 1.7; color: #1E1B17">For B2B startups that need experienced GTM support but aren't ready to hire a full-time product marketing leader. I embed in your team to connect product, sales and marketing around a clearer market story: sharper messaging, stronger launches, sales enablement, and the content system that reaches buyers consistently.</p>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; font-weight: 600">Explore embedded support →</a>
+<span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 20px; color: #3A352E">Pricing discussed on the diagnostic call</span>
+</div>
+</div>
+<div style="flex: 1 1 400px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+<div>
+<p style="margin: 0 0 12px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px">This can include</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+<sc-for list="{{embedIncludes}}" as="x" hint-placeholder-count="8"><li style="padding-left: 18px; position: relative"><span aria-hidden="true" style="position: absolute; left: 0; color: #FF4A1C">—</span>{{x}}</li></sc-for>
+</ul>
+</div>
+<div>
+<p style="margin: 0 0 12px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px">Best suited for</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+<sc-for list="{{embedFit}}" as="x" hint-placeholder-count="4"><li style="padding-left: 18px; position: relative"><span aria-hidden="true" style="position: absolute; left: 0; color: #FF4A1C">—</span>{{x}}</li></sc-for>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px; border-top: 1px solid #111">
+<p style="margin: 0 0 12px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Additional services</p>
+<h2 style="margin: 0 0 40px; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 62px); line-height: 1.02">Need something <em>more focused?</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{extras}}" as="e" hint-placeholder-count="3">
+<a class="svc" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: flex; flex-direction: column; gap: 14px; padding: 30px; border: 1px solid #111; border-radius: 6px; text-decoration: none; color: #111; background: #F6F3EC">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; opacity: .75">{{e.tag}}</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 36px; line-height: 1.02">{{e.name}}</span>
+<span class="svc-sub" style="font-size: 16px; line-height: 1.65; color: #3A352E">{{e.body}}</span>
+<span class="svc-sub" style="font-size: 14px; line-height: 1.6; color: #3A352E"><strong style="font-weight: 700">Includes:</strong> {{e.includes}}</span>
+<span class="svc-sub" style="font-size: 14px; line-height: 1.6; color: #3A352E; flex-grow: 1"><strong style="font-weight: 700">Best for:</strong> {{e.fit}}</span>
+<span style="font-weight: 700; font-size: 15px">{{e.cta}} →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #E4DED2; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 72px; margin-bottom: 44px">
+<h2 style="flex: 1 1 340px; margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 62px); line-height: 1.02">What working together <em>looks like</em></h2>
+<p style="flex: 1.3 1 420px; margin: 0; align-self: flex-end; font-size: 18px; line-height: 1.7; color: #1E1B17">Every engagement begins with diagnosis, not assumptions. The clearer we are on the commercial priority, the faster the work produces something the market can act on.</p>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #111">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #A9A194">
+<span style="display: block; font-family: 'Instrument Serif', serif; font-size: 64px; line-height: 0.9; color: #FF4A1C">{{s.n}}</span>
+<span style="display: block; margin-top: 14px; font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1">{{s.name}}</span>
+<span style="display: block; margin-top: 10px; font-size: 15px; line-height: 1.65; color: #3A352E">{{s.body}}</span>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<section style="background: #FF4A1C; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="max-width: 780px">
+<p style="margin: 0 0 16px; font-family: 'Geist Mono', monospace; font-size: 12px">Ready when you are</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(48px, 6.5vw, 96px); line-height: 0.95; letter-spacing: -0.02em">Your next GTM move deserves a story <em>the whole company can use.</em></h2>
+<p style="margin: 22px 0 0; max-width: 560px; font-size: 18px; line-height: 1.65">Tell me what your company is launching or changing. I'll arrive with a perspective.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; font-weight: 600">Book a GTM diagnostic →</a>
+<span style="font-size: 14px">30 minutes · No pitch · No obligation</span>
+</div>
+</div>
+<div style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<a href="Main.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 20px; text-decoration: none">The world of <em>Jeremiah</em></a>
+<span style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+<a href="mailto:jeremiahajayi245@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a>
+<a href="Work.dc.html">Case studies</a>
+</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px">Lagos · © 2026</span>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stats: [
+        { v: '15+', l: 'Product launches across payroll, payments, compliance, HR tech and AI' },
+        { v: '174%', l: 'Year-on-year growth in organic users at RemotePass' },
+        { v: '$3M+', l: 'Influenced pipeline for clients so far' },
+        { v: '1.9M', l: 'Users acquired through a single content strategy at Stears' },
+        { v: '$70K+', l: 'Qualified pipeline in 90 days through content repositioning' }
+      ],
+      pillars: [
+        { n: '01', who: 'Buyers', name: 'The message buyers encounter', body: 'Website, landing pages and positioning that make the product clear to the right people.' },
+        { n: '02', who: 'Sales', name: 'The materials sales uses', body: 'Decks, one-pagers, battlecards and case studies that help revenue teams close.' },
+        { n: '03', who: 'Market', name: 'The content that carries the story', body: 'Articles, guides and thought leadership that distribute the narrative into the market.' }
+      ],
+      embedIncludes: ['Positioning and messaging', 'Product-launch strategy', 'Website and landing-page narratives', 'Sales decks and one-pagers', 'Case studies', 'Campaign and content planning', 'Executive thought leadership', 'GTM reporting and message refinement'],
+      embedFit: ['Teams running several launches at once', 'Companies repositioning or entering a new market', 'Startups whose sales motion needs clearer narrative support', 'Founders who need senior GTM judgment before a full-time hire'],
+      extras: [
+        { tag: 'Content production · monthly', name: 'Ongoing GTM content partner', body: 'For companies with a clear commercial priority that need content supporting it consistently: a focused system around the story the market needs to understand, not disconnected articles.', includes: 'product and category education, search and AI-discovery content, customer stories, comparison content, founder thought leadership, email and nurture.', fit: 'teams with a defined product, audience and GTM direction that need consistent execution.', cta: 'Build your GTM content system' },
+        { tag: 'Fixed project', name: 'Positioning and messaging sprint', body: 'For companies whose product has changed faster than the way they describe it. I study your product, buyers, category and competitors, then build one coherent story for the website, sales and content.', includes: 'buyer and competitor research, positioning and messaging house, value propositions, audience narratives, homepage recommendations, objection messaging.', fit: 'launches, repositioning, new segments, market expansion and upmarket moves.', cta: 'Clarify your market story' },
+        { tag: 'Per launch', name: 'Product launch and sales enablement', body: 'For teams introducing a new product, feature, market or use case. I turn the launch strategy into the materials needed across the buying journey.', includes: 'launch messaging and GTM brief, landing pages, sales decks and one-pagers, battlecards and objection guides, launch emails, post-launch distribution plan.', fit: 'a product ready to launch with incomplete messaging, enablement or campaigns.', cta: 'Prepare your launch' }
+      ],
+      steps: [
+        { n: '01', name: 'Diagnose', body: 'I review your product, buyers, messaging, competitors, sales materials and content to find where the GTM story breaks down.' },
+        { n: '02', name: 'Clarify', body: 'We agree on the commercial priority and develop the positioning, narrative and messages to support it.' },
+        { n: '03', name: 'Build', body: 'I turn the strategy into the website, sales and content assets your team needs to take the story to market.' },
+        { n: '04', name: 'Distribute and refine', body: 'We take the story to market, gather feedback from buyers and sales, and improve the message based on what we learn.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

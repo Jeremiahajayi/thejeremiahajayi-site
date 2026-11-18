@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Writing — The World of Jeremiah</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Geist+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#EFEBE3}
+a{color:#111}a:hover{color:#C2360E}
+::selection{background:#FF4A1C;color:#111}
+.grain{background-image:radial-gradient(rgba(17,17,17,.05) 1px,transparent 1px);background-size:3px 3px}
+.navlink{text-decoration:none;color:#111}.navlink:hover{color:#C2360E}.navlink.on{color:#C2360E}
+.btn-ink{text-decoration:none;background:#111;color:#EFEBE3}.btn-ink:hover{background:#FF4A1C;color:#111}
+.chip{cursor:pointer;font:inherit;border:1.5px solid #111;background:transparent;color:#111}
+.chip:hover{background:#E4DED2}.chip.on{background:#111;color:#EFEBE3}
+.post:hover .post-title{color:#C2360E}
+.feat{transition:transform .3s ease}.feat:hover{transform:translateY(-4px)}
+.feat:hover .feat-title{text-decoration:underline;text-decoration-color:#FF4A1C;text-decoration-thickness:2px;text-underline-offset:5px}
+</style>
+</helmet>
+<div class="grain" style="width: 100%; min-height: 100vh; background-color: #EFEBE3; color: #111; font-family: 'Manrope', system-ui, sans-serif">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(239,235,227,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #CFC7B8">
+<div style="max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="Main.dc.html" class="navlink" style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1">The world of <em style="color: #C2360E">Jeremiah</em></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Vol. 08 · Writing</span>
+</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+<a class="navlink" href="Work.dc.html">Case studies</a>
+<a class="navlink" href="Portfolio.dc.html">Portfolio</a>
+<a class="navlink" href="Services.dc.html">Services</a>
+<a class="navlink on" href="Writing.dc.html" aria-current="page">Writing</a>
+<a class="navlink" href="Tools.dc.html">Tools</a>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600">Book a call</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 24px clamp(48px, 6vw, 80px); display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end">
+<div style="flex: 999 1 620px; min-width: 0">
+<p style="margin: 0 0 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Writing · {{total}} posts</p>
+<h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 8.5vw, 132px); line-height: 0.92; letter-spacing: -0.02em">Notes on how buyers <em style="color: #C2360E">find, judge and choose.</em></h1>
+</div>
+<p style="flex: 1 1 300px; margin: 0; font-size: 18px; line-height: 1.65; color: #2C2823">Original research on AI search, teardowns of how companies go to market, and the playbooks I use in my own work.</p>
+</section>
+
+<section aria-label="Most read" style="max-width: 1320px; margin: 0 auto; padding: 0 24px clamp(56px, 7vw, 96px)">
+<p style="margin: 0 0 18px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px">Most read</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-for list="{{featured}}" as="f" hint-placeholder-count="3">
+<a class="feat" href="{{f.href}}" style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 6px; background: {{f.bg}}; color: {{f.fg}}; text-decoration: none; min-height: 300px; box-sizing: border-box">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; opacity: .8">{{f.kicker}}</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 72px; line-height: 0.9">{{f.stat}}</span>
+<span class="feat-title" style="font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1.1; flex-grow: 1">{{f.title}}</span>
+<span style="font-size: 14px; font-weight: 700">Read · {{f.mins}} min →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: 0 24px clamp(72px, 10vw, 140px)">
+<div role="group" aria-label="Filter posts" style="position: sticky; top: 69px; z-index: 5; padding: 14px 0; background: rgba(239,235,227,0.96); display: flex; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid #111">
+<sc-for list="{{filters}}" as="fl" hint-placeholder-count="5">
+<button type="button" class="chip {{fl.cls}}" onClick="{{fl.pick}}" aria-pressed="{{fl.pressed}}" style="min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 600">{{fl.label}} <span style="opacity: .6; font-weight: 500">{{fl.count}}</span></button>
+</sc-for>
+</div>
+<sc-for list="{{shown}}" as="p" hint-placeholder-count="10">
+<a class="post" href="{{p.href}}" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 32px; padding: 26px 4px; border-bottom: 1px solid #CFC7B8; text-decoration: none; color: #111">
+<span style="flex: 0 0 120px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C; line-height: 1.6">{{p.date}}<br>{{p.mins}} min read</span>
+<span style="flex: 999 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">{{p.catLabel}}</span>
+<span class="post-title" style="font-family: 'Instrument Serif', serif; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; transition: color .3s">{{p.title}}</span>
+<span style="max-width: 720px; font-size: 16px; line-height: 1.65; color: #3A352E">{{p.dek}}</span>
+</span>
+<span style="font-size: 14px; font-weight: 700">Read →</span>
+</a>
+</sc-for>
+
+<div style="margin-top: 44px; padding: 32px; border-radius: 6px; background: #111; color: #EFEBE3; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<div style="max-width: 560px">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: 40px; line-height: 1.05">Get the next one <em style="color: #FF4A1C">first.</em></p>
+<p style="margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: #D8D1C5">Teardowns and research on launches, positioning and AI search, straight to your inbox.</p>
+</div>
+<a href="[NEWSLETTER LINK]" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #FF4A1C; color: #111; text-decoration: none; font-weight: 700">Subscribe →</a>
+</div>
+<p style="margin: 28px 0 0; font-size: 16px; line-height: 1.6">Looking for my published work elsewhere (Product Marketing Alliance, Buffer, ProductLed)? <a href="Portfolio.dc.html" style="font-weight: 700">See the portfolio →</a></p>
+</section>
+
+<footer style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<a href="Main.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 20px; text-decoration: none">The world of <em>Jeremiah</em></a>
+<span style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+<a href="mailto:jeremiahajayi245@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a>
+<a href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call</a>
+</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px">Lagos · © 2026</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'all' }; }
+  renderVals() {
+    const B = 'https://www.thejeremiahajayi.com/post/';
+    const posts = [
+      { cat: 'gtm', date: '3 Nov 2026', mins: 10, title: 'How to turn a B2B product launch into sales conversations', dek: 'What Arrows’ relaunch shows about the gap between launch attention and pipeline, and what sales needs from every launch.', href: B + 'saas-product-launch-proof-gap' },
+      { cat: 'ai', date: '21 Oct 2026', mins: 10, title: 'Who owns AEO? Hiring lessons from 40 job listings', dek: 'What companies expect from AI-search hires, and how they split the work between employees and specialists.', href: B + 'who-owns-aeo-hiring-lessons' },
+      { cat: 'gtm', date: '15 Oct 2026', mins: 10, title: 'Does founder-led content work? Data from 530 LinkedIn posts', dek: 'Comparing fintech brands with their founders on LinkedIn, post by post.', href: B + 'does-founder-led-content-work-data-from-530-linkedin-posts' },
+      { cat: 'ai', date: '24 Sep 2026', mins: 5, title: 'OPay, Kuda and Moniepoint: what AI recommends as the best digital bank in Nigeria', dek: 'One prompt, four AI platforms, run twice: which bank wins, and why the answers differ.', href: B + 'opay-kuda-and-moniepoint-what-ai-recommends-as-the-best-digital-bank-in-nigeria' },
+      { cat: 'ai', date: '18 Sep 2026', mins: 9, title: 'AEO and GEO: a simple guide to how AI search works', dek: 'A plain-language explainer, from watching clicks fall at RemotePass to leading product marketing at an AI visibility platform.', href: B + 'aeo-and-geo-a-simple-guide-to-how-ai-search-works' },
+      { cat: 'gtm', date: '2 Sep 2026', mins: 8, title: 'Granola is growing without a big editorial engine. Can that last?', dek: 'A small search footprint, fast adoption, and what happens when the category gets crowded.', href: B + 'granola-growth-strategy' },
+      { cat: 'ai', date: '12 Aug 2026', mins: 9, title: 'Why AI keeps recommending PiggyVest for savings in Nigeria', dek: 'PiggyVest appeared in 14 of 15 answers. The story AI tells about it, and where that story comes from.', href: B + 'why-ai-recommends-piggyvest' },
+      { cat: 'ai', date: '7 Aug 2026', mins: 6, title: 'Best savings apps in Nigeria according to ChatGPT, Gemini and Perplexity', dek: 'What three AI tools recommend when Nigerians ask where to save, and which brands they leave out.', href: B + 'best-savings-apps-in-nigeria-according-to-chatgpt-gemini-perplexity' },
+      { cat: 'play', date: '6 Aug 2026', mins: 8, title: 'The three marketing checks I’d run before spending another dollar', dek: 'Category visibility, marketing function health and GTM readiness, and the audit tools I built for each.', href: B + 'the-three-marketing-audit-tools-i-d-run-before-spending-another-dollar' },
+      { cat: 'gtm', date: '23 Jul 2026', mins: 10, title: 'What comes after investor attention? A GTM analysis of Scale, Raven and Metrifox', dek: 'Three Nigerian startups, three different go-to-market challenges after the funding headlines.', href: B + 'scale-raven-metrifox-gtm-analysis' },
+      { cat: 'gtm', date: '9 Jul 2026', mins: 19, title: 'How do you know if B2B research is working? A teardown of 5 companies', dek: 'A scorecard for research reports, applied to Muck Rack, Ashby, Attest, Customer.io and AppFollow.', href: B + 'how-to-measure-b2b-research' },
+      { cat: 'personal', date: '1 Jul 2026', mins: 10, title: 'The life I chose after the life I planned', dek: 'Leaving law at OAU, starting again, and graduating first class.', href: B + 'the-life-i-chose-after-the-life-i-planned' },
+      { cat: 'gtm', date: '29 Apr 2026', mins: 5, title: 'How to run a local content strategy that scales globally', dek: 'Why the strongest content strategies start narrow, and how local authority grows into global reach.', href: B + 'how-to-run-a-local-content-strategy-that-scales-globally' },
+      { cat: 'play', date: '11 Feb 2026', mins: 8, title: '30+ resources that have made me a better marketer', dek: 'The books, newsletters and tools I keep coming back to.', href: B + '30-resources-that-have-made-me-a-better-marketer' },
+      { cat: 'gtm', date: '9 Dec 2025', mins: 10, title: 'The 5 critical leaks killing your startup’s growth', dek: 'Where early-stage and post-PMF go-to-market quietly breaks down, and how to fix each leak.', href: B + 'the-5-critical-leaks-killing-your-startup-s-growth-and-how-to-fix-them' },
+      { cat: 'play', date: '2 Dec 2025', mins: 8, title: 'A marketing manager’s guide to building a reliable freelance team', dek: 'How I built RemotePass’ first freelance content team, from pitching leadership to feedback systems.', href: B + 'a-marketing-manager-s-guide-to-building-a-reliable-freelance-team' },
+      { cat: 'play', date: '25 Nov 2025', mins: 5, title: 'The template that turns your content audit into a growth lever', dek: 'A free audit template that scores business value, SEO and ICP fit, with a built-in roadmap.', href: B + 'the-template-that-turns-your-content-audit-from-spreadsheet-to-growth-lever' },
+      { cat: 'play', date: '4 Nov 2025', mins: 12, title: 'The 90-day plan that helped me earn C-suite trust at RemotePass', dek: 'The 30/60/90 plan I used to go from new hire to trusted strategist.', href: B + 'the-90-day-plan-that-helped-me-earn-c-suite-trust-at-remotepass' }
+    ];
+    const cats = [{ id: 'all', label: 'All' }, { id: 'ai', label: 'AI search research' }, { id: 'gtm', label: 'GTM & growth' }, { id: 'play', label: 'Playbooks & templates' }, { id: 'personal', label: 'Personal' }];
+    const labelOf = {}; cats.forEach(c => { labelOf[c.id] = c.label; });
+    const cur = this.state.cat;
+    return {
+      total: posts.length,
+      featured: [
+        { kicker: 'AI search research', stat: '3 AIs', title: 'Best savings apps in Nigeria according to ChatGPT, Gemini and Perplexity', mins: 6, href: B + 'best-savings-apps-in-nigeria-according-to-chatgpt-gemini-perplexity', bg: '#FF4A1C', fg: '#111' },
+        { kicker: 'Personal', stat: '2018', title: 'The life I chose after the life I planned', mins: 10, href: B + 'the-life-i-chose-after-the-life-i-planned', bg: '#111', fg: '#EFEBE3' },
+        { kicker: 'AI search research', stat: '14/15', title: 'Why AI keeps recommending PiggyVest for savings in Nigeria', mins: 9, href: B + 'why-ai-recommends-piggyvest', bg: '#E4DED2', fg: '#111' }
+      ],
+      filters: cats.map(c => ({
+        label: c.label,
+        count: c.id === 'all' ? posts.length : posts.filter(p => p.cat === c.id).length,
+        cls: c.id === cur ? 'on' : '', pressed: c.id === cur ? 'true' : 'false',
+        pick: () => this.setState({ cat: c.id })
+      })),
+      shown: posts.filter(p => cur === 'all' || p.cat === cur).map(p => ({ ...p, catLabel: labelOf[p.cat] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

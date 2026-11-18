@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World of Jeremiah — Product Marketing &amp; Organic Growth</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Geist+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#EFEBE3}
+a{color:#111}a:hover{color:#C2360E}
+html{scroll-behavior:smooth}
+::selection{background:#FF4A1C;color:#111}
+em{font-style:italic}
+.grain{background-image:radial-gradient(rgba(17,17,17,.05) 1px,transparent 1px);background-size:3px 3px}
+.halftone{position:relative;overflow:hidden}
+.halftone::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,#111 1.4px,transparent 1.9px);background-size:7px 7px;mix-blend-mode:multiply;opacity:.8;transition:opacity .9s ease}
+.halftone:hover::after,.halftone.clear::after{opacity:0}
+.toc-row{transition:padding .35s cubic-bezier(.2,.8,.2,1)}
+.toc-row:hover{padding-left:20px !important}
+.toc-row:hover .toc-name{color:#C2360E}
+.toc-row:hover .toc-arrow{transform:translateX(6px);color:#FF4A1C}
+.toc-arrow{transition:transform .35s ease,color .35s ease}
+.cover-line{text-decoration:none;color:#111}
+.cover-line:hover .cl-title{text-decoration:underline;text-decoration-color:#FF4A1C;text-decoration-thickness:2px;text-underline-offset:4px}
+.btn-ink{text-decoration:none;background:#111;color:#EFEBE3}
+.btn-ink:hover{background:#FF4A1C;color:#111}
+.btn-orange{text-decoration:none;background:#FF4A1C;color:#111}
+.btn-orange:hover{background:#111;color:#EFEBE3}
+.btn-line{text-decoration:none;color:#111;border:1.5px solid #111}
+.btn-line:hover{background:#111;color:#EFEBE3}
+.btn-line-light{text-decoration:none;color:#EFEBE3;border:1.5px solid #EFEBE3}
+.btn-line-light:hover{background:#EFEBE3;color:#111}
+.navlink{text-decoration:none;color:#111}
+.navlink:hover{color:#C2360E}
+.classified{transition:background .3s,color .3s}
+.classified:hover{background:#111;color:#EFEBE3}
+.classified:hover .cl-sub{color:#D8D1C5}
+.report:hover .rp-title{color:#C2360E}
+.lede::first-letter{font-family:'Instrument Serif',serif;float:left;font-size:5.2em;line-height:.78;margin:.06em .1em 0 0;color:#FF4A1C}
+@keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+@media (prefers-reduced-motion: reduce){.reveal{animation:none !important}.toc-row,.halftone::after{transition:none}}
+</style>
+</helmet>
+<div class="grain" style="width: 100%; min-height: 100vh; background-color: #EFEBE3; color: #111; font-family: 'Manrope', system-ui, sans-serif; box-sizing: border-box">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(239,235,227,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #CFC7B8">
+<div style="max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="#cover" class="navlink" style="display: flex; align-items: baseline; gap: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1">The world of <em style="color: #C2360E">Jeremiah</em></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">Vol. 08 · {{section}}</span>
+</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+<a class="navlink" href="Work.dc.html">Case studies</a>
+<a class="navlink" href="Portfolio.dc.html">Portfolio</a>
+<a class="navlink" href="Services.dc.html">Services</a>
+<a class="navlink" href="Writing.dc.html">Writing</a>
+<a class="navlink" href="Tools.dc.html">Tools</a>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600">Book a call</a>
+</nav>
+</div>
+</header>
+
+<section id="cover" data-section="Cover" style="max-width: 1320px; margin: 0 auto; padding: 32px 24px clamp(64px, 8vw, 112px)">
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-bottom: 12px; border-bottom: 1px solid #111; font-family: 'Geist Mono', monospace; font-size: 12px; color: #3A352E">
+<span>Vol. 08 · Est. 2018</span>
+<span>Lagos, Nigeria · {{time}}</span>
+<span>Product marketing &amp; organic growth</span>
+</div>
+<h1 style="margin: clamp(32px, 5vw, 64px) 0 0; font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.02em">
+<span style="display: block; font-style: italic; font-size: clamp(28px, 3vw, 44px); line-height: 1; color: #C2360E">The world of</span>
+<span style="display: block; font-size: clamp(76px, 12.5vw, 196px); line-height: 0.9">Jeremiah Ajayi</span>
+</h1>
+<div style="margin-top: clamp(36px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.12">I help B2B SaaS, fintech and AI companies turn launches, positioning and search visibility into <em style="color: #C2360E">pipeline.</em></p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a class="btn-orange" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; justify-content: space-between; min-height: 54px; padding: 0 24px; border-radius: 999px; font-size: 16px; font-weight: 600">Book a free 30-minute diagnostic <span aria-hidden="true">→</span></a>
+<a class="btn-line" href="#hire" style="display: inline-flex; align-items: center; justify-content: space-between; min-height: 54px; padding: 0 24px; border-radius: 999px; font-size: 16px; font-weight: 600; box-sizing: border-box">Hiring a product marketer? <span aria-hidden="true">→</span></a>
+</div>
+</div>
+
+<div style="flex: 1 1 360px; min-width: 0; position: relative">
+<div class="halftone {{portraitClass}}" role="img" aria-label="Portrait of Jeremiah Ajayi (placeholder)" style="height: 100%; min-height: 480px; background: #B9B1A3; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center">
+<span style="position: relative; z-index: 1; margin-bottom: 18px; background: #EFEBE3; padding: 6px 12px; border-radius: 999px; font-family: 'Geist Mono', monospace; font-size: 12px">Portrait — upload photo</span>
+</div>
+<div style="position: absolute; top: -20px; right: -12px; width: 136px; height: 136px; border-radius: 50%; background: #FF4A1C; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transform: rotate(9deg); box-shadow: 0 10px 24px rgba(17,17,17,0.16)">
+<span style="font-family: 'Instrument Serif', serif; font-size: 42px; line-height: 1">$3M+</span>
+<span style="font-size: 12px; font-weight: 600; line-height: 1.25; margin-top: 4px">pipeline<br>influenced</span>
+</div>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid #111">
+<p style="margin: 14px 0 6px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">In this issue</p>
+<sc-for list="{{coverLines}}" as="cl" hint-placeholder-count="4">
+<a class="cover-line" href="{{cl.href}}" style="display: flex; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid #CFC7B8">
+<span style="flex: 0 0 92px; font-family: 'Instrument Serif', serif; font-size: 40px; line-height: 1; color: #C2360E">{{cl.num}}</span>
+<span class="cl-title" style="font-size: 16px; font-weight: 600; line-height: 1.4">{{cl.title}}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section aria-label="Clients" style="background: #111; color: #EFEBE3">
+<div style="max-width: 1320px; margin: 0 auto; padding: 26px 24px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 36px">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #FF4A1C">Featured clients</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 28px">RemotePass</span>
+<span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px">Stears</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 28px">PiggyVest</span>
+<span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px">Northzone</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 28px">The Earthshot Prize</span>
+<span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px">iPullRank</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 28px">SEON</span>
+</div>
+</section>
+
+<section id="contents" data-section="Contents" style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 260px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.5vw, 64px); line-height: 1">Contents</h2>
+<p style="margin: 16px 0 0; max-width: 300px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; line-height: 1.3; color: #5C564C">Eight years of launches, writing and experiments, edited down to what matters.</p>
+</div>
+<nav aria-label="Contents" style="flex: 999 1 620px; min-width: 0; border-top: 1px solid #111">
+<sc-for list="{{toc}}" as="t" hint-placeholder-count="6">
+<a class="toc-row" href="{{t.href}}" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 24px; padding: 20px 4px; border-bottom: 1px solid #CFC7B8; text-decoration: none; color: inherit">
+<span style="flex: 0 0 52px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">{{t.page}}</span>
+<span class="toc-name" style="flex: 1 1 240px; font-family: 'Instrument Serif', serif; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.1; transition: color .3s">{{t.name}}</span>
+<span style="flex: 0 1 300px; font-size: 15px; line-height: 1.5; color: #3A352E">{{t.dek}}</span>
+<span class="toc-arrow" aria-hidden="true" style="font-size: 20px">→</span>
+</a>
+</sc-for>
+</nav>
+</div>
+</section>
+
+<section id="work" data-section="Selected work" style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(64px, 10vw, 152px); line-height: 0.9; letter-spacing: -0.02em">Selected <em style="color: #FF4A1C">work</em></h2>
+<p style="margin: 0; max-width: 360px; font-size: 17px; line-height: 1.6; color: #3A352E">Four stories about products that needed to be found, understood and bought, and what changed when they were.</p>
+</div>
+<sc-for list="{{features}}" as="f" hint-placeholder-count="4">
+<article class="reveal" style="max-width: 1320px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) 24px; display: flex; flex-wrap: wrap; flex-direction: {{f.dir}}; gap: 48px; border-bottom: 1px solid #CFC7B8">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">No. {{f.no}} · {{f.client}} · {{f.year}}</p>
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(112px, 15vw, 216px); line-height: 0.82; color: #FF4A1C; letter-spacing: -0.03em">{{f.stat}}</p>
+<p style="margin: 0; max-width: 300px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; line-height: 1.25">{{f.statLabel}}</p>
+</div>
+<div style="flex: 1.4 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(34px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.01em">{{f.title}}</h3>
+<p style="margin: 0; max-width: 620px; font-size: 18px; line-height: 1.65; color: #2C2823">{{f.dek}}</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px; border-top: 1px solid #111; padding-top: 18px">
+<div><p style="margin: 0 0 8px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">The brief</p><p style="margin: 0; font-size: 16px; line-height: 1.6">{{f.brief}}</p></div>
+<div><p style="margin: 0 0 8px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">The work</p><p style="margin: 0; font-size: 16px; line-height: 1.6">{{f.work}}</p></div>
+<div><p style="margin: 0 0 8px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">The result</p><p style="margin: 0; font-size: 16px; line-height: 1.6; font-weight: 700">{{f.result}}</p></div>
+</div>
+<sc-if value="{{f.hasQuote}}" hint-placeholder-val="{{ true }}">
+<blockquote style="margin: 10px 0 0; padding-left: 22px; border-left: 3px solid #FF4A1C; font-family: 'Instrument Serif', serif; font-style: italic; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.25">“{{f.quote}}”<span style="display: block; margin-top: 10px; font-family: 'Manrope', sans-serif; font-style: normal; font-size: 14px; font-weight: 600; color: #5C564C">{{f.quoteBy}}</span></blockquote>
+</sc-if>
+</div>
+</article>
+</sc-for>
+<div style="max-width: 1320px; margin: 0 auto; padding: 56px 24px clamp(72px, 10vw, 140px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px">
+<a class="btn-ink" href="Work.dc.html" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600">Read the full case studies →</a>
+<a class="btn-line" href="Portfolio.dc.html" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600; box-sizing: border-box">Browse 28 published pieces</a>
+</div>
+<p style="margin: 0 0 20px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px">Also in this issue</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 32px; border-top: 1px solid #111">
+<sc-for list="{{briefs}}" as="b" hint-placeholder-count="3">
+<div style="padding: 24px 0; border-bottom: 1px solid #CFC7B8">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 0.95; color: #C2360E">{{b.stat}}</p>
+<p style="margin: 10px 0 6px; font-weight: 700; font-size: 16px">{{b.client}}</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3A352E">{{b.line}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="services" data-section="Ways to work together" style="background: #E4DED2; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 9vw, 128px) 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px; margin-bottom: 44px">
+<div style="flex: 1 1 300px">
+<p style="margin: 0 0 12px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Now accepting new projects</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 4.2vw, 60px); line-height: 1.02">Ways to work <em>together</em></h2>
+</div>
+<p style="flex: 1 1 420px; margin: 0; align-self: flex-end; font-family: 'Instrument Serif', serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.25; color: #2C2823">Most companies aren't short on marketing activity. They're short on marketing that <em style="color: #C2360E">connects to revenue.</em></p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<sc-for list="{{services}}" as="s" hint-placeholder-count="4">
+<a class="classified" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border: 1px solid #111; border-radius: 4px; text-decoration: none; color: #111; background: #EFEBE3">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: inherit; opacity: 0.75">{{s.tag}}</span>
+<span style="font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1.05">{{s.name}}</span>
+<span class="cl-sub" style="font-size: 16px; line-height: 1.6; color: #3A352E; flex-grow: 1">{{s.body}}</span>
+<span style="font-size: 14px; font-weight: 600">Best for {{s.fit}} →</span>
+</a>
+</sc-for>
+</div>
+<div style="margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<a class="btn-ink" href="Services.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-size: 14px; font-weight: 600; margin-right: 12px">See all services →</a>
+<span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; margin-right: 8px">or try a free diagnostic:</span>
+<a class="btn-line" href="Tools.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 600; box-sizing: border-box">GTM readiness score</a>
+<a class="btn-line" href="https://www.thejeremiahajayi.com/categoryvisibilityaudit" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 600; box-sizing: border-box">Category visibility audit</a>
+<a class="btn-line" href="Tools.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 600; box-sizing: border-box">Marketing audit</a>
+</div>
+</div>
+</section>
+
+<section id="ask" data-section="Ask AI" style="background: #111; color: #EFEBE3">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(80px, 11vw, 160px) 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0 0 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #FF4A1C">An experiment in public</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 8vw, 120px); line-height: 0.95; letter-spacing: -0.02em">Don't take <em style="color: #FF4A1C">my word</em> for it.</h2>
+<p style="margin: 26px 0 0; max-width: 520px; font-size: 18px; line-height: 1.65; color: #D8D1C5">I research how AI tools decide which brands to recommend. So ask one about me, and see what it says.</p>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; border: 1px solid #5C564C; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; color: #A9A194">Prompt</p>
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 16px; line-height: 1.55">&gt; Who is Jeremiah Ajayi, the B2B product marketer in Lagos, and what is he known for?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
+<a class="btn-orange" href="https://chatgpt.com/?q=Who%20is%20Jeremiah%20Ajayi%2C%20the%20B2B%20product%20marketer%20in%20Lagos%2C%20and%20what%20is%20he%20known%20for%3F" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 600">Ask ChatGPT ↗</a>
+<a class="btn-line-light" href="https://www.perplexity.ai/search?q=Who%20is%20Jeremiah%20Ajayi%2C%20the%20B2B%20product%20marketer%20in%20Lagos%2C%20and%20what%20is%20he%20known%20for%3F" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 600; box-sizing: border-box">Ask Perplexity ↗</a>
+</div>
+<p style="margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: #D8D1C5">Curious what AI says about your brand? <a href="https://www.thejeremiahajayi.com/categoryvisibilityaudit" style="color: #EFEBE3; font-weight: 600">Run the category visibility audit →</a></p>
+</div>
+</div>
+</section>
+
+<section id="writing" data-section="Writing" style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 9vw, 128px) 24px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 280px">
+<p style="margin: 0 0 12px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Reports &amp; essays</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 4.2vw, 60px); line-height: 1.02">What I'm <em>curious</em> about</h2>
+<p style="margin: 18px 0 0; max-width: 320px; font-size: 16px; line-height: 1.65; color: #3A352E">Original research on how AI recommends brands, and what that means for positioning and pipeline.</p>
+</div>
+<div style="flex: 999 1 640px; min-width: 0">
+<div style="border-top: 1px solid #111">
+<sc-for list="{{reports}}" as="r" hint-placeholder-count="5">
+<a class="report" href="{{r.href}}" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; padding: 24px 4px; border-bottom: 1px solid #CFC7B8; text-decoration: none; color: #111">
+<span style="flex: 0 0 40px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">{{r.no}}</span>
+<span style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span class="rp-title" style="font-family: 'Instrument Serif', serif; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.12; transition: color .3s">{{r.title}}</span>
+<span style="font-size: 16px; line-height: 1.6; color: #3A352E">{{r.finding}}</span>
+</span>
+<span style="font-size: 14px; font-weight: 600">Read →</span>
+</a>
+</sc-for>
+</div>
+<div style="margin-top: 36px; padding: 28px; border-radius: 6px; background: #E4DED2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="max-width: 480px">
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1.1">Get the next one <em>first.</em></p>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: #3A352E">Teardowns and research on launches, positioning and AI search, straight to your inbox.</p>
+</div>
+<a class="btn-line" href="Writing.dc.html" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600; box-sizing: border-box">All 18 posts</a>
+<a class="btn-ink" href="[NEWSLETTER LINK]" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600">Subscribe →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="letter" data-section="Letter from the editor" style="background: #E4DED2; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 10vw, 140px) 24px clamp(48px, 6vw, 80px); display: flex; flex-wrap: wrap; gap: 48px 72px">
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0 0 12px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">Letter from the editor</p>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); line-height: 0.98">How I got <em>here</em></h2>
+<div class="halftone" role="img" aria-label="Candid photo of Jeremiah in Lagos (placeholder)" style="margin-top: 32px; height: 340px; border-radius: 4px; background: #B9B1A3; display: flex; align-items: flex-end">
+<span style="position: relative; z-index: 1; margin: 14px; background: #EFEBE3; padding: 6px 12px; border-radius: 999px; font-family: 'Geist Mono', monospace; font-size: 12px">Candid photo — Lagos</span>
+</div>
+</div>
+<div style="flex: 1.5 1 520px; min-width: 0; max-width: 680px; font-family: 'Instrument Serif', serif; font-size: clamp(22px, 1.9vw, 26px); line-height: 1.5; display: flex; flex-direction: column; gap: 22px; color: #1E1B17">
+<p class="lede" style="margin: 0">In 2018, I was sitting in a law lecture I barely remember when a friend told me about freelance writing. That conversation changed everything.</p>
+<p style="margin: 0">I went from ghostwriting blog posts to content strategy to product marketing at PiggyVest, Stears and RemotePass, then led product and content marketing at an AI visibility platform. The pattern was the same everywhere: companies weren't short on marketing activity. They were short on marketing that <em style="color: #C2360E">connected to revenue.</em> That gap became the thing I learned to close.</p>
+<p style="margin: 0">In 2025 I co-founded EmpowerQ, Nigeria's first professional empowerment organisation for LGBTQ+ communities. It is the most important work I have done, and it has made me a sharper operator in every other room I walk into.</p>
+<p style="margin: 0; font-style: italic; font-size: 30px">— Jeremiah</p>
+</div>
+</div>
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 24px clamp(72px, 10vw, 140px)">
+<p style="margin: 0 0 16px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px">The short version</p>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1px solid #111">
+<sc-for list="{{timeline}}" as="m" hint-placeholder-count="7">
+<li style="padding: 16px 16px 20px 0; border-bottom: 1px solid #A9A194">
+<span style="display: block; font-family: 'Instrument Serif', serif; font-size: 34px; line-height: 1; color: #C2360E">{{m.year}}</span>
+<span style="display: block; margin-top: 8px; font-size: 14px; line-height: 1.5">{{m.what}}</span>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<section id="letters" data-section="Letters" style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(72px, 9vw, 128px) 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(36px, 3.6vw, 48px); line-height: 1">Letters</h2>
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; color: #5C564C">From people I've worked with</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px">
+<sc-for list="{{letters}}" as="l" hint-placeholder-count="3">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<span aria-hidden="true" style="font-family: 'Instrument Serif', serif; font-size: 80px; line-height: 0.6; color: #FF4A1C">“</span>
+<blockquote style="margin: 0; font-family: 'Instrument Serif', serif; font-size: 25px; line-height: 1.32">{{l.quote}}</blockquote>
+<figcaption style="font-size: 15px; line-height: 1.4"><strong style="font-weight: 700">{{l.name}}</strong> <span style="color: #5C564C">· {{l.context}}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="hire" data-section="Let's work" style="background: #FF4A1C; color: #111; border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(80px, 11vw, 160px) 24px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(88px, 15vw, 232px); line-height: 0.85; letter-spacing: -0.03em">Let's <em>work.</em></h2>
+<div style="margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div style="padding: 32px; border-radius: 6px; display: flex; flex-direction: column; gap: 16px; background: #EFEBE3">
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; color: #C2360E">For founders and marketing leads</p>
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; flex-grow: 1">Preparing a launch, repositioning or market expansion? In 30 minutes we'll find what your buyers need to hear and what sales needs to sell.</p>
+<a class="btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 600">Book the free diagnostic →</a>
+</div>
+<div style="padding: 32px; border-radius: 6px; display: flex; flex-direction: column; gap: 16px; background: #111; color: #EFEBE3">
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; color: #FF4A1C">For hiring managers</p>
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; flex-grow: 1">Open to full-time product marketing and growth roles, remote or with relocation. Send the role and I'll share a tailored resume.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a class="btn-orange" href="mailto:jeremiahajayi245@gmail.com?subject=A%20product%20marketing%20role" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 600">Email me the role →</a>
+<a class="btn-line-light" href="https://www.linkedin.com/in/jeremiah-ajayi/" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 600; box-sizing: border-box">LinkedIn</a>
+</div>
+</div>
+</div>
+</div>
+<div style="border-top: 1px solid #111">
+<div style="max-width: 1320px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 20px">The world of <em>Jeremiah</em> · Vol. 08</span>
+<span style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+<a href="mailto:jeremiahajayi245@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a>
+<a href="https://www.thejeremiahajayi.com/blog">Blog</a>
+</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px">Lagos · {{time}} · © 2026</span>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":9800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { time: this.lagosTime(), section: 'Cover', scrolled: false };
+  }
+  lagosTime() {
+    try {
+      return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date());
+    } catch (e) { return ''; }
+  }
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ time: this.lagosTime() }), 30000);
+    this.onScroll = () => {
+      const s = (window.scrollY || 0) > 140;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    try {
+      this.io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const name = e.target.getAttribute('data-section');
+            if (name && name !== this.state.section) this.setState({ section: name });
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      document.querySelectorAll('[data-section]').forEach((el) => this.io.observe(el));
+    } catch (e) {}
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+  renderVals() {
+    const features = [
+      { client: 'Stears', year: '2023', stat: '#1', statLabel: 'on Google for “2023 election results”', title: 'How a new election tracker beat the BBC on Google', dek: 'Nigeria’s first real-time election tracker had weeks to become the place millions of people trusted for results.', brief: 'Make a new product discoverable and trusted during the country’s most competitive election.', work: 'Built the SEO strategy, trained economists on search-ready publishing, and coordinated editorial, engineering, data and design.', result: 'Ranked above the BBC, CNN and INEC. 1.9M+ users, 52% from search; cited by the FT, Quartz and Al Jazeera.', quote: 'I got a front-row seat to how brilliant, resourceful, and proactive Jeremiah was.', quoteBy: 'Adetoro Adeniran, Stears' },
+      { client: 'RemotePass', year: '2024–25', stat: '174%', statLabel: 'YoY growth in organic user acquisition', title: 'Inside a content engine built to reach pipeline', dek: 'A global payroll platform up against Deel and Remote needed inbound that sales could actually close.', brief: 'Grow qualified inbound in a crowded category.', work: 'Built the content engine from zero, turned lost-deal notes into objection-handling content, and added a GEO playbook as AI search grew.', result: '$500K+ in influenced pipeline, and GTM for 15+ launches during a year company revenue grew 134%.', quote: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', quoteBy: 'Wesley Hattingh, RemotePass' },
+      { client: 'RemotePass × Certn', year: '2024', stat: '270+', statLabel: 'media pickups for one partnership launch', title: 'The partnership launch that went global', dek: 'Weeks after a $5.5M raise, RemotePass launched background screening with Certn, one of the world’s leading providers.', brief: 'Position a new integration as proof that RemotePass was enterprise-ready.', work: 'Ran GTM end to end: narrative and timing with Certn’s global team, PR, and sales enablement.', result: 'Coverage on Yahoo Finance, Fox and NBC, and new enterprise conversations in regulated industries.', quote: '', quoteBy: '' },
+      { client: 'Xofu', year: '2026', stat: '2×', statLabel: 'the newsletter’s best click-through rate', title: 'Giving a new AI product one clear question to answer', dek: 'An early-stage AI visibility platform in a brand-new category, without a story buyers could repeat.', brief: 'Make the product easy to understand, try and buy.', work: 'Repositioned it around one buyer question, “Does AI recommend us?”, and rewrote the website, pricing and onboarding.', result: 'The Citation Audit launch email hit a 3.7% CTR, double the previous best.', quote: '', quoteBy: '' }
+    ].map((f, i) => ({ ...f, no: String(i + 1).padStart(2, '0'), dir: i % 2 ? 'row-reverse' : 'row', hasQuote: !!f.quote }));
+    return {
+      time: this.state.time,
+      section: this.state.section,
+      portraitClass: this.state.scrolled ? 'clear' : '',
+      coverLines: [
+        { num: '#1', title: 'How a new election tracker beat the BBC on Google', href: '#work' },
+        { num: '174%', title: 'Inside a content engine built to reach pipeline', href: '#work' },
+        { num: '270+', title: 'The partnership launch that went global', href: '#work' },
+        { num: '14/15', title: 'Why AI keeps recommending PiggyVest', href: 'https://www.thejeremiahajayi.com/post/why-ai-recommends-piggyvest' }
+      ],
+      toc: [
+        { page: 'p. 02', name: 'Selected work', dek: 'Four features: the brief, the work, the result.', href: 'Work.dc.html' },
+        { page: 'p. 03', name: 'Ways to work together', dek: 'Four ways to hire me, and free diagnostics.', href: 'Services.dc.html' },
+        { page: 'p. 04', name: 'Ask AI about me', dek: 'An experiment in public.', href: '#ask' },
+        { page: 'p. 05', name: 'Reports & essays', dek: 'Original research on AI search and GTM.', href: 'Writing.dc.html' },
+        { page: 'p. 06', name: 'Letter from the editor', dek: 'From a law lecture to launches.', href: '#letter' },
+        { page: 'p. 07', name: 'Let’s work', dek: 'For founders, and for hiring managers.', href: '#hire' }
+      ],
+      features,
+      briefs: [
+        { stat: '100+', client: 'RemotePass × Wafeq', line: 'Media placements across the UAE and KSA for the region’s first HR and payroll integration with Wafeq, in English and Arabic.' },
+        { stat: '40K+', client: 'PiggyVest', line: 'App downloads and 100,000 readers from storytelling campaigns about real money decisions.' },
+        { stat: '+88%', client: 'Wonsulting', line: 'Site traffic grew from 51K to 96K+ users through SEO-led content and expert interviews.' }
+      ],
+      services: [
+        { tag: 'Retainer · 90 days+', name: 'Embedded marketing partner', body: 'I join your team and own the marketing function: positioning, GTM systems, content and pipeline reporting.', fit: 'startups without a senior marketer' },
+        { tag: 'Per launch', name: 'Product marketing support', body: 'GTM briefs, launch calendars, sales enablement and internal alignment for teams shipping features.', fit: 'launches the market needs to notice' },
+        { tag: 'Fixed project', name: 'Positioning & copy', body: 'The messaging framework and the copy your team needs to tell one clear story.', fit: 'repositioning or a new market' },
+        { tag: 'Monthly', name: 'Content partner', body: 'Senior-level content tied to business goals, built for Google and AI search.', fit: 'steady pipeline from content' }
+      ],
+      reports: [
+        { no: '01', title: 'The Ghost Citation', finding: '240 AI answers traced to the outside sources AI uses to explain n8n.', href: '[FOUNDATION LABS LINK]' },
+        { no: '02', title: 'Why AI keeps recommending PiggyVest', finding: 'PiggyVest appeared in 14 of 15 AI answers about saving in Nigeria. Here is why.', href: 'https://www.thejeremiahajayi.com/blog' },
+        { no: '03', title: 'Does founder-led content work?', finding: 'What 530 LinkedIn posts from fintech brands and their founders show.', href: 'https://www.thejeremiahajayi.com/post/does-founder-led-content-work-data-from-530-linkedin-posts' },
+        { no: '04', title: 'Who owns AEO?', finding: 'Hiring lessons from 40 AI-search job listings.', href: 'https://www.thejeremiahajayi.com/post/who-owns-aeo-hiring-lessons' },
+        { no: '05', title: 'How to turn a product launch into sales conversations', finding: 'A teardown of Arrows’ relaunch, and what sales needs from every launch.', href: 'https://www.thejeremiahajayi.com/post/saas-product-launch-proof-gap' }
+      ],
+      timeline: [
+        { year: '2018', what: 'A law lecture, a friend, and the first freelance writing job' },
+        { year: '2021', what: 'Wonsulting and VEC Studio: SEO and product-led content' },
+        { year: '2022', what: 'PiggyVest, then Stears' },
+        { year: '2023', what: 'Stears Elections ranks above the BBC' },
+        { year: '2024', what: 'RemotePass: 15+ launches, 174% organic growth' },
+        { year: '2025', what: 'Co-founded EmpowerQ' },
+        { year: '2026', what: 'Xofu, AI-search research, Treford faculty' }
+      ],
+      letters: [
+        { quote: 'Working with Jeremiah transformed our marketing. His passion for collaboration and his data‑driven drive for performance create a powerhouse partnership that consistently delivers results.', name: 'Wesley Hattingh', context: 'RemotePass' },
+        { quote: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', name: 'Adetoro Adeniran', context: 'Stears' },
+        { quote: 'From the very beginning he was incredibly professional and easy to work with… His work was excellent quality, he was very hands on right from the start.', name: 'Stephen Lavery', context: 'Client, African insights report' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

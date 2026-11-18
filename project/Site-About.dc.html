@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About · Jeremiah Ajayi</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap">
+<style>
+body{margin:0;background:#111111}
+a{color:inherit}a:hover{color:#FF5A2A}
+html{scroll-behavior:smooth}
+::selection{background:#FF5A2A;color:#111}
+.sg{font-family:'Space Grotesk',system-ui,sans-serif}
+.nl{text-decoration:none;color:#F2EFE8;transition:color .25s}
+.nl:hover{color:#FF5A2A}
+.nd{text-decoration:none;color:#111;transition:color .25s}
+.nd:hover{color:#C23A0E}
+.btn-o{text-decoration:none;background:#FF5A2A;color:#111;transition:background .3s,color .3s,transform .3s}
+.btn-o:hover{background:#F2EFE8;color:#111;transform:translateY(-2px)}
+.btn-l{text-decoration:none;color:#F2EFE8;border:1.5px solid #F2EFE8;transition:background .3s,color .3s}
+.btn-l:hover{background:#F2EFE8;color:#111}
+.btn-k{text-decoration:none;background:#111;color:#F2EFE8;transition:background .3s,color .3s,transform .3s}
+.btn-k:hover{background:#FF5A2A;color:#111;transform:translateY(-2px)}
+.ph{background-image:repeating-linear-gradient(135deg,rgba(17,17,17,.07) 0 1px,transparent 1px 10px)}
+.ph-d{background-image:repeating-linear-gradient(135deg,rgba(242,239,232,.07) 0 1px,transparent 1px 10px)}
+.ph-l{background-image:repeating-linear-gradient(135deg,rgba(185,166,255,.18) 0 1px,transparent 1px 10px)}
+.sheet{text-decoration:none;color:#F2EFE8;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sheet:hover{transform:translateY(-8px)}
+.sheet:hover .sh-t{color:#FF5A2A}
+.lift{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.case:hover .lift{transform:translateY(-10px) rotate(-0.6deg)}
+.case:hover .lift2{transform:translateY(8px) rotate(1deg)}
+.lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.row-x{transition:background .35s,color .35s}
+.row-x:hover{background:#FF5A2A;color:#111}
+.row-x:hover .rx-sub{color:#111}
+.stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
+.stop-dot{transition:transform .3s,background .3s}
+.door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
+.door:hover{border-color:#111}
+.marquee{display:flex;gap:44px;width:max-content;animation:slide 32s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.grid-bg{background-image:linear-gradient(rgba(242,239,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.05) 1px,transparent 1px);background-size:80px 80px}
+@keyframes linein{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.l1{animation:linein .8s cubic-bezier(.2,.8,.2,1) both}
+.l2{animation:linein .8s .12s cubic-bezier(.2,.8,.2,1) both}
+.l3{animation:linein .8s .24s cubic-bezier(.2,.8,.2,1) both}
+@keyframes reveal-photo{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.photo-in{animation:reveal-photo 1.2s .3s cubic-bezier(.7,0,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@media (prefers-reduced-motion: reduce){.l1,.l2,.l3,.photo-in,.reveal,.marquee{animation:none !important}.lift,.lift2,.sheet{transition:none}}
+.wall{display:flex;gap:18px;width:max-content;animation:slide 70s linear infinite}
+.wall-wrap:hover .wall,.wall-wrap:focus-within .wall{animation-play-state:paused}
+.shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.shot:hover{transform:translateY(-6px) rotate(-.5deg)}
+.need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
+.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.hscroll>*{scroll-snap-align:start}
+.jump{text-decoration:none;transition:background .3s,color .3s}
+.jump:hover{background:#111;color:#F2EFE8}
+.path{text-decoration:none;color:inherit;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.path:hover{transform:translateY(-6px)}
+.path:hover .path-go{color:#FF5A2A}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@supports (animation-timeline: view()){.wipe{animation:wipe linear both;animation-timeline:view();animation-range:entry 20% cover 50%}.grow{transform-origin:left;animation:growx linear both;animation-timeline:view();animation-range:entry 30% cover 45%}.drawy{transform-origin:top;animation:growy linear both;animation-timeline:view();animation-range:entry 0% cover 60%}}
+@media (prefers-reduced-motion: reduce){.wall,.wipe,.grow,.drawy{animation:none !important}.shot,.path{transition:none}}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width: 860px){.qgrid{grid-template-columns:1fr}.qgrid>*{grid-column:auto !important}}
+.wrow{transition:padding .35s cubic-bezier(.2,.8,.2,1)}
+.wrow:hover{padding-left:14px !important}
+
+.nav-on{color:#FF5A2A !important}
+.chip{font:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.chip:hover{border-color:#111}
+.card-l{text-decoration:none;color:#111;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card-l:hover{transform:translateY(-6px)}
+.card-l:hover .card-t{color:#C23A0E}
+.anch{text-decoration:none;color:inherit;transition:color .25s}
+.anch:hover{color:#FF5A2A}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
+<header style="position: sticky; top: 0; z-index: 40; background: rgba(17,17,17,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #2B2A27">
+<div style="max-width: 1360px; margin: 0 auto; padding: 12px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -0.04em">
+<span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #FF5A2A; color: #111; font-size: 16px; letter-spacing: -0.06em">JA</span>Jeremiah Ajayi</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px; font-weight: 500">
+<a class="nl" href="Site-Work.dc.html">Work</a>
+<a class="nl" href="Site-Services.dc.html">Expertise</a>
+<a class="nl" href="Site-EmpowerQ.dc.html">EmpowerQ</a>
+<a class="nl" href="Site-Writing.dc.html">Writing</a>
+<a class="nl nav-on" href="Site-About.dc.html" aria-current="page">About</a>
+<a class="btn-o" href="Site-Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700">Book a call ↗</a>
+</nav>
+</div>
+</header>
+<section class="grid-bg" style="background-color: #111; color: #F2EFE8; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 28px clamp(72px, 9vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
+<div>
+<h1 style="margin: 0 0 24px; font-size: 15px; font-weight: 500; line-height: 1.5; color: #B5B0A6"><span style="color: #F2EFE8; font-weight: 700">Jeremiah Ajayi.</span> Marketing consultant for B2B SaaS and technology companies, based in Lagos.</h1>
+<p class="sg l1" style="margin: 0; font-weight: 600; font-size: clamp(48px, 6.4vw, 100px); line-height: 0.92; letter-spacing: -0.058em">I studied how to win an argument.</p>
+<p class="sg l2" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(48px, 6.4vw, 100px); line-height: 0.92; letter-spacing: -0.058em; color: #FF5A2A">Now I help good products win theirs.</p>
+<p class="l3" style="margin: 32px 0 0; max-width: 560px; font-size: 19px; line-height: 1.6; color: #D8D3C9">Eight years of positioning, launches and content for companies in fintech, HR tech, AI and media. Before that, a law student who couldn’t stop writing. Now also the co-founder of EmpowerQ.</p>
+</div>
+<div style="position: relative; justify-self: center; width: min(100%, 460px)">
+<div aria-hidden="true" style="position: absolute; inset: 28px -18px -18px 28px; border-radius: 14px; background: #FF5A2A"></div>
+<img class="photo-in" src="/_blob/ed98487bc78b8be08bddc3d53416cc60" alt="Jeremiah Ajayi, standing outside in Lagos" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 14px; background: #1C1C1B">
+</div>
+</div>
+</section>
+
+<section style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 136px) 28px; position: relative">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">The story so far</p>
+<h2 class="sg" style="margin: 0 0 clamp(48px, 6vw, 80px); max-width: 860px; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">The chapters a summary skips.</h2>
+<sc-for list="{{chapters}}" as="c" hint-placeholder-count="3">
+<article id="{{c.id}}" class="reveal" style="display: flex; flex-direction: {{c.side}}; flex-wrap: wrap; gap: 40px 72px; align-items: center; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid #C9C3B6">
+<div style="flex: 1 1 420px; min-width: 0">
+<p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #C23A0E">{{c.n}}</span><span style="color: #6B675F">{{c.when}}</span></p>
+<h3 class="sg" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">{{c.h}}</h3>
+<p style="margin: 22px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">{{c.p1}}</p>
+<p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">{{c.p2}}</p>
+</div>
+<sc-if value="{{c.photo}}"><div style="flex: 0 1 400px; display: flex; flex-direction: column; gap: 20px"><figure style="margin: 0"><img class="shot" src="{{c.photo}}" alt="{{c.alt}}" loading="lazy" style="width: 100%; aspect-ratio: {{c.ratio}}; object-fit: cover; object-position: {{c.pos}}; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">{{c.caption}}</figcaption></figure><sc-if value="{{c.photo2}}"><figure style="margin: 0 0 0 12%"><img class="shot" src="{{c.photo2}}" alt="{{c.alt2}}" loading="lazy" style="width: 100%; aspect-ratio: 1110 / 723; object-fit: cover; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">{{c.caption2}}</figcaption></figure></sc-if></div></sc-if>
+<sc-if value="{{c.needed}}"><div class="need" data-ph="asset" style="flex: 0 1 400px; aspect-ratio: {{c.ratio}}; border-radius: 14px; color: #6B675F; display: flex; align-items: flex-end; padding: 18px; box-sizing: border-box; font-size: 13px">{{c.need}}</div></sc-if>
+</article>
+</sc-for>
+<blockquote class="reveal" style="margin: 0; padding: clamp(48px, 6vw, 80px) 0; border-top: 1px solid #C9C3B6"><p class="sg" style="margin: 0; max-width: 1000px; font-size: clamp(36px, 4.6vw, 68px); font-weight: 600; line-height: 1; letter-spacing: -0.05em">Small proof compounds. <span style="color: #C23A0E">Nothing is truly wasted when you are paying attention.</span></p></blockquote>
+<article id="ch4" class="reveal" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 40px 72px; align-items: center; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid #C9C3B6; border-bottom: 1px solid #C9C3B6">
+<div style="flex: 1 1 420px; min-width: 0">
+<p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #C23A0E">04</span><span style="color: #6B675F">2023 to 2026</span></p>
+<h3 class="sg" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">Starting again, and going global</h3>
+<p style="margin: 22px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">Leaving OAU left a gap that mattered to me. In 2023 I went back to school, studying Business Management at Miva Open University while working full-time.</p>
+<p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">At RemotePass, a Dubai-based HR and payroll platform, I led GTM for launches across EMEA, North America and APAC. Some went out in English and Arabic on the same day; one partnership reached 270+ media outlets. The work took me to more than ten countries.</p>
+<p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">Then I led product marketing at Xofu, an AI visibility platform, and started publishing my own research on how AI assistants choose which brands to recommend.</p>
+<a class="nd" href="Site-Work.dc.html" style="display: inline-block; margin-top: 20px; font-weight: 700; color: #C23A0E">See the work →</a>
+</div>
+<figure style="flex: 0 1 400px; margin: 0">
+<img class="shot" src="{{dfs}}" alt="Campaign post counting down to RemotePass at Dubai Fintech Summit 2025" loading="lazy" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #E6E1D6">
+<figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">Campaign creative for RemotePass at Dubai Fintech Summit 2025</figcaption>
+</figure>
+</article>
+</div>
+</section>
+
+<section id="empowerq" style="background: #1C1430; color: #F1ECFF; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 144px) 28px">
+<p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #B9A6FF">05</span><span style="color: #CFC4F5">Now</span></p>
+<div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px 72px; align-items: start">
+<div class="reveal">
+<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 6.4vw, 100px); line-height: 0.9; letter-spacing: -0.065em">Opening doors I had to <span style="color: #B9A6FF">find my own way through.</span></h2>
+<p style="margin: 28px 0 0; max-width: 560px; font-size: 18px; line-height: 1.65; color: #E4DDFB">In 2025 I co-founded EmpowerQ, a nonprofit working on economic inclusion for LGBTQ+ professionals in Nigeria. It takes what I learned pitching my way into global work and makes that path open to more people.</p>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="Site-EmpowerQ.dc.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 999px; background: #B9A6FF; color: #1C1430; font-weight: 700">Inside EmpowerQ →</a>
+</div>
+</div>
+<div>
+<figure style="margin: 0"><img class="shot" src="/_blob/0fe41496a3d98ea1e46a9745fbb85f69" alt="Members of the EmpowerQ community together at an event" loading="lazy" style="width: 100%; aspect-ratio: 1600 / 1066; object-fit: cover; background: #2A2145"><figcaption style="margin-top: 12px; font-size: 13px; color: #CFC4F5">At an EmpowerQ community event</figcaption></figure>
+<div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding-top: 20px; border-top: 1px solid #3A2F5C">
+<sc-for list="{{empowerq}}" as="e" hint-placeholder-count="2"><div><p class="sg" style="margin: 0; font-size: clamp(32px, 3.2vw, 48px); font-weight: 700; line-height: .9; letter-spacing: -0.05em; color: #B9A6FF">{{e.big}}</p><p style="margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: #E4DDFB">{{e.label}}</p></div></sc-for>
+</div>
+</div>
+</div>
+<div style="margin-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 1px solid #3A2F5C">
+<sc-for list="{{alsoNow}}" as="a" hint-placeholder-count="3"><div style="padding: 24px 24px 28px 0; border-bottom: 1px solid #3A2F5C"><p class="sg" style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">{{a.h}}</p><p style="margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: #E4DDFB">{{a.t}}</p></div></sc-for>
+</div>
+</div>
+</section>
+
+<section style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
+<div class="qgrid">
+<sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
+<blockquote class="reveal" style="margin: 0; grid-column: {{q.col}}; padding: clamp(28px, 3vw, 44px); border-radius: 16px; background: {{q.bg}}; color: {{q.fg}}; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<p class="sg" style="margin: 0; font-size: {{q.size}}; font-weight: 500; line-height: 1.12; letter-spacing: -0.035em">“{{q.text}}”</p>
+<footer style="font-size: 14px"><strong>{{q.name}}</strong> · {{q.org}}</footer>
+</blockquote>
+</sc-for>
+</div>
+<div style="margin-top: clamp(56px, 7vw, 88px); display: flex; flex-wrap: wrap; gap: 32px 72px">
+<div style="flex: 1 1 260px"><h3 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; letter-spacing: -0.04em">Recognition</h3><figure style="margin: 28px 0 0; max-width: 300px"><img class="shot" src="/_blob/1ada8c43b66919c70ad6d23904db5df0" alt="Jeremiah receiving the Martech Africa award for Content Marketing Specialist of the Year" loading="lazy" style="width: 100%; aspect-ratio: 560 / 996; object-fit: cover; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">Receiving the Martech Africa award, 2025</figcaption></figure></div>
+<ul style="margin: 0; padding: 0; list-style: none; flex: 1 1 640px; border-top: 2px solid #111">
+<sc-for list="{{recognition}}" as="r" hint-placeholder-count="6"><li style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5"><span class="sg" style="flex: 0 0 52px; font-weight: 700; color: #C23A0E">{{r.y}}</span><span>{{r.t}}</span></li></sc-for>
+<li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5"><a class="nd" href="https://blog.useaccrue.com/this-marketer-wants-to-earn-7k-next-how-can-he-do-it" style="font-weight: 700; color: #C23A0E">Read my Accrue spotlight ↗</a></li>
+<li style="margin-top: 28px; padding: 22px 24px; border-radius: 14px; background: #FFFFFF; list-style: none"><span style="display: block; font-size: 13px; font-weight: 700; color: #C23A0E">A side note</span><span class="sg" style="display: block; margin-top: 8px; font-size: 26px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1">60+ certifications</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.55; color: #45423C">From CXL, HubSpot, the University of London and the International Business Management Institute, among others. I never stopped studying, even when I left school.</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="now" style="background: #111; color: #F2EFE8">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 144px) 28px clamp(48px, 6vw, 72px)">
+<h2 class="sg" style="margin: 0; max-width: 980px; font-weight: 700; font-size: clamp(48px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.065em">Let’s work out <span style="color: #FF5A2A">the next chapter.</span></h2>
+<div style="margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
+<a class="path" href="Site-Contact.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #F2EFE8; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #C23A0E">For employers and hiring managers</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">I’m open to senior product marketing, content and growth roles, remote or with relocation.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Get my CV →</span></a>
+<a class="path" href="Site-Services.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #FF5A2A; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700">For companies</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">Select consulting projects in positioning, launches and content.</span><span style="margin-top: auto; font-weight: 700">See the services →</span></a>
+<a class="path" href="Site-EmpowerQ.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 260px; padding: 28px; border-radius: 16px; background: #1C1430; color: #F1ECFF; border: 1px solid #3A2F5C; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #B9A6FF">For funders and partners</span><span class="sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08">Help EmpowerQ open more doors.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Support EmpowerQ →</span></a>
+</div>
+<details style="margin-top: 48px; border-top: 1px solid #3A3934">
+<summary class="sg" style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 600">Quick facts</summary>
+<dl style="margin: 0 0 20px">
+<sc-for list="{{brief}}" as="b" hint-placeholder-count="6"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid #2A2926"><dt style="flex: 0 0 140px; font-size: 14px; font-weight: 700; color: #B5B0A6">{{b.k}}</dt><dd style="margin: 0; flex: 1 1 360px; font-size: 15px; line-height: 1.5">{{b.v}}</dd></div></sc-for>
+</dl>
+<p style="margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px"><sc-for list="{{profiles}}" as="l" hint-placeholder-count="4"><a class="nl" href="{{l.href}}" style="font-weight: 700">{{l.label}} ↗</a></sc-for></p>
+</details>
+</div>
+</section>
+
+
+<section style="background: #111; color: #F2EFE8">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 28px clamp(40px, 5vw, 64px)">
+<footer style="padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
+<a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a class="nl" href="Site-Service-Positioning.dc.html">Positioning</a><a class="nl" href="Site-Service-Launch.dc.html">Launches & GTM</a><a class="nl" href="Site-Service-Content.dc.html">Content & growth</a><a class="nl" href="Site-Work.dc.html">Work</a><a class="nl" href="Site-Writing.dc.html">Writing</a><a class="nl" href="Site-About.dc.html">About</a><a class="nl" href="Site-EmpowerQ.dc.html">EmpowerQ</a><a class="nl" href="Site-Contact.dc.html">Contact</a><a class="nl" href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><span>Lagos · {{time}} · © 2026</span></span>
+</footer>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({ time: this.lagosTime() }, this.initialState ? this.initialState() : {});
+  }
+  lagosTime() {
+    try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; }
+  }
+  componentDidMount() { this.timer = setInterval(() => this.setState({ time: this.lagosTime() }), 30000); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    return {
+      time: this.state.time,
+      chapters: [
+        { id: 'ch1', n: '01', when: '2017 to 2018', h: 'The life I planned', side: 'row',
+          p1: 'In 2017 I finished secondary school as class valedictorian, headed for Law at Obafemi Awolowo University. I come from a family of lawyers, so the dream felt natural. It was also easy to explain.',
+          p2: 'While I waited months for the university to resume, I started a blog called Better Than Good, just to write and publish something that was mine. It was my first brush with SEO. Then, in 2018, a friend introduced me to freelance writing, and I saw that words could become work.',
+          photo: '/_blob/bdf09678f86df90bce8dc2fbad846823', alt: 'Jeremiah as a law student, in a suit and tie', caption: 'A law student at OAU', pos: 'center', ratio: '4 / 5', needed: false, need: '', photo2: '', alt2: '', caption2: '' },
+        { id: 'ch2', n: '02', when: '2018 to 2021', h: 'Law student by day, freelancer by night', side: 'row-reverse',
+          p1: 'I interned at the Securities and Exchange Commission and two law firms, but freelance work kept pulling me elsewhere. When strikes and the pandemic closed the campus, I kept writing, pitching and staying in touch. Kelechi Udoagwu, whom I first contacted in 2019, later hired me as Content and Community Manager at Week of Saturdays, where I started to understand B2B SaaS marketing.',
+          p2: 'In 2020 I became a UN Millennium Fellow and started Digivention, which helped 1,200+ young Nigerians build digital skills. In 2021 I sent Victor Eduoh a note about his guides on product-led storytelling and asked for a coffee chat. He turned it into a job offer at VEC Studio.',
+          photo: '/_blob/5256eccdd45b8c85b88528542c769d7e', alt: 'LinkedIn messages: Jeremiah asks Victor Eduoh for a coffee chat, and Victor invites him to join VEC Studio', caption: 'The note that led to VEC Studio', pos: 'top', ratio: '900 / 1144', needed: false, need: '',
+          photo2: '/_blob/e784d372be0015d94ac43c65a1185268', alt2: 'Millennium Fellowship page naming Jeremiah a fellow for the class of 2020, with his Digivention project', caption2: 'Millennium Fellow, class of 2020' },
+        { id: 'ch3', n: '03', when: '2022 to 2023', h: 'The bet', side: 'row',
+          p1: 'In early 2022 I joined PiggyVest. Months later, Stears offered me a senior content marketing role just as OAU resumed for my fourth year. I could finish Law, or follow the career I had already started building. I chose Stears, and some people thought I had lost my mind.',
+          p2: 'Then came Nigeria’s 2023 election. Our results tracker ranked first on Google, above the BBC, CNN and INEC, and reached 1.9M+ people. The best marketing, I learned, makes something useful easy to find, understand and trust.',
+          photo: '/_blob/fc39c3db9800ffc1933e240a5186b657', alt: 'The Stears Elections presidential results page', caption: 'The results tracker, with one of my articles in the sidebar', pos: 'left top', ratio: '4 / 3', needed: false, need: '', photo2: '', alt2: '', caption2: '' }
+      ],
+      dfs: '/_blob/7b26ce554a84b7e8f8efc0c9b7b09d2e',
+      empowerq: [
+        { big: '2025', label: 'co-founded, in Lagos' },
+        { big: '90', label: 'professionals in the Lavender Ladder, running now' },
+        { big: 'Finalist', label: 'Social Shifters Global Innovation Challenge 2026, for the Lavender Ladder' }
+      ],
+      alsoNow: [
+        { h: 'Research', t: 'Co-authored The State of AI Search in Nigeria, the first report of its kind, and four AI-search studies for Foundation Labs.' },
+        { h: 'Teaching', t: 'Faculty at Treford’s Product Marketing Accelerator, training product marketers on AI search.' },
+        { h: 'Finishing what I started', t: 'Graduated in Business Management from Miva Open University with first-class honours, while working full-time and building EmpowerQ.' }
+      ],
+      quotes: [
+        { text: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', name: 'Wesley Hattingh', org: 'RemotePass', bg: '#FF5A2A', fg: '#111', size: 'clamp(30px, 3.4vw, 50px)', col: 'span 2' },
+        { text: 'His work was excellent quality, he was very hands on right from the start.', name: 'Stephen Lavery', org: 'Earthshot Prize', bg: '#FFFFFF', fg: '#111', size: 'clamp(22px, 2vw, 30px)', col: 'span 1' },
+        { text: 'You really are a rockstar, one of the best teammates I have had across law, journalism, consulting and tech!', name: 'Shivani Saxena', org: 'RemotePass', bg: '#FFFFFF', fg: '#111', size: 'clamp(22px, 2vw, 30px)', col: 'span 1' },
+        { text: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', name: 'Adetoro Adeniran', org: 'Stears', bg: '#111', fg: '#F2EFE8', size: 'clamp(22px, 2.2vw, 32px)', col: 'span 2' }
+      ],
+      recognition: [
+        { y: '2026', t: 'Finalist, Social Shifters Global Innovation Challenge (EmpowerQ’s Lavender Ladder)' },
+        { y: '2026', t: 'Dalai Lama Fellow' },
+        { y: '2026', t: 'Youth delegate, World Bank Youth Summit' },
+        { y: '2025', t: 'Content Marketing Specialist of the Year, Martech' },
+        { y: '', t: 'Top 50 People Shaping Remote Work in Nigeria, Cleva Banking' },
+        { y: '', t: 'Profiled by Accrue, Wimbart, Smarketers Hub and Condia' }
+      ],
+      brief: [
+        { k: 'Name', v: 'Jeremiah Ajayi' },
+        { k: 'Role', v: 'Marketing consultant for B2B SaaS and technology companies' },
+        { k: 'Services', v: 'Positioning and messaging, product launches and GTM, content and organic growth' },
+        { k: 'Based in', v: 'Lagos, Nigeria (UTC+1), working with teams in Europe, North America, the Middle East and Africa' },
+        { k: 'Worked with', v: 'RemotePass, Stears, PiggyVest, Xofu, SEON, Kittl, Northzone, the Earthshot Prize, Foundation Marketing' },
+        { k: 'Also', v: 'Co-founder and Executive Director, EmpowerQ' }
+      ],
+      profiles: [
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jeremiah-ajayi/' },
+        { label: 'Product Marketing Alliance', href: 'https://productmarketingalliance.com/author/jeremiah' },
+        { label: 'Buffer', href: 'https://buffer.com/resources/consistent-content-creator/' },
+        { label: 'ProductLed', href: 'https://productled.com/blog/product-led-marketing-gtm-strategy' },
+        { label: 'The life I chose after the life I planned', href: 'https://www.thejeremiahajayi.com/post/the-life-i-chose-after-the-life-i-planned' }
+      ]
+    };
+  }
+
+}
+</script>
+</body>
+</html>

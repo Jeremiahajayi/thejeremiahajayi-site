@@ -1,0 +1,11 @@
+# Old Wix URLs
+/successstories /work/ 301
+/successstories/ /work/ 301
+/portfolio /work/ 301
+/portfolio/ /work/ 301
+/expertise /services/ 301
+/expertise/ /services/ 301
+/writing /blog/ 301
+/writing/ /blog/ 301
+# Blog posts are migrated at their original /post/<slug> addresses.
+# All three tools are built at their current paths.

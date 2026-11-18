@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Positioning and messaging consultant · Jeremiah Ajayi</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap">
+<style>
+body{margin:0;background:#111111}
+a{color:inherit}a:hover{color:#FF5A2A}
+html{scroll-behavior:smooth}
+::selection{background:#FF5A2A;color:#111}
+.sg{font-family:'Space Grotesk',system-ui,sans-serif}
+.nl{text-decoration:none;color:#F2EFE8;transition:color .25s}
+.nl:hover{color:#FF5A2A}
+.nd{text-decoration:none;color:#111;transition:color .25s}
+.nd:hover{color:#C23A0E}
+.btn-o{text-decoration:none;background:#FF5A2A;color:#111;transition:background .3s,color .3s,transform .3s}
+.btn-o:hover{background:#F2EFE8;color:#111;transform:translateY(-2px)}
+.btn-l{text-decoration:none;color:#F2EFE8;border:1.5px solid #F2EFE8;transition:background .3s,color .3s}
+.btn-l:hover{background:#F2EFE8;color:#111}
+.btn-k{text-decoration:none;background:#111;color:#F2EFE8;transition:background .3s,color .3s,transform .3s}
+.btn-k:hover{background:#FF5A2A;color:#111;transform:translateY(-2px)}
+.ph{background-image:repeating-linear-gradient(135deg,rgba(17,17,17,.07) 0 1px,transparent 1px 10px)}
+.ph-d{background-image:repeating-linear-gradient(135deg,rgba(242,239,232,.07) 0 1px,transparent 1px 10px)}
+.ph-l{background-image:repeating-linear-gradient(135deg,rgba(185,166,255,.18) 0 1px,transparent 1px 10px)}
+.sheet{text-decoration:none;color:#F2EFE8;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sheet:hover{transform:translateY(-8px)}
+.sheet:hover .sh-t{color:#FF5A2A}
+.lift{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.case:hover .lift{transform:translateY(-10px) rotate(-0.6deg)}
+.case:hover .lift2{transform:translateY(8px) rotate(1deg)}
+.lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.row-x{transition:background .35s,color .35s}
+.row-x:hover{background:#FF5A2A;color:#111}
+.row-x:hover .rx-sub{color:#111}
+.stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
+.stop-dot{transition:transform .3s,background .3s}
+.door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
+.door:hover{border-color:#111}
+.marquee{display:flex;gap:44px;width:max-content;animation:slide 32s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.grid-bg{background-image:linear-gradient(rgba(242,239,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.05) 1px,transparent 1px);background-size:80px 80px}
+@keyframes linein{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.l1{animation:linein .8s cubic-bezier(.2,.8,.2,1) both}
+.l2{animation:linein .8s .12s cubic-bezier(.2,.8,.2,1) both}
+.l3{animation:linein .8s .24s cubic-bezier(.2,.8,.2,1) both}
+@keyframes reveal-photo{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.photo-in{animation:reveal-photo 1.2s .3s cubic-bezier(.7,0,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@media (prefers-reduced-motion: reduce){.l1,.l2,.l3,.photo-in,.reveal,.marquee{animation:none !important}.lift,.lift2,.sheet{transition:none}}
+.wall{display:flex;gap:18px;width:max-content;animation:slide 70s linear infinite}
+.wall-wrap:hover .wall,.wall-wrap:focus-within .wall{animation-play-state:paused}
+.shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.shot:hover{transform:translateY(-6px) rotate(-.5deg)}
+.need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
+.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.hscroll>*{scroll-snap-align:start}
+.jump{text-decoration:none;transition:background .3s,color .3s}
+.jump:hover{background:#111;color:#F2EFE8}
+.path{text-decoration:none;color:inherit;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.path:hover{transform:translateY(-6px)}
+.path:hover .path-go{color:#FF5A2A}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@supports (animation-timeline: view()){.wipe{animation:wipe linear both;animation-timeline:view();animation-range:entry 20% cover 50%}.grow{transform-origin:left;animation:growx linear both;animation-timeline:view();animation-range:entry 30% cover 45%}.drawy{transform-origin:top;animation:growy linear both;animation-timeline:view();animation-range:entry 0% cover 60%}}
+@media (prefers-reduced-motion: reduce){.wall,.wipe,.grow,.drawy{animation:none !important}.shot,.path{transition:none}}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width: 860px){.qgrid{grid-template-columns:1fr}.qgrid>*{grid-column:auto !important}}
+.wrow{transition:padding .35s cubic-bezier(.2,.8,.2,1)}
+.wrow:hover{padding-left:14px !important}
+
+.nav-on{color:#FF5A2A !important}
+.chip{font:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.chip:hover{border-color:#111}
+.card-l{text-decoration:none;color:#111;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card-l:hover{transform:translateY(-6px)}
+.card-l:hover .card-t{color:#C23A0E}
+.anch{text-decoration:none;color:inherit;transition:color .25s}
+.anch:hover{color:#FF5A2A}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
+<header style="position: sticky; top: 0; z-index: 40; background: rgba(17,17,17,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #2B2A27">
+<div style="max-width: 1360px; margin: 0 auto; padding: 12px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -0.04em">
+<span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #FF5A2A; color: #111; font-size: 16px; letter-spacing: -0.06em">JA</span>Jeremiah Ajayi</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px; font-weight: 500">
+<a class="nl" href="Site-Work.dc.html">Work</a>
+<a class="nl nav-on" href="Site-Services.dc.html" aria-current="page">Expertise</a>
+<a class="nl" href="Site-EmpowerQ.dc.html">EmpowerQ</a>
+<a class="nl" href="Site-Writing.dc.html">Writing</a>
+<a class="nl" href="Site-About.dc.html">About</a>
+<a class="btn-o" href="Site-Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700">Book a call ↗</a>
+</nav>
+</div>
+</header>
+<section style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) 28px clamp(64px, 8vw, 104px)">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #45423C; margin-bottom: 28px"><a class="nd" href="Site-Services.dc.html">Expertise</a> <span aria-hidden="true">/</span> <span style="color: #111">{{svc.name}}</span></nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 48px 72px; align-items: center">
+<div>
+<p class="sg" style="margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.03em">Make it <span style="color: #C23A0E">clear.</span></p>
+<h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(46px, 6vw, 92px); line-height: 0.94; letter-spacing: -0.055em">{{svc.title}}</h1>
+<p style="margin: 30px 0 0; max-width: 600px; font-size: 20px; line-height: 1.55; color: #2D2B27">{{svc.intro}}</p>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn-k" href="Site-Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #111; color: #F2EFE8; text-decoration: none; font-size: 16px; font-weight: 700">Book a call ↗</a>
+<a class="nd" href="#proof" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 12px; font-size: 16px; font-weight: 700">See the proof ↓</a>
+</div>
+</div>
+<figure style="margin: 0" aria-label="The five questions a positioning framework answers">
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+<li class="reveal" style="padding: 18px 22px; border-radius: 14px; background: #FFFFFF; display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span class="sg" style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Who it’s for</span><span style="font-size: 13px; font-weight: 700; color: #6B675F">01</span></li>
+<li class="reveal" style="padding: 18px 22px; border-radius: 14px; background: #FFFFFF; margin-left: 6%; display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span class="sg" style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">The problem they feel</span><span style="font-size: 13px; font-weight: 700; color: #6B675F">02</span></li>
+<li class="reveal" style="padding: 18px 22px; border-radius: 14px; background: #FFFFFF; margin-left: 12%; display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span class="sg" style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">What they’d use instead</span><span style="font-size: 13px; font-weight: 700; color: #6B675F">03</span></li>
+<li class="reveal" style="padding: 18px 22px; border-radius: 14px; background: #111; color: #F2EFE8; margin-left: 18%; display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span class="sg" style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Why you, and why now</span><span style="font-size: 13px; font-weight: 700; color: #B5B0A6">04</span></li>
+<li class="reveal" style="padding: 18px 22px; border-radius: 14px; background: #FF5A2A; margin-left: 24%; display: flex; justify-content: space-between; gap: 16px; align-items: baseline"><span class="sg" style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em">The proof that makes it believable</span><span style="font-size: 13px; font-weight: 700">05</span></li>
+</ol>
+<figcaption style="margin-top: 16px; font-size: 13px; color: #6B675F">The five questions every positioning answers before a word of copy is written.</figcaption>
+</figure>
+</div>
+<div style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding-top: 24px; border-top: 2px solid #111">
+<sc-for list="{{svc.stats}}" as="s" hint-placeholder-count="3"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: 52px; line-height: 0.9; letter-spacing: -0.06em; color: #C23A0E">{{s.big}}</p><p style="margin: 8px 0 0; font-size: 14px; line-height: 1.45; color: #45423C">{{s.label}}</p></div></sc-for>
+</div>
+</div>
+</section>
+
+<section style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px 64px">
+<div>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
+<ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
+<sc-for list="{{svc.forWho}}" as="w" hint-placeholder-count="3"><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">{{w.t}}</li></sc-for>
+</ul>
+</div>
+<div>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Signs you need this</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{svc.signs}}" as="g" hint-placeholder-count="5"><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>{{g.t}}</span></li></sc-for>
+</ul>
+</div>
+</div>
+</section>
+<section style="background: #111; color: #F2EFE8; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #FF5A2A">In practice · Xofu, 2026</p>
+<h2 class="sg reveal" style="margin: 0; max-width: 1100px; font-weight: 700; font-size: clamp(48px, 7.6vw, 124px); line-height: 0.88; letter-spacing: -0.07em">One question, <span style="color: #FF5A2A">everywhere.</span></h2>
+<p style="margin: 28px 0 0; max-width: 640px; font-size: 18px; line-height: 1.65; color: #D8D3C9">Xofu was a new category that buyers struggled to place. I rebuilt its story around the question they were already asking, “Does AI recommend us?”, then carried it through the homepage, pricing and launch emails.</p>
+<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; align-items: start">
+<figure style="margin: 0"><img class="shot" src="/_blob/0dfa31b585c479139da9600a8bdd8b9d" alt="Xofu homepage hero from the rewrite draft" loading="lazy" style="width: 100%; aspect-ratio: 923 / 533; object-fit: cover; background: #FFFFFF"><figcaption style="margin-top: 12px; font-size: 13px; color: #B5B0A6">The homepage hero, from my rewrite</figcaption></figure>
+<figure style="margin: 0"><img class="shot" src="/_blob/a4cbf106e17930bec111332800b706fd" alt="Xofu pricing page draft with four tiers" loading="lazy" style="width: 100%; aspect-ratio: 1600 / 929; object-fit: cover; background: #FFFFFF"><figcaption style="margin-top: 12px; font-size: 13px; color: #B5B0A6">Four pricing tiers, packaged around the new positioning</figcaption></figure>
+</div>
+<p style="margin: 36px 0 0; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline"><span class="sg" style="font-size: clamp(40px, 4vw, 60px); font-weight: 700; letter-spacing: -0.06em; color: #FF5A2A">3.7%</span><span style="font-size: 16px; color: #D8D3C9">click-through on the launch email that followed, double the previous best.</span><a class="nl" href="Site-Work.dc.html#xofu" style="font-weight: 700">The full case →</a></p>
+</div>
+</section>
+
+<section style="background: #FFFFFF; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: flex; flex-wrap: wrap; gap: 48px 64px">
+<div style="flex: 1 1 560px; min-width: 0">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">What you get</p>
+<h2 class="sg" style="margin: 0 0 32px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.getsTitle}}</h2>
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
+<sc-for list="{{svc.gets}}" as="g" hint-placeholder-count="6"><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #C23A0E">{{g.n}}</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{g.h}}</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">{{g.t}}</span></span></li></sc-for>
+</ol>
+</div>
+<aside style="flex: 0 1 420px; min-width: 280px; align-self: flex-start; background: #111; color: #F2EFE8; border-radius: 16px; padding: clamp(26px, 3vw, 36px)">
+<h3 class="sg" style="margin: 0 0 18px; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">{{svc.extraTitle}}</h3>
+<sc-if value="{{svc.extraText}}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 18px; font-size: 16px; line-height: 1.6; color: #D8D3C9">{{svc.extraText}}</p></sc-if>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{svc.extra}}" as="x" hint-placeholder-count="4"><li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">{{x.t}}</li></sc-for>
+</ul>
+<sc-if value="{{svc.extraLink}}" hint-placeholder-val="{{ true }}"><a class="nl" href="{{svc.extraLink}}" style="display: inline-block; margin-top: 18px; font-weight: 700; color: #FF5A2A">{{svc.extraLinkLabel}} →</a></sc-if>
+</aside>
+</div>
+</section>
+
+<section style="background: #111; color: #F2EFE8">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #FF5A2A">How it works</p>
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
+<sc-for list="{{svc.steps}}" as="s" hint-placeholder-count="4"><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #FF5A2A">{{s.n}}</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">{{s.t}}</span></li></sc-for>
+</ol>
+</div>
+</section>
+
+<section id="proof" style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">Proof</p>
+<h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.proofTitle}}</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<sc-for list="{{svc.cases}}" as="c" hint-placeholder-count="2">
+<a class="card-l" href="{{c.href}}" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px; padding: clamp(24px, 3vw, 36px); border-radius: 14px; background: {{c.bg}}; color: {{c.fg}}; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700"><span>{{c.client}}</span><span style="opacity: .75">{{c.year}}</span></span>
+<span class="sg" style="font-weight: 700; font-size: clamp(64px, 7vw, 104px); line-height: 0.85; letter-spacing: -0.065em">{{c.big}}</span>
+<span style="display: block"><span class="card-t sg" style="display: block; font-size: 22px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15; transition: color .3s">{{c.title}}</span><span style="display: block; margin-top: 8px; font-size: 14px; line-height: 1.5; opacity: .85">{{c.result}}</span><span style="display: block; margin-top: 14px; font-size: 14px; font-weight: 700">Read the case study →</span></span>
+</a>
+</sc-for>
+</div>
+<sc-if value="{{svc.hasQuote}}" hint-placeholder-val="{{ true }}">
+<figure style="margin: 28px 0 0; padding: clamp(24px, 3vw, 36px); border-radius: 14px; background: #FF5A2A; color: #111; max-width: 980px">
+<blockquote class="sg" style="margin: 0; font-size: clamp(24px, 2.4vw, 32px); font-weight: 600; line-height: 1.18; letter-spacing: -0.03em">“{{svc.quote}}”</blockquote>
+<figcaption style="margin-top: 14px; font-size: 14px"><span style="font-weight: 700">{{svc.quoteName}}</span> · {{svc.quoteOrg}}</figcaption>
+</figure>
+</sc-if>
+<sc-if value="{{svc.note}}" hint-placeholder-val="{{ true }}"><p style="margin: 22px 0 0; max-width: 760px; font-size: 14px; line-height: 1.6; color: #45423C">{{svc.note}}</p></sc-if>
+</div>
+</section>
+
+<section style="background: #E6E1D6; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 9vw, 112px) 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-if value="{{svc.tool}}" hint-placeholder-val="{{ true }}">
+<a class="card-l" href="{{svc.tool.href}}" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 14px; background: #111; color: #F2EFE8; box-sizing: border-box">
+<span style="font-size: 13px; font-weight: 700; color: #FF5A2A">Free tool</span>
+<span class="card-t sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; transition: color .3s">{{svc.tool.name}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #D8D3C9">{{svc.tool.line}}</span>
+<span style="margin-top: auto; font-weight: 700">Try it →</span>
+</a>
+</sc-if>
+<a class="card-l" href="{{svc.paired.href}}" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 14px; background: #FFFFFF; color: #111; box-sizing: border-box">
+<span style="font-size: 13px; font-weight: 700; color: #C23A0E">Often paired with</span>
+<span class="card-t sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; transition: color .3s">{{svc.paired.name}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #45423C">{{svc.paired.line}}</span>
+<span style="margin-top: auto; font-weight: 700">See the service →</span>
+</a>
+<div style="padding: 28px; border-radius: 14px; background: #F2EFE8">
+<span style="display: block; font-size: 13px; font-weight: 700; color: #C23A0E; margin-bottom: 10px">Further reading</span>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{svc.reading}}" as="r" hint-placeholder-count="2"><li style="border-top: 1px solid #C9C3B6"><a class="nd" href="{{r.href}}" style="display: block; padding: 14px 0"><span class="sg" style="display: block; font-size: 19px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">{{r.title}}</span><span style="display: block; margin-top: 4px; font-size: 13px; color: #45423C">{{r.where}}</span></a></li></sc-for>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="faq" style="background: #FFFFFF; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
+<div style="flex: 1 1 640px; min-width: 0; border-top: 2px solid #111">
+<sc-for list="{{faq}}" as="q" hint-placeholder-count="5">
+<details style="border-bottom: 1px solid #E6E1D6; padding: 0">
+<summary class="sg" style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25">{{q.q}}<span aria-hidden="true" style="color: #C23A0E">+</span></summary>
+<p style="margin: 0 0 24px; max-width: 720px; font-size: 17px; line-height: 1.65; color: #2D2B27">{{q.a}}</p>
+</details>
+</sc-for>
+</div>
+</div>
+</section>
+
+
+
+<section id="contact" style="background: #111; color: #F2EFE8">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 152px) 28px clamp(48px, 6vw, 72px)">
+<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Is your story<br><span style="color: #FF5A2A">ready to be told?</span></h2>
+<div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
+<a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
+<a class="btn-l" href="mailto:jeremiah@thejeremiahajayi.com" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; font-size: 17px; font-weight: 600">jeremiah@thejeremiahajayi.com</a>
+<a class="btn-l" href="https://www.linkedin.com/in/jeremiah-ajayi/" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; font-size: 17px; font-weight: 600">LinkedIn</a>
+</div>
+<footer style="margin-top: clamp(72px, 9vw, 112px); padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
+<a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 22px"><a class="nl" href="Site-Service-Positioning.dc.html">Positioning</a><a class="nl" href="Site-Service-Launch.dc.html">Launches & GTM</a><a class="nl" href="Site-Service-Content.dc.html">Content & growth</a><a class="nl" href="Site-Work.dc.html">Work</a><a class="nl" href="Site-Writing.dc.html">Writing</a><a class="nl" href="Site-About.dc.html">About</a><a class="nl" href="Site-EmpowerQ.dc.html">EmpowerQ</a><a class="nl" href="Site-Contact.dc.html">Contact</a><a class="nl" href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><span>Lagos · {{time}} · © 2026</span></span>
+</footer>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({ time: this.lagosTime() }, this.initialState ? this.initialState() : {});
+  }
+  lagosTime() {
+    try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; }
+  }
+  componentDidMount() { this.timer = setInterval(() => this.setState({ time: this.lagosTime() }), 30000); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const S = 'https://www.thejeremiahajayi.com/post/';
+    return {
+      time: this.state.time,
+      svc: {
+        slug: 'positioning-messaging', name: 'Positioning & messaging', verb: 'clear',
+        title: 'Positioning and messaging consultant for B2B SaaS',
+        intro: 'One clear story that product, marketing and sales all use, so your product is easy to understand, easy to compare and easy to buy.',
+        stats: [ { big: '2x', label: 'Xofu launch email click-through after repositioning' }, { big: '4', label: 'pricing tiers packaged around the new positioning' }, { big: '20+', label: 'launches positioned for new segments and markets' } ],
+        forWho: [ { t: 'Founders before a launch, a fundraise or a move into a new segment' }, { t: 'Marketing leaders whose messaging has drifted across teams' }, { t: 'Teams building a new category that buyers don’t understand yet' } ],
+        signs: [ { t: 'Prospects still can’t explain what you do after the demo.' }, { t: 'Your website, deck and sales calls tell different stories.' }, { t: 'You lose deals to “no decision” or to cheaper look-alikes.' }, { t: 'AI assistants describe your product vaguely, or wrongly.' }, { t: 'A launch, raise or new market is coming, and the story isn’t ready.' } ],
+        getsTitle: 'A story your whole company can tell the same way.',
+        gets: [
+          { n: '01', h: 'Customer and competitor research', t: 'Interviews, call recordings, CRM notes, win/loss data and the alternatives buyers compare you with.' },
+          { n: '02', h: 'Positioning', t: 'Who it’s for, what they’d use instead, what’s different and why it matters.' },
+          { n: '03', h: 'Messaging framework', t: 'The core narrative, value pillars and proof points for each audience.' },
+          { n: '04', h: 'Website and sales copy', t: 'Homepage, product and pricing pages, and the pitch narrative.' },
+          { n: '05', h: 'AI-search perception check', t: 'How ChatGPT, Perplexity and Google’s AI describe you today, and what to change.' }
+        ],
+        extraTitle: 'When it pays off most',
+        extraText: '',
+        extra: [ { t: 'Before a major launch' }, { t: 'Before a fundraise' }, { t: 'When entering a new segment or region' }, { t: 'When a new category needs explaining' } ],
+        extraLink: '', extraLinkLabel: '',
+        steps: [
+          { n: '1', h: 'Listen', t: 'Customers, sales calls, CRM notes, win/loss data and competitor research.' },
+          { n: '2', h: 'Decide', t: 'One audience, one problem and one reason to choose you, agreed with leadership.' },
+          { n: '3', h: 'Write', t: 'The messaging framework first, then the website, deck and onboarding copy.' },
+          { n: '4', h: 'Test and roll out', t: 'Check the story with customers and sales, then use it everywhere.' }
+        ],
+        proofTitle: 'Clearer stories, measurable results.',
+        cases: [
+          { client: 'Xofu', year: '2026', big: '2x', title: 'Giving a new AI product one clear question to answer', result: 'Repositioned around “Does AI recommend us?”; the launch email hit a 3.7% click-through rate.', href: 'Site-Work.dc.html#xofu', bg: '#111', fg: '#F2EFE8' },
+          { client: 'VEC Studio', year: '2021–22', big: '+49%', title: 'Product-led stories for SEON, Kittl and Blackthorn', result: 'Monthly organic traffic growth for a B2B SaaS client.', href: 'Site-Work.dc.html#index', bg: '#FF5A2A', fg: '#111' }
+        ],
+        hasQuote: false, quote: '', quoteName: '', quoteOrg: '', note: '',
+        tool: null,
+        paired: { name: 'Launches & go-to-market', line: 'New positioning lands best with a launch behind it.', href: 'Site-Service-Launch.dc.html' },
+        reading: [
+          { title: 'What comes after investor attention? A GTM analysis of Scale, Raven and Metrifox', where: 'My site', href: S + 'scale-raven-metrifox-gtm-analysis' },
+          { title: 'How to turn a B2B product launch into sales conversations', where: 'My site', href: S + 'saas-product-launch-proof-gap' }
+        ]
+      },
+      faq: [
+        { q: 'How long does a positioning project take?', a: 'It depends on how much customer research already exists. We agree the timeline after a diagnostic call, and you see the positioning and messaging framework before any website copy is rewritten.' },
+        { q: 'What do you need from our team?', a: 'Access to customers or call recordings, your CRM notes, one decision-maker from leadership, and a few short working sessions. I do the research and writing.' },
+        { q: 'Is this a workshop or done with you?', a: 'Done with you. I run the research and draft everything; your team makes the decisions in short working sessions, so the story is yours, not mine.' },
+        { q: 'How do you test the messaging?', a: 'With customers and prospects, with your sales team on live calls, and on the pages and emails where it goes first. I also check how AI assistants describe you before and after.' },
+        { q: 'How is it priced?', a: 'Every project is scoped to the problem. After a diagnostic call, you get a written proposal with scope, timeline and fee.' }
+      ]
+    };
+  }
+
+}
+</script>
+</body>
+</html>

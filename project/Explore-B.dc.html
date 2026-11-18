@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jeremiah Ajayi · Exploration B · The Launch Board</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap">
+<style>
+body{margin:0;background:#111111}
+a{color:inherit}a:hover{color:#FF5A2A}
+html{scroll-behavior:smooth}
+::selection{background:#FF5A2A;color:#111}
+.nl{text-decoration:none;color:#F2EFE8;transition:color .25s}
+.nl:hover{color:#FF5A2A}
+.nl-d{text-decoration:none;color:#111;transition:color .25s}
+.nl-d:hover{color:#C23A0E}
+.btn-o{text-decoration:none;background:#FF5A2A;color:#111;transition:background .3s,color .3s,transform .3s}
+.btn-o:hover{background:#F2EFE8;color:#111;transform:translateY(-2px)}
+.btn-l{text-decoration:none;color:#F2EFE8;border:1.5px solid #F2EFE8;transition:background .3s,color .3s}
+.btn-l:hover{background:#F2EFE8;color:#111}
+.tilt{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.board:hover .t1{transform:rotate(-7deg) translate(-14px,-8px)}
+.board:hover .t2{transform:rotate(6deg) translate(12px,6px)}
+.board:hover .t3{transform:rotate(-1deg) translateY(-10px)}
+.reel{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 28px 28px;scrollbar-width:thin}
+.reel > *{scroll-snap-align:start}
+.card{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-10px) rotate(-1deg)}
+.marquee{display:flex;gap:44px;width:max-content;animation:slide 30s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.row-x{transition:background .35s,color .35s}
+.row-x:hover{background:#FF5A2A;color:#111}
+.row-x:hover .rx-sub{color:#111}
+.grid-bg{background-image:linear-gradient(rgba(242,239,232,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.06) 1px,transparent 1px);background-size:80px 80px}
+@keyframes linein{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.l1{animation:linein .8s cubic-bezier(.2,.8,.2,1) both}
+.l2{animation:linein .8s .12s cubic-bezier(.2,.8,.2,1) both}
+.l3{animation:linein .8s .24s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@media (prefers-reduced-motion: reduce){.l1,.l2,.l3,.reveal,.marquee{animation:none !important}.tilt,.card{transition:none}}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box">
+
+<header style="position: sticky; top: 0; z-index: 30; background: rgba(17,17,17,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #2B2A27">
+<div style="max-width: 1360px; margin: 0 auto; padding: 14px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="#top" class="nl" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: -0.04em">
+<span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #FF5A2A; color: #111; font-size: 16px; letter-spacing: -0.06em">JA</span>Jeremiah Ajayi</a>
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px; font-weight: 500">
+<a class="nl" href="Work.dc.html">Work</a>
+<a class="nl" href="#expertise">Expertise</a>
+<a class="nl" href="#empowerq">EmpowerQ</a>
+<a class="nl" href="Writing.dc.html">Writing</a>
+<a class="nl" href="#about">About</a>
+<a class="btn-o" href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; font-weight: 700">Let’s talk ↗</a>
+</nav>
+</div>
+</header>
+
+<section id="top" class="grid-bg" style="position: relative; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(48px, 6vw, 88px) 28px clamp(56px, 6vw, 88px); display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 720px; min-width: 0">
+<p style="margin: 0 0 30px; font-size: 15px; font-weight: 500; color: #B5B0A6">Marketer for ambitious brands · Lagos · {{time}}</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(56px, 8.4vw, 128px); line-height: 0.95; letter-spacing: -0.055em">
+<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px">Make it <span style="color: #FF5A2A">clear.</span><span style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Positioning &amp; messaging</span></span>
+<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; padding-left: clamp(0px, 6vw, 96px)">Make it <span style="color: #FF5A2A">land.</span><span style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Launches &amp; go-to-market</span></span>
+<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; padding-left: clamp(0px, 12vw, 192px)">Make it <span style="color: #FF5A2A">travel.</span><span style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Content &amp; storytelling</span></span>
+</h1>
+<p style="margin: 40px 0 0; max-width: 560px; font-size: 20px; line-height: 1.55; color: #D8D3C9">I help ambitious brands get understood, launched and chosen. Eight years across tech, finance and media, with teams in Europe, North America, the Middle East and Africa.</p>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; font-size: 16px; font-weight: 700">Start a project ↗</a>
+<a class="btn-l" href="#work" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; font-size: 16px; font-weight: 600">See the work</a>
+</div>
+</div>
+<div class="board" style="flex: 0 1 440px; min-width: 300px; height: 560px; position: relative">
+<div class="tilt t1" aria-hidden="true" style="position: absolute; left: 0; top: 40px; width: 220px; height: 280px; transform: rotate(-5deg); background: #FF5A2A; color: #111; border-radius: 10px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 20px 40px rgba(0,0,0,.35)">
+<span style="font-size: 12px; font-weight: 700">Stears · 2023</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 96px; line-height: 0.8; letter-spacing: -0.07em">#1</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.1">above the BBC for “2023 election results”</span>
+</div>
+<div class="tilt t2" role="img" aria-label="Portrait of Jeremiah Ajayi (placeholder)" style="position: absolute; right: 0; top: 0; width: 270px; height: 360px; transform: rotate(4deg); background: #2A2926; border: 8px solid #F2EFE8; border-radius: 6px; box-sizing: border-box; display: flex; align-items: flex-end; padding: 16px; box-shadow: 0 24px 48px rgba(0,0,0,.4)">
+<span style="font-size: 12px; line-height: 1.45; color: #B5B0A6">Portrait · candid, mid-conversation, warm light</span>
+</div>
+<div class="tilt t3" aria-hidden="true" style="position: absolute; left: 70px; bottom: 0; width: 300px; height: 190px; transform: rotate(-2deg); background: #F2EFE8; color: #111; border-radius: 10px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 20px 40px rgba(0,0,0,.35)">
+<span style="font-size: 12px; font-weight: 700">Xofu · 2026</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1; letter-spacing: -0.04em">“Does AI recommend us?”</span>
+<span style="font-size: 13px; font-weight: 600">One question, a whole new story</span>
+</div>
+</div>
+</div>
+</section>
+
+<div style="background: #FF5A2A; color: #111; overflow: hidden; padding: 18px 0; transform: rotate(-1.2deg); margin: 0 -20px; position: relative; z-index: 2" aria-label="Clients and collaborators">
+<div class="marquee" style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap">
+<sc-for list="{{clientsLoop}}" as="n" hint-placeholder-count="8"><span>{{n.name}} <span aria-hidden="true">✳</span></span></sc-for>
+</div>
+</div>
+
+<section id="work" style="padding: clamp(80px, 10vw, 136px) 0 0">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 28px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(44px, 5.6vw, 84px); line-height: 0.95; letter-spacing: -0.05em">Selected work</h2>
+<p style="margin: 0; font-size: 15px; font-weight: 600; color: #B5B0A6">Scroll sideways →</p>
+</div>
+<div class="reel" style="max-width: 1440px; margin: 0 auto; box-sizing: border-box">
+<sc-for list="{{work}}" as="w" hint-placeholder-count="4">
+<a class="card" href="Work.dc.html" style="flex: 0 0 min(420px, 82vw); text-decoration: none; color: #F2EFE8; display: flex; flex-direction: column; gap: 18px">
+<div style="height: 520px; border-radius: 12px; background: {{w.bg}}; color: {{w.fg}}; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden">
+<span style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700"><span>{{w.client}}</span><span>{{w.tag}}</span></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: {{w.size}}; line-height: 0.86; letter-spacing: -0.06em">{{w.big}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 20px; line-height: 1.15; letter-spacing: -0.02em">{{w.small}}</span>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1">{{w.title}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #B5B0A6">{{w.result}}</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section id="expertise" style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 148px) 28px 0">
+<h2 style="margin: 0 0 44px; max-width: 900px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.98; letter-spacing: -0.05em">Three disciplines. One job: helping good products get chosen.</h2>
+<sc-for list="{{capabilities}}" as="c" hint-placeholder-count="3">
+<div class="row-x reveal" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: baseline; padding: 32px 16px; border-top: 1px solid #3A3934">
+<span style="flex: 0 0 200px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(48px, 5vw, 72px); line-height: 0.9; letter-spacing: -0.06em">{{c.verb}}</span>
+<div style="flex: 1 1 420px; min-width: 0">
+<p style="margin: 0 0 10px; font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">{{c.name}}</p>
+<p class="rx-sub" style="margin: 0; font-size: 17px; line-height: 1.6; color: #D8D3C9">{{c.long}}</p>
+</div>
+<div class="rx-sub" style="flex: 1 1 300px; font-size: 14px; line-height: 1.6; color: #B5B0A6">
+<p style="margin: 0 0 8px"><strong style="color: inherit">Proof</strong> · {{c.proof}}</p>
+<p style="margin: 0"><strong style="color: inherit">Supported by</strong> · {{c.tools}}</p>
+</div>
+</div>
+</sc-for>
+</section>
+
+<section aria-label="What people say" style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 140px) 28px">
+<div style="display: flex; flex-direction: column; gap: 56px">
+<sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
+<figure class="reveal" style="margin: 0; max-width: 860px; align-self: {{q.align}}">
+<blockquote style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -0.035em">“{{q.text}}”</blockquote>
+<figcaption style="margin-top: 16px; font-size: 15px; color: #B5B0A6"><span style="color: #FF5A2A; font-weight: 700">{{q.name}}</span> · {{q.org}}</figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+
+<section id="empowerq" style="background: #B9A6FF; color: #1C1430; position: relative; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(88px, 11vw, 148px) 28px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 1 1 560px; min-width: 0">
+<p style="margin: 0 0 18px; font-size: 15px; font-weight: 700">The work I care about most</p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(72px, 10vw, 168px); line-height: 0.82; letter-spacing: -0.07em">EmpowerQ</h2>
+<p style="margin: 32px 0 0; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.1; letter-spacing: -0.03em; max-width: 680px">Every queer Nigerian professional deserves a fair shot at a good career.</p>
+<p style="margin: 24px 0 0; font-size: 18px; line-height: 1.65; max-width: 600px; color: #2E2350">Many LGBTQ+ Nigerians are shut out of the networks, mentorship and fair hiring that careers depend on. I co-founded EmpowerQ in 2025 to change that, with practical support, honest research and a community that makes work safer.</p>
+<ol style="margin: 40px 0 0; padding: 0; list-style: none; border-top: 2px solid #1C1430">
+<sc-for list="{{programs}}" as="p" hint-placeholder-count="6">
+<li style="display: flex; flex-wrap: wrap; gap: 4px 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(28,20,48,.25)"><span style="flex: 0 0 240px; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.03em">{{p.name}}</span><span style="flex: 1 1 260px; font-size: 15px; line-height: 1.5; color: #2E2350">{{p.line}}</span></li>
+</sc-for>
+</ol>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a href="[EMPOWERQ WEBSITE]" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; background: #1C1430; color: #F1ECFF; font-weight: 700">Visit EmpowerQ ↗</a>
+<a href="mailto:jeremiahajayi245@gmail.com?subject=Partnering%20with%20EmpowerQ" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; border: 2px solid #1C1430; color: #1C1430; font-weight: 700">Partner or fund our work</a>
+</div>
+</div>
+<div style="flex: 0 1 420px; min-width: 280px; position: relative; height: 560px">
+<div role="img" aria-label="Photo from Out of Office Vol. 1 (placeholder)" style="position: absolute; inset: 0 30px 80px 0; transform: rotate(3deg); background: #1C1430; border: 8px solid #F1ECFF; border-radius: 6px; box-sizing: border-box; display: flex; align-items: flex-end; padding: 18px">
+<span style="font-size: 12px; line-height: 1.5; color: #C9C0E6">Out of Office Vol. 1, Lagos · the room, hands, backs, or people who have agreed to be shown</span>
+</div>
+<div style="position: absolute; right: 0; bottom: 0; width: 210px; height: 210px; border-radius: 50%; background: #1C1430; color: #F1ECFF; transform: rotate(-8deg); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 60px; line-height: 1; letter-spacing: -0.06em; color: #B9A6FF">100+</span>
+<span style="margin-top: 6px; font-size: 13px; font-weight: 600; max-width: 140px; line-height: 1.3">at our first Out of Office gathering</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start">
+<h2 style="margin: 0; flex: 1 1 380px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(36px, 3.8vw, 56px); line-height: 1; letter-spacing: -0.05em">From a law lecture to launches.</h2>
+<div style="flex: 1 1 520px; font-size: 18px; line-height: 1.65">
+<p style="margin: 0 0 18px">In 2018 a friend told me about freelance writing during a law lecture I barely remember. Since then I’ve shaped launches, positioning and content for PiggyVest, Stears, RemotePass, SEON and Kittl, and original research for Foundation Marketing.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-weight: 600"><a class="nl-d" href="#about">More about me →</a><a class="nl-d" href="Writing.dc.html">Read my writing →</a></div>
+</div>
+</div>
+</section>
+
+<section id="contact" style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 168px) 28px clamp(48px, 6vw, 80px)">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(56px, 9vw, 148px); line-height: 0.86; letter-spacing: -0.065em">Got something<br><span style="color: #FF5A2A">worth launching?</span></h2>
+<div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 14px">
+<a class="btn-o" href="mailto:jeremiahajayi245@gmail.com" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 30px; border-radius: 999px; font-size: 18px; font-weight: 700">jeremiahajayi245@gmail.com</a>
+<a class="btn-l" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 30px; border-radius: 999px; font-size: 18px; font-weight: 600">Book a call</a>
+<a class="btn-l" href="https://www.linkedin.com/in/jeremiah-ajayi/" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 30px; border-radius: 999px; font-size: 18px; font-weight: 600">LinkedIn</a>
+</div>
+<p style="margin: 64px 0 0; font-size: 13px; color: #8F8A80">© 2026 Jeremiah Ajayi · Lagos · {{time}}</p>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { time: this.lagosTime() };
+  }
+  lagosTime() {
+    try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; }
+  }
+  componentDidMount() { this.timer = setInterval(() => this.setState({ time: this.lagosTime() }), 30000); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const clients = ['RemotePass', 'Stears', 'PiggyVest', 'SEON', 'Kittl', 'Northzone', 'The Earthshot Prize', 'Foundation Marketing', 'iPullRank', 'Wonsulting'];
+    return {
+      time: this.state.time,
+      clientsLoop: clients.concat(clients).map((name) => ({ name })),
+      work: [
+        { client: 'Stears', tag: 'Content', bg: '#FF5A2A', fg: '#111', size: '150px', big: '#1', small: 'on Google for “2023 election results”, above the BBC, CNN and INEC', title: 'How a new election tracker beat the BBC on Google', result: '1.9M+ users, 52% from search. Cited by the FT and Al Jazeera.' },
+        { client: 'RemotePass × Certn', tag: 'Launch', bg: '#F2EFE8', fg: '#111', size: '128px', big: '270+', small: 'media pickups for one partnership launch', title: 'The partnership launch that went global', result: 'Yahoo Finance, Fox and NBC, plus new enterprise conversations.' },
+        { client: 'Xofu', tag: 'Positioning', bg: '#2A2926', fg: '#F2EFE8', size: '54px', big: '“Does AI recommend us?”', small: 'One buyer question became the product’s whole story', title: 'Giving a new AI product one clear question to answer', result: 'Launch email click-through of 3.7%, double the previous best.' },
+        { client: 'RemotePass', tag: 'Content', bg: '#FFD9C9', fg: '#111', size: '104px', big: '$500K+', small: 'pipeline from a content engine built from zero', title: 'A content engine built to reach pipeline', result: '174% growth in organic user acquisition, year on year.' },
+        { client: 'RemotePass × Wafeq', tag: 'Launch', bg: '#F2EFE8', fg: '#111', size: '128px', big: '100+', small: 'placements across the UAE and Saudi Arabia, in English and Arabic', title: 'A regional first, launched in two languages', result: 'The region’s first HR and payroll integration with Wafeq.' }
+      ],
+      capabilities: [
+        { verb: 'Clear', name: 'Positioning & messaging', long: 'Finding what makes a product worth choosing, then turning it into a story the whole company can tell the same way.', proof: 'Repositioned Xofu around one buyer question; rewrote its site, pricing and onboarding.', tools: 'research, messaging frameworks, AI-search insight' },
+        { verb: 'Land', name: 'Launches & go-to-market', long: 'Launches planned end to end, from narrative and timing to press, partners and the material sales needs on day one.', proof: 'GTM for 15+ RemotePass launches.', tools: 'launch planning, PR and partnerships, sales enablement' },
+        { verb: 'Travel', name: 'Content & storytelling', long: 'Content people seek out and share, built to keep working long after it’s published.', proof: '#1 above the BBC for Stears; 174% organic growth at RemotePass.', tools: 'editorial strategy, SEO and AI search, distribution' }
+      ],
+      quotes: [
+        { text: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', name: 'Wesley Hattingh', org: 'RemotePass', align: 'flex-start' },
+        { text: 'From day one, he was full of ideas on how we could improve our product growth.', name: 'Adetoro Adeniran', org: 'Stears', align: 'center' },
+        { text: 'His work was excellent quality, he was very hands on right from the start.', name: 'Stephen Lavery', org: 'Client', align: 'flex-end' }
+      ],
+      programs: [
+        { name: 'Lavender Ladder', line: 'An employment programme for progression, not just placement.' },
+        { name: 'Workforce Pulse Report', line: 'Research on LGBTQ+ working life in Nigeria.' },
+        { name: 'EmpowerQ Debrief', line: 'A weekly newsletter on work, money and opportunity.' },
+        { name: 'Your Career Bestie', line: 'An AI career coach. Launching soon.' },
+        { name: 'Out of Office', line: 'Gatherings for queer professionals.' },
+        { name: 'Career office hours', line: 'One-to-one sessions anyone can book.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

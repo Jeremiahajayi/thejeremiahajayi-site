@@ -1,0 +1,166 @@
+<section style="background: #FF5A2A; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) 28px clamp(64px, 8vw, 104px)">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #45423C; margin-bottom: 28px"><a class="nd" href="Site-Services.dc.html">Expertise</a> <span aria-hidden="true">/</span> <span style="color: #111">{{svc.name}}</span></nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 48px 72px; align-items: start">
+<div>
+<p class="sg" style="margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.03em">Make it <span style="color: #F2EFE8; background: #111; padding: 0 10px; border-radius: 6px">land.</span></p>
+<h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(46px, 6vw, 92px); line-height: 0.94; letter-spacing: -0.055em">{{svc.title}}</h1>
+<p style="margin: 30px 0 0; max-width: 600px; font-size: 20px; line-height: 1.55">{{svc.intro}}</p>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="Site-Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #111; color: #F2EFE8; text-decoration: none; font-size: 16px; font-weight: 700">Plan my launch ↗</a>
+<a class="nd" href="#proof" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 12px; font-size: 16px; font-weight: 700">See the proof ↓</a>
+</div>
+</div>
+<figure style="margin: 0; padding: 28px; border-radius: 18px; background: #111; color: #F2EFE8" aria-label="A launch, from six weeks out to thirty days after">
+<figcaption style="font-size: 13px; font-weight: 700; color: #FF5A2A">The countdown I run</figcaption>
+<div style="position: relative; margin-top: 18px">
+<span class="drawy" aria-hidden="true" style="position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: #FF5A2A"></span>
+<ol style="margin: 0; padding: 0 0 0 26px; list-style: none">
+<li style="position: relative; padding: 0 0 22px"><span aria-hidden="true" style="position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #111; border: 2px solid #FF5A2A"></span><span class="sg" style="display: block; font-size: 15px; font-weight: 700; color: #FF5A2A">6 weeks out</span><span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.5">GTM brief, launch tier and success measures, agreed with product and sales.</span></li>
+<li style="position: relative; padding: 0 0 22px"><span aria-hidden="true" style="position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #111; border: 2px solid #FF5A2A"></span><span class="sg" style="display: block; font-size: 15px; font-weight: 700; color: #FF5A2A">4 weeks out</span><span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.5">Messaging, press and partner story, and the sales enablement kit.</span></li>
+<li style="position: relative; padding: 0 0 22px"><span aria-hidden="true" style="position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #FF5A2A"></span><span class="sg" style="display: block; font-size: 15px; font-weight: 700; color: #FF5A2A">Launch day</span><span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.5">Announcement, website, email, social, press and partners, on the same day.</span></li>
+<li style="position: relative; padding: 0"><span aria-hidden="true" style="position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #111; border: 2px solid #FF5A2A"></span><span class="sg" style="display: block; font-size: 15px; font-weight: 700; color: #FF5A2A">30 days after</span><span style="display: block; margin-top: 4px; font-size: 16px; line-height: 1.5">Pipeline, sales usage and adoption, reported with lessons for the next launch.</span></li>
+</ol>
+</div>
+</figure>
+</div>
+<div style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding-top: 24px; border-top: 2px solid #111">
+<sc-for list="{{svc.stats}}" as="s" hint-placeholder-count="3"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: 52px; line-height: 0.9; letter-spacing: -0.06em">{{s.big}}</p><p style="margin: 8px 0 0; font-size: 14px; line-height: 1.45">{{s.label}}</p></div></sc-for>
+</div>
+</div>
+</section>
+
+<section style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px 64px">
+<div>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
+<ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
+<sc-for list="{{svc.forWho}}" as="w" hint-placeholder-count="3"><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">{{w.t}}</li></sc-for>
+</ul>
+</div>
+<div>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Signs you need this</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{svc.signs}}" as="g" hint-placeholder-count="5"><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>{{g.t}}</span></li></sc-for>
+</ul>
+</div>
+</div>
+</section>
+<section style="background: #111; color: #F2EFE8; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px 0">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #FF5A2A">Launch day, in creative</p>
+<h2 class="sg reveal" style="margin: 0; max-width: 980px; font-weight: 600; font-size: clamp(40px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">Real launches, shipped with product, sales and partners.</h2>
+</div>
+<div class="wall-wrap" style="padding: 48px 0 16px; overflow: hidden">
+<div class="wall" aria-label="Launch creative from RemotePass launches">
+<img class="shot" src="/_blob/059d23d54fba852a7e2e28c2b4ef3db4" alt="RemotePass × Certn launch visual" loading="lazy" style="width: 380px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/c7e58c431da5738727e39bea1b223b8d" alt="Wafeq integration announcement visual" loading="lazy" style="width: 416px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/c3cb1759fffe47bc7bbed1cc3895d701" alt="QuickBooks integration launch post" loading="lazy" style="width: 188px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/ef8d3efbfc1194e978574d9eb50ef96f" alt="Time-Off Policies launch visual" loading="lazy" style="width: 416px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/89d9fecea4c00f909e23139b6e195ac7" alt="KSA Payroll launch visual" loading="lazy" style="width: 416px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/7b26ce554a84b7e8f8efc0c9b7b09d2e" alt="Dubai Fintech Summit countdown post" loading="lazy" style="width: 233px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/059d23d54fba852a7e2e28c2b4ef3db4" alt="" aria-hidden="true" loading="lazy" style="width: 380px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/c7e58c431da5738727e39bea1b223b8d" alt="" aria-hidden="true" loading="lazy" style="width: 416px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/c3cb1759fffe47bc7bbed1cc3895d701" alt="" aria-hidden="true" loading="lazy" style="width: 188px; height: 233px; object-fit: cover; flex: none">
+<img class="shot" src="/_blob/ef8d3efbfc1194e978574d9eb50ef96f" alt="" aria-hidden="true" loading="lazy" style="width: 416px; height: 233px; object-fit: cover; flex: none">
+</div>
+</div>
+<div style="max-width: 1360px; margin: 0 auto; padding: 32px 28px clamp(80px, 10vw, 128px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 24px">
+<div style="padding: 28px; border-radius: 16px; background: #FF5A2A; color: #111"><p class="sg" style="margin: 0; font-size: clamp(64px, 7vw, 104px); font-weight: 700; line-height: .84; letter-spacing: -0.065em">270+</p><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.5">media pickups for the RemotePass × Certn launch, including Yahoo Finance, Fox and NBC.</p></div>
+<div style="padding: 28px; border-radius: 16px; background: #1C1C1B; border: 1px solid #3A3934"><p class="sg" style="margin: 0; font-size: clamp(64px, 7vw, 104px); font-weight: 700; line-height: .84; letter-spacing: -0.065em">103</p><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.5; color: #D8D3C9">pieces of coverage for the Wafeq integration across the UAE and Saudi Arabia.</p><div aria-hidden="true" style="margin-top: 18px; display: flex; height: 14px; border-radius: 999px; overflow: hidden"><span class="grow" style="width: 54.4%; background: #FF5A2A"></span><span class="grow" style="width: 45.6%; background: #F2EFE8"></span></div><p style="margin: 8px 0 0; display: flex; justify-content: space-between; font-size: 13px; font-weight: 600"><span style="color: #FF5A2A">56 in Arabic</span><span>47 in English</span></p></div>
+</div>
+</section>
+
+<section style="background: #FFFFFF; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: flex; flex-wrap: wrap; gap: 48px 64px">
+<div style="flex: 1 1 560px; min-width: 0">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">What you get</p>
+<h2 class="sg" style="margin: 0 0 32px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.getsTitle}}</h2>
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
+<sc-for list="{{svc.gets}}" as="g" hint-placeholder-count="6"><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #C23A0E">{{g.n}}</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{g.h}}</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">{{g.t}}</span></span></li></sc-for>
+</ol>
+</div>
+<aside style="flex: 0 1 420px; min-width: 280px; align-self: flex-start; background: #111; color: #F2EFE8; border-radius: 16px; padding: clamp(26px, 3vw, 36px)">
+<h3 class="sg" style="margin: 0 0 18px; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">{{svc.extraTitle}}</h3>
+<sc-if value="{{svc.extraText}}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 18px; font-size: 16px; line-height: 1.6; color: #D8D3C9">{{svc.extraText}}</p></sc-if>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{svc.extra}}" as="x" hint-placeholder-count="4"><li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">{{x.t}}</li></sc-for>
+</ul>
+<sc-if value="{{svc.extraLink}}" hint-placeholder-val="{{ true }}"><a class="nl" href="{{svc.extraLink}}" style="display: inline-block; margin-top: 18px; font-weight: 700; color: #FF5A2A">{{svc.extraLinkLabel}} →</a></sc-if>
+</aside>
+</div>
+</section>
+
+<section style="background: #111; color: #F2EFE8">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #FF5A2A">How it works</p>
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
+<sc-for list="{{svc.steps}}" as="s" hint-placeholder-count="4"><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #FF5A2A">{{s.n}}</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">{{s.t}}</span></li></sc-for>
+</ol>
+</div>
+</section>
+
+<section id="proof" style="background: #F2EFE8; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px">
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">Proof</p>
+<h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.proofTitle}}</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<sc-for list="{{svc.cases}}" as="c" hint-placeholder-count="2">
+<a class="card-l" href="{{c.href}}" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px; padding: clamp(24px, 3vw, 36px); border-radius: 14px; background: {{c.bg}}; color: {{c.fg}}; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700"><span>{{c.client}}</span><span style="opacity: .75">{{c.year}}</span></span>
+<span class="sg" style="font-weight: 700; font-size: clamp(64px, 7vw, 104px); line-height: 0.85; letter-spacing: -0.065em">{{c.big}}</span>
+<span style="display: block"><span class="card-t sg" style="display: block; font-size: 22px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15; transition: color .3s">{{c.title}}</span><span style="display: block; margin-top: 8px; font-size: 14px; line-height: 1.5; opacity: .85">{{c.result}}</span><span style="display: block; margin-top: 14px; font-size: 14px; font-weight: 700">Read the case study →</span></span>
+</a>
+</sc-for>
+</div>
+<sc-if value="{{svc.hasQuote}}" hint-placeholder-val="{{ true }}">
+<figure style="margin: 28px 0 0; padding: clamp(24px, 3vw, 36px); border-radius: 14px; background: #FF5A2A; color: #111; max-width: 980px">
+<blockquote class="sg" style="margin: 0; font-size: clamp(24px, 2.4vw, 32px); font-weight: 600; line-height: 1.18; letter-spacing: -0.03em">“{{svc.quote}}”</blockquote>
+<figcaption style="margin-top: 14px; font-size: 14px"><span style="font-weight: 700">{{svc.quoteName}}</span> · {{svc.quoteOrg}}</figcaption>
+</figure>
+</sc-if>
+<sc-if value="{{svc.note}}" hint-placeholder-val="{{ true }}"><p style="margin: 22px 0 0; max-width: 760px; font-size: 14px; line-height: 1.6; color: #45423C">{{svc.note}}</p></sc-if>
+</div>
+</section>
+
+<section style="background: #E6E1D6; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 9vw, 112px) 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-if value="{{svc.tool}}" hint-placeholder-val="{{ true }}">
+<a class="card-l" href="{{svc.tool.href}}" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 14px; background: #111; color: #F2EFE8; box-sizing: border-box">
+<span style="font-size: 13px; font-weight: 700; color: #FF5A2A">Free tool</span>
+<span class="card-t sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; transition: color .3s">{{svc.tool.name}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #D8D3C9">{{svc.tool.line}}</span>
+<span style="margin-top: auto; font-weight: 700">Try it →</span>
+</a>
+</sc-if>
+<a class="card-l" href="{{svc.paired.href}}" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 14px; background: #FFFFFF; color: #111; box-sizing: border-box">
+<span style="font-size: 13px; font-weight: 700; color: #C23A0E">Often paired with</span>
+<span class="card-t sg" style="font-size: 28px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; transition: color .3s">{{svc.paired.name}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #45423C">{{svc.paired.line}}</span>
+<span style="margin-top: auto; font-weight: 700">See the service →</span>
+</a>
+<div style="padding: 28px; border-radius: 14px; background: #F2EFE8">
+<span style="display: block; font-size: 13px; font-weight: 700; color: #C23A0E; margin-bottom: 10px">Further reading</span>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{svc.reading}}" as="r" hint-placeholder-count="2"><li style="border-top: 1px solid #C9C3B6"><a class="nd" href="{{r.href}}" style="display: block; padding: 14px 0"><span class="sg" style="display: block; font-size: 19px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">{{r.title}}</span><span style="display: block; margin-top: 4px; font-size: 13px; color: #45423C">{{r.where}}</span></a></li></sc-for>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="faq" style="background: #FFFFFF; color: #111">
+<div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 28px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
+<div style="flex: 1 1 640px; min-width: 0; border-top: 2px solid #111">
+<sc-for list="{{faq}}" as="q" hint-placeholder-count="5">
+<details style="border-bottom: 1px solid #E6E1D6; padding: 0">
+<summary class="sg" style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25">{{q.q}}<span aria-hidden="true" style="color: #C23A0E">+</span></summary>
+<p style="margin: 0 0 24px; max-width: 720px; font-size: 17px; line-height: 1.65; color: #2D2B27">{{q.a}}</p>
+</details>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!--CONTACT:Got a launch<br><span style="color: #FF5A2A">on the calendar?</span>-->

@@ -1,0 +1,72 @@
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap">
+<style>
+body{margin:0;background:#111111}
+a{color:inherit}a:hover{color:#FF5A2A}
+html{scroll-behavior:smooth}
+::selection{background:#FF5A2A;color:#111}
+.sg{font-family:'Space Grotesk',system-ui,sans-serif}
+.nl{text-decoration:none;color:#F2EFE8;transition:color .25s}
+.nl:hover{color:#FF5A2A}
+.nd{text-decoration:none;color:#111;transition:color .25s}
+.nd:hover{color:#C23A0E}
+.btn-o{text-decoration:none;background:#FF5A2A;color:#111;transition:background .3s,color .3s,transform .3s}
+.btn-o:hover{background:#F2EFE8;color:#111;transform:translateY(-2px)}
+.btn-l{text-decoration:none;color:#F2EFE8;border:1.5px solid #F2EFE8;transition:background .3s,color .3s}
+.btn-l:hover{background:#F2EFE8;color:#111}
+.btn-k{text-decoration:none;background:#111;color:#F2EFE8;transition:background .3s,color .3s,transform .3s}
+.btn-k:hover{background:#FF5A2A;color:#111;transform:translateY(-2px)}
+.ph{background-image:repeating-linear-gradient(135deg,rgba(17,17,17,.07) 0 1px,transparent 1px 10px)}
+.ph-d{background-image:repeating-linear-gradient(135deg,rgba(242,239,232,.07) 0 1px,transparent 1px 10px)}
+.ph-l{background-image:repeating-linear-gradient(135deg,rgba(185,166,255,.18) 0 1px,transparent 1px 10px)}
+.sheet{text-decoration:none;color:#F2EFE8;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sheet:hover{transform:translateY(-8px)}
+.sheet:hover .sh-t{color:#FF5A2A}
+.lift{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.case:hover .lift{transform:translateY(-10px) rotate(-0.6deg)}
+.case:hover .lift2{transform:translateY(8px) rotate(1deg)}
+.lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.row-x{transition:background .35s,color .35s}
+.row-x:hover{background:#FF5A2A;color:#111}
+.row-x:hover .rx-sub{color:#111}
+.stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
+.stop-dot{transition:transform .3s,background .3s}
+.door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
+.door:hover{border-color:#111}
+.marquee{display:flex;gap:44px;width:max-content;animation:slide 32s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.grid-bg{background-image:linear-gradient(rgba(242,239,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.05) 1px,transparent 1px);background-size:80px 80px}
+@keyframes linein{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.l1{animation:linein .8s cubic-bezier(.2,.8,.2,1) both}
+.l2{animation:linein .8s .12s cubic-bezier(.2,.8,.2,1) both}
+.l3{animation:linein .8s .24s cubic-bezier(.2,.8,.2,1) both}
+@keyframes reveal-photo{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.photo-in{animation:reveal-photo 1.2s .3s cubic-bezier(.7,0,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@media (prefers-reduced-motion: reduce){.l1,.l2,.l3,.photo-in,.reveal,.marquee{animation:none !important}.lift,.lift2,.sheet{transition:none}}
+.wall{display:flex;gap:18px;width:max-content;animation:slide 70s linear infinite}
+.wall-wrap:hover .wall,.wall-wrap:focus-within .wall{animation-play-state:paused}
+.shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.shot:hover{transform:translateY(-6px) rotate(-.5deg)}
+.need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
+.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.hscroll>*{scroll-snap-align:start}
+.jump{text-decoration:none;transition:background .3s,color .3s}
+.jump:hover{background:#111;color:#F2EFE8}
+.path{text-decoration:none;color:inherit;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.path:hover{transform:translateY(-6px)}
+.path:hover .path-go{color:#FF5A2A}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@supports (animation-timeline: view()){.wipe{animation:wipe linear both;animation-timeline:view();animation-range:entry 20% cover 50%}.grow{transform-origin:left;animation:growx linear both;animation-timeline:view();animation-range:entry 30% cover 45%}.drawy{transform-origin:top;animation:growy linear both;animation-timeline:view();animation-range:entry 0% cover 60%}}
+@media (prefers-reduced-motion: reduce){.wall,.wipe,.grow,.drawy{animation:none !important}.shot,.path{transition:none}}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width: 860px){.qgrid{grid-template-columns:1fr}.qgrid>*{grid-column:auto !important}}
+.wrow{transition:padding .35s cubic-bezier(.2,.8,.2,1)}
+.wrow:hover{padding-left:14px !important}
+</style>
+</helmet>
