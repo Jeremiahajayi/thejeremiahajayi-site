@@ -5,8 +5,8 @@
 <nav aria-label="Breadcrumb" style="font-size: 14px; color: #B5B0A6; margin-bottom: 28px"><a class="nl" href="Site-Services.dc.html">Expertise</a> <span aria-hidden="true">/</span> <span style="color: #F2EFE8">{{svc.name}}</span></nav>
 <div style="display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-end">
 <div style="flex: 1 1 680px; min-width: 0">
-<p class="sg" style="margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.03em">Make it <span class="vpill" style="background: var(--mint)">{{svc.verb}}. ✈️</span></p>
-<h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(46px, 6.2vw, 96px); line-height: 0.94; letter-spacing: -0.055em">{{svc.title}}</h1>
+<p class="sg sv-verb">Make it <span class="sv-v sv3"><span class="sv-ink" aria-hidden="true"></span><span class="sv-t">{{svc.verb}}.</span></span></p>
+<h1 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(34px, 4.2vw, 64px); line-height: 0.94; letter-spacing: -0.055em">{{svc.title}}</h1>
 <p style="margin: 30px 0 0; max-width: 620px; font-size: 20px; line-height: 1.55; color: #D8D3C9">{{svc.intro}}</p>
 <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
 <a class="btn-o" href="Site-Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 16px; font-weight: 700">Book a call <span class="arr" aria-hidden="true">→</span></a>
@@ -28,13 +28,13 @@
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px 64px">
 <div>
-<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 700; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
 <ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
 <sc-for list="{{svc.forWho}}" as="w" hint-placeholder-count="3"><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">{{w.t}}</li></sc-for>
 </ul>
 </div>
 <div>
-<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Signs you need this</h2>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 700; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Signs you need this</h2>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
 <sc-for list="{{svc.signs}}" as="g" hint-placeholder-count="5"><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>{{g.t}}</span></li></sc-for>
 </ul>
@@ -44,7 +44,7 @@
 <section style="background: #F2EFE8; color: #111; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">Why it compounds</p>
-<h2 class="sg reveal" style="margin: 0; max-width: 980px; font-weight: 600; font-size: clamp(40px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">Search, AI answers and buyers all reward the same thing: useful pages, kept up to date.</h2>
+<h2 class="sg reveal" style="margin: 0; max-width: 980px; font-weight: 700; font-size: clamp(40px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">Search, AI answers and buyers all reward the same thing: useful pages, kept up to date.</h2>
 <div style="margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 72px; align-items: center">
 <div role="group" aria-label="KSA Payroll campaign posts" style="display: flex; justify-content: center; padding: 18px 0">
 <img class="shot" src="/_blob/11081f461253fb84fb4a4bb9bf11f88b" alt="Carousel cover: Risks of manual payroll in Saudi Arabia" loading="lazy" style="width: 34%; max-width: 200px; aspect-ratio: 1600 / 1985; object-fit: cover; margin: 0 -2%; transform: rotate(-4deg) translateY(16px)">
@@ -68,13 +68,13 @@
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 48px 64px">
 <div style="flex: 1 1 560px; min-width: 0">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">What you get</p>
-<h2 class="sg" style="margin: 0 0 32px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.getsTitle}}</h2>
+<h2 class="sg" style="margin: 0 0 32px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.getsTitle}}</h2>
 <ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
 <sc-for list="{{svc.gets}}" as="g" hint-placeholder-count="6"><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">{{g.n}}</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{g.h}}</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">{{g.t}}</span></span></li></sc-for>
 </ol>
 </div>
 <aside style="flex: 0 1 420px; min-width: 280px; align-self: flex-start; background: #111; color: #F2EFE8; border-radius: 16px; padding: clamp(26px, 3vw, 36px)">
-<h3 class="sg" style="margin: 0 0 18px; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">{{svc.extraTitle}}</h3>
+<h3 class="sg" style="margin: 0 0 18px; font-size: 26px; font-weight: 700; letter-spacing: -0.03em">{{svc.extraTitle}}</h3>
 <sc-if value="{{svc.extraText}}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 18px; font-size: 16px; line-height: 1.6; color: #D8D3C9">{{svc.extraText}}</p></sc-if>
 <ul style="margin: 0; padding: 0; list-style: none">
 <sc-for list="{{svc.extra}}" as="x" hint-placeholder-count="4"><li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">{{x.t}}</li></sc-for>
@@ -87,7 +87,7 @@
 <section style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">How it works</p>
-<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
 <sc-for list="{{svc.steps}}" as="s" hint-placeholder-count="4"><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">{{s.n}}</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">{{s.t}}</span></li></sc-for>
 </ol>
@@ -97,7 +97,7 @@
 <section id="proof" style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">Proof</p>
-<h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.proofTitle}}</h2>
+<h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">{{svc.proofTitle}}</h2>
 <div class="mswipe" style="display: flex; flex-wrap: wrap; gap: 20px">
 <sc-for list="{{svc.cases}}" as="c" hint-placeholder-count="2">
 <a class="card-l" href="{{c.href}}" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px; padding: clamp(24px, 3vw, 36px); border-radius: 14px; background: {{c.bg}}; color: {{c.fg}}; box-sizing: border-box">
@@ -144,7 +144,7 @@
 
 <section id="faq" style="background: #FFFFFF; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 32px 64px">
-<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
+<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
 <div style="flex: 1 1 640px; min-width: 0; border-top: 2px solid #111">
 <sc-for list="{{faq}}" as="q" hint-placeholder-count="5">
 <details style="border-bottom: 1px solid #E6E1D6; padding: 0">

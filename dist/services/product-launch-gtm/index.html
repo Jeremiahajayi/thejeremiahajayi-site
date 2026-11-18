@@ -335,13 +335,28 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .chips-rot>*:nth-child(5n+5){background:#FFFFFF !important}
 @media (max-width: 760px){.deco-dsk{display:none}}
 .vpill{display:inline-block;padding:0 .14em;border-radius:.12em;color:#111}
+/* shared language with the homepage */
+.tiles-rot>*{border:1.5px solid #111;box-shadow:5px 5px 0 #111;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.tiles-rot>*:hover{transform:translate(-2px,-4px);box-shadow:7px 9px 0 #111}
+.mswipe.tiles-rot{padding-bottom:10px}
+.btn-k{box-shadow:3px 3px 0 #FF5A2A;transition:transform .2s,box-shadow .2s}
+.btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
+.sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
+.sv-v{position:relative;display:inline-block;padding:0 .12em .04em;transform:rotate(-2deg)}
+.sv-ink{position:absolute;inset:.06em 0 0;border-radius:.14em;transform-origin:left center;animation:svink .7s .3s cubic-bezier(.7,0,.2,1) both}
+.sv1 .sv-ink{background:#111}.sv1 .sv-t{color:#FFC83D}
+.sv2 .sv-ink{background:#111}.sv2 .sv-t{color:#FF5A2A}
+.sv3 .sv-ink{background:#8FE3B0}.sv3 .sv-t{color:#111}
+.sv-t{position:relative}
+@keyframes svink{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){.sv-ink{animation:none}.tiles-rot>*,.btn-k{transition:none}}
 /*shared:end*/
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","url":"https://www.thejeremiahajayi.com/services/product-launch-gtm/","name":"Product launch and GTM consultant for B2B SaaS · Jeremiah Ajayi","author":{"@id":"https://www.thejeremiahajayi.com/#person"}},{"@type":"Service","name":"Product launch and go-to-market strategy","serviceType":"Product launch and go-to-market strategy","description":"Product launches built for pipeline: a GTM brief, launch plan, sales enablement and launch-to-pipeline measurement. 20+ launches led.","url":"https://www.thejeremiahajayi.com/services/product-launch-gtm/","provider":{"@id":"https://www.thejeremiahajayi.com/#person"},"areaServed":["Europe","North America","Middle East","Africa"],"audience":{"@type":"BusinessAudience","name":"B2B SaaS and technology companies"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When should we bring you in?","acceptedAnswer":{"@type":"Answer","text":"As soon as the release is defined. The earlier the positioning and GTM brief are agreed, the less rework there is for sales and marketing later. I can also step in mid-launch to rescue a plan that’s drifting."}},{"@type":"Question","name":"How do you work with our sales team?","acceptedAnswer":{"@type":"Answer","text":"Sales is part of the plan from day one. I talk to reps about the objections they hear, build the enablement kit with them, and check after launch which assets they actually used."}},{"@type":"Question","name":"How do you measure whether a launch created pipeline?","acceptedAnswer":{"@type":"Answer","text":"We agree the measures before launch: sourced and influenced pipeline, demo requests, sales usage of launch assets and early adoption. Then I report against them after launch, using your CRM and analytics."}},{"@type":"Question","name":"Can you run one launch, or only a launch program?","acceptedAnswer":{"@type":"Answer","text":"Both. A single launch is a fixed-scope project. For teams that ship often, I run the launch program as an embedded partner and leave you a repeatable playbook."}},{"@type":"Question","name":"Which regions do you cover?","acceptedAnswer":{"@type":"Answer","text":"I work from Lagos with teams in Europe, North America, the Middle East and Africa, and I’ve run launches in both English and Arabic."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thejeremiahajayi.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.thejeremiahajayi.com/services/"},{"@type":"ListItem","position":3,"name":"Launches & go-to-market","item":"https://www.thejeremiahajayi.com/services/product-launch-gtm/"}]}]}</script>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQCD7V7B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
+<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: clip">
 <header class="site-h">
 <div class="h-in">
 <a href="/" class="logo sg"><span aria-hidden="true" class="logo-m">JA</span>Jeremiah Ajayi</a>
@@ -349,7 +364,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <label for="navt" class="nav-btn" aria-hidden="true"><span class="nav-btn-t">Menu</span><span class="burger"></span></label>
 <nav id="nav-main" class="nav-main" aria-label="Primary">
 <div class="dd"><a class="dd-top" href="/work/" aria-haspopup="true">Work<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Case studies</p><a class="dd-l" href="/work/#stears"><b>Stears Elections</b><span>How a new election tracker beat the BBC on Google</span></a><a class="dd-l" href="/work/#certn"><b>RemotePass × Certn</b><span>A partnership launch with 270+ media pickups</span></a><a class="dd-l" href="/work/#askai"><b>RemotePass Ask AI</b><span>Selling the answer, not the AI: record MQLs</span></a><a class="dd-l" href="/work/#engine"><b>RemotePass content engine</b><span>174% organic growth and an English–Arabic hub</span></a><a class="dd-l" href="/work/#xofu"><b>Xofu</b><span>One clear question for a new AI product</span></a><a class="dd-all" href="/work/#index">All work and projects →</a></div></div>
-<div class="dd"><a class="dd-top nav-on" href="/services/" aria-current="page" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="/services/positioning-messaging/"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="/services/product-launch-gtm/"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="/services/content-growth/"><b>Content & organic growth</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="/services/">All services →</a></div></div>
+<div class="dd"><a class="dd-top nav-on" href="/services/" aria-current="page" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="/services/positioning-messaging/"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="/services/product-launch-gtm/"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="/services/content-growth/"><b>Content & storytelling</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="/services/">All services →</a></div></div>
 <a class="nl" href="/empowerq/">EmpowerQ</a>
 <a class="nl" href="/blog/">Writing</a>
 <a class="nl" href="/about/">About</a>
@@ -380,8 +395,8 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <nav aria-label="Breadcrumb" style="font-size: 14px; color: #1F120C; margin-bottom: 28px"><a class="nd" href="/services/">Expertise</a> <span aria-hidden="true">/</span> <span style="color: #111">Launches &amp; go-to-market</span></nav>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 48px 72px; align-items: start">
 <div>
-<p class="sg" style="margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.03em">Make it <span style="color: #F2EFE8; background: #111; padding: 0 10px; border-radius: 6px">land. 🚀</span></p>
-<h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(46px, 6vw, 92px); line-height: 0.94; letter-spacing: -0.055em">Product launch and GTM consultant for B2B SaaS teams</h1>
+<p class="sg sv-verb">Make it <span class="sv-v sv2"><span class="sv-ink" aria-hidden="true"></span><span class="sv-t">land.</span></span></p>
+<h1 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(34px, 4.2vw, 64px); line-height: 0.94; letter-spacing: -0.055em">Product launch and GTM consultant for B2B SaaS teams</h1>
 <p style="margin: 30px 0 0; max-width: 600px; font-size: 20px; line-height: 1.55">Launches built for pipeline, not just attention: a GTM brief, a launch plan, sales enablement and measurement, so every release starts sales conversations.</p>
 <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px">
 <a href="/contact/" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; background: #111; color: #F2EFE8; text-decoration: none; font-size: 16px; font-weight: 700">Plan my launch ↗</a>
@@ -410,13 +425,13 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px 64px">
 <div>
-<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 700; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
 <ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
 <li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">B2B SaaS teams shipping a major feature, a new product or a new market entry</li><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">Product marketing leads who need senior launch support</li><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">Founders running founder-led sales who need launches sales can use</li>
 </ul>
 </div>
 <div>
-<h2 class="sg" style="margin: 0 0 24px; font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Signs you need this</h2>
+<h2 class="sg" style="margin: 0 0 24px; font-weight: 700; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Signs you need this</h2>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
 <li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>Launches get a spike of attention, then nothing happens in the pipeline.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>Sales hears about a release after customers do.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>No one can say what the last launch did for pipeline.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>Partner launches stall on timing, approvals and whose story it is.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.5"><span aria-hidden="true" style="flex: 0 0 auto; margin-top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #FF5A2A"></span><span>You’re entering a new market without a story that works there.</span></li>
 </ul>
@@ -426,7 +441,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <section style="background: var(--night); color: #F2EFE8; overflow: hidden">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px) 0">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">Launch day, in creative</p>
-<h2 class="sg reveal" style="margin: 0; max-width: 980px; font-weight: 600; font-size: clamp(40px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">Real launches, shipped with product, sales and partners.</h2>
+<h2 class="sg reveal" style="margin: 0; max-width: 980px; font-weight: 700; font-size: clamp(40px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">Real launches, shipped with product, sales and partners.</h2>
 </div>
 <div class="wall-wrap" style="padding: 48px 0 16px; overflow: hidden">
 <div class="wall" aria-label="Launch creative from RemotePass launches">
@@ -452,13 +467,13 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 48px 64px">
 <div style="flex: 1 1 560px; min-width: 0">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">What you get</p>
-<h2 class="sg" style="margin: 0 0 32px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Everything a launch needs to reach pipeline.</h2>
+<h2 class="sg" style="margin: 0 0 32px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Everything a launch needs to reach pipeline.</h2>
 <ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
 <li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">01</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">GTM brief</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">Who the release is for, the problem it solves, and how it changes the pitch.</span></span></li><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">02</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Launch plan and tiering</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">A calendar, owners and channels, scaled to how big the release really is.</span></span></li><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">03</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Launch messaging</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">The announcement, website and in-product copy, and the press and partner story.</span></span></li><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">04</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Sales enablement kit</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">Deck, battlecards, one-pagers, FAQs and talk tracks that sales actually uses.</span></span></li><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">05</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Internal alignment</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">Product, sales, customer success and partners working to one timeline.</span></span></li><li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="flex: 0 0 36px; font-size: 16px; font-weight: 700; color: #111">06</span><span style="display: block"><span class="sg" style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Launch-to-pipeline measurement</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: #45423C">Agreed before launch, reported after it, with lessons for the next one.</span></span></li>
 </ol>
 </div>
 <aside style="flex: 0 1 420px; min-width: 280px; align-self: flex-start; background: #111; color: #F2EFE8; border-radius: 16px; padding: clamp(26px, 3vw, 36px)">
-<h3 class="sg" style="margin: 0 0 18px; font-size: 26px; font-weight: 600; letter-spacing: -0.03em">Launches I handle</h3>
+<h3 class="sg" style="margin: 0 0 18px; font-size: 26px; font-weight: 700; letter-spacing: -0.03em">Launches I handle</h3>
 
 <ul style="margin: 0; padding: 0; list-style: none">
 <li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">Major features and new product lines</li><li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">Integrations and partnership launches</li><li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">New market entry, including English and Arabic launches for MENA</li><li style="padding: 12px 0; border-top: 1px solid #3A3934; font-size: 16px; line-height: 1.5">Launch content and lead magnets</li>
@@ -471,7 +486,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <section style="background: var(--night); color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">How it works</p>
-<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Four steps, agreed up front.</h2>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
 <li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">1</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">Diagnose</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">The release, the buyer, the sales motion and what success means in pipeline.</span></li><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">2</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">Plan</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">The GTM brief, launch tier, calendar and owners, agreed with product and sales.</span></li><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">3</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">Launch</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">Messaging, press, partners and the enablement kit, shipped on the same day.</span></li><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">4</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">Measure</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">Pipeline, sales usage and what to repeat or change for the next launch.</span></li>
 </ol>
@@ -481,7 +496,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <section id="proof" style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">Proof</p>
-<h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Launches that reached sales, not just the news.</h2>
+<h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Launches that reached sales, not just the news.</h2>
 <div class="mswipe" style="display: flex; flex-wrap: wrap; gap: 20px">
 
 <a class="card-l" href="/work/#certn" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px; padding: clamp(24px, 3vw, 36px); border-radius: 14px; background: var(--night); color: #F2EFE8; box-sizing: border-box">
@@ -540,7 +555,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 <section id="faq" style="background: #FFFFFF; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 32px 64px">
-<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
+<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
 <div style="flex: 1 1 640px; min-width: 0; border-top: 2px solid #111">
 
 <details style="border-bottom: 1px solid #E6E1D6; padding: 0">
@@ -646,7 +661,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
   // Scroll reveals: content eases up as it enters the screen.
   if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var SEL = 'section h2, section h3, section blockquote, section figure, section article, section li, section dl > div, section .card-l, section .path, section .row-x, section .door, section img';
-    var SKIP = '.site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k]';
+    var SKIP = '.img-rv, .ix, .h-hero, .site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k], .pc-media, .st-stage, .rs-fan, .qt, .tl, .ab-title';
     var picked = [];
     document.querySelectorAll(SEL).forEach(function (el) {
       if (el.closest(SKIP)) return;
@@ -656,7 +671,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
     });
     document.documentElement.classList.add('js-rv');
     var io = new IntersectionObserver(function (entries) {
-      var batch = entries.filter(function (e) { return e.isIntersecting; });
+      var batch = entries.filter(function (e) { return e.isIntersecting || e.boundingClientRect.top < 0; });
       batch.forEach(function (e, i) {
         var el = e.target, d = Math.min(i * 70, 350);
         el.style.transitionDelay = d + 'ms'; el.classList.add('in'); io.unobserve(el);
@@ -665,6 +680,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     picked.forEach(function (el) { io.observe(el); });
+    window.addEventListener('hashchange', function () { picked.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); }); });
   }
   // Guide: "Not sure where to start?" Routes visitors by need or by a typed question.
   var CAL = 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi';
@@ -767,7 +783,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
         if (e.target.closest('[data-gd-dismiss]')) { peek.hidden = true; try { sessionStorage.setItem('gdPeek', '1'); } catch (x) {} }
       });
       var seenPeek = false; try { seenPeek = sessionStorage.getItem('gdPeek') === '1'; } catch (e) {}
-      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, document.querySelector('.hero-anim') && !document.documentElement.classList.contains('jg-skip') ? 4800 : 1600);
+      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, 9000);
     }
     form.addEventListener('submit', function (e) {
       e.preventDefault(); var raw = (form.q.value || '').trim(); if (!raw || busy) return; var q = raw.toLowerCase();
@@ -841,23 +857,6 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
     onScroll.push(barFn); barFn();
   }
 
-  // 4. Primary buttons lean toward the cursor (desktop only).
-  if (FINE && !CALM) {
-    var mags = [].slice.call(document.querySelectorAll('.btn-o, .gd-launch')), mx = -1e4, my = -1e4, magOn = false;
-    document.addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      if (!magOn) { magOn = true; raf(function () {
-        magOn = false;
-        mags.forEach(function (b) {
-          var r = b.getBoundingClientRect(); if (!r.width) return;
-          var cx = r.left + r.width / 2, cy = r.top + r.height / 2, dx = mx - cx, dy = my - cy, d = Math.sqrt(dx * dx + dy * dy), reach = Math.max(r.width, r.height) * 0.9 + 40;
-          if (d < reach) { var f = (1 - d / reach) * 0.35; b.style.translate = Math.max(-12, Math.min(12, dx * f)) + 'px ' + Math.max(-8, Math.min(8, dy * f)) + 'px'; b.classList.add('mag'); }
-          else if (b.classList.contains('mag')) { b.style.translate = '0 0'; b.classList.remove('mag'); }
-        });
-      }); }
-    }, { passive: true });
-  }
-
   // 5. Case images on the Work page drift at different depths as you scroll.
   if (!CALM && /^\/work\/?$/.test(location.pathname) && innerWidth > 640) {
     var depthEls = [].slice.call(document.querySelectorAll('#stears img, #certn img, #askai img, #askai .lift2, #engine img, #xofu img')).filter(function (el) { return !el.closest('.hscroll'); });
@@ -899,6 +898,120 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
       }
     };
     onScroll.push(rtFn); rtFn();
+  }
+  // 7. Selected work index: the preview follows whichever project you point at or tab to.
+  var ix = document.querySelector('.ix');
+  if (ix) {
+    var stage = ix.querySelector('.ix-stage'), imgs = ix.querySelectorAll('.ix-img'), cap = ix.querySelector('.ix-cap'), front = 0, cur = null;
+    function show(row) {
+      if (!row || row === cur || !stage) return; cur = row;
+      ix.querySelectorAll('.ix-row').forEach(function (r) { r.classList.toggle('is-on', r === row); });
+      var next = imgs[1 - front];
+      next.src = row.getAttribute('data-img'); next.style.objectFit = row.getAttribute('data-fit'); next.style.objectPosition = row.getAttribute('data-pos');
+      stage.style.background = row.getAttribute('data-bg');
+      var swap = function () { imgs[front].classList.remove('is-on'); next.classList.add('is-on'); front = 1 - front; };
+      if (next.complete) swap(); else next.onload = swap;
+      if (cap) cap.textContent = row.getAttribute('data-alt');
+    }
+    ix.querySelectorAll('.ix-row').forEach(function (r, i) {
+      r.addEventListener('mouseenter', function () { show(r); });
+      r.addEventListener('focus', function () { show(r); });
+      if (i === 0) { r.classList.add('is-on'); cur = r; }
+    });
+  }
+
+
+  // 9. Homepage: hero rows show their project beside the portrait, a fact bubble, kinetic rows,
+  //    the sheet rising over the hero, Stears tabs, in-view reveals, the route plane, the case pill.
+  var hero = document.querySelector('[data-hero]');
+  if (hero) {
+    var hrows = [].slice.call(hero.querySelectorAll('.h-row[data-peek]')), cards = [].slice.call(hero.querySelectorAll('[data-peek-card]'));
+    var hi = 0, held = false, timer = null;
+    var setPeek = function (i) { hi = i; hrows.forEach(function (r, k) { r.classList.toggle('is-on', k === i); }); cards.forEach(function (c, k) { c.classList.toggle('is-on', k === i); }); };
+    setPeek(0);
+    hrows.forEach(function (r, k) {
+      r.addEventListener('mouseenter', function () { held = true; setPeek(k); });
+      r.addEventListener('focus', function () { held = true; setPeek(k); });
+      r.addEventListener('mouseleave', function () { held = false; });
+    });
+    if (!CALM) timer = setInterval(function () { if (!held && !document.hidden && scrollY < innerHeight) setPeek((hi + 1) % hrows.length); }, 2800);
+    var bub = hero.querySelector('.h-bub');
+    if (bub) {
+      var facts = []; try { facts = JSON.parse(bub.getAttribute('data-facts')); } catch (e) {}
+      var fi = 0, bt = bub.querySelector('.h-bub-t');
+      var nextFact = function () { if (!facts.length) return; fi = (fi + 1) % facts.length; bt.textContent = facts[fi]; bub.classList.remove('pop'); void bub.offsetWidth; bub.classList.add('pop'); };
+      bub.addEventListener('click', nextFact);
+      var ph = hero.querySelector('.h-photo'); if (ph) { ph.style.cursor = 'pointer'; ph.addEventListener('click', nextFact); }
+    }
+    var sheet = document.querySelector('[data-sheet]');
+    if (!CALM && innerWidth > 1080 && hero.offsetHeight <= innerHeight + 40) {
+      hero.classList.add('h-stick');
+      var kin = function () {
+        var y = scrollY, h = hero.offsetHeight, p = Math.max(0, Math.min(1, y / h));
+        hrows.forEach(function (r, k) { r.style.transform = 'translateX(' + ((k % 2 ? 1 : -1) * p * 90).toFixed(1) + 'px)'; });
+        var st = hero.querySelector('.h-stage'); if (st) st.style.transform = 'translateY(' + (p * 60).toFixed(1) + 'px) rotate(' + (p * -4).toFixed(2) + 'deg)';
+        if (sheet) {
+          var sr = sheet.getBoundingClientRect(), q = Math.max(0, Math.min(1, 1 - (sr.top - 80) / (innerHeight * 0.75)));
+          sheet.style.transform = 'scale(' + (0.92 + 0.08 * q).toFixed(4) + ')';
+          hero.style.visibility = sr.top < -10 ? 'hidden' : '';
+          hero.style.setProperty('--hp', Math.max(0, Math.min(1, 1 - sr.top / innerHeight)).toFixed(3));
+        }
+      };
+      onScroll.push(kin); kin();
+    }
+  }
+  // Stears tabs (work without motion too)
+  var stTabs = [].slice.call(document.querySelectorAll('.st-tabs [role="tab"]'));
+  if (stTabs.length) {
+    var stSel = function (i, focus) {
+      stTabs.forEach(function (t, k) {
+        var on = k === i; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+        var pnl = document.getElementById(t.getAttribute('aria-controls')); if (pnl) pnl.hidden = !on;
+      });
+      document.querySelectorAll('.st-v').forEach(function (v) { v.classList.toggle('is-on', v.getAttribute('data-v') === String(i)); });
+      if (focus) stTabs[i].focus();
+    };
+    stTabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { stSel(k); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); stSel((k + (e.key === 'ArrowRight' ? 1 : stTabs.length - 1)) % stTabs.length, true); }
+      });
+    });
+  }
+  // In-view flags for small reveals (strike-through, report fan)
+  var iv = document.querySelectorAll('[data-inview]');
+  if (iv.length) {
+    if (CALM || !('IntersectionObserver' in window)) iv.forEach(function (el) { el.classList.add('in'); });
+    else { var ivo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting || e.boundingClientRect.top < 0) { e.target.classList.add('in'); ivo.unobserve(e.target); } }); }, { threshold: 0.5 }); iv.forEach(function (el) { ivo.observe(el); }); }
+  }
+  // Route: the plane flies along as you scroll and stops light up
+  var tl = document.querySelector('[data-tl]');
+  if (tl && !CALM && innerWidth > 1080) {
+    tl.setAttribute('data-live', '');
+    var tis = [].slice.call(tl.querySelectorAll('.tl-i'));
+    var tlFn = function () {
+      var r = tl.getBoundingClientRect(), p = Math.max(0, Math.min(1, (innerHeight * 0.85 - r.top) / (innerHeight * 0.6)));
+      tl.style.setProperty('--p', p.toFixed(3));
+      tis.forEach(function (t, k) { t.classList.toggle('on', p >= k / tis.length); });
+    };
+    onScroll.push(tlFn); tlFn();
+  }
+  // A small "View case" pill follows the pointer over project imagery
+  if (FINE && !CALM) {
+    var cards2 = document.querySelectorAll('.pc .pc-media');
+    if (cards2.length) {
+      var pill = document.createElement('div'); pill.className = 'view-pill'; pill.setAttribute('aria-hidden', 'true'); pill.textContent = 'View case →'; document.body.appendChild(pill);
+      cards2.forEach(function (m) {
+        m.addEventListener('mousemove', function (e) { pill.style.left = e.clientX + 'px'; pill.style.top = e.clientY + 'px'; pill.classList.add('on'); });
+        m.addEventListener('mouseleave', function () { pill.classList.remove('on'); });
+      });
+    }
+  }
+  // 8. Images unveil once as they come into view.
+  if (!CALM && 'IntersectionObserver' in window) {
+    var rimgs = document.querySelectorAll('.img-rv');
+    var rio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting || e.boundingClientRect.top < 0) { e.target.classList.add('in'); rio.unobserve(e.target); } }); }, { threshold: [0, 0.15] });
+    rimgs.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight * 0.9) el.classList.add('in'); else rio.observe(el); });
   }
 })();
 </script>

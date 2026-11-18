@@ -54,7 +54,7 @@
   // Scroll reveals: content eases up as it enters the screen.
   if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var SEL = 'section h2, section h3, section blockquote, section figure, section article, section li, section dl > div, section .card-l, section .path, section .row-x, section .door, section img';
-    var SKIP = '.site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k]';
+    var SKIP = '.img-rv, .ix, .h-hero, .site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k], .pc-media, .st-stage, .rs-fan, .qt, .tl, .ab-title';
     var picked = [];
     document.querySelectorAll(SEL).forEach(function (el) {
       if (el.closest(SKIP)) return;
@@ -64,7 +64,7 @@
     });
     document.documentElement.classList.add('js-rv');
     var io = new IntersectionObserver(function (entries) {
-      var batch = entries.filter(function (e) { return e.isIntersecting; });
+      var batch = entries.filter(function (e) { return e.isIntersecting || e.boundingClientRect.top < 0; });
       batch.forEach(function (e, i) {
         var el = e.target, d = Math.min(i * 70, 350);
         el.style.transitionDelay = d + 'ms'; el.classList.add('in'); io.unobserve(el);
@@ -73,6 +73,7 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     picked.forEach(function (el) { io.observe(el); });
+    window.addEventListener('hashchange', function () { picked.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); }); });
   }
   // Guide: "Not sure where to start?" Routes visitors by need or by a typed question.
   var CAL = 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi';
@@ -175,7 +176,7 @@
         if (e.target.closest('[data-gd-dismiss]')) { peek.hidden = true; try { sessionStorage.setItem('gdPeek', '1'); } catch (x) {} }
       });
       var seenPeek = false; try { seenPeek = sessionStorage.getItem('gdPeek') === '1'; } catch (e) {}
-      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, document.querySelector('.hero-anim') && !document.documentElement.classList.contains('jg-skip') ? 4800 : 1600);
+      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, 9000);
     }
     form.addEventListener('submit', function (e) {
       e.preventDefault(); var raw = (form.q.value || '').trim(); if (!raw || busy) return; var q = raw.toLowerCase();
@@ -249,23 +250,6 @@
     onScroll.push(barFn); barFn();
   }
 
-  // 4. Primary buttons lean toward the cursor (desktop only).
-  if (FINE && !CALM) {
-    var mags = [].slice.call(document.querySelectorAll('.btn-o, .gd-launch')), mx = -1e4, my = -1e4, magOn = false;
-    document.addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      if (!magOn) { magOn = true; raf(function () {
-        magOn = false;
-        mags.forEach(function (b) {
-          var r = b.getBoundingClientRect(); if (!r.width) return;
-          var cx = r.left + r.width / 2, cy = r.top + r.height / 2, dx = mx - cx, dy = my - cy, d = Math.sqrt(dx * dx + dy * dy), reach = Math.max(r.width, r.height) * 0.9 + 40;
-          if (d < reach) { var f = (1 - d / reach) * 0.35; b.style.translate = Math.max(-12, Math.min(12, dx * f)) + 'px ' + Math.max(-8, Math.min(8, dy * f)) + 'px'; b.classList.add('mag'); }
-          else if (b.classList.contains('mag')) { b.style.translate = '0 0'; b.classList.remove('mag'); }
-        });
-      }); }
-    }, { passive: true });
-  }
-
   // 5. Case images on the Work page drift at different depths as you scroll.
   if (!CALM && /^\/work\/?$/.test(location.pathname) && innerWidth > 640) {
     var depthEls = [].slice.call(document.querySelectorAll('#stears img, #certn img, #askai img, #askai .lift2, #engine img, #xofu img')).filter(function (el) { return !el.closest('.hscroll'); });
@@ -307,5 +291,119 @@
       }
     };
     onScroll.push(rtFn); rtFn();
+  }
+  // 7. Selected work index: the preview follows whichever project you point at or tab to.
+  var ix = document.querySelector('.ix');
+  if (ix) {
+    var stage = ix.querySelector('.ix-stage'), imgs = ix.querySelectorAll('.ix-img'), cap = ix.querySelector('.ix-cap'), front = 0, cur = null;
+    function show(row) {
+      if (!row || row === cur || !stage) return; cur = row;
+      ix.querySelectorAll('.ix-row').forEach(function (r) { r.classList.toggle('is-on', r === row); });
+      var next = imgs[1 - front];
+      next.src = row.getAttribute('data-img'); next.style.objectFit = row.getAttribute('data-fit'); next.style.objectPosition = row.getAttribute('data-pos');
+      stage.style.background = row.getAttribute('data-bg');
+      var swap = function () { imgs[front].classList.remove('is-on'); next.classList.add('is-on'); front = 1 - front; };
+      if (next.complete) swap(); else next.onload = swap;
+      if (cap) cap.textContent = row.getAttribute('data-alt');
+    }
+    ix.querySelectorAll('.ix-row').forEach(function (r, i) {
+      r.addEventListener('mouseenter', function () { show(r); });
+      r.addEventListener('focus', function () { show(r); });
+      if (i === 0) { r.classList.add('is-on'); cur = r; }
+    });
+  }
+
+
+  // 9. Homepage: hero rows show their project beside the portrait, a fact bubble, kinetic rows,
+  //    the sheet rising over the hero, Stears tabs, in-view reveals, the route plane, the case pill.
+  var hero = document.querySelector('[data-hero]');
+  if (hero) {
+    var hrows = [].slice.call(hero.querySelectorAll('.h-row[data-peek]')), cards = [].slice.call(hero.querySelectorAll('[data-peek-card]'));
+    var hi = 0, held = false, timer = null;
+    var setPeek = function (i) { hi = i; hrows.forEach(function (r, k) { r.classList.toggle('is-on', k === i); }); cards.forEach(function (c, k) { c.classList.toggle('is-on', k === i); }); };
+    setPeek(0);
+    hrows.forEach(function (r, k) {
+      r.addEventListener('mouseenter', function () { held = true; setPeek(k); });
+      r.addEventListener('focus', function () { held = true; setPeek(k); });
+      r.addEventListener('mouseleave', function () { held = false; });
+    });
+    if (!CALM) timer = setInterval(function () { if (!held && !document.hidden && scrollY < innerHeight) setPeek((hi + 1) % hrows.length); }, 2800);
+    var bub = hero.querySelector('.h-bub');
+    if (bub) {
+      var facts = []; try { facts = JSON.parse(bub.getAttribute('data-facts')); } catch (e) {}
+      var fi = 0, bt = bub.querySelector('.h-bub-t');
+      var nextFact = function () { if (!facts.length) return; fi = (fi + 1) % facts.length; bt.textContent = facts[fi]; bub.classList.remove('pop'); void bub.offsetWidth; bub.classList.add('pop'); };
+      bub.addEventListener('click', nextFact);
+      var ph = hero.querySelector('.h-photo'); if (ph) { ph.style.cursor = 'pointer'; ph.addEventListener('click', nextFact); }
+    }
+    var sheet = document.querySelector('[data-sheet]');
+    if (!CALM && innerWidth > 1080 && hero.offsetHeight <= innerHeight + 40) {
+      hero.classList.add('h-stick');
+      var kin = function () {
+        var y = scrollY, h = hero.offsetHeight, p = Math.max(0, Math.min(1, y / h));
+        hrows.forEach(function (r, k) { r.style.transform = 'translateX(' + ((k % 2 ? 1 : -1) * p * 90).toFixed(1) + 'px)'; });
+        var st = hero.querySelector('.h-stage'); if (st) st.style.transform = 'translateY(' + (p * 60).toFixed(1) + 'px) rotate(' + (p * -4).toFixed(2) + 'deg)';
+        if (sheet) {
+          var sr = sheet.getBoundingClientRect(), q = Math.max(0, Math.min(1, 1 - (sr.top - 80) / (innerHeight * 0.75)));
+          sheet.style.transform = 'scale(' + (0.92 + 0.08 * q).toFixed(4) + ')';
+          hero.style.visibility = sr.top < -10 ? 'hidden' : '';
+          hero.style.setProperty('--hp', Math.max(0, Math.min(1, 1 - sr.top / innerHeight)).toFixed(3));
+        }
+      };
+      onScroll.push(kin); kin();
+    }
+  }
+  // Stears tabs (work without motion too)
+  var stTabs = [].slice.call(document.querySelectorAll('.st-tabs [role="tab"]'));
+  if (stTabs.length) {
+    var stSel = function (i, focus) {
+      stTabs.forEach(function (t, k) {
+        var on = k === i; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+        var pnl = document.getElementById(t.getAttribute('aria-controls')); if (pnl) pnl.hidden = !on;
+      });
+      document.querySelectorAll('.st-v').forEach(function (v) { v.classList.toggle('is-on', v.getAttribute('data-v') === String(i)); });
+      if (focus) stTabs[i].focus();
+    };
+    stTabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { stSel(k); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); stSel((k + (e.key === 'ArrowRight' ? 1 : stTabs.length - 1)) % stTabs.length, true); }
+      });
+    });
+  }
+  // In-view flags for small reveals (strike-through, report fan)
+  var iv = document.querySelectorAll('[data-inview]');
+  if (iv.length) {
+    if (CALM || !('IntersectionObserver' in window)) iv.forEach(function (el) { el.classList.add('in'); });
+    else { var ivo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting || e.boundingClientRect.top < 0) { e.target.classList.add('in'); ivo.unobserve(e.target); } }); }, { threshold: 0.5 }); iv.forEach(function (el) { ivo.observe(el); }); }
+  }
+  // Route: the plane flies along as you scroll and stops light up
+  var tl = document.querySelector('[data-tl]');
+  if (tl && !CALM && innerWidth > 1080) {
+    tl.setAttribute('data-live', '');
+    var tis = [].slice.call(tl.querySelectorAll('.tl-i'));
+    var tlFn = function () {
+      var r = tl.getBoundingClientRect(), p = Math.max(0, Math.min(1, (innerHeight * 0.85 - r.top) / (innerHeight * 0.6)));
+      tl.style.setProperty('--p', p.toFixed(3));
+      tis.forEach(function (t, k) { t.classList.toggle('on', p >= k / tis.length); });
+    };
+    onScroll.push(tlFn); tlFn();
+  }
+  // A small "View case" pill follows the pointer over project imagery
+  if (FINE && !CALM) {
+    var cards2 = document.querySelectorAll('.pc .pc-media');
+    if (cards2.length) {
+      var pill = document.createElement('div'); pill.className = 'view-pill'; pill.setAttribute('aria-hidden', 'true'); pill.textContent = 'View case →'; document.body.appendChild(pill);
+      cards2.forEach(function (m) {
+        m.addEventListener('mousemove', function (e) { pill.style.left = e.clientX + 'px'; pill.style.top = e.clientY + 'px'; pill.classList.add('on'); });
+        m.addEventListener('mouseleave', function () { pill.classList.remove('on'); });
+      });
+    }
+  }
+  // 8. Images unveil once as they come into view.
+  if (!CALM && 'IntersectionObserver' in window) {
+    var rimgs = document.querySelectorAll('.img-rv');
+    var rio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting || e.boundingClientRect.top < 0) { e.target.classList.add('in'); rio.unobserve(e.target); } }); }, { threshold: [0, 0.15] });
+    rimgs.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight * 0.9) el.classList.add('in'); else rio.observe(el); });
   }
 })();

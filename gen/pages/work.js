@@ -23,7 +23,7 @@
       { src: img.certnCheck, alt: 'Background check completed, Certn integration visual', w: 380, h: 233 },
       { src: img.workforce, alt: '2025 to 2026 workforce trends report cover', w: 416, h: 233 }
     ];
-    const tags = { pos: 'Positioning & messaging', launch: 'Launches & go-to-market', content: 'Content & organic growth' };
+    const tags = { pos: 'Positioning & messaging', launch: 'Launches & go-to-market', content: 'Content & storytelling' };
     const projects = [
       { k: 'content', client: 'Stears', year: '2023', big: '#1', bigLabel: 'on Google for “2023 election results”, above the BBC, CNN and INEC', title: 'How a new election tracker beat the BBC on Google', href: '#stears', deep: true, dark: true },
       { k: 'launch', client: 'RemotePass × Certn', year: '2024', big: '270+', bigLabel: 'media pickups, including Yahoo Finance, Fox and NBC', title: 'The partnership launch that went global', href: '#certn', deep: true, orange: true },

@@ -19,12 +19,12 @@
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px); position: relative">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">The story so far</p>
-<h2 class="sg" style="margin: 0 0 clamp(48px, 6vw, 80px); max-width: 860px; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">The chapters a summary skips.</h2>
+<h2 class="sg" style="margin: 0 0 clamp(48px, 6vw, 80px); max-width: 860px; font-weight: 700; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">The chapters a summary skips.</h2>
 <sc-for list="{{chapters}}" as="c" hint-placeholder-count="3">
 <article id="{{c.id}}" class="reveal" style="display: flex; flex-direction: {{c.side}}; flex-wrap: wrap; gap: 40px 72px; align-items: center; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid #C9C3B6">
 <div style="flex: 1 1 420px; min-width: 0">
 <p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #111">{{c.n}}</span><span style="color: #6B675F">{{c.when}}</span></p>
-<h3 class="sg" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">{{c.h}}</h3>
+<h3 class="sg" style="margin: 14px 0 0; font-weight: 700; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">{{c.h}}</h3>
 <p style="margin: 22px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">{{c.p1}}</p>
 <p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">{{c.p2}}</p>
 </div>
@@ -36,7 +36,7 @@
 <article id="ch4" class="reveal" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 40px 72px; align-items: center; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid #C9C3B6; border-bottom: 1px solid #C9C3B6">
 <div style="flex: 1 1 420px; min-width: 0">
 <p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #111">04</span><span style="color: #6B675F">2023 to 2026</span></p>
-<h3 class="sg" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">Starting again, and going global</h3>
+<h3 class="sg" style="margin: 14px 0 0; font-weight: 700; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">Starting again, and going global</h3>
 <p style="margin: 22px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">Leaving OAU left a gap that mattered to me. In 2023 I went back to school, studying Business Management at Miva Open University while working full-time.</p>
 <p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">At RemotePass, a Dubai-based HR and payroll platform, I led GTM for launches across EMEA, North America and APAC. Some went out in English and Arabic on the same day; one partnership reached 270+ media outlets. The work took me to more than ten countries.</p>
 <p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">Then I led product marketing at Xofu, an AI visibility platform, and started publishing my own research on how AI assistants choose which brands to recommend.</p>
@@ -76,7 +76,7 @@
 
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
 <div class="qgrid mswipe tiles-rot">
 <sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
 <blockquote class="reveal" style="margin: 0; grid-column: {{q.col}}; padding: clamp(28px, 3vw, 44px); border-radius: 16px; background: {{q.bg}}; color: {{q.fg}}; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
@@ -86,7 +86,7 @@
 </sc-for>
 </div>
 <div style="margin-top: clamp(56px, 7vw, 88px); display: flex; flex-wrap: wrap; gap: 32px 72px">
-<div style="flex: 1 1 260px"><h3 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; letter-spacing: -0.04em">Recognition</h3><figure style="margin: 28px 0 0; max-width: 300px"><img class="shot" src="/_blob/1ada8c43b66919c70ad6d23904db5df0" alt="Jeremiah receiving the Martech Africa award for Content Marketing Specialist of the Year" loading="lazy" style="width: 100%; aspect-ratio: 560 / 996; object-fit: cover; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">Receiving the Martech Africa award, 2025</figcaption></figure></div>
+<div style="flex: 1 1 260px"><h3 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; letter-spacing: -0.04em">Recognition</h3><figure style="margin: 28px 0 0; max-width: 300px"><img class="shot" src="/_blob/1ada8c43b66919c70ad6d23904db5df0" alt="Jeremiah receiving the Martech Africa award for Content Marketing Specialist of the Year" loading="lazy" style="width: 100%; aspect-ratio: 560 / 996; object-fit: cover; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">Receiving the Martech Africa award, 2025</figcaption></figure></div>
 <ul style="margin: 0; padding: 0; list-style: none; flex: 1 1 640px; border-top: 2px solid #111">
 <sc-for list="{{recognition}}" as="r" hint-placeholder-count="6"><li style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5"><span class="sg" style="flex: 0 0 52px; font-weight: 700; color: #111">{{r.y}}</span><span>{{r.t}}</span></li></sc-for>
 <li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5"><a class="nd" href="https://blog.useaccrue.com/this-marketer-wants-to-earn-7k-next-how-can-he-do-it" style="font-weight: 700; color: #111">Read my Accrue spotlight ↗</a></li>

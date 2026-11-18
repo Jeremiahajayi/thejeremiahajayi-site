@@ -3,7 +3,7 @@
     return {
       time: this.state.time,
       svc: {
-        slug: 'content-growth', name: 'Content & organic growth', verb: 'travel',
+        slug: 'content-growth', name: 'Content & storytelling', verb: 'travel',
         title: 'Content and organic growth consultant for B2B SaaS',
         intro: 'Content buyers trust, that search engines and AI assistants surface, measured in pipeline rather than volume. SEO and AI search are part of the method, not separate offers.',
         stats: [ { big: '174%', label: 'organic user acquisition growth at RemotePass, year on year' }, { big: '$500K+', label: 'pipeline influenced by content in under a year' }, { big: '#1', label: 'above the BBC on Google for Stears' } ],

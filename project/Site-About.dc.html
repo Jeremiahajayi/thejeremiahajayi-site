@@ -323,11 +323,26 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .chips-rot>*:nth-child(5n+5){background:#FFFFFF !important}
 @media (max-width: 760px){.deco-dsk{display:none}}
 .vpill{display:inline-block;padding:0 .14em;border-radius:.12em;color:#111}
+/* shared language with the homepage */
+.tiles-rot>*{border:1.5px solid #111;box-shadow:5px 5px 0 #111;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.tiles-rot>*:hover{transform:translate(-2px,-4px);box-shadow:7px 9px 0 #111}
+.mswipe.tiles-rot{padding-bottom:10px}
+.btn-k{box-shadow:3px 3px 0 #FF5A2A;transition:transform .2s,box-shadow .2s}
+.btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
+.sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
+.sv-v{position:relative;display:inline-block;padding:0 .12em .04em;transform:rotate(-2deg)}
+.sv-ink{position:absolute;inset:.06em 0 0;border-radius:.14em;transform-origin:left center;animation:svink .7s .3s cubic-bezier(.7,0,.2,1) both}
+.sv1 .sv-ink{background:#111}.sv1 .sv-t{color:#FFC83D}
+.sv2 .sv-ink{background:#111}.sv2 .sv-t{color:#FF5A2A}
+.sv3 .sv-ink{background:#8FE3B0}.sv3 .sv-t{color:#111}
+.sv-t{position:relative}
+@keyframes svink{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){.sv-ink{animation:none}.tiles-rot>*,.btn-k{transition:none}}
 /*shared:end*/
 </style>
 </helmet>
 
-<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
+<div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: clip">
 <header class="site-h">
 <div class="h-in">
 <a href="Home-B2.dc.html" class="logo sg"><span aria-hidden="true" class="logo-m">JA</span>Jeremiah Ajayi</a>
@@ -335,7 +350,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <label for="navt" class="nav-btn" aria-hidden="true"><span class="nav-btn-t">Menu</span><span class="burger"></span></label>
 <nav id="nav-main" class="nav-main" aria-label="Primary">
 <div class="dd"><a class="dd-top" href="Site-Work.dc.html" aria-haspopup="true">Work<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Case studies</p><a class="dd-l" href="Site-Work.dc.html#stears"><b>Stears Elections</b><span>How a new election tracker beat the BBC on Google</span></a><a class="dd-l" href="Site-Work.dc.html#certn"><b>RemotePass × Certn</b><span>A partnership launch with 270+ media pickups</span></a><a class="dd-l" href="Site-Work.dc.html#askai"><b>RemotePass Ask AI</b><span>Selling the answer, not the AI: record MQLs</span></a><a class="dd-l" href="Site-Work.dc.html#engine"><b>RemotePass content engine</b><span>174% organic growth and an English–Arabic hub</span></a><a class="dd-l" href="Site-Work.dc.html#xofu"><b>Xofu</b><span>One clear question for a new AI product</span></a><a class="dd-all" href="Site-Work.dc.html#index">All work and projects →</a></div></div>
-<div class="dd"><a class="dd-top" href="Site-Services.dc.html" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="Site-Service-Positioning.dc.html"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="Site-Service-Launch.dc.html"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="Site-Service-Content.dc.html"><b>Content & organic growth</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="Site-Services.dc.html">All services →</a></div></div>
+<div class="dd"><a class="dd-top" href="Site-Services.dc.html" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="Site-Service-Positioning.dc.html"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="Site-Service-Launch.dc.html"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="Site-Service-Content.dc.html"><b>Content & storytelling</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="Site-Services.dc.html">All services →</a></div></div>
 <a class="nl" href="Site-EmpowerQ.dc.html">EmpowerQ</a>
 <a class="nl" href="Site-Writing.dc.html">Writing</a>
 <a class="nl nav-on" href="Site-About.dc.html" aria-current="page">About</a>
@@ -380,12 +395,12 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px); position: relative">
 <p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">The story so far</p>
-<h2 class="sg" style="margin: 0 0 clamp(48px, 6vw, 80px); max-width: 860px; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">The chapters a summary skips.</h2>
+<h2 class="sg" style="margin: 0 0 clamp(48px, 6vw, 80px); max-width: 860px; font-weight: 700; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">The chapters a summary skips.</h2>
 <sc-for list="{{chapters}}" as="c" hint-placeholder-count="3">
 <article id="{{c.id}}" class="reveal" style="display: flex; flex-direction: {{c.side}}; flex-wrap: wrap; gap: 40px 72px; align-items: center; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid #C9C3B6">
 <div style="flex: 1 1 420px; min-width: 0">
 <p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #111">{{c.n}}</span><span style="color: #6B675F">{{c.when}}</span></p>
-<h3 class="sg" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">{{c.h}}</h3>
+<h3 class="sg" style="margin: 14px 0 0; font-weight: 700; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">{{c.h}}</h3>
 <p style="margin: 22px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">{{c.p1}}</p>
 <p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">{{c.p2}}</p>
 </div>
@@ -397,7 +412,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <article id="ch4" class="reveal" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 40px 72px; align-items: center; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid #C9C3B6; border-bottom: 1px solid #C9C3B6">
 <div style="flex: 1 1 420px; min-width: 0">
 <p style="margin: 0; display: flex; gap: 16px; align-items: baseline; font-size: 14px; font-weight: 700"><span class="sg" style="font-size: 18px; color: #111">04</span><span style="color: #6B675F">2023 to 2026</span></p>
-<h3 class="sg" style="margin: 14px 0 0; font-weight: 600; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">Starting again, and going global</h3>
+<h3 class="sg" style="margin: 14px 0 0; font-weight: 700; font-size: clamp(34px, 3.8vw, 56px); line-height: 0.98; letter-spacing: -0.05em">Starting again, and going global</h3>
 <p style="margin: 22px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">Leaving OAU left a gap that mattered to me. In 2023 I went back to school, studying Business Management at Miva Open University while working full-time.</p>
 <p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">At RemotePass, a Dubai-based HR and payroll platform, I led GTM for launches across EMEA, North America and APAC. Some went out in English and Arabic on the same day; one partnership reached 270+ media outlets. The work took me to more than ten countries.</p>
 <p style="margin: 14px 0 0; max-width: 580px; font-size: 18px; line-height: 1.65; color: #2D2B27">Then I led product marketing at Xofu, an AI visibility platform, and started publishing my own research on how AI assistants choose which brands to recommend.</p>
@@ -437,7 +452,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 <section style="background: #F2EFE8; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
+<h2 class="sg" style="margin: 0 0 40px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">What people say</h2>
 <div class="qgrid mswipe tiles-rot">
 <sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
 <blockquote class="reveal" style="margin: 0; grid-column: {{q.col}}; padding: clamp(28px, 3vw, 44px); border-radius: 16px; background: {{q.bg}}; color: {{q.fg}}; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
@@ -447,7 +462,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </sc-for>
 </div>
 <div style="margin-top: clamp(56px, 7vw, 88px); display: flex; flex-wrap: wrap; gap: 32px 72px">
-<div style="flex: 1 1 260px"><h3 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; letter-spacing: -0.04em">Recognition</h3><figure style="margin: 28px 0 0; max-width: 300px"><img class="shot" src="/_blob/1ada8c43b66919c70ad6d23904db5df0" alt="Jeremiah receiving the Martech Africa award for Content Marketing Specialist of the Year" loading="lazy" style="width: 100%; aspect-ratio: 560 / 996; object-fit: cover; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">Receiving the Martech Africa award, 2025</figcaption></figure></div>
+<div style="flex: 1 1 260px"><h3 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; letter-spacing: -0.04em">Recognition</h3><figure style="margin: 28px 0 0; max-width: 300px"><img class="shot" src="/_blob/1ada8c43b66919c70ad6d23904db5df0" alt="Jeremiah receiving the Martech Africa award for Content Marketing Specialist of the Year" loading="lazy" style="width: 100%; aspect-ratio: 560 / 996; object-fit: cover; background: #E6E1D6"><figcaption style="margin-top: 12px; font-size: 13px; color: #6B675F">Receiving the Martech Africa award, 2025</figcaption></figure></div>
 <ul style="margin: 0; padding: 0; list-style: none; flex: 1 1 640px; border-top: 2px solid #111">
 <sc-for list="{{recognition}}" as="r" hint-placeholder-count="6"><li style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5"><span class="sg" style="flex: 0 0 52px; font-weight: 700; color: #111">{{r.y}}</span><span>{{r.t}}</span></li></sc-for>
 <li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5"><a class="nd" href="https://blog.useaccrue.com/this-marketer-wants-to-earn-7k-next-how-can-he-do-it" style="font-weight: 700; color: #111">Read my Accrue spotlight ↗</a></li>

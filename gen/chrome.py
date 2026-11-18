@@ -13,7 +13,7 @@ WORK_MENU = [
 EXPERTISE_MENU = [
     ('Positioning & messaging', 'Make it clear: a story buyers can repeat', 'Site-Service-Positioning.dc.html'),
     ('Launches & go-to-market', 'Make it land: launches built for pipeline', 'Site-Service-Launch.dc.html'),
-    ('Content & organic growth', 'Make it travel: content, SEO and AI search', 'Site-Service-Content.dc.html'),
+    ('Content & storytelling', 'Make it travel: content, SEO and AI search', 'Site-Service-Content.dc.html'),
 ]
 
 CHEV = '<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span>'
@@ -328,5 +328,20 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .chips-rot>*:nth-child(5n+5){background:#FFFFFF !important}
 @media (max-width: 760px){.deco-dsk{display:none}}
 .vpill{display:inline-block;padding:0 .14em;border-radius:.12em;color:#111}
+/* shared language with the homepage */
+.tiles-rot>*{border:1.5px solid #111;box-shadow:5px 5px 0 #111;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.tiles-rot>*:hover{transform:translate(-2px,-4px);box-shadow:7px 9px 0 #111}
+.mswipe.tiles-rot{padding-bottom:10px}
+.btn-k{box-shadow:3px 3px 0 #FF5A2A;transition:transform .2s,box-shadow .2s}
+.btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
+.sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
+.sv-v{position:relative;display:inline-block;padding:0 .12em .04em;transform:rotate(-2deg)}
+.sv-ink{position:absolute;inset:.06em 0 0;border-radius:.14em;transform-origin:left center;animation:svink .7s .3s cubic-bezier(.7,0,.2,1) both}
+.sv1 .sv-ink{background:#111}.sv1 .sv-t{color:#FFC83D}
+.sv2 .sv-ink{background:#111}.sv2 .sv-t{color:#FF5A2A}
+.sv3 .sv-ink{background:#8FE3B0}.sv3 .sv-t{color:#111}
+.sv-t{position:relative}
+@keyframes svink{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){.sv-ink{animation:none}.tiles-rot>*,.btn-k{transition:none}}
 /*shared:end*/
 """
