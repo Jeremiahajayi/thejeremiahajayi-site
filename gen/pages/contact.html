@@ -7,7 +7,7 @@
 <div role="radiogroup" aria-label="What you need" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
 <sc-for list="{{doors}}" as="d" hint-placeholder-count="5">
 <button class="door" data-door="{{$index}}" role="radio" aria-checked="{{d.selected}}" onClick="{{d.pick}}" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding: 14px 22px; border-radius: 14px; border: 1.5px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}">
-<span class="sg" style="font-size: clamp(19px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em">{{d.label}}</span>
+<span class="sg" style="display: inline-flex; align-items: center; gap: 12px; font-size: clamp(19px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em"><span aria-hidden="true" style="font-size: 0.95em">{{d.e}}</span>{{d.label}}</span>
 <span style="font-size: 13px; font-weight: 600; opacity: .8">{{d.who}}</span>
 </button>
 </sc-for>

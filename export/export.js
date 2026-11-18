@@ -245,7 +245,7 @@ console.log('done');
   const start = shell.indexOf('<section');
   const end = shell.lastIndexOf('<section', shell.indexOf('<footer'));
   const main = `<section class="grid-bg" style="min-height: 60vh"><div style="max-width: 1360px; margin: 0 auto; padding: clamp(96px, 12vw, 160px) 28px">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #FF5A2A">404</p>
+<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #B5B0A6">404 · 🧭 Wrong turn</p>
 <h1 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(56px, 8.4vw, 136px); line-height: 0.88; letter-spacing: -0.065em">This page didn’t<br><span style="color: #FF5A2A">land.</span></h1>
 <p style="margin: 28px 0 0; max-width: 560px; font-size: 19px; line-height: 1.6; color: #D8D3C9">It may have moved when the site was rebuilt. Try one of these instead.</p>
 <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px">

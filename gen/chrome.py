@@ -52,10 +52,43 @@ def header(active, home=False):
 {plain('EmpowerQ', 'Site-EmpowerQ.dc.html')}
 {plain('Writing', 'Site-Writing.dc.html')}
 {plain('About', 'Site-About.dc.html')}
-<a class="btn-o nav-cta" href="Site-Contact.dc.html">Book a call ↗</a>
+<a class="btn-o nav-cta" href="Site-Contact.dc.html">Book a call <span class="arr" aria-hidden="true">→</span></a>
 </nav>
 </div>
 </header>'''
+
+
+GUIDE_OPTS = [
+    ('positioning', '🧭', 'Our product is hard to explain'),
+    ('launch', '🚀', 'We have a launch coming up'),
+    ('content', '📈', 'We need content that ranks and converts'),
+    ('ai', '🤖', 'We want to show up in AI answers'),
+    ('hire', '💼', 'I’m hiring a marketer'),
+    ('proof', '🏆', 'Show me results first'),
+    ('read', '📚', 'I want to read your research'),
+    ('empowerq', '🌈', 'I want to support EmpowerQ'),
+]
+
+
+def guide():
+    opts = ''.join(
+        f'<li><button type="button" class="gd-opt" data-gd="{k}"><span class="gd-e" aria-hidden="true">{e}</span>{t}</button></li>'
+        for k, e, t in GUIDE_OPTS
+    )
+    return f'''<!--guide:start-->
+<div class="gd" data-gd-root>
+<button type="button" class="gd-launch" data-gd-open aria-expanded="false" aria-controls="gd-panel"><span class="gd-wave" aria-hidden="true">👋</span><span>Not sure where to start?</span></button>
+<div class="gd-panel" id="gd-panel" role="dialog" aria-labelledby="gd-h" hidden>
+<div class="gd-head"><p id="gd-h" class="sg">Hi, I’m Jeremiah. What brings you here?</p><button type="button" class="gd-x" data-gd-close aria-label="Close the guide">×</button></div>
+<div class="gd-pick" data-gd-pick>
+<ul class="gd-opts">{opts}</ul>
+<form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Ask a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Or ask, e.g. “Do you work with startups?”"><button type="submit" aria-label="Ask">→</button></form>
+</div>
+<div class="gd-ans" data-gd-ans hidden></div>
+</div>
+</div>
+<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="Site-Contact.dc.html">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Guide</button></div>
+<!--guide:end-->'''
 
 
 SHARED_CSS = r"""
@@ -133,5 +166,59 @@ body:has(.nav-t:checked){overflow:hidden}
 .js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .js-rv .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){.js-rv .rv{opacity:1;transform:none;transition:none}.nav-main>*,.nav-main,.dd-p,.chev,.burger::before,.burger::after{transition:none !important}}
+.arr{display:inline-block;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.btn-o,.btn-k,.btn-l{position:relative}
+.btn-o{box-shadow:0 3px 0 #B8431C,0 12px 28px rgba(255,90,42,.22)}
+.btn-o:hover{box-shadow:0 5px 0 #B8431C,0 16px 32px rgba(255,90,42,.28)}
+.btn-o:active{transform:translateY(1px);box-shadow:0 1px 0 #B8431C}
+.btn-o:hover .arr,.btn-k:hover .arr,.btn-l:hover .arr{transform:translateX(5px)}
+.btn-o:hover .arr-d,.btn-k:hover .arr-d,.btn-l:hover .arr-d{transform:translateY(4px)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #FF5A2A;outline-offset:3px}
+.gd{position:fixed;right:20px;bottom:20px;z-index:60;font-family:'DM Sans',system-ui,sans-serif}
+.gd-launch{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 20px 0 14px;border:0;border-radius:999px;background:#F2EFE8;color:#111;font:700 15px 'DM Sans',system-ui,sans-serif;cursor:pointer;box-shadow:0 12px 36px rgba(0,0,0,.28),0 0 0 1px rgba(17,17,17,.08);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.gd-launch:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.32),0 0 0 1px rgba(17,17,17,.1)}
+.gd-wave{display:inline-block;font-size:22px;transform-origin:70% 70%;animation:wave 2.4s 1.5s ease-in-out 2}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
+.gd-open .gd-launch{display:none}
+.gd-panel{position:absolute;right:0;bottom:0;width:min(400px,calc(100vw - 32px));max-height:min(620px,calc(100vh - 110px));overflow:auto;border-radius:20px;background:#F2EFE8;color:#111;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(17,17,17,.08);transform-origin:bottom right;animation:gd-pop .32s cubic-bezier(.2,.8,.2,1)}
+.gd-panel[hidden]{display:none}
+@keyframes gd-pop{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
+.gd-head{position:sticky;top:0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:20px 20px 14px;background:#F2EFE8;border-bottom:1px solid #E1DBCF}
+.gd-head p{margin:0;font-size:21px;font-weight:600;line-height:1.15;letter-spacing:-.03em}
+.gd-x{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:#E6E1D6;color:#111;font-size:22px;line-height:1;cursor:pointer}
+.gd-x:hover{background:#111;color:#F2EFE8}
+.gd-opts{margin:0;padding:12px 12px 8px;list-style:none;display:grid;gap:5px}
+.gd-opt{width:100%;display:flex;align-items:center;gap:12px;min-height:46px;padding:8px 14px;border:1px solid #E1DBCF;border-radius:14px;background:#FFFFFF;color:#111;font:600 15px/1.3 'DM Sans',system-ui,sans-serif;text-align:left;cursor:pointer;transition:border-color .2s,transform .2s,background .2s}
+.gd-opt:hover{border-color:#111;transform:translateX(3px)}
+.gd-e{flex:none;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#F2EFE8;font-size:18px}
+.gd-ask{display:flex;gap:8px;margin:2px 12px 14px;padding:6px 6px 6px 14px;border:1px solid #D8D1C3;border-radius:999px;background:#FFFFFF}
+.gd-ask input{flex:1;min-width:0;border:0;background:none;font:500 15px 'DM Sans',system-ui,sans-serif;color:#111;outline:none}
+.gd-ask button{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:#111;color:#F2EFE8;font-size:18px;cursor:pointer}
+.gd-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.gd-ans{padding:18px 20px 20px;animation:gd-pop .3s cubic-bezier(.2,.8,.2,1)}
+.gd-ans[hidden]{display:none}
+.gd-ans .gd-big{font-size:34px;line-height:1}
+.gd-ans h3{margin:12px 0 0;font:600 22px/1.15 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
+.gd-ans p{margin:10px 0 0;font-size:15px;line-height:1.6;color:#2D2B27}
+.gd-links{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.gd-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 16px;border-radius:12px;background:#FFFFFF;border:1px solid #E1DBCF;color:#111;font-weight:700;font-size:15px;text-decoration:none;transition:border-color .2s,background .2s}
+.gd-links a:hover{border-color:#111}
+.gd-links a.gd-main{background:#111;border-color:#111;color:#F2EFE8}
+.gd-links a.gd-main:hover{background:#FF5A2A;border-color:#FF5A2A;color:#111}
+.gd-links a span{font-weight:500;font-size:13px;opacity:.7}
+.gd-back{margin-top:14px;padding:8px 0;border:0;background:none;color:#45423C;font:700 14px 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.gd-back:hover{color:#111;text-decoration:underline}
+.mbar{display:none}
+@media (max-width: 640px){
+.gd{right:12px;left:12px;bottom:12px}
+.gd-launch{display:none}
+.gd-panel{right:0;left:0;width:auto;max-height:calc(100vh - 90px)}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(17,17,17,.94);border-top:1px solid #2B2A27}
+.mbar .btn-o{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:999px;font-weight:700;font-size:16px}
+.mbar-g{flex:none;min-height:50px;padding:0 18px;border:1px solid #4A4842;border-radius:999px;background:#1E1D1B;color:#F2EFE8;font:700 15px 'DM Sans',system-ui,sans-serif;cursor:pointer}
+body{padding-bottom:72px}
+.gd-open~.mbar,body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar{display:none}
+}
+@media (prefers-reduced-motion: reduce){.gd-wave,.gd-panel,.gd-ans{animation:none}.gd-launch,.gd-opt,.arr{transition:none}}
 /*shared:end*/
 """

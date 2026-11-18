@@ -6,7 +6,7 @@ Each page lives in pages/<id>.html (markup) and pages/<id>.js (renderVals body).
 """
 import sys, pathlib, re
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from chrome import header, SHARED_CSS
+from chrome import header, guide, SHARED_CSS
 
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT.parent / 'project'
@@ -64,13 +64,13 @@ def contact_band(title_html):
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 152px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
 <h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">{title_html}</h2>
 <div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
-<a class="btn-o" href="{CAL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
+<a class="btn-o" href="{CAL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 700">Book a call <span class="arr" aria-hidden="true">↗</span></a>
 <a class="btn-l" href="mailto:{MAIL}" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">{MAIL}</a>
 <a class="btn-l" href="https://www.linkedin.com/in/jeremiah-ajayi/" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">LinkedIn</a>
 </div>
 <footer style="margin-top: clamp(50px, 9vw, 112px); padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
 <a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
-<span style="display: flex; flex-wrap: wrap; gap: 8px 22px">{''.join(f'<a class="nl" href="{h}">{l}</a>' for l, h in FOOT)}<span>Lagos · {{{{time}}}} · © 2026</span></span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 22px">{''.join(f'<a class="nl" href="{h}">{l}</a>' for l, h in FOOT)}<span>Lagos 🇳🇬 · {{{{time}}}} · © 2026</span></span>
 </footer>
 </div>
 </section>'''
@@ -81,7 +81,7 @@ def footer_only():
 <div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 28px) clamp(40px, 5vw, 64px)">
 <footer style="padding-top: 22px; border-top: 1px solid #2B2A27; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #B5B0A6">
 <a href="Home-B2.dc.html" class="nl sg" style="display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; letter-spacing: -0.04em"><span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #FF5A2A; color: #111; font-size: 14px">JA</span>Jeremiah Ajayi</a>
-<span style="display: flex; flex-wrap: wrap; gap: 8px 22px">{''.join(f'<a class="nl" href="{h}">{l}</a>' for l, h in FOOT)}<span>Lagos · {{{{time}}}} · © 2026</span></span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 22px">{''.join(f'<a class="nl" href="{h}">{l}</a>' for l, h in FOOT)}<span>Lagos 🇳🇬 · {{{{time}}}} · © 2026</span></span>
 </footer>
 </div>
 </section>'''
@@ -111,6 +111,7 @@ def build(pid):
 {helmet}
 <div style="width: 100%; min-height: 100vh; background: #111111; color: #F2EFE8; font-family: 'DM Sans', system-ui, sans-serif; box-sizing: border-box; overflow-x: hidden">
 {header(active)}
+{guide()}
 {body}
 {band}
 </div>
