@@ -65,11 +65,12 @@ def hero():
         for i, (verb, num, name, sub, href, img, cap) in enumerate(LINES)
     )
     facts = json.dumps(FACTS, ensure_ascii=False).replace('"', '&quot;')
-    return f'''<section id="top" class="h-hero" data-hero>
+    return f'''<section id="top" class="h-hero" data-hero data-sky="day">
+<div class="h-sky" aria-hidden="true"><span class="h-stars"></span><span class="h-sun"></span></div>
 <div class="h-rays" aria-hidden="true"></div>
 <div class="wrap h-grid">
 <div class="h-copy">
-<p class="h-hello"><span lang="yo">Ẹ káàbọ̀</span><span aria-hidden="true">·</span><span>Lagos, {{{{time}}}}</span></p>
+<p class="h-hello"><span lang="yo">Ẹ káàbọ̀</span><span aria-hidden="true">·</span><span>Lagos, {{{{time}}}}</span><span class="h-skyl" data-sky-label></span></p>
 <h1 class="h-id"><b>Jeremiah Ajayi</b> is a marketing consultant for B2B SaaS and technology companies.</h1>
 <p class="h-display sg">{rows}</p>
 </div>
@@ -78,11 +79,11 @@ def hero():
 <span class="shp shp-flower h-flower" aria-hidden="true"></span>
 <div class="shp shp-scallop h-photo"><img src="{B(IMG['head'])}" alt="Portrait of Jeremiah Ajayi" width="800" height="800"></div>
 <div class="h-ring" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="h-ring-p" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs><text><textPath href="#h-ring-p" textLength="290" lengthAdjust="spacingAndGlyphs">CONTENT MARKETING SPECIALIST OF THE YEAR · 2025 ·</textPath></text></svg><span class="sg">Martech<br>Africa</span></div>
-<button type="button" class="h-bub" data-facts="{facts}" aria-live="polite"><span class="h-bub-t">{FACTS[0]}</span><span class="h-bub-more">Tell me something else <span aria-hidden="true">↻</span></span></button>
+<button type="button" class="h-bub" data-facts="{facts}" aria-live="polite" onClick="{{{{nextFact}}}}"><span class="h-bub-t">{{{{fact}}}}</span><span class="h-bub-more">Tell me something else <span aria-hidden="true">↻</span></span></button>
 </div>
 <div class="h-foot">
 <p class="h-lede">I help ambitious teams get understood, launched and chosen. Eight years of positioning, launches and content for companies in Europe, North America, the Middle East and Africa.</p>
-<div class="h-cta"><a class="btn-o h-btn" href="#work">See the work <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="Site-Contact.dc.html">Book a call {ARR}</a><a class="h-hire" href="#contact">Hiring? I’m open to senior marketing roles {ARR}</a></div>
+<div class="h-cta"><a class="btn-o h-btn" href="#work">See the work <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="{CAL}">Book a call <span class="arr" aria-hidden="true">↗</span></a><a class="h-hire" href="Site-Contact.dc.html#hiring">Hiring? I’m open to senior marketing roles {ARR}</a></div>
 </div>
 </div>
 </section>'''
@@ -194,7 +195,7 @@ def engine():
 {meta('05', 'RemotePass', '2024–25', 'Content & storytelling')}
 <h3 class="sg pc-title"><a class="pc-go" href="Site-Work.dc.html#engine">A content engine for global hiring, with an English–Arabic hub</a></h3>
 <div class="en-stats"><p><span class="sg">174%</span>organic user acquisition, year on year</p><p><span class="sg">$500K+</span>pipeline influenced in under a year</p></div>
-{facts_dl('Joined after a $5.5M raise to lead GTM and positioning. Built the content strategy from zero and ran a team of freelance writers.', 'Around 40 country guides, an English–Arabic hub for MENA, and content built from the objections in sales calls.', 'Content became a pipeline channel, not just a traffic one.')}
+{facts_dl('Joined after a $5.5M raise and built RemotePass’s first content strategy across the whole customer journey, with a freelance team I hired and briefed.', 'SEO content that ranks on page one, thought leadership featured on Wamda, a help centre and product videos, and sales decks, one-pagers and case studies.', '$192K in revenue in Q1 2025 alone from people who found us through content, with no ad spend.')}
 </div>
 <div class="pc-media en-media">
 <img class="en-a" src="{B(IMG['mena'])}" alt="The RemotePass MENA hub for payroll and HR, in English and Arabic" loading="lazy">
@@ -330,7 +331,7 @@ def contact():
 <div class="ct-grid">
 <div class="ct-doors" role="radiogroup" aria-label="What you need">
 <sc-for list="{{{{doors}}}}" as="d" hint-placeholder-count="5">
-<button class="door ct-door" data-door="{{{{$index}}}}" role="radio" aria-checked="{{{{d.selected}}}}" onClick="{{{{d.pick}}}}"><span class="ct-ic" aria-hidden="true">{{{{d.e}}}}</span><span class="ct-label sg">{{{{d.label}}}}</span><span class="ct-who">{{{{d.who}}}}</span></button>
+<button class="door ct-door" data-css data-door="{{{{$index}}}}" role="radio" aria-checked="{{{{d.selected}}}}" onClick="{{{{d.pick}}}}"><span class="ct-ic" aria-hidden="true">{{{{d.e}}}}</span><span class="ct-label sg">{{{{d.label}}}}</span><span class="ct-who">{{{{d.who}}}}</span></button>
 </sc-for>
 </div>
 <div class="ct-panel" aria-live="polite">
@@ -358,7 +359,7 @@ CSS = r'''
 .h-link:hover .arr{transform:translateX(5px)}
 /* ---------- hero ---------- */
 .h-hero{position:relative;background:#FFF5D9;color:#111;overflow:hidden;isolation:isolate}
-.h-rays{position:absolute;right:-12vw;top:-30vw;width:90vw;height:90vw;color:#FFC83D;opacity:.55;z-index:-1;background:repeating-conic-gradient(from 0deg at 50% 50%,currentColor 0 4deg,transparent 4deg 11deg);-webkit-mask:radial-gradient(closest-side,#000 40%,transparent 100%);mask:radial-gradient(closest-side,#000 40%,transparent 100%);animation:spin 160s linear infinite}
+.h-rays{position:absolute;left:calc(var(--sx,72%) - 45vw);top:calc(var(--sy,18%) - 45vw);width:90vw;height:90vw;color:var(--ray,#FFC83D);opacity:var(--rop,.55);z-index:-1;transition:color 1.5s,opacity 1.5s;background:repeating-conic-gradient(from 0deg at 50% 50%,currentColor 0 4deg,transparent 4deg 11deg);-webkit-mask:radial-gradient(closest-side,#000 40%,transparent 100%);mask:radial-gradient(closest-side,#000 40%,transparent 100%);animation:spin 160s linear infinite}
 .h-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"copy stage" "foot stage";column-gap:clamp(24px,4vw,64px);padding-top:clamp(28px,3.4vw,52px);padding-bottom:clamp(44px,5vw,72px)}
 .h-copy{grid-area:copy}.h-stage{grid-area:stage}.h-foot{grid-area:foot}
 .h-hello{margin:0 0 10px;display:flex;gap:10px;font-size:14px;font-weight:600;color:#6B675F}
@@ -395,6 +396,33 @@ CSS = r'''
 .h-btn:hover .arr{transform:translateX(4px)}
 .h-hire{flex-basis:100%;margin-top:4px;font-size:14.5px;font-weight:600;color:#45423C;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(17,17,17,.3)}
 .h-hire:hover{color:#111;text-decoration-color:#FF5A2A}
+
+/* the sky follows the time of day in Lagos */
+.h-hero{background:var(--sky,#FFF5D9);transition:background 1.5s}
+.h-sky{position:absolute;inset:0;z-index:-2;pointer-events:none}
+.h-sun{position:absolute;left:var(--sx,72%);top:var(--sy,18%);width:clamp(90px,9vw,140px);aspect-ratio:1;border-radius:50%;background:var(--sun,#FFC83D);transform:translate(-50%,-50%);box-shadow:0 0 0 18px color-mix(in srgb,var(--sun,#FFC83D) 22%,transparent),0 0 90px 30px color-mix(in srgb,var(--sun,#FFC83D) 45%,transparent);transition:left 1.5s,top 1.5s,background 1.5s,box-shadow 1.5s}
+.h-stars{position:absolute;inset:0;opacity:0;transition:opacity 1.5s;background-image:radial-gradient(circle,#F2EFE8 1.2px,transparent 1.6px),radial-gradient(circle,#F2EFE8 .9px,transparent 1.3px);background-size:140px 120px,90px 70px;background-position:20px 30px,60px 10px}
+.h-skyl{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;background:rgba(17,17,17,.06);color:inherit;font-weight:600}
+.h-skyl:empty{display:none}
+.h-hero[data-sky="dawn"]{--sky:linear-gradient(180deg,#FFD9C7 0%,#FFF5D9 70%);--sun:#FF8FB6;--ray:#FF8FB6;--rop:.4}
+.h-hero[data-sky="morning"]{--sky:#FFF5D9;--sun:#FFC83D;--ray:#FFC83D;--rop:.5}
+.h-hero[data-sky="noon"]{--sky:#FFF8E3;--sun:#FFD54F;--ray:#FFC83D;--rop:.7}
+.h-hero[data-sky="golden"]{--sky:linear-gradient(180deg,#FFD7A6 0%,#FFF1D6 75%);--sun:#FF5A2A;--ray:#FF8A3D;--rop:.5}
+.h-hero[data-sky="dusk"]{--sky:linear-gradient(180deg,#2E2350 0%,#6B4FA8 60%,#FF8FB6 130%);--sun:#FF8FB6;--ray:#FF8FB6;--rop:.18}
+.h-hero[data-sky="night"]{--sky:linear-gradient(180deg,#0B1F22 0%,#0E2A2E 100%);--sun:#F2EFE8;--ray:#8FE3B0;--rop:.1}
+.h-hero[data-sky="night"] .h-sun{box-shadow:inset -22px -10px 0 0 #C9C4BA,0 0 60px 10px rgba(242,239,232,.18)}
+.h-hero[data-sky="night"] .h-stars,.h-hero[data-sky="dusk"] .h-stars{opacity:.8}
+.h-hero[data-sky="dusk"] .h-stars{opacity:.35}
+.h-hero[data-sky="dusk"],.h-hero[data-sky="night"]{color:#F2EFE8}
+.h-hero[data-sky="dusk"] .h-hello,.h-hero[data-sky="night"] .h-hello,.h-hero[data-sky="dusk"] .h-id,.h-hero[data-sky="night"] .h-id,.h-hero[data-sky="dusk"] .h-lede,.h-hero[data-sky="night"] .h-lede,.h-hero[data-sky="dusk"] .h-hire,.h-hero[data-sky="night"] .h-hire{color:#D9D4CA}
+.h-hero[data-sky="dusk"] .h-hello span:first-child,.h-hero[data-sky="night"] .h-hello span:first-child,.h-hero[data-sky="dusk"] .h-id b,.h-hero[data-sky="night"] .h-id b,.h-hero[data-sky="dusk"] .h-mk,.h-hero[data-sky="night"] .h-mk,.h-hero[data-sky="dusk"] .h-row,.h-hero[data-sky="night"] .h-row{color:#F2EFE8}
+.h-hero .h-vt,.h-hero .h-tag{color:#111}
+.h-hero .h-row.is-on .h-tag,.h-hero .h-row:hover .h-tag{color:#FFF5D9}
+.h-hero[data-sky="dusk"] .h-skyl,.h-hero[data-sky="night"] .h-skyl{background:rgba(242,239,232,.12)}
+.h-hero[data-sky="dusk"] .h-btn-ink,.h-hero[data-sky="night"] .h-btn-ink{background:#F2EFE8;color:#111}
+.h-hero[data-sky="dusk"] .h-ring text,.h-hero[data-sky="night"] .h-ring text{fill:#F2EFE8}
+.h-hero[data-sky="dusk"] .h-hire,.h-hero[data-sky="night"] .h-hire{text-decoration-color:rgba(242,239,232,.4)}
+@media (prefers-reduced-motion: reduce){.h-sun,.h-hero,.h-rays,.h-stars{transition:none}}
 /* portrait stage */
 .h-stage{position:relative;align-self:center;aspect-ratio:1/1.08;min-height:420px}
 .h-flower{position:absolute;left:8%;top:6%;width:84%;aspect-ratio:1;background:#FF5A2A;animation:spin 60s linear infinite}
@@ -671,7 +699,7 @@ CSS = r'''
 .ct-grid{margin-top:clamp(36px,4.4vw,56px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,56px);align-items:start}
 .ct-doors{display:flex;flex-direction:column;gap:10px}
 .ct-door{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:72px;padding:12px 18px 12px 12px;border:1.5px solid #C9C3B6;border-radius:18px;background:#FFFDF6;color:#111;font:inherit;text-align:left;cursor:pointer;transition:border-color .25s,background .25s,color .25s,transform .25s}
-.ct-door:hover{border-color:#111;transform:translateX(4px)}
+.ct-door:hover{border-color:#111;background:#FFF5D9}
 .ct-door[aria-checked="true"]{background:#111;border-color:#111;color:#F2EFE8}
 .ct-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;font-size:22px}
 .ct-door:nth-child(1) .ct-ic{background:#FFC83D}.ct-door:nth-child(2) .ct-ic{background:#FF5A2A}.ct-door:nth-child(3) .ct-ic{background:#8FE3B0}.ct-door:nth-child(4) .ct-ic{background:#B9A6FF}.ct-door:nth-child(5) .ct-ic{background:#FF8FB6}
@@ -758,6 +786,10 @@ def main():
     s = re.sub(r'\n?/\*home:start\*/.*?/\*home:end\*/\n?', '\n', s, flags=re.S)
     s = s.replace('</style>\n</helmet>', CSS.strip('\n') + '\n</style>\n</helmet>', 1)
     s = s.replace('class="grid-bg hero-anim"', '')
+    facts_js = json.dumps(FACTS, ensure_ascii=False)
+    s = s.replace("this.state = { time: this.lagosTime(), door: 0 };", "this.state = { time: this.lagosTime(), door: 0, fact: 0 };")
+    if 'const FACTS =' not in s:
+        s = s.replace("    return {\n      time: this.state.time,", "    const FACTS = " + facts_js + ";\n    return {\n      time: this.state.time,\n      fact: FACTS[this.state.fact % FACTS.length],\n      nextFact: () => this.setState({ fact: (this.state.fact + 1) % FACTS.length }),", 1)
     # clip (not hidden) so the sticky header and the hero curtain can stick
     s = s.replace('box-sizing: border-box; overflow-x: hidden">', 'box-sizing: border-box; overflow-x: clip">', 1)
     HOME.write_text(s)

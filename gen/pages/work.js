@@ -29,7 +29,7 @@
       { k: 'launch', client: 'RemotePass × Certn', year: '2024', big: '270+', bigLabel: 'media pickups, including Yahoo Finance, Fox and NBC', title: 'The partnership launch that went global', href: '#certn', deep: true, orange: true },
       { k: 'launch', client: 'RemotePass', year: '2024–25', big: '15+', bigLabel: 'launches, in a year company revenue grew 134%', title: 'A launch program built for pipeline', href: '#launches', deep: true },
       { k: 'launch', client: 'RemotePass', year: 'Ask AI', big: 'Record', bigLabel: 'MQL performance after launch, with sales flooded with enquiries', title: 'Everyone was selling AI. We sold the answer.', href: '#askai', deep: true, orange: true },
-      { k: 'content', client: 'RemotePass', year: '2024–25', big: '174%', bigLabel: 'organic user acquisition, year on year, and $500K+ pipeline in under a year', title: 'A content engine for global hiring, with an English–Arabic hub for MENA', href: '#engine', deep: true },
+      { k: 'content', client: 'RemotePass', year: '2024–25', big: '$192K', bigLabel: 'revenue from inbound content in Q1 2025 alone, with no ad spend; 174% organic user growth', title: 'A content engine that turned search into revenue', href: '#engine', deep: true },
       { k: 'pos', client: 'Xofu', year: '2026', big: '3.7%', bigLabel: 'launch email click-through, double the previous best', title: 'Giving a new AI product one clear question to answer', href: '#xofu', deep: true, dark: true },
       { k: 'launch', client: 'RemotePass × Wafeq', year: '2025', big: '103', bigLabel: 'pieces of coverage in the UAE and Saudi Arabia, 56 of them in Arabic', title: 'A regional integration, launched in two languages', href: '#launches' },
       { k: 'launch', client: 'Stears', year: '2023', big: '$70K+', bigLabel: 'qualified pipeline from the FX Monitor launch', title: 'Taking a data product to market after the B2B pivot', href: '#stears' },
@@ -71,9 +71,9 @@
       },
       certn: {
         mosaic: [
-          { src: img.certnTeam, alt: 'Launch visual showing a global hiring team being screened', span: 'span 2', ratio: '1600 / 981' },
-          { src: img.certnCheck, alt: 'Launch visual: a completed background check report, powered by Certn', span: 'span 1', ratio: '1600 / 981' },
-          { src: img.certnSecured, alt: 'Launch visual: candidate data secured by Certn', span: 'span 1', ratio: '1600 / 980' }
+          { i: 1, src: img.certnTeam, alt: 'Launch visual showing a global hiring team being screened', span: 'span 2', ratio: '1600 / 981' },
+          { i: 2, src: img.certnCheck, alt: 'Launch visual: a completed background check report, powered by Certn', span: 'span 1', ratio: '1600 / 981' },
+          { i: 3, src: img.certnSecured, alt: 'Launch visual: candidate data secured by Certn', span: 'span 1', ratio: '1600 / 980' }
         ],
         did: [
           { h: 'Positioning', t: 'Framed the integration as proof RemotePass was the safer, more compliant choice for regulated industries.' },
@@ -102,9 +102,9 @@
       },
       engine: {
         posts: [
-          { src: img.ksaRisks, alt: 'Carousel cover: Risks of manual payroll in Saudi Arabia', rot: 'rotate(-4deg)', y: '18px' },
-          { src: img.ksaProblem, alt: 'Carousel slide: the problem with payroll in KSA', rot: 'rotate(0deg)', y: '0px' },
-          { src: img.ksaCompare, alt: 'Carousel slide comparing a local payroll provider with RemotePass', rot: 'rotate(4deg)', y: '18px' }
+          { i: 1, src: img.ksaRisks, alt: 'Carousel cover: Risks of manual payroll in Saudi Arabia', rot: 'rotate(-4deg)', y: '18px' },
+          { i: 2, src: img.ksaProblem, alt: 'Carousel slide: the problem with payroll in KSA', rot: 'rotate(0deg)', y: '0px' },
+          { i: 3, src: img.ksaCompare, alt: 'Carousel slide comparing a local payroll provider with RemotePass', rot: 'rotate(4deg)', y: '18px' }
         ],
         hub: [ { t: 'EOR in the UAE' }, { t: 'EOR in Saudi Arabia' }, { t: 'UAE payroll' }, { t: 'KSA payroll' } ],
         guides: [ { t: 'Hiring in the UAE' }, { t: 'DIFC hiring guide' }, { t: 'ADGM hiring guide' }, { t: 'Contractors in Saudi Arabia' }, { t: 'Iqama sponsorship' }, { t: 'Saudization requirements' }, { t: 'Hiring in Egypt' } ],
@@ -142,6 +142,6 @@
         ]
       },
       filters: filters.map((x) => ({ id: x.id, label: x.label, count: x.id === 'all' ? projects.length : projects.filter((p) => p.k === x.id).length, pressed: x.id === f ? 'true' : 'false', bg: x.id === f ? '#111' : 'transparent', fg: x.id === f ? '#F2EFE8' : '#111', border: x.id === f ? '#111' : '#C9C3B6', pick: () => this.setState({ f: x.id }) })),
-      shown: projects.filter((p) => f === 'all' || p.k === f).map((p) => ({ ...p, tag: tags[p.k], cta: p.deep ? 'See the case →' : 'Ask me about it →', bg: p.dark ? '#111' : (p.orange ? '#E6E1D6' : '#F2EFE8'), fg: p.dark ? '#F2EFE8' : '#111', rule: p.dark ? '#3A3934' : 'rgba(17,17,17,.2)' }))
+      shown: projects.filter((p) => f === 'all' || p.k === f).map((p) => ({ ...p, cls: p.dark ? 'is-deep' : '', tag: tags[p.k], cta: p.deep ? 'See the case →' : 'Ask me about it →', bg: p.dark ? '#111' : (p.orange ? '#E6E1D6' : '#F2EFE8'), fg: p.dark ? '#F2EFE8' : '#111', rule: p.dark ? '#3A3934' : 'rgba(17,17,17,.2)' }))
     };
   }

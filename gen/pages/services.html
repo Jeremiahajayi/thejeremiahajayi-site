@@ -1,89 +1,98 @@
-<section class="has-deco" style="background: var(--night); color: #F2EFE8">
-<span class="deco shp shp-flower spin" aria-hidden="true" style="right: -120px; top: -120px; width: 360px; aspect-ratio: 1; background: var(--sun); opacity: .95"></span>
-<span class="deco deco-dsk shp shp-clover floaty" aria-hidden="true" style="right: 26%; top: 90px; width: 70px; aspect-ratio: 1; background: var(--blush)"></span>
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 128px) clamp(20px, 5vw, 28px) clamp(45px, 8vw, 104px)">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #F2EFE8">Expertise</p>
-<h1 class="sg" style="margin: 0; max-width: 1140px; font-weight: 700; font-size: clamp(50px, 7vw, 112px); line-height: 0.92; letter-spacing: -0.058em">Marketing for B2B SaaS and technology companies: <span class="vpill" style="background: var(--mint)">three services, one practice.</span></h1>
-<p style="margin: 32px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #D8D3C9">Choose by the problem you have, then by how you want to work. Research, SEO, AI search and sales enablement are how I do the work. These three are what the work is for.</p>
-<div style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+
+<style>
+.sv-ladder ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.sv-ladder li{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 20px;border:1.5px solid #111;border-radius:16px;background:#FFFDF6;box-shadow:4px 4px 0 #111;font:700 clamp(18px,1.6vw,22px) 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;transition:transform .3s}
+.sv-ladder li span{font:700 13px 'DM Sans',system-ui,sans-serif;opacity:.6}
+.sv-ladder li:nth-child(2){margin-left:6%}.sv-ladder li:nth-child(3){margin-left:12%}.sv-ladder li:nth-child(4){margin-left:18%;background:#111;color:#FFF5D9;box-shadow:4px 4px 0 #FF5A2A}.sv-ladder li:nth-child(5){margin-left:24%;background:#FF5A2A}
+.sv-ladder li:hover{transform:translateX(-6px)}
+.sv-ladder figcaption{margin-top:14px;font-size:13.5px;opacity:.8}
+.sv-count{padding:clamp(22px,2.6vw,32px);border:1.5px solid #111;border-radius:24px;background:#111;color:#F2EFE8;box-shadow:6px 6px 0 #FFC83D}
+.sv-count-h{margin:0 0 18px;font:700 13px 'DM Sans',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#FFC83D}
+.sv-count ol{margin:0;padding:0 0 0 28px;list-style:none;display:grid;gap:18px;border-left:2px dashed #45423C}
+.sv-count li{position:relative;display:flex;flex-direction:column;gap:4px;font-size:15px;line-height:1.5;color:#C9C4BA}
+.sv-count li::before{content:"";position:absolute;left:-38px;top:3px;width:16px;height:16px;border-radius:50%;background:#111;border:2px solid #FF5A2A}
+.sv-count li.is-day::before{background:#FF5A2A;box-shadow:0 0 0 6px rgba(255,90,42,.25)}
+.sv-count b{font:700 18px 'Space Grotesk',system-ui,sans-serif;color:#F2EFE8}
+.sv-serp{position:relative}
+.sv-serp .k-shot{transform:rotate(2deg);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.sv-one{left:-22px;top:-26px;width:104px;height:104px;font-size:20px}
+.sv-q{margin:0;font-weight:700;font-size:clamp(48px,7vw,116px);line-height:.9;letter-spacing:-.06em;max-width:12ch}
+.sv-xofu{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(28px,4vw,56px);align-items:center}
+.sv-xofu-fan{height:clamp(300px,32vw,460px)}
+.sv-xofu-fan .f1{left:0;top:0;width:72%;z-index:1;transform:rotate(-2deg)}
+.sv-xofu-fan .f2{right:0;bottom:0;width:52%;transform:rotate(4deg)}
+.sv-xofu-fan:hover .f1{transform:rotate(-4deg) translate(-8px,-6px)}.sv-xofu-fan:hover .f2{transform:rotate(7deg) translate(8px,6px)}
+.sv-result{transform:rotate(1.5deg)}
+.sv-two{margin-top:clamp(28px,3vw,44px)}
+.sv-ksa{height:clamp(320px,30vw,420px)}
+.sv-ksa img{width:44%;aspect-ratio:4/5;object-fit:cover}
+.sv-ksa .f1{left:0;top:8%;transform:rotate(-7deg)}.sv-ksa .f2{left:28%;top:0;z-index:2}.sv-ksa .f3{right:0;top:10%;transform:rotate(7deg)}
+.sv-ksa:hover .f1{transform:rotate(-11deg) translateX(-12px)}.sv-ksa:hover .f3{transform:rotate(11deg) translateX(12px)}
+.sv-get{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,72px);align-items:start}
+.sv-aside{position:sticky;top:100px;transform:rotate(1deg)}
+.sv-aside ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.sv-aside li{padding:12px 14px;border-radius:12px;background:rgba(255,253,246,.12);font-weight:600}
+.sv-cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:22px}
+.sv-case .k-big{font-size:clamp(64px,7vw,108px)}
+.sv-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px;align-items:stretch}
+.sv-read ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.sv-read a{display:flex;flex-direction:column;gap:2px;color:inherit;text-decoration:none}
+.sv-read a b{font:700 17px/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.015em}
+.sv-read a:hover b{color:#C23A0E}
+.sv-read a span{font-size:13px;opacity:.7}
+.sv-overview .xd-grid{margin-top:clamp(36px,4vw,56px)}
+.sv-tool{margin-top:22px;padding:14px 18px;border:1.5px dashed currentColor;border-radius:16px;font-size:15px;line-height:1.6}
+@media (max-width:1080px){.sv-xofu,.sv-get{grid-template-columns:1fr}.sv-aside{position:static}}
+@media (max-width:640px){.sv-ladder li{margin-left:0 !important}.sv-one{left:-6px;width:84px;height:84px;font-size:16px}.sv-ksa{height:280px}.sv-xofu-fan{height:260px}}
+</style>
+<section class="k-hero k-night sv-overview" style="--rc: #FF5A2A; --ro: .35">
+<div class="k-rays" aria-hidden="true"></div>
+<div class="wrap">
+<p class="eyebrow">Expertise</p>
+<h1 class="sg k-h1" style="max-width: 17ch">Marketing for B2B SaaS and technology companies: <span class="k-mark" style="--mk: #8FE3B0; --mkt: #0E2A2E"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">three services, one practice.</span></span></h1>
+<p class="k-lede">Choose by the problem you have, then by how you want to work. Research, SEO, AI search and sales enablement are how I do the work. These three are what the work is for.</p>
+<div class="xd-grid">
 <sc-for list="{{services}}" as="d" hint-placeholder-count="3">
-<a class="card-l" href="{{d.href}}" style="position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 16px; min-height: 380px; padding: 28px; border-radius: 22px; background: {{d.bg}}; color: {{d.fg}}; box-sizing: border-box">
-<span class="xp-art" aria-hidden="true" style="width: 84px; height: 84px; margin-bottom: 6px"><span class="shp xp-shape spin {{d.shp}}" style="background: {{d.shpc}}"></span><span class="xp-emo" style="font-size: 36px">{{d.emo}}</span></span>
-<span class="sg" style="font-weight: 700; font-size: clamp(52px, 5vw, 76px); line-height: 0.88; letter-spacing: -0.065em">{{d.verb}}.</span>
-<span class="card-t sg" style="font-size: 26px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; transition: color .3s">{{d.name}}</span>
-<span style="font-size: 15px; line-height: 1.55; opacity: .9"><strong>Choose this when</strong> {{d.when}}</span>
-<span style="margin-top: auto; display: flex; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid {{d.rule}}; font-size: 14px; font-weight: 700"><span>{{d.proof}}</span><span>See the service →</span></span>
-</a>
+<a class="xd {{d.cls}}" href="{{d.href}}"><span class="xd-badge"><span class="shp {{d.shp}} xd-shp" aria-hidden="true"></span><span class="xd-emo" aria-hidden="true">{{d.emo}}</span></span><span class="xd-verb sg">{{d.verb}}<i>.</i></span><span class="xd-name sg">{{d.name}}</span><span class="xd-long"><b>Choose this when</b> {{d.when}}</span><span class="xd-proof"><b>Proof</b> {{d.proof}}</span><span class="xd-go">See the service <span class="arr" aria-hidden="true">→</span></span></a>
 </sc-for>
 </div>
 </div>
 </section>
 
-<section style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px 64px">
-<div>
-<h2 class="sg" style="margin: 0 0 24px; font-weight: 700; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it’s for</h2>
-<ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
-<sc-for list="{{forWho}}" as="w" hint-placeholder-count="4"><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5">{{w.t}}</li></sc-for>
-</ul>
-</div>
-<div>
-<h2 class="sg" style="margin: 0 0 24px; font-weight: 700; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.045em">Who it isn’t for</h2>
-<ul style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
-<sc-for list="{{notFor}}" as="w" hint-placeholder-count="3"><li style="padding: 16px 0; border-bottom: 1px solid #C9C3B6; font-size: 17px; line-height: 1.5; color: #45423C">{{w.t}}</li></sc-for>
-</ul>
-</div>
+<section class="k-sec k-paper" aria-label="Who it’s for">
+<div class="wrap k-g2">
+<div class="k-stk s-mint" style="transform: rotate(-.8deg)"><h2 class="sg k-h3">Who it’s for</h2><ul class="k-list"><sc-for list="{{forWho}}" as="w" hint-placeholder-count="4"><li>{{w.t}}</li></sc-for></ul></div>
+<div class="k-stk s-blush" style="transform: rotate(.7deg)"><h2 class="sg k-h3">Who it isn’t for</h2><ul class="k-list k-x"><sc-for list="{{notFor}}" as="w" hint-placeholder-count="3"><li>{{w.t}}</li></sc-for></ul></div>
 </div>
 </section>
 
-<section style="background: #FFFFFF; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">Ways to work together</p>
-<h2 class="sg" style="margin: 0; max-width: 900px; font-weight: 700; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">Pick the shape that fits your problem.</h2>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 2px solid #111">
+<section class="k-sec k-cream" aria-labelledby="ways-t">
+<div class="wrap">
+<div class="k-head"><p class="eyebrow">Ways to work together</p><h2 id="ways-t" class="sg k-h2">Pick the shape that fits <span class="k-mark" style="--mk: #FF5A2A; --mkt: #111"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">your problem.</span></span></h2></div>
+<div class="k-g4 k-rot k-rot5">
 <sc-for list="{{ways}}" as="w" hint-placeholder-count="4">
-<div style="padding: 28px 24px 32px 0; border-bottom: 1px solid #E6E1D6; display: flex; flex-direction: column; gap: 12px">
-<span class="sg" style="font-size: 15px; font-weight: 700; color: #111">{{w.n}}</span>
-<h3 class="sg" style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.05">{{w.h}}</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2D2B27">{{w.t}}</p>
-<a class="nd" href="{{w.href}}" style="margin-top: auto; font-weight: 700">{{w.cta}}</a>
-</div>
+<a class="k-stk" href="{{w.href}}"><span class="sg k-big" style="font-size: 44px">{{w.n}}</span><h3 class="sg k-h3">{{w.h}}</h3><span style="font-size: 16px; line-height: 1.55">{{w.t}}</span><span class="k-go">{{w.cta}}</span></a>
 </sc-for>
 </div>
 </div>
 </section>
 
-<section style="background: var(--night); color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">How an engagement runs</p>
-<h2 class="sg" style="margin: 0 0 40px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">From first call to measured result.</h2>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
-<sc-for list="{{steps}}" as="s" hint-placeholder-count="4"><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">{{s.n}}</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">{{s.t}}</span></li></sc-for>
-</ol>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; border-top: 1px solid #3A3934; padding-top: 28px">
-<sc-for list="{{proof}}" as="p" hint-placeholder-count="4"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 72px); line-height: 0.86; letter-spacing: -0.06em; color: #F2EFE8">{{p.big}}</p><p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #D8D3C9">{{p.label}}</p></div></sc-for>
-</div>
+<section class="k-sec k-white" aria-labelledby="run-t">
+<div class="wrap">
+<div class="k-head"><p class="eyebrow">How an engagement runs</p><h2 id="run-t" class="sg k-h2">From first call to measured result.</h2></div>
+<ol class="k-steps"><sc-for list="{{steps}}" as="s" hint-placeholder-count="4"><li data-n="{{s.n}}"><b>{{s.h}}</b><span>{{s.t}}</span></li></sc-for></ol>
 </div>
 </section>
 
-<section id="faq" style="background: #FFFFFF; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 32px 64px">
-<h2 class="sg" style="margin: 0; flex: 1 1 300px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Questions people ask</h2>
-<div style="flex: 1 1 640px; min-width: 0; border-top: 2px solid #111">
-<sc-for list="{{faq}}" as="q" hint-placeholder-count="5">
-<details style="border-bottom: 1px solid #E6E1D6">
-<summary class="sg" style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25">{{q.q}}<span aria-hidden="true" style="color: #111">+</span></summary>
-<p style="margin: 0 0 24px; max-width: 720px; font-size: 17px; line-height: 1.65; color: #2D2B27">{{q.a}}</p>
-</details>
-</sc-for>
-</div>
-</div>
-<div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 28px) clamp(50px, 9vw, 112px)">
-<div style="padding: 26px clamp(20px, 5vw, 28px); border-radius: 14px; background: #F2EFE8; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline">
-<span style="font-size: 14px; font-weight: 700">Toolkit</span>
-<span style="font-size: 15px; line-height: 1.6; color: #2D2B27">{{toolkit}}</span>
-</div>
-</div>
+<section class="k-sec k-sun" aria-label="Results">
+<div class="wrap"><p class="eyebrow">Across my work</p>
+<div class="k-stats" style="margin-top: 12px"><sc-for list="{{proof}}" as="p" hint-placeholder-count="4"><div class="k-stat"><b>{{p.big}}</b><span>{{p.label}}</span></div></sc-for></div></div>
 </section>
 
-<!--CONTACT:Which one are you<br><span style="color: #F2EFE8">working on?</span>-->
+<section id="faq" class="k-sec k-paper" aria-labelledby="faq-t">
+<div class="wrap k-split"><h2 id="faq-t" class="sg k-h2">Questions people ask</h2>
+<div><div class="k-faq"><sc-for list="{{faq}}" as="q" hint-placeholder-count="5"><details><summary>{{q.q}}<i aria-hidden="true">+</i></summary><p>{{q.a}}</p></details></sc-for></div>
+<p class="sv-tool"><b>Toolkit</b> · {{toolkit}}</p></div></div>
+</section>
+
+<!--CONTACT:Which one are you <span class="k-mark" style="--mk: #FFC83D; --mkt: #111"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">working on?</span></span>-->

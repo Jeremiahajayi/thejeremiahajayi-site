@@ -2,17 +2,17 @@
     return {
       time: this.state.time,
       services: [
-        { verb: 'Clear', name: 'Positioning & messaging', when: 'buyers can’t explain what you do, or a launch, raise or new market is coming.', proof: 'Xofu: 2x click-through', href: 'Site-Service-Positioning.dc.html', bg: 'var(--sun)', fg: '#111', shp: 'shp-flower', shpc: 'var(--mint)', emo: '🔍', rule: 'rgba(17,17,17,.2)' },
-        { verb: 'Land', name: 'Launches & go-to-market', when: 'releases get attention but don’t reach sales conversations.', proof: '20+ launches led', href: 'Site-Service-Launch.dc.html', bg: 'var(--orange)', fg: '#111', shp: 'shp-star', shpc: 'var(--sun)', emo: '🚀', rule: 'rgba(17,17,17,.25)' },
-        { verb: 'Travel', name: 'Content & storytelling', when: 'content isn’t turning into pipeline, or AI answers recommend competitors.', proof: '174% organic growth', href: 'Site-Service-Content.dc.html', bg: 'var(--mint)', fg: '#111', shp: 'shp-clover', shpc: 'var(--leaf)', emo: '✈️', rule: 'rgba(17,17,17,.2)' }
+        { cls: 'd-clear', verb: 'Clear', name: 'Positioning & messaging', when: 'buyers can’t explain what you do, or a launch, raise or new market is coming.', proof: 'Xofu: 2x click-through', href: 'Site-Service-Positioning.dc.html', bg: 'var(--sun)', fg: '#111', shp: 'shp-flower', shpc: 'var(--mint)', emo: '🔍', rule: 'rgba(17,17,17,.2)' },
+        { cls: 'd-land', verb: 'Land', name: 'Launches & go-to-market', when: 'releases get attention but don’t reach sales conversations.', proof: '20+ launches led', href: 'Site-Service-Launch.dc.html', bg: 'var(--orange)', fg: '#111', shp: 'shp-star', shpc: 'var(--sun)', emo: '🚀', rule: 'rgba(17,17,17,.25)' },
+        { cls: 'd-travel', verb: 'Travel', name: 'Content & storytelling', when: 'content isn’t turning into pipeline, or AI answers recommend competitors.', proof: '174% organic growth', href: 'Site-Service-Content.dc.html', bg: 'var(--mint)', fg: '#111', shp: 'shp-clover', shpc: 'var(--leaf)', emo: '✈️', rule: 'rgba(17,17,17,.2)' }
       ],
       forWho: [ { t: 'B2B SaaS and technology companies, from seed to growth stage' }, { t: 'Founders who need senior marketing judgment before a full-time hire' }, { t: 'Marketing and product leaders who need a hands-on partner for a launch, a repositioning or a content engine' }, { t: 'Teams in Europe, North America, the Middle East and Africa' } ],
       notFor: [ { t: 'Teams looking for volume content without a strategy behind it' }, { t: 'Paid ads management as a standalone service' }, { t: 'Projects where success can’t be tied to a business outcome' } ],
       ways: [
-        { n: '01', h: 'Embedded partner', t: 'Senior, hands-on marketing leadership inside your team for several months, across positioning, launches and content.', cta: 'Book a call ↗', href: 'Site-Contact.dc.html' },
-        { n: '02', h: 'Fixed-scope project', t: 'One clear piece of work: a repositioning, a launch or a content strategy, with a defined outcome.', cta: 'Book a call ↗', href: 'Site-Contact.dc.html' },
-        { n: '03', h: 'Ongoing content partner', t: 'A content engine run month to month: strategy, editorial, distribution and reporting.', cta: 'Book a call ↗', href: 'Site-Contact.dc.html' },
-        { n: '04', h: 'A full-time role', t: 'Open to senior marketing roles, remote or with relocation. Send me the role and I’ll reply with a tailored CV.', cta: 'Get in touch ↗', href: 'Site-Contact.dc.html' }
+        { n: '01', h: 'Embedded partner', t: 'Senior, hands-on marketing leadership inside your team for several months, across positioning, launches and content.', cta: 'Book a call ↗', href: 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi' },
+        { n: '02', h: 'Fixed-scope project', t: 'One clear piece of work: a repositioning, a launch or a content strategy, with a defined outcome.', cta: 'Book a call ↗', href: 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi' },
+        { n: '03', h: 'Ongoing content partner', t: 'A content engine run month to month: strategy, editorial, distribution and reporting.', cta: 'Book a call ↗', href: 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi' },
+        { n: '04', h: 'A full-time role', t: 'Open to senior marketing roles, remote or with relocation. Send me the role and I’ll reply with a tailored CV.', cta: 'Send me the role →', href: 'Site-Contact.dc.html#hiring' }
       ],
       steps: [
         { n: '1', h: 'Diagnostic call', t: '30 minutes on your product, buyers, goals and what’s getting in the way.' },

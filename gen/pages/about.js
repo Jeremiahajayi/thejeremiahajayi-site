@@ -28,10 +28,10 @@
         { h: 'Finishing what I started', t: 'Graduated in Business Management from Miva Open University with first-class honours, while working full-time and building EmpowerQ.' }
       ],
       quotes: [
-        { text: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', name: 'Wesley Hattingh', org: 'RemotePass', bg: '#E6E1D6', fg: '#111', size: 'clamp(30px, 3.4vw, 50px)', col: 'span 2' },
-        { text: 'His work was excellent quality, he was very hands on right from the start.', name: 'Stephen Lavery', org: 'Earthshot Prize', bg: '#FFFFFF', fg: '#111', size: 'clamp(22px, 2vw, 30px)', col: 'span 1' },
-        { text: 'You really are a rockstar, one of the best teammates I have had across law, journalism, consulting and tech!', name: 'Shivani Saxena', org: 'RemotePass', bg: '#FFFFFF', fg: '#111', size: 'clamp(22px, 2vw, 30px)', col: 'span 1' },
-        { text: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', name: 'Adetoro Adeniran', org: 'Stears', bg: '#111', fg: '#F2EFE8', size: 'clamp(22px, 2.2vw, 32px)', col: 'span 2' }
+        { text: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', name: 'Wesley Hattingh', cls: 'q-sun', org: 'RemotePass', bg: '#E6E1D6', fg: '#111', size: 'clamp(30px, 3.4vw, 50px)', col: 'span 2' },
+        { text: 'His work was excellent quality, he was very hands on right from the start.', name: 'Stephen Lavery', cls: 'q-mint', org: 'Earthshot Prize', bg: '#FFFFFF', fg: '#111', size: 'clamp(22px, 2vw, 30px)', col: 'span 1' },
+        { text: 'You really are a rockstar, one of the best teammates I have had across law, journalism, consulting and tech!', name: 'Shivani Saxena', cls: 'q-blush', org: 'RemotePass', bg: '#FFFFFF', fg: '#111', size: 'clamp(22px, 2vw, 30px)', col: 'span 1' },
+        { text: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', name: 'Adetoro Adeniran', cls: 'q-paper', org: 'Stears', bg: '#111', fg: '#F2EFE8', size: 'clamp(22px, 2.2vw, 32px)', col: 'span 2' }
       ],
       recognition: [
         { y: '2026', t: 'Finalist, Social Shifters Global Innovation Challenge (EmpowerQ’s Lavender Ladder)' },

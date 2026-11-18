@@ -6,7 +6,7 @@
         slug: 'content-growth', name: 'Content & storytelling', verb: 'travel',
         title: 'Content and organic growth consultant for B2B SaaS',
         intro: 'Content buyers trust, that search engines and AI assistants surface, measured in pipeline rather than volume. SEO and AI search are part of the method, not separate offers.',
-        stats: [ { big: '174%', label: 'organic user acquisition growth at RemotePass, year on year' }, { big: '$500K+', label: 'pipeline influenced by content in under a year' }, { big: '#1', label: 'above the BBC on Google for Stears' } ],
+        stats: [ { big: '174%', label: 'organic user acquisition growth at RemotePass, year on year' }, { big: '$192K', label: 'revenue from inbound content at RemotePass in one quarter, with no ad spend' }, { big: '#1', label: 'above the BBC on Google for Stears' } ],
         forWho: [ { t: 'Marketing leaders who need content tied to pipeline' }, { t: 'Founders whose site attracts little organic demand' }, { t: 'Teams losing clicks as buyers ask ChatGPT and Perplexity instead of Google' } ],
         signs: [ { t: 'You publish a lot, but little of it turns into pipeline.' }, { t: 'Organic traffic is flat or falling as AI answers take clicks.' }, { t: 'AI assistants recommend your competitors, not you.' }, { t: 'Content depends on one person and stops when they’re busy.' }, { t: 'Sales doesn’t use what marketing publishes.' } ],
         getsTitle: 'A content engine that compounds.',

@@ -7,6 +7,8 @@ Each page lives in pages/<id>.html (markup) and pages/<id>.js (renderVals body).
 import sys, pathlib, re
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from chrome import header, guide, SHARED_CSS
+from kit import KIT_CSS, end_band, footer_band
+import home as _home
 
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT.parent / 'project'
@@ -91,13 +93,15 @@ def build(pid):
     fname, title, active, height = PAGES[pid]
     body = (ROOT / 'pages' / f'{TEMPLATE.get(pid, pid)}.html').read_text()
     js = (ROOT / 'pages' / f'{pid}.js').read_text()
-    helmet = (ROOT / 'helmet.html').read_text().replace('</style>', EXTRA_CSS + SHARED_CSS + '</style>')
+    helmet = (ROOT / 'helmet.html').read_text().replace('</style>', EXTRA_CSS + SHARED_CSS + _home.CSS + KIT_CSS + '</style>')
     m = re.search(r'<!--CONTACT:(.*?)-->', body, re.S)
-    if '<!--NOBAND-->' in body:
-        band = footer_only()
+    if '<!--NOEND-->' in body:
+        band = ''
+    elif '<!--NOBAND-->' in body:
+        band = footer_band()
     else:
-        band = contact_band(m.group(1).strip() if m else 'Let’s talk<span style="color: #F2EFE8">.</span>')
-    body = body.replace('<!--NOBAND-->', '')
+        band = end_band(m.group(1).strip() if m else 'Let’s talk.')
+    body = body.replace('<!--NOBAND-->', '').replace('<!--NOEND-->', '')
     body = re.sub(r'<!--CONTACT:.*?-->', '', body, flags=re.S)
     html = f'''<!doctype html>
 <html lang="en">

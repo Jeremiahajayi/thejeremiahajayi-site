@@ -6,7 +6,7 @@ WORK_MENU = [
     ('Stears Elections', 'How a new election tracker beat the BBC on Google', 'Site-Work.dc.html#stears'),
     ('RemotePass × Certn', 'A partnership launch with 270+ media pickups', 'Site-Work.dc.html#certn'),
     ('RemotePass Ask AI', 'Selling the answer, not the AI: record MQLs', 'Site-Work.dc.html#askai'),
-    ('RemotePass content engine', '174% organic growth and an English–Arabic hub', 'Site-Work.dc.html#engine'),
+    ('RemotePass content engine', '$192K revenue from content in one quarter', 'Site-Work.dc.html#engine'),
     ('Xofu', 'One clear question for a new AI product', 'Site-Work.dc.html#xofu'),
 ]
 
@@ -52,7 +52,7 @@ def header(active, home=False):
 {plain('EmpowerQ', 'Site-EmpowerQ.dc.html')}
 {plain('Writing', 'Site-Writing.dc.html')}
 {plain('About', 'Site-About.dc.html')}
-<a class="btn-o nav-cta" href="Site-Contact.dc.html">Book a call <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn-o nav-cta" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call <span class="arr" aria-hidden="true">↗</span></a>
 </nav>
 </div>
 </header>'''
@@ -90,7 +90,7 @@ def guide():
 <form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Type a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Type a question…"><button type="submit" aria-label="Send">↑</button></form>
 </div>
 </div>
-<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="Site-Contact.dc.html">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
+<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call <span class="arr" aria-hidden="true">↗</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
 <!--guide:end-->'''
 
 
@@ -141,7 +141,8 @@ SHARED_CSS = r"""
 .nav-main>a.nl:hover,.dd-top:hover{background:none}
 .dd-top{border-bottom:0}
 .chev{display:none}
-.dd-p{position:static;width:auto;padding:0 0 14px;border:0;border-bottom:1px solid #2B2A27;border-radius:0;background:none;box-shadow:none;opacity:1;visibility:visible;transform:none;transition:none}
+.dd-p{position:static;width:auto;padding:0 0 14px;border:0;border-bottom:1px solid #2B2A27;border-radius:0;background:none;box-shadow:none;opacity:1;visibility:inherit;transform:none;transition:none}
+.nav-main{pointer-events:none}.nav-t:checked~.nav-main{pointer-events:auto}
 .dd-p::before{display:none}
 .dd-h{display:none}
 .dd-l{padding:9px 0 9px 14px;border-left:2px solid #2B2A27;border-radius:0}

@@ -1,108 +1,90 @@
-<section class="has-deco" style="background: #B9A6FF; color: #1C1430">
-<span class="deco shp shp-flower spin" aria-hidden="true" style="left: -110px; bottom: -110px; width: 300px; aspect-ratio: 1; background: var(--sun)"></span>
-<span class="deco deco-dsk shp shp-clover floaty" aria-hidden="true" style="right: 40%; top: 60px; width: 70px; aspect-ratio: 1; background: var(--blush)"></span>
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 128px) clamp(20px, 5vw, 28px) clamp(50px, 9vw, 120px); display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-end">
-<div style="flex: 1 1 640px; min-width: 0">
-<p style="margin: 0 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; font-size: 15px; font-weight: 700"><span>Co-founded in 2025</span><span style="font-size: 13px; padding: 7px 14px; border-radius: 999px; background: #1C1430; color: #F1ECFF">Finalist · Social Shifters Global Innovation Challenge 2026</span></p>
-<h1 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(80px, 12vw, 200px); line-height: 0.8; letter-spacing: -0.075em">EmpowerQ</h1>
-<p class="sg" style="margin: 36px 0 0; max-width: 720px; font-weight: 500; font-size: clamp(28px, 3vw, 44px); line-height: 1.08; letter-spacing: -0.035em">Every queer Nigerian professional deserves a fair shot at a good career.</p>
-<p style="margin: 24px 0 0; max-width: 600px; font-size: 18px; line-height: 1.65; color: #2E2350">EmpowerQ is a nonprofit building economic inclusion for LGBTQ+ professionals in Nigeria: career support, honest research and a community that makes work safer and more rewarding.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
-<a href="#involved" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; background: #1C1430; color: #F1ECFF; font-weight: 700">Get involved ↓</a>
-<a href="https://www.empowerqueer.org" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 54px; padding: 0 26px; border-radius: 999px; border: 2px solid #1C1430; color: #1C1430; font-weight: 700">Visit EmpowerQ ↗</a>
+
+<style>
+.eqp-hero{background:#B9A6FF;color:#1C1430}
+.eqp-hero .k-h1{font-size:clamp(64px,8.4vw,136px);line-height:.8;letter-spacing:-.075em;max-width:none}
+.eqp-lede{margin:22px 0 0;max-width:22ch;font:600 clamp(24px,2.4vw,36px)/1.12 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.025em}
+.eqp-why{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:start}
+.eqp-why .k-p{color:#D6CCFF}
+.eqp-why .sig{margin-top:22px;font-weight:700;color:#B9A6FF}
+.eqp-ll{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,2.6vw,32px);align-items:start}
+.eqp-ll-c{background:#1C1430;color:#E9E2FF;box-shadow:6px 6px 0 #B9A6FF}
+.eqp-ll-c video{display:block;width:min(100%,280px);margin:10px auto 0;border-radius:22px;border:1.5px solid #B9A6FF}
+.eqp-progs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.eqp-progs .k-stk{padding:18px 20px;box-shadow:4px 4px 0 #1C1430;border-color:#1C1430}
+.eqp-progs .k-stk:nth-child(4n+1){background:#E9E2FF}.eqp-progs .k-stk:nth-child(4n+2){background:#FFC83D}.eqp-progs .k-stk:nth-child(4n+3){background:#FF8FB6}.eqp-progs .k-stk:nth-child(4n+4){background:#FFFDF6}
+.eqp-partners{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:12px}
+.eqp-partners li{display:grid;place-items:center;height:84px;padding:0 22px;border-radius:18px;background:#FFFDF6;border:1.5px solid #1C1430}
+.eqp-partners img{max-height:48px;max-width:150px;width:auto}
+.eqp-stats .k-stat{border-color:#1C1430;box-shadow:4px 4px 0 #1C1430}
+.eqp-ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+.eqp-ways .k-stk{border-color:#1C1430;box-shadow:5px 5px 0 #1C1430}
+.eqp-note{margin:28px 0 0;max-width:70ch;font-size:14.5px;line-height:1.6;opacity:.8}
+.eqp-end{background:#1C1430;color:#E9E2FF}
+.eqp-end .k-end-s{background:#B9A6FF}
+@media (max-width:1080px){.eqp-why,.eqp-ll{grid-template-columns:1fr}}
+@media (max-width:640px){.eqp-progs{grid-template-columns:1fr}}
+</style>
+<section class="k-hero eqp-hero" style="--rc: #E9E2FF; --ro: .45">
+<div class="k-rays" aria-hidden="true"></div>
+<span class="shp shp-flower k-shape" aria-hidden="true" style="left: 38%; bottom: -60px; width: 150px; height: 150px; background: #FF8FB6"></span>
+<div class="wrap eq-grid">
+<div class="eq-copy">
+<p class="eq-top"><span class="eyebrow eq-eyebrow">Co-founded in 2025</span><span class="eq-pill">Finalist · Social Shifters Global Innovation Challenge 2026</span></p>
+<h1 class="sg k-h1">EmpowerQ</h1>
+<p class="eq-lede eqp-lede sg">Every queer Nigerian professional deserves a fair shot at a good career.</p>
+<p class="k-p" style="margin-top: 20px; color: #2E2350">EmpowerQ is a nonprofit building economic inclusion for LGBTQ+ professionals in Nigeria: career support, honest research and a community that makes work safer and more rewarding.</p>
+<div class="eq-cta"><a class="eq-btn" href="#involved">Get involved <span aria-hidden="true">↓</span></a><a class="eq-link" href="https://www.empowerqueer.org">Visit EmpowerQ ↗</a></div>
 </div>
-</div>
-<figure style="flex: 0 1 420px; min-width: 280px; margin: 0; transform: rotate(2deg)">
-<img class="shot" src="/_blob/2887802b6b670e13694193452b911747" alt="Name tags and lanyards laid out for Out of Office, EmpowerQ’s queer career conference" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; border-radius: 12px; background: #1C1430">
-<figcaption style="margin-top: 12px; font-size: 13px; color: #2E2350">Name tags for Out of Office, Nigeria’s first queer career conference. We keep attendees’ faces off the web.</figcaption>
-</figure>
+<figure class="eq-photo"><img src="/_blob/2887802b6b670e13694193452b911747" alt="Name tags and lanyards laid out for Out of Office, EmpowerQ’s queer career conference"><span class="eq-badge sg"><b>100+</b>at our first Out of Office</span><figcaption>Name tags for Out of Office, Nigeria’s first queer career conference. We keep attendees’ faces off the web.</figcaption></figure>
 </div>
 </section>
 
-<section style="background: #1C1430; color: #F1ECFF">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px); display: flex; flex-wrap: wrap; gap: 48px 80px">
-<div style="flex: 1 1 360px; min-width: 0">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #B9A6FF">Why it exists</p>
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">Talent is everywhere. Opportunity isn’t.</h2>
-</div>
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px; font-size: 19px; line-height: 1.7; color: #E7E1FA">
-<p style="margin: 0">My career started because a friend told me about an opportunity in a law lecture. One open door changed everything that came after it. Since 2020 I’ve tried to open doors for others: Digivention, Write to Win, and a career newsletter read by 900+ people.</p>
-<p style="margin: 0">But some people need more than a newsletter. Many LGBTQ+ Nigerians are shut out of the networks, mentorship and fair hiring that careers depend on, and too often they have to choose between being safe and being seen. In 2025, I co-founded EmpowerQ with Alexandria to change that.</p>
-<p style="margin: 0">We focus on what moves a career: jobs, skills, research that makes the case to employers, and a community where people don’t have to hide to get ahead.</p>
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: #B9A6FF">— Jeremiah Ajayi, Executive Director and Co-Founder</p>
-</div>
-</div>
-</section>
-
-<section style="background: #F1ECFF; color: #1C1430">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #5B47A8">What we’re building</p>
-<h2 class="sg" style="margin: 0; max-width: 900px; font-weight: 700; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">Practical support at every step of a career.</h2>
-<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 20px">
-<article style="flex: 1 1 520px; min-width: 0; background: #1C1430; color: #F1ECFF; border-radius: 16px; padding: clamp(28px, 3.4vw, 44px); display: flex; flex-direction: column; gap: 18px">
-<span style="align-self: flex-start; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: #B9A6FF; color: #1C1430">Flagship · Social Shifters 2026 finalist</span>
-<h3 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(44px, 5vw, 76px); line-height: 0.88; letter-spacing: -0.06em">Lavender Ladder</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #E7E1FA">An employment programme built for progression, not just placement. Participants get mentorship from working professionals, career coaching and a route into recruiter-ready talent pools with employers who want to hire inclusively.</p>
-<figure style="margin: 8px 0 0; align-self: center; width: min(100%, 280px)">
-<video src="/_blob/040da4b995e99035dda7fe59d67b1464" poster="/_blob/326c0bfe0ddf15444f246261858a4af6" autoplay muted loop playsinline aria-label="A walkthrough of the Lavender Ladder app: the home screen, your ladder from Explore to Earn, opportunities, the Career Bestie AI coach, events and support" style="display: block; width: 100%; aspect-ratio: 896 / 1332; object-fit: cover; border-radius: 22px; border: 6px solid #2C2148; background: #2C2148"></video>
-<figcaption style="margin-top: 12px; font-size: 13px; color: #C9C0E6; text-align: center">The Lavender Ladder app, where participants track their next move</figcaption>
-</figure>
-</article>
-<div style="flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
-<sc-for list="{{programs}}" as="p" hint-placeholder-count="6">
-<a class="card-l" href="{{p.href}}" style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 14px; background: #FFFFFF; color: #1C1430; box-sizing: border-box">
-<span style="font-size: 12px; font-weight: 700; color: #5B47A8">{{p.kind}}</span>
-<span class="card-t sg" style="font-size: 22px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; transition: color .3s">{{p.name}}</span>
-<span style="font-size: 14px; line-height: 1.5; color: #3A2C66">{{p.line}}</span>
-</a>
-</sc-for>
-</div>
+<section class="k-sec k-plum" aria-labelledby="why-t">
+<div class="wrap eqp-why">
+<div><p class="eyebrow">Why it exists</p><h2 id="why-t" class="sg k-h2">Talent is everywhere. <span class="k-mark" style="--mk: #B9A6FF; --mkt: #1C1430"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">Opportunity isn’t.</span></span></h2></div>
+<div>
+<p class="k-p">My career started because a friend told me about an opportunity in a law lecture. One open door changed everything that came after it. Since 2020 I’ve tried to open doors for others: Digivention, Write to Win, and a career newsletter read by 900+ people.</p>
+<p class="k-p">But some people need more than a newsletter. Many LGBTQ+ Nigerians are shut out of the networks, mentorship and fair hiring that careers depend on, and too often they have to choose between being safe and being seen. In 2025, I co-founded EmpowerQ with Alexandria to change that.</p>
+<p class="k-p">We focus on what moves a career: jobs, skills, research that makes the case to employers, and a community where people don’t have to hide to get ahead.</p>
+<p class="sig">— Jeremiah Ajayi, Executive Director and Co-Founder</p>
 </div>
 </div>
 </section>
 
-<section style="background: #B9A6FF; color: #1C1430">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<h2 class="sg" style="margin: 0 0 40px; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">Our first year, so far.</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; border-top: 2px solid #1C1430; padding-top: 28px">
-<sc-for list="{{impact}}" as="m" hint-placeholder-count="4">
-<div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(56px, 6vw, 92px); line-height: 0.85; letter-spacing: -0.065em">{{m.big}}</p><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #2E2350">{{m.label}}</p></div>
-</sc-for>
-</div>
-<div style="margin-top: 56px; padding-top: 28px; border-top: 2px solid #1C1430">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700">Partners we’ve worked with</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px">
-<sc-for list="{{partners}}" as="l" hint-placeholder-count="11"><li style="aspect-ratio: 3 / 2; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="{{l.src}}" alt="{{l.alt}}" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain"></li></sc-for>
-</ul>
+<section class="k-sec" style="background: #E9E2FF; color: #1C1430" aria-labelledby="build-t">
+<div class="wrap">
+<div class="k-head"><p class="eyebrow" style="color: #3B2C6E">What we’re building</p><h2 id="build-t" class="sg k-h2">Practical support at every step of <span class="k-mark" style="--mk: #B9A6FF"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">a career.</span></span></h2></div>
+<div class="eqp-ll">
+<article class="k-stk eqp-ll-c"><span class="k-tag" style="color: #FFC83D">Flagship · Social Shifters 2026 finalist</span><h3 class="sg k-h2" style="font-size: clamp(34px, 3.6vw, 54px)">Lavender Ladder</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D6CCFF">An employment programme built for progression, not just placement. Participants get mentorship from working professionals, career coaching and a route into recruiter-ready talent pools with employers who want to hire inclusively.</p>
+<figure class="k-fig"><video src="/_blob/040da4b995e99035dda7fe59d67b1464" poster="/_blob/326c0bfe0ddf15444f246261858a4af6" autoplay muted loop playsinline aria-label="A walkthrough of the Lavender Ladder app: the home screen, your ladder from Explore to Earn, opportunities, the Career Bestie AI coach, events and support"></video><figcaption style="text-align: center; color: #D6CCFF">The Lavender Ladder app, where participants track their next move</figcaption></figure></article>
+<div class="eqp-progs"><sc-for list="{{programs}}" as="p" hint-placeholder-count="8"><a class="k-stk" href="{{p.href}}" style="color: #1C1430"><span class="k-kicker">{{p.kind}}</span><span class="sg k-h3" style="font-size: 21px">{{p.name}}</span><span style="font-size: 15px; line-height: 1.5">{{p.line}}</span></a></sc-for></div>
 </div>
 </div>
 </section>
 
-<section id="involved" style="background: #F2EFE8; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #5B47A8">Get involved</p>
-<h2 class="sg" style="margin: 0; max-width: 900px; font-weight: 700; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">There’s a door you can open.</h2>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 2px solid #111">
-<sc-for list="{{ways}}" as="w" hint-placeholder-count="5">
-<div style="padding: 28px 24px 32px 0; border-bottom: 1px solid #C9C3B6; display: flex; flex-direction: column; gap: 12px">
-<h3 class="sg" style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.05">{{w.h}}</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2D2B27">{{w.t}}</p>
-<a class="nd" href="{{w.href}}" style="margin-top: auto; font-weight: 700">{{w.cta}}</a>
-</div>
-</sc-for>
-</div>
-<p style="margin: 40px 0 0; max-width: 760px; font-size: 14px; line-height: 1.6; color: #45423C">We protect our community’s privacy. We never share participants’ details, and photos only show people who have agreed to be shown. EmpowerQ is registered in Nigeria as Career Growth Initiative for the Disadvantaged.</p>
+<section class="k-sec k-lav" aria-labelledby="yr-t">
+<div class="wrap">
+<h2 id="yr-t" class="sg k-h2">Our first year, <span class="k-mark" style="--mk: #1C1430; --mkt: #E9E2FF"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">so far.</span></span></h2>
+<div class="k-stats eqp-stats"><sc-for list="{{impact}}" as="m" hint-placeholder-count="4"><div class="k-stat"><b>{{m.big}}</b><span>{{m.label}}</span></div></sc-for></div>
+<p class="eyebrow eq-eyebrow" style="margin: clamp(48px, 6vw, 72px) 0 0">Partners we’ve worked with</p>
+<ul class="eqp-partners"><sc-for list="{{partners}}" as="l" hint-placeholder-count="11"><li><img src="{{l.src}}" alt="{{l.alt}}" loading="lazy"></li></sc-for></ul>
 </div>
 </section>
 
-<section style="background: #1C1430; color: #F1ECFF">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 152px) clamp(20px, 5vw, 28px) clamp(56px, 7vw, 88px)">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Want to open<br><span style="color: #B9A6FF">a door?</span></h2>
-<div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
-<a href="mailto:info@empowerqueer.org?subject=Supporting%20EmpowerQ" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; background: #B9A6FF; color: #1C1430; font-size: 17px; font-weight: 700">Contact EmpowerQ ↗</a>
-<a href="https://www.empowerqueer.org" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; border: 1.5px solid #B9A6FF; color: #F1ECFF; font-size: 17px; font-weight: 600">Visit EmpowerQ ↗</a>
-<a href="https://calendly.com/empowerqueer-info/30min" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; border: 1.5px solid #B9A6FF; color: #F1ECFF; font-size: 17px; font-weight: 600">Book career office hours</a>
-</div>
+<section id="involved" class="k-sec k-cream" aria-labelledby="inv-t" style="padding-bottom: clamp(110px, 12vw, 170px)">
+<div class="wrap">
+<div class="k-head"><p class="eyebrow">Get involved</p><h2 id="inv-t" class="sg k-h2">There’s a door <span class="k-mark" style="--mk: #B9A6FF"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">you can open.</span></span></h2></div>
+<div class="eqp-ways k-rot k-rot5"><sc-for list="{{ways}}" as="w" hint-placeholder-count="5"><a class="k-stk" href="{{w.href}}" style="color: #1C1430"><span class="sg k-h3">{{w.h}}</span><span style="font-size: 15.5px; line-height: 1.55">{{w.t}}</span><span class="k-go">{{w.cta}}</span></a></sc-for></div>
+<p class="eqp-note">We protect our community’s privacy. We never share participants’ details, and photos only show people who have agreed to be shown. EmpowerQ is registered in Nigeria as Career Growth Initiative for the Disadvantaged.</p>
 </div>
 </section>
-<!--NOBAND-->
+
+<section class="k-end eqp-end" aria-label="Get in touch with EmpowerQ">
+<span class="shp shp-flower k-end-s" aria-hidden="true"></span>
+<div class="wrap">
+<h2 class="sg k-end-t">Want to open <span class="k-mark" style="--mk: #B9A6FF; --mkt: #1C1430"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">a door?</span></span></h2>
+<div class="k-cta"><a class="eq-btn" style="background: #B9A6FF; color: #1C1430" href="mailto:info@empowerqueer.org?subject=Supporting%20EmpowerQ">Contact EmpowerQ ↗</a><a class="h-btn k-btn-line" href="https://www.empowerqueer.org">Visit EmpowerQ ↗</a><a class="h-btn k-btn-line" href="https://calendly.com/empowerqueer-info/30min">Book career office hours</a></div>
+<footer class="k-foot"><a class="sg k-brand" href="Home-B2.dc.html"><span aria-hidden="true" class="ct-mark">JA</span>Jeremiah Ajayi</a><span class="k-fnav"><a href="Site-Service-Positioning.dc.html">Positioning</a><a href="Site-Service-Launch.dc.html">Launches & GTM</a><a href="Site-Service-Content.dc.html">Content & storytelling</a><a href="Site-Work.dc.html">Work</a><a href="Site-Writing.dc.html">Writing</a><a href="Site-About.dc.html">About</a><a href="Site-EmpowerQ.dc.html">EmpowerQ</a><a href="Site-Contact.dc.html">Contact</a><a href="https://www.linkedin.com/in/jeremiah-ajayi/">LinkedIn</a><span>Lagos 🇳🇬 · {{time}} · © 2026</span></span></footer>
+</div>
+</section>
+<!--NOEND-->

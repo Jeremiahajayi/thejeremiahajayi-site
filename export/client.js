@@ -14,7 +14,7 @@
   function t() { try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; } }
   function tick() { document.querySelectorAll('[data-time]').forEach(function (el) { el.textContent = t(); }); }
   tick(); setInterval(tick, 30000);
-  function paint(o, on) { o.style.background = on ? '#111' : 'transparent'; o.style.color = on ? '#F2EFE8' : '#111'; o.style.borderColor = on ? '#111' : '#C9C3B6'; }
+  function paint(o, on) { if (o.hasAttribute('data-css')) return; o.style.background = on ? '#111' : 'transparent'; o.style.color = on ? '#F2EFE8' : '#111'; o.style.borderColor = on ? '#111' : '#C9C3B6'; }
   function apply(sec) {
     var f = sec.getAttribute('data-cur') || 'all';
     var inp = sec.querySelector('[data-search]'); var q = inp ? inp.value.trim().toLowerCase() : '';
@@ -45,6 +45,7 @@
         s('cta').textContent = d.cta; s('cta').setAttribute('href', d.href);
       });
     });
+    if (/^#(hiring|hire|role)$/i.test(location.hash)) { var hb = document.querySelector('button[data-door="3"]'); if (hb) hb.click(); }
   }
   // Close the mobile menu when a same-page link is used.
   var navT = document.getElementById('navt');
@@ -54,7 +55,7 @@
   // Scroll reveals: content eases up as it enters the screen.
   if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var SEL = 'section h2, section h3, section blockquote, section figure, section article, section li, section dl > div, section .card-l, section .path, section .row-x, section .door, section img';
-    var SKIP = '.img-rv, .ix, .h-hero, .site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k], .pc-media, .st-stage, .rs-fan, .qt, .tl, .ab-title';
+    var SKIP = '.img-rv, .ix, .h-hero, .site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k], .pc-media, .st-stage, .rs-fan, .qt, .tl, .ab-title, .wk-pl-media, .k-fan, .k-hs, .k-wall, .k-stk img, .sv-serp';
     var picked = [];
     document.querySelectorAll(SEL).forEach(function (el) {
       if (el.closest(SKIP)) return;
@@ -328,6 +329,28 @@
       r.addEventListener('mouseleave', function () { held = false; });
     });
     if (!CALM) timer = setInterval(function () { if (!held && !document.hidden && scrollY < innerHeight) setPeek((hi + 1) % hrows.length); }, 2800);
+    // The sky follows the time of day in Lagos: dawn, morning, noon, golden hour, dusk, night.
+    var skyL = hero.querySelector('[data-sky-label]');
+    var paintSky = function () {
+      var h = 12, m = 0;
+      try { var parts = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Africa/Lagos' }).formatToParts(new Date()); parts.forEach(function (x) { if (x.type === 'hour') h = +x.value % 24; if (x.type === 'minute') m = +x.value; }); } catch (e) {}
+      var t = h + m / 60, sky, label;
+      if (t >= 5.5 && t < 8) { sky = 'dawn'; label = '🌅 Sunrise in Lagos'; }
+      else if (t >= 8 && t < 12) { sky = 'morning'; label = '☀️ Morning in Lagos'; }
+      else if (t >= 12 && t < 15.5) { sky = 'noon'; label = '😎 Midday sun in Lagos'; }
+      else if (t >= 15.5 && t < 18.75) { sky = 'golden'; label = '🌇 Golden hour in Lagos'; }
+      else if (t >= 18.75 && t < 20.5) { sky = 'dusk'; label = '🌆 Dusk in Lagos'; }
+      else { sky = 'night'; label = '🌙 Night in Lagos'; }
+      var x, y;
+      if (t >= 6 && t <= 19) { var f = (t - 6) / 13; x = 46 + 50 * f; y = 70 - 60 * Math.sin(Math.PI * f); }
+      else { var n = ((t + 24 - 19) % 24) / 11; x = 50 + 44 * n; y = 26 - 14 * Math.sin(Math.PI * n); }
+      hero.setAttribute('data-sky', sky);
+      hero.style.setProperty('--sx', x.toFixed(1) + '%'); hero.style.setProperty('--sy', y.toFixed(1) + '%');
+      if (skyL) skyL.textContent = label;
+    };
+    var qs = /[?&]sky=(dawn|morning|noon|golden|dusk|night)/.exec(location.search);
+    if (qs) { hero.setAttribute('data-sky', qs[1]); var demo = { dawn: [50, 62], morning: [60, 24], noon: [72, 10], golden: [90, 40], dusk: [95, 66], night: [62, 14] }[qs[1]]; hero.style.setProperty('--sx', demo[0] + '%'); hero.style.setProperty('--sy', demo[1] + '%'); if (skyL) skyL.textContent = qs[1]; }
+    else { paintSky(); setInterval(paintSky, 60000); }
     var bub = hero.querySelector('.h-bub');
     if (bub) {
       var facts = []; try { facts = JSON.parse(bub.getAttribute('data-facts')); } catch (e) {}

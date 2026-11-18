@@ -1,289 +1,338 @@
-<section class="has-deco dot-bg" style="background-color: var(--cream); color: #111; overflow: hidden">
-<span class="deco shp shp-flower spin" aria-hidden="true" style="right: -110px; top: -110px; width: 340px; aspect-ratio: 1; background: var(--sun)"></span>
-<span class="deco deco-dsk shp shp-star floaty" aria-hidden="true" style="right: 22%; top: 70px; width: 64px; aspect-ratio: 1; background: var(--mint)"></span>
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 120px) clamp(20px, 5vw, 28px) clamp(40px, 5vw, 64px)">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #111">Work · 2018 to 2026</p>
-<h1 class="sg" style="margin: 0; max-width: 1120px; font-weight: 700; font-size: clamp(52px, 7.4vw, 116px); line-height: 0.92; letter-spacing: -0.058em">Eight years of making good products <span class="vpill" style="background: var(--sun)">easier to choose.</span></h1>
-<p style="margin: 32px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #2D2B27">Six projects in depth, then the rest. For each one: what I was responsible for, what I made, and what changed.</p>
-<div class="bento" role="list" aria-label="Results in brief">
-<div class="bt bt-1" role="listitem"><span class="pat-rays bt-rays" aria-hidden="true"></span><p class="sg bt-n">$3M+</p><p class="bt-l">pipeline influenced across my work</p></div>
-<div class="bt bt-2" role="listitem"><span class="shp shp-flower spin bt-sh" aria-hidden="true"></span><p class="sg bt-n">20+</p><p class="bt-l">product launches led</p></div>
-<div class="bt bt-3" role="listitem"><span class="shp shp-star floaty bt-sh" aria-hidden="true"></span><p class="sg bt-n">#1</p><p class="bt-l">above the BBC on Google for Stears</p></div>
-<div class="bt bt-4" role="listitem"><span class="pat-tri bt-tri" aria-hidden="true"></span><p class="sg bt-n">270+</p><p class="bt-l">media pickups for one launch</p></div>
+
+<style>
+.wk-hero .k-h1{max-width:13ch}
+.wk-fan{height:clamp(320px,34vw,500px)}
+.wk-fan img{object-fit:cover}
+.wk-fan .f1{left:4%;top:4%;width:70%;aspect-ratio:16/10;transform:rotate(-6deg)}
+.wk-fan .f2{right:0;top:30%;width:58%;aspect-ratio:16/10;transform:rotate(5deg);z-index:1}
+.wk-fan .f3{left:16%;bottom:0;width:40%;aspect-ratio:4/5;transform:rotate(-2deg);z-index:2}
+.wk-fan:hover .f1{transform:rotate(-9deg) translate(-10px,-6px)}.wk-fan:hover .f2{transform:rotate(8deg) translate(10px,0)}.wk-fan:hover .f3{transform:rotate(-4deg) translateY(8px)}
+.wk-fan .k-badge{right:6%;top:-4%;width:118px;height:118px;background:#FF5A2A;color:#111;z-index:3}
+.wk-sheet{position:relative;z-index:2;margin-top:-34px;border-radius:clamp(24px,3.4vw,48px) clamp(24px,3.4vw,48px) 0 0;background:#111;color:#F2EFE8;padding:clamp(36px,4vw,56px) 0 clamp(36px,4vw,52px)}
+.wk-sheet .eyebrow{color:#8A867E}
+.wk-jumps{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}
+.wk-jumps a{flex:none;display:flex;align-items:center;gap:10px;min-height:52px;padding:0 18px 0 8px;border-radius:999px;border:1.5px solid #3A3934;color:#F2EFE8;text-decoration:none;font-weight:700;font-size:14.5px;transition:background .25s,color .25s,border-color .25s}
+.wk-jumps a b{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;font:700 13px 'Space Grotesk',system-ui,sans-serif;color:#111}
+.wk-jumps a:nth-child(5n+1) b{background:#FFC83D}.wk-jumps a:nth-child(5n+2) b{background:#FF5A2A}.wk-jumps a:nth-child(5n+3) b{background:#8FE3B0}.wk-jumps a:nth-child(5n+4) b{background:#FF8FB6}.wk-jumps a:nth-child(5n+5) b{background:#B9A6FF}
+.wk-jumps a span{font-weight:500;opacity:.6}
+.wk-jumps a:hover{background:#F2EFE8;color:#111;border-color:#F2EFE8}
+/* Stears on the work page reuses the homepage tabs */
+.wk-stears{padding:clamp(48px,6vw,80px) 0 clamp(72px,9vw,128px);background:#111}
+.wk-stears .pc-stears{margin-top:0}
+.wk-st-more{margin-top:clamp(28px,3vw,44px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,3vw,44px);align-items:start}
+.wk-st-more .k-fig figcaption{color:#9DB8B0}
+.wk-st-q{display:grid;gap:22px}
+.wk-st-q .k-quote:nth-child(2){transform:rotate(1.2deg);background:#8FE3B0}
+.wk-cited{margin:0;font-size:14px;color:#9DB8B0}
+.wk-st-res{margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.wk-st-res div{padding:16px;border-radius:16px;background:#123A3F}
+.wk-st-res b{display:block;font:700 clamp(32px,3vw,46px)/.9 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.05em;color:#8FE3B0}
+.wk-st-res span{display:block;margin-top:8px;font-size:13.5px;line-height:1.4;color:#CFE3DC}
+/* Certn */
+.wk-press{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.wk-press span{padding:5px 12px;border-radius:999px;background:#111;color:#FFF5D9;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.wk-cn-fan{height:clamp(300px,30vw,440px);margin:clamp(28px,3.4vw,48px) 0}
+.wk-cn-fan img{width:46%;aspect-ratio:1600/981;object-fit:cover}
+.wk-cn-fan .f1{left:0;top:12%;transform:rotate(-6deg)}.wk-cn-fan .f2{left:27%;top:0;z-index:1;transform:rotate(1deg)}.wk-cn-fan .f3{right:0;top:16%;transform:rotate(7deg)}
+.wk-cn-fan:hover .f1{transform:rotate(-10deg) translateX(-14px)}.wk-cn-fan:hover .f2{transform:translateY(-12px) scale(1.04)}.wk-cn-fan:hover .f3{transform:rotate(11deg) translateX(14px)}
+.wk-270{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 24px}
+.wk-270 .k-big{font-size:clamp(88px,11vw,180px)}
+.wk-270 .k-pills>*{box-shadow:3px 3px 0 #111}
+/* launches */
+.wk-log{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,3vw,40px);align-items:start;margin-top:clamp(28px,3vw,44px)}
+/* Ask AI */
+.wk-ai-media{position:relative}
+.wk-ai-media .k-shot{transform:rotate(1.5deg)}
+.wk-ai-media .k-chat{position:absolute;left:-28px;bottom:-40px;width:min(380px,80%);margin:0;padding:0}
+.wk-record{display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;margin-top:clamp(56px,6vw,80px)}
+.wk-record .k-big{font-size:clamp(80px,10vw,160px)}
+.wk-record p{margin:0;max-width:30ch;font:600 clamp(19px,1.8vw,24px)/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+.wk-touch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.wk-touch a{display:flex;align-items:center;gap:14px}
+.wk-touch a b{font:700 15px 'Space Grotesk',system-ui,sans-serif;opacity:.6}
+.wk-touch a span{display:flex;flex-direction:column;gap:2px}
+.wk-touch a span span{font-size:13.5px;opacity:.75}
+.wk-touch a i{margin-left:auto;font-style:normal;font-size:20px}
+/* engine */
+.wk-hub{margin:clamp(32px,4vw,56px) 0;padding:clamp(24px,3vw,40px);border-radius:28px;border:1.5px dashed rgba(14,42,46,.5)}
+.wk-hub .k-pills{justify-content:center}
+.wk-hub .k-pills.svc>*{background:#0E2A2E !important;color:#EAF6F1;border-color:#0E2A2E}
+.wk-en-imgs{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:22px;align-items:start}
+.wk-en-imgs .k-fig:nth-child(2){margin-top:40px}
+.wk-en-imgs .k-shot{transform:rotate(-1deg)}
+.wk-en-imgs .k-fig:nth-child(2) .k-shot{transform:rotate(1.5deg)}
+.wk-en-res{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(24px,3vw,44px);align-items:start;margin-top:clamp(36px,4vw,56px)}
+.wk-ksa{height:clamp(280px,26vw,360px)}
+.wk-ksa img{width:40%;aspect-ratio:4/5;object-fit:cover}
+.wk-ksa .f1{left:2%;top:10%;transform:rotate(-7deg)}.wk-ksa .f2{left:30%;top:0;z-index:2}.wk-ksa .f3{right:2%;top:12%;transform:rotate(7deg)}
+.wk-en-big{margin-top:clamp(36px,4vw,56px);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px;align-items:stretch}
+.wk-en-big .k-big{font-size:clamp(48px,5vw,84px)}
+.wk-en-big .s-ink .k-big{font-size:clamp(64px,7vw,116px);color:#8FE3B0}
+.wk-pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.wk-pl p{margin:0;font-size:16px;line-height:1.55}
+.wk-pl-media{display:grid;gap:12px;margin-top:8px}
+.wk-pl-media.two{grid-template-columns:1fr 1fr;align-items:start}
+.wk-pl-media img{aspect-ratio:4/3;object-fit:cover;object-position:top;box-shadow:none}
+.wk-pl-media:not(.two) img{aspect-ratio:16/9}
+.wk-pl-media.two img:nth-child(2){transform:rotate(2deg)}
+.wk-pl .wk-pl-cap{font-size:13.5px;opacity:.8;margin-top:12px}
+/* Xofu */
+.wk-xq{margin:8px 0 0;font-weight:700;font-size:clamp(64px,11vw,184px);line-height:.88;letter-spacing:-.065em}
+.wk-xq span{color:#C23A0E;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.1em;text-decoration-color:#FFC83D}
+.wk-xf{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,56px);align-items:center;margin-top:clamp(32px,4vw,56px)}
+.wk-xf-fan{height:clamp(320px,32vw,460px)}
+.wk-xf-fan .f1{left:0;top:0;width:74%;z-index:1}.wk-xf-fan .f2{right:0;top:22%;width:46%;transform:rotate(4deg)}.wk-xf-fan .f3{left:28%;bottom:0;width:34%;transform:rotate(-5deg);z-index:2}
+.wk-ctr{display:flex;align-items:flex-end;gap:22px;height:220px;margin:14px 0 10px;padding:0 6px;border-bottom:2px solid #111}
+.wk-ctr div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;height:100%}
+.wk-ctr b{font:700 30px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.04em}
+.wk-ctr i{display:block;width:100%;border-radius:12px 12px 0 0;border:1.5px solid #111;border-bottom:0;transform-origin:bottom;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+[data-inview].in .wk-ctr i{transform:none}
+.wk-ctr-l{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;opacity:.75}
+/* all projects */
+.wk-all .k-head{align-items:end}
+.wk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:20px}
+.wk-grid .k-stk{min-height:250px}
+.wk-grid .k-big{font-size:clamp(46px,4.4vw,64px)}
+.wk-grid .card-t{font:700 19px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+.wk-grid .k-stk.is-deep{background:#111;color:#F2EFE8}
+.wk-grid .k-stk.is-deep .k-tag{color:#FFC83D}
+@media (max-width:1080px){.wk-en-big{grid-template-columns:1fr 1fr}.wk-pillars{grid-template-columns:1fr}.wk-st-more,.wk-log,.wk-en-imgs,.wk-en-res,.wk-xf{grid-template-columns:1fr}.wk-st-res{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-touch{grid-template-columns:1fr}.wk-ai-media .k-chat{position:relative;left:0;bottom:0;margin-top:18px;width:100%}}
+@media (max-width:640px){.wk-fan{height:300px}.wk-cn-fan{height:220px}.wk-xf-fan{height:260px}.wk-ksa{height:240px}.wk-en-imgs .k-fig:nth-child(2){margin-top:0}}
+</style>
+<section class="k-hero k-cream wk-hero">
+<div class="k-rays" aria-hidden="true"></div>
+<div class="wrap k-hero-g">
+<div>
+<p class="eyebrow">Work · 2018 to 2026</p>
+<h1 class="sg k-h1">Eight years of making good products <span class="k-mark" style="--mk: #FF5A2A; --mkt: #111"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">easier to choose.</span></span></h1>
+<p class="k-lede">Six projects in depth, then the rest. For each one: what I was responsible for, what I made, and what changed.</p>
+<div class="k-cta"><a class="btn-o h-btn" href="#stears">Start with Stears <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#index">All projects <span class="arr" aria-hidden="true">→</span></a></div>
+</div>
+<div class="k-fan wk-fan" aria-hidden="true">
+<img class="f1" src="/_blob/fc39c3db9800ffc1933e240a5186b657" alt="">
+<img class="f2" src="/_blob/b231344f1e5c3214a838fe77d08c503f" alt="">
+<img class="f3" src="/_blob/11081f461253fb84fb4a4bb9bf11f88b" alt="">
+<span class="k-badge">Six cases<br>in depth</span>
 </div>
 </div>
-<div class="wall-wrap" style="padding: 8px 0 clamp(56px, 7vw, 88px); overflow: hidden">
-<div class="wall" aria-label="Launch and campaign creative from the projects on this page">
-<sc-for list="{{wall}}" as="w" hint-placeholder-count="11">
-<img class="shot" src="{{w.src}}" alt="{{w.alt}}" loading="lazy" style="width: {{w.w}}px; height: {{w.h}}px; object-fit: cover; flex: none; background: #E6E1D6">
-</sc-for>
+<div class="wrap"><div class="k-stats"><sc-for list="{{headline}}" as="h" hint-placeholder-count="4"><div class="k-stat"><b>{{h.big}}</b><span>{{h.label}}</span></div></sc-for></div></div>
+</section>
+
+<div class="wk-sheet">
+<div class="k-wall" aria-label="Launch and campaign creative from the projects on this page"><div class="k-wall-t">
+<sc-for list="{{wall}}" as="w" hint-placeholder-count="12"><img src="{{w.src}}" alt="{{w.alt}}" loading="lazy"></sc-for>
+</div></div>
+<nav class="wrap" aria-label="Case studies on this page" style="margin-top: 22px"><p class="eyebrow">Jump to a case</p><div class="wk-jumps">
+<sc-for list="{{jumps}}" as="j" hint-placeholder-count="6"><a href="{{j.href}}"><b>{{j.n}}</b>{{j.t}}<span>{{j.s}}</span></a></sc-for>
+<a href="#index"><b>+</b>All projects</a>
+</div></nav>
 </div>
-<p style="max-width: 1360px; margin: 18px auto 0; padding: 0 clamp(20px, 5vw, 28px); font-size: 13px; color: #6B675F">Real work from Stears, RemotePass and Xofu. Hover to pause.</p>
+
+<section class="wk-stears" aria-labelledby="st-title">
+<div class="wrap">
+<article class="pc pc-stears" id="stears" aria-labelledby="st-title">
+<div class="st-head">
+<p class="k-cmeta"><span class="k-cn">01</span><span>Stears Elections · 2023</span><span class="k-tag">Content & storytelling</span><a href="Site-Service-Content.dc.html">The service →</a></p>
+<h2 id="st-title" class="sg pc-title st-title">How a new election tracker beat the BBC on Google</h2>
+</div>
+<div class="st-body">
+<div class="st-copy">
+<div class="st-tabs" role="tablist" aria-label="The Stears case">
+<button type="button" role="tab" id="st-t0" aria-controls="st-p0" aria-selected="true" data-st="0">The challenge</button>
+<button type="button" role="tab" id="st-t1" aria-controls="st-p1" aria-selected="false" tabindex="-1" data-st="1">What I did</button>
+<button type="button" role="tab" id="st-t2" aria-controls="st-p2" aria-selected="false" tabindex="-1" data-st="2">The result</button>
+</div>
+<div class="st-panel" role="tabpanel" id="st-p0" aria-labelledby="st-t0"><p>Stears rebuilt Nigeria’s first real-time election tracker for the 2023 general election. My job was to make sure millions of Nigerians could find it, and trust it, when results started coming in.</p><p class="st-role">I led SEO and content strategy, working across editorial, engineering, data and design.</p></div>
+<div class="st-panel" role="tabpanel" id="st-p1" aria-labelledby="st-t1" hidden><ol class="st-steps"><sc-for list="{{stears.did}}" as="d" hint-placeholder-count="4"><li>{{d.t}}</li></sc-for></ol></div>
+<div class="st-panel" role="tabpanel" id="st-p2" aria-labelledby="st-t2" hidden><div class="st-results"><p><span class="sg st-big st-hot">#1</span><span>on Google for “2023 election results”, above the BBC, CNN and INEC</span></p><p><span class="sg st-big">1.9M+</span><span>users, 52% of them from organic search</span></p></div></div>
+</div>
+<div class="st-stage" aria-hidden="true">
+<div class="st-v is-on" data-v="0"><img src="/_blob/fc39c3db9800ffc1933e240a5186b657" alt="" loading="lazy"><span class="st-chip">The Stears Elections results page</span></div>
+<div class="st-v" data-v="1"><div class="st-dots"><span class="st-dots-on"></span></div><p class="st-dots-n"><b class="sg">10,000+</b> candidate pages, covering every candidate for governor, senate and president</p></div>
+<div class="st-v" data-v="2"><img class="st-serp" src="/_blob/97c7a07c9e01d68334e57d95e5d31f53" alt="" loading="lazy"><ol class="st-rank"><li class="st-me"><b>#1</b> Stears Elections</li><li>BBC</li><li>CNN</li><li>INEC</li></ol><span class="st-chip">Google, “2023 election results”</span></div>
+</div>
+</div>
+<div class="wk-st-res"><sc-for list="{{stears.results}}" as="r" hint-placeholder-count="4"><div><b>{{r.big}}</b><span>{{r.label}}</span></div></sc-for></div>
+<div class="wk-st-more">
+<div class="k-g2">
+<figure class="k-fig"><img class="k-shot" src="/_blob/97c7a07c9e01d68334e57d95e5d31f53" alt="Google results for 2023 election results: Stears ranks first, above the BBC, Wikipedia, INEC and Al Jazeera" loading="lazy"><figcaption>Google results for “2023 election results”, captured October 2026. Stears still ranks first.</figcaption></figure>
+<figure class="k-fig"><img class="k-shot" src="/_blob/0db9b2b88aa9a3c9ea449acc5de5c099" alt="A Stears Elections candidate profile page" loading="lazy"><figcaption>A candidate profile, one of 10,000+</figcaption></figure>
+</div>
+<div class="wk-st-q">
+<figure class="k-quote"><blockquote>“I got a front-row seat to how brilliant, resourceful, and proactive Jeremiah was.”</blockquote><figcaption><b>Adetoro Adeniran</b> · Stears</figcaption></figure>
+<figure class="k-quote"><blockquote>“You did a great job with the marketing plan for the FX Monitor.”</blockquote><figcaption><b>Yvette Dimiri</b> · Stears</figcaption></figure>
+<p class="wk-cited">{{stears.cited}}</p>
+</div>
+</div>
+</article>
 </div>
 </section>
 
-<nav aria-label="Case studies on this page" style="position: sticky; top: 0; z-index: 5; background: #FFFFFF; border-bottom: 1px solid #E6E1D6">
-<div class="hscroll" style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 28px); display: flex; gap: 0">
-<sc-for list="{{jumps}}" as="j" hint-placeholder-count="5">
-<a class="jump" href="{{j.href}}" style="flex: none; display: flex; align-items: baseline; gap: 10px; min-height: 56px; padding: 16px 20px; color: #111; font-size: 15px; font-weight: 600; border-right: 1px solid #E6E1D6; box-sizing: border-box"><span class="sg" style="font-weight: 700; color: #111">{{j.n}}</span><span>{{j.t}}</span><span style="font-size: 12px; font-weight: 500; opacity: .6">{{j.s}}</span></a>
-</sc-for>
-<a class="jump" href="#index" style="flex: none; display: flex; align-items: center; min-height: 56px; padding: 16px 20px; color: #111; font-size: 15px; font-weight: 600; box-sizing: border-box">All projects ↓</a>
+<section id="certn" class="k-case k-orange" aria-labelledby="cn-t">
+<span class="shp shp-star k-shape" aria-hidden="true" style="right: -60px; top: 40px; width: 200px; height: 200px; background: #FFC83D"></span>
+<div class="wrap">
+<p class="k-cmeta"><span class="k-cn">02</span><span>RemotePass × Certn · 2024</span><span class="k-tag">Launches & go-to-market</span><a href="Site-Service-Launch.dc.html">The service →</a></p>
+<p class="wk-press"><span>Press release</span><span>Dubai, UAE</span><span>Global release</span></p>
+<h2 id="cn-t" class="sg k-ct" style="max-width: 20ch; font-size: clamp(36px, 4.6vw, 76px)">RemotePass partners with Certn to launch employee background checks in over 190 countries</h2>
+<p class="k-p" style="margin-top: 22px">I joined RemotePass just after a $5.5M raise. Within weeks I was asked to launch its biggest partnership yet: background screening from Certn, built into the platform, to make RemotePass a safer choice for hiring around the world.</p>
+<div class="k-fan wk-cn-fan" role="group" aria-label="Launch visuals">
+<sc-for list="{{certn.mosaic}}" as="m" hint-placeholder-count="3"><img class="f{{m.i}}" src="{{m.src}}" alt="{{m.alt}}" loading="lazy"></sc-for>
 </div>
-</nav>
-
-<section id="stears" style="background: var(--night); color: #F2EFE8; scroll-margin-top: 56px">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg num-b shp shp-flower" style="background: var(--sun); color: #111">01</span><span style="color: #F2EFE8">Stears Elections · 2023</span><span>Content & storytelling</span><a class="nl" href="Site-Service-Content.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px 72px; align-items: start">
-<div class="reveal">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(42px, 5vw, 78px); line-height: 0.95; letter-spacing: -0.055em">How a new election tracker <span style="color: #F2EFE8">beat the BBC</span> on Google.</h2>
-<p style="margin: 28px 0 0; font-size: 18px; line-height: 1.65; color: #D8D3C9">Stears rebuilt Nigeria’s first real-time election tracker for the 2023 general election. My job was to make sure millions of Nigerians could find it, and trust it, when results started coming in.</p>
+<p style="margin: 0 0 32px; font-size: 14px">Launch visuals by the RemotePass design team. My part: the positioning, messaging, copy and launch plan.</p>
+<div class="wk-270"><span class="k-big">270+</span><div><p style="margin: 0 0 10px; font-weight: 700">media pickups, including</p><div class="k-pills"><span>Yahoo Finance</span><span>Fox</span><span>NBC</span></div></div></div>
+<p class="k-p" style="margin-top: 18px">The launch opened enterprise conversations in regulated industries like fintech and healthtech.</p>
+<div class="k-g4 k-rot" style="margin-top: clamp(32px, 4vw, 48px)">
+<sc-for list="{{certn.did}}" as="d" hint-placeholder-count="4"><div class="k-stk"><span class="k-tag">{{d.h}}</span><span style="font-size: 16px; line-height: 1.55">{{d.t}}</span></div></sc-for>
 </div>
-<figure class="reveal" style="margin: 0">
-<img class="shot" src="/_blob/97c7a07c9e01d68334e57d95e5d31f53" alt="Google results for 2023 election results: Stears ranks first, above the BBC, Wikipedia, INEC and Al Jazeera" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 810 / 754; background: #1C1C1B">
-<figcaption style="margin-top: 12px; font-size: 13px; color: #B5B0A6">Google results for “2023 election results”, captured October 2026. Stears still ranks first.</figcaption>
-</figure>
-</div>
-<div style="margin-top: clamp(45px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 72px; align-items: center">
-<div>
-<p class="sg" data-scrub="dots" style="margin: 0; font-weight: 700; font-size: clamp(72px, 9vw, 148px); line-height: 0.82; letter-spacing: -0.07em; color: #F2EFE8; font-variant-numeric: tabular-nums">10,000+</p>
-<p style="margin: 20px 0 0; max-width: 460px; font-size: 18px; line-height: 1.6; color: #D8D3C9">programmatic candidate pages, covering every candidate for governor, senate and president. The largest digital repository of election candidate data in Nigeria at the time.</p>
-<p style="margin: 14px 0 0; font-size: 13px; color: #B5B0A6">Each dot is 10 pages. Keep scrolling to light them up.</p>
-</div>
-<div class="dots-g" data-dots role="img" aria-label="A grid of 1,000 dots, each standing for 10 candidate pages" style="width: 100%; max-width: 620px; aspect-ratio: 40 / 25; justify-self: end"><span class="dots-lit"></span><span class="dots-edge"></span></div>
-</div>
-<ol style="margin: clamp(45px, 8vw, 96px) 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
-<sc-for list="{{stears.did}}" as="d" hint-placeholder-count="4"><li style="padding: 24px 24px 28px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 15px; font-weight: 700; color: #F2EFE8">{{d.n}}</span><span style="display: block; margin-top: 10px; font-size: 16px; line-height: 1.6; color: #E8E4DC">{{d.t}}</span></li></sc-for>
-</ol>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 16px; align-items: start">
-<figure style="margin: 0"><img class="shot" src="/_blob/fc39c3db9800ffc1933e240a5186b657" alt="Stears Elections presidential results page, with vote counts and a timeline of past elections" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1600 / 996; background: #F2EFE8"><figcaption style="margin-top: 12px; font-size: 13px; color: #B5B0A6">The presidential results page, with declared and provisional results</figcaption></figure>
-<figure style="margin: 0"><img class="shot" src="/_blob/0db9b2b88aa9a3c9ea449acc5de5c099" alt="A Stears Elections candidate profile page" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1600 / 1133; background: #F2EFE8"><figcaption style="margin-top: 12px; font-size: 13px; color: #B5B0A6">A candidate profile, one of 10,000+</figcaption></figure>
-</div>
-<div style="margin-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; padding-top: 28px; border-top: 2px solid #F2EFE8">
-<sc-for list="{{stears.results}}" as="r" hint-placeholder-count="4"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(44px, 4.4vw, 64px); line-height: 0.86; letter-spacing: -0.06em">{{r.big}}</p><p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #B5B0A6">{{r.label}}</p></div></sc-for>
-</div>
-<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 24px 56px; align-items: end; justify-content: space-between">
-<blockquote style="margin: 0; max-width: 760px"><p class="sg" style="margin: 0; font-size: clamp(24px, 2.4vw, 34px); font-weight: 500; line-height: 1.2; letter-spacing: -0.03em">“I got a front-row seat to how brilliant, resourceful, and proactive Jeremiah was.”</p><footer style="margin-top: 14px; font-size: 14px; color: #B5B0A6"><strong style="color: #F2EFE8">Adetoro Adeniran</strong> · Stears</footer></blockquote>
-<div style="max-width: 420px"><blockquote style="margin: 0"><p class="sg" style="margin: 0; font-size: 20px; font-weight: 500; line-height: 1.25; letter-spacing: -0.02em">“You did a great job with the marketing plan for the FX Monitor.”</p><footer style="margin-top: 10px; font-size: 14px; color: #B5B0A6"><strong style="color: #F2EFE8">Yvette Dimiri</strong> · Stears</footer></blockquote><p style="margin: 20px 0 0; font-size: 14px; font-weight: 600; color: #B5B0A6">{{stears.cited}}</p></div>
-</div>
-</div>
-</section>
-<section id="certn" style="background: #F2EFE8; color: #111; scroll-margin-top: 56px">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--mint); color: #111">02</span><span style="color: #111">RemotePass × Certn · 2024</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
-<div style="margin-top: 48px; padding: 28px 0 32px; border-top: 6px solid #111; border-bottom: 1px solid #111">
-<p style="margin: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase"><span>Press release</span><span style="color: #6B675F">Dubai, UAE</span><span style="color: #6B675F">Global release</span></p>
-<h2 class="sg reveal" style="margin: 18px 0 0; max-width: 1180px; font-weight: 700; font-size: clamp(36px, 4.8vw, 72px); line-height: 0.98; letter-spacing: -0.05em">RemotePass partners with Certn to launch employee background checks in over 190 countries</h2>
-</div>
-<p style="margin: 28px 0 0; max-width: 760px; font-size: 18px; line-height: 1.65; color: #2D2B27">I joined RemotePass just after a $5.5M raise. Within weeks I was asked to launch its biggest partnership yet: background screening from Certn, built into the platform, to make RemotePass a safer choice for hiring around the world.</p>
-<div style="margin-top: 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
-<sc-for list="{{certn.mosaic}}" as="m" hint-placeholder-count="3">
-<img class="shot" src="{{m.src}}" alt="{{m.alt}}" loading="lazy" style="width: 100%; height: auto; aspect-ratio: {{m.ratio}}; object-fit: cover; background: #E6E1D6">
-</sc-for>
-</div>
-<p style="margin: 14px 0 0; font-size: 13px; color: #6B675F">Launch visuals by the RemotePass design team. My part: the positioning, messaging, copy and launch plan.</p>
-<div style="margin-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px 72px; align-items: start">
-<div>
-<p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(96px, 13vw, 210px); line-height: 0.8; letter-spacing: -0.075em; color: #111">270+</p>
-<p style="margin: 20px 0 0; font-size: 20px; line-height: 1.5">media pickups, including</p>
-<p class="sg" style="margin: 6px 0 0; font-size: clamp(24px, 2.4vw, 34px); font-weight: 600; letter-spacing: -0.03em">{{certn.outlets}}</p>
-<p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: #45423C">The launch opened enterprise conversations in regulated industries like fintech and healthtech.</p>
-</div>
-<ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
-<sc-for list="{{certn.did}}" as="d" hint-placeholder-count="4"><li style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid #C9C3B6"><span class="sg" style="font-size: 17px; font-weight: 700">{{d.h}}</span><span style="font-size: 16px; line-height: 1.6; color: #2D2B27">{{d.t}}</span></li></sc-for>
-</ol>
-</div>
-<blockquote style="margin: clamp(56px, 7vw, 88px) 0 0; padding: clamp(32px, 4vw, 56px); border-radius: 18px; background: #111; color: #F2EFE8">
-<p class="sg" style="margin: 0; max-width: 1000px; font-size: clamp(30px, 3.6vw, 54px); font-weight: 600; line-height: 1.04; letter-spacing: -0.045em">“He doesn’t just blur the lines between Sales and Marketing—he obliterates them.”</p>
-<footer style="margin-top: 20px; font-size: 15px"><strong>Wesley Hattingh</strong> · RemotePass</footer>
-</blockquote>
+<figure class="k-quote" style="margin-top: clamp(40px, 5vw, 64px); max-width: 860px; background: #111; color: #FFF5D9; box-shadow: 6px 6px 0 #FFC83D"><blockquote>“He doesn’t just blur the lines between Sales and Marketing—he obliterates them.”</blockquote><figcaption><b>Wesley Hattingh</b> · RemotePass</figcaption></figure>
 </div>
 </section>
 
-<section id="launches" style="background: #FFFFFF; color: #111; scroll-margin-top: 56px; overflow: hidden">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px) 0">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #E6E1D6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--blush); color: #111">03</span><span style="color: #111">RemotePass · 2024–25</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
-<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 28px 72px; align-items: end; justify-content: space-between">
-<h2 class="sg reveal" style="margin: 0; max-width: 820px; font-weight: 700; font-size: clamp(42px, 5vw, 78px); line-height: 0.95; letter-spacing: -0.055em">After Certn, a launch <span style="color: #111">every few weeks.</span></h2>
-<p style="margin: 0; max-width: 440px; font-size: 18px; line-height: 1.6; color: #2D2B27">I led GTM and product positioning across EMEA, North America and APAC, and turned launches into a repeatable system that product, sales and partners could rely on.</p>
+<section id="launches" class="k-case k-cream" aria-labelledby="ln-t">
+<div class="wrap">
+<p class="k-cmeta"><span class="k-cn">03</span><span>RemotePass · 2024–25</span><span class="k-tag">Launches & go-to-market</span><a href="Site-Service-Launch.dc.html">The service →</a></p>
+<div class="k-head" style="margin-bottom: 28px"><h2 id="ln-t" class="sg k-ct">After Certn, a launch <span class="k-mark" style="--mk: #FFC83D"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">every few weeks.</span></span></h2>
+<p class="k-sum">I led GTM and product positioning across EMEA, North America and APAC, and turned launches into a repeatable system that product, sales and partners could rely on.</p></div>
 </div>
+<div class="wrap"><div class="k-hs" tabindex="0" aria-label="Launch creative, scroll sideways">
+<sc-for list="{{launches.strip}}" as="l" hint-placeholder-count="6"><figure><img src="{{l.src}}" alt="{{l.alt}}" loading="lazy"><figcaption><b>{{l.name}}</b><span>{{l.when}}</span></figcaption></figure></sc-for>
+</div></div>
+<div class="wrap wk-log">
+<div class="k-stk s-ink"><span class="k-kicker" style="color: #FFC83D">Launch log</span><div class="k-pills"><sc-for list="{{launches.log}}" as="g" hint-placeholder-count="17"><span>{{g.t}}</span></sc-for></div><p style="margin: 6px 0 0; color: #C9C4BA">Features, integrations and market launches, in a year company revenue grew 134%, from $1.1M to $2.57M.</p></div>
+<div class="k-stk s-sun" data-inview style="transform: rotate(1deg)"><span class="k-kicker">Spotlight · Wafeq integration, March 2025</span><span class="k-big">103</span><span>pieces of coverage across the UAE and Saudi Arabia, including Khaleej Times, Gulf Today and Zawya.</span>
+<div class="k-bars"><div class="k-bar"><div><span>In Arabic</span><b>56</b></div><div class="k-bar-t"><div class="k-bar-f" style="--w: 54%; --c: #FF5A2A"></div></div></div><div class="k-bar"><div><span>In English</span><b>47</b></div><div class="k-bar-t"><div class="k-bar-f" style="--w: 46%; --c: #111"></div></div></div></div></div>
 </div>
-<div class="hscroll" tabindex="0" aria-label="Launch creative, scroll sideways" style="margin-top: 48px; padding: 0 max(28px, calc((100% - 1360px) / 2 + 28px)) 24px; display: flex; gap: 18px">
-<sc-for list="{{launches.strip}}" as="l" hint-placeholder-count="6">
-<figure style="flex: none; margin: 0; width: {{l.w}}px; max-width: 82vw">
-<img class="shot" src="{{l.src}}" alt="{{l.alt}}" loading="lazy" style="width: 100%; height: 240px; object-fit: cover; background: #E6E1D6">
-<figcaption style="margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><strong>{{l.name}}</strong><span style="color: #6B675F">{{l.when}}</span></figcaption>
-</figure>
-</sc-for>
-</div>
-<div style="max-width: 1360px; margin: 0 auto; padding: 32px clamp(20px, 5vw, 28px) clamp(56px, 10vw, 136px)">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 72px">
-<div>
-<p style="margin: 0 0 16px; font-size: 14px; font-weight: 700; color: #111">Launch log</p>
-<div class="chips-rot" style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{launches.log}}" as="g" hint-placeholder-count="16"><span style="padding: 9px 14px; border-radius: 999px; background: #F2EFE8; font-size: 14px; font-weight: 600">{{g.t}}</span></sc-for>
-</div>
-<p style="margin: 18px 0 0; font-size: 15px; line-height: 1.6; color: #45423C">Features, integrations and market launches, in a year company revenue grew 134%, from $1.1M to $2.57M.</p>
-</div>
-<div style="padding: 28px; border-radius: 16px; background: #111; color: #F2EFE8">
-<p style="margin: 0; font-size: 14px; font-weight: 700; color: #F2EFE8">Spotlight · Wafeq integration, March 2025</p>
-<p class="sg" style="margin: 14px 0 0; font-weight: 700; font-size: clamp(64px, 7vw, 104px); line-height: 0.84; letter-spacing: -0.065em">103</p>
-<p style="margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: #D8D3C9">pieces of coverage across the UAE and Saudi Arabia, including Khaleej Times, Gulf Today and Zawya.</p>
-<div aria-hidden="true" style="margin-top: 22px; display: flex; height: 18px; border-radius: 999px; overflow: hidden">
-<span class="grow" style="width: 54.4%; background: #FF5A2A"></span><span class="grow" style="width: 45.6%; background: #F2EFE8"></span>
-</div>
-<p style="margin: 10px 0 0; display: flex; justify-content: space-between; font-size: 14px; font-weight: 600"><span style="color: #FF5A2A">56 in Arabic</span><span>47 in English</span></p>
-</div>
-</div>
-<blockquote class="reveal" style="margin: clamp(56px, 7vw, 88px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px 48px; align-items: end"><p class="sg" style="margin: 0; font-size: clamp(28px, 3.2vw, 46px); font-weight: 600; line-height: 1.05; letter-spacing: -0.045em">“I think expectations from you are always so much but you deliver <span style="color: #111">without fail.</span>”</p><footer style="font-size: 15px"><strong>Shivani Saxena</strong> · RemotePass</footer></blockquote>
-<ol style="margin: clamp(56px, 7vw, 88px) 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); border-top: 2px solid #111">
-<sc-for list="{{launches.steps}}" as="s" hint-placeholder-count="4"><li style="padding: 24px 24px 28px 0; border-bottom: 1px solid #E6E1D6"><span class="sg" style="font-size: 56px; font-weight: 700; line-height: .9; letter-spacing: -0.06em; color: #111">{{s.n}}</span><span class="sg" style="display: block; margin-top: 12px; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #45423C">{{s.t}}</span></li></sc-for>
-</ol>
+<div class="wrap">
+<figure class="k-quote" style="margin-top: clamp(40px, 5vw, 64px); max-width: 860px; background: #FF8FB6"><blockquote>“I think expectations from you are always so much but you deliver without fail.”</blockquote><figcaption><b>Shivani Saxena</b> · RemotePass</figcaption></figure>
+<p class="eyebrow" style="margin-top: clamp(48px, 6vw, 80px)">How each launch ran</p>
+<ol class="k-steps"><sc-for list="{{launches.steps}}" as="s" hint-placeholder-count="4"><li data-n="{{s.n}}"><b>{{s.h}}</b><span>{{s.t}}</span></li></sc-for></ol>
 </div>
 </section>
-<section id="askai" style="background: var(--cream); color: #111; scroll-margin-top: 56px; overflow: hidden">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid rgba(17,17,17,.3); font-size: 14px; font-weight: 600; color: #3A1C10"><span class="sg num-b shp shp-flower" style="background: var(--lav); color: #111">04</span><span style="color: #111">RemotePass · Ask AI</span><span>Launches & go-to-market</span><a class="nd" href="Site-Service-Launch.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px 72px; align-items: center">
+
+<section id="askai" class="k-case k-sun" aria-labelledby="ai-t">
+<div class="wrap">
+<p class="k-cmeta"><span class="k-cn">04</span><span>RemotePass · Ask AI · 2025</span><span class="k-tag">Launches & go-to-market</span><a href="Site-Service-Launch.dc.html">The service →</a></p>
+<div class="k-hero-g" style="align-items: start">
 <div>
-<h2 class="sg reveal" style="margin: 0; font-weight: 700; font-size: clamp(44px, 5.4vw, 84px); line-height: 1.04; letter-spacing: -0.055em">Everyone was selling AI. <span style="background: #111; color: #F2EFE8; padding: 0 0.1em; border-radius: 0.08em; -webkit-box-decoration-break: clone; box-decoration-break: clone">We sold the answer.</span></h2>
-<p style="margin: 28px 0 0; max-width: 560px; font-size: 18px; line-height: 1.65; color: #1F120C">Ask AI was RemotePass’s newest feature, launched at the peak of the AI craze. Every brand in our category was making the same promise. I led the campaign around a different one: how easy it is to simply ask your workforce data a question.</p>
-<dl style="margin: 32px 0 0; display: grid; gap: 0; border-top: 2px solid #111">
-<sc-for list="{{askai.story}}" as="a" hint-placeholder-count="3"><div style="display: grid; grid-template-columns: minmax(0, 132px) minmax(0, 1fr); gap: 8px 20px; padding: 16px 0; border-bottom: 1px solid rgba(17,17,17,.25)"><dt style="font-size: 14px; font-weight: 700">{{a.h}}</dt><dd style="margin: 0; font-size: 16px; line-height: 1.6; color: #1F120C">{{a.t}}</dd></div></sc-for>
-</dl>
+<h2 id="ai-t" class="sg k-ct">Everyone was selling AI. <span class="k-mark" style="--mk: #111; --mkt: #FFC83D"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">We sold the answer.</span></span></h2>
+<p class="k-p" style="margin-top: 22px">Ask AI was RemotePass’s newest feature, launched at the peak of the AI craze. Every brand in our category was making the same promise. I led the campaign around a different one: how easy it is to simply ask your workforce data a question.</p>
+<dl class="pc-dl"><sc-for list="{{askai.story}}" as="a" hint-placeholder-count="3"><div><dt>{{a.h}}</dt><dd>{{a.t}}</dd></div></sc-for></dl>
 </div>
-<figure style="margin: 0; position: relative">
-<img class="shot" src="/_blob/b231344f1e5c3214a838fe77d08c503f" alt="The Ask AI launch page on remotepass.com: Get answers from your workforce data and let Ask AI do the rest, with the announcement video" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1600 / 734; background: #EDE6F2">
-<div class="lift2" style="position: relative; width: min(420px, 88%); margin: -12% 0 0 auto; border-radius: 20px; background: #111; color: #F2EFE8; padding: clamp(18px, 2.4vw, 26px); box-shadow: 0 40px 80px rgba(17,17,17,.3)">
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid #2B2A27; font-size: 13px; color: #B5B0A6"><span style="display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #F2EFE8"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #FF5A2A"></span>Ask AI</span><span>Questions from the launch page</span></div>
-<ul style="margin: 0; padding: 22px 0 6px; list-style: none; display: flex; flex-direction: column; gap: 12px">
-<sc-for list="{{askai.prompts}}" as="p" hint-placeholder-count="3"><li style="align-self: flex-end; max-width: 88%; padding: 14px 18px; border-radius: 18px 18px 4px 18px; background: #F2EFE8; color: #111; font-size: 16px; line-height: 1.45; font-weight: 500">{{p.t}}</li></sc-for>
-</ul>
-</div>
-<figcaption style="margin-top: 12px; font-size: 13px; color: #45423C">The launch page, and example questions from it.</figcaption>
+<figure class="k-fig wk-ai-media"><img class="k-shot" src="/_blob/b231344f1e5c3214a838fe77d08c503f" alt="The Ask AI launch page on remotepass.com: Get answers from your workforce data and let Ask AI do the rest, with the announcement video" loading="lazy">
+<ul class="k-chat" aria-label="Example questions from the launch page"><sc-for list="{{askai.prompts}}" as="p" hint-placeholder-count="3"><li>{{p.t}}</li></sc-for></ul>
 </figure>
 </div>
-<div style="margin-top: clamp(45px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px 72px; align-items: end">
-<div class="reveal">
-<p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(76px, 10vw, 160px); line-height: 0.8; letter-spacing: -0.07em">Record</p>
-<p class="sg" style="margin: 14px 0 0; max-width: 520px; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; line-height: 1.15; letter-spacing: -0.03em">MQL performance after the launch. The sales team was flooded with enquiries about the product.</p>
-</div>
-<div>
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700">One story, carried across every touchpoint</p>
-<div style="display: grid; gap: 10px">
-<sc-for list="{{askai.touch}}" as="t" hint-placeholder-count="3"><a class="path" href="{{t.href}}" style="display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 14px; background: {{t.bg}}; color: {{t.fg}}"><span class="sg" style="font-size: 15px; font-weight: 700; opacity: .6">{{t.n}}</span><span style="flex: 1; min-width: 0"><span style="display: block; font-size: 17px; font-weight: 700">{{t.h}}</span><span style="display: block; margin-top: 2px; font-size: 14px; opacity: .75">{{t.s}}</span></span><span class="path-go" style="font-weight: 700">{{t.go}}</span></a></sc-for>
-</div>
-<p style="margin: 14px 0 0; font-size: 13px; line-height: 1.5; color: #3A1C10">Video and visuals by the RemotePass team. My part: the angle, the story and the campaign.</p>
-</div>
-</div>
+<div class="wk-record"><span class="k-big">Record</span><p>MQL performance after the launch. The sales team was flooded with enquiries about the product.</p></div>
+<p class="eyebrow" style="margin-top: clamp(36px, 4vw, 52px)">One story, carried across every touchpoint</p>
+<div class="wk-touch"><sc-for list="{{askai.touch}}" as="t" hint-placeholder-count="3"><a class="k-stk" href="{{t.href}}" style="background: {{t.bg}}; color: {{t.fg}}"><b>{{t.n}}</b><span><strong>{{t.h}}</strong><span>{{t.s}}</span></span><i aria-hidden="true">{{t.go}}</i></a></sc-for></div>
+<p style="margin: 16px 0 0; font-size: 14px">Video and visuals by the RemotePass team. My part: the angle, the story and the campaign.</p>
 </div>
 </section>
-<section id="engine" style="background: var(--night); color: #F2EFE8; scroll-margin-top: 56px; overflow: hidden">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #3A3934; font-size: 14px; font-weight: 600; color: #B5B0A6"><span class="sg num-b shp shp-flower" style="background: var(--leaf); color: #FFFFFF">05</span><span style="color: #F2EFE8">RemotePass · 2024–25</span><span>Content & storytelling</span><a class="nl" href="Site-Service-Content.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
-<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 56px 72px; align-items: center">
-<div class="reveal">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(42px, 5vw, 76px); line-height: 0.95; letter-spacing: -0.055em">A content engine for global hiring, with <span style="color: #F2EFE8">an English–Arabic hub</span> for MENA.</h2>
-<p style="margin: 28px 0 0; font-size: 18px; line-height: 1.65; color: #D8D3C9">Organic search had to become a real acquisition channel. I built the strategy across every market we sold into. The MENA hub was one part of it, written for buyers expanding into the UAE and Saudi Arabia.</p>
+
+<section id="engine" class="k-case k-mint" aria-labelledby="en-t">
+<div class="wrap">
+<p class="k-cmeta"><span class="k-cn">05</span><span>RemotePass · 2024–25</span><span class="k-tag">Content & storytelling</span><a href="Site-Service-Content.dc.html">The service →</a></p>
+<div class="k-head" style="margin-bottom: 0"><h2 id="en-t" class="sg k-ct">A content engine that turned search into <span class="k-mark" style="--mk: #0E2A2E; --mkt: #8FE3B0"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">revenue.</span></span></h2>
+<p class="k-sum">RemotePass helps companies hire, manage and pay teams in 150+ countries. When I joined in early 2024, it had just raised $5.5M, but nothing tied content to leads, adoption or revenue. I built its first content strategy across the whole customer journey: how people find us, how they talk to sales, and why they stay.</p></div>
+<div class="wk-en-big">
+<div class="k-stk s-ink" style="transform: rotate(-1deg)"><span class="k-kicker" style="color: #8FE3B0">Q1 2025 alone</span><span class="k-big">$192K</span><span>in revenue from people who found RemotePass through search and social content, engaged and converted, with no ad spend.</span></div>
+<div class="k-stk" style="transform: rotate(.8deg)"><span class="k-big">174%</span><span>rise in organic user acquisition within a year</span></div>
+<div class="k-stk s-sun" style="transform: rotate(-.6deg)"><span class="k-big">159%</span><span>increase in organic traffic in the same year</span></div>
+<div class="k-stk s-blush" style="transform: rotate(1deg)"><span class="k-big">$500K+</span><span>pipeline influenced by content, in under a year</span></div>
 </div>
-<div aria-label="KSA Payroll campaign carousel" role="group" style="display: flex; justify-content: center; gap: 0; padding: 24px 0">
-<sc-for list="{{engine.posts}}" as="p" hint-placeholder-count="3">
-<img class="shot" src="{{p.src}}" alt="{{p.alt}}" loading="lazy" style="width: 34%; max-width: 210px; aspect-ratio: 1600 / 1985; object-fit: cover; margin: 0 -2%; transform: {{p.rot}} translateY({{p.y}}); background: #2A2926">
-</sc-for>
+<p class="eyebrow" style="margin-top: clamp(48px, 6vw, 72px)">Four pillars, one strategy</p>
+<div class="wk-pillars">
+<article class="k-stk wk-pl">
+<span class="k-tag">01 · SEO-driven acquisition</span><h3 class="sg k-h3">Ranking for what buyers actually search</h3>
+<p>Search-optimised articles built to capture high-intent traffic where RemotePass had little visibility, from hiring strategy to Saudization rules.</p>
+<div class="wk-pl-media two"><img class="k-shot" src="/_blob/e7219da309f013bac5384e9b78a172ca" alt="Google results for how SMEs can compete for top talent, with the RemotePass article ranked first" loading="lazy"><img class="k-shot" src="/_blob/f3320b37d4e21b7a526bf2574c0168f8" alt="Google results for Saudization requirements for employers, with the RemotePass guide on the first page" loading="lazy"></div>
+<p class="wk-pl-cap">#1 on Google for “how SMEs can compete for top talent”, and on page one for “Saudization requirements for employers”.</p>
+</article>
+<article class="k-stk wk-pl s-cream">
+<span class="k-tag">02 · Thought leadership</span><h3 class="sg k-h3">Credibility in a regulated space</h3>
+<p>Expert insight and HR policy breakdowns that earned mentions in key newsletters and media. I edited pieces for our leadership and brought in outside experts.</p>
+<div class="wk-pl-media two"><img class="k-shot" src="/_blob/2dbe16216dbc9a01970164caa8d4caae" alt="Wamda article, Cybersecurity in the era of remote work, by Kamal Reggad, co-founder and CEO of RemotePass" loading="lazy"><img class="k-shot" src="/_blob/78402468c3b013ab73a0c75271775f4e" alt="RemotePass blog article on scalability issues, quoting Alari Aho, CEO of Toggl" loading="lazy"></div>
+<p class="wk-pl-cap">An article by CEO Kamal Reggad, edited by me, featured on Wamda; and a RemotePass piece with insight from Toggl’s CEO, Alari Aho.</p>
+</article>
+<article class="k-stk wk-pl s-sun">
+<span class="k-tag">03 · Product education</span><h3 class="sg k-h3">Content that keeps customers</h3>
+<p>Help articles, walkthrough videos and Q&amp;A posts that showed users how to get more out of the platform, to improve retention.</p>
+<div class="wk-pl-media two"><img class="k-shot" src="/_blob/6338a3cf99c325980eff3f459b782219" alt="RemotePass LinkedIn Q&amp;A video with Lead Product Manager Nuno Oliveira Silva on Local Payroll" loading="lazy"><img class="k-shot" src="/_blob/b538d272de7218edd079fb46117d5f80" alt="The RemotePass Help Center, with short video guides to creating contracts" loading="lazy"></div>
+<p class="wk-pl-cap">A Q&amp;A video with the product lead on Local Payroll, and the Help Center I helped build.</p>
+</article>
+<article class="k-stk wk-pl s-blush">
+<span class="k-tag">04 · Sales enablement</span><h3 class="sg k-h3">Material that closes deals</h3>
+<p>Pitch decks, one-pagers and customer case studies built with the sales team, to speed up the sales cycle and help close more deals.</p>
+<div class="wk-pl-media"><img class="k-shot" src="/_blob/24b1db903d17b09a82c3e7fe0cd32eaf" alt="The RemotePass customer case studies page, featuring Pemo, Podeo and Lean" loading="lazy"></div>
+<p class="wk-pl-cap">Customer stories from Pemo, Podeo and Lean.</p>
+</article>
 </div>
+<p class="eyebrow" style="margin-top: clamp(48px, 6vw, 72px)">Built for the Middle East, in two languages</p>
+<div class="wk-hub k-hub" aria-label="How the MENA hub fits together" style="margin-top: 0">
+<div class="k-hub-c">MENA HR & Payroll Hub<small>English and Arabic</small></div>
+<span class="k-hub-l" aria-hidden="true"></span>
+<div class="k-pills svc"><sc-for list="{{engine.hub}}" as="h" hint-placeholder-count="4"><span>{{h.t}}</span></sc-for></div>
+<span class="k-hub-l" aria-hidden="true"></span>
+<div class="k-pills"><sc-for list="{{engine.guides}}" as="g" hint-placeholder-count="7"><span>{{g.t}}</span></sc-for></div>
 </div>
-<div style="margin-top: clamp(45px, 8vw, 104px)">
-<p style="margin: 0 0 22px; font-size: 14px; font-weight: 700; color: #F2EFE8">How the MENA hub fits together</p>
-<div style="padding: 22px 26px; border-radius: 14px; background: #F2EFE8; color: #111; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; align-items: baseline"><span class="sg" style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; letter-spacing: -0.03em">MENA HR & Payroll Hub</span><span style="font-size: 15px; font-weight: 700">English and Arabic</span></div>
-<div class="drawy" aria-hidden="true" style="width: 2px; height: 36px; margin: 0 auto; background: #FF5A2A"></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px">
-<sc-for list="{{engine.hub}}" as="h" hint-placeholder-count="4"><div style="padding: 16px 18px; border-radius: 12px; border: 1.5px solid #F2EFE8; font-size: 16px; font-weight: 700">{{h.t}}<span style="display: block; margin-top: 4px; font-size: 12px; font-weight: 500; color: #B5B0A6">Service page</span></div></sc-for>
+<div class="wk-en-imgs">
+<figure class="k-fig"><img class="k-shot" src="/_blob/04684a9d91b293a1856c9baf69694f0d" alt="The RemotePass MENA hub: Automated Payroll and HRIS for MENA, with country options from Tunisia to Morocco" loading="lazy"><figcaption><b>The MENA hub</b> · payroll and HR for the region, in English and Arabic</figcaption></figure>
+<figure class="k-fig"><img class="k-shot" src="/_blob/805be6f1e5453616f33a1d34c9c1f227" alt="The RemotePass country guides hub: Your guide to global employment, with guides filtered by region" loading="lazy"><figcaption><b>Country guides</b> · around 40 guides to hiring, payroll and tax</figcaption></figure>
 </div>
-<div class="drawy" aria-hidden="true" style="width: 2px; height: 36px; margin: 0 auto; background: #3A3934"></div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center">
-<sc-for list="{{engine.guides}}" as="g" hint-placeholder-count="7"><span style="padding: 10px 16px; border-radius: 999px; background: #2A2926; font-size: 14px; font-weight: 600">{{g.t}}</span></sc-for>
-</div>
-<div style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 24px; align-items: start">
-<figure class="reveal" style="margin: 0"><img class="shot" src="/_blob/04684a9d91b293a1856c9baf69694f0d" alt="The RemotePass MENA hub: Automated Payroll and HRIS for MENA, with country options from Tunisia to Morocco" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1600 / 787; background: #F4F6FC"><figcaption style="margin-top: 12px; font-size: 14px"><strong>The MENA hub</strong> <span style="color: #B5B0A6">· payroll and HR for the region, in English and Arabic</span></figcaption></figure>
-<figure class="reveal" style="margin: 0"><img class="shot" src="/_blob/805be6f1e5453616f33a1d34c9c1f227" alt="The RemotePass country guides hub: Your guide to global employment, with guides filtered by region" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1600 / 995; background: #0B1340"><figcaption style="margin-top: 12px; font-size: 14px"><strong>Country guides</strong> <span style="color: #B5B0A6">· around 40 guides to hiring, payroll and tax</span></figcaption></figure>
-</div>
-</div>
-<div style="margin-top: clamp(45px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 72px">
-<ol style="margin: 0; padding: 0; list-style: none; border-top: 1px solid #3A3934">
-<sc-for list="{{engine.did}}" as="d" hint-placeholder-count="4"><li style="padding: 18px 0; border-bottom: 1px solid #3A3934; font-size: 16px; line-height: 1.6; color: #E8E4DC">{{d.t}}</li></sc-for>
-</ol>
-<div>
-<p style="margin: 0; font-size: 14px; font-weight: 700; color: #F2EFE8">Share of tracked AI answers mentioning RemotePass</p>
-<div style="margin-top: 22px; display: grid; gap: 14px">
-<div><div style="display: flex; justify-content: space-between; font-size: 14px; color: #B5B0A6"><span>Before the GEO playbook</span><span class="sg" style="font-size: 20px; font-weight: 700; color: #F2EFE8">10%</span></div><div style="margin-top: 8px; height: 14px; border-radius: 999px; background: #2A2926"><div class="grow" style="width: 10%; height: 100%; border-radius: 999px; background: #8A867E"></div></div></div>
-<div><div style="display: flex; justify-content: space-between; font-size: 14px; color: #B5B0A6"><span>After</span><span class="sg" style="font-size: 20px; font-weight: 700; color: #FF5A2A">40%</span></div><div style="margin-top: 8px; height: 14px; border-radius: 999px; background: #2A2926"><div class="grow" style="width: 40%; height: 100%; border-radius: 999px; background: #FF5A2A"></div></div></div>
-</div>
-<p style="margin: 12px 0 0; font-size: 13px; color: #B5B0A6">Tracked prompts across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
-<div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 24px; border-top: 2px solid #F2EFE8">
-<sc-for list="{{engine.results}}" as="r" hint-placeholder-count="2"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(44px, 4.6vw, 68px); line-height: .86; letter-spacing: -0.06em">{{r.big}}</p><p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #B5B0A6">{{r.label}}</p></div></sc-for>
-</div>
+<div class="wk-en-res">
+<div><ol class="k-num"><sc-for list="{{engine.did}}" as="d" hint-placeholder-count="4"><li><span>{{d.t}}</span></li></sc-for></ol>
+<div class="k-fan wk-ksa" role="group" aria-label="KSA Payroll campaign carousel" style="margin-top: 36px"><sc-for list="{{engine.posts}}" as="p" hint-placeholder-count="3"><img class="f{{p.i}}" src="{{p.src}}" alt="{{p.alt}}" loading="lazy"></sc-for></div></div>
+<div class="k-stk" data-inview style="transform: rotate(1deg)">
+<span class="k-kicker">Share of tracked AI answers mentioning RemotePass</span>
+<div class="k-bars"><div class="k-bar"><div><span>Before the GEO playbook</span><b>10%</b></div><div class="k-bar-t"><div class="k-bar-f" style="--w: 10%; --c: #8A867E"></div></div></div><div class="k-bar"><div><span>After</span><b>40%</b></div><div class="k-bar-t"><div class="k-bar-f" style="--w: 40%; --c: #1FA463"></div></div></div></div>
+<p style="margin: 0; font-size: 14px; opacity: .75">Tracked prompts across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="xofu" style="background: #F2EFE8; color: #111; scroll-margin-top: 56px">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 136px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #C9C3B6; font-size: 14px; font-weight: 600; color: #6B675F"><span class="sg num-b shp shp-flower" style="background: var(--orange); color: #111">06</span><span style="color: #111">Xofu · 2026</span><span>Positioning & messaging</span><a class="nd" href="Site-Service-Positioning.dc.html" style="margin-left: auto; font-weight: 700">The service →</a></div>
-<p style="margin: 48px 0 0; max-width: 680px; font-size: 18px; line-height: 1.65; color: #2D2B27">Xofu tracks how ChatGPT, Perplexity, Claude and Gemini cite and recommend brands. It was a new category, and buyers had no simple way to see why it mattered to them. I gave the whole story one question to answer.</p>
-<h2 class="sg reveal" style="margin: 28px 0 0; font-weight: 700; font-size: clamp(56px, 9.4vw, 152px); line-height: 0.88; letter-spacing: -0.07em">“Does AI <span style="color: #C23A0E">recommend us?</span>”</h2>
-<div style="margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; align-items: start">
-<figure style="margin: 0"><img class="shot" src="/_blob/0dfa31b585c479139da9600a8bdd8b9d" alt="Xofu homepage hero from the rewrite draft: Grow your brand’s visibility in AI search" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 923 / 533; background: #FFFFFF"><figcaption style="margin-top: 12px; font-size: 14px"><strong>Homepage hero</strong> <span style="color: #6B675F">· from my rewrite draft</span></figcaption></figure>
-<figure style="margin: 0"><img class="shot" src="/_blob/a4cbf106e17930bec111332800b706fd" alt="Xofu pricing page draft with four tiers: Free, Personal, Business and Agency" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1600 / 929; background: #FFFFFF"><figcaption style="margin-top: 12px; font-size: 14px"><strong>Four pricing tiers</strong> <span style="color: #6B675F">· Free, Personal, Business, Agency</span></figcaption></figure>
+<section id="xofu" class="k-case k-white" aria-labelledby="xf-t">
+<div class="wrap">
+<p class="k-cmeta"><span class="k-cn">06</span><span>Xofu · 2026</span><span class="k-tag">Positioning & messaging</span><a href="Site-Service-Positioning.dc.html">The service →</a></p>
+<p class="k-p">Xofu tracks how ChatGPT, Perplexity, Claude and Gemini cite and recommend brands. It was a new category, and buyers had no simple way to see why it mattered to them. I gave the whole story one question to answer.</p>
+<h2 id="xf-t" class="sg wk-xq">“Does AI <span>recommend us?</span>”</h2>
+<div class="wk-xf">
+<div class="k-fan wk-xf-fan">
+<img class="f1" src="/_blob/0dfa31b585c479139da9600a8bdd8b9d" alt="Xofu homepage hero from the rewrite draft: Grow your brand’s visibility in AI search" loading="lazy">
+<img class="f2" src="/_blob/a4cbf106e17930bec111332800b706fd" alt="Xofu pricing page draft with four tiers: Free, Personal, Business and Agency" loading="lazy">
+<img class="f3" src="/_blob/690c37a910717b44a095316769f59bf8" alt="Xofu newsletter layout" loading="lazy">
 </div>
-<div style="margin-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 72px; align-items: end">
-<ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #111">
-<sc-for list="{{xofu.did}}" as="d" hint-placeholder-count="4"><li style="padding: 18px 0; border-bottom: 1px solid #C9C3B6; font-size: 16px; line-height: 1.6">{{d.t}}</li></sc-for>
-</ol>
-<figure style="margin: 0; padding: 28px; border-radius: 16px; background: #FFFFFF">
-<figcaption style="font-size: 14px; font-weight: 700">Product email click-through rate</figcaption>
-<div role="img" aria-label="Previous best product email: 1.8% click-through. Citation Audit launch email: 3.7%." style="margin-top: 24px; height: 220px; display: flex; align-items: flex-end; gap: 28px; border-bottom: 2px solid #111">
-<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%"><span class="sg" style="font-size: 28px; font-weight: 700">1.8%</span><span class="drawy" style="margin-top: 8px; width: 100%; height: 83px; background: #C9C3B6; border-radius: 8px 8px 0 0; transform-origin: bottom"></span></div>
-<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%"><span class="sg" style="font-size: 28px; font-weight: 700; color: #C23A0E">3.7%</span><span class="drawy" style="margin-top: 8px; width: 100%; height: 170px; background: #FF5A2A; border-radius: 8px 8px 0 0; transform-origin: bottom"></span></div>
-</div>
-<div style="margin-top: 12px; display: flex; gap: 28px; font-size: 13px; color: #45423C"><span style="flex: 1">Previous best · August 2025</span><span style="flex: 1">Citation Audit launch · February 2026, 538 recipients</span></div>
+<div>
+<ol class="k-num"><sc-for list="{{xofu.did}}" as="d" hint-placeholder-count="4"><li><span>{{d.t}}</span></li></sc-for></ol>
+<figure class="k-stk s-sun" data-inview style="margin: 28px 0 0; transform: rotate(-1deg)">
+<figcaption class="k-kicker">Product email click-through rate</figcaption>
+<div class="wk-ctr" role="img" aria-label="Previous best product email: 1.8% click-through. Citation Audit launch email: 3.7%."><div><b>1.8%</b><i style="height: 45%; background: #FFFDF6"></i></div><div><b>3.7%</b><i style="height: 92%; background: #FF5A2A"></i></div></div>
+<div class="wk-ctr-l"><span>Previous best · August 2025</span><span>Citation Audit launch · February 2026, 538 recipients</span></div>
 </figure>
 </div>
 </div>
+</div>
 </section>
-<section id="index" style="background: #FFFFFF; color: #111">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 112px) clamp(20px, 5vw, 28px)">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(36px, 4vw, 60px); line-height: 0.95; letter-spacing: -0.05em">All projects</h2>
-<div role="group" aria-label="Filter projects by discipline" style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{filters}}" as="f" hint-placeholder-count="4">
-<button class="chip" data-f="{{f.id}}" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid {{f.border}}; background: {{f.bg}}; color: {{f.fg}}; font-size: 14px; font-weight: 600">{{f.label}} <span style="opacity: .6">{{f.count}}</span></button>
+
+<section id="index" class="k-sec k-paper wk-all" aria-labelledby="all-t">
+<div class="wrap">
+<div class="k-head"><h2 id="all-t" class="sg k-h2">All projects</h2>
+<div class="k-chips" role="group" aria-label="Filter projects by discipline"><sc-for list="{{filters}}" as="f" hint-placeholder-count="4"><button class="k-chip" data-css data-f="{{f.id}}" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}">{{f.label}} <span>{{f.count}}</span></button></sc-for></div></div>
+<div class="wk-grid k-rot k-rot5">
+<sc-for list="{{shown}}" as="p" hint-placeholder-count="13">
+<a class="k-stk {{p.cls}}" data-k="{{p.k}}" href="{{p.href}}"><span class="k-kicker">{{p.client}} · {{p.year}}</span><span class="k-big">{{p.big}}</span><span style="font-size: 14.5px; line-height: 1.45">{{p.bigLabel}}</span><span class="card-t">{{p.title}}</span><span class="k-tag">{{p.tag}}</span><span class="k-go">{{p.cta}}</span></a>
 </sc-for>
 </div>
 </div>
-<div class="mswipe tiles-rot" style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
-<sc-for list="{{shown}}" as="p" hint-placeholder-count="9">
-<a class="card-l" data-k="{{p.k}}" href="{{p.href}}" style="display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 260px; padding: 24px; border-radius: 12px; background: {{p.bg}}; color: {{p.fg}}; box-sizing: border-box">
-<span style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700"><span>{{p.client}}</span><span style="opacity: .75">{{p.year}}</span></span>
-<span style="display: block">
-<span class="sg" style="display: block; font-weight: 700; font-size: 52px; line-height: 0.9; letter-spacing: -0.06em">{{p.big}}</span>
-<span style="display: block; margin-top: 8px; font-size: 14px; line-height: 1.45; opacity: .85">{{p.bigLabel}}</span>
-</span>
-<span style="display: block; padding-top: 16px; border-top: 1px solid {{p.rule}}">
-<span class="card-t sg" style="display: block; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; transition: color .3s">{{p.title}}</span>
-<span style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 13px; font-weight: 600; opacity: .75"><span>{{p.tag}}</span><span>{{p.cta}}</span></span>
-</span>
-</a>
-</sc-for>
-</div>
-</div>
-</section><section aria-labelledby="next-h" style="background: var(--night); color: #F2EFE8">
-<div style="max-width: 1360px; margin: 0 auto; padding: clamp(62px, 11vw, 144px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
-<h2 id="next-h" class="sg" style="margin: 0; max-width: 900px; font-weight: 700; font-size: clamp(48px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.065em">Seen the work? <span style="color: #F2EFE8">Here’s what’s next.</span></h2>
-<div style="margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
-<a class="path" href="Site-About.dc.html#now" style="display: flex; flex-direction: column; gap: 14px; min-height: 280px; padding: 28px; border-radius: 16px; background: #F2EFE8; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #111">💼 Hiring for a marketing role</span><span class="sg" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05">Product marketing, content or growth, remote or with relocation.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Read my story and ask for my CV →</span></a>
-<a class="path" href="Site-Services.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 280px; padding: 28px; border-radius: 16px; background: #F2EFE8; color: #111; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700">🚀 Planning a launch or a repositioning</span><span class="sg" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05">See how a consulting project with me works.</span><span style="margin-top: auto; font-weight: 700">Explore the three services →</span></a>
-<a class="path" href="Site-EmpowerQ.dc.html" style="display: flex; flex-direction: column; gap: 14px; min-height: 280px; padding: 28px; border-radius: 16px; background: #1C1430; color: #F1ECFF; border: 1px solid #3A2F5C; box-sizing: border-box"><span style="font-size: 14px; font-weight: 700; color: #B9A6FF">🌈 Backing inclusion work</span><span class="sg" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05">Support EmpowerQ’s programmes for LGBTQ+ professionals.</span><span class="path-go" style="margin-top: auto; font-weight: 700; transition: color .3s">Visit EmpowerQ →</span></a>
+</section>
+
+<section class="k-sec k-cream" aria-labelledby="next-h" style="padding-bottom: clamp(110px, 12vw, 170px)">
+<div class="wrap">
+<h2 id="next-h" class="sg k-h2" style="margin-bottom: clamp(32px, 4vw, 52px)">Seen the work? <span class="k-mark" style="--mk: #FF5A2A; --mkt: #111"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">Here’s what’s next.</span></span></h2>
+<div class="k-g3 k-rot">
+<a class="k-stk s-sun" href="Site-Contact.dc.html#hiring"><span class="k-emo"><span class="shp shp-flower" style="background: #FFFDF6"></span><i aria-hidden="true">💼</i></span><span class="k-kicker">Hiring for a marketing role</span><span class="sg k-h3">Product marketing, content or growth, remote or with relocation.</span><span class="k-go">Send me the role, get a tailored CV <span class="arr" aria-hidden="true">→</span></span></a>
+<a class="k-stk s-orange" href="Site-Services.dc.html"><span class="k-emo"><span class="shp shp-star" style="background: #FFC83D"></span><i aria-hidden="true">🚀</i></span><span class="k-kicker">Planning a launch or a repositioning</span><span class="sg k-h3">See how a consulting project with me works.</span><span class="k-go">Explore the three services <span class="arr" aria-hidden="true">→</span></span></a>
+<a class="k-stk s-lav" href="Site-EmpowerQ.dc.html"><span class="k-emo"><span class="shp shp-clover" style="background: #1C1430"></span><i aria-hidden="true">🌈</i></span><span class="k-kicker">Backing inclusion work</span><span class="sg k-h3">Support EmpowerQ’s programmes for LGBTQ+ professionals.</span><span class="k-go">Visit EmpowerQ <span class="arr" aria-hidden="true">→</span></span></a>
 </div>
 </div>
 </section>

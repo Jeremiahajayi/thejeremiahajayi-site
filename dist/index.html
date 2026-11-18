@@ -114,7 +114,8 @@ html{scroll-behavior:smooth}
 .nav-main>a.nl:hover,.dd-top:hover{background:none}
 .dd-top{border-bottom:0}
 .chev{display:none}
-.dd-p{position:static;width:auto;padding:0 0 14px;border:0;border-bottom:1px solid #2B2A27;border-radius:0;background:none;box-shadow:none;opacity:1;visibility:visible;transform:none;transition:none}
+.dd-p{position:static;width:auto;padding:0 0 14px;border:0;border-bottom:1px solid #2B2A27;border-radius:0;background:none;box-shadow:none;opacity:1;visibility:inherit;transform:none;transition:none}
+.nav-main{pointer-events:none}.nav-t:checked~.nav-main{pointer-events:auto}
 .dd-p::before{display:none}
 .dd-h{display:none}
 .dd-l{padding:9px 0 9px 14px;border-left:2px solid #2B2A27;border-radius:0}
@@ -325,7 +326,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .h-link:hover .arr{transform:translateX(5px)}
 /* ---------- hero ---------- */
 .h-hero{position:relative;background:#FFF5D9;color:#111;overflow:hidden;isolation:isolate}
-.h-rays{position:absolute;right:-12vw;top:-30vw;width:90vw;height:90vw;color:#FFC83D;opacity:.55;z-index:-1;background:repeating-conic-gradient(from 0deg at 50% 50%,currentColor 0 4deg,transparent 4deg 11deg);-webkit-mask:radial-gradient(closest-side,#000 40%,transparent 100%);mask:radial-gradient(closest-side,#000 40%,transparent 100%);animation:spin 160s linear infinite}
+.h-rays{position:absolute;left:calc(var(--sx,72%) - 45vw);top:calc(var(--sy,18%) - 45vw);width:90vw;height:90vw;color:var(--ray,#FFC83D);opacity:var(--rop,.55);z-index:-1;transition:color 1.5s,opacity 1.5s;background:repeating-conic-gradient(from 0deg at 50% 50%,currentColor 0 4deg,transparent 4deg 11deg);-webkit-mask:radial-gradient(closest-side,#000 40%,transparent 100%);mask:radial-gradient(closest-side,#000 40%,transparent 100%);animation:spin 160s linear infinite}
 .h-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"copy stage" "foot stage";column-gap:clamp(24px,4vw,64px);padding-top:clamp(28px,3.4vw,52px);padding-bottom:clamp(44px,5vw,72px)}
 .h-copy{grid-area:copy}.h-stage{grid-area:stage}.h-foot{grid-area:foot}
 .h-hello{margin:0 0 10px;display:flex;gap:10px;font-size:14px;font-weight:600;color:#6B675F}
@@ -362,6 +363,33 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .h-btn:hover .arr{transform:translateX(4px)}
 .h-hire{flex-basis:100%;margin-top:4px;font-size:14.5px;font-weight:600;color:#45423C;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(17,17,17,.3)}
 .h-hire:hover{color:#111;text-decoration-color:#FF5A2A}
+
+/* the sky follows the time of day in Lagos */
+.h-hero{background:var(--sky,#FFF5D9);transition:background 1.5s}
+.h-sky{position:absolute;inset:0;z-index:-2;pointer-events:none}
+.h-sun{position:absolute;left:var(--sx,72%);top:var(--sy,18%);width:clamp(90px,9vw,140px);aspect-ratio:1;border-radius:50%;background:var(--sun,#FFC83D);transform:translate(-50%,-50%);box-shadow:0 0 0 18px color-mix(in srgb,var(--sun,#FFC83D) 22%,transparent),0 0 90px 30px color-mix(in srgb,var(--sun,#FFC83D) 45%,transparent);transition:left 1.5s,top 1.5s,background 1.5s,box-shadow 1.5s}
+.h-stars{position:absolute;inset:0;opacity:0;transition:opacity 1.5s;background-image:radial-gradient(circle,#F2EFE8 1.2px,transparent 1.6px),radial-gradient(circle,#F2EFE8 .9px,transparent 1.3px);background-size:140px 120px,90px 70px;background-position:20px 30px,60px 10px}
+.h-skyl{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;background:rgba(17,17,17,.06);color:inherit;font-weight:600}
+.h-skyl:empty{display:none}
+.h-hero[data-sky="dawn"]{--sky:linear-gradient(180deg,#FFD9C7 0%,#FFF5D9 70%);--sun:#FF8FB6;--ray:#FF8FB6;--rop:.4}
+.h-hero[data-sky="morning"]{--sky:#FFF5D9;--sun:#FFC83D;--ray:#FFC83D;--rop:.5}
+.h-hero[data-sky="noon"]{--sky:#FFF8E3;--sun:#FFD54F;--ray:#FFC83D;--rop:.7}
+.h-hero[data-sky="golden"]{--sky:linear-gradient(180deg,#FFD7A6 0%,#FFF1D6 75%);--sun:#FF5A2A;--ray:#FF8A3D;--rop:.5}
+.h-hero[data-sky="dusk"]{--sky:linear-gradient(180deg,#2E2350 0%,#6B4FA8 60%,#FF8FB6 130%);--sun:#FF8FB6;--ray:#FF8FB6;--rop:.18}
+.h-hero[data-sky="night"]{--sky:linear-gradient(180deg,#0B1F22 0%,#0E2A2E 100%);--sun:#F2EFE8;--ray:#8FE3B0;--rop:.1}
+.h-hero[data-sky="night"] .h-sun{box-shadow:inset -22px -10px 0 0 #C9C4BA,0 0 60px 10px rgba(242,239,232,.18)}
+.h-hero[data-sky="night"] .h-stars,.h-hero[data-sky="dusk"] .h-stars{opacity:.8}
+.h-hero[data-sky="dusk"] .h-stars{opacity:.35}
+.h-hero[data-sky="dusk"],.h-hero[data-sky="night"]{color:#F2EFE8}
+.h-hero[data-sky="dusk"] .h-hello,.h-hero[data-sky="night"] .h-hello,.h-hero[data-sky="dusk"] .h-id,.h-hero[data-sky="night"] .h-id,.h-hero[data-sky="dusk"] .h-lede,.h-hero[data-sky="night"] .h-lede,.h-hero[data-sky="dusk"] .h-hire,.h-hero[data-sky="night"] .h-hire{color:#D9D4CA}
+.h-hero[data-sky="dusk"] .h-hello span:first-child,.h-hero[data-sky="night"] .h-hello span:first-child,.h-hero[data-sky="dusk"] .h-id b,.h-hero[data-sky="night"] .h-id b,.h-hero[data-sky="dusk"] .h-mk,.h-hero[data-sky="night"] .h-mk,.h-hero[data-sky="dusk"] .h-row,.h-hero[data-sky="night"] .h-row{color:#F2EFE8}
+.h-hero .h-vt,.h-hero .h-tag{color:#111}
+.h-hero .h-row.is-on .h-tag,.h-hero .h-row:hover .h-tag{color:#FFF5D9}
+.h-hero[data-sky="dusk"] .h-skyl,.h-hero[data-sky="night"] .h-skyl{background:rgba(242,239,232,.12)}
+.h-hero[data-sky="dusk"] .h-btn-ink,.h-hero[data-sky="night"] .h-btn-ink{background:#F2EFE8;color:#111}
+.h-hero[data-sky="dusk"] .h-ring text,.h-hero[data-sky="night"] .h-ring text{fill:#F2EFE8}
+.h-hero[data-sky="dusk"] .h-hire,.h-hero[data-sky="night"] .h-hire{text-decoration-color:rgba(242,239,232,.4)}
+@media (prefers-reduced-motion: reduce){.h-sun,.h-hero,.h-rays,.h-stars{transition:none}}
 /* portrait stage */
 .h-stage{position:relative;align-self:center;aspect-ratio:1/1.08;min-height:420px}
 .h-flower{position:absolute;left:8%;top:6%;width:84%;aspect-ratio:1;background:#FF5A2A;animation:spin 60s linear infinite}
@@ -638,7 +666,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .ct-grid{margin-top:clamp(36px,4.4vw,56px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,56px);align-items:start}
 .ct-doors{display:flex;flex-direction:column;gap:10px}
 .ct-door{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:72px;padding:12px 18px 12px 12px;border:1.5px solid #C9C3B6;border-radius:18px;background:#FFFDF6;color:#111;font:inherit;text-align:left;cursor:pointer;transition:border-color .25s,background .25s,color .25s,transform .25s}
-.ct-door:hover{border-color:#111;transform:translateX(4px)}
+.ct-door:hover{border-color:#111;background:#FFF5D9}
 .ct-door[aria-checked="true"]{background:#111;border-color:#111;color:#F2EFE8}
 .ct-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;font-size:22px}
 .ct-door:nth-child(1) .ct-ic{background:#FFC83D}.ct-door:nth-child(2) .ct-ic{background:#FF5A2A}.ct-door:nth-child(3) .ct-ic{background:#8FE3B0}.ct-door:nth-child(4) .ct-ic{background:#B9A6FF}.ct-door:nth-child(5) .ct-ic{background:#FF8FB6}
@@ -725,12 +753,12 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <input type="checkbox" id="navt" class="nav-t" aria-label="Open the menu" aria-controls="nav-main">
 <label for="navt" class="nav-btn" aria-hidden="true"><span class="nav-btn-t">Menu</span><span class="burger"></span></label>
 <nav id="nav-main" class="nav-main" aria-label="Primary">
-<div class="dd"><a class="dd-top" href="/work/" aria-haspopup="true">Work<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Case studies</p><a class="dd-l" href="/work/#stears"><b>Stears Elections</b><span>How a new election tracker beat the BBC on Google</span></a><a class="dd-l" href="/work/#certn"><b>RemotePass × Certn</b><span>A partnership launch with 270+ media pickups</span></a><a class="dd-l" href="/work/#askai"><b>RemotePass Ask AI</b><span>Selling the answer, not the AI: record MQLs</span></a><a class="dd-l" href="/work/#engine"><b>RemotePass content engine</b><span>174% organic growth and an English–Arabic hub</span></a><a class="dd-l" href="/work/#xofu"><b>Xofu</b><span>One clear question for a new AI product</span></a><a class="dd-all" href="/work/#index">All work and projects →</a></div></div>
+<div class="dd"><a class="dd-top" href="/work/" aria-haspopup="true">Work<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Case studies</p><a class="dd-l" href="/work/#stears"><b>Stears Elections</b><span>How a new election tracker beat the BBC on Google</span></a><a class="dd-l" href="/work/#certn"><b>RemotePass × Certn</b><span>A partnership launch with 270+ media pickups</span></a><a class="dd-l" href="/work/#askai"><b>RemotePass Ask AI</b><span>Selling the answer, not the AI: record MQLs</span></a><a class="dd-l" href="/work/#engine"><b>RemotePass content engine</b><span>$192K revenue from content in one quarter</span></a><a class="dd-l" href="/work/#xofu"><b>Xofu</b><span>One clear question for a new AI product</span></a><a class="dd-all" href="/work/#index">All work and projects →</a></div></div>
 <div class="dd"><a class="dd-top" href="/services/" aria-haspopup="true">Expertise<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span></a><div class="dd-p"><p class="dd-h">Services</p><a class="dd-l" href="/services/positioning-messaging/"><b>Positioning & messaging</b><span>Make it clear: a story buyers can repeat</span></a><a class="dd-l" href="/services/product-launch-gtm/"><b>Launches & go-to-market</b><span>Make it land: launches built for pipeline</span></a><a class="dd-l" href="/services/content-growth/"><b>Content & storytelling</b><span>Make it travel: content, SEO and AI search</span></a><a class="dd-all" href="/services/">All services →</a></div></div>
 <a class="nl" href="/empowerq/">EmpowerQ</a>
 <a class="nl" href="/blog/">Writing</a>
 <a class="nl" href="/about/">About</a>
-<a class="btn-o nav-cta" href="/contact/">Book a call <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn-o nav-cta" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call <span class="arr" aria-hidden="true">↗</span></a>
 </nav>
 </div>
 </header>
@@ -748,14 +776,15 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Type a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Type a question…"><button type="submit" aria-label="Send">↑</button></form>
 </div>
 </div>
-<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="/contact/">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
+<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call <span class="arr" aria-hidden="true">↗</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
 <!--guide:end-->
 
-<section id="top" class="h-hero" data-hero>
+<section id="top" class="h-hero" data-hero data-sky="day">
+<div class="h-sky" aria-hidden="true"><span class="h-stars"></span><span class="h-sun"></span></div>
 <div class="h-rays" aria-hidden="true"></div>
 <div class="wrap h-grid">
 <div class="h-copy">
-<p class="h-hello"><span lang="yo">Ẹ káàbọ̀</span><span aria-hidden="true">·</span><span>Lagos, <span data-time></span></span></p>
+<p class="h-hello"><span lang="yo">Ẹ káàbọ̀</span><span aria-hidden="true">·</span><span>Lagos, <span data-time></span></span><span class="h-skyl" data-sky-label></span></p>
 <h1 class="h-id"><b>Jeremiah Ajayi</b> is a marketing consultant for B2B SaaS and technology companies.</h1>
 <p class="h-display sg"><a class="h-row" href="/services/positioning-messaging/" data-peek="0" style="--i:0"><span class="h-tag"><span class="h-num">01</span>Positioning & messaging<span class="h-tag-s">A story buyers can repeat →</span></span><span class="h-line"><span class="h-mk">Make it</span> <span class="h-verb v1"><span class="h-ink" aria-hidden="true"></span><span class="h-vt">clear.</span></span></span></a><a class="h-row" href="/services/product-launch-gtm/" data-peek="1" style="--i:1"><span class="h-tag"><span class="h-num">02</span>Launches & go-to-market<span class="h-tag-s">Launches built for pipeline →</span></span><span class="h-line"><span class="h-mk">Make it</span> <span class="h-verb v2"><span class="h-ink" aria-hidden="true"></span><span class="h-vt">land.</span></span></span></a><a class="h-row" href="/services/content-growth/" data-peek="2" style="--i:2"><span class="h-tag"><span class="h-num">03</span>Content & storytelling<span class="h-tag-s">Content that keeps working →</span></span><span class="h-line"><span class="h-mk">Make it</span> <span class="h-verb v3"><span class="h-ink" aria-hidden="true"></span><span class="h-vt">travel.</span></span></span></a></p>
 </div>
@@ -768,7 +797,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </div>
 <div class="h-foot">
 <p class="h-lede">I help ambitious teams get understood, launched and chosen. Eight years of positioning, launches and content for companies in Europe, North America, the Middle East and Africa.</p>
-<div class="h-cta"><a class="btn-o h-btn" href="#work">See the work <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="/contact/">Book a call <span class="arr" aria-hidden="true">→</span></a><a class="h-hire" href="#contact">Hiring? I’m open to senior marketing roles <span class="arr" aria-hidden="true">→</span></a></div>
+<div class="h-cta"><a class="btn-o h-btn" href="#work">See the work <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi">Book a call <span class="arr" aria-hidden="true">↗</span></a><a class="h-hire" href="/contact/#hiring">Hiring? I’m open to senior marketing roles <span class="arr" aria-hidden="true">→</span></a></div>
 </div>
 </div>
 </section>
@@ -864,7 +893,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <p class="pc-meta"><span class="pc-n sg">05</span><span class="pc-client">RemotePass · 2024–25</span><span class="pc-disc">Content & storytelling</span></p>
 <h3 class="sg pc-title"><a class="pc-go" href="/work/#engine">A content engine for global hiring, with an English–Arabic hub</a></h3>
 <div class="en-stats"><p><span class="sg">174%</span>organic user acquisition, year on year</p><p><span class="sg">$500K+</span>pipeline influenced in under a year</p></div>
-<dl class="pc-dl"><div><dt>My role</dt><dd>Joined after a $5.5M raise to lead GTM and positioning. Built the content strategy from zero and ran a team of freelance writers.</dd></div><div><dt>What we made</dt><dd>Around 40 country guides, an English–Arabic hub for MENA, and content built from the objections in sales calls.</dd></div><div class="pc-res"><dt>Result</dt><dd>Content became a pipeline channel, not just a traffic one.</dd></div></dl>
+<dl class="pc-dl"><div><dt>My role</dt><dd>Joined after a $5.5M raise and built RemotePass’s first content strategy across the whole customer journey, with a freelance team I hired and briefed.</dd></div><div><dt>What we made</dt><dd>SEO content that ranks on page one, thought leadership featured on Wamda, a help centre and product videos, and sales decks, one-pagers and case studies.</dd></div><div class="pc-res"><dt>Result</dt><dd>$192K in revenue in Q1 2025 alone from people who found us through content, with no ad spend.</dd></div></dl>
 </div>
 <div class="pc-media en-media">
 <img class="en-a" src="/img/mena-hub.webp" alt="The RemotePass MENA hub for payroll and HR, in English and Arabic" loading="lazy">
@@ -959,15 +988,15 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <div class="ct-grid">
 <div class="ct-doors" role="radiogroup" aria-label="What you need">
 
-<button class="door ct-door" data-door="0" role="radio" aria-checked="true"><span class="ct-ic" aria-hidden="true">🧭</span><span class="ct-label sg">Our positioning isn’t landing</span><span class="ct-who">For founders and marketing leads</span></button>
+<button class="door ct-door" data-css data-door="0" role="radio" aria-checked="true"><span class="ct-ic" aria-hidden="true">🧭</span><span class="ct-label sg">Our positioning isn’t landing</span><span class="ct-who">For founders and marketing leads</span></button>
 
-<button class="door ct-door" data-door="1" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">🚀</span><span class="ct-label sg">We have a launch coming up</span><span class="ct-who">For product and marketing teams</span></button>
+<button class="door ct-door" data-css data-door="1" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">🚀</span><span class="ct-label sg">We have a launch coming up</span><span class="ct-who">For product and marketing teams</span></button>
 
-<button class="door ct-door" data-door="2" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">📈</span><span class="ct-label sg">Our content should work harder</span><span class="ct-who">For growth and content teams</span></button>
+<button class="door ct-door" data-css data-door="2" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">📈</span><span class="ct-label sg">Our content should work harder</span><span class="ct-who">For growth and content teams</span></button>
 
-<button class="door ct-door" data-door="3" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">💼</span><span class="ct-label sg">I’m hiring a marketer</span><span class="ct-who">For hiring managers</span></button>
+<button class="door ct-door" data-css data-door="3" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">💼</span><span class="ct-label sg">I’m hiring a marketer</span><span class="ct-who">For hiring managers</span></button>
 
-<button class="door ct-door" data-door="4" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">🤝</span><span class="ct-label sg">Let’s work on something together</span><span class="ct-who">For collaborators</span></button>
+<button class="door ct-door" data-css data-door="4" role="radio" aria-checked="false"><span class="ct-ic" aria-hidden="true">🤝</span><span class="ct-label sg">Let’s work on something together</span><span class="ct-who">For collaborators</span></button>
 
 </div>
 <div class="ct-panel" aria-live="polite">
@@ -1003,7 +1032,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
   function t() { try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; } }
   function tick() { document.querySelectorAll('[data-time]').forEach(function (el) { el.textContent = t(); }); }
   tick(); setInterval(tick, 30000);
-  function paint(o, on) { o.style.background = on ? '#111' : 'transparent'; o.style.color = on ? '#F2EFE8' : '#111'; o.style.borderColor = on ? '#111' : '#C9C3B6'; }
+  function paint(o, on) { if (o.hasAttribute('data-css')) return; o.style.background = on ? '#111' : 'transparent'; o.style.color = on ? '#F2EFE8' : '#111'; o.style.borderColor = on ? '#111' : '#C9C3B6'; }
   function apply(sec) {
     var f = sec.getAttribute('data-cur') || 'all';
     var inp = sec.querySelector('[data-search]'); var q = inp ? inp.value.trim().toLowerCase() : '';
@@ -1034,6 +1063,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
         s('cta').textContent = d.cta; s('cta').setAttribute('href', d.href);
       });
     });
+    if (/^#(hiring|hire|role)$/i.test(location.hash)) { var hb = document.querySelector('button[data-door="3"]'); if (hb) hb.click(); }
   }
   // Close the mobile menu when a same-page link is used.
   var navT = document.getElementById('navt');
@@ -1043,7 +1073,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
   // Scroll reveals: content eases up as it enters the screen.
   if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var SEL = 'section h2, section h3, section blockquote, section figure, section article, section li, section dl > div, section .card-l, section .path, section .row-x, section .door, section img';
-    var SKIP = '.img-rv, .ix, .h-hero, .site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k], .pc-media, .st-stage, .rs-fan, .qt, .tl, .ab-title';
+    var SKIP = '.img-rv, .ix, .h-hero, .site-h, .wall-wrap, .marquee, .wall, .hscroll, .l1, .l2, .l3, .photo-in, .reveal, .wipe, .grow, .drawy, .nav-main, .mswipe, [data-k], .pc-media, .st-stage, .rs-fan, .qt, .tl, .ab-title, .wk-pl-media, .k-fan, .k-hs, .k-wall, .k-stk img, .sv-serp';
     var picked = [];
     document.querySelectorAll(SEL).forEach(function (el) {
       if (el.closest(SKIP)) return;
@@ -1317,6 +1347,28 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
       r.addEventListener('mouseleave', function () { held = false; });
     });
     if (!CALM) timer = setInterval(function () { if (!held && !document.hidden && scrollY < innerHeight) setPeek((hi + 1) % hrows.length); }, 2800);
+    // The sky follows the time of day in Lagos: dawn, morning, noon, golden hour, dusk, night.
+    var skyL = hero.querySelector('[data-sky-label]');
+    var paintSky = function () {
+      var h = 12, m = 0;
+      try { var parts = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Africa/Lagos' }).formatToParts(new Date()); parts.forEach(function (x) { if (x.type === 'hour') h = +x.value % 24; if (x.type === 'minute') m = +x.value; }); } catch (e) {}
+      var t = h + m / 60, sky, label;
+      if (t >= 5.5 && t < 8) { sky = 'dawn'; label = '🌅 Sunrise in Lagos'; }
+      else if (t >= 8 && t < 12) { sky = 'morning'; label = '☀️ Morning in Lagos'; }
+      else if (t >= 12 && t < 15.5) { sky = 'noon'; label = '😎 Midday sun in Lagos'; }
+      else if (t >= 15.5 && t < 18.75) { sky = 'golden'; label = '🌇 Golden hour in Lagos'; }
+      else if (t >= 18.75 && t < 20.5) { sky = 'dusk'; label = '🌆 Dusk in Lagos'; }
+      else { sky = 'night'; label = '🌙 Night in Lagos'; }
+      var x, y;
+      if (t >= 6 && t <= 19) { var f = (t - 6) / 13; x = 46 + 50 * f; y = 70 - 60 * Math.sin(Math.PI * f); }
+      else { var n = ((t + 24 - 19) % 24) / 11; x = 50 + 44 * n; y = 26 - 14 * Math.sin(Math.PI * n); }
+      hero.setAttribute('data-sky', sky);
+      hero.style.setProperty('--sx', x.toFixed(1) + '%'); hero.style.setProperty('--sy', y.toFixed(1) + '%');
+      if (skyL) skyL.textContent = label;
+    };
+    var qs = /[?&]sky=(dawn|morning|noon|golden|dusk|night)/.exec(location.search);
+    if (qs) { hero.setAttribute('data-sky', qs[1]); var demo = { dawn: [50, 62], morning: [60, 24], noon: [72, 10], golden: [90, 40], dusk: [95, 66], night: [62, 14] }[qs[1]]; hero.style.setProperty('--sx', demo[0] + '%'); hero.style.setProperty('--sy', demo[1] + '%'); if (skyL) skyL.textContent = qs[1]; }
+    else { paintSky(); setInterval(paintSky, 60000); }
     var bub = hero.querySelector('.h-bub');
     if (bub) {
       var facts = []; try { facts = JSON.parse(bub.getAttribute('data-facts')); } catch (e) {}
