@@ -336,13 +336,6 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .btn-k{box-shadow:3px 3px 0 #FF5A2A;transition:transform .2s,box-shadow .2s}
 .btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
 .sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
-.sv-v{position:relative;display:inline-block;padding:0 .12em .04em;transform:rotate(-2deg)}
-.sv-ink{position:absolute;inset:.06em 0 0;border-radius:.14em;transform-origin:left center;animation:svink .7s .3s cubic-bezier(.7,0,.2,1) both}
-.sv1 .sv-ink{background:#111}.sv1 .sv-t{color:#FFC83D}
-.sv2 .sv-ink{background:#111}.sv2 .sv-t{color:#FF5A2A}
-.sv3 .sv-ink{background:#8FE3B0}.sv3 .sv-t{color:#111}
-.sv-t{position:relative}
-@keyframes svink{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@media (prefers-reduced-motion: reduce){.sv-ink{animation:none}.tiles-rot>*,.btn-k{transition:none}}
+@media (prefers-reduced-motion: reduce){.tiles-rot>*,.btn-k{transition:none}}
 /*shared:end*/
 """

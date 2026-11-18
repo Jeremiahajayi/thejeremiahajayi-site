@@ -323,6 +323,7 @@
     var hi = 0, held = false, timer = null;
     var setPeek = function (i) { hi = i; hrows.forEach(function (r, k) { r.classList.toggle('is-on', k === i); }); cards.forEach(function (c, k) { c.classList.toggle('is-on', k === i); }); };
     setPeek(0);
+    var hdisp = hero.querySelector('.h-display'); if (hdisp && !CALM) hdisp.classList.add('is-cycling');
     hrows.forEach(function (r, k) {
       r.addEventListener('mouseenter', function () { held = true; setPeek(k); });
       r.addEventListener('focus', function () { held = true; setPeek(k); });

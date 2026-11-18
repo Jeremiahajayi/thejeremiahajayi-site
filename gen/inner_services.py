@@ -1,11 +1,11 @@
 """Expertise pages (overview + three services) in the homepage's language."""
-from kit import mark, ARR, CAL
+from kit import mark, ARR, CAL, motif
 
 B = lambda i: '/_blob/' + i
 
 # ---------- per-service pieces ----------
 HERO = {
-    'svc-positioning': dict(bg='k-sun', rays='#FFFDF6', verb='clear', ink='#111', vt='#FFC83D', cta='Book a call',
+    'svc-positioning': dict(motif='target', bg='k-sun', rays='#FFFDF6', verb='clear', ink='#111', vt='#FFC83D', cta='Book a call',
         side='''<figure class="k-fig sv-ladder" aria-label="The five questions a positioning framework answers">
 <ol>
 <li><b>Who it’s for</b><span>01</span></li>
@@ -16,7 +16,7 @@ HERO = {
 </ol>
 <figcaption>The five questions every positioning answers before a word of copy is written.</figcaption>
 </figure>'''),
-    'svc-launch': dict(bg='k-orange', rays='#FFC83D', verb='land', ink='#111', vt='#FF5A2A', cta='Plan my launch',
+    'svc-launch': dict(motif='flight', bg='k-orange', rays='#FFC83D', verb='land', ink='#111', vt='#FF5A2A', cta='Plan my launch',
         side='''<figure class="k-fig sv-count" aria-label="A launch, from six weeks out to thirty days after">
 <figcaption class="sv-count-h">The countdown I run</figcaption>
 <ol>
@@ -26,7 +26,7 @@ HERO = {
 <li><b>30 days after</b><span>Pipeline, sales usage and adoption, reported with lessons for the next launch.</span></li>
 </ol>
 </figure>'''),
-    'svc-content': dict(bg='k-night', rays='#8FE3B0', verb='{{svc.verb}}', ink='#8FE3B0', vt='#0E2A2E', cta='Book a call',
+    'svc-content': dict(motif='ripple', bg='k-night', rays='#8FE3B0', verb='{{svc.verb}}', ink='#8FE3B0', vt='#0E2A2E', cta='Book a call',
         side=f'''<figure class="k-fig sv-serp"><img class="k-shot" src="{B('97c7a07c9e01d68334e57d95e5d31f53')}" alt="Google results for 2023 election results with Stears ranked first, above the BBC"><span class="k-badge sv-one" style="background: #FFC83D; color: #111">#1<br>on Google</span><figcaption>Stears, still first on Google for “2023 election results”</figcaption></figure>'''),
 }
 
@@ -143,12 +143,12 @@ SVC_CSS = '''
 
 def service(pid):
     h = HERO[pid]
-    verb = f'<span class="k-mark" style="--mk: {h["ink"]}; --mkt: {h["vt"]}"><span class="k-ink" aria-hidden="true"></span><span class="k-mt">{h["verb"]}.</span></span>'
+    verb = f'{h["verb"]}<span class="k-dot sv-dot">.</span>'
     light = h['bg'] in ('k-night',)
     btn = 'k-btn-paper' if light else 'h-btn-ink'
     return f'''{SVC_CSS}
-<section class="k-hero {h['bg']}" style="--rc: {h['rays']}">
-<div class="k-rays" aria-hidden="true"></div>
+<section class="k-hero {h['bg']}">
+{motif(h['motif'])}
 <div class="wrap">
 <nav class="k-crumb" aria-label="Breadcrumb"><a href="Site-Services.dc.html">Expertise</a> / <span>{{{{svc.name}}}}</span></nav>
 <div class="k-hero-g">
@@ -221,8 +221,8 @@ def service(pid):
 
 def services():
     return f'''{SVC_CSS}
-<section class="k-hero k-night sv-overview" style="--rc: #FF5A2A; --ro: .35">
-<div class="k-rays" aria-hidden="true"></div>
+<section class="k-hero k-night sv-overview">
+{motif('venn')}
 <div class="wrap">
 <p class="eyebrow">Expertise</p>
 <h1 class="sg k-h1" style="max-width: 17ch">Marketing for B2B SaaS and technology companies: {mark('three services, one practice.', '#8FE3B0', '#0E2A2E')}</h1>

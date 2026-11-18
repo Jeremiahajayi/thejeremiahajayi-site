@@ -1,5 +1,5 @@
 """Work page in the homepage's language: each case gets its own colour and composition."""
-from kit import mark, ARR
+from kit import mark, ARR, motif
 
 B = lambda i: '/_blob/' + i
 
@@ -89,7 +89,7 @@ CSS = '''
 .wk-pl .wk-pl-cap{font-size:13.5px;opacity:.8;margin-top:12px}
 /* Xofu */
 .wk-xq{margin:8px 0 0;font-weight:700;font-size:clamp(64px,11vw,184px);line-height:.88;letter-spacing:-.065em}
-.wk-xq span{color:#C23A0E;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.1em;text-decoration-color:#FFC83D}
+.wk-xq span{color:#C23A0E}
 .wk-xf{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,56px);align-items:center;margin-top:clamp(32px,4vw,56px)}
 .wk-xf-fan{height:clamp(320px,32vw,460px)}
 .wk-xf-fan .f1{left:0;top:0;width:74%;z-index:1}.wk-xf-fan .f2{right:0;top:22%;width:46%;transform:rotate(4deg)}.wk-xf-fan .f3{left:28%;bottom:0;width:34%;transform:rotate(-5deg);z-index:2}
@@ -115,7 +115,7 @@ CSS = '''
 def page():
     return f'''{CSS}
 <section class="k-hero k-cream wk-hero">
-<div class="k-rays" aria-hidden="true"></div>
+{motif('proof')}
 <div class="wrap k-hero-g">
 <div>
 <p class="eyebrow">Work · 2018 to 2026</p>

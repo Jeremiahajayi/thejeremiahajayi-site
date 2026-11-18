@@ -7,6 +7,8 @@ the inner-page pieces: coloured heroes with rays, highlight marks, sticker
 cards, steps, FAQs, chips, bars, and the closing band.
 """
 
+import re
+
 CAL = 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi'
 MAIL = 'jeremiah@thejeremiahajayi.com'
 ARR = '<span class="arr" aria-hidden="true">→</span>'
@@ -24,10 +26,40 @@ FOOT = [
 ]
 
 
-def mark(word, color='#FFC83D', text=None, cls=''):
-    """A word with the homepage's colour block swept in behind it."""
-    t = f' style="--mk: {color}' + (f'; --mkt: {text}' if text else '') + '"'
-    return f'<span class="k-mark{(" " + cls) if cls else ""}"{t}><span class="k-ink" aria-hidden="true"></span><span class="k-mt">{word}</span></span>'
+def mark(word, color=None, text=None, cls=''):
+    """Emphasis without a highlighter: the words stay plain and the closing
+    punctuation becomes the site's signature orange full stop."""
+    m = re.match(r'^(.*?)([.?!]+)$', word, re.S)
+    if m:
+        return f'{m.group(1)}<span class="k-dot">{m.group(2)}</span>'
+    return word
+
+
+MOTIFS = {
+    # Positioning: focus. Concentric rings around one orange point.
+    'target': '''<svg class="mo-svg mo-target" viewBox="0 0 600 600"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="300" cy="300" r="280"/><circle cx="300" cy="300" r="220"/><circle cx="300" cy="300" r="160"/><circle cx="300" cy="300" r="100"/><circle cx="300" cy="300" r="46"/></g><circle class="mo-bull" cx="300" cy="300" r="16" fill="#FF5A2A"/></svg>''',
+    # Launches: a flight path coming in to land on a runway.
+    'flight': '''<svg class="mo-svg mo-flight" viewBox="0 0 900 500" preserveAspectRatio="xMaxYMid meet"><path class="mo-path" d="M20 60 C 300 20, 560 120, 760 380" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="10 14"/><line x1="600" y1="430" x2="890" y2="430" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><g stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".6"><line x1="640" y1="452" x2="680" y2="452"/><line x1="720" y1="452" x2="760" y2="452"/><line x1="800" y1="452" x2="840" y2="452"/></g><circle cx="760" cy="380" r="12" fill="#111"/></svg>''',
+    # Content: ripples that keep travelling outwards.
+    'ripple': '''<div class="mo-ripple"><i></i><i></i><i></i><i></i><b></b></div>''',
+    # Expertise: three disciplines, one practice.
+    'venn': '''<svg class="mo-svg mo-venn" viewBox="0 0 600 560"><circle cx="220" cy="210" r="170" fill="#FFC83D"/><circle cx="380" cy="210" r="170" fill="#FF5A2A"/><circle cx="300" cy="350" r="170" fill="#8FE3B0"/></svg>''',
+    # Work: evidence. Graph paper with a line that climbs.
+    'proof': '''<div class="mo-grid"></div><svg class="mo-svg mo-proof" viewBox="0 0 800 420" preserveAspectRatio="xMaxYMax meet"><path class="mo-line" d="M10 400 L 140 360 L 250 372 L 360 300 L 470 280 L 580 190 L 690 150 L 790 30" fill="none" stroke="#FF5A2A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="790" cy="30" r="10" fill="#FF5A2A"/></svg>''',
+    # About: a route with turns, from law to marketing.
+    'route': '''<svg class="mo-svg mo-route" viewBox="0 0 700 700"><path class="mo-path" d="M40 660 C 160 520, 40 420, 200 360 S 420 380, 420 240 S 600 120, 660 40" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="8 14"/><circle cx="40" cy="660" r="10" fill="currentColor"/><circle cx="200" cy="360" r="10" fill="currentColor"/><circle cx="420" cy="240" r="10" fill="currentColor"/><circle cx="660" cy="40" r="14" fill="#FF5A2A"/></svg>''',
+    # Writing: a ruled page with a margin line.
+    'ruled': '''<div class="mo-ruled"></div>''',
+    # EmpowerQ: doorways.
+    'arches': '''<svg class="mo-svg mo-arches" viewBox="0 0 640 420" preserveAspectRatio="xMaxYMax meet"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M20 420 V170 a80 80 0 0 1 160 0 V420"/><path d="M230 420 V120 a80 80 0 0 1 160 0 V420"/></g><path d="M440 420 V70 a80 80 0 0 1 160 0 V420 Z" fill="#E9E2FF"/><path d="M440 420 V70 a80 80 0 0 1 160 0 V420" fill="none" stroke="currentColor" stroke-width="3"/></svg>''',
+    # Contact: a signal going out.
+    'signal': '''<svg class="mo-svg mo-signal" viewBox="0 0 500 500"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path class="s1" d="M500 380 A 120 120 0 0 0 380 500"/><path class="s2" d="M500 260 A 240 240 0 0 0 260 500"/><path class="s3" d="M500 140 A 360 360 0 0 0 140 500"/><path class="s4" d="M500 20 A 480 480 0 0 0 20 500"/></g></svg>''',
+}
+
+
+def motif(name):
+    """A background drawing chosen for what the page is about (the homepage keeps the sun)."""
+    return f'<div class="k-motif m-{name}" aria-hidden="true">{MOTIFS[name]}</div>'
 
 
 def footer_html():
@@ -248,5 +280,42 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 .k-bar-f{transform:none;transition:none}
 .k-stk,.k-fan img{transition:none}
 }
+
+/* emphasis: the orange full stop */
+.k-dot{color:var(--dot,#FF5A2A)}
+.k-orange{--dot:#111}
+/* page motifs */
+.k-motif{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.mo-svg{position:absolute;display:block}
+.m-target{color:rgba(17,17,17,.14)}
+.mo-target{right:-6vw;top:50%;width:min(62vw,820px);transform:translateY(-50%)}
+.mo-bull{transform-origin:300px 300px;animation:bull 3.2s ease-in-out infinite}
+@keyframes bull{50%{transform:scale(1.35)}}
+.m-flight{color:rgba(17,17,17,.3)}
+.mo-flight{right:0;bottom:4%;width:min(70vw,980px)}
+.mo-path{animation:dash 30s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-480}}
+.mo-ripple{position:absolute;right:8%;top:22%;width:2px;height:2px}
+.mo-ripple i{position:absolute;left:50%;top:50%;width:620px;height:620px;margin:-310px 0 0 -310px;border-radius:50%;border:2px solid #8FE3B0;opacity:0;animation:ripple 9s cubic-bezier(.2,.6,.4,1) infinite}
+.mo-ripple i:nth-child(2){animation-delay:2.25s}.mo-ripple i:nth-child(3){animation-delay:4.5s}.mo-ripple i:nth-child(4){animation-delay:6.75s}
+.mo-ripple b{position:absolute;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;background:#8FE3B0}
+@keyframes ripple{0%{transform:scale(.05);opacity:.55}100%{transform:scale(1.4);opacity:0}}
+.mo-venn{right:-4vw;top:-6%;width:min(52vw,700px);opacity:.16;mix-blend-mode:screen;animation:spin 120s linear infinite}
+.mo-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(17,17,17,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask:linear-gradient(100deg,transparent 30%,#000 75%);mask:linear-gradient(100deg,transparent 30%,#000 75%)}
+.mo-proof{right:2%;bottom:6%;width:min(56vw,760px);opacity:.35}
+.mo-line{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s .4s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.m-route{color:rgba(255,143,182,.55)}
+.mo-route{right:-2vw;top:-4%;width:min(56vw,760px)}
+.mo-ruled{position:absolute;inset:0;background:linear-gradient(90deg,transparent calc(100% - 46vw),rgba(255,90,42,.35) calc(100% - 46vw),rgba(255,90,42,.35) calc(100% - 46vw + 2px),transparent calc(100% - 46vw + 2px)),repeating-linear-gradient(180deg,transparent 0 37px,rgba(17,17,17,.08) 37px 38px)}
+.m-arches{color:rgba(28,20,48,.32)}
+.mo-arches{right:2%;bottom:0;width:min(46vw,620px)}
+.m-signal{color:rgba(255,90,42,.45)}
+.mo-signal{right:0;top:0;width:min(46vw,560px);transform:scaleY(-1)}
+.mo-signal path{animation:sig 3.6s ease-in-out infinite}
+.mo-signal .s2{animation-delay:.3s}.mo-signal .s3{animation-delay:.6s}.mo-signal .s4{animation-delay:.9s}
+@keyframes sig{0%,100%{opacity:.25}40%{opacity:1}}
+@media (max-width:640px){.mo-target{width:120vw;right:-50vw;opacity:.7}.mo-flight{width:150vw;right:-30vw;bottom:0}.mo-ripple{right:12%;top:12%}.mo-venn{width:110vw;right:-40vw}.mo-proof,.mo-route,.mo-arches{opacity:.5}.mo-ruled{opacity:.6}}
+@media (prefers-reduced-motion: reduce){.mo-bull,.mo-path,.mo-ripple i,.mo-venn,.mo-signal path{animation:none !important}.mo-ripple i{opacity:.2;transform:scale(.6)}.mo-ripple i:nth-child(2){transform:scale(.9)}.mo-line{animation:none;stroke-dashoffset:0}}
 /*kit:end*/
 '''

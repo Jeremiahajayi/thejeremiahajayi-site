@@ -57,7 +57,7 @@ DISCIPLINES = [
 def hero():
     rows = ''.join(
         f'<a class="h-row" href="{href}" data-peek="{i}" style="--i:{i}"><span class="h-tag"><span class="h-num">{num}</span>{name}<span class="h-tag-s">{sub} →</span></span>'
-        f'<span class="h-line"><span class="h-mk">Make it</span> <span class="h-verb v{i + 1}"><span class="h-ink" aria-hidden="true"></span><span class="h-vt">{verb}.</span></span></span></a>'
+        f'<span class="h-line"><span class="h-mk">Make it</span> <span class="h-verb v{i + 1}"><span class="h-vt">{verb}<span class="h-dot">.</span></span></span></span></a>'
         for i, (verb, num, name, sub, href, img, cap) in enumerate(LINES)
     )
     peeks = ''.join(
@@ -212,7 +212,7 @@ def work():
 <div class="wrap">
 <div class="sw-head">
 <p class="eyebrow">Selected work</p>
-<h2 id="sw-title" class="sg sw-title">Work where the story <em>changed</em> the outcome.</h2>
+<h2 id="sw-title" class="sg sw-title">Work where the story changed the outcome<span class="k-dot">.</span></h2>
 <p class="sw-sum">Five projects, each with what I was responsible for, what we made and what happened. Across my work: <b>$3M+</b> in pipeline influenced and <b>20+</b> launches led.</p>
 </div>
 {stears()}
@@ -375,13 +375,14 @@ CSS = r'''
 .h-tag-s{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
 .h-line{white-space:nowrap}
 .h-mk{color:#111}
-.h-verb{position:relative;display:inline-block;padding:0 .12em .04em;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.h-ink{position:absolute;inset:.06em 0 0;border-radius:.14em;transform-origin:left center;animation:ink .7s cubic-bezier(.7,0,.2,1) both;animation-delay:calc(.35s + var(--i) * .22s)}
-.h-row[style*="--i:0"] .h-ink,.v1 .h-ink{background:#FFC83D}
-.v2 .h-ink{background:#FF5A2A}
-.v3 .h-ink{background:#8FE3B0}
+.h-verb{position:relative;display:inline-block}
 .h-vt{position:relative}
-.h-row.is-on .h-verb,.h-row:hover .h-verb,.h-row:focus-visible .h-verb{transform:rotate(-2.5deg) translateY(-2px)}
+.h-dot{display:inline-block;color:#FF5A2A;transform-origin:50% 80%;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.h-line{transition:opacity .45s}
+.h-display.is-cycling .h-row:not(.is-on) .h-line{opacity:.42}
+.h-display:hover .h-row:not(:hover) .h-line{opacity:.32}
+.h-row.is-on .h-dot,.h-row:hover .h-dot,.h-row:focus-visible .h-dot{transform:scale(1.5);animation:hop .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes hop{0%{transform:translateY(0) scale(1)}45%{transform:translateY(-.35em) scale(1.5)}100%{transform:scale(1.5)}}
 .h-row.is-on .h-tag,.h-row:hover .h-tag,.h-row:focus-visible .h-tag{background:#111;color:#FFF5D9}
 .h-row.is-on .h-num,.h-row:hover .h-num{background:#FF5A2A;color:#111}
 .h-row:hover .h-tag-s,.h-row:focus-visible .h-tag-s{max-width:260px;opacity:1}
@@ -416,7 +417,7 @@ CSS = r'''
 .h-hero[data-sky="dusk"],.h-hero[data-sky="night"]{color:#F2EFE8}
 .h-hero[data-sky="dusk"] .h-hello,.h-hero[data-sky="night"] .h-hello,.h-hero[data-sky="dusk"] .h-id,.h-hero[data-sky="night"] .h-id,.h-hero[data-sky="dusk"] .h-lede,.h-hero[data-sky="night"] .h-lede,.h-hero[data-sky="dusk"] .h-hire,.h-hero[data-sky="night"] .h-hire{color:#D9D4CA}
 .h-hero[data-sky="dusk"] .h-hello span:first-child,.h-hero[data-sky="night"] .h-hello span:first-child,.h-hero[data-sky="dusk"] .h-id b,.h-hero[data-sky="night"] .h-id b,.h-hero[data-sky="dusk"] .h-mk,.h-hero[data-sky="night"] .h-mk,.h-hero[data-sky="dusk"] .h-row,.h-hero[data-sky="night"] .h-row{color:#F2EFE8}
-.h-hero .h-vt,.h-hero .h-tag{color:#111}
+.h-hero .h-tag{color:#111}
 .h-hero .h-row.is-on .h-tag,.h-hero .h-row:hover .h-tag{color:#FFF5D9}
 .h-hero[data-sky="dusk"] .h-skyl,.h-hero[data-sky="night"] .h-skyl{background:rgba(242,239,232,.12)}
 .h-hero[data-sky="dusk"] .h-btn-ink,.h-hero[data-sky="night"] .h-btn-ink{background:#F2EFE8;color:#111}
@@ -465,7 +466,7 @@ CSS = r'''
 .sw-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:12px 48px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
 .sw-head .eyebrow{grid-column:1/-1}
 .sw-title{margin:0;font-weight:700;font-size:clamp(44px,6vw,96px);line-height:.94;letter-spacing:-.055em;max-width:13ch}
-.sw-title em{font-style:normal;color:#111;background:#FF5A2A;padding:0 .1em;border-radius:.12em;display:inline-block;transform:rotate(-2deg)}
+.sw-title .k-dot,.h-hero .k-dot{color:#FF5A2A}
 .sw-sum{margin:0;font-size:17px;line-height:1.6;color:#B5B0A6;max-width:40ch}
 .sw-sum b{color:#F2EFE8}
 .sw-all{margin:clamp(40px,5vw,64px) 0 0;text-align:center}
@@ -559,7 +560,7 @@ CSS = r'''
 .pc-xofu{background:#FFF5D9;color:#111}
 .xf-top{display:flex;flex-direction:column}
 .xf-quote{margin:4px 0 0;font-size:clamp(56px,9vw,148px);font-weight:700;line-height:.9;letter-spacing:-.06em}
-.xf-quote span{color:#C23A0E;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.1em;text-decoration-color:#FFC83D}
+.xf-quote span{color:#C23A0E}
 .xf-sub{margin:14px 0 0;font-size:17px;color:#45423C}
 .xf-grid{margin-top:clamp(28px,3.4vw,48px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px);align-items:center}
 .xf-media{height:clamp(300px,30vw,440px)}
@@ -651,7 +652,7 @@ CSS = r'''
 .ab-title{margin:0 0 18px;font-weight:700;font-size:clamp(44px,5.6vw,88px);line-height:1;letter-spacing:-.055em;max-width:12ch}
 .ab-strike{position:relative;display:inline-block}
 .ab-strike i{position:absolute;left:-3%;right:-3%;top:54%;height:.1em;background:#FF5A2A;border-radius:99px;transform:scaleX(0) rotate(-4deg);transform-origin:left;transition:transform .7s .2s cubic-bezier(.7,0,.2,1)}
-.ab-ins{display:inline-block;margin-left:.18em;padding:0 .1em;background:#FFC83D;border-radius:.12em;transform:rotate(-3deg) scale(.4);opacity:0;transition:transform .55s 1s cubic-bezier(.3,1.6,.5,1),opacity .3s 1s}
+.ab-ins{display:inline-block;margin-left:.18em;color:#C23A0E;transform:rotate(-3deg) scale(.4);opacity:0;transition:transform .55s 1s cubic-bezier(.3,1.6,.5,1),opacity .3s 1s}
 .ab-title.in .ab-strike i{transform:scaleX(1) rotate(-4deg)}
 .ab-title.in .ab-strike{color:#8A867E}
 .ab-title.in .ab-ins{transform:rotate(-3deg);opacity:1}
@@ -764,7 +765,7 @@ CSS = r'''
 .rs-sticker{right:-4%;width:88px;height:88px;font-size:13px}
 }
 @media (prefers-reduced-motion: reduce){
-.h-rays,.h-flower,.h-ring svg,.eq-s1,.eq-s2,.logo-track,.h-ink,.h-photo{animation:none !important}
+.h-rays,.h-flower,.h-ring svg,.eq-s1,.eq-s2,.logo-track,.h-photo,.h-dot{animation:none !important}
 .xd:hover .xd-shp,.xd:hover .xd-emo{animation:none !important}
 .st-v.is-on .st-dots-on{animation:none;clip-path:none}
 .st-v.is-on .st-rank li{animation:none !important}

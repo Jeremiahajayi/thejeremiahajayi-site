@@ -1,5 +1,5 @@
 """About, Writing, EmpowerQ and Contact in the homepage's language."""
-from kit import mark, ARR, footer_html
+from kit import mark, ARR, footer_html, motif
 
 B = lambda i: '/_blob/' + i
 
@@ -51,8 +51,8 @@ ABOUT_CSS = '''
 
 def about():
     return f'''{ABOUT_CSS}
-<section class="k-hero k-night ab-hero" style="--rc: #FF8FB6; --ro: .28">
-<div class="k-rays" aria-hidden="true"></div>
+<section class="k-hero k-night ab-hero">
+{motif('route')}
 <div class="wrap k-hero-g">
 <div>
 <h1 class="ab-id"><b>Jeremiah Ajayi.</b> Marketing consultant for B2B SaaS and technology companies, based in Lagos.</h1>
@@ -189,7 +189,7 @@ WR_CSS = '''
 def writing():
     return f'''{WR_CSS}
 <section class="k-hero k-cream wr-hero">
-<div class="k-rays" aria-hidden="true"></div>
+{motif('ruled')}
 <div class="wrap k-hero-g">
 <div>
 <p class="eyebrow">Writing &amp; research</p>
@@ -292,8 +292,8 @@ EQ_CSS = '''
 
 def empowerq():
     return f'''{EQ_CSS}
-<section class="k-hero eqp-hero" style="--rc: #E9E2FF; --ro: .45">
-<div class="k-rays" aria-hidden="true"></div>
+<section class="k-hero eqp-hero">
+{motif('arches')}
 <span class="shp shp-flower k-shape" aria-hidden="true" style="left: 38%; bottom: -60px; width: 150px; height: 150px; background: #FF8FB6"></span>
 <div class="wrap eq-grid">
 <div class="eq-copy">
@@ -370,7 +370,7 @@ CT_CSS = '''
 def contact():
     return f'''{CT_CSS}
 <section class="ct ctp k-cream" aria-labelledby="ct-title">
-<div class="k-rays" aria-hidden="true"></div>
+{motif('signal')}
 <div class="wrap">
 <p class="eyebrow">Contact</p>
 <h1 id="ct-title" class="sg ct-title">What are you {mark('working on?', '#FF5A2A', '#111')}</h1>
