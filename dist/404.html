@@ -49,8 +49,8 @@ html{scroll-behavior:smooth}
 .case:hover .lift2{transform:translateY(8px) rotate(1deg)}
 .lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .row-x{transition:background .35s,color .35s}
-.row-x:hover{background:#FF5A2A;color:#111}
-.row-x:hover .rx-sub{color:#111}
+.row-x:hover{background:#F2EFE8;color:#111}
+.row-x:hover .rx-sub,.row-x:hover .rx-sub *{color:#111 !important}
 .stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
 .stop-dot{transition:transform .3s,background .3s}
 .door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
@@ -72,7 +72,7 @@ html{scroll-behavior:smooth}
 .shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .shot:hover{transform:translateY(-6px) rotate(-.5deg)}
 .need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
-.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.dots{background-image:radial-gradient(circle,#F2EFE8 34%,transparent 38%);background-size:2.5% 4%}
 .hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
 .hscroll>*{scroll-snap-align:start}
 .jump{text-decoration:none;transition:background .3s,color .3s}
@@ -214,6 +214,18 @@ body:has(.nav-t:checked){overflow:hidden}
 </div>
 <script type="application/json" id="doors-data">[{"label":"Our positioning isn’t landing","who":"For founders and marketing leads","title":"Let’s find the one thing your market should remember.","body":"We’ll work out what makes your product worth choosing, then turn it into messaging your whole team can tell the same way.","cta":"Book a positioning call ↗","href":"https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi","selected":"true","bg":"#111","fg":"#F2EFE8","border":"#111"},{"label":"We have a launch coming up","who":"For product and marketing teams","title":"Let’s make it a launch the market notices and sales can use.","body":"Narrative and timing, press and partners, and the material sales needs on day one.","cta":"Book a launch call ↗","href":"https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi","selected":"false","bg":"transparent","fg":"#111","border":"#C9C3B6"},{"label":"Our content should work harder","who":"For growth and content teams","title":"Let’s build content that earns attention and turns into pipeline.","body":"Editorial strategy, storytelling and distribution, built to keep working long after it’s published.","cta":"Book a content call ↗","href":"https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi","selected":"false","bg":"transparent","fg":"#111","border":"#C9C3B6"},{"label":"I’m hiring a marketer","who":"For hiring managers","title":"I’m open to senior marketing roles.","body":"Remote, or with relocation for the right team. Send me the role and I’ll reply with a CV tailored to it.","cta":"Email me the role ↗","href":"mailto:jeremiah@thejeremiahajayi.com?subject=A%20role%20for%20you","selected":"false","bg":"transparent","fg":"#111","border":"#C9C3B6"},{"label":"Let’s work on something together","who":"For collaborators","title":"Speaking, research, writing, or supporting EmpowerQ.","body":"If it involves good ideas going somewhere useful, I’d like to hear about it.","cta":"Start a conversation ↗","href":"mailto:jeremiah@thejeremiahajayi.com?subject=Working%20together","selected":"false","bg":"transparent","fg":"#111","border":"#C9C3B6"}]</script>
 <script>(function () {
+
+  // Homepage hero: "the edit". Plays once per visit; the button replays it.
+  document.documentElement.classList.add('js-on');
+  var hero = document.querySelector('.hero-anim');
+  if (hero) {
+    try { sessionStorage.setItem('jgSeen', '1'); } catch (e) {}
+    var rb = document.querySelector('[data-jg-replay]');
+    if (rb) rb.addEventListener('click', function () {
+      var sec = document.getElementById('top');
+      document.documentElement.classList.remove('jg-skip'); sec.classList.remove('hero-anim'); void sec.offsetWidth; sec.classList.add('hero-anim');
+    });
+  }
   function t() { try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; } }
   function tick() { document.querySelectorAll('[data-time]').forEach(function (el) { el.textContent = t(); }); }
   tick(); setInterval(tick, 30000);

@@ -169,7 +169,7 @@ for (const page of PAGES) {
 <html lang="en">
 <head>
 ${GTM_HEAD}
-<meta charset="utf-8">
+${page.out === 'index.html' ? "<script>try{if(sessionStorage.getItem('jgSeen')==='1')document.documentElement.classList.add('jg-skip')}catch(e){}</script>\n" : ''}<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${page.title}</title>
 <meta name="description" content="${page.desc}">

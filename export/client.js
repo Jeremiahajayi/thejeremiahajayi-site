@@ -1,4 +1,16 @@
 (function () {
+
+  // Homepage hero: "the edit". Plays once per visit; the button replays it.
+  document.documentElement.classList.add('js-on');
+  var hero = document.querySelector('.hero-anim');
+  if (hero) {
+    try { sessionStorage.setItem('jgSeen', '1'); } catch (e) {}
+    var rb = document.querySelector('[data-jg-replay]');
+    if (rb) rb.addEventListener('click', function () {
+      var sec = document.getElementById('top');
+      document.documentElement.classList.remove('jg-skip'); sec.classList.remove('hero-anim'); void sec.offsetWidth; sec.classList.add('hero-anim');
+    });
+  }
   function t() { try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; } }
   function tick() { document.querySelectorAll('[data-time]').forEach(function (el) { el.textContent = t(); }); }
   tick(); setInterval(tick, 30000);

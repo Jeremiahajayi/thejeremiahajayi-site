@@ -37,8 +37,8 @@ html{scroll-behavior:smooth}
 .case:hover .lift2{transform:translateY(8px) rotate(1deg)}
 .lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .row-x{transition:background .35s,color .35s}
-.row-x:hover{background:#FF5A2A;color:#111}
-.row-x:hover .rx-sub{color:#111}
+.row-x:hover{background:#F2EFE8;color:#111}
+.row-x:hover .rx-sub,.row-x:hover .rx-sub *{color:#111 !important}
 .stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
 .stop-dot{transition:transform .3s,background .3s}
 .door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
@@ -60,7 +60,7 @@ html{scroll-behavior:smooth}
 .shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .shot:hover{transform:translateY(-6px) rotate(-.5deg)}
 .need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
-.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.dots{background-image:radial-gradient(circle,#F2EFE8 34%,transparent 38%);background-size:2.5% 4%}
 .hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
 .hscroll>*{scroll-snap-align:start}
 .jump{text-decoration:none;transition:background .3s,color .3s}
@@ -183,7 +183,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <section style="background: #E6E1D6; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 128px) clamp(20px, 5vw, 28px) clamp(45px, 8vw, 104px); display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-end">
 <div style="flex: 1 1 620px; min-width: 0">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #C23A0E">Writing &amp; research</p>
+<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #111">Writing &amp; research</p>
 <h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(52px, 7vw, 108px); line-height: 0.92; letter-spacing: -0.058em">How buyers find, judge and <span style="color: #C23A0E">choose.</span></h1>
 <p style="margin: 28px 0 0; max-width: 580px; font-size: 19px; line-height: 1.6; color: #2D2B27">Original research on AI search, teardowns of launches and growth, and the playbooks I use. Published here, at Foundation Labs, Condia, Buffer and the Product Marketing Alliance.</p>
 </div>
@@ -191,7 +191,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <div class="lift" style="position: relative; aspect-ratio: 4 / 3; border-radius: 12px; background-color: #111; overflow: hidden; box-shadow: 0 30px 60px rgba(17,17,17,.2)">
 <img src="/_blob/7eb8244cdcb54835b411e77a562f76ac" alt="Contents page of the report, with six chapters" loading="lazy" style="position: absolute; right: 7%; top: 13%; width: 40%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; transform: rotate(5deg); box-shadow: 0 18px 40px rgba(0,0,0,.45); background: #FBF7D9">
 <img src="/_blob/33c1f064948e333f4df17633271445aa" alt="Cover of The State of AI Search in Nigeria, written and researched by Jeremiah Ajayi and Felix Akinnibi" loading="lazy" style="position: absolute; left: 9%; top: 7%; width: 45%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; transform: rotate(-4deg); box-shadow: 0 24px 50px rgba(0,0,0,.5); background: #FBF7D9">
-<span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #FF5A2A; color: #111">A first for Nigeria · 2026</span>
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #F2EFE8; color: #111">A first for Nigeria · 2026</span>
 </div>
 <span class="sg" style="font-size: 24px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em">The State of AI Search in Nigeria</span>
 <span style="font-size: 15px; line-height: 1.55; color: #2D2B27">Co-authored with Felix Akinnibi, Read the report →</span>
@@ -203,7 +203,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 40px">
 <div>
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #FF5A2A">Foundation Labs research</p>
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #F2EFE8">Foundation Labs research</p>
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.95; letter-spacing: -0.05em">Four studies on how AI chooses its sources.</h2>
 </div>
 <p style="margin: 0; max-width: 380px; font-size: 15px; line-height: 1.6; color: #B5B0A6">Original investigations I authored for Foundation Marketing’s research lab.</p>
@@ -222,13 +222,13 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section style="background: #E6E1D6; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #C23A0E">Start here</p>
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #111">Start here</p>
 <h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.95; letter-spacing: -0.05em">An essay, and three pieces built on original data.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 16px; align-items: stretch">
 <a class="case" href="https://www.thejeremiahajayi.com/post/the-life-i-chose-after-the-life-i-planned" style="text-decoration: none; color: #F2EFE8; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-radius: 16px; overflow: hidden; background: #111; min-height: 420px">
 <img class="lift" src="/_blob/bdf09678f86df90bce8dc2fbad846823" alt="Jeremiah as a law student at Obafemi Awolowo University" loading="lazy" style="width: 100%; height: 100%; object-fit: cover">
 <span style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px; padding: 28px">
-<span style="font-size: 13px; font-weight: 700; color: #FF5A2A">Personal essay · July 2026</span>
+<span style="font-size: 13px; font-weight: 700; color: #F2EFE8">Personal essay · July 2026</span>
 <span><span class="card-t sg" style="display: block; font-size: clamp(28px, 2.8vw, 40px); font-weight: 600; line-height: 1; letter-spacing: -0.04em; transition: color .3s">The life I chose after the life I planned</span><span style="display: block; margin-top: 14px; font-size: 15px; line-height: 1.55; color: #D8D3C9">Leaving Law, starting again, and the people who left fingerprints on the story.</span></span>
 <span style="font-size: 14px; font-weight: 700">Read the essay →</span>
 </span>
@@ -260,7 +260,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <ul style="margin: 36px 0 0; padding: 0; list-style: none; border-top: 2px solid #111">
 <sc-for list="{{shown}}" as="p" hint-placeholder-count="8">
 <li data-k="{{p.cat}}" data-text="{{p.text}}" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="{{p.href}}" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">{{p.where}}</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">{{p.where}}</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">{{p.title}}</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">{{p.dek}}</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">{{p.meta}}</span>
 </a></li>
@@ -285,7 +285,7 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section id="contact" style="background: #111; color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 152px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Need this thinking on<br><span style="color: #FF5A2A">your positioning, launch or content?</span></h2>
+<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Need this thinking on<br><span style="color: #F2EFE8">your positioning, launch or content?</span></h2>
 <div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
 <a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
 <a class="btn-l" href="mailto:jeremiah@thejeremiahajayi.com" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">jeremiah@thejeremiahajayi.com</a>
@@ -347,7 +347,7 @@ class Component extends DCLogic {
     return {
       time: this.state.time,
       studies: [
-        { no: '01', subject: 'n8n', big: '16%', title: 'The Ghost Citation', finding: 'Of the citations behind n8n’s AI answers, only about 16% came from n8n’s own sites.', href: 'https://foundationinc.co/lab/n8n-ghost-citation-audit', bg: '#FF5A2A', fg: '#111' },
+        { no: '01', subject: 'n8n', big: '16%', title: 'The Ghost Citation', finding: 'Of the citations behind n8n’s AI answers, only about 16% came from n8n’s own sites.', href: 'https://foundationinc.co/lab/n8n-ghost-citation-audit', bg: '#E6E1D6', fg: '#111' },
         { no: '02', subject: 'ClickUp', big: '0/12', title: 'Model Drift', finding: 'Named in 97.5% of discovery answers, recommended in none of 12 head-to-head comparisons.', href: 'https://foundationinc.co/lab/model-drift-clickup-ai-visibility', bg: '#F2EFE8', fg: '#111' },
         { no: '03', subject: 'ATS category', big: '73%', title: 'The Versus Layer', finding: 'Of the evidence in head-to-head answers, 73% came from outside the vendors being compared.', href: 'https://foundationinc.co/lab/versus-layer-ai-comparison-pages/', bg: '#2A2926', fg: '#F2EFE8' },
         { no: '04', subject: 'Docker', big: '54%', title: 'The Docs Dividend', finding: 'Docs were 54% of Docker’s own citations, but scale and upkeep explained the lead.', href: 'https://foundationinc.co/lab/docker-docs-ai-citations', bg: '#2A2926', fg: '#F2EFE8' }
@@ -359,7 +359,7 @@ class Component extends DCLogic {
       noneDisplay: posts.filter((p) => (cur === 'all' || p.cat === cur) && match(p)).length === 0 ? 'block' : 'none',
       none: posts.filter((p) => (cur === 'all' || p.cat === cur) && match(p)).length === 0,
       featured: [
-        { big: '530', unit: 'LinkedIn posts', title: 'Does founder-led content work?', dek: 'Six fintech brands against their founders, post by post.', href: B + 'does-founder-led-content-work-data-from-530-linkedin-posts', bg: '#FF5A2A', fg: '#111' },
+        { big: '530', unit: 'LinkedIn posts', title: 'Does founder-led content work?', dek: 'Six fintech brands against their founders, post by post.', href: B + 'does-founder-led-content-work-data-from-530-linkedin-posts', bg: '#E6E1D6', fg: '#111' },
         { big: '40', unit: 'job listings', title: 'Who owns AEO? Hiring lessons', dek: 'What companies expect from AI-search hires, and how they split the work.', href: B + 'who-owns-aeo-hiring-lessons', bg: '#111', fg: '#F2EFE8' },
         { big: '14/15', unit: 'AI answers', title: 'Why AI keeps recommending PiggyVest', dek: 'Where one brand’s AI dominance in Nigerian savings comes from.', href: B + 'why-ai-recommends-piggyvest', bg: '#FFFFFF', fg: '#111' }
       ],

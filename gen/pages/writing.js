@@ -35,7 +35,7 @@
     return {
       time: this.state.time,
       studies: [
-        { no: '01', subject: 'n8n', big: '16%', title: 'The Ghost Citation', finding: 'Of the citations behind n8n’s AI answers, only about 16% came from n8n’s own sites.', href: 'https://foundationinc.co/lab/n8n-ghost-citation-audit', bg: '#FF5A2A', fg: '#111' },
+        { no: '01', subject: 'n8n', big: '16%', title: 'The Ghost Citation', finding: 'Of the citations behind n8n’s AI answers, only about 16% came from n8n’s own sites.', href: 'https://foundationinc.co/lab/n8n-ghost-citation-audit', bg: '#E6E1D6', fg: '#111' },
         { no: '02', subject: 'ClickUp', big: '0/12', title: 'Model Drift', finding: 'Named in 97.5% of discovery answers, recommended in none of 12 head-to-head comparisons.', href: 'https://foundationinc.co/lab/model-drift-clickup-ai-visibility', bg: '#F2EFE8', fg: '#111' },
         { no: '03', subject: 'ATS category', big: '73%', title: 'The Versus Layer', finding: 'Of the evidence in head-to-head answers, 73% came from outside the vendors being compared.', href: 'https://foundationinc.co/lab/versus-layer-ai-comparison-pages/', bg: '#2A2926', fg: '#F2EFE8' },
         { no: '04', subject: 'Docker', big: '54%', title: 'The Docs Dividend', finding: 'Docs were 54% of Docker’s own citations, but scale and upkeep explained the lead.', href: 'https://foundationinc.co/lab/docker-docs-ai-citations', bg: '#2A2926', fg: '#F2EFE8' }
@@ -47,7 +47,7 @@
       noneDisplay: posts.filter((p) => (cur === 'all' || p.cat === cur) && match(p)).length === 0 ? 'block' : 'none',
       none: posts.filter((p) => (cur === 'all' || p.cat === cur) && match(p)).length === 0,
       featured: [
-        { big: '530', unit: 'LinkedIn posts', title: 'Does founder-led content work?', dek: 'Six fintech brands against their founders, post by post.', href: B + 'does-founder-led-content-work-data-from-530-linkedin-posts', bg: '#FF5A2A', fg: '#111' },
+        { big: '530', unit: 'LinkedIn posts', title: 'Does founder-led content work?', dek: 'Six fintech brands against their founders, post by post.', href: B + 'does-founder-led-content-work-data-from-530-linkedin-posts', bg: '#E6E1D6', fg: '#111' },
         { big: '40', unit: 'job listings', title: 'Who owns AEO? Hiring lessons', dek: 'What companies expect from AI-search hires, and how they split the work.', href: B + 'who-owns-aeo-hiring-lessons', bg: '#111', fg: '#F2EFE8' },
         { big: '14/15', unit: 'AI answers', title: 'Why AI keeps recommending PiggyVest', dek: 'Where one brand’s AI dominance in Nigerian savings comes from.', href: B + 'why-ai-recommends-piggyvest', bg: '#FFFFFF', fg: '#111' }
       ],

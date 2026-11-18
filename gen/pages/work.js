@@ -45,9 +45,9 @@
       time: this.state.time,
       headline: [
         { big: '$3M+', label: 'pipeline influenced across my work', color: '#111' },
-        { big: '20+', label: 'product launches led', color: '#C23A0E' },
+        { big: '20+', label: 'product launches led', color: '#111' },
         { big: '#1', label: 'above the BBC on Google for Stears', color: '#111' },
-        { big: '270+', label: 'media pickups for one launch', color: '#C23A0E' }
+        { big: '270+', label: 'media pickups for one launch', color: '#111' }
       ],
       wall: wallItems.concat(wallItems),
       jumps: [
@@ -130,7 +130,7 @@
         touch: [
           { n: '01', h: 'Landing page', s: 'remotepass.com/ai', href: 'https://www.remotepass.com/ai', go: '↗', bg: '#111', fg: '#F2EFE8' },
           { n: '02', h: 'Announcement video', s: 'Watch it on LinkedIn', href: 'https://lnkd.in/p/gMXYb4hH', go: '↗', bg: '#111', fg: '#F2EFE8' },
-          { n: '03', h: 'Sales enablement', s: 'Documents for the sales team, built on the same story', href: 'Site-Service-Launch.dc.html', go: '→', bg: 'rgba(17,17,17,.12)', fg: '#111' }
+          { n: '03', h: 'Sales enablement', s: 'Documents for the sales team, built on the same story', href: 'Site-Service-Launch.dc.html', go: '→', bg: '#F2EFE8', fg: '#111' }
         ]
       },
       xofu: {
@@ -142,6 +142,6 @@
         ]
       },
       filters: filters.map((x) => ({ id: x.id, label: x.label, count: x.id === 'all' ? projects.length : projects.filter((p) => p.k === x.id).length, pressed: x.id === f ? 'true' : 'false', bg: x.id === f ? '#111' : 'transparent', fg: x.id === f ? '#F2EFE8' : '#111', border: x.id === f ? '#111' : '#C9C3B6', pick: () => this.setState({ f: x.id }) })),
-      shown: projects.filter((p) => f === 'all' || p.k === f).map((p) => ({ ...p, tag: tags[p.k], cta: p.deep ? 'See the case →' : 'Ask me about it →', bg: p.dark ? '#111' : (p.orange ? '#FF5A2A' : '#F2EFE8'), fg: p.dark ? '#F2EFE8' : '#111', rule: p.dark ? '#3A3934' : 'rgba(17,17,17,.2)' }))
+      shown: projects.filter((p) => f === 'all' || p.k === f).map((p) => ({ ...p, tag: tags[p.k], cta: p.deep ? 'See the case →' : 'Ask me about it →', bg: p.dark ? '#111' : (p.orange ? '#E6E1D6' : '#F2EFE8'), fg: p.dark ? '#F2EFE8' : '#111', rule: p.dark ? '#3A3934' : 'rgba(17,17,17,.2)' }))
     };
   }

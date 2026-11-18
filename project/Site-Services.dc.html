@@ -37,8 +37,8 @@ html{scroll-behavior:smooth}
 .case:hover .lift2{transform:translateY(8px) rotate(1deg)}
 .lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .row-x{transition:background .35s,color .35s}
-.row-x:hover{background:#FF5A2A;color:#111}
-.row-x:hover .rx-sub{color:#111}
+.row-x:hover{background:#F2EFE8;color:#111}
+.row-x:hover .rx-sub,.row-x:hover .rx-sub *{color:#111 !important}
 .stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
 .stop-dot{transition:transform .3s,background .3s}
 .door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
@@ -60,7 +60,7 @@ html{scroll-behavior:smooth}
 .shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .shot:hover{transform:translateY(-6px) rotate(-.5deg)}
 .need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
-.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.dots{background-image:radial-gradient(circle,#F2EFE8 34%,transparent 38%);background-size:2.5% 4%}
 .hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
 .hscroll>*{scroll-snap-align:start}
 .jump{text-decoration:none;transition:background .3s,color .3s}
@@ -182,7 +182,7 @@ body:has(.nav-t:checked){overflow:hidden}
 </header>
 <section class="grid-bg">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 128px) clamp(20px, 5vw, 28px) clamp(45px, 8vw, 104px)">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #FF5A2A">Expertise</p>
+<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #F2EFE8">Expertise</p>
 <h1 class="sg" style="margin: 0; max-width: 1140px; font-weight: 600; font-size: clamp(50px, 7vw, 112px); line-height: 0.92; letter-spacing: -0.058em">Marketing for B2B SaaS and technology companies: <span style="color: #FF5A2A">three services, one practice.</span></h1>
 <p style="margin: 32px 0 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #D8D3C9">Choose by the problem you have, then by how you want to work. Research, SEO, AI search and sales enablement are how I do the work. These three are what the work is for.</p>
 <div style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
@@ -217,12 +217,12 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section style="background: #FFFFFF; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #C23A0E">Ways to work together</p>
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #111">Ways to work together</p>
 <h2 class="sg" style="margin: 0; max-width: 900px; font-weight: 600; font-size: clamp(40px, 4.8vw, 72px); line-height: 0.96; letter-spacing: -0.055em">Pick the shape that fits your problem.</h2>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 2px solid #111">
 <sc-for list="{{ways}}" as="w" hint-placeholder-count="4">
 <div style="padding: 28px 24px 32px 0; border-bottom: 1px solid #E6E1D6; display: flex; flex-direction: column; gap: 12px">
-<span class="sg" style="font-size: 15px; font-weight: 700; color: #C23A0E">{{w.n}}</span>
+<span class="sg" style="font-size: 15px; font-weight: 700; color: #111">{{w.n}}</span>
 <h3 class="sg" style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.05">{{w.h}}</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2D2B27">{{w.t}}</p>
 <a class="nd" href="{{w.href}}" style="margin-top: auto; font-weight: 700">{{w.cta}}</a>
@@ -234,13 +234,13 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section style="background: #111; color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #FF5A2A">How an engagement runs</p>
+<p style="margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #F2EFE8">How an engagement runs</p>
 <h2 class="sg" style="margin: 0 0 40px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.96; letter-spacing: -0.05em">From first call to measured result.</h2>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
-<sc-for list="{{steps}}" as="s" hint-placeholder-count="4"><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #FF5A2A">{{s.n}}</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">{{s.t}}</span></li></sc-for>
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4"><li style="padding: 26px 24px 30px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 64px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: #F2EFE8">{{s.n}}</span><span class="sg" style="display: block; margin-top: 14px; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</span><span style="display: block; margin-top: 8px; font-size: 15px; line-height: 1.6; color: #D8D3C9">{{s.t}}</span></li></sc-for>
 </ol>
 <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; border-top: 1px solid #3A3934; padding-top: 28px">
-<sc-for list="{{proof}}" as="p" hint-placeholder-count="4"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 72px); line-height: 0.86; letter-spacing: -0.06em; color: #FF5A2A">{{p.big}}</p><p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #D8D3C9">{{p.label}}</p></div></sc-for>
+<sc-for list="{{proof}}" as="p" hint-placeholder-count="4"><div><p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(48px, 5vw, 72px); line-height: 0.86; letter-spacing: -0.06em; color: #F2EFE8">{{p.big}}</p><p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #D8D3C9">{{p.label}}</p></div></sc-for>
 </div>
 </div>
 </section>
@@ -251,7 +251,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <div style="flex: 1 1 640px; min-width: 0; border-top: 2px solid #111">
 <sc-for list="{{faq}}" as="q" hint-placeholder-count="5">
 <details style="border-bottom: 1px solid #E6E1D6">
-<summary class="sg" style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25">{{q.q}}<span aria-hidden="true" style="color: #C23A0E">+</span></summary>
+<summary class="sg" style="cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25">{{q.q}}<span aria-hidden="true" style="color: #111">+</span></summary>
 <p style="margin: 0 0 24px; max-width: 720px; font-size: 17px; line-height: 1.65; color: #2D2B27">{{q.a}}</p>
 </details>
 </sc-for>
@@ -269,7 +269,7 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section id="contact" style="background: #111; color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 152px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Which one are you<br><span style="color: #FF5A2A">working on?</span></h2>
+<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Which one are you<br><span style="color: #F2EFE8">working on?</span></h2>
 <div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
 <a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
 <a class="btn-l" href="mailto:jeremiah@thejeremiahajayi.com" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">jeremiah@thejeremiahajayi.com</a>
@@ -299,7 +299,7 @@ class Component extends DCLogic {
       time: this.state.time,
       services: [
         { verb: 'Clear', name: 'Positioning & messaging', when: 'buyers can’t explain what you do, or a launch, raise or new market is coming.', proof: 'Xofu: 2x click-through', href: 'Site-Service-Positioning.dc.html', bg: '#F2EFE8', fg: '#111', rule: 'rgba(17,17,17,.2)' },
-        { verb: 'Land', name: 'Launches & go-to-market', when: 'releases get attention but don’t reach sales conversations.', proof: '20+ launches led', href: 'Site-Service-Launch.dc.html', bg: '#FF5A2A', fg: '#111', rule: 'rgba(17,17,17,.25)' },
+        { verb: 'Land', name: 'Launches & go-to-market', when: 'releases get attention but don’t reach sales conversations.', proof: '20+ launches led', href: 'Site-Service-Launch.dc.html', bg: '#E6E1D6', fg: '#111', rule: 'rgba(17,17,17,.25)' },
         { verb: 'Travel', name: 'Content & organic growth', when: 'content isn’t turning into pipeline, or AI answers recommend competitors.', proof: '174% organic growth', href: 'Site-Service-Content.dc.html', bg: '#F2EFE8', fg: '#111', rule: 'rgba(17,17,17,.2)' }
       ],
       forWho: [ { t: 'B2B SaaS and technology companies, from seed to growth stage' }, { t: 'Founders who need senior marketing judgment before a full-time hire' }, { t: 'Marketing and product leaders who need a hands-on partner for a launch, a repositioning or a content engine' }, { t: 'Teams in Europe, North America, the Middle East and Africa' } ],

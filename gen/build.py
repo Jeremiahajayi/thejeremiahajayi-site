@@ -96,7 +96,7 @@ def build(pid):
     if '<!--NOBAND-->' in body:
         band = footer_only()
     else:
-        band = contact_band(m.group(1).strip() if m else 'Let’s talk<span style="color: #FF5A2A">.</span>')
+        band = contact_band(m.group(1).strip() if m else 'Let’s talk<span style="color: #F2EFE8">.</span>')
     body = body.replace('<!--NOBAND-->', '')
     body = re.sub(r'<!--CONTACT:.*?-->', '', body, flags=re.S)
     html = f'''<!doctype html>

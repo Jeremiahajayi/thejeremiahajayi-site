@@ -31,7 +31,7 @@
         proofTitle: 'Launches that reached sales, not just the news.',
         cases: [
           { client: 'RemotePass × Certn', year: '2024', big: '270+', title: 'The partnership launch that went global', result: 'Media pickups including Yahoo Finance, Fox and NBC, and enterprise conversations in regulated industries.', href: 'Site-Work.dc.html#certn', bg: '#111', fg: '#F2EFE8' },
-          { client: 'RemotePass', year: '2024–25', big: '134%', title: 'A launch program built for pipeline', result: 'GTM for 15+ launches, including Org Chart, Time-Off, Local Payroll, Open APIs and Wafeq.', href: 'Site-Work.dc.html#launches', bg: '#FF5A2A', fg: '#111' },
+          { client: 'RemotePass', year: '2024–25', big: '134%', title: 'A launch program built for pipeline', result: 'GTM for 15+ launches, including Org Chart, Time-Off, Local Payroll, Open APIs and Wafeq.', href: 'Site-Work.dc.html#launches', bg: '#E6E1D6', fg: '#111' },
           { client: 'RemotePass · Ask AI', year: 'Feature launch', big: 'Record', title: 'Everyone was selling AI. We sold the answer.', result: 'MQL performance after the launch, from one story carried across the landing page, video and sales enablement.', href: 'Site-Work.dc.html#askai', bg: '#E6E1D6', fg: '#111' }
         ],
         hasQuote: true, quote: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', quoteName: 'Wesley Hattingh', quoteOrg: 'RemotePass',

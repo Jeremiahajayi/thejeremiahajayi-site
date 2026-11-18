@@ -49,8 +49,8 @@ html{scroll-behavior:smooth}
 .case:hover .lift2{transform:translateY(8px) rotate(1deg)}
 .lift2{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .row-x{transition:background .35s,color .35s}
-.row-x:hover{background:#FF5A2A;color:#111}
-.row-x:hover .rx-sub{color:#111}
+.row-x:hover{background:#F2EFE8;color:#111}
+.row-x:hover .rx-sub,.row-x:hover .rx-sub *{color:#111 !important}
 .stop:hover .stop-dot{transform:scale(1.5);background:#FF5A2A}
 .stop-dot{transition:transform .3s,background .3s}
 .door{font:inherit;cursor:pointer;text-align:left;transition:background .3s,color .3s,border-color .3s}
@@ -72,7 +72,7 @@ html{scroll-behavior:smooth}
 .shot{display:block;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .shot:hover{transform:translateY(-6px) rotate(-.5deg)}
 .need{border:1.5px dashed currentColor;background-image:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 1px,transparent 1px 10px)}
-.dots{background-image:radial-gradient(circle,#FF5A2A 34%,transparent 38%);background-size:2.5% 4%}
+.dots{background-image:radial-gradient(circle,#F2EFE8 34%,transparent 38%);background-size:2.5% 4%}
 .hscroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
 .hscroll>*{scroll-snap-align:start}
 .jump{text-decoration:none;transition:background .3s,color .3s}
@@ -197,7 +197,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <section style="background: #E6E1D6; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(50px, 9vw, 128px) clamp(20px, 5vw, 28px) clamp(45px, 8vw, 104px); display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-end">
 <div style="flex: 1 1 620px; min-width: 0">
-<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #C23A0E">Writing &amp; research</p>
+<p style="margin: 0 0 20px; font-size: 14px; font-weight: 700; color: #111">Writing &amp; research</p>
 <h1 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(52px, 7vw, 108px); line-height: 0.92; letter-spacing: -0.058em">How buyers find, judge and <span style="color: #C23A0E">choose.</span></h1>
 <p style="margin: 28px 0 0; max-width: 580px; font-size: 19px; line-height: 1.6; color: #2D2B27">Original research on AI search, teardowns of launches and growth, and the playbooks I use. Published here, at Foundation Labs, Condia, Buffer and the Product Marketing Alliance.</p>
 </div>
@@ -205,7 +205,7 @@ body:has(.nav-t:checked){overflow:hidden}
 <div class="lift" style="position: relative; aspect-ratio: 4 / 3; border-radius: 12px; background-color: #111; overflow: hidden; box-shadow: 0 30px 60px rgba(17,17,17,.2)">
 <img src="/img/report-contents.webp" alt="Contents page of the report, with six chapters" loading="lazy" style="position: absolute; right: 7%; top: 13%; width: 40%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; transform: rotate(5deg); box-shadow: 0 18px 40px rgba(0,0,0,.45); background: #FBF7D9">
 <img src="/img/report-cover.webp" alt="Cover of The State of AI Search in Nigeria, written and researched by Jeremiah Ajayi and Felix Akinnibi" loading="lazy" style="position: absolute; left: 9%; top: 7%; width: 45%; aspect-ratio: 1000 / 1414; object-fit: cover; border-radius: 3px; transform: rotate(-4deg); box-shadow: 0 24px 50px rgba(0,0,0,.5); background: #FBF7D9">
-<span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #FF5A2A; color: #111">A first for Nigeria · 2026</span>
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #F2EFE8; color: #111">A first for Nigeria · 2026</span>
 </div>
 <span class="sg" style="font-size: 24px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em">The State of AI Search in Nigeria</span>
 <span style="font-size: 15px; line-height: 1.55; color: #2D2B27">Co-authored with Felix Akinnibi, Read the report →</span>
@@ -217,14 +217,14 @@ body:has(.nav-t:checked){overflow:hidden}
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 40px">
 <div>
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #FF5A2A">Foundation Labs research</p>
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #F2EFE8">Foundation Labs research</p>
 <h2 class="sg" style="margin: 0; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.95; letter-spacing: -0.05em">Four studies on how AI chooses its sources.</h2>
 </div>
 <p style="margin: 0; max-width: 380px; font-size: 15px; line-height: 1.6; color: #B5B0A6">Original investigations I authored for Foundation Marketing’s research lab.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
 
-<a class="card-l" href="https://foundationinc.co/lab/n8n-ghost-citation-audit" style="display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px; padding: 24px; border-radius: 12px; background: #FF5A2A; color: #111; box-sizing: border-box">
+<a class="card-l" href="https://foundationinc.co/lab/n8n-ghost-citation-audit" style="display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px; padding: 24px; border-radius: 12px; background: #E6E1D6; color: #111; box-sizing: border-box">
 <span style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700"><span>n8n</span><span style="opacity: .7">01</span></span>
 <span class="sg" style="font-weight: 700; font-size: 56px; line-height: 0.88; letter-spacing: -0.06em">16%</span>
 <span style="display: block"><span class="card-t sg" style="display: block; font-size: 22px; font-weight: 600; letter-spacing: -0.025em; transition: color .3s">The Ghost Citation</span><span style="display: block; margin-top: 8px; font-size: 14px; line-height: 1.5; opacity: .85">Of the citations behind n8n’s AI answers, only about 16% came from n8n’s own sites.</span></span>
@@ -254,20 +254,20 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section style="background: #E6E1D6; color: #111">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px, 10vw, 128px) clamp(20px, 5vw, 28px)">
-<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #C23A0E">Start here</p>
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #111">Start here</p>
 <h2 class="sg" style="margin: 0 0 40px; max-width: 900px; font-weight: 600; font-size: clamp(36px, 4vw, 60px); line-height: 0.95; letter-spacing: -0.05em">An essay, and three pieces built on original data.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 16px; align-items: stretch">
 <a class="case" href="https://www.thejeremiahajayi.com/post/the-life-i-chose-after-the-life-i-planned" style="text-decoration: none; color: #F2EFE8; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-radius: 16px; overflow: hidden; background: #111; min-height: 420px">
 <img class="lift" src="/img/law-school.webp" alt="Jeremiah as a law student at Obafemi Awolowo University" loading="lazy" style="width: 100%; height: 100%; object-fit: cover">
 <span style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px; padding: 28px">
-<span style="font-size: 13px; font-weight: 700; color: #FF5A2A">Personal essay · July 2026</span>
+<span style="font-size: 13px; font-weight: 700; color: #F2EFE8">Personal essay · July 2026</span>
 <span><span class="card-t sg" style="display: block; font-size: clamp(28px, 2.8vw, 40px); font-weight: 600; line-height: 1; letter-spacing: -0.04em; transition: color .3s">The life I chose after the life I planned</span><span style="display: block; margin-top: 14px; font-size: 15px; line-height: 1.55; color: #D8D3C9">Leaving Law, starting again, and the people who left fingerprints on the story.</span></span>
 <span style="font-size: 14px; font-weight: 700">Read the essay →</span>
 </span>
 </a>
 <div style="display: grid; gap: 16px">
 
-<a class="card-l" href="https://www.thejeremiahajayi.com/post/does-founder-led-content-work-data-from-530-linkedin-posts" style="display: grid; grid-template-columns: minmax(120px, auto) 1fr; gap: 20px; align-items: center; padding: 22px 26px; border-radius: 14px; background: #FF5A2A; color: #111; text-decoration: none">
+<a class="card-l" href="https://www.thejeremiahajayi.com/post/does-founder-led-content-work-data-from-530-linkedin-posts" style="display: grid; grid-template-columns: minmax(120px, auto) 1fr; gap: 20px; align-items: center; padding: 22px 26px; border-radius: 14px; background: #E6E1D6; color: #111; text-decoration: none">
 <span><span class="sg" style="display: block; font-size: clamp(40px, 4vw, 56px); font-weight: 700; line-height: .85; letter-spacing: -0.06em">530</span><span style="display: block; margin-top: 6px; font-size: 13px; font-weight: 700; opacity: .75">LinkedIn posts</span></span>
 <span><span class="card-t sg" style="display: block; font-size: 22px; font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; transition: color .3s">Does founder-led content work?</span><span style="display: block; margin-top: 6px; font-size: 14px; line-height: 1.5; opacity: .85">Six fintech brands against their founders, post by post.</span></span>
 </a>
@@ -312,151 +312,151 @@ body:has(.nav-t:checked){overflow:hidden}
 <ul style="margin: 36px 0 0; padding: 0; list-style: none; border-top: 2px solid #111">
 
 <li data-k="gtm" data-text="how to turn a b2b product launch into sales conversations what arrows’ relaunch shows about the gap between launch attention and pipeline. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/saas-product-launch-proof-gap" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">How to turn a B2B product launch into sales conversations</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">What Arrows’ relaunch shows about the gap between launch attention and pipeline.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">3 Nov 2026</span>
 </a></li>
 
 <li data-k="ai" data-text="who owns aeo? hiring lessons from 40 job listings what companies expect from ai-search hires, and how they split the work. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/who-owns-aeo-hiring-lessons" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Who owns AEO? Hiring lessons from 40 job listings</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">What companies expect from AI-search hires, and how they split the work.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">21 Oct 2026</span>
 </a></li>
 
 <li data-k="gtm" data-text="does founder-led content work? data from 530 linkedin posts comparing fintech brands with their founders on linkedin, post by post. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/does-founder-led-content-work-data-from-530-linkedin-posts" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Does founder-led content work? Data from 530 LinkedIn posts</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Comparing fintech brands with their founders on LinkedIn, post by post.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">15 Oct 2026</span>
 </a></li>
 
 <li data-k="ai" data-text="opay, kuda and moniepoint: what ai recommends as the best digital bank in nigeria one prompt, four ai platforms, run twice. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/opay-kuda-and-moniepoint-what-ai-recommends-as-the-best-digital-bank-in-nigeria" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">OPay, Kuda and Moniepoint: what AI recommends as the best digital bank in Nigeria</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">One prompt, four AI platforms, run twice.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">24 Sep 2026</span>
 </a></li>
 
 <li data-k="ai" data-text="aeo and geo: a simple guide to how ai search works a plain-language explainer for marketers. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/aeo-and-geo-a-simple-guide-to-how-ai-search-works" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">AEO and GEO: a simple guide to how AI search works</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">A plain-language explainer for marketers.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">18 Sep 2026</span>
 </a></li>
 
 <li data-k="gtm" data-text="granola is growing without a big editorial engine. can that last? a small search footprint, fast adoption, and a crowding category. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/granola-growth-strategy" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Granola is growing without a big editorial engine. Can that last?</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">A small search footprint, fast adoption, and a crowding category.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">2 Sep 2026</span>
 </a></li>
 
 <li data-k="ai" data-text="why ai keeps recommending piggyvest for savings in nigeria piggyvest appeared in 14 of 15 answers. where that story comes from. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/why-ai-recommends-piggyvest" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Why AI keeps recommending PiggyVest for savings in Nigeria</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">PiggyVest appeared in 14 of 15 answers. Where that story comes from.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">12 Aug 2026</span>
 </a></li>
 
 <li data-k="ai" data-text="best savings apps in nigeria according to chatgpt, gemini and perplexity what three ai tools recommend, and which brands they leave out. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/best-savings-apps-in-nigeria-according-to-chatgpt-gemini-perplexity" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Best savings apps in Nigeria according to ChatGPT, Gemini and Perplexity</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">What three AI tools recommend, and which brands they leave out.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">7 Aug 2026</span>
 </a></li>
 
 <li data-k="play" data-text="the three marketing checks i’d run before spending another dollar category visibility, marketing function health and gtm readiness. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/the-three-marketing-audit-tools-i-d-run-before-spending-another-dollar" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">The three marketing checks I’d run before spending another dollar</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Category visibility, marketing function health and GTM readiness.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">6 Aug 2026</span>
 </a></li>
 
 <li data-k="gtm" data-text="what comes after investor attention? a gtm analysis of scale, raven and metrifox three nigerian startups, three different gtm challenges. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/scale-raven-metrifox-gtm-analysis" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">What comes after investor attention? A GTM analysis of Scale, Raven and Metrifox</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Three Nigerian startups, three different GTM challenges.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">23 Jul 2026</span>
 </a></li>
 
 <li data-k="gtm" data-text="how do you know if b2b research is working? a teardown of 5 companies a scorecard for research reports, applied to muck rack, ashby, attest, customer.io and appfollow. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/how-to-measure-b2b-research" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">How do you know if B2B research is working? A teardown of 5 companies</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">A scorecard for research reports, applied to Muck Rack, Ashby, Attest, Customer.io and AppFollow.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">9 Jul 2026</span>
 </a></li>
 
 <li data-k="personal" data-text="the life i chose after the life i planned leaving law, starting again, and graduating first class. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/the-life-i-chose-after-the-life-i-planned" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">The life I chose after the life I planned</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Leaving law, starting again, and graduating first class.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">1 Jul 2026</span>
 </a></li>
 
 <li data-k="gtm" data-text="how to run a local content strategy that scales globally why the strongest strategies start narrow. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/how-to-run-a-local-content-strategy-that-scales-globally" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">How to run a local content strategy that scales globally</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Why the strongest strategies start narrow.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">29 Apr 2026</span>
 </a></li>
 
 <li data-k="play" data-text="30+ resources that have made me a better marketer the books, newsletters and tools i keep coming back to. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/30-resources-that-have-made-me-a-better-marketer" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">30+ resources that have made me a better marketer</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">The books, newsletters and tools I keep coming back to.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">11 Feb 2026</span>
 </a></li>
 
 <li data-k="gtm" data-text="the 5 critical leaks killing your startup’s growth where go-to-market quietly breaks down, and how to fix it. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/the-5-critical-leaks-killing-your-startup-s-growth-and-how-to-fix-them" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">The 5 critical leaks killing your startup’s growth</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Where go-to-market quietly breaks down, and how to fix it.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">9 Dec 2025</span>
 </a></li>
 
 <li data-k="play" data-text="a marketing manager’s guide to building a reliable freelance team how i built remotepass’ first freelance content team. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/a-marketing-manager-s-guide-to-building-a-reliable-freelance-team" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">A marketing manager’s guide to building a reliable freelance team</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">How I built RemotePass’ first freelance content team.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">2 Dec 2025</span>
 </a></li>
 
 <li data-k="play" data-text="the template that turns your content audit into a growth lever a free template that scores business value, seo and icp fit. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/the-template-that-turns-your-content-audit-from-spreadsheet-to-growth-lever" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">The template that turns your content audit into a growth lever</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">A free template that scores business value, SEO and ICP fit.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">25 Nov 2025</span>
 </a></li>
 
 <li data-k="play" data-text="the 90-day plan that helped me earn c-suite trust at remotepass the 30/60/90 plan i used to go from new hire to trusted strategist. my site" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.thejeremiahajayi.com/post/the-90-day-plan-that-helped-me-earn-c-suite-trust-at-remotepass" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">My site</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">My site</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">The 90-day plan that helped me earn C-suite trust at RemotePass</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">The 30/60/90 plan I used to go from new hire to trusted strategist.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">4 Nov 2025</span>
 </a></li>
 
 <li data-k="press" data-text="product-led marketing and gtm strategy how product-led thinking shapes go-to-market. productled" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://productled.com/blog/product-led-marketing-gtm-strategy" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">ProductLed</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">ProductLed</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Product-led marketing and GTM strategy</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">How product-led thinking shapes go-to-market.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">Guest post</span>
 </a></li>
 
 <li data-k="press" data-text="7 systems that let me coordinate 15 launches the launch systems i built at remotepass. product marketing alliance" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://www.productmarketingalliance.com/7-systems-that-let-me-coordinate-15-launches/" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">Product Marketing Alliance</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">Product Marketing Alliance</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">7 systems that let me coordinate 15 launches</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">The launch systems I built at RemotePass.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">Guest post</span>
 </a></li>
 
 <li data-k="press" data-text="how to be a consistent content creator guest post. ranked #1 on google for its main search phrase. buffer" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://buffer.com/resources/consistent-content-creator/" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">Buffer</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">Buffer</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">How to be a consistent content creator</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Guest post. Ranked #1 on Google for its main search phrase.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">2023</span>
 </a></li>
 
 <li data-k="press" data-text="succeeding in tech as a non-technical talent insights from 20+ professionals. condia’s 2nd most-read article of 2022. condia" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="http://benjamindada.com/succeeding-tech-non-technical-person-20-experts/" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">Condia</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">Condia</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Succeeding in tech as a non-technical talent</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Insights from 20+ professionals. Condia’s 2nd most-read article of 2022.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">2022</span>
 </a></li>
 
 <li data-k="press" data-text="how to know if your startup is venture-scalable the investors’ corner, with kola aina of ventures platform. condia" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://thecondia.com/kola-aina-vc-funding-africa-venture-scale/" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">Condia</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">Condia</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">How to know if your startup is venture-scalable</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">The Investors’ Corner, with Kola Aina of Ventures Platform.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">Series</span>
 </a></li>
 
 <li data-k="press" data-text="how to attract vc funding in today’s market the investors’ corner, with basil moftah of nclude. condia" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://thecondia.com/attract-vc-funding-africa-basil-moftah/" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">Condia</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">Condia</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">How to attract VC funding in today’s market</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">The Investors’ Corner, with Basil Moftah of Nclude.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">Series</span>
 </a></li>
 
 <li data-k="press" data-text="surviving vc-funded startups as a marketer advice from marketing leaders at flutterwave and piggyvest. condia" style="border-bottom: 1px solid #C9C3B6"><a class="nd wrow" href="https://thecondia.com/marketing-tips-startup-growth/" style="display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; padding: 22px 0">
-<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #C23A0E">Condia</span>
+<span style="flex: 0 0 150px; font-size: 13px; font-weight: 700; color: #111">Condia</span>
 <span style="flex: 1 1 440px; min-width: 0; display: block"><span class="sg" style="display: block; font-size: 23px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.15">Surviving VC-funded startups as a marketer</span><span style="display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: #45423C">Advice from marketing leaders at Flutterwave and PiggyVest.</span></span>
 <span style="flex: 0 0 120px; font-size: 13px; color: #6B675F; text-align: right">Essay</span>
 </a></li>
@@ -491,7 +491,7 @@ body:has(.nav-t:checked){overflow:hidden}
 
 <section id="contact" style="background: #111; color: #F2EFE8">
 <div style="max-width: 1360px; margin: 0 auto; padding: clamp(67px, 12vw, 152px) clamp(20px, 5vw, 28px) clamp(48px, 6vw, 72px)">
-<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Need this thinking on<br><span style="color: #FF5A2A">your positioning, launch or content?</span></h2>
+<h2 class="sg" style="margin: 0; font-weight: 700; font-size: clamp(52px, 7.6vw, 120px); line-height: 0.9; letter-spacing: -0.065em">Need this thinking on<br><span style="color: #F2EFE8">your positioning, launch or content?</span></h2>
 <div style="margin-top: clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 14px">
 <a class="btn-o" href="https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 700">Book a call ↗</a>
 <a class="btn-l" href="mailto:jeremiah@thejeremiahajayi.com" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 clamp(20px, 5vw, 28px); border-radius: 999px; font-size: 17px; font-weight: 600">jeremiah@thejeremiahajayi.com</a>
@@ -506,6 +506,18 @@ body:has(.nav-t:checked){overflow:hidden}
 </div>
 
 <script>(function () {
+
+  // Homepage hero: "the edit". Plays once per visit; the button replays it.
+  document.documentElement.classList.add('js-on');
+  var hero = document.querySelector('.hero-anim');
+  if (hero) {
+    try { sessionStorage.setItem('jgSeen', '1'); } catch (e) {}
+    var rb = document.querySelector('[data-jg-replay]');
+    if (rb) rb.addEventListener('click', function () {
+      var sec = document.getElementById('top');
+      document.documentElement.classList.remove('jg-skip'); sec.classList.remove('hero-anim'); void sec.offsetWidth; sec.classList.add('hero-anim');
+    });
+  }
   function t() { try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos' }).format(new Date()); } catch (e) { return ''; } }
   function tick() { document.querySelectorAll('[data-time]').forEach(function (el) { el.textContent = t(); }); }
   tick(); setInterval(tick, 30000);
