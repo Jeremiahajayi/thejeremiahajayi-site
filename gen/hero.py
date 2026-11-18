@@ -67,16 +67,82 @@ CSS = r"""
 .jg-skip .hero-anim .v-clear,.jg-skip .hero-anim .v-land,.jg-skip .hero-anim .v-travel{animation:none}
 @media (max-width: 640px){.jg span:nth-child(n+16){display:none}.jg span{font-size:calc(var(--s) * .62)}.jg .jg-cap{font-size:12px}}
 @media (prefers-reduced-motion: reduce){.hero-anim .jg{display:none}.hero-anim .l1,.hero-anim .l2,.hero-anim .l3,.hero-anim .v-clear,.hero-anim .v-land,.hero-anim .v-travel{animation:none !important;opacity:1;filter:none;transform:none}.jg-replay{display:none !important}}
-.logo-i{filter:grayscale(1) contrast(1.35) brightness(.82);opacity:.8;transition:filter .3s,opacity .3s}
-.logo-i:hover{filter:none;opacity:1}
-.logo-row{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:20px 28px;align-items:center}
-.logo-row li{display:flex;align-items:center;justify-content:center;min-height:64px}
-.logo-row li{opacity:0;transform:translateY(10px);animation:logo-in .6s cubic-bezier(.2,.8,.2,1) forwards;animation-timeline:view();animation-range:entry 0% entry 60%}
-@supports not (animation-timeline: view()){.logo-row li{animation-timeline:auto;animation-delay:calc(var(--i,0) * 60ms)}}
-@keyframes logo-in{to{opacity:1;transform:none}}
-@media (max-width: 1000px){.logo-row{grid-template-columns:repeat(5,minmax(0,1fr))}}
-@media (max-width: 640px){.logo-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 16px}.logo-row li{min-height:52px}.logo-i{transform:scale(.82)}}
-@media (prefers-reduced-motion: reduce){.logo-row li{opacity:1;transform:none;animation:none}}
+.lt-wrap{overflow:hidden}
+.logo-track{margin:0;padding:0;list-style:none;display:flex;align-items:center;width:max-content;animation:logos 30s linear infinite}
+.lt-wrap:hover .logo-track{animation-play-state:paused}
+.logo-track li{flex:none;display:flex;align-items:center;justify-content:center;height:64px;padding:0 clamp(26px,3.6vw,48px)}
+.logo-i{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.logo-i:hover{transform:scale(1.08)}
+@keyframes logos{to{transform:translateX(-50%)}}
+@media (max-width: 640px){.logo-track{animation-duration:22s}.logo-track li{height:52px;padding:0 22px}.logo-i{max-height:40px}}
+@media (prefers-reduced-motion: reduce){.logo-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;row-gap:16px}.logo-track li[aria-hidden="true"]{display:none}}
+/* verb emojis: rest state (also what the canvas and returning visitors see) */
+.v-clear,.v-land,.v-travel{position:relative;margin-right:.62em}
+.ve{position:absolute;display:inline-block;font-size:.4em;line-height:1;letter-spacing:0;pointer-events:none;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.ve-lens{left:0;top:.35em;opacity:0}
+.ve-spark{right:-.95em;top:-.05em;animation:twinkle 3.2s 1s ease-in-out infinite}
+.ve-rocket{right:-1em;top:.32em;transform:rotate(-45deg);animation:hover 3s 1s ease-in-out infinite}
+.ve-puff{right:-1.55em;top:1.1em;font-size:.26em;opacity:0}
+.ve-plane{right:-1.05em;top:.1em;animation:bob 3.4s 1s ease-in-out infinite}
+.ve-trail{right:.1em;top:.36em;height:0;width:3.5em;border-top:3px dashed #6B675F;opacity:0}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.25) rotate(14deg)}}
+@keyframes hover{0%,100%{transform:rotate(-45deg) translateY(0)}50%{transform:rotate(-45deg) translateY(-6%)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10%) rotate(-4deg)}}
+/* the intro: each emoji acts out its verb */
+.hero-anim .ve-lens{animation:lens 1.3s 2.2s cubic-bezier(.45,0,.3,1) both}
+.hero-anim .ve-spark{animation:pop .5s 3.35s cubic-bezier(.3,1.6,.5,1) both,twinkle 3.2s 4.2s ease-in-out infinite}
+.hero-anim .ve-rocket{animation:touchdown 1.05s 2.55s cubic-bezier(.2,.7,.3,1) both,hover 3s 4.2s ease-in-out infinite}
+.hero-anim .ve-puff{animation:puff .9s 3.45s ease-out both}
+.hero-anim .ve-plane{animation:fly 1.5s 2.75s cubic-bezier(.25,.8,.3,1) both,bob 3.4s 4.4s ease-in-out infinite}
+.hero-anim .ve-trail{animation:trail 1.9s 2.85s ease-out both}
+@keyframes lens{0%{opacity:0;transform:translateX(-.8em) rotate(-10deg)}15%{opacity:1}80%{opacity:1;transform:translateX(5.6em) rotate(10deg)}100%{opacity:0;transform:translateX(6.6em) rotate(10deg) scale(.6)}}
+@keyframes pop{from{opacity:0;transform:scale(0) rotate(-40deg)}to{opacity:1;transform:none}}
+@keyframes touchdown{0%{opacity:0;transform:rotate(-45deg) translateY(-4em)}70%{opacity:1;transform:rotate(-45deg) translateY(.12em)}85%{transform:rotate(-45deg) translateY(-.06em)}100%{opacity:1;transform:rotate(-45deg)}}
+@keyframes puff{0%{opacity:0;transform:translateX(0) scale(.6)}30%{opacity:.9}100%{opacity:0;transform:translateX(.9em) scale(1.4)}}
+@keyframes fly{0%{opacity:0;transform:translate(-12em,1.2em) rotate(8deg)}20%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes trail{0%{opacity:0;clip-path:inset(0 100% 0 0)}25%{opacity:.7}60%{opacity:.7;clip-path:inset(0 0 0 0)}100%{opacity:0;clip-path:inset(0 0 0 0)}}
+.jg-skip .hero-anim .ve-lens,.jg-skip .hero-anim .ve-puff,.jg-skip .hero-anim .ve-trail{animation:none;opacity:0}
+.jg-skip .hero-anim .ve-spark{animation:twinkle 3.2s 1s ease-in-out infinite}
+.jg-skip .hero-anim .ve-rocket{animation:hover 3s 1s ease-in-out infinite}
+.jg-skip .hero-anim .ve-plane{animation:bob 3.4s 1s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.ve{animation:none !important}.ve-lens,.ve-puff,.ve-trail{opacity:0}}
+/* route map timeline */
+.route{position:relative;margin-top:clamp(56px,7vw,88px);height:600px}
+.rt-label{position:absolute;left:0;top:0;margin:0;font-size:14px;font-weight:700;color:#111}
+.rt-svg{position:absolute;left:0;top:180px;width:100%;height:300px;overflow:visible}
+.rt-base{fill:none;stroke:#CFC7B8;stroke-width:3;stroke-dasharray:1 11;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.rt-line{fill:none;stroke:#111;stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.rt-list{list-style:none;margin:0;padding:0}
+.rt-stop{position:absolute;left:var(--x);top:calc(180px + var(--y));width:0;height:0}
+.rt-pin{position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#FFFFFF;border:2px solid #111;display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 10px 24px rgba(17,17,17,.14);transition:transform .55s cubic-bezier(.3,1.6,.5,1),opacity .4s,border-color .3s}
+.rt-stop:hover .rt-pin{transform:translate(-50%,-50%) scale(1.15) rotate(-8deg)}
+.rt-card{position:absolute;left:0;width:172px;transform:translateX(-50%);display:flex;flex-direction:column;gap:4px;text-align:center;transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.rt-up .rt-card{bottom:44px}.rt-down .rt-card{top:44px}
+.rt-stop:first-child .rt-card{transform:translateX(-30%)}
+.rt-stop:last-child .rt-card{transform:translateX(-72%)}
+.rt-year{font-size:32px;font-weight:700;line-height:1;letter-spacing:-.04em}
+.rt-what{font-size:14px;line-height:1.4;color:#2D2B27}
+.rt-plane{position:absolute;left:0;top:0;z-index:3;font-size:32px;line-height:1;opacity:0;pointer-events:none;will-change:transform}
+.rt-rail{display:none}
+.rt-live .rt-plane{opacity:1}
+.rt-live .rt-stop .rt-pin{opacity:.35;transform:translate(-50%,-50%) scale(.72);border-color:#CFC7B8}
+.rt-live .rt-stop .rt-card{opacity:.25}
+.rt-live .rt-stop.on .rt-pin{opacity:1;transform:translate(-50%,-50%) scale(1);border-color:#111}
+.rt-live .rt-stop.on .rt-card{opacity:1}
+.rt-live .rt-stop.on:hover .rt-pin{transform:translate(-50%,-50%) scale(1.15) rotate(-8deg)}
+@media (max-width: 860px){
+.route{height:auto;padding-left:48px}
+.rt-svg{display:none}
+.rt-label{position:static;margin:0 0 22px -48px}
+.rt-rail{display:block;position:absolute;left:19px;top:52px;bottom:24px;width:3px;border-radius:3px;background:#D8D1C3}
+.rt-rail-fill{display:block;width:100%;height:100%;border-radius:3px;background:#111;transform-origin:top}
+.rt-stop{position:relative;left:auto;top:auto;width:auto;height:auto;padding:0 0 28px}
+.rt-pin{left:-27.5px;top:18px;width:42px;height:42px;font-size:20px}
+.rt-card,.rt-stop:first-child .rt-card,.rt-stop:last-child .rt-card{position:static;width:auto;transform:none;text-align:left}
+.rt-year{font-size:26px}
+.rt-plane{font-size:26px}
+}
+@media (prefers-reduced-motion: reduce){.rt-plane{display:none}}
 /*hero:end*/
 """
 
@@ -91,9 +157,9 @@ def headline():
 {words()}
 </div>
 <p class="sg" style="margin: 0; font-weight: 600; font-size: clamp(56px, 7.8vw, 120px); line-height: 0.95; letter-spacing: -0.055em">
-<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px"><span><span class="hl-mute">Make it</span> <span class="v-clear">clear<span class="v-dot">.</span></span></span>{tag('Site-Service-Positioning.dc.html', 'Positioning &amp; messaging')}</span>
-<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 5vw, 80px)"><span><span class="hl-mute">Make it</span> <span class="v-land">land<span class="v-dot">.</span></span></span>{tag('Site-Service-Launch.dc.html', 'Launches &amp; go-to-market')}</span>
-<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 10vw, 160px)"><span><span class="hl-mute">Make it</span> <span class="v-travel">travel<span class="v-dot">.</span></span></span>{tag('Site-Service-Content.dc.html', 'Content &amp; organic growth')}</span>
+<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px"><span><span class="hl-mute">Make it</span> <span class="v-clear">clear<span class="v-dot">.</span><span class="ve ve-lens" aria-hidden="true">🔍</span><span class="ve ve-spark" aria-hidden="true">✨</span></span></span>{tag('Site-Service-Positioning.dc.html', 'Positioning &amp; messaging')}</span>
+<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 5vw, 80px)"><span><span class="hl-mute">Make it</span> <span class="v-land">land<span class="v-dot">.</span><span class="ve ve-rocket" aria-hidden="true">🚀</span><span class="ve ve-puff" aria-hidden="true">💨</span></span></span>{tag('Site-Service-Launch.dc.html', 'Launches &amp; go-to-market')}</span>
+<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 10vw, 160px)"><span><span class="hl-mute">Make it</span> <span class="v-travel">travel<span class="v-dot">.</span><span class="ve ve-trail" aria-hidden="true"></span><span class="ve ve-plane" aria-hidden="true">✈️</span></span></span>{tag('Site-Service-Content.dc.html', 'Content &amp; organic growth')}</span>
 </p>
 <button class="jg-replay" type="button" data-jg-replay>↺ Replay the edit</button>
 </div>'''

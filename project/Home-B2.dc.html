@@ -244,16 +244,82 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .jg-skip .hero-anim .v-clear,.jg-skip .hero-anim .v-land,.jg-skip .hero-anim .v-travel{animation:none}
 @media (max-width: 640px){.jg span:nth-child(n+16){display:none}.jg span{font-size:calc(var(--s) * .62)}.jg .jg-cap{font-size:12px}}
 @media (prefers-reduced-motion: reduce){.hero-anim .jg{display:none}.hero-anim .l1,.hero-anim .l2,.hero-anim .l3,.hero-anim .v-clear,.hero-anim .v-land,.hero-anim .v-travel{animation:none !important;opacity:1;filter:none;transform:none}.jg-replay{display:none !important}}
-.logo-i{filter:grayscale(1) contrast(1.35) brightness(.82);opacity:.8;transition:filter .3s,opacity .3s}
-.logo-i:hover{filter:none;opacity:1}
-.logo-row{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:20px 28px;align-items:center}
-.logo-row li{display:flex;align-items:center;justify-content:center;min-height:64px}
-.logo-row li{opacity:0;transform:translateY(10px);animation:logo-in .6s cubic-bezier(.2,.8,.2,1) forwards;animation-timeline:view();animation-range:entry 0% entry 60%}
-@supports not (animation-timeline: view()){.logo-row li{animation-timeline:auto;animation-delay:calc(var(--i,0) * 60ms)}}
-@keyframes logo-in{to{opacity:1;transform:none}}
-@media (max-width: 1000px){.logo-row{grid-template-columns:repeat(5,minmax(0,1fr))}}
-@media (max-width: 640px){.logo-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 16px}.logo-row li{min-height:52px}.logo-i{transform:scale(.82)}}
-@media (prefers-reduced-motion: reduce){.logo-row li{opacity:1;transform:none;animation:none}}
+.lt-wrap{overflow:hidden}
+.logo-track{margin:0;padding:0;list-style:none;display:flex;align-items:center;width:max-content;animation:logos 30s linear infinite}
+.lt-wrap:hover .logo-track{animation-play-state:paused}
+.logo-track li{flex:none;display:flex;align-items:center;justify-content:center;height:64px;padding:0 clamp(26px,3.6vw,48px)}
+.logo-i{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.logo-i:hover{transform:scale(1.08)}
+@keyframes logos{to{transform:translateX(-50%)}}
+@media (max-width: 640px){.logo-track{animation-duration:22s}.logo-track li{height:52px;padding:0 22px}.logo-i{max-height:40px}}
+@media (prefers-reduced-motion: reduce){.logo-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;row-gap:16px}.logo-track li[aria-hidden="true"]{display:none}}
+/* verb emojis: rest state (also what the canvas and returning visitors see) */
+.v-clear,.v-land,.v-travel{position:relative;margin-right:.62em}
+.ve{position:absolute;display:inline-block;font-size:.4em;line-height:1;letter-spacing:0;pointer-events:none;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.ve-lens{left:0;top:.35em;opacity:0}
+.ve-spark{right:-.95em;top:-.05em;animation:twinkle 3.2s 1s ease-in-out infinite}
+.ve-rocket{right:-1em;top:.32em;transform:rotate(-45deg);animation:hover 3s 1s ease-in-out infinite}
+.ve-puff{right:-1.55em;top:1.1em;font-size:.26em;opacity:0}
+.ve-plane{right:-1.05em;top:.1em;animation:bob 3.4s 1s ease-in-out infinite}
+.ve-trail{right:.1em;top:.36em;height:0;width:3.5em;border-top:3px dashed #6B675F;opacity:0}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.25) rotate(14deg)}}
+@keyframes hover{0%,100%{transform:rotate(-45deg) translateY(0)}50%{transform:rotate(-45deg) translateY(-6%)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10%) rotate(-4deg)}}
+/* the intro: each emoji acts out its verb */
+.hero-anim .ve-lens{animation:lens 1.3s 2.2s cubic-bezier(.45,0,.3,1) both}
+.hero-anim .ve-spark{animation:pop .5s 3.35s cubic-bezier(.3,1.6,.5,1) both,twinkle 3.2s 4.2s ease-in-out infinite}
+.hero-anim .ve-rocket{animation:touchdown 1.05s 2.55s cubic-bezier(.2,.7,.3,1) both,hover 3s 4.2s ease-in-out infinite}
+.hero-anim .ve-puff{animation:puff .9s 3.45s ease-out both}
+.hero-anim .ve-plane{animation:fly 1.5s 2.75s cubic-bezier(.25,.8,.3,1) both,bob 3.4s 4.4s ease-in-out infinite}
+.hero-anim .ve-trail{animation:trail 1.9s 2.85s ease-out both}
+@keyframes lens{0%{opacity:0;transform:translateX(-.8em) rotate(-10deg)}15%{opacity:1}80%{opacity:1;transform:translateX(5.6em) rotate(10deg)}100%{opacity:0;transform:translateX(6.6em) rotate(10deg) scale(.6)}}
+@keyframes pop{from{opacity:0;transform:scale(0) rotate(-40deg)}to{opacity:1;transform:none}}
+@keyframes touchdown{0%{opacity:0;transform:rotate(-45deg) translateY(-4em)}70%{opacity:1;transform:rotate(-45deg) translateY(.12em)}85%{transform:rotate(-45deg) translateY(-.06em)}100%{opacity:1;transform:rotate(-45deg)}}
+@keyframes puff{0%{opacity:0;transform:translateX(0) scale(.6)}30%{opacity:.9}100%{opacity:0;transform:translateX(.9em) scale(1.4)}}
+@keyframes fly{0%{opacity:0;transform:translate(-12em,1.2em) rotate(8deg)}20%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes trail{0%{opacity:0;clip-path:inset(0 100% 0 0)}25%{opacity:.7}60%{opacity:.7;clip-path:inset(0 0 0 0)}100%{opacity:0;clip-path:inset(0 0 0 0)}}
+.jg-skip .hero-anim .ve-lens,.jg-skip .hero-anim .ve-puff,.jg-skip .hero-anim .ve-trail{animation:none;opacity:0}
+.jg-skip .hero-anim .ve-spark{animation:twinkle 3.2s 1s ease-in-out infinite}
+.jg-skip .hero-anim .ve-rocket{animation:hover 3s 1s ease-in-out infinite}
+.jg-skip .hero-anim .ve-plane{animation:bob 3.4s 1s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.ve{animation:none !important}.ve-lens,.ve-puff,.ve-trail{opacity:0}}
+/* route map timeline */
+.route{position:relative;margin-top:clamp(56px,7vw,88px);height:600px}
+.rt-label{position:absolute;left:0;top:0;margin:0;font-size:14px;font-weight:700;color:#111}
+.rt-svg{position:absolute;left:0;top:180px;width:100%;height:300px;overflow:visible}
+.rt-base{fill:none;stroke:#CFC7B8;stroke-width:3;stroke-dasharray:1 11;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.rt-line{fill:none;stroke:#111;stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.rt-list{list-style:none;margin:0;padding:0}
+.rt-stop{position:absolute;left:var(--x);top:calc(180px + var(--y));width:0;height:0}
+.rt-pin{position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#FFFFFF;border:2px solid #111;display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 10px 24px rgba(17,17,17,.14);transition:transform .55s cubic-bezier(.3,1.6,.5,1),opacity .4s,border-color .3s}
+.rt-stop:hover .rt-pin{transform:translate(-50%,-50%) scale(1.15) rotate(-8deg)}
+.rt-card{position:absolute;left:0;width:172px;transform:translateX(-50%);display:flex;flex-direction:column;gap:4px;text-align:center;transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.rt-up .rt-card{bottom:44px}.rt-down .rt-card{top:44px}
+.rt-stop:first-child .rt-card{transform:translateX(-30%)}
+.rt-stop:last-child .rt-card{transform:translateX(-72%)}
+.rt-year{font-size:32px;font-weight:700;line-height:1;letter-spacing:-.04em}
+.rt-what{font-size:14px;line-height:1.4;color:#2D2B27}
+.rt-plane{position:absolute;left:0;top:0;z-index:3;font-size:32px;line-height:1;opacity:0;pointer-events:none;will-change:transform}
+.rt-rail{display:none}
+.rt-live .rt-plane{opacity:1}
+.rt-live .rt-stop .rt-pin{opacity:.35;transform:translate(-50%,-50%) scale(.72);border-color:#CFC7B8}
+.rt-live .rt-stop .rt-card{opacity:.25}
+.rt-live .rt-stop.on .rt-pin{opacity:1;transform:translate(-50%,-50%) scale(1);border-color:#111}
+.rt-live .rt-stop.on .rt-card{opacity:1}
+.rt-live .rt-stop.on:hover .rt-pin{transform:translate(-50%,-50%) scale(1.15) rotate(-8deg)}
+@media (max-width: 860px){
+.route{height:auto;padding-left:48px}
+.rt-svg{display:none}
+.rt-label{position:static;margin:0 0 22px -48px}
+.rt-rail{display:block;position:absolute;left:19px;top:52px;bottom:24px;width:3px;border-radius:3px;background:#D8D1C3}
+.rt-rail-fill{display:block;width:100%;height:100%;border-radius:3px;background:#111;transform-origin:top}
+.rt-stop{position:relative;left:auto;top:auto;width:auto;height:auto;padding:0 0 28px}
+.rt-pin{left:-27.5px;top:18px;width:42px;height:42px;font-size:20px}
+.rt-card,.rt-stop:first-child .rt-card,.rt-stop:last-child .rt-card{position:static;width:auto;transform:none;text-align:left}
+.rt-year{font-size:26px}
+.rt-plane{font-size:26px}
+}
+@media (prefers-reduced-motion: reduce){.rt-plane{display:none}}
 /*hero:end*/
 </style>
 </helmet>
@@ -326,9 +392,9 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <span style="--x: 32.1%; --y: 21.7%; --s: 16px; --r: -1.9deg; --d: 1.02s; --k: 1.31s; --o: 2.15s; --sp: 52deg; --fy: 369px">turnkey</span>
 </div>
 <p class="sg" style="margin: 0; font-weight: 600; font-size: clamp(56px, 7.8vw, 120px); line-height: 0.95; letter-spacing: -0.055em">
-<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px"><span><span class="hl-mute">Make it</span> <span class="v-clear">clear<span class="v-dot">.</span></span></span><a href="Site-Service-Positioning.dc.html" style="text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Positioning &amp; messaging</a></span>
-<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 5vw, 80px)"><span><span class="hl-mute">Make it</span> <span class="v-land">land<span class="v-dot">.</span></span></span><a href="Site-Service-Launch.dc.html" style="text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Launches &amp; go-to-market</a></span>
-<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 10vw, 160px)"><span><span class="hl-mute">Make it</span> <span class="v-travel">travel<span class="v-dot">.</span></span></span><a href="Site-Service-Content.dc.html" style="text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Content &amp; organic growth</a></span>
+<span class="l1" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px"><span><span class="hl-mute">Make it</span> <span class="v-clear">clear<span class="v-dot">.</span><span class="ve ve-lens" aria-hidden="true">🔍</span><span class="ve ve-spark" aria-hidden="true">✨</span></span></span><a href="Site-Service-Positioning.dc.html" style="text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Positioning &amp; messaging</a></span>
+<span class="l2" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 5vw, 80px)"><span><span class="hl-mute">Make it</span> <span class="v-land">land<span class="v-dot">.</span><span class="ve ve-rocket" aria-hidden="true">🚀</span><span class="ve ve-puff" aria-hidden="true">💨</span></span></span><a href="Site-Service-Launch.dc.html" style="text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Launches &amp; go-to-market</a></span>
+<span class="l3" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-left: clamp(0px, 10vw, 160px)"><span><span class="hl-mute">Make it</span> <span class="v-travel">travel<span class="v-dot">.</span><span class="ve ve-trail" aria-hidden="true"></span><span class="ve ve-plane" aria-hidden="true">✈️</span></span></span><a href="Site-Service-Content.dc.html" style="text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; padding: 6px 12px; border: 1px solid #4A4842; border-radius: 999px; color: #D8D3C9">Content &amp; organic growth</a></span>
 </p>
 <button class="jg-replay" type="button" data-jg-replay>↺ Replay the edit</button>
 </div>
@@ -367,11 +433,13 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 </section>
 
 <div class="logo-band" style="background: #FFFFFF; color: #111; border-top: 1px solid #E6E1D6; border-bottom: 1px solid #E6E1D6; position: relative; z-index: 2">
-<div style="max-width: 1360px; margin: 0 auto; padding: 26px clamp(20px, 5vw, 28px) 30px">
+<div style="padding: 26px 0 30px">
 <p style="margin: 0 0 18px; font-size: 13px; font-weight: 700; color: #6B675F; text-align: center">Teams I’ve worked with</p>
-<ul class="logo-row" aria-label="Clients and collaborators">
-<sc-for list="{{clients}}" as="n" hint-placeholder-count="9"><li><img class="logo-i" src="{{n.src}}" alt="{{n.alt}}" style="height: {{n.h}}; width: auto; max-width: 100%; display: block"></li></sc-for>
+<div class="lt-wrap">
+<ul class="logo-track" aria-label="Clients and collaborators">
+<sc-for list="{{clientsLoop}}" as="n" hint-placeholder-count="18"><li aria-hidden="{{n.dup}}"><img class="logo-i" src="{{n.src}}" alt="{{n.a}}" style="height: {{n.h}}; width: auto; display: block"></li></sc-for>
 </ul>
+</div>
 </div>
 </div>
 
@@ -570,7 +638,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #F2EFE8; color: #111">A first for Nigeria · 71 pages</span>
 </div>
 <span class="sg" style="font-size: 24px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em">The State of AI Search in Nigeria <span style="color: #111">→</span></span>
-<span style="font-size: 15px; line-height: 1.55; color: #2D2B27">Co-authored with Felix Akinnibi, in partnership with the Freelance Coalition for Developing Countries. The country’s first study of how AI assistants surface Nigerian brands.</span>
+<span style="font-size: 15px; line-height: 1.55; color: #2D2B27">Co-authored with Felix Akinnibi. The country’s first study of how AI assistants surface Nigerian brands.</span>
 </a>
 </div>
 <div style="flex: 1 1 560px; min-width: 0">
@@ -600,15 +668,46 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 
 
 </div>
-<ol aria-label="Route so far" style="margin: clamp(56px, 7vw, 88px) 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; position: relative; border-top: 2px solid #111">
-<sc-for list="{{route}}" as="r" hint-placeholder-count="7">
-<li class="stop" style="flex: 1 1 150px; position: relative; padding: 28px 16px 8px 0">
-<span class="stop-dot" aria-hidden="true" style="position: absolute; top: -8px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: {{r.dot}}"></span>
-<span class="sg" style="display: block; font-size: 28px; font-weight: 700; letter-spacing: -0.04em">{{r.year}}</span>
-<span style="display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: #2D2B27">{{r.what}}</span>
+<div class="route" data-route>
+<p class="rt-label">The route so far</p>
+<svg class="rt-svg" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><path class="rt-base" d="M0.0,150.0 L2.5,144.3 L5.0,138.7 L7.5,133.1 L10.0,127.6 L12.5,122.2 L15.0,116.9 L17.5,111.7 L20.0,106.6 L22.5,101.8 L25.0,97.1 L27.5,92.6 L30.0,88.4 L32.5,84.4 L35.0,80.7 L37.5,77.2 L40.0,74.0 L42.5,71.1 L45.0,68.6 L47.5,66.3 L50.0,64.4 L52.5,62.8 L55.0,61.6 L57.5,60.7 L60.0,60.2 L62.5,60.0 L65.0,60.2 L67.5,60.7 L70.0,61.6 L72.5,62.8 L75.0,64.4 L77.5,66.3 L80.0,68.6 L82.5,71.1 L85.0,74.0 L87.5,77.2 L90.0,80.7 L92.5,84.4 L95.0,88.4 L97.5,92.6 L100.0,97.1 L102.5,101.8 L105.0,106.6 L107.5,111.7 L110.0,116.9 L112.5,122.2 L115.0,127.6 L117.5,133.1 L120.0,138.7 L122.5,144.3 L125.0,150.0 L127.5,155.7 L130.0,161.3 L132.5,166.9 L135.0,172.4 L137.5,177.8 L140.0,183.1 L142.5,188.3 L145.0,193.4 L147.5,198.2 L150.0,202.9 L152.5,207.4 L155.0,211.6 L157.5,215.6 L160.0,219.3 L162.5,222.8 L165.0,226.0 L167.5,228.9 L170.0,231.4 L172.5,233.7 L175.0,235.6 L177.5,237.2 L180.0,238.4 L182.5,239.3 L185.0,239.8 L187.5,240.0 L190.0,239.8 L192.5,239.3 L195.0,238.4 L197.5,237.2 L200.0,235.6 L202.5,233.7 L205.0,231.4 L207.5,228.9 L210.0,226.0 L212.5,222.8 L215.0,219.3 L217.5,215.6 L220.0,211.6 L222.5,207.4 L225.0,202.9 L227.5,198.2 L230.0,193.4 L232.5,188.3 L235.0,183.1 L237.5,177.8 L240.0,172.4 L242.5,166.9 L245.0,161.3 L247.5,155.7 L250.0,150.0 L252.5,144.3 L255.0,138.7 L257.5,133.1 L260.0,127.6 L262.5,122.2 L265.0,116.9 L267.5,111.7 L270.0,106.6 L272.5,101.8 L275.0,97.1 L277.5,92.6 L280.0,88.4 L282.5,84.4 L285.0,80.7 L287.5,77.2 L290.0,74.0 L292.5,71.1 L295.0,68.6 L297.5,66.3 L300.0,64.4 L302.5,62.8 L305.0,61.6 L307.5,60.7 L310.0,60.2 L312.5,60.0 L315.0,60.2 L317.5,60.7 L320.0,61.6 L322.5,62.8 L325.0,64.4 L327.5,66.3 L330.0,68.6 L332.5,71.1 L335.0,74.0 L337.5,77.2 L340.0,80.7 L342.5,84.4 L345.0,88.4 L347.5,92.6 L350.0,97.1 L352.5,101.8 L355.0,106.6 L357.5,111.7 L360.0,116.9 L362.5,122.2 L365.0,127.6 L367.5,133.1 L370.0,138.7 L372.5,144.3 L375.0,150.0 L377.5,155.7 L380.0,161.3 L382.5,166.9 L385.0,172.4 L387.5,177.8 L390.0,183.1 L392.5,188.3 L395.0,193.4 L397.5,198.2 L400.0,202.9 L402.5,207.4 L405.0,211.6 L407.5,215.6 L410.0,219.3 L412.5,222.8 L415.0,226.0 L417.5,228.9 L420.0,231.4 L422.5,233.7 L425.0,235.6 L427.5,237.2 L430.0,238.4 L432.5,239.3 L435.0,239.8 L437.5,240.0 L440.0,239.8 L442.5,239.3 L445.0,238.4 L447.5,237.2 L450.0,235.6 L452.5,233.7 L455.0,231.4 L457.5,228.9 L460.0,226.0 L462.5,222.8 L465.0,219.3 L467.5,215.6 L470.0,211.6 L472.5,207.4 L475.0,202.9 L477.5,198.2 L480.0,193.4 L482.5,188.3 L485.0,183.1 L487.5,177.8 L490.0,172.4 L492.5,166.9 L495.0,161.3 L497.5,155.7 L500.0,150.0 L502.5,144.3 L505.0,138.7 L507.5,133.1 L510.0,127.6 L512.5,122.2 L515.0,116.9 L517.5,111.7 L520.0,106.6 L522.5,101.8 L525.0,97.1 L527.5,92.6 L530.0,88.4 L532.5,84.4 L535.0,80.7 L537.5,77.2 L540.0,74.0 L542.5,71.1 L545.0,68.6 L547.5,66.3 L550.0,64.4 L552.5,62.8 L555.0,61.6 L557.5,60.7 L560.0,60.2 L562.5,60.0 L565.0,60.2 L567.5,60.7 L570.0,61.6 L572.5,62.8 L575.0,64.4 L577.5,66.3 L580.0,68.6 L582.5,71.1 L585.0,74.0 L587.5,77.2 L590.0,80.7 L592.5,84.4 L595.0,88.4 L597.5,92.6 L600.0,97.1 L602.5,101.8 L605.0,106.6 L607.5,111.7 L610.0,116.9 L612.5,122.2 L615.0,127.6 L617.5,133.1 L620.0,138.7 L622.5,144.3 L625.0,150.0 L627.5,155.7 L630.0,161.3 L632.5,166.9 L635.0,172.4 L637.5,177.8 L640.0,183.1 L642.5,188.3 L645.0,193.4 L647.5,198.2 L650.0,202.9 L652.5,207.4 L655.0,211.6 L657.5,215.6 L660.0,219.3 L662.5,222.8 L665.0,226.0 L667.5,228.9 L670.0,231.4 L672.5,233.7 L675.0,235.6 L677.5,237.2 L680.0,238.4 L682.5,239.3 L685.0,239.8 L687.5,240.0 L690.0,239.8 L692.5,239.3 L695.0,238.4 L697.5,237.2 L700.0,235.6 L702.5,233.7 L705.0,231.4 L707.5,228.9 L710.0,226.0 L712.5,222.8 L715.0,219.3 L717.5,215.6 L720.0,211.6 L722.5,207.4 L725.0,202.9 L727.5,198.2 L730.0,193.4 L732.5,188.3 L735.0,183.1 L737.5,177.8 L740.0,172.4 L742.5,166.9 L745.0,161.3 L747.5,155.7 L750.0,150.0 L752.5,144.3 L755.0,138.7 L757.5,133.1 L760.0,127.6 L762.5,122.2 L765.0,116.9 L767.5,111.7 L770.0,106.6 L772.5,101.8 L775.0,97.1 L777.5,92.6 L780.0,88.4 L782.5,84.4 L785.0,80.7 L787.5,77.2 L790.0,74.0 L792.5,71.1 L795.0,68.6 L797.5,66.3 L800.0,64.4 L802.5,62.8 L805.0,61.6 L807.5,60.7 L810.0,60.2 L812.5,60.0 L815.0,60.2 L817.5,60.7 L820.0,61.6 L822.5,62.8 L825.0,64.4 L827.5,66.3 L830.0,68.6 L832.5,71.1 L835.0,74.0 L837.5,77.2 L840.0,80.7 L842.5,84.4 L845.0,88.4 L847.5,92.6 L850.0,97.1 L852.5,101.8 L855.0,106.6 L857.5,111.7 L860.0,116.9 L862.5,122.2 L865.0,127.6 L867.5,133.1 L870.0,138.7 L872.5,144.3 L875.0,150.0 L877.5,155.7 L880.0,161.3 L882.5,166.9 L885.0,172.4 L887.5,177.8 L890.0,183.1 L892.5,188.3 L895.0,193.4 L897.5,198.2 L900.0,202.9 L902.5,207.4 L905.0,211.6 L907.5,215.6 L910.0,219.3 L912.5,222.8 L915.0,226.0 L917.5,228.9 L920.0,231.4 L922.5,233.7 L925.0,235.6 L927.5,237.2 L930.0,238.4 L932.5,239.3 L935.0,239.8 L937.5,240.0 L940.0,239.8 L942.5,239.3 L945.0,238.4 L947.5,237.2 L950.0,235.6 L952.5,233.7 L955.0,231.4 L957.5,228.9 L960.0,226.0 L962.5,222.8 L965.0,219.3 L967.5,215.6 L970.0,211.6 L972.5,207.4 L975.0,202.9 L977.5,198.2 L980.0,193.4 L982.5,188.3 L985.0,183.1 L987.5,177.8 L990.0,172.4 L992.5,166.9 L995.0,161.3 L997.5,155.7 L1000.0,150.0"/><path class="rt-line" d="M0.0,150.0 L2.5,144.3 L5.0,138.7 L7.5,133.1 L10.0,127.6 L12.5,122.2 L15.0,116.9 L17.5,111.7 L20.0,106.6 L22.5,101.8 L25.0,97.1 L27.5,92.6 L30.0,88.4 L32.5,84.4 L35.0,80.7 L37.5,77.2 L40.0,74.0 L42.5,71.1 L45.0,68.6 L47.5,66.3 L50.0,64.4 L52.5,62.8 L55.0,61.6 L57.5,60.7 L60.0,60.2 L62.5,60.0 L65.0,60.2 L67.5,60.7 L70.0,61.6 L72.5,62.8 L75.0,64.4 L77.5,66.3 L80.0,68.6 L82.5,71.1 L85.0,74.0 L87.5,77.2 L90.0,80.7 L92.5,84.4 L95.0,88.4 L97.5,92.6 L100.0,97.1 L102.5,101.8 L105.0,106.6 L107.5,111.7 L110.0,116.9 L112.5,122.2 L115.0,127.6 L117.5,133.1 L120.0,138.7 L122.5,144.3 L125.0,150.0 L127.5,155.7 L130.0,161.3 L132.5,166.9 L135.0,172.4 L137.5,177.8 L140.0,183.1 L142.5,188.3 L145.0,193.4 L147.5,198.2 L150.0,202.9 L152.5,207.4 L155.0,211.6 L157.5,215.6 L160.0,219.3 L162.5,222.8 L165.0,226.0 L167.5,228.9 L170.0,231.4 L172.5,233.7 L175.0,235.6 L177.5,237.2 L180.0,238.4 L182.5,239.3 L185.0,239.8 L187.5,240.0 L190.0,239.8 L192.5,239.3 L195.0,238.4 L197.5,237.2 L200.0,235.6 L202.5,233.7 L205.0,231.4 L207.5,228.9 L210.0,226.0 L212.5,222.8 L215.0,219.3 L217.5,215.6 L220.0,211.6 L222.5,207.4 L225.0,202.9 L227.5,198.2 L230.0,193.4 L232.5,188.3 L235.0,183.1 L237.5,177.8 L240.0,172.4 L242.5,166.9 L245.0,161.3 L247.5,155.7 L250.0,150.0 L252.5,144.3 L255.0,138.7 L257.5,133.1 L260.0,127.6 L262.5,122.2 L265.0,116.9 L267.5,111.7 L270.0,106.6 L272.5,101.8 L275.0,97.1 L277.5,92.6 L280.0,88.4 L282.5,84.4 L285.0,80.7 L287.5,77.2 L290.0,74.0 L292.5,71.1 L295.0,68.6 L297.5,66.3 L300.0,64.4 L302.5,62.8 L305.0,61.6 L307.5,60.7 L310.0,60.2 L312.5,60.0 L315.0,60.2 L317.5,60.7 L320.0,61.6 L322.5,62.8 L325.0,64.4 L327.5,66.3 L330.0,68.6 L332.5,71.1 L335.0,74.0 L337.5,77.2 L340.0,80.7 L342.5,84.4 L345.0,88.4 L347.5,92.6 L350.0,97.1 L352.5,101.8 L355.0,106.6 L357.5,111.7 L360.0,116.9 L362.5,122.2 L365.0,127.6 L367.5,133.1 L370.0,138.7 L372.5,144.3 L375.0,150.0 L377.5,155.7 L380.0,161.3 L382.5,166.9 L385.0,172.4 L387.5,177.8 L390.0,183.1 L392.5,188.3 L395.0,193.4 L397.5,198.2 L400.0,202.9 L402.5,207.4 L405.0,211.6 L407.5,215.6 L410.0,219.3 L412.5,222.8 L415.0,226.0 L417.5,228.9 L420.0,231.4 L422.5,233.7 L425.0,235.6 L427.5,237.2 L430.0,238.4 L432.5,239.3 L435.0,239.8 L437.5,240.0 L440.0,239.8 L442.5,239.3 L445.0,238.4 L447.5,237.2 L450.0,235.6 L452.5,233.7 L455.0,231.4 L457.5,228.9 L460.0,226.0 L462.5,222.8 L465.0,219.3 L467.5,215.6 L470.0,211.6 L472.5,207.4 L475.0,202.9 L477.5,198.2 L480.0,193.4 L482.5,188.3 L485.0,183.1 L487.5,177.8 L490.0,172.4 L492.5,166.9 L495.0,161.3 L497.5,155.7 L500.0,150.0 L502.5,144.3 L505.0,138.7 L507.5,133.1 L510.0,127.6 L512.5,122.2 L515.0,116.9 L517.5,111.7 L520.0,106.6 L522.5,101.8 L525.0,97.1 L527.5,92.6 L530.0,88.4 L532.5,84.4 L535.0,80.7 L537.5,77.2 L540.0,74.0 L542.5,71.1 L545.0,68.6 L547.5,66.3 L550.0,64.4 L552.5,62.8 L555.0,61.6 L557.5,60.7 L560.0,60.2 L562.5,60.0 L565.0,60.2 L567.5,60.7 L570.0,61.6 L572.5,62.8 L575.0,64.4 L577.5,66.3 L580.0,68.6 L582.5,71.1 L585.0,74.0 L587.5,77.2 L590.0,80.7 L592.5,84.4 L595.0,88.4 L597.5,92.6 L600.0,97.1 L602.5,101.8 L605.0,106.6 L607.5,111.7 L610.0,116.9 L612.5,122.2 L615.0,127.6 L617.5,133.1 L620.0,138.7 L622.5,144.3 L625.0,150.0 L627.5,155.7 L630.0,161.3 L632.5,166.9 L635.0,172.4 L637.5,177.8 L640.0,183.1 L642.5,188.3 L645.0,193.4 L647.5,198.2 L650.0,202.9 L652.5,207.4 L655.0,211.6 L657.5,215.6 L660.0,219.3 L662.5,222.8 L665.0,226.0 L667.5,228.9 L670.0,231.4 L672.5,233.7 L675.0,235.6 L677.5,237.2 L680.0,238.4 L682.5,239.3 L685.0,239.8 L687.5,240.0 L690.0,239.8 L692.5,239.3 L695.0,238.4 L697.5,237.2 L700.0,235.6 L702.5,233.7 L705.0,231.4 L707.5,228.9 L710.0,226.0 L712.5,222.8 L715.0,219.3 L717.5,215.6 L720.0,211.6 L722.5,207.4 L725.0,202.9 L727.5,198.2 L730.0,193.4 L732.5,188.3 L735.0,183.1 L737.5,177.8 L740.0,172.4 L742.5,166.9 L745.0,161.3 L747.5,155.7 L750.0,150.0 L752.5,144.3 L755.0,138.7 L757.5,133.1 L760.0,127.6 L762.5,122.2 L765.0,116.9 L767.5,111.7 L770.0,106.6 L772.5,101.8 L775.0,97.1 L777.5,92.6 L780.0,88.4 L782.5,84.4 L785.0,80.7 L787.5,77.2 L790.0,74.0 L792.5,71.1 L795.0,68.6 L797.5,66.3 L800.0,64.4 L802.5,62.8 L805.0,61.6 L807.5,60.7 L810.0,60.2 L812.5,60.0 L815.0,60.2 L817.5,60.7 L820.0,61.6 L822.5,62.8 L825.0,64.4 L827.5,66.3 L830.0,68.6 L832.5,71.1 L835.0,74.0 L837.5,77.2 L840.0,80.7 L842.5,84.4 L845.0,88.4 L847.5,92.6 L850.0,97.1 L852.5,101.8 L855.0,106.6 L857.5,111.7 L860.0,116.9 L862.5,122.2 L865.0,127.6 L867.5,133.1 L870.0,138.7 L872.5,144.3 L875.0,150.0 L877.5,155.7 L880.0,161.3 L882.5,166.9 L885.0,172.4 L887.5,177.8 L890.0,183.1 L892.5,188.3 L895.0,193.4 L897.5,198.2 L900.0,202.9 L902.5,207.4 L905.0,211.6 L907.5,215.6 L910.0,219.3 L912.5,222.8 L915.0,226.0 L917.5,228.9 L920.0,231.4 L922.5,233.7 L925.0,235.6 L927.5,237.2 L930.0,238.4 L932.5,239.3 L935.0,239.8 L937.5,240.0 L940.0,239.8 L942.5,239.3 L945.0,238.4 L947.5,237.2 L950.0,235.6 L952.5,233.7 L955.0,231.4 L957.5,228.9 L960.0,226.0 L962.5,222.8 L965.0,219.3 L967.5,215.6 L970.0,211.6 L972.5,207.4 L975.0,202.9 L977.5,198.2 L980.0,193.4 L982.5,188.3 L985.0,183.1 L987.5,177.8 L990.0,172.4 L992.5,166.9 L995.0,161.3 L997.5,155.7 L1000.0,150.0"/></svg>
+<span class="rt-plane" aria-hidden="true">✈️</span>
+<span class="rt-rail" aria-hidden="true"><span class="rt-rail-fill"></span></span>
+<ol class="rt-list" aria-label="The route so far">
+<li class="rt-stop rt-up" style="--x: 6.25%; --y: 60px" data-at="0.0625">
+<span class="rt-pin" aria-hidden="true">✍️</span>
+<span class="rt-card"><span class="rt-year sg">2018</span><span class="rt-what">A law lecture, a friend, a first freelance writing job</span></span>
 </li>
-</sc-for>
+<li class="rt-stop rt-down" style="--x: 18.75%; --y: 240px" data-at="0.1875">
+<span class="rt-pin" aria-hidden="true">🎤</span>
+<span class="rt-card"><span class="rt-year sg">2020</span><span class="rt-what">Digivention, a career conference for 1,000+ young Nigerians</span></span>
+</li>
+<li class="rt-stop rt-up" style="--x: 31.25%; --y: 60px" data-at="0.3125">
+<span class="rt-pin" aria-hidden="true">🧠</span>
+<span class="rt-card"><span class="rt-year sg">2021</span><span class="rt-what">Strategy at VEC Studio for SEON and Kittl</span></span>
+</li>
+<li class="rt-stop rt-down" style="--x: 43.75%; --y: 240px" data-at="0.4375">
+<span class="rt-pin" aria-hidden="true">🐷</span>
+<span class="rt-card"><span class="rt-year sg">2022</span><span class="rt-what">PiggyVest, and Condia’s 2nd most-read article of the year</span></span>
+</li>
+<li class="rt-stop rt-up" style="--x: 56.25%; --y: 60px" data-at="0.5625">
+<span class="rt-pin" aria-hidden="true">🗳️</span>
+<span class="rt-card"><span class="rt-year sg">2023</span><span class="rt-what">Stears ranks above the BBC</span></span>
+</li>
+<li class="rt-stop rt-down" style="--x: 68.75%; --y: 240px" data-at="0.6875">
+<span class="rt-pin" aria-hidden="true">🚀</span>
+<span class="rt-card"><span class="rt-year sg">2024</span><span class="rt-what">RemotePass: the Certn launch and a content engine</span></span>
+</li>
+<li class="rt-stop rt-up" style="--x: 81.25%; --y: 60px" data-at="0.8125">
+<span class="rt-pin" aria-hidden="true">🌈</span>
+<span class="rt-card"><span class="rt-year sg">2025</span><span class="rt-what">Co-founded EmpowerQ</span></span>
+</li>
+<li class="rt-stop rt-down" style="--x: 93.75%; --y: 240px" data-at="0.9375">
+<span class="rt-pin" aria-hidden="true">🔎</span>
+<span class="rt-card"><span class="rt-year sg">2026</span><span class="rt-what">Nigeria’s first State of AI Search report; Social Shifters finalist</span></span>
+</li>
 </ol>
+</div>
 </div>
 </section>
 
@@ -700,7 +799,7 @@ class Component extends DCLogic {
     const di = this.state.door;
     return {
       time: this.state.time,
-      clients,
+      clientsLoop: clients.map((c) => ({ ...c, a: c.alt, dup: 'false' })).concat(clients.map((c) => ({ ...c, a: '', dup: 'true' }))),
       sheet: [
         { frame: '01', kind: 'Screenshot', src: '/_blob/97c7a07c9e01d68334e57d95e5d31f53', fit: 'cover', pos: 'center top', asset: 'Google results with Stears ranked first for 2023 election results', title: 'Stears · #1 above the BBC', href: '#stears', bg: '#232220', fg: '#D8D3C9' },
         { frame: '02', kind: 'Launch', src: '/_blob/059d23d54fba852a7e2e28c2b4ef3db4', fit: 'cover', pos: 'center', asset: 'RemotePass × Certn launch visual', title: 'RemotePass × Certn · 270+ pickups', href: '#certn', bg: '#3A2A22', fg: '#F2D9CC' },

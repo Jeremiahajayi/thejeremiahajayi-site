@@ -1017,7 +1017,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
         if (e.target.closest('[data-gd-dismiss]')) { peek.hidden = true; try { sessionStorage.setItem('gdPeek', '1'); } catch (x) {} }
       });
       var seenPeek = false; try { seenPeek = sessionStorage.getItem('gdPeek') === '1'; } catch (e) {}
-      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, document.querySelector('.hero-anim') && !document.documentElement.classList.contains('jg-skip') ? 3900 : 1600);
+      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, document.querySelector('.hero-anim') && !document.documentElement.classList.contains('jg-skip') ? 4800 : 1600);
     }
     form.addEventListener('submit', function (e) {
       e.preventDefault(); var raw = (form.q.value || '').trim(); if (!raw || busy) return; var q = raw.toLowerCase();
@@ -1122,6 +1122,33 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
       });
     };
     onScroll.push(depthFn); depthFn();
+  }
+  // 6. Homepage route map: the road draws itself, a plane travels it, stops light up.
+  var route = document.querySelector('[data-route]');
+  if (route && !CALM) {
+    route.classList.add('rt-live');
+    var rline = route.querySelector('.rt-line'), rsvg = route.querySelector('.rt-svg'), rplane = route.querySelector('.rt-plane'), rfill = route.querySelector('.rt-rail-fill'), rrail = route.querySelector('.rt-rail');
+    var rstops = [].slice.call(route.querySelectorAll('.rt-stop')), RL = rline.getTotalLength();
+    rline.style.strokeDasharray = RL;
+    var rtFn = function () {
+      var r = route.getBoundingClientRect(), vh = innerHeight, desk = innerWidth > 860;
+      var p = Math.max(0, Math.min(1, (vh * 0.78 - r.top) / (r.height * 0.85)));
+      if (desk) {
+        rline.style.strokeDashoffset = RL * (1 - p);
+        var sr = rsvg.getBoundingClientRect(), sx = sr.width / 1000;
+        var a = rline.getPointAtLength(RL * p), b = rline.getPointAtLength(Math.min(RL, RL * p + 2)), a0 = p >= 1 ? rline.getPointAtLength(RL - 2) : a;
+        var X = a.x * sx + (sr.left - r.left), Y = a.y + (sr.top - r.top);
+        var ang = Math.atan2((p >= 1 ? a.y - a0.y : b.y - a.y), (p >= 1 ? (a.x - a0.x) : (b.x - a.x)) * sx) * 180 / Math.PI;
+        rplane.style.transform = 'translate(' + X + 'px,' + Y + 'px) translate(-50%,-50%) rotate(' + (ang + 45) + 'deg)';
+        rstops.forEach(function (s) { s.classList.toggle('on', p >= parseFloat(s.getAttribute('data-at')) - 0.015); });
+      } else {
+        rfill.style.transform = 'scaleY(' + p + ')';
+        var rl = rrail.getBoundingClientRect(), Y2 = (rl.top - r.top) + rl.height * p;
+        rplane.style.transform = 'translate(20.5px,' + Y2 + 'px) translate(-50%,-50%) rotate(135deg)';
+        rstops.forEach(function (s) { var t = s.getBoundingClientRect(); s.classList.toggle('on', (t.top + 30 - rl.top) <= rl.height * p); });
+      }
+    };
+    onScroll.push(rtFn); rtFn();
   }
 })();
 </script>
