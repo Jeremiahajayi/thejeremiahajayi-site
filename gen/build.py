@@ -31,6 +31,7 @@ PAGES = {
     'empowerq': ('Site-EmpowerQ.dc.html', 'EmpowerQ · Jeremiah Ajayi', 'EmpowerQ', 6400),
     'writing': ('Site-Writing.dc.html', 'Writing & research · Jeremiah Ajayi', 'Writing', 5600),
     'about': ('Site-About.dc.html', 'About · Jeremiah Ajayi', 'About', 6600),
+    'what-id-do': ('Site-WhatIdDo.dc.html', 'What I’d Do · Jeremiah Ajayi', 'What I’d Do', 8200),
 }
 
 FOOT = [

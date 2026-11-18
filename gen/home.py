@@ -281,6 +281,18 @@ def research():
 </section>'''
 
 
+def wid_band():
+    return f'''<section class="wdb" aria-labelledby="wdb-t">
+<div class="wrap wdb-g">
+<p class="wdb-k">New · a newsletter + live series</p>
+<h2 id="wdb-t" class="sg wdb-t">What <span class="wdb-i">I</span>’d Do<span class="k-dot">.</span></h2>
+<div class="wdb-c"><p class="wdb-s">Marketing is full of hard calls. Let’s work through them.</p>
+<p>Real marketing decisions, examined: the situation, the options and the reasoning behind the call. Twice a month in your inbox, twice a month live.</p>
+<a class="h-link" href="Site-WhatIdDo.dc.html">Open What I’d Do {ARR}</a></div>
+</div>
+</section>'''
+
+
 def about():
     return f'''<section id="about" class="ab" aria-labelledby="ab-title">
 <div class="wrap ab-grid">
@@ -646,6 +658,16 @@ CSS = r'''
 .rs-note{font-size:15px;line-height:1.55;color:#45423C;max-width:60ch}
 .rs-row:hover{padding-left:10px}
 .rs-row:hover .rs-t{color:#C23A0E}
+.wdb{background:#F4F0E6;color:#141414;padding:clamp(64px,7vw,104px) 0;border-top:1.5px solid #141414;border-bottom:1.5px solid #141414}
+.wdb-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);grid-template-areas:"k k" "t c";gap:14px clamp(32px,5vw,80px);align-items:end}
+.wdb-k{grid-area:k;margin:0;font:700 12px/1.4 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid #141414}
+.wdb-t{grid-area:t;margin:10px 0 0;font-size:clamp(64px,9vw,148px);font-weight:700;line-height:.86;letter-spacing:-.065em;white-space:nowrap}
+.wdb-i{display:inline-block;padding:0 .08em;border:.045em solid #141414;border-radius:.06em;line-height:.9;transform:rotate(-2deg)}
+.wdb-c{grid-area:c;padding-bottom:8px}
+.wdb-c p{margin:0 0 14px;font-size:17px;line-height:1.65;max-width:44ch}
+.wdb-c .wdb-s{font:italic 400 clamp(22px,2vw,28px)/1.3 Georgia,'Times New Roman',serif}
+@media (max-width:1080px){.wdb-g{grid-template-columns:1fr;grid-template-areas:"k" "t" "c"}}
+@media (max-width:640px){.wdb-t{font-size:clamp(52px,16vw,76px)}}
 /* ---------- about ---------- */
 .ab{background:#F2EFE8;color:#111;padding:clamp(80px,10vw,140px) 0 clamp(64px,8vw,104px)}
 .ab-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:center}
@@ -832,7 +854,7 @@ def main():
     s = HOME.read_text()
     a = s.index('<section id="top"')
     b = s.index('\n\n</div>\n</x-dc>')
-    body = '\n\n'.join([hero(), work(), quotes(), expertise(), research(), about(), empowerq(), contact()])
+    body = '\n\n'.join([hero(), work(), quotes(), expertise(), research(), wid_band(), about(), empowerq(), contact()])
     s = s[:a] + body + s[b:]
     s = re.sub(r'\n?/\*hero:start\*/.*?/\*hero:end\*/\n?', '\n', s, flags=re.S)
     s = re.sub(r'\n?/\*home:start\*/.*?/\*home:end\*/\n?', '\n', s, flags=re.S)

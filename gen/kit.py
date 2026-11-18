@@ -18,6 +18,7 @@ FOOT = [
     ('Launches & GTM', 'Site-Service-Launch.dc.html'),
     ('Content & storytelling', 'Site-Service-Content.dc.html'),
     ('Work', 'Site-Work.dc.html'),
+    ('What I’d Do', 'Site-WhatIdDo.dc.html'),
     ('Writing', 'Site-Writing.dc.html'),
     ('About', 'Site-About.dc.html'),
     ('EmpowerQ', 'Site-EmpowerQ.dc.html'),

@@ -49,6 +49,7 @@ def header(active, home=False):
 <nav id="nav-main" class="nav-main" aria-label="Primary">
 {_dropdown('Work', 'Site-Work.dc.html', active, 'Case studies', WORK_MENU, 'All work and projects', 'Site-Work.dc.html#index')}
 {_dropdown('Expertise', 'Site-Services.dc.html', active, 'Services', EXPERTISE_MENU, 'All services', 'Site-Services.dc.html')}
+{plain('What I’d Do', 'Site-WhatIdDo.dc.html')}
 {plain('EmpowerQ', 'Site-EmpowerQ.dc.html')}
 {plain('Writing', 'Site-Writing.dc.html')}
 {plain('About', 'Site-About.dc.html')}

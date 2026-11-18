@@ -424,6 +424,18 @@
       });
     }
   }
+  // 10. What I'd Do: the red pen circles "The Call" once it comes into view.
+  var pens = document.querySelectorAll('[data-pen]');
+  if (pens.length) {
+    if (CALM || !('IntersectionObserver' in window)) pens.forEach(function (el) { el.classList.add('inked'); });
+    else { var po = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('inked'); po.unobserve(e.target); } }); }, { threshold: 0.6 }); pens.forEach(function (el) { po.observe(el); }); }
+  }
+  // The "I" changes depending on who's speaking.
+  var who = document.querySelector('[data-who] b');
+  if (who && !CALM) {
+    var whos = ['says Jeremiah', 'says the guest', 'says you'], wi = 0;
+    setInterval(function () { if (document.hidden) return; who.classList.add('out'); setTimeout(function () { wi = (wi + 1) % whos.length; who.textContent = whos[wi]; who.classList.remove('out'); }, 350); }, 2800);
+  }
   // 8. Images unveil once as they come into view.
   if (!CALM && 'IntersectionObserver' in window) {
     var rimgs = document.querySelectorAll('.img-rv');

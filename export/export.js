@@ -27,6 +27,7 @@ const PAGES = [
   { file: 'Site-Writing.dc.html', out: 'blog/index.html', url: '/blog/', crumb: 'Writing', title: 'Writing and research · Jeremiah Ajayi', desc: 'Original research on AI search, launch and growth teardowns, and marketing playbooks.' },
   { file: 'Site-About.dc.html', out: 'about/index.html', url: '/about/', crumb: 'About', title: 'About Jeremiah Ajayi · Marketing consultant in Lagos', desc: 'Jeremiah Ajayi is a marketing consultant for B2B SaaS and technology companies, based in Lagos, and the co-founder of EmpowerQ.' },
   { file: 'Site-EmpowerQ.dc.html', out: 'empowerq/index.html', url: '/empowerq/', crumb: 'EmpowerQ', title: 'EmpowerQ · Co-founded by Jeremiah Ajayi', desc: 'EmpowerQ builds economic inclusion for LGBTQ+ professionals in Nigeria. Co-founded by Jeremiah Ajayi in 2025.' },
+  { file: 'Site-WhatIdDo.dc.html', out: 'what-id-do/index.html', url: '/what-id-do/', crumb: 'What I’d Do', og: '/og-what-id-do.png', title: 'What I’d Do · A newsletter and live series on hard marketing calls', desc: 'Marketing is full of hard calls. A twice-monthly newsletter and live conversation series, hosted by Jeremiah Ajayi, on real marketing decisions: the situation, the options and the reasoning behind the call.' },
   { file: 'Site-Contact.dc.html', out: 'contact/index.html', url: '/contact/', crumb: 'Contact', title: 'Contact · Jeremiah Ajayi', desc: 'Book a call with Jeremiah Ajayi about positioning, a product launch or content, or get in touch about a role or collaboration.' }
 ];
 const LINKS = Object.fromEntries(PAGES.map((p) => [p.file, p.url]));
@@ -145,6 +146,7 @@ function schema(page, v) {
   else g.push({ '@type': 'WebPage', url: SITE + page.url, name: page.title, author: { '@id': PERSON_ID } });
   if (page.service) g.push({ '@type': 'Service', name: page.service, serviceType: page.service, description: page.desc, url: SITE + page.url, provider: { '@id': PERSON_ID }, areaServed: ['Europe', 'North America', 'Middle East', 'Africa'], audience: { '@type': 'BusinessAudience', name: 'B2B SaaS and technology companies' } });
   if (page.url === '/empowerq/') g.push({ '@type': 'NGO', '@id': SITE + '/empowerq/#org', name: 'EmpowerQ', legalName: 'Career Growth Initiative for the Disadvantaged', foundingDate: '2025', address: { '@type': 'PostalAddress', addressLocality: 'Lagos', addressCountry: 'NG' }, founder: { '@id': PERSON_ID } });
+  if (page.url === '/what-id-do/') g.push({ '@type': 'CreativeWorkSeries', '@id': SITE + '/what-id-do/#series', name: 'What I’d Do', description: page.desc, url: SITE + page.url, inLanguage: 'en', author: { '@id': PERSON_ID }, publisher: { '@id': PERSON_ID }, genre: 'Marketing', audience: { '@type': 'Audience', audienceType: 'Founders, marketing leaders and marketing operators at technology companies' } }, { '@type': 'EventSeries', '@id': SITE + '/what-id-do/#live', name: 'What I’d Do: Live', description: 'Online conversations, twice a month, about real marketing decisions.', eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode', organizer: { '@id': PERSON_ID }, location: { '@type': 'VirtualLocation', url: SITE + page.url } });
   if (Array.isArray(v.faq) && v.faq.length) g.push({ '@type': 'FAQPage', mainEntity: v.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
   const c = crumbs(page); if (c) g.push(c);
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': g }).replace(/</g, '\\u003c')}</script>`;
@@ -178,7 +180,7 @@ ${page.out === 'index.html' ? "<script>try{if(sessionStorage.getItem('jgSeen')==
 <meta property="og:title" content="${page.title}">
 <meta property="og:description" content="${page.desc}">
 <meta property="og:url" content="${SITE}${page.url}">
-<meta property="og:image" content="${SITE}/og.png">
+<meta property="og:image" content="${SITE}${page.og || '/og.png'}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 ${helmet.trim()}
@@ -217,6 +219,7 @@ fs.writeFileSync(path.join(outDir, 'llms.txt'), `# Jeremiah Ajayi
 ## Proof
 
 - [Work](${SITE}/work/): Stears Elections (#1 on Google above the BBC), RemotePass × Certn (270+ media pickups), RemotePass content ($500K+ pipeline in under a year), Xofu repositioning; $3M+ pipeline influenced overall
+- [What I’d Do](${SITE}/what-id-do/): a newsletter and live conversation series on hard marketing decisions
 - [Writing](${SITE}/blog/): AI search research, including The State of AI Search in Nigeria and four Foundation Labs studies
 - [About](${SITE}/about/): background, recognition and education
 
@@ -261,7 +264,7 @@ console.log('done');
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '');
   fs.writeFileSync(path.join(outDir, '404.html'), page);
 }
-{ const og = path.join(__dirname, '..', 'og', 'og.png'); if (fs.existsSync(og)) fs.copyFileSync(og, path.join(outDir, 'og.png')); }
+for (const f of ['og.png', 'og-what-id-do.png']) { const og = path.join(__dirname, '..', 'og', f); if (fs.existsSync(og)) fs.copyFileSync(og, path.join(outDir, f)); }
 
 // Free tools: the original scorecards, restyled, at their existing URLs.
 {
