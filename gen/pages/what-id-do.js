@@ -4,11 +4,9 @@
     // Paste the official links here when they exist. Leave a value as '' until then:
     // the page shows an honest "not yet" state instead of a button that does nothing.
     const CONFIG = {
-      // beehiiv → Grow → Subscribe forms → (form) → Embed → copy the iframe's src.
-      // Looks like: https://embeds.beehiiv.com/00000000-0000-0000-0000-000000000000
-      beehiivEmbedUrl: '',
-      // The publication's public page, used as a link for people who prefer it. e.g. https://whatiddo.beehiiv.com
-      beehiivUrl: '',
+      // beehiiv subscribe form ID: the data-beehiiv-form value from beehiiv's embed code.
+      // The page loads beehiiv's official loader (subscribe-forms.beehiiv.com/v3/loader.js) for it.
+      beehiivFormId: '486dd20f-f759-4e17-a148-6ae63a258dcf',
       // Luma → Calendar → Settings → Embed. The calendar ID looks like cal-XXXXXXXX.
       lumaCalendarId: '',
       // The featured event's ID on Luma (evt-XXXXXXXX). Set it only once the real event exists.
@@ -31,9 +29,8 @@
     return {
       time: this.state.time,
       cfg: CONFIG,
-      hasSub: !!CONFIG.beehiivEmbedUrl,
-      noSub: !CONFIG.beehiivEmbedUrl,
-      hasSubUrl: !!CONFIG.beehiivUrl,
+      hasForm: !!CONFIG.beehiivFormId,
+      noForm: !CONFIG.beehiivFormId,
       notifyMail,
       hasCal: !!luma,
       noCal: !luma,
