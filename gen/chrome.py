@@ -87,7 +87,6 @@ def guide():
 <div class="gd-panel" id="gd-panel" role="dialog" aria-label="Chat with Jeremiah’s site guide" hidden>
 <div class="gd-head">{av}<div class="gd-who"><b>Jeremiah</b><span>Here to point you the right way</span></div><button type="button" class="gd-ic" data-gd-restart aria-label="Start over" title="Start over">↺</button><button type="button" class="gd-ic" data-gd-close aria-label="Close the chat">×</button></div>
 <div class="gd-thread" data-gd-thread aria-live="polite"></div>
-<div class="gd-chips" data-gd-chips></div>
 <form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Type a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Type a question…"><button type="submit" aria-label="Send">↑</button></form>
 </div>
 </div>
@@ -223,8 +222,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .gd-links a.gd-main{background:#FF5A2A;border-color:#FF5A2A;color:#111}
 .gd-links a.gd-main:hover{background:#111;border-color:#111;color:#F2EFE8}
 .gd-links a span{flex:none;font-weight:500;font-size:13px;opacity:.75;text-align:right}
-.gd-chips{flex:none;display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 4px;max-height:40%;overflow-y:auto}
-.gd-chips:empty{display:none}
+.gd-choices{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;padding:2px 0 4px;animation:gd-msg .35s cubic-bezier(.2,.8,.2,1)}
 .gd-ask{flex:none;display:flex;gap:8px;margin:8px 12px 12px;padding:5px 5px 5px 16px;border:1px solid #D8D1C3;border-radius:999px;background:#FFFFFF}
 .gd-ask input{flex:1;min-width:0;border:0;background:none;font:500 15px 'DM Sans',system-ui,sans-serif;color:#111;outline:none}
 .gd-ask button{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:#111;color:#F2EFE8;font-size:18px;font-weight:700;cursor:pointer}
@@ -254,5 +252,21 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 @keyframes vt-out{to{opacity:0}}
 @keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
 @media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
+/* report-inspired kit: colours, shapes, patterns */
+:root{--ink:#111;--paper:#F2EFE8;--cream:#FFF5D9;--orange:#FF5A2A;--sun:#FFC83D;--leaf:#1FA463;--mint:#8FE3B0;--blush:#FF8FB6;--lav:#B9A6FF;--night:#0E2A2E}
+.shp{display:inline-block;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.shp-flower{--m:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2281.00%22%20cy%3D%2250.00%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2271.92%22%20cy%3D%2271.92%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2250.00%22%20cy%3D%2281.00%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2228.08%22%20cy%3D%2271.92%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2219.00%22%20cy%3D%2250.00%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2228.08%22%20cy%3D%2228.08%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2250.00%22%20cy%3D%2219.00%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2271.92%22%20cy%3D%2228.08%22%20r%3D%2218.5%22/%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2234%22/%3E%3C/svg%3E")}
+.shp-clover{--m:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2266.97%22%20cy%3D%2266.97%22%20r%3D%2225%22/%3E%3Ccircle%20cx%3D%2233.03%22%20cy%3D%2266.97%22%20r%3D%2225%22/%3E%3Ccircle%20cx%3D%2233.03%22%20cy%3D%2233.03%22%20r%3D%2225%22/%3E%3Ccircle%20cx%3D%2266.97%22%20cy%3D%2233.03%22%20r%3D%2225%22/%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2222%22/%3E%3C/svg%3E")}
+.shp-star{--m:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%200C54%2034%2066%2046%20100%2050C66%2054%2054%2066%2050%20100C46%2066%2034%2054%200%2050C34%2046%2046%2034%2050%200Z%22/%3E%3C/svg%3E")}
+.shp-cross{--m:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20x%3D%2238%22%20y%3D%222%22%20width%3D%2224%22%20height%3D%2296%22%20rx%3D%2212%22%20transform%3D%22rotate%280%2050%2050%29%22/%3E%3Crect%20x%3D%2238%22%20y%3D%222%22%20width%3D%2224%22%20height%3D%2296%22%20rx%3D%2212%22%20transform%3D%22rotate%2860%2050%2050%29%22/%3E%3Crect%20x%3D%2238%22%20y%3D%222%22%20width%3D%2224%22%20height%3D%2296%22%20rx%3D%2212%22%20transform%3D%22rotate%28120%2050%2050%29%22/%3E%3C/svg%3E")}
+.shp-scallop{--m:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2294.00%22%20cy%3D%2250.00%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2290.65%22%20cy%3D%2266.84%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2281.11%22%20cy%3D%2281.11%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2266.84%22%20cy%3D%2290.65%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2250.00%22%20cy%3D%2294.00%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2233.16%22%20cy%3D%2290.65%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2218.89%22%20cy%3D%2281.11%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%229.35%22%20cy%3D%2266.84%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%226.00%22%20cy%3D%2250.00%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%229.35%22%20cy%3D%2233.16%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2218.89%22%20cy%3D%2218.89%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2233.16%22%20cy%3D%229.35%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2250.00%22%20cy%3D%226.00%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2266.84%22%20cy%3D%229.35%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2281.11%22%20cy%3D%2218.89%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2290.65%22%20cy%3D%2233.16%22%20r%3D%228.6%22/%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2245%22/%3E%3C/svg%3E")}
+.pat-tri{-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2040%2020%22%3E%3Cpath%20d%3D%22M0%2020L10%200L20%2020Z%20M20%2020L30%200L40%2020Z%22%20fill%3D%22black%22/%3E%3C/svg%3E") 0 0/40px 20px repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2040%2020%22%3E%3Cpath%20d%3D%22M0%2020L10%200L20%2020Z%20M20%2020L30%200L40%2020Z%22%20fill%3D%22black%22/%3E%3C/svg%3E") 0 0/40px 20px repeat}
+.pat-rays{background:repeating-conic-gradient(from 0deg at 0% 100%,currentColor 0 3deg,transparent 3deg 7deg)}
+.spin{animation:spin 24s linear infinite}
+.spin-r{animation:spin 30s linear infinite reverse}
+.floaty{animation:floaty 6s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(6deg)}}
+@media (prefers-reduced-motion: reduce){.spin,.spin-r,.floaty{animation:none}}
 /*shared:end*/
 """

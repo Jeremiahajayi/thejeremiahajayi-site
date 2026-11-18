@@ -126,8 +126,10 @@
     function add(html, cls, tag) { var el = document.createElement(tag || 'div'); el.className = cls; el.innerHTML = html; thread.appendChild(el); scroll(); return el; }
     function wait(ms) { return new Promise(function (r) { setTimeout(r, calm ? 0 : ms); }); }
     function typing(ms) { var t = add('<i></i><i></i><i></i>', 'gd-m gd-bot gd-typing'); t.setAttribute('aria-label', 'Jeremiah is typing'); return wait(ms).then(function () { t.remove(); }); }
+    function clearChoices() { [].forEach.call(thread.querySelectorAll('.gd-choices'), function (g) { g.remove(); }); }
     function setChips(keys, extra) {
-      chips.innerHTML = keys.map(function (k) { return '<button type="button" class="gd-chip" data-gd="' + k + '">' + LABEL[k] + '</button>'; }).join('') + (extra || '');
+      clearChoices();
+      add(keys.map(function (k) { return '<button type="button" class="gd-chip" data-gd="' + k + '">' + LABEL[k] + '</button>'; }).join('') + (extra || ''), 'gd-choices');
     }
     function greet() {
       if (thread.children.length) return Promise.resolve();
@@ -136,7 +138,7 @@
         .then(function () { add('What brings you here today? Pick one below, or type your question.', 'gd-m gd-bot'); setChips(ORDER); busy = false; });
     }
     function answer(k, how, said) {
-      if (busy) return; busy = true; chips.innerHTML = '';
+      if (busy) return; busy = true; clearChoices();
       var a = GD[k] || GD.none; track(k, how); if (asked.indexOf(k) < 0) asked.push(k);
       add(esc(said || LABEL[k] || k), 'gd-m gd-you');
       typing(650).then(function () {
@@ -159,13 +161,13 @@
       greet().then(function () { if (then) then(); else form.q.focus({ preventScroll: true }); });
     }
     function closeG() { root.classList.remove('gd-open'); panel.hidden = true; document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); }); if (opener && opener.offsetParent) opener.focus(); }
-    function restart() { thread.innerHTML = ''; chips.innerHTML = ''; asked = []; busy = false; greet(); }
+    function restart() { thread.innerHTML = ''; asked = []; busy = false; greet(); }
     document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.addEventListener('click', function () { panel.hidden ? openG(b) : closeG(); }); });
     root.querySelector('[data-gd-close]').addEventListener('click', closeG);
     root.querySelector('[data-gd-restart]').addEventListener('click', restart);
-    chips.addEventListener('click', function (e) {
+    thread.addEventListener('click', function (e) {
       var c = e.target.closest('[data-gd]'); if (c) return answer(c.getAttribute('data-gd'), 'option');
-      if (e.target.closest('[data-gd-done]') && !busy) { chips.innerHTML = ''; add('That’s all, thanks 👍', 'gd-m gd-you'); busy = true; typing(600).then(function () { add('Lovely. If anything comes up, email me at <a href="mailto:jeremiah@thejeremiahajayi.com">jeremiah@thejeremiahajayi.com</a>. Enjoy the site 👋', 'gd-m gd-bot'); busy = false; }); }
+      if (e.target.closest('[data-gd-done]') && !busy) { clearChoices(); add('That’s all, thanks 👍', 'gd-m gd-you'); busy = true; typing(600).then(function () { add('Lovely. If anything comes up, email me at <a href="mailto:jeremiah@thejeremiahajayi.com">jeremiah@thejeremiahajayi.com</a>. Enjoy the site 👋', 'gd-m gd-bot'); busy = false; }); }
     });
     if (peek) {
       peek.addEventListener('click', function (e) {

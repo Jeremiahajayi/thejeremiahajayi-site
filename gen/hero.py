@@ -143,6 +143,70 @@ CSS = r"""
 .rt-plane{font-size:26px}
 }
 @media (prefers-reduced-motion: reduce){.rt-plane{display:none}}
+/* hero portrait in a flower frame */
+.hf-stage{position:relative;aspect-ratio:1/1;width:100%}
+.hf-flower{position:absolute;inset:-4%;background:var(--sun)}
+.hf-photo{position:absolute;inset:9%;background:#FFFFFF}
+.hf-s1{position:absolute;left:-6%;top:-2%;width:22%;aspect-ratio:1;background:var(--mint)}
+.hf-s2{position:absolute;right:-3%;top:8%;width:15%;aspect-ratio:1;background:var(--blush)}
+.hf-s3{position:absolute;right:4%;bottom:6%;width:14%;aspect-ratio:1;background:var(--orange)}
+.hf-badge{position:absolute;left:-4%;bottom:2%;max-width:78%;padding:9px 14px;border-radius:999px;background:#111;color:#F2EFE8;font-size:12.5px;font-weight:700;line-height:1.3;transform:rotate(-5deg);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.hero-anim .hf-flower{animation:pop-in .9s .2s cubic-bezier(.3,1.5,.5,1) both,spin 40s 1.1s linear infinite}
+.hero-anim .hf-s1,.hero-anim .hf-s2,.hero-anim .hf-s3,.hero-anim .hf-badge{animation:pop-in .7s cubic-bezier(.3,1.6,.5,1) both}
+.hero-anim .hf-s1{animation-delay:.6s}.hero-anim .hf-s2{animation-delay:.75s}.hero-anim .hf-s3{animation-delay:.9s}.hero-anim .hf-badge{animation-delay:1.1s}
+@keyframes pop-in{from{opacity:0;transform:scale(.3) rotate(-30deg)}to{opacity:1}}
+.hero-anim .hf-badge{animation-name:pop-badge}
+@keyframes pop-badge{from{opacity:0;transform:scale(.5) rotate(-20deg)}to{opacity:1;transform:rotate(-5deg)}}
+/* results bento */
+.bento{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.bt{position:relative;overflow:hidden;border-radius:22px;padding:clamp(22px,2.6vw,34px);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;color:#111}
+.bt-n{position:relative;margin:0;font-weight:700;font-size:clamp(56px,6vw,96px);line-height:.85;letter-spacing:-.06em}
+.bt-l{position:relative;margin:10px 0 0;font-size:15px;line-height:1.45;font-weight:600;max-width:260px}
+.bt-1{grid-row:span 2;background:var(--sun);min-height:380px}
+.bt-1 .bt-n{font-size:clamp(80px,9vw,150px)}
+.bt-2{background:var(--leaf);color:#FFFFFF}
+.bt-3{background:var(--mint)}
+.bt-4{grid-column:span 2;background:var(--orange)}
+.bt-rays{position:absolute;right:-30%;top:-40%;width:110%;aspect-ratio:1;color:rgba(255,90,42,.55);border-radius:50%}
+.bt-sh{position:absolute;right:-26px;top:-26px;width:120px;aspect-ratio:1}
+.bt-2 .bt-sh{background:rgba(255,255,255,.22)}
+.bt-3 .bt-sh{background:var(--leaf);opacity:.35;width:90px;right:16px;top:16px}
+.bt-tri{position:absolute;right:0;top:0;width:46%;height:100%;background:var(--sun);opacity:.9}
+@media (max-width: 760px){.bento{grid-template-columns:1fr 1fr}.bt-1{grid-row:auto;grid-column:span 2;min-height:220px}.bt-4{grid-column:span 2}.bt{min-height:150px}.bt-n{font-size:52px}.bt-1 .bt-n{font-size:84px}.bt-tri{width:34%}}
+/* case number badges */
+.num-b{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;font-size:14px;font-weight:700;color:#111}
+/* disciplines as tiles */
+.xp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.xp{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;min-height:440px;padding:clamp(24px,2.6vw,34px);border-radius:24px;text-decoration:none;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.xp:hover{transform:translateY(-8px) rotate(-.6deg);color:#111}
+.xp-art{position:relative;width:110px;height:110px;margin-bottom:auto}
+.xp-shape{position:absolute;inset:0}
+.xp-emo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:46px;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.xp:hover .xp-emo{transform:scale(1.18) rotate(-10deg)}
+.xp-verb{font-size:clamp(56px,5.6vw,88px);font-weight:700;line-height:.85;letter-spacing:-.06em}
+.xp-name{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.xp-long{font-size:16px;line-height:1.55;color:#2D2B27}
+.xp-proof{font-size:13.5px;line-height:1.5;color:#2D2B27}
+.xp-go{margin-top:6px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:46px;padding:0 18px;border-radius:999px;background:#111;color:#F2EFE8;font-weight:700;font-size:15px}
+.xp:hover .xp-go .arr{transform:translateX(5px)}
+@media (max-width: 900px){.xp-grid{grid-template-columns:1fr}.xp{min-height:0}.xp-art{width:84px;height:84px}.xp-emo{font-size:36px}}
+/* contact doors */
+.door-e{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;font-size:20px;background:var(--sun)}
+.door:nth-of-type(2) .door-e{background:var(--orange)}
+.door:nth-of-type(3) .door-e{background:var(--mint)}
+.door:nth-of-type(4) .door-e{background:var(--lav)}
+.door:nth-of-type(5) .door-e{background:var(--blush)}
+/* route pins in colour */
+.rt-stop:nth-child(5n+1) .rt-pin{background:var(--sun)}
+.rt-stop:nth-child(5n+2) .rt-pin{background:var(--mint)}
+.rt-stop:nth-child(5n+3) .rt-pin{background:var(--blush)}
+.rt-stop:nth-child(5n+4) .rt-pin{background:var(--lav)}
+.rt-stop:nth-child(5n+5) .rt-pin{background:#FFFFFF}
+/* EmpowerQ section flowers */
+.eq-f1{position:absolute;right:-90px;top:-90px;width:260px;aspect-ratio:1;background:var(--sun);opacity:.9}
+.eq-f2{position:absolute;left:38%;bottom:-40px;width:110px;aspect-ratio:1;background:var(--blush)}
+@media (max-width: 640px){.eq-f1{width:170px;right:-70px;top:-70px}.eq-f2{display:none}}
+@media (prefers-reduced-motion: reduce){.hf-flower,.hf-s1,.hf-s2,.hf-s3,.hf-badge{animation:none !important}}
 /*hero:end*/
 """
 
