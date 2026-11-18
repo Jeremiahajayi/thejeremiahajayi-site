@@ -128,9 +128,9 @@
           { t: 'What are our top expenses this quarter?' }
         ],
         touch: [
-          { n: '01', h: 'Landing page', s: 'remotepass.com/ai', href: 'https://www.remotepass.com/ai', go: '↗', bg: '#111', fg: '#F2EFE8' },
-          { n: '02', h: 'Announcement video', s: 'Watch it on LinkedIn', href: 'https://lnkd.in/p/gMXYb4hH', go: '↗', bg: '#111', fg: '#F2EFE8' },
-          { n: '03', h: 'Sales enablement', s: 'Documents for the sales team, built on the same story', href: 'Site-Service-Launch.dc.html', go: '→', bg: '#F2EFE8', fg: '#111' }
+          { n: '01', h: 'Landing page', s: 'remotepass.com/ai', href: 'https://www.remotepass.com/ai', go: '↗', bg: '#111', fg: '#F2EFE8', img: '/_blob/e2f2facb76d7585de187f135b62123f5', alt: 'The Ask AI landing page headline: Get answers from your workforce data and let Ask AI do the rest' },
+          { n: '02', h: 'Announcement video', s: 'Watch it on LinkedIn', href: 'https://lnkd.in/p/gMXYb4hH', go: '↗', bg: '#111', fg: '#F2EFE8', img: '/_blob/03980524c45a3df2f820446ec7e9e0c2', alt: 'Opening frame of the Introducing Ask AI announcement video' },
+          { n: '03', h: 'Sales enablement', s: 'Documents for the sales team, built on the same story', href: 'Site-Service-Launch.dc.html', go: '→', bg: '#F2EFE8', fg: '#111', img: '', alt: '' }
         ]
       },
       xofu: {

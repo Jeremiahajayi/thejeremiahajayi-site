@@ -276,9 +276,23 @@ EQ_CSS = '''
 .eqp-progs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .eqp-progs .k-stk{padding:18px 20px;box-shadow:4px 4px 0 #1C1430;border-color:#1C1430}
 .eqp-progs .k-stk:nth-child(4n+1){background:#E9E2FF}.eqp-progs .k-stk:nth-child(4n+2){background:#FFC83D}.eqp-progs .k-stk:nth-child(4n+3){background:#FF8FB6}.eqp-progs .k-stk:nth-child(4n+4){background:#FFFDF6}
-.eqp-partners{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:12px}
-.eqp-partners li{display:grid;place-items:center;height:84px;padding:0 22px;border-radius:18px;background:#FFFDF6;border:1.5px solid #1C1430}
-.eqp-partners img{max-height:48px;max-width:150px;width:auto}
+.eqp-receipts{background:#FFF5D9;color:#1C1430;--dot:#7B5CF0}
+.eqp-core{margin:0;max-width:20ch;font-weight:700;font-size:clamp(38px,4.8vw,76px);line-height:.98;letter-spacing:-.05em}
+.eqp-poster{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(28px,3vw,44px) clamp(20px,2.4vw,36px);align-items:end;border-top:2px solid #1C1430;padding-top:clamp(28px,3vw,40px)}
+.eqp-n{grid-column:span 2;display:flex;flex-direction:column;gap:8px}
+.eqp-n b{font-size:clamp(56px,5.4vw,88px);line-height:.86;letter-spacing:-.06em}
+.eqp-n span{font-size:15.5px;line-height:1.45;max-width:26ch;color:#2E2350}
+.eqp-n.is-hero{grid-column:span 6;flex-direction:row;align-items:flex-end;gap:12px 28px;flex-wrap:wrap}
+.eqp-n.is-hero b{font-size:clamp(140px,19vw,300px);color:#1C1430}
+.eqp-n.is-hero span{font:700 clamp(24px,2.6vw,40px)/1.05 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em;max-width:12ch;padding-bottom:.6em;color:#7B5CF0}
+.eqp-n.is-big{grid-column:span 3}
+.eqp-n.is-big b{font-size:clamp(80px,9vw,150px)}
+.eqp-built{margin:clamp(36px,4vw,52px) 0 0;padding:18px 0;border-top:1px solid rgba(28,20,48,.25);border-bottom:1px solid rgba(28,20,48,.25);font-size:16px;line-height:1.6;color:#2E2350}
+.eqp-next{margin:clamp(28px,3vw,40px) 0 0;font-size:clamp(28px,3.2vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1.05}
+.eqp-partners{margin:22px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.eqp-partners li{display:grid;place-items:center;height:128px;padding:16px 26px;box-sizing:border-box;border-radius:20px;background:#FFFFFF;border:1.5px solid #1C1430;box-shadow:4px 4px 0 #1C1430;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.eqp-partners li:hover{transform:translate(-2px,-3px) rotate(-1deg)}
+.eqp-partners img{max-height:80px;max-width:100%;width:auto;object-fit:contain}
 .eqp-stats .k-stat{border-color:#1C1430;box-shadow:4px 4px 0 #1C1430}
 .eqp-ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
 .eqp-ways .k-stk{border-color:#1C1430;box-shadow:5px 5px 0 #1C1430}
@@ -286,7 +300,7 @@ EQ_CSS = '''
 .eqp-end{background:#1C1430;color:#E9E2FF}
 .eqp-end .k-end-s{background:#B9A6FF}
 @media (max-width:1080px){.eqp-why,.eqp-ll{grid-template-columns:1fr}}
-@media (max-width:640px){.eqp-progs{grid-template-columns:1fr}}
+@media (max-width:640px){.eqp-progs{grid-template-columns:1fr}.eqp-poster{grid-template-columns:repeat(2,minmax(0,1fr))}.eqp-n,.eqp-n.is-big{grid-column:span 1}.eqp-n.is-hero{grid-column:span 2}.eqp-partners{grid-template-columns:repeat(2,minmax(0,1fr))}.eqp-partners li{height:100px}}
 </style>'''
 
 
@@ -297,13 +311,13 @@ def empowerq():
 <span class="shp shp-flower k-shape" aria-hidden="true" style="left: 38%; bottom: -60px; width: 150px; height: 150px; background: #FF8FB6"></span>
 <div class="wrap eq-grid">
 <div class="eq-copy">
-<p class="eq-top"><span class="eyebrow eq-eyebrow">Co-founded in 2025</span><span class="eq-pill">Finalist · Social Shifters Global Innovation Challenge 2026</span></p>
+<p class="eq-top"><span class="eyebrow eq-eyebrow">Co-founded in 2025 · now in year two</span><span class="eq-pill">Finalist · Social Shifters Global Innovation Challenge 2026</span></p>
 <h1 class="sg k-h1">EmpowerQ</h1>
 <p class="eq-lede eqp-lede sg">Every queer Nigerian professional deserves a fair shot at a good career.</p>
-<p class="k-p" style="margin-top: 20px; color: #2E2350">EmpowerQ is a nonprofit building economic inclusion for LGBTQ+ professionals in Nigeria: career support, honest research and a community that makes work safer and more rewarding.</p>
+<p class="k-p" style="margin-top: 20px; color: #2E2350">EmpowerQ builds career infrastructure for LGBTQ+ professionals in Nigeria: jobs, skills, mentorship, research and a community that makes work safer and more rewarding. In our first year, we supported 20+ people into jobs and trained 500+.</p>
 <div class="eq-cta"><a class="eq-btn" href="#involved">Get involved <span aria-hidden="true">↓</span></a><a class="eq-link" href="https://www.empowerqueer.org">Visit EmpowerQ ↗</a></div>
 </div>
-<figure class="eq-photo"><img src="{B('2887802b6b670e13694193452b911747')}" alt="Name tags and lanyards laid out for Out of Office, EmpowerQ’s queer career conference"><span class="eq-badge sg"><b>100+</b>at our first Out of Office</span><figcaption>Name tags for Out of Office, Nigeria’s first queer career conference. We keep attendees’ faces off the web.</figcaption></figure>
+<figure class="eq-photo"><img src="{B('2887802b6b670e13694193452b911747')}" alt="Name tags and lanyards laid out for Out of Office, EmpowerQ’s queer career conference"><span class="eq-badge sg"><b>100+</b>registered for our first Out of Office</span><figcaption>Name tags for Out of Office, Nigeria’s first queer career conference. We keep attendees’ faces off the web.</figcaption></figure>
 </div>
 </section>
 
@@ -330,12 +344,15 @@ def empowerq():
 </div>
 </section>
 
-<section class="k-sec k-lav" aria-labelledby="yr-t">
+<section class="k-sec eqp-receipts" aria-labelledby="yr-t">
 <div class="wrap">
-<h2 id="yr-t" class="sg k-h2">Our first year, {mark('so far.', '#1C1430', '#E9E2FF')}</h2>
-<div class="k-stats eqp-stats"><sc-for list="{{{{impact}}}}" as="m" hint-placeholder-count="4"><div class="k-stat"><b>{{{{m.big}}}}</b><span>{{{{m.label}}}}</span></div></sc-for></div>
-<p class="eyebrow eq-eyebrow" style="margin: clamp(48px, 6vw, 72px) 0 0">Partners we’ve worked with</p>
-<ul class="eqp-partners"><sc-for list="{{{{partners}}}}" as="l" hint-placeholder-count="11"><li><img src="{{{{l.src}}}}" alt="{{{{l.alt}}}}" loading="lazy"></li></sc-for></ul>
+<p class="eyebrow" style="color: #3B2C6E">Year one, in receipts</p>
+<h2 id="yr-t" class="sg eqp-core">In year one, we proved the need. In year two, {mark('we build the ladder.')}</h2>
+<div class="eqp-poster"><sc-for list="{{{{impact}}}}" as="m" hint-placeholder-count="9"><div class="eqp-n {{{{m.cls}}}}"><b class="sg">{{{{m.big}}}}</b><span>{{{{m.label}}}}</span></div></sc-for></div>
+<p class="eqp-built"><b>Also built:</b> Nigeria’s first LGBTQ+ Workforce Report · Career Bestie, our AI career coach · Lavender Ladder · the Resource Vault · Out of Office, Nigeria’s first queer career conference · finalist, Social Shifters Global Innovation Challenge 2026</p>
+<p class="eqp-next sg">Year two: more jobs. More income. More options<span class="k-dot">.</span></p>
+<h3 class="eyebrow" style="color: #3B2C6E; margin: clamp(56px, 7vw, 88px) 0 0">The partners who chose to stand with us</h3>
+<ul class="eqp-partners"><sc-for list="{{{{partners}}}}" as="l" hint-placeholder-count="12"><li><img src="{{{{l.src}}}}" alt="{{{{l.alt}}}}" loading="lazy"></li></sc-for></ul>
 </div>
 </section>
 

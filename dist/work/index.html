@@ -677,6 +677,9 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .eq-title{margin:0;font-weight:700;font-size:clamp(72px,10vw,160px);line-height:.82;letter-spacing:-.07em}
 .eq-lede{margin:22px 0 0;max-width:24ch;font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.12;letter-spacing:-.025em}
 .eq-copy>p:not(.eq-lede):not(.eq-top){max-width:58ch;font-size:17px;line-height:1.65;color:#2E2350}
+.eq-nums{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:14px 34px}
+.eq-nums li{display:flex;flex-direction:column;max-width:18ch;font-size:14px;line-height:1.35;font-weight:600}
+.eq-nums b{font-size:clamp(40px,4vw,60px);line-height:.9;letter-spacing:-.05em}
 .eq-list{margin:28px 0 0;padding:0;list-style:none;border-top:2px solid #1C1430}
 .eq-list li{display:grid;grid-template-columns:210px minmax(0,1fr);gap:4px 20px;padding:14px 0;border-bottom:1px solid rgba(28,20,48,.22);font-size:15px;line-height:1.5}
 .eq-list b{font-family:'Space Grotesk',system-ui,sans-serif;font-size:18px;letter-spacing:-.015em}
@@ -1078,18 +1081,28 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 /* launches */
 .wk-log{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,3vw,40px);align-items:start;margin-top:clamp(28px,3vw,44px)}
 /* Ask AI */
-.wk-ai-media{position:relative}
-.wk-ai-media .k-shot{transform:rotate(1.5deg)}
-.wk-ai-media .k-chat{position:absolute;left:-28px;bottom:-40px;width:min(380px,80%);margin:0;padding:0}
 .wk-record{display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;margin-top:clamp(56px,6vw,80px)}
 .wk-record .k-big{font-size:clamp(80px,10vw,160px)}
 .wk-record p{margin:0;max-width:30ch;font:600 clamp(19px,1.8vw,24px)/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
-.wk-touch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
-.wk-touch a{display:flex;align-items:center;gap:14px}
-.wk-touch a b{font:700 15px 'Space Grotesk',system-ui,sans-serif;opacity:.6}
-.wk-touch a span{display:flex;flex-direction:column;gap:2px}
-.wk-touch a span span{font-size:13.5px;opacity:.75}
-.wk-touch a i{margin-left:auto;font-style:normal;font-size:20px}
+.wk-ai-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,4.6vw,72px);align-items:start}
+.wk-ai-media .k-shot{transform:rotate(1deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.wk-ai-media a:hover .k-shot{transform:rotate(0) translateY(-4px)}
+.wk-ai-media figcaption{margin-top:20px}
+.wk-ai-media .k-chat{position:static;width:auto;margin:0;padding:0;flex-direction:row;flex-wrap:wrap}
+.wk-ai-media .k-chat li{max-width:none}
+.wk-touch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+.wk-tc{padding:0;overflow:hidden;gap:0}
+.wk-tc-m{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;border-bottom:1.5px solid #111;background:#FFC83D}
+.wk-tc-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.wk-tc:hover .wk-tc-m img{transform:scale(1.04)}
+.wk-docs{position:absolute;inset:0;display:grid;place-items:center}
+.wk-docs i{position:absolute;width:34%;aspect-ratio:3/4;border:1.5px solid #111;border-radius:6px;background:#FFFDF6;background-image:repeating-linear-gradient(180deg,transparent 0 14px,rgba(17,17,17,.12) 14px 16px);background-clip:content-box;padding:18% 12%;box-sizing:border-box;box-shadow:3px 3px 0 #111}
+.wk-docs i:nth-child(1){transform:rotate(-9deg) translateX(-34%)}.wk-docs i:nth-child(2){transform:rotate(7deg) translateX(34%)}.wk-docs i:nth-child(3){transform:translateY(-4%)}
+.wk-tc-b{display:flex;align-items:center;gap:14px;padding:18px 20px}
+.wk-tc-b b{font:700 15px 'Space Grotesk',system-ui,sans-serif;opacity:.6}
+.wk-tc-b>span{display:flex;flex-direction:column;gap:2px}
+.wk-tc-b>span span{font-size:13.5px;opacity:.75}
+.wk-tc-b i{margin-left:auto;font-style:normal;font-size:20px}
 /* engine */
 .wk-hub{margin:clamp(32px,4vw,56px) 0;padding:clamp(24px,3vw,40px);border-radius:28px;border:1.5px dashed rgba(14,42,46,.5)}
 .wk-hub .k-pills{justify-content:center}
@@ -1133,7 +1146,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 .wk-grid .card-t{font:700 19px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
 .wk-grid .k-stk.is-deep{background:#111;color:#F2EFE8}
 .wk-grid .k-stk.is-deep .k-tag{color:#FFC83D}
-@media (max-width:1080px){.wk-en-big{grid-template-columns:1fr 1fr}.wk-pillars{grid-template-columns:1fr}.wk-st-more,.wk-log,.wk-en-imgs,.wk-en-res,.wk-xf{grid-template-columns:1fr}.wk-st-res{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-touch{grid-template-columns:1fr}.wk-ai-media .k-chat{position:relative;left:0;bottom:0;margin-top:18px;width:100%}}
+@media (max-width:1080px){.wk-en-big{grid-template-columns:1fr 1fr}.wk-pillars{grid-template-columns:1fr}.wk-st-more,.wk-log,.wk-en-imgs,.wk-en-res,.wk-xf{grid-template-columns:1fr}.wk-st-res{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-touch{grid-template-columns:1fr}.wk-ai-g{grid-template-columns:1fr}}
 @media (max-width:640px){.wk-fan{height:300px}.wk-cn-fan{height:220px}.wk-xf-fan{height:260px}.wk-ksa{height:240px}.wk-en-imgs .k-fig:nth-child(2){margin-top:0}}
 </style>
 <section class="k-hero k-cream wk-hero">
@@ -1249,19 +1262,21 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <section id="askai" class="k-case k-sun" aria-labelledby="ai-t">
 <div class="wrap">
 <p class="k-cmeta"><span class="k-cn">04</span><span>RemotePass · Ask AI · 2025</span><span class="k-tag">Launches & go-to-market</span><a href="/services/product-launch-gtm/">The service →</a></p>
-<div class="k-hero-g" style="align-items: start">
+<div class="wk-ai-g">
 <div>
 <h2 id="ai-t" class="sg k-ct">Everyone was selling AI. We sold the answer<span class="k-dot">.</span></h2>
 <p class="k-p" style="margin-top: 22px">Ask AI was RemotePass’s newest feature, launched at the peak of the AI craze. Every brand in our category was making the same promise. I led the campaign around a different one: how easy it is to simply ask your workforce data a question.</p>
 <dl class="pc-dl"><div><dt>The insight</dt><dd>HR leaders, our customers and prospects, kept telling us they never had time to explore their own workforce data. Most competitors had not built a story on that.</dd></div><div><dt>What we made</dt><dd>One story from the landing page to the announcement video to the sales enablement documents, so buyers heard the same promise at every step.</dd></div><div><dt>My role</dt><dd>Led the campaign as Content Marketing Manager: the angle, the story and keeping it consistent across every channel.</dd></div></dl>
 </div>
-<figure class="k-fig wk-ai-media"><img class="k-shot" src="/img/askai-landing.webp" alt="The Ask AI launch page on remotepass.com: Get answers from your workforce data and let Ask AI do the rest, with the announcement video" loading="lazy">
+<figure class="k-fig wk-ai-media"><a href="https://www.remotepass.com/ai" aria-label="Open the Ask AI landing page on remotepass.com"><img class="k-shot" src="/img/askai-landing.webp" alt="The Ask AI launch page on remotepass.com: Get answers from your workforce data and let Ask AI do the rest, with the announcement video" loading="lazy"></a>
+<figcaption>The Ask AI landing page, live at remotepass.com/ai</figcaption>
+<p class="k-kicker" style="margin: 22px 0 10px">Questions the launch invited HR leaders to ask</p>
 <ul class="k-chat" aria-label="Example questions from the launch page"><li>Where is my team located and how much are we spending by country?</li><li>Which contracts expire next month? Draft the renewals.</li><li>What are our top expenses this quarter?</li></ul>
 </figure>
 </div>
 <div class="wk-record"><span class="k-big">Record</span><p>MQL performance after the launch. The sales team was flooded with enquiries about the product.</p></div>
 <p class="eyebrow" style="margin-top: clamp(36px, 4vw, 52px)">One story, carried across every touchpoint</p>
-<div class="wk-touch"><a class="k-stk" href="https://www.remotepass.com/ai" style="background: #111; color: #F2EFE8"><b>01</b><span><strong>Landing page</strong><span>remotepass.com/ai</span></span><i aria-hidden="true">↗</i></a><a class="k-stk" href="https://lnkd.in/p/gMXYb4hH" style="background: #111; color: #F2EFE8"><b>02</b><span><strong>Announcement video</strong><span>Watch it on LinkedIn</span></span><i aria-hidden="true">↗</i></a><a class="k-stk" href="/services/product-launch-gtm/" style="background: #F2EFE8; color: #111"><b>03</b><span><strong>Sales enablement</strong><span>Documents for the sales team, built on the same story</span></span><i aria-hidden="true">→</i></a></div>
+<div class="wk-touch"><a class="k-stk wk-tc" href="https://www.remotepass.com/ai" style="background: #111; color: #F2EFE8"><span class="wk-tc-m"><img src="/img/askai-hero-crop.webp" alt="The Ask AI landing page headline: Get answers from your workforce data and let Ask AI do the rest" loading="lazy"><span class="wk-docs" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="wk-tc-b"><b>01</b><span><strong>Landing page</strong><span>remotepass.com/ai</span></span><i aria-hidden="true">↗</i></span></a><a class="k-stk wk-tc" href="https://lnkd.in/p/gMXYb4hH" style="background: #111; color: #F2EFE8"><span class="wk-tc-m"><img src="/img/askai-video-crop.webp" alt="Opening frame of the Introducing Ask AI announcement video" loading="lazy"><span class="wk-docs" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="wk-tc-b"><b>02</b><span><strong>Announcement video</strong><span>Watch it on LinkedIn</span></span><i aria-hidden="true">↗</i></span></a><a class="k-stk wk-tc" href="/services/product-launch-gtm/" style="background: #F2EFE8; color: #111"><span class="wk-tc-m"><span class="wk-docs" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="wk-tc-b"><b>03</b><span><strong>Sales enablement</strong><span>Documents for the sales team, built on the same story</span></span><i aria-hidden="true">→</i></span></a></div>
 <p style="margin: 16px 0 0; font-size: 14px">Video and visuals by the RemotePass team. My part: the angle, the story and the campaign.</p>
 </div>
 </section>

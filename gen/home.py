@@ -313,13 +313,14 @@ def empowerq():
 <p class="eq-top"><span class="eyebrow eq-eyebrow">The work I care about most</span><span class="eq-pill">Finalist · Social Shifters Global Innovation Challenge 2026</span></p>
 <h2 id="eq-title" class="sg eq-title">EmpowerQ</h2>
 <p class="eq-lede sg">Every queer Nigerian professional deserves a fair shot at a good career.</p>
-<p>Many LGBTQ+ Nigerians are shut out of the networks, mentorship and fair hiring that careers depend on. I co-founded EmpowerQ in 2025 to change that, with practical support, honest research and a community that makes work safer.</p>
+<p>Many LGBTQ+ Nigerians are shut out of the networks, mentorship and fair hiring that careers depend on. I co-founded EmpowerQ in 2025 to change that. Year one proved the need; in year two, we’re building the ladder.</p>
+<ul class="eq-nums" aria-label="EmpowerQ’s first year"><li><b class="sg">500+</b>queer professionals trained</li><li><b class="sg">130+</b>community members</li><li><b class="sg">151</b>voices in Nigeria’s first LGBTQ+ Workforce Report</li></ul>
 <ul class="eq-list">
 <sc-for list="{{{{programs}}}}" as="p" hint-placeholder-count="5"><li><b>{{{{p.name}}}}</b><span>{{{{p.line}}}}</span></li></sc-for>
 </ul>
 <div class="eq-cta"><a class="eq-btn" href="https://www.empowerqueer.org">Visit EmpowerQ <span class="arr" aria-hidden="true">↗</span></a><a class="eq-link" href="mailto:jeremiah@thejeremiahajayi.com?subject=Partnering%20with%20EmpowerQ">Partner or fund our work {ARR}</a></div>
 </div>
-<figure class="eq-photo"><img class="img-rv" src="{B(IMG['tags'])}" alt="Name tags and lanyards for Out of Office, EmpowerQ’s queer career conference" loading="lazy"><span class="eq-badge sg"><b>100+</b>at our first Out of Office</span><figcaption>We keep attendees’ faces off the web.</figcaption></figure>
+<figure class="eq-photo"><img class="img-rv" src="{B(IMG['tags'])}" alt="Name tags and lanyards for Out of Office, EmpowerQ’s queer career conference" loading="lazy"><span class="eq-badge sg"><b>20+</b>people supported into jobs</span><figcaption>We keep attendees’ faces off the web.</figcaption></figure>
 </div>
 </section>'''
 
@@ -682,6 +683,9 @@ CSS = r'''
 .eq-title{margin:0;font-weight:700;font-size:clamp(72px,10vw,160px);line-height:.82;letter-spacing:-.07em}
 .eq-lede{margin:22px 0 0;max-width:24ch;font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.12;letter-spacing:-.025em}
 .eq-copy>p:not(.eq-lede):not(.eq-top){max-width:58ch;font-size:17px;line-height:1.65;color:#2E2350}
+.eq-nums{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:14px 34px}
+.eq-nums li{display:flex;flex-direction:column;max-width:18ch;font-size:14px;line-height:1.35;font-weight:600}
+.eq-nums b{font-size:clamp(40px,4vw,60px);line-height:.9;letter-spacing:-.05em}
 .eq-list{margin:28px 0 0;padding:0;list-style:none;border-top:2px solid #1C1430}
 .eq-list li{display:grid;grid-template-columns:210px minmax(0,1fr);gap:4px 20px;padding:14px 0;border-bottom:1px solid rgba(28,20,48,.22);font-size:15px;line-height:1.5}
 .eq-list b{font-family:'Space Grotesk',system-ui,sans-serif;font-size:18px;letter-spacing:-.015em}

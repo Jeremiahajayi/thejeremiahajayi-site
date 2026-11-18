@@ -18,9 +18,9 @@
       ],
       dfs: '/_blob/7b26ce554a84b7e8f8efc0c9b7b09d2e',
       empowerq: [
-        { big: '2025', label: 'co-founded, in Lagos' },
-        { big: '90', label: 'professionals in the Lavender Ladder, running now' },
-        { big: 'Finalist', label: 'Social Shifters Global Innovation Challenge 2026, for the Lavender Ladder' }
+        { big: '20+', label: 'people supported into jobs' },
+        { big: '500+', label: 'queer professionals trained across our programmes' },
+        { big: '130+', label: 'community members, from a year-one goal of 100' }
       ],
       alsoNow: [
         { h: 'Research', t: 'Co-authored The State of AI Search in Nigeria, the first report of its kind, and four AI-search studies for Foundation Labs.' },

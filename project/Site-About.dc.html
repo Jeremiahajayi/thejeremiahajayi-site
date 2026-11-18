@@ -665,6 +665,9 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .eq-title{margin:0;font-weight:700;font-size:clamp(72px,10vw,160px);line-height:.82;letter-spacing:-.07em}
 .eq-lede{margin:22px 0 0;max-width:24ch;font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.12;letter-spacing:-.025em}
 .eq-copy>p:not(.eq-lede):not(.eq-top){max-width:58ch;font-size:17px;line-height:1.65;color:#2E2350}
+.eq-nums{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:14px 34px}
+.eq-nums li{display:flex;flex-direction:column;max-width:18ch;font-size:14px;line-height:1.35;font-weight:600}
+.eq-nums b{font-size:clamp(40px,4vw,60px);line-height:.9;letter-spacing:-.05em}
 .eq-list{margin:28px 0 0;padding:0;list-style:none;border-top:2px solid #1C1430}
 .eq-list li{display:grid;grid-template-columns:210px minmax(0,1fr);gap:4px 20px;padding:14px 0;border-bottom:1px solid rgba(28,20,48,.22);font-size:15px;line-height:1.5}
 .eq-list b{font-family:'Space Grotesk',system-ui,sans-serif;font-size:18px;letter-spacing:-.015em}
@@ -1202,9 +1205,9 @@ class Component extends DCLogic {
       ],
       dfs: '/_blob/7b26ce554a84b7e8f8efc0c9b7b09d2e',
       empowerq: [
-        { big: '2025', label: 'co-founded, in Lagos' },
-        { big: '90', label: 'professionals in the Lavender Ladder, running now' },
-        { big: 'Finalist', label: 'Social Shifters Global Innovation Challenge 2026, for the Lavender Ladder' }
+        { big: '20+', label: 'people supported into jobs' },
+        { big: '500+', label: 'queer professionals trained across our programmes' },
+        { big: '130+', label: 'community members, from a year-one goal of 100' }
       ],
       alsoNow: [
         { h: 'Research', t: 'Co-authored The State of AI Search in Nigeria, the first report of its kind, and four AI-search studies for Foundation Labs.' },
