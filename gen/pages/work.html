@@ -43,11 +43,11 @@
 </div>
 <div style="margin-top: clamp(45px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 72px; align-items: center">
 <div>
-<p class="sg" style="margin: 0; font-weight: 700; font-size: clamp(72px, 9vw, 148px); line-height: 0.82; letter-spacing: -0.07em; color: #F2EFE8">10,000+</p>
+<p class="sg" data-scrub="dots" style="margin: 0; font-weight: 700; font-size: clamp(72px, 9vw, 148px); line-height: 0.82; letter-spacing: -0.07em; color: #F2EFE8; font-variant-numeric: tabular-nums">10,000+</p>
 <p style="margin: 20px 0 0; max-width: 460px; font-size: 18px; line-height: 1.6; color: #D8D3C9">programmatic candidate pages, covering every candidate for governor, senate and president. The largest digital repository of election candidate data in Nigeria at the time.</p>
-<p style="margin: 14px 0 0; font-size: 13px; color: #B5B0A6">Each dot is 10 pages.</p>
+<p style="margin: 14px 0 0; font-size: 13px; color: #B5B0A6">Each dot is 10 pages. Keep scrolling to light them up.</p>
 </div>
-<div class="dots wipe" role="img" aria-label="A grid of 1,000 dots, each standing for 10 candidate pages" style="width: 100%; max-width: 620px; aspect-ratio: 40 / 25; justify-self: end"></div>
+<div class="dots-g" data-dots role="img" aria-label="A grid of 1,000 dots, each standing for 10 candidate pages" style="width: 100%; max-width: 620px; aspect-ratio: 40 / 25; justify-self: end"><span class="dots-lit"></span><span class="dots-edge"></span></div>
 </div>
 <ol style="margin: clamp(45px, 8vw, 96px) 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 1px solid #3A3934">
 <sc-for list="{{stears.did}}" as="d" hint-placeholder-count="4"><li style="padding: 24px 24px 28px 0; border-bottom: 1px solid #3A3934"><span class="sg" style="display: block; font-size: 15px; font-weight: 700; color: #F2EFE8">{{d.n}}</span><span style="display: block; margin-top: 10px; font-size: 16px; line-height: 1.6; color: #E8E4DC">{{d.t}}</span></li></sc-for>

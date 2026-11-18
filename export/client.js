@@ -113,32 +113,170 @@
     ['proof', /\b(result|case|portfolio|work|example|client|proof|testimonial)/],
     ['contact', /\b(contact|email|call|talk|book|meet|reach)/]
   ];
+  var LABEL = { positioning: '🧭 Our product is hard to explain', launch: '🚀 We have a launch coming up', content: '📈 We need content that ranks and converts', ai: '🤖 We want to show up in AI answers', hire: '💼 I’m hiring a marketer', proof: '🏆 Show me results first', read: '📚 I want to read your research', empowerq: '🌈 I want to support EmpowerQ' };
+  var ORDER = ['positioning', 'launch', 'content', 'ai', 'hire', 'proof', 'read', 'empowerq'];
   var root = document.querySelector('[data-gd-root]');
   if (root) {
-    var panel = root.querySelector('.gd-panel'), pick = root.querySelector('[data-gd-pick]'), ans = root.querySelector('[data-gd-ans]');
-    var opener = null;
+    var panel = root.querySelector('.gd-panel'), thread = root.querySelector('[data-gd-thread]'), chips = root.querySelector('[data-gd-chips]'), peek = root.querySelector('[data-gd-peek]');
+    var form = root.querySelector('[data-gd-form]'), opener = null, busy = false, asked = [];
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     function track(intent, how) { try { (window.dataLayer = window.dataLayer || []).push({ event: 'guide_select', guide_intent: intent, guide_method: how }); } catch (e) {} }
-    function openG(btn) { opener = btn || null; root.classList.add('gd-open'); panel.hidden = false; document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); }); var f = panel.querySelector('.gd-opt'); if (f) f.focus(); track('open', 'open'); }
-    function closeG() { root.classList.remove('gd-open'); panel.hidden = true; showPick(); document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); }); if (opener && opener.offsetParent) opener.focus(); }
-    function showPick() { ans.hidden = true; pick.hidden = false; }
     function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-    function show(k, how) {
-      var a = GD[k] || GD.none; track(k, how);
-      ans.innerHTML = '<div class="gd-big" aria-hidden="true">' + a.e + '</div><h3>' + esc(a.t) + '</h3><p>' + esc(a.p) + '</p><ul class="gd-links">' +
-        a.l.map(function (x) { var ext = /^https?:/.test(x[1]); return '<li><a class="' + (x[3] ? 'gd-main' : '') + '" href="' + x[1] + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + esc(x[0]) + ' <span>' + esc(x[2]) + ' ' + (ext ? '↗' : '→') + '</span></a></li>'; }).join('') +
-        '</ul><button type="button" class="gd-back" data-gd-back>← Back to all options</button>';
-      pick.hidden = true; ans.hidden = false; var h = ans.querySelector('h3'); h.setAttribute('tabindex', '-1'); h.focus();
+    function scroll() { thread.scrollTop = thread.scrollHeight; }
+    function add(html, cls, tag) { var el = document.createElement(tag || 'div'); el.className = cls; el.innerHTML = html; thread.appendChild(el); scroll(); return el; }
+    function wait(ms) { return new Promise(function (r) { setTimeout(r, calm ? 0 : ms); }); }
+    function typing(ms) { var t = add('<i></i><i></i><i></i>', 'gd-m gd-bot gd-typing'); t.setAttribute('aria-label', 'Jeremiah is typing'); return wait(ms).then(function () { t.remove(); }); }
+    function setChips(keys, extra) {
+      chips.innerHTML = keys.map(function (k) { return '<button type="button" class="gd-chip" data-gd="' + k + '">' + LABEL[k] + '</button>'; }).join('') + (extra || '');
     }
+    function greet() {
+      if (thread.children.length) return Promise.resolve();
+      busy = true;
+      return typing(500).then(function () { add('Hi, I’m Jeremiah 👋 I help B2B SaaS and tech teams get understood, launched and chosen.', 'gd-m gd-bot'); return typing(700); })
+        .then(function () { add('What brings you here today? Pick one below, or type your question.', 'gd-m gd-bot'); setChips(ORDER); busy = false; });
+    }
+    function answer(k, how, said) {
+      if (busy) return; busy = true; chips.innerHTML = '';
+      var a = GD[k] || GD.none; track(k, how); if (asked.indexOf(k) < 0) asked.push(k);
+      add(esc(said || LABEL[k] || k), 'gd-m gd-you');
+      typing(650).then(function () {
+        add('<b>' + esc(a.t) + '</b> ' + esc(a.p), 'gd-m gd-bot');
+        return wait(250);
+      }).then(function () {
+        add(a.l.map(function (x) { var ext = /^(https?:|mailto:)/.test(x[1]); return '<li><a class="' + (x[3] ? 'gd-main' : '') + '" href="' + x[1] + '"' + (/^https?:/.test(x[1]) ? ' target="_blank" rel="noopener"' : '') + '>' + esc(x[0]) + '<span>' + esc(x[2]) + (ext ? ' ↗' : ' →') + '</span></a></li>'; }).join(''), 'gd-links', 'ul');
+        return typing(900);
+      }).then(function () {
+        add('Anything else I can help you find?', 'gd-m gd-bot');
+        var rest = ORDER.filter(function (x) { return asked.indexOf(x) < 0; }).slice(0, 4);
+        setChips(rest, '<button type="button" class="gd-chip" data-gd-done>👍 That’s all, thanks</button>');
+        busy = false;
+      });
+    }
+    function openG(btn, then) {
+      opener = btn || null; root.classList.add('gd-open'); panel.hidden = false; if (peek) peek.hidden = true;
+      document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); });
+      track('open', 'open'); try { sessionStorage.setItem('gdPeek', '1'); } catch (e) {}
+      greet().then(function () { if (then) then(); else form.q.focus({ preventScroll: true }); });
+    }
+    function closeG() { root.classList.remove('gd-open'); panel.hidden = true; document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); }); if (opener && opener.offsetParent) opener.focus(); }
+    function restart() { thread.innerHTML = ''; chips.innerHTML = ''; asked = []; busy = false; greet(); }
     document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.addEventListener('click', function () { panel.hidden ? openG(b) : closeG(); }); });
     root.querySelector('[data-gd-close]').addEventListener('click', closeG);
-    root.querySelectorAll('[data-gd]').forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-gd'), 'option'); }); });
-    ans.addEventListener('click', function (e) { if (e.target.closest('[data-gd-back]')) { showPick(); var f = panel.querySelector('.gd-opt'); if (f) f.focus(); } });
-    root.querySelector('[data-gd-form]').addEventListener('submit', function (e) {
-      e.preventDefault(); var q = (this.q.value || '').toLowerCase().trim(); if (!q) return;
+    root.querySelector('[data-gd-restart]').addEventListener('click', restart);
+    chips.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-gd]'); if (c) return answer(c.getAttribute('data-gd'), 'option');
+      if (e.target.closest('[data-gd-done]') && !busy) { chips.innerHTML = ''; add('That’s all, thanks 👍', 'gd-m gd-you'); busy = true; typing(600).then(function () { add('Lovely. If anything comes up, email me at <a href="mailto:jeremiah@thejeremiahajayi.com">jeremiah@thejeremiahajayi.com</a>. Enjoy the site 👋', 'gd-m gd-bot'); busy = false; }); }
+    });
+    if (peek) {
+      peek.addEventListener('click', function (e) {
+        var c = e.target.closest('[data-gd]'); if (c) { var k = c.getAttribute('data-gd'); openG(null, function () { answer(k, 'peek'); }); }
+        if (e.target.closest('[data-gd-dismiss]')) { peek.hidden = true; try { sessionStorage.setItem('gdPeek', '1'); } catch (x) {} }
+      });
+      var seenPeek = false; try { seenPeek = sessionStorage.getItem('gdPeek') === '1'; } catch (e) {}
+      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, document.querySelector('.hero-anim') && !document.documentElement.classList.contains('jg-skip') ? 3900 : 1600);
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); var raw = (form.q.value || '').trim(); if (!raw || busy) return; var q = raw.toLowerCase();
       var hit = 'none'; for (var i = 0; i < KEYS.length; i++) { if (KEYS[i][1].test(q)) { hit = KEYS[i][0]; break; } }
-      show(hit, 'question'); this.q.value = '';
+      form.q.value = ''; answer(hit, 'question', raw);
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) closeG(); });
-    document.addEventListener('click', function (e) { if (!panel.hidden && !e.target.closest('[data-gd-root]') && !e.target.closest('[data-gd-open]')) closeG(); });
+  }
+
+  // ---- Motion layer (all of it respects reduced-motion) ----
+  var CALM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var FINE = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+  var onScroll = [];
+  var ticking = false;
+  function runScroll() { ticking = false; onScroll.forEach(function (f) { f(); }); }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; raf(runScroll); } }, { passive: true });
+  window.addEventListener('resize', function () { raf(runScroll); });
+
+  // 1. Numbers count up when they come into view.
+  if (!CALM && 'IntersectionObserver' in window) {
+    var NUM = /^(\$?)(\d[\d,]*(?:\.\d+)?)(\s?[KMk]?)([%+]?)$/;
+    var nums = [].filter.call(document.querySelectorAll('.sg, dt, [data-count]'), function (el) {
+      if (el.children.length || el.hasAttribute('data-scrub') || el.closest('.nav-main, .gd, .jg, .logo-row, .mbar, button, label')) return false;
+      var t = el.textContent.trim(), m = NUM.exec(t); if (!m) return false;
+      var v = parseFloat(m[2].replace(/,/g, '')); if (!m[1] && !m[3] && !m[4] && v >= 1900 && v <= 2100) return false; // years
+      return parseFloat(getComputedStyle(el).fontSize) >= 28;
+    });
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; cio.unobserve(e.target);
+        var el = e.target, final = el.textContent.trim(), m = NUM.exec(final), target = parseFloat(m[2].replace(/,/g, ''));
+        var dec = (m[2].split('.')[1] || '').length, comma = m[2].indexOf(',') > -1, t0 = performance.now(), dur = 1500;
+        el.style.fontVariantNumeric = 'tabular-nums';
+        (function step(now) {
+          var p = Math.min(1, (now - t0) / dur), k = 1 - Math.pow(1 - p, 3), v = target * k;
+          var txt = dec ? v.toFixed(dec) : Math.round(v).toString(); if (comma) txt = Number(txt).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+          el.textContent = p < 1 ? m[1] + txt + m[3] + m[4] : final;
+          if (p < 1) raf(step);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (el) { cio.observe(el); });
+  }
+
+  // 2. Stears dot grid lights up row by row as you scroll, with the page count in step.
+  var dg = document.querySelector('[data-dots]');
+  if (dg && !CALM) {
+    var lit = dg.querySelector('.dots-lit'), edge = dg.querySelector('.dots-edge'), dnum = document.querySelector('[data-scrub="dots"]');
+    var dotsFn = function () {
+      var r = dg.getBoundingClientRect(), vh = innerHeight;
+      var p = Math.max(0, Math.min(1, (vh * 0.92 - r.top) / (r.height + vh * 0.42)));
+      var total = p * 1000, rows = Math.floor(total / 40), frac = (total % 40) / 40, R = rows * 4;
+      lit.style.clipPath = 'polygon(0 0,100% 0,100% ' + R + '%,0 ' + R + '%)';
+      edge.style.clipPath = p >= 1 ? 'inset(100% 0 0 0)' : 'polygon(0 ' + R + '%,' + (frac * 100) + '% ' + R + '%,' + (frac * 100) + '% ' + (R + 4) + '%,0 ' + (R + 4) + '%)';
+      if (dnum) dnum.textContent = p >= 1 ? '10,000+' : Math.round(total * 10).toLocaleString('en-US');
+    };
+    onScroll.push(dotsFn); dotsFn();
+  }
+
+  // 3. Reading progress bar on articles and the Work page.
+  if (document.querySelector('.post-body') || /^\/work\/?$/.test(location.pathname)) {
+    var bar = document.createElement('div'); bar.className = 'rp'; bar.setAttribute('aria-hidden', 'true'); bar.innerHTML = '<span></span>';
+    document.body.appendChild(bar); var barIn = bar.firstChild;
+    var target = document.querySelector('.post-body') || document.querySelector('main') || document.body;
+    var barFn = function () {
+      var r = target.getBoundingClientRect(), total = r.height - innerHeight * 0.6;
+      var p = total > 0 ? Math.max(0, Math.min(1, -r.top / total)) : 0;
+      barIn.style.transform = 'scaleX(' + p + ')';
+    };
+    onScroll.push(barFn); barFn();
+  }
+
+  // 4. Primary buttons lean toward the cursor (desktop only).
+  if (FINE && !CALM) {
+    var mags = [].slice.call(document.querySelectorAll('.btn-o, .gd-launch')), mx = -1e4, my = -1e4, magOn = false;
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (!magOn) { magOn = true; raf(function () {
+        magOn = false;
+        mags.forEach(function (b) {
+          var r = b.getBoundingClientRect(); if (!r.width) return;
+          var cx = r.left + r.width / 2, cy = r.top + r.height / 2, dx = mx - cx, dy = my - cy, d = Math.sqrt(dx * dx + dy * dy), reach = Math.max(r.width, r.height) * 0.9 + 40;
+          if (d < reach) { var f = (1 - d / reach) * 0.35; b.style.translate = Math.max(-12, Math.min(12, dx * f)) + 'px ' + Math.max(-8, Math.min(8, dy * f)) + 'px'; b.classList.add('mag'); }
+          else if (b.classList.contains('mag')) { b.style.translate = '0 0'; b.classList.remove('mag'); }
+        });
+      }); }
+    }, { passive: true });
+  }
+
+  // 5. Case images on the Work page drift at different depths as you scroll.
+  if (!CALM && /^\/work\/?$/.test(location.pathname) && innerWidth > 640) {
+    var depthEls = [].slice.call(document.querySelectorAll('#stears img, #certn img, #askai img, #askai .lift2, #engine img, #xofu img')).filter(function (el) { return !el.closest('.hscroll'); });
+    var D = [0.07, 0.13, 0.1, 0.16];
+    depthEls.forEach(function (el, i) { el.dataset.depth = D[i % D.length]; el.style.willChange = 'translate'; });
+    var depthFn = function () {
+      var vh = innerHeight;
+      depthEls.forEach(function (el) {
+        var r = el.getBoundingClientRect(); if (r.bottom < -200 || r.top > vh + 200) return;
+        var off = ((r.top + r.height / 2) - vh / 2) * -parseFloat(el.dataset.depth);
+        el.style.translate = '0 ' + Math.max(-48, Math.min(48, off)).toFixed(1) + 'px';
+      });
+    };
+    onScroll.push(depthFn); depthFn();
   }
 })();

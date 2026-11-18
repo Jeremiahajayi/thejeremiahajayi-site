@@ -89,6 +89,10 @@ html{scroll-behavior:smooth}
 @media (max-width: 860px){.qgrid{grid-template-columns:1fr}.qgrid>*{grid-column:auto !important}}
 .wrow{transition:padding .35s cubic-bezier(.2,.8,.2,1)}
 .wrow:hover{padding-left:14px !important}
+.dots-g{position:relative;background-image:radial-gradient(circle,#3A3934 34%,transparent 38%);background-size:2.5% 4%}
+.dots-lit,.dots-edge{position:absolute;inset:0;background-size:2.5% 4%}
+.dots-lit{background-image:radial-gradient(circle,#F2EFE8 34%,transparent 38%)}
+.dots-edge{background-image:radial-gradient(circle,#FF5A2A 40%,transparent 44%);clip-path:inset(100% 0 0 0)}
 
 .chip{font:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .chip:hover{border-color:#111}
@@ -180,52 +184,82 @@ body:has(.nav-t:checked){overflow:hidden}
 .btn-o:hover .arr,.btn-k:hover .arr,.btn-l:hover .arr{transform:translateX(5px)}
 .btn-o:hover .arr-d,.btn-k:hover .arr-d,.btn-l:hover .arr-d{transform:translateY(4px)}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #FF5A2A;outline-offset:3px}
-.gd{position:fixed;right:20px;bottom:20px;z-index:60;font-family:'DM Sans',system-ui,sans-serif}
-.gd-launch{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 20px 0 14px;border:0;border-radius:999px;background:#F2EFE8;color:#111;font:700 15px 'DM Sans',system-ui,sans-serif;cursor:pointer;box-shadow:0 12px 36px rgba(0,0,0,.28),0 0 0 1px rgba(17,17,17,.08);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.gd-launch:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.32),0 0 0 1px rgba(17,17,17,.1)}
-.gd-wave{display:inline-block;font-size:22px;transform-origin:70% 70%;animation:wave 2.4s 1.5s ease-in-out 2}
+.gd{position:fixed;right:20px;bottom:20px;z-index:60;font-family:'DM Sans',system-ui,sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.gd-av{flex:none;width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center 30%;background:#FFFFFF;box-shadow:0 0 0 2px #F2EFE8}
+.gd-launch{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 18px 0 8px;border:0;border-radius:999px;background:#F2EFE8;color:#111;font:700 15px 'DM Sans',system-ui,sans-serif;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.3),0 0 0 1px rgba(17,17,17,.08);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.gd-launch .gd-av{width:40px;height:40px;box-shadow:none}
+.gd-launch:hover{transform:translateY(-3px)}
+.gd-wave{display:inline-block;font-size:20px;transform-origin:70% 70%;animation:wave 2.4s 1.2s ease-in-out 2}
 @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
-.gd-open .gd-launch{display:none}
-.gd-panel{position:absolute;right:0;bottom:0;width:min(400px,calc(100vw - 32px));max-height:min(620px,calc(100vh - 110px));overflow:auto;border-radius:20px;background:#F2EFE8;color:#111;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(17,17,17,.08);transform-origin:bottom right;animation:gd-pop .32s cubic-bezier(.2,.8,.2,1)}
+.gd-open .gd-launch,.gd-open .gd-peek{display:none}
+.gd-peek{position:relative;width:min(360px,calc(100vw - 32px));padding:16px;box-sizing:border-box;border-radius:20px 20px 6px 20px;background:#FFFFFF;color:#111;box-shadow:0 22px 60px rgba(0,0,0,.35),0 0 0 1px rgba(17,17,17,.06);animation:gd-pop .45s cubic-bezier(.2,.8,.2,1)}
+.gd-peek[hidden]{display:none}
+.gd-peek-top{display:flex;gap:12px;align-items:flex-start;padding-right:22px}
+.gd-peek-top p{margin:0;font-size:15px;line-height:1.45;color:#2D2B27}
+.gd-peek-top b{color:#111;font-size:16px}
+.gd-peek-x{position:absolute;top:8px;right:8px;width:30px;height:30px;border:0;border-radius:50%;background:none;color:#6B675F;font-size:20px;cursor:pointer}
+.gd-peek-x:hover{background:#F2EFE8;color:#111}
+.gd-peek-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.gd-chip{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:6px 13px;border:1px solid #D8D1C3;border-radius:999px;background:#FFFFFF;color:#111;font:600 14px 'DM Sans',system-ui,sans-serif;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.gd-chip:hover{border-color:#111;transform:translateY(-1px)}
+.gd-chip-more{background:#111;border-color:#111;color:#F2EFE8}
+.gd-chip-more:hover{background:#2B2A27}
+.gd-panel{width:min(400px,calc(100vw - 32px));height:min(640px,calc(100vh - 100px));display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#F7F5F0;color:#111;box-shadow:0 30px 80px rgba(0,0,0,.42),0 0 0 1px rgba(17,17,17,.08);transform-origin:bottom right;animation:gd-pop .32s cubic-bezier(.2,.8,.2,1)}
 .gd-panel[hidden]{display:none}
-@keyframes gd-pop{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
-.gd-head{position:sticky;top:0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:20px 20px 14px;background:#F2EFE8;border-bottom:1px solid #E1DBCF}
-.gd-head p{margin:0;font-size:21px;font-weight:600;line-height:1.15;letter-spacing:-.03em}
-.gd-x{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:#E6E1D6;color:#111;font-size:22px;line-height:1;cursor:pointer}
-.gd-x:hover{background:#111;color:#F2EFE8}
-.gd-opts{margin:0;padding:12px 12px 8px;list-style:none;display:grid;gap:5px}
-.gd-opt{width:100%;display:flex;align-items:center;gap:12px;min-height:46px;padding:8px 14px;border:1px solid #E1DBCF;border-radius:14px;background:#FFFFFF;color:#111;font:600 15px/1.3 'DM Sans',system-ui,sans-serif;text-align:left;cursor:pointer;transition:border-color .2s,transform .2s,background .2s}
-.gd-opt:hover{border-color:#111;transform:translateX(3px)}
-.gd-e{flex:none;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#F2EFE8;font-size:18px}
-.gd-ask{display:flex;gap:8px;margin:2px 12px 14px;padding:6px 6px 6px 14px;border:1px solid #D8D1C3;border-radius:999px;background:#FFFFFF}
+@keyframes gd-pop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+.gd-head{flex:none;display:flex;align-items:center;gap:10px;padding:14px 12px 14px 16px;background:#111;color:#F2EFE8}
+.gd-who{flex:1;min-width:0;display:flex;flex-direction:column}
+.gd-who b{font:700 16px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+.gd-who span{font-size:12px;color:#B5B0A6}
+.gd-ic{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:#2B2A27;color:#F2EFE8;font-size:18px;line-height:1;cursor:pointer}
+.gd-ic:hover{background:#F2EFE8;color:#111}
+.gd-thread{flex:1;overflow-y:auto;padding:16px 14px 6px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth}
+.gd-m{max-width:86%;padding:11px 14px;border-radius:18px;font-size:15px;line-height:1.5;animation:gd-msg .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes gd-msg{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.gd-bot{align-self:flex-start;background:#FFFFFF;border:1px solid #E6E1D6;border-bottom-left-radius:6px;color:#2D2B27}
+.gd-bot b{color:#111}
+.gd-you{align-self:flex-end;background:#111;color:#F2EFE8;border-bottom-right-radius:6px}
+.gd-typing{display:inline-flex;gap:4px;align-items:center;padding:14px 16px}
+.gd-typing i{width:7px;height:7px;border-radius:50%;background:#B5B0A6;animation:gd-dot 1s infinite}
+.gd-typing i:nth-child(2){animation-delay:.15s}.gd-typing i:nth-child(3){animation-delay:.3s}
+@keyframes gd-dot{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+.gd-links{align-self:stretch;margin:2px 0 4px;padding:0;list-style:none;display:grid;gap:6px;animation:gd-msg .35s cubic-bezier(.2,.8,.2,1)}
+.gd-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;padding:10px 14px;border-radius:14px;background:#FFFFFF;border:1px solid #E1DBCF;color:#111;font-weight:700;font-size:15px;text-decoration:none;transition:border-color .2s,background .2s,transform .2s}
+.gd-links a:hover{border-color:#111;transform:translateX(2px)}
+.gd-links a.gd-main{background:#FF5A2A;border-color:#FF5A2A;color:#111}
+.gd-links a.gd-main:hover{background:#111;border-color:#111;color:#F2EFE8}
+.gd-links a span{flex:none;font-weight:500;font-size:13px;opacity:.75;text-align:right}
+.gd-chips{flex:none;display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 4px;max-height:40%;overflow-y:auto}
+.gd-chips:empty{display:none}
+.gd-ask{flex:none;display:flex;gap:8px;margin:8px 12px 12px;padding:5px 5px 5px 16px;border:1px solid #D8D1C3;border-radius:999px;background:#FFFFFF}
 .gd-ask input{flex:1;min-width:0;border:0;background:none;font:500 15px 'DM Sans',system-ui,sans-serif;color:#111;outline:none}
-.gd-ask button{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:#111;color:#F2EFE8;font-size:18px;cursor:pointer}
+.gd-ask button{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:#111;color:#F2EFE8;font-size:18px;font-weight:700;cursor:pointer}
+.gd-ask button:hover{background:#FF5A2A;color:#111}
 .gd-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.gd-ans{padding:18px 20px 20px;animation:gd-pop .3s cubic-bezier(.2,.8,.2,1)}
-.gd-ans[hidden]{display:none}
-.gd-ans .gd-big{font-size:34px;line-height:1}
-.gd-ans h3{margin:12px 0 0;font:600 22px/1.15 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
-.gd-ans p{margin:10px 0 0;font-size:15px;line-height:1.6;color:#2D2B27}
-.gd-links{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
-.gd-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 16px;border-radius:12px;background:#FFFFFF;border:1px solid #E1DBCF;color:#111;font-weight:700;font-size:15px;text-decoration:none;transition:border-color .2s,background .2s}
-.gd-links a:hover{border-color:#111}
-.gd-links a.gd-main{background:#111;border-color:#111;color:#F2EFE8}
-.gd-links a.gd-main:hover{background:#FF5A2A;border-color:#FF5A2A;color:#111}
-.gd-links a span{font-weight:500;font-size:13px;opacity:.7}
-.gd-back{margin-top:14px;padding:8px 0;border:0;background:none;color:#45423C;font:700 14px 'DM Sans',system-ui,sans-serif;cursor:pointer}
-.gd-back:hover{color:#111;text-decoration:underline}
 .mbar{display:none}
 @media (max-width: 640px){
-.gd{right:12px;left:12px;bottom:12px}
+.gd{right:12px;left:12px;bottom:84px;align-items:stretch}
+.gd-open{bottom:12px}
 .gd-launch{display:none}
-.gd-panel{right:0;left:0;width:auto;max-height:calc(100vh - 90px)}
+.gd-peek{width:auto}
+.gd-panel{width:auto;height:calc(100vh - 24px);height:calc(100dvh - 24px)}
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(17,17,17,.94);border-top:1px solid #2B2A27}
 .mbar .btn-o{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:999px;font-weight:700;font-size:16px}
 .mbar-g{flex:none;min-height:50px;padding:0 18px;border:1px solid #4A4842;border-radius:999px;background:#1E1D1B;color:#F2EFE8;font:700 15px 'DM Sans',system-ui,sans-serif;cursor:pointer}
 body{padding-bottom:72px}
-.gd-open~.mbar,body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar{display:none}
+body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked) .gd{display:none}
 }
-@media (prefers-reduced-motion: reduce){.gd-wave,.gd-panel,.gd-ans{animation:none}.gd-launch,.gd-opt,.arr{transition:none}}
+@media (prefers-reduced-motion: reduce){.gd-wave,.gd-panel,.gd-peek,.gd-m,.gd-links,.gd-typing i{animation:none}.gd-launch,.gd-chip,.arr{transition:none}}
+.rp{position:fixed;left:0;right:0;top:0;height:3px;z-index:70;pointer-events:none}
+.rp span{display:block;height:100%;background:#FF5A2A;transform:scaleX(0);transform-origin:left center}
+.btn-o,.gd-launch{transition:background .3s,color .3s,transform .3s,box-shadow .3s,translate .35s cubic-bezier(.2,.8,.2,1)}
+@view-transition{navigation:auto}
+.site-h{view-transition-name:site-header}
+::view-transition-old(root){animation:vt-out .22s ease both}
+::view-transition-new(root){animation:vt-in .38s cubic-bezier(.2,.8,.2,1) both}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
+@media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
 /*shared:end*/
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Savings Apps in Nigeria According to ChatGPT, Gemini & Perplexity","description":"I tested ChatGPT, Gemini and Perplexity to see which Nigerian savings and investment apps they recommend, how they describe them and which sources appear.","datePublished":"2026-08-07T10:28:26.000Z","dateModified":"2026-08-12T11:27:29.505Z","image":"https://www.thejeremiahajayi.com/post-img/256bbf_cbdb2927d3ac403fa8547d10a1082dcb.webp","url":"https://www.thejeremiahajayi.com/post/best-savings-apps-in-nigeria-according-to-chatgpt-gemini-perplexity","mainEntityOfPage":"https://www.thejeremiahajayi.com/post/best-savings-apps-in-nigeria-according-to-chatgpt-gemini-perplexity","author":{"@type":"Person","@id":"https://www.thejeremiahajayi.com/#person","name":"Jeremiah Ajayi","url":"https://www.thejeremiahajayi.com/about/"},"publisher":{"@id":"https://www.thejeremiahajayi.com/#person"}}</script>
@@ -250,17 +284,20 @@ body{padding-bottom:72px}
 </header>
 <!--guide:start-->
 <div class="gd" data-gd-root>
-<button type="button" class="gd-launch" data-gd-open aria-expanded="false" aria-controls="gd-panel"><span class="gd-wave" aria-hidden="true">👋</span><span>Not sure where to start?</span></button>
-<div class="gd-panel" id="gd-panel" role="dialog" aria-labelledby="gd-h" hidden>
-<div class="gd-head"><p id="gd-h" class="sg">Hi, I’m Jeremiah. What brings you here?</p><button type="button" class="gd-x" data-gd-close aria-label="Close the guide">×</button></div>
-<div class="gd-pick" data-gd-pick>
-<ul class="gd-opts"><li><button type="button" class="gd-opt" data-gd="positioning"><span class="gd-e" aria-hidden="true">🧭</span>Our product is hard to explain</button></li><li><button type="button" class="gd-opt" data-gd="launch"><span class="gd-e" aria-hidden="true">🚀</span>We have a launch coming up</button></li><li><button type="button" class="gd-opt" data-gd="content"><span class="gd-e" aria-hidden="true">📈</span>We need content that ranks and converts</button></li><li><button type="button" class="gd-opt" data-gd="ai"><span class="gd-e" aria-hidden="true">🤖</span>We want to show up in AI answers</button></li><li><button type="button" class="gd-opt" data-gd="hire"><span class="gd-e" aria-hidden="true">💼</span>I’m hiring a marketer</button></li><li><button type="button" class="gd-opt" data-gd="proof"><span class="gd-e" aria-hidden="true">🏆</span>Show me results first</button></li><li><button type="button" class="gd-opt" data-gd="read"><span class="gd-e" aria-hidden="true">📚</span>I want to read your research</button></li><li><button type="button" class="gd-opt" data-gd="empowerq"><span class="gd-e" aria-hidden="true">🌈</span>I want to support EmpowerQ</button></li></ul>
-<form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Ask a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Or ask, e.g. “Do you work with startups?”"><button type="submit" aria-label="Ask">→</button></form>
+<div class="gd-peek" data-gd-peek hidden>
+<button type="button" class="gd-peek-x" data-gd-dismiss aria-label="Dismiss">×</button>
+<div class="gd-peek-top"><img class="gd-av" src="/img/headshot.webp" alt="" width="40" height="40"><p><b>Hi, I’m Jeremiah 👋</b><br>What brings you here today?</p></div>
+<div class="gd-peek-chips"><button type="button" class="gd-chip" data-gd="positioning"><span aria-hidden="true">🧭</span> Our product is hard to explain</button><button type="button" class="gd-chip" data-gd="launch"><span aria-hidden="true">🚀</span> We have a launch coming up</button><button type="button" class="gd-chip" data-gd="content"><span aria-hidden="true">📈</span> We need content that ranks and converts</button><button type="button" class="gd-chip gd-chip-more" data-gd-open>Something else →</button></div>
 </div>
-<div class="gd-ans" data-gd-ans hidden></div>
+<button type="button" class="gd-launch" data-gd-open aria-expanded="false" aria-controls="gd-panel"><img class="gd-av" src="/img/headshot.webp" alt="" width="40" height="40"><span>Ask me anything</span><span class="gd-wave" aria-hidden="true">👋</span></button>
+<div class="gd-panel" id="gd-panel" role="dialog" aria-label="Chat with Jeremiah’s site guide" hidden>
+<div class="gd-head"><img class="gd-av" src="/img/headshot.webp" alt="" width="40" height="40"><div class="gd-who"><b>Jeremiah</b><span>Here to point you the right way</span></div><button type="button" class="gd-ic" data-gd-restart aria-label="Start over" title="Start over">↺</button><button type="button" class="gd-ic" data-gd-close aria-label="Close the chat">×</button></div>
+<div class="gd-thread" data-gd-thread aria-live="polite"></div>
+<div class="gd-chips" data-gd-chips></div>
+<form class="gd-ask" data-gd-form><label class="gd-sr" for="gd-q">Type a question</label><input id="gd-q" name="q" autocomplete="off" placeholder="Type a question…"><button type="submit" aria-label="Send">↑</button></form>
 </div>
 </div>
-<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="/contact/">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Guide</button></div>
+<div class="mbar" aria-label="Quick actions"><a class="btn-o" href="/contact/">Book a call <span class="arr" aria-hidden="true">→</span></a><button type="button" class="mbar-g" data-gd-open aria-controls="gd-panel">👋 Ask me</button></div>
 <!--guide:end-->
 <style>
 .post-body{max-width:720px;margin:0 auto;font-size:19px;line-height:1.75;color:#2D2B27}
@@ -428,33 +465,171 @@ body{padding-bottom:72px}
     ['proof', /\b(result|case|portfolio|work|example|client|proof|testimonial)/],
     ['contact', /\b(contact|email|call|talk|book|meet|reach)/]
   ];
+  var LABEL = { positioning: '🧭 Our product is hard to explain', launch: '🚀 We have a launch coming up', content: '📈 We need content that ranks and converts', ai: '🤖 We want to show up in AI answers', hire: '💼 I’m hiring a marketer', proof: '🏆 Show me results first', read: '📚 I want to read your research', empowerq: '🌈 I want to support EmpowerQ' };
+  var ORDER = ['positioning', 'launch', 'content', 'ai', 'hire', 'proof', 'read', 'empowerq'];
   var root = document.querySelector('[data-gd-root]');
   if (root) {
-    var panel = root.querySelector('.gd-panel'), pick = root.querySelector('[data-gd-pick]'), ans = root.querySelector('[data-gd-ans]');
-    var opener = null;
+    var panel = root.querySelector('.gd-panel'), thread = root.querySelector('[data-gd-thread]'), chips = root.querySelector('[data-gd-chips]'), peek = root.querySelector('[data-gd-peek]');
+    var form = root.querySelector('[data-gd-form]'), opener = null, busy = false, asked = [];
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     function track(intent, how) { try { (window.dataLayer = window.dataLayer || []).push({ event: 'guide_select', guide_intent: intent, guide_method: how }); } catch (e) {} }
-    function openG(btn) { opener = btn || null; root.classList.add('gd-open'); panel.hidden = false; document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); }); var f = panel.querySelector('.gd-opt'); if (f) f.focus(); track('open', 'open'); }
-    function closeG() { root.classList.remove('gd-open'); panel.hidden = true; showPick(); document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); }); if (opener && opener.offsetParent) opener.focus(); }
-    function showPick() { ans.hidden = true; pick.hidden = false; }
     function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-    function show(k, how) {
-      var a = GD[k] || GD.none; track(k, how);
-      ans.innerHTML = '<div class="gd-big" aria-hidden="true">' + a.e + '</div><h3>' + esc(a.t) + '</h3><p>' + esc(a.p) + '</p><ul class="gd-links">' +
-        a.l.map(function (x) { var ext = /^https?:/.test(x[1]); return '<li><a class="' + (x[3] ? 'gd-main' : '') + '" href="' + x[1] + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + esc(x[0]) + ' <span>' + esc(x[2]) + ' ' + (ext ? '↗' : '→') + '</span></a></li>'; }).join('') +
-        '</ul><button type="button" class="gd-back" data-gd-back>← Back to all options</button>';
-      pick.hidden = true; ans.hidden = false; var h = ans.querySelector('h3'); h.setAttribute('tabindex', '-1'); h.focus();
+    function scroll() { thread.scrollTop = thread.scrollHeight; }
+    function add(html, cls, tag) { var el = document.createElement(tag || 'div'); el.className = cls; el.innerHTML = html; thread.appendChild(el); scroll(); return el; }
+    function wait(ms) { return new Promise(function (r) { setTimeout(r, calm ? 0 : ms); }); }
+    function typing(ms) { var t = add('<i></i><i></i><i></i>', 'gd-m gd-bot gd-typing'); t.setAttribute('aria-label', 'Jeremiah is typing'); return wait(ms).then(function () { t.remove(); }); }
+    function setChips(keys, extra) {
+      chips.innerHTML = keys.map(function (k) { return '<button type="button" class="gd-chip" data-gd="' + k + '">' + LABEL[k] + '</button>'; }).join('') + (extra || '');
     }
+    function greet() {
+      if (thread.children.length) return Promise.resolve();
+      busy = true;
+      return typing(500).then(function () { add('Hi, I’m Jeremiah 👋 I help B2B SaaS and tech teams get understood, launched and chosen.', 'gd-m gd-bot'); return typing(700); })
+        .then(function () { add('What brings you here today? Pick one below, or type your question.', 'gd-m gd-bot'); setChips(ORDER); busy = false; });
+    }
+    function answer(k, how, said) {
+      if (busy) return; busy = true; chips.innerHTML = '';
+      var a = GD[k] || GD.none; track(k, how); if (asked.indexOf(k) < 0) asked.push(k);
+      add(esc(said || LABEL[k] || k), 'gd-m gd-you');
+      typing(650).then(function () {
+        add('<b>' + esc(a.t) + '</b> ' + esc(a.p), 'gd-m gd-bot');
+        return wait(250);
+      }).then(function () {
+        add(a.l.map(function (x) { var ext = /^(https?:|mailto:)/.test(x[1]); return '<li><a class="' + (x[3] ? 'gd-main' : '') + '" href="' + x[1] + '"' + (/^https?:/.test(x[1]) ? ' target="_blank" rel="noopener"' : '') + '>' + esc(x[0]) + '<span>' + esc(x[2]) + (ext ? ' ↗' : ' →') + '</span></a></li>'; }).join(''), 'gd-links', 'ul');
+        return typing(900);
+      }).then(function () {
+        add('Anything else I can help you find?', 'gd-m gd-bot');
+        var rest = ORDER.filter(function (x) { return asked.indexOf(x) < 0; }).slice(0, 4);
+        setChips(rest, '<button type="button" class="gd-chip" data-gd-done>👍 That’s all, thanks</button>');
+        busy = false;
+      });
+    }
+    function openG(btn, then) {
+      opener = btn || null; root.classList.add('gd-open'); panel.hidden = false; if (peek) peek.hidden = true;
+      document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); });
+      track('open', 'open'); try { sessionStorage.setItem('gdPeek', '1'); } catch (e) {}
+      greet().then(function () { if (then) then(); else form.q.focus({ preventScroll: true }); });
+    }
+    function closeG() { root.classList.remove('gd-open'); panel.hidden = true; document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); }); if (opener && opener.offsetParent) opener.focus(); }
+    function restart() { thread.innerHTML = ''; chips.innerHTML = ''; asked = []; busy = false; greet(); }
     document.querySelectorAll('[data-gd-open]').forEach(function (b) { b.addEventListener('click', function () { panel.hidden ? openG(b) : closeG(); }); });
     root.querySelector('[data-gd-close]').addEventListener('click', closeG);
-    root.querySelectorAll('[data-gd]').forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-gd'), 'option'); }); });
-    ans.addEventListener('click', function (e) { if (e.target.closest('[data-gd-back]')) { showPick(); var f = panel.querySelector('.gd-opt'); if (f) f.focus(); } });
-    root.querySelector('[data-gd-form]').addEventListener('submit', function (e) {
-      e.preventDefault(); var q = (this.q.value || '').toLowerCase().trim(); if (!q) return;
+    root.querySelector('[data-gd-restart]').addEventListener('click', restart);
+    chips.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-gd]'); if (c) return answer(c.getAttribute('data-gd'), 'option');
+      if (e.target.closest('[data-gd-done]') && !busy) { chips.innerHTML = ''; add('That’s all, thanks 👍', 'gd-m gd-you'); busy = true; typing(600).then(function () { add('Lovely. If anything comes up, email me at <a href="mailto:jeremiah@thejeremiahajayi.com">jeremiah@thejeremiahajayi.com</a>. Enjoy the site 👋', 'gd-m gd-bot'); busy = false; }); }
+    });
+    if (peek) {
+      peek.addEventListener('click', function (e) {
+        var c = e.target.closest('[data-gd]'); if (c) { var k = c.getAttribute('data-gd'); openG(null, function () { answer(k, 'peek'); }); }
+        if (e.target.closest('[data-gd-dismiss]')) { peek.hidden = true; try { sessionStorage.setItem('gdPeek', '1'); } catch (x) {} }
+      });
+      var seenPeek = false; try { seenPeek = sessionStorage.getItem('gdPeek') === '1'; } catch (e) {}
+      if (!seenPeek) setTimeout(function () { if (panel.hidden) { peek.hidden = false; track('peek', 'shown'); } }, document.querySelector('.hero-anim') && !document.documentElement.classList.contains('jg-skip') ? 3900 : 1600);
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); var raw = (form.q.value || '').trim(); if (!raw || busy) return; var q = raw.toLowerCase();
       var hit = 'none'; for (var i = 0; i < KEYS.length; i++) { if (KEYS[i][1].test(q)) { hit = KEYS[i][0]; break; } }
-      show(hit, 'question'); this.q.value = '';
+      form.q.value = ''; answer(hit, 'question', raw);
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) closeG(); });
-    document.addEventListener('click', function (e) { if (!panel.hidden && !e.target.closest('[data-gd-root]') && !e.target.closest('[data-gd-open]')) closeG(); });
+  }
+
+  // ---- Motion layer (all of it respects reduced-motion) ----
+  var CALM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var FINE = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+  var onScroll = [];
+  var ticking = false;
+  function runScroll() { ticking = false; onScroll.forEach(function (f) { f(); }); }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; raf(runScroll); } }, { passive: true });
+  window.addEventListener('resize', function () { raf(runScroll); });
+
+  // 1. Numbers count up when they come into view.
+  if (!CALM && 'IntersectionObserver' in window) {
+    var NUM = /^(\$?)(\d[\d,]*(?:\.\d+)?)(\s?[KMk]?)([%+]?)$/;
+    var nums = [].filter.call(document.querySelectorAll('.sg, dt, [data-count]'), function (el) {
+      if (el.children.length || el.hasAttribute('data-scrub') || el.closest('.nav-main, .gd, .jg, .logo-row, .mbar, button, label')) return false;
+      var t = el.textContent.trim(), m = NUM.exec(t); if (!m) return false;
+      var v = parseFloat(m[2].replace(/,/g, '')); if (!m[1] && !m[3] && !m[4] && v >= 1900 && v <= 2100) return false; // years
+      return parseFloat(getComputedStyle(el).fontSize) >= 28;
+    });
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; cio.unobserve(e.target);
+        var el = e.target, final = el.textContent.trim(), m = NUM.exec(final), target = parseFloat(m[2].replace(/,/g, ''));
+        var dec = (m[2].split('.')[1] || '').length, comma = m[2].indexOf(',') > -1, t0 = performance.now(), dur = 1500;
+        el.style.fontVariantNumeric = 'tabular-nums';
+        (function step(now) {
+          var p = Math.min(1, (now - t0) / dur), k = 1 - Math.pow(1 - p, 3), v = target * k;
+          var txt = dec ? v.toFixed(dec) : Math.round(v).toString(); if (comma) txt = Number(txt).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+          el.textContent = p < 1 ? m[1] + txt + m[3] + m[4] : final;
+          if (p < 1) raf(step);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (el) { cio.observe(el); });
+  }
+
+  // 2. Stears dot grid lights up row by row as you scroll, with the page count in step.
+  var dg = document.querySelector('[data-dots]');
+  if (dg && !CALM) {
+    var lit = dg.querySelector('.dots-lit'), edge = dg.querySelector('.dots-edge'), dnum = document.querySelector('[data-scrub="dots"]');
+    var dotsFn = function () {
+      var r = dg.getBoundingClientRect(), vh = innerHeight;
+      var p = Math.max(0, Math.min(1, (vh * 0.92 - r.top) / (r.height + vh * 0.42)));
+      var total = p * 1000, rows = Math.floor(total / 40), frac = (total % 40) / 40, R = rows * 4;
+      lit.style.clipPath = 'polygon(0 0,100% 0,100% ' + R + '%,0 ' + R + '%)';
+      edge.style.clipPath = p >= 1 ? 'inset(100% 0 0 0)' : 'polygon(0 ' + R + '%,' + (frac * 100) + '% ' + R + '%,' + (frac * 100) + '% ' + (R + 4) + '%,0 ' + (R + 4) + '%)';
+      if (dnum) dnum.textContent = p >= 1 ? '10,000+' : Math.round(total * 10).toLocaleString('en-US');
+    };
+    onScroll.push(dotsFn); dotsFn();
+  }
+
+  // 3. Reading progress bar on articles and the Work page.
+  if (document.querySelector('.post-body') || /^\/work\/?$/.test(location.pathname)) {
+    var bar = document.createElement('div'); bar.className = 'rp'; bar.setAttribute('aria-hidden', 'true'); bar.innerHTML = '<span></span>';
+    document.body.appendChild(bar); var barIn = bar.firstChild;
+    var target = document.querySelector('.post-body') || document.querySelector('main') || document.body;
+    var barFn = function () {
+      var r = target.getBoundingClientRect(), total = r.height - innerHeight * 0.6;
+      var p = total > 0 ? Math.max(0, Math.min(1, -r.top / total)) : 0;
+      barIn.style.transform = 'scaleX(' + p + ')';
+    };
+    onScroll.push(barFn); barFn();
+  }
+
+  // 4. Primary buttons lean toward the cursor (desktop only).
+  if (FINE && !CALM) {
+    var mags = [].slice.call(document.querySelectorAll('.btn-o, .gd-launch')), mx = -1e4, my = -1e4, magOn = false;
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (!magOn) { magOn = true; raf(function () {
+        magOn = false;
+        mags.forEach(function (b) {
+          var r = b.getBoundingClientRect(); if (!r.width) return;
+          var cx = r.left + r.width / 2, cy = r.top + r.height / 2, dx = mx - cx, dy = my - cy, d = Math.sqrt(dx * dx + dy * dy), reach = Math.max(r.width, r.height) * 0.9 + 40;
+          if (d < reach) { var f = (1 - d / reach) * 0.35; b.style.translate = Math.max(-12, Math.min(12, dx * f)) + 'px ' + Math.max(-8, Math.min(8, dy * f)) + 'px'; b.classList.add('mag'); }
+          else if (b.classList.contains('mag')) { b.style.translate = '0 0'; b.classList.remove('mag'); }
+        });
+      }); }
+    }, { passive: true });
+  }
+
+  // 5. Case images on the Work page drift at different depths as you scroll.
+  if (!CALM && /^\/work\/?$/.test(location.pathname) && innerWidth > 640) {
+    var depthEls = [].slice.call(document.querySelectorAll('#stears img, #certn img, #askai img, #askai .lift2, #engine img, #xofu img')).filter(function (el) { return !el.closest('.hscroll'); });
+    var D = [0.07, 0.13, 0.1, 0.16];
+    depthEls.forEach(function (el, i) { el.dataset.depth = D[i % D.length]; el.style.willChange = 'translate'; });
+    var depthFn = function () {
+      var vh = innerHeight;
+      depthEls.forEach(function (el) {
+        var r = el.getBoundingClientRect(); if (r.bottom < -200 || r.top > vh + 200) return;
+        var off = ((r.top + r.height / 2) - vh / 2) * -parseFloat(el.dataset.depth);
+        el.style.translate = '0 ' + Math.max(-48, Math.min(48, off)).toFixed(1) + 'px';
+      });
+    };
+    onScroll.push(depthFn); depthFn();
   }
 })();
 </script>

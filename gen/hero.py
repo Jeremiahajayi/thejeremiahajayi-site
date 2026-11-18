@@ -67,9 +67,16 @@ CSS = r"""
 .jg-skip .hero-anim .v-clear,.jg-skip .hero-anim .v-land,.jg-skip .hero-anim .v-travel{animation:none}
 @media (max-width: 640px){.jg span:nth-child(n+16){display:none}.jg span{font-size:calc(var(--s) * .62)}.jg .jg-cap{font-size:12px}}
 @media (prefers-reduced-motion: reduce){.hero-anim .jg{display:none}.hero-anim .l1,.hero-anim .l2,.hero-anim .l3,.hero-anim .v-clear,.hero-anim .v-land,.hero-anim .v-travel{animation:none !important;opacity:1;filter:none;transform:none}.jg-replay{display:none !important}}
-.logo-i{filter:grayscale(1) contrast(1.1);opacity:.75;transition:filter .3s,opacity .3s}
+.logo-i{filter:grayscale(1) contrast(1.35) brightness(.82);opacity:.8;transition:filter .3s,opacity .3s}
 .logo-i:hover{filter:none;opacity:1}
-@media (max-width: 640px){.logo-i{transform:scale(.8)}}
+.logo-row{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:20px 28px;align-items:center}
+.logo-row li{display:flex;align-items:center;justify-content:center;min-height:64px}
+.logo-row li{opacity:0;transform:translateY(10px);animation:logo-in .6s cubic-bezier(.2,.8,.2,1) forwards;animation-timeline:view();animation-range:entry 0% entry 60%}
+@supports not (animation-timeline: view()){.logo-row li{animation-timeline:auto;animation-delay:calc(var(--i,0) * 60ms)}}
+@keyframes logo-in{to{opacity:1;transform:none}}
+@media (max-width: 1000px){.logo-row{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (max-width: 640px){.logo-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 16px}.logo-row li{min-height:52px}.logo-i{transform:scale(.82)}}
+@media (prefers-reduced-motion: reduce){.logo-row li{opacity:1;transform:none;animation:none}}
 /*hero:end*/
 """
 
