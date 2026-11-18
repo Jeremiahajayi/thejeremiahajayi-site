@@ -118,7 +118,7 @@ CSS = '''
 .wk-grid .k-stk.is-deep{background:#111;color:#F2EFE8}
 .wk-grid .k-stk.is-deep .k-tag{color:#FFC83D}
 @media (max-width:1080px){.wk-en-big{grid-template-columns:1fr 1fr}.wk-pillars{grid-template-columns:1fr}.wk-st-more,.wk-log,.wk-en-imgs,.wk-en-res,.wk-xf{grid-template-columns:1fr}.wk-st-res{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-touch{grid-template-columns:1fr}.wk-ai-g{grid-template-columns:1fr}}
-@media (max-width:640px){.wk-fan{height:300px}.wk-cn-fan{height:220px}.wk-xf-fan{height:260px}.wk-ksa{height:240px}.wk-en-imgs .k-fig:nth-child(2){margin-top:0}}
+@media (max-width:640px){.wk-pillars{gap:24px}.wk-en-big{gap:16px}.wk-touch{gap:20px}.wk-log{gap:24px}.wk-st-more{gap:28px}.wk-st-res{gap:12px}.wk-jumps a{min-height:56px}.wk-grid{gap:24px}.wk-fan{height:300px}.wk-cn-fan{height:220px}.wk-xf-fan{height:260px}.wk-ksa{height:240px}.wk-en-imgs .k-fig:nth-child(2){margin-top:0}}
 </style>'''
 
 

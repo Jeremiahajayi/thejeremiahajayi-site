@@ -777,6 +777,53 @@ CSS = r'''
 .js-rv .img-rv{clip-path:none;opacity:1;transform:none;transition:none}
 .logo-track{flex-wrap:wrap;justify-content:center;width:auto}.logo-track li[aria-hidden="true"]{display:none}
 }
+/* phones: more room to breathe */
+@media (max-width: 640px){
+.wrap{padding-left:24px;padding-right:24px}
+.h-grid{padding-top:32px;padding-bottom:56px}
+.h-id{margin-bottom:26px;font-size:17px;line-height:1.55}
+.h-display{gap:18px}
+.h-tag{margin-top:10px}
+.h-stage{margin-top:44px}
+.h-foot{padding-top:36px}
+.h-lede{line-height:1.7}
+.h-cta{gap:14px;margin-top:28px}
+.h-sun{left:84% !important;top:610px !important;width:56px}
+.sw{padding:72px 0 96px}
+.sw-head{gap:18px;margin-bottom:40px}
+.sw-title{line-height:1}
+.pc{padding:30px 24px 32px;margin-top:28px;border-radius:26px}
+.pc-pair{gap:28px;margin-top:28px}
+.pc-title{line-height:1.06}
+.pc-meta{gap:10px 12px;margin-bottom:20px}
+.pc-dl{gap:20px;margin-top:26px}
+.pc-dl dd{line-height:1.62}
+.pc-big{margin-top:22px}
+.pc-certn,.pc-askai{gap:34px}
+.st-body{gap:32px;margin-top:28px}
+.st-tabs{gap:10px;margin-bottom:26px}
+.st-panel p,.st-steps li{line-height:1.7}
+.st-steps{gap:18px}
+.xf-grid,.pc-engine{gap:36px}
+.en-stats{gap:20px 32px}
+.qs,.xs,.rs,.eq,.ct{padding-top:88px;padding-bottom:88px}
+.ab{padding:88px 0 72px}
+.qt-row{gap:26px;margin-top:40px}
+.qt{padding:28px 24px 24px}
+.xd-grid{gap:22px;margin-top:40px}
+.xd{padding:30px 26px;gap:12px}
+.rs-grid,.ab-grid,.eq-grid,.ct-grid{gap:48px}
+.rs-row{padding:22px 0;gap:6px}
+.ab-copy p,.eq-copy>p{line-height:1.7}
+.tl-list{row-gap:34px;column-gap:18px}
+.eq-list li{padding:16px 0;gap:6px}
+.eq-cta{gap:18px}
+.ct-doors{gap:12px}
+.ct-door{padding:16px 18px 16px 14px;gap:12px 14px}
+.ct-panel{padding:30px 24px}
+.ct-foot{gap:18px}
+.ct-nav{gap:12px 22px}
+}
 /*home:end*/
 '''
 

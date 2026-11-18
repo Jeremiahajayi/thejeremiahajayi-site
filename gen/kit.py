@@ -164,7 +164,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 .k-list li{display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:17px;line-height:1.5}
 .k-list li::before{content:"✓";display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#111;color:#8FE3B0;font-size:13px;font-weight:700}
 .k-list.k-x li::before{content:"✕";color:#FF8FB6}
-.k-list.k-dot li::before{content:"";width:12px;height:12px;margin:7px 0 0 7px;background:#FF5A2A}
+.k-list.k-bul li::before{content:"";width:12px;height:12px;margin:7px 0 0 7px;background:#FF5A2A}
 .k-num{margin:0;padding:0;list-style:none;counter-reset:n;display:grid;gap:0;border-top:2px solid currentColor}
 .k-num li{counter-increment:n;display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;padding:18px 0;border-bottom:1px solid rgba(127,127,127,.35)}
 .k-num li::before{content:counter(n,decimal-leading-zero);font:700 15px/1.6 'Space Grotesk',system-ui,sans-serif;color:#FF5A2A}
@@ -317,5 +317,33 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 @keyframes sig{0%,100%{opacity:.25}40%{opacity:1}}
 @media (max-width:640px){.mo-target{width:120vw;right:-50vw;opacity:.7}.mo-flight{width:150vw;right:-30vw;bottom:0}.mo-ripple{right:12%;top:12%}.mo-venn{width:110vw;right:-40vw}.mo-proof,.mo-route,.mo-arches{opacity:.5}.mo-ruled{opacity:.6}}
 @media (prefers-reduced-motion: reduce){.mo-bull,.mo-path,.mo-ripple i,.mo-venn,.mo-signal path{animation:none !important}.mo-ripple i{opacity:.2;transform:scale(.6)}.mo-ripple i:nth-child(2){transform:scale(.9)}.mo-line{animation:none;stroke-dashoffset:0}}
+/* phones: more room to breathe */
+@media (max-width: 640px){
+.k-hero{padding:40px 0 72px}
+.k-crumb{margin-bottom:26px}
+.k-hero-g{gap:44px}
+.k-h1,.k-h2,.k-ct,.k-end-t{line-height:1.02}
+.k-lede,.k-p{line-height:1.7}
+.k-p+.k-p{margin-top:18px}
+.k-cta{gap:14px;margin-top:30px}
+.k-stats{gap:16px;margin-top:40px}
+.k-stat{padding:18px 20px 20px}
+.k-sec,.k-case{padding:88px 0}
+.k-head{gap:18px;margin-bottom:40px}
+.k-g2,.k-g3,.k-g4{gap:24px}
+.k-stk{padding:28px 24px;gap:12px}
+.k-list{gap:16px}
+.k-list li{line-height:1.6}
+.k-num li{padding:20px 0;grid-template-columns:44px minmax(0,1fr)}
+.k-steps{row-gap:40px}
+.k-faq summary{padding:24px 0;gap:16px}
+.k-faq details p{line-height:1.7;margin-bottom:26px}
+.k-cmeta{gap:10px 12px;margin-bottom:24px}
+.k-quote{padding:28px 24px}
+.k-hs{gap:16px}
+.k-end{padding:96px 0 40px}
+.k-foot{gap:20px}
+.k-fnav{gap:12px 22px}
+}
 /*kit:end*/
 '''
