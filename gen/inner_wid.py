@@ -96,23 +96,6 @@ CSS = r'''
 .wx-two .read h3 i{background:#FFC83D}.wx-two .live h3 i{background:#FF5A2A}
 .wx-two p{margin:14px 0 18px;max-width:44ch;font-size:17.5px;line-height:1.65;color:#2D2B27}
 .wx-two p.wx-when{margin:0 0 18px;font-weight:700;color:#111}
-/* ── D. the thinking ── */
-.wx-think{background:#FFF5D9;color:#111;padding:clamp(80px,9vw,128px) 0 clamp(110px,11vw,160px)}
-.wx-think-h{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:16px 48px;align-items:end}
-.wx-think-h p{margin:0;font-size:17px;line-height:1.65;color:#45423C;max-width:42ch}
-.wx-think .qt-row{grid-template-columns:repeat(4,minmax(0,1fr))}
-.wx-think .qt{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:#111}
-.wx-up{align-self:flex-start;padding:4px 10px;border-radius:999px;border:1.5px solid #111;background:#FFFDF6;font:700 11.5px 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.wx-think .qt b{font:700 clamp(20px,1.7vw,24px)/1.18 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.025em}
-.wx-think .qt span{font-size:15px;line-height:1.5;color:#2D2B27}
-.wx-think .qt.q-ink{background:#111;color:#FFF5D9;box-shadow:5px 5px 0 #FF5A2A}
-.wx-think .qt.q-ink span{color:#D9D4CA}
-.wx-think .qt.q-ink .wx-up{background:#FF5A2A;border-color:#FF5A2A;color:#111}
-.wx-think .qt .wx-go{margin-top:auto;font-weight:700;font-size:15px}
-.wx-files{margin:clamp(36px,4vw,56px) 0 0;padding:0;list-style:none;border-top:2px solid #111}
-.wx-files a{display:grid;grid-template-columns:160px minmax(0,1fr) 150px;gap:6px 28px;padding:22px 0;border-bottom:1px solid #E3D6B0;color:#111;text-decoration:none}
-.wx-files a:hover b{color:#C23A0E}
-.wx-files b{font:700 22px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
 /* ── E. join ── */
 .wx-join{position:relative;z-index:2;margin-top:-40px;border-radius:clamp(24px,3.4vw,48px) clamp(24px,3.4vw,48px) 0 0;background:#111;color:#F2EFE8;padding:clamp(80px,9vw,128px) 0 clamp(32px,4vw,48px);overflow:hidden}
 .wx-join-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(36px,5vw,80px);align-items:center}
@@ -136,9 +119,8 @@ CSS = r'''
 .wx-join .k-foot{margin-top:clamp(64px,8vw,104px)}
 /* ── responsive ── */
 @media (max-width:1080px){
-.wx-hero-g,.wx-conv,.wx-join-g,.wx-think-h{grid-template-columns:1fr}
+.wx-hero-g,.wx-conv,.wx-join-g{grid-template-columns:1fr}
 .wx-stage{justify-self:start;width:min(100%,440px)}
-.wx-think .qt-row{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:760px){
 .wx-guest{order:2;display:grid;grid-template-columns:120px 1fr;gap:4px 18px;align-items:center;max-width:none}
@@ -154,7 +136,6 @@ CSS = r'''
 .wx-stop{display:grid;grid-template-columns:58px 1fr;column-gap:18px;align-items:center}
 .wx-stop .wx-dot{grid-row:span 2}
 .wx-stop b{margin:0}
-.wx-files a{grid-template-columns:1fr}
 }
 @media (max-width:640px){
 .wx-h1{font-size:clamp(56px,17vw,78px)}
@@ -162,7 +143,6 @@ CSS = r'''
 .wx-lede,.wx-conv p.wx-p,.wx-two p,.wx-join p.wx-p{font-size:17px}
 .wx-switch{display:flex;width:100%}
 .wx-switch button{flex:1;padding:0 10px}
-.wx-think .qt-row{grid-template-columns:1fr}
 .wx-tba{width:88px;height:88px;font-size:13px}
 .wx-join>.shp-flower{width:180px;height:180px;right:-60px;top:-60px}
 }
@@ -256,18 +236,6 @@ def page():
 </div>
 </section>
 
-<section class="wx-think" aria-labelledby="wx-th-t">
-<div class="wrap">
-<div class="wx-think-h"><div><p class="eyebrow">The thinking</p><h2 id="wx-th-t" class="wx-h2">Problems on the table<span class="k-dot">.</span></h2></div>
-<p>The first issues are being written now. These are the calls they work through.</p></div>
-<sc-if value="{{{{hasFiles}}}}" hint-placeholder-val="{{{{ false }}}}"><ul class="wx-files"><sc-for list="{{{{files}}}}" as="f" hint-placeholder-count="3"><li><a href="{{{{f.href}}}}"><span class="eyebrow" style="margin: 0">{{{{f.cat}}}}</span><span><b>{{{{f.title}}}}</b><br><span>{{{{f.dek}}}}</span></span><span>{{{{f.by}}}} · <time datetime="{{{{f.date}}}}">{{{{f.dateLabel}}}}</time></span></a></li></sc-for></ul></sc-if>
-<div class="qt-row">
-<sc-for list="{{{{topics}}}}" as="t" hint-placeholder-count="3"><div class="qt {{{{t.cls}}}}"><span class="wx-up">Upcoming</span><b>{{{{t.title}}}}</b><span>{{{{t.q}}}}</span></div></sc-for>
-<a class="qt q-ink" href="{{{{submitHref}}}}"><span class="wx-up">Your turn</span><b>Got a hard call of your own?</b><span>Send it in. We may take it apart in an issue or live, anonymised if you like.</span><span class="wx-go">Send a problem <span aria-hidden="true">↗</span></span></a>
-</div>
-</div>
-</section>
-
 <section class="wx-join" id="join" aria-labelledby="wx-join-t">
 <span class="shp shp-flower" aria-hidden="true"></span>
 <div class="wrap">
@@ -275,13 +243,13 @@ def page():
 <div>
 <p class="eyebrow" style="color: #8A867E">Free · twice a month</p>
 <h2 id="wx-join-t" class="wx-join-t">Join What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h2>
-<p class="wx-p">One hard call in your inbox on the first and third Wednesday, and first word on every live session.</p>
-<ul><li><i style="background: #FFC83D" aria-hidden="true"></i>Real problems, not hot takes</li><li><i style="background: #8FE3B0" aria-hidden="true"></i>The options and the reasoning, not just the answer</li><li><i style="background: #FF8FB6" aria-hidden="true"></i>Unsubscribe in one click</li></ul>
+<p class="wx-p">A real marketing problem in your inbox on the first and third Wednesday of every month, plus first access to each live session.</p>
+<ul><li><i style="background: #FFC83D" aria-hidden="true"></i>A real situation, with the options laid out</li><li><i style="background: #8FE3B0" aria-hidden="true"></i>The call, and the reasoning behind it</li><li><i style="background: #FF8FB6" aria-hidden="true"></i>Free, and easy to unsubscribe</li></ul>
 </div>
 <div class="wx-form">
 <h3>Subscribe</h3>
 <p>Newsletter only. Live sessions have their own sign-up.</p>
-<sc-if value="{{{{hasForm}}}}" hint-placeholder-val="{{{{ true }}}}"><div class="wx-bh" data-beehiiv-slot="{{{{cfg.beehiivFormId}}}}" aria-live="polite"><p class="wx-bh-wait">Loading the sign-up form…</p></div></sc-if>
+<div class="wx-bh" data-beehiiv-slot="486dd20f-f759-4e17-a148-6ae63a258dcf" aria-live="polite"><p class="wx-bh-wait">Loading the sign-up form…</p><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="486dd20f-f759-4e17-a148-6ae63a258dcf"></script></div>
 <p class="wx-fall">Form not showing? <sc-if value="{{{{hasSubPage}}}}" hint-placeholder-val="{{{{ false }}}}"><a href="{{{{cfg.beehiivSubscribeUrl}}}}">Subscribe on beehiiv ↗</a> or </sc-if><a href="{{{{notifyMail}}}}">email me</a> and you’ll be added.</p>
 </div>
 </div>

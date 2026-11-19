@@ -24,12 +24,6 @@
     // { cat: 'Independent analysis', title: '…', by: 'Jeremiah Ajayi', date: '2026-12-02',
     //   dateLabel: '2 Dec 2026', read: '7 min read', dek: '…', href: 'https://…' }
     const FILES = [];
-    // ── Problems on the table (shown as "Upcoming" until issues are published) ──
-    const TOPICS = [
-      { title: 'The launch got attention. Sales got nothing.', q: 'Rewrite the message, change the audience, or fix the hand-off to sales?', cls: 'q-sun' },
-      { title: 'They sign up, then disappear.', q: 'Spend on acquisition, or fix retention first?', cls: 'q-mint' },
-      { title: 'Five priorities. Budget for two.', q: 'What gets cut, and how do you defend it?', cls: 'q-blush' }
-    ];
 
     const mail = 'mailto:jeremiah@thejeremiahajayi.com';
     const submitMail = mail + '?subject=' + encodeURIComponent('What I’d Do: a problem to work through') + '&body=' + encodeURIComponent('What’s happening:\n\nWhat you’ve tried or considered:\n\nWhat’s at stake, and by when:\n\nCan we share identifying details? (We’ll always ask first.)\n');
@@ -53,7 +47,6 @@
       noSubmitUrl: !CONFIG.submitUrl,
       submitMail,
       files: FILES,
-      topics: TOPICS,
       hasSubPage: !!CONFIG.beehiivSubscribeUrl,
       submitHref: CONFIG.submitUrl || submitMail,
       hasFiles: FILES.length > 0,

@@ -1737,10 +1737,12 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
     var bhLoaded = false;
     var bhLoad = function () {
       if (bhLoaded) return; bhLoaded = true;
-      var sc = document.createElement('script');
-      sc.async = true; sc.src = 'https://subscribe-forms.beehiiv.com/v3/loader.js';
-      sc.setAttribute('data-beehiiv-form', bhSlot.getAttribute('data-beehiiv-slot'));
-      bhSlot.appendChild(sc);
+      if (!bhSlot.querySelector('script[data-beehiiv-form]')) {
+        var sc = document.createElement('script');
+        sc.async = true; sc.src = 'https://subscribe-forms.beehiiv.com/v3/loader.js';
+        sc.setAttribute('data-beehiiv-form', bhSlot.getAttribute('data-beehiiv-slot'));
+        bhSlot.appendChild(sc);
+      }
       var wait = bhSlot.querySelector('.wd-bh-wait, .wx-bh-wait');
       var done = function () { return [].some.call(bhSlot.children, function (c) { return c.tagName !== 'SCRIPT' && c !== wait && c.tagName !== 'NOSCRIPT'; }); };
       if ('MutationObserver' in window) { var bmo = new MutationObserver(function () { if (done()) { if (wait) wait.remove(); bmo.disconnect(); } }); bmo.observe(bhSlot, { childList: true, subtree: true }); }
