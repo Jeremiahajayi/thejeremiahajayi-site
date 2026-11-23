@@ -332,6 +332,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 .btn-k:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #FF5A2A}
 .sv-verb{margin:0 0 18px;font-size:clamp(48px,6.4vw,104px);font-weight:700;line-height:.95;letter-spacing:-.055em}
 @media (prefers-reduced-motion: reduce){.tiles-rot>*,.btn-k{transition:none}}
+@media print{.rv,.img-rv,.js-rv .rv,.js-rv .img-rv{opacity:1 !important;transform:none !important;clip-path:none !important}.site-h,.gd-launch,.gd-peek,.gd-panel,.mbar,.rp{display:none !important}}
 /*shared:end*/
 
 /*home:start*/
@@ -1198,6 +1199,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <li data-k="{{p.cat}}" data-text="{{p.text}}"><a class="rs-row" href="{{p.href}}"><span class="rs-outlet">{{p.where}}</span><span><span class="rs-t">{{p.title}}</span><span class="rs-note">{{p.dek}}</span></span><span>{{p.meta}}</span></a></li>
 </sc-for>
 </ul>
+<p style="margin: 28px 0 0"><a class="h-link" href="/blog/">Read every article on the blog <span class="arr" aria-hidden="true">→</span></a></p>
 <p data-empty style="display: none; margin-top: 24px; font-size: 17px">Nothing matches that yet. Try a broader word, or <a class="h-link" href="Site-Contact.dc.html">ask me about it</a>.</p>
 </div>
 </section>
