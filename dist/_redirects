@@ -5,7 +5,5 @@
 /portfolio/ /work/ 301
 /expertise /services/ 301
 /expertise/ /services/ 301
-/writing /blog/ 301
-/writing/ /blog/ 301
-# Blog posts are migrated at their original /post/<slug> addresses.
+# Blog posts live on WordPress at /blog/<slug>/; /post/<slug> redirects there (src/worker.js).
 # All three tools are built at their current paths.

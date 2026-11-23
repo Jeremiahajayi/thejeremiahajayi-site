@@ -34,7 +34,7 @@ const PAGES = [
   { file: 'Site-Service-Launch.dc.html', out: 'services/product-launch-gtm/index.html', url: '/services/product-launch-gtm/', crumb: 'Launches & go-to-market', service: 'Product launch and go-to-market strategy', title: 'Product launch and GTM consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Product launches built for pipeline: a GTM brief, launch plan, sales enablement and launch-to-pipeline measurement. 20+ launches led.' },
   { file: 'Site-Service-Content.dc.html', out: 'services/content-growth/index.html', url: '/services/content-growth/', crumb: 'Content & organic growth', service: 'Content and organic growth', title: 'Content and organic growth consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Content strategy, SEO and AI search visibility for B2B SaaS, measured in pipeline. 174% organic growth at RemotePass.' },
   { file: 'Site-Work.dc.html', out: 'work/index.html', url: '/work/', crumb: 'Work', title: 'Work and case studies · Jeremiah Ajayi', desc: 'Case studies in positioning, launches and content: Stears, RemotePass, Certn, Xofu and more.' },
-  { file: 'Site-Writing.dc.html', out: 'blog/index.html', url: '/blog/', crumb: 'Writing', title: 'Writing and research · Jeremiah Ajayi', desc: 'Original research on AI search, launch and growth teardowns, and marketing playbooks.' },
+  { file: 'Site-Writing.dc.html', out: 'writing/index.html', url: '/writing/', crumb: 'Writing', title: 'Writing and research · Jeremiah Ajayi', desc: 'Original research on AI search, launch and growth teardowns, and marketing playbooks.' },
   { file: 'Site-About.dc.html', out: 'about/index.html', url: '/about/', crumb: 'About', title: 'About Jeremiah Ajayi · Marketing consultant in Lagos', desc: 'Jeremiah Ajayi is a marketing consultant for B2B SaaS and technology companies, based in Lagos, and the co-founder of EmpowerQ.' },
   { file: 'Site-EmpowerQ.dc.html', out: 'empowerq/index.html', url: '/empowerq/', crumb: 'EmpowerQ', title: 'EmpowerQ · Co-founded by Jeremiah Ajayi', desc: 'EmpowerQ builds economic inclusion for LGBTQ+ professionals in Nigeria. Co-founded by Jeremiah Ajayi in 2025.' },
   { file: 'Site-WhatIdDo.dc.html', out: 'what-id-do/index.html', url: '/what-id-do/', crumb: 'What I’d Do', og: '/og-what-id-do-v2.png', title: 'What I’d Do · A newsletter and live events on marketing problems', desc: 'A free newsletter and live event series by Jeremiah Ajayi. Two emails a month on real marketing problems and how to solve them, plus a monthly live conversation.' },
@@ -231,7 +231,8 @@ fs.writeFileSync(path.join(outDir, 'llms.txt'), `# Jeremiah Ajayi
 
 - [Work](${SITE}/work/): Stears Elections (#1 on Google above the BBC), RemotePass × Certn (270+ media pickups), RemotePass content ($500K+ pipeline in under a year), Xofu repositioning; $3M+ pipeline influenced overall
 - [What I’d Do](${SITE}/what-id-do/): a free newsletter and monthly live event series about solving marketing problems
-- [Writing](${SITE}/blog/): AI search research, including The State of AI Search in Nigeria and four Foundation Labs studies
+- [Blog](${SITE}/blog/): articles on marketing, product launches, content and AI search
+- [Writing](${SITE}/writing/): AI search research, including The State of AI Search in Nigeria and four Foundation Labs studies
 - [About](${SITE}/about/): background, recognition and education
 
 ## Other
@@ -246,8 +247,6 @@ fs.writeFileSync(path.join(outDir, '_redirects'), `# Old Wix URLs
 /portfolio/ /work/ 301
 /expertise /services/ 301
 /expertise/ /services/ 301
-/writing /blog/ 301
-/writing/ /blog/ 301
 # Before launch: migrate the Wix posts to /post/<slug> and the tool pages
 # (/gtm-scorecard, /categoryvisibilityaudit, /marketingaudit) at their current paths.
 `);
@@ -409,4 +408,25 @@ ${p.cover ? `<div style="max-width: 1100px; margin: 0 auto; padding: 0 28px clam
     fs.writeFileSync(rd, fs.readFileSync(rd, 'utf8').replace(/# Before launch: migrate the Wix posts[^\n]*\n/, '# Blog posts are migrated at their original /post/<slug> addresses.\n'));
     console.log('posts', posts.length);
   }
+}
+
+// The blog now runs on WordPress at /blog (src/worker.js proxies it). The research hub is /writing/.
+// Old /post/<slug> addresses redirect to /blog/<slug>/ in the worker, so the static copies are removed.
+{
+  const postsFile = path.join(__dirname, '..', 'posts', 'posts.json');
+  const posts = fs.existsSync(postsFile) ? JSON.parse(fs.readFileSync(postsFile, 'utf8')) : [];
+  fs.rmSync(path.join(outDir, 'post'), { recursive: true, force: true });
+  const smPath = path.join(outDir, 'sitemap.xml');
+  fs.writeFileSync(smPath, fs.readFileSync(smPath, 'utf8').replace(/  <url><loc>[^<]*\/post\/[^<]*<\/loc><\/url>\n/g, ''));
+  fs.writeFileSync(path.join(outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\nSitemap: ${SITE}/blog/sitemap_index.xml\n`);
+  const rd = path.join(outDir, '_redirects');
+  fs.writeFileSync(rd, fs.readFileSync(rd, 'utf8').replace(/# Blog posts are migrated[^\n]*\n/, '# Blog posts live on WordPress at /blog/<slug>/; /post/<slug> redirects there (src/worker.js).\n'));
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
+  let n = 0;
+  for (const f of walk(outDir).filter((f) => /\.(html|txt|xml)$/.test(f))) {
+    const src = fs.readFileSync(f, 'utf8');
+    const out = src.replace(/(https:\/\/www\.thejeremiahajayi\.com)?\/post\/([a-z0-9-]+)(\.html)?(?=["'#?\s<)])/g, (m, host, slug) => (host || '') + '/blog/' + slug + '/');
+    if (out !== src) { fs.writeFileSync(f, out); n++; }
+  }
+  console.log('blog on WordPress: post links rewritten in', n, 'files;', posts.length, 'posts redirect from /post/');
 }

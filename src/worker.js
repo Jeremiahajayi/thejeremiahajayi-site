@@ -8,7 +8,7 @@
 // BLOG_LIVE = false: during setup the static Writing page keeps /blog/ itself; everything below it
 // (wp-admin, wp-login.php, wp-content, previews) goes to WordPress.
 // BLOG_LIVE = true: /blog/ itself is WordPress too.
-const BLOG_LIVE = false;
+const BLOG_LIVE = true;
 const WP_ORIGIN = 'https://wp.thejeremiahajayi.com';
 const TEXT_TYPES = /text\/|javascript|json|xml/;
 
@@ -72,6 +72,9 @@ export default {
       url.hostname = 'www.thejeremiahajayi.com';
       return Response.redirect(url.toString(), 301);
     }
+    // Old Wix-era article addresses moved to the WordPress blog.
+    const old = /^\/post\/([a-z0-9-]+?)(?:\.html)?\/?$/.exec(url.pathname);
+    if (old) return Response.redirect('https://www.thejeremiahajayi.com/blog/' + old[1] + '/', 301);
     if (isBlogPath(url.pathname)) return proxyBlog(request, url);
     return env.ASSETS.fetch(request);
   }
