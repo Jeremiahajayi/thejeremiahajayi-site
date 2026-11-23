@@ -1,20 +1,33 @@
 <!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=DM+Sans:wght@700&family=Newsreader:ital,wght@1,400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
 <style>
-html,body{margin:0}
-body{width:1200px;height:630px;background:#F4F0E6;color:#141414;font-family:'DM Sans';box-sizing:border-box;padding:56px 72px;position:relative;overflow:hidden}
-.mast{display:flex;justify-content:space-between;padding:12px 0;border-top:3px solid #141414;border-bottom:1.5px solid #141414;font:700 15px 'DM Sans';letter-spacing:.16em;text-transform:uppercase}
-.mast span:last-child{font:italic 400 21px 'Newsreader';letter-spacing:0;text-transform:none}
-h1{margin:44px 0 0;font:700 196px/.86 'Space Grotesk';letter-spacing:-.065em;white-space:nowrap}
-.i{display:inline-block;padding:0 .08em;border:.045em solid #141414;border-radius:.06em;line-height:.9;transform:rotate(-2deg)}
-.dot{color:#FF5A2A}
-p{margin:44px 0 0;font:italic 400 44px/1.15 'Newsreader';max-width:1080px}
-p u{text-decoration:none;background:no-repeat 0 100%/100% 4px linear-gradient(#FF5A2A,#FF5A2A)}
-.foot{position:absolute;left:72px;right:72px;bottom:44px;display:flex;justify-content:space-between;font:700 18px 'DM Sans'}
-.foot span:last-child{color:#C23A0E}
+*{box-sizing:border-box}html,body{margin:0}
+body{width:1200px;height:630px;overflow:hidden;background:#FFF5D9;color:#111;font-family:'DM Sans',sans-serif;position:relative}
+.l{position:absolute;left:72px;top:64px;width:700px}
+.by{font:700 18px 'DM Sans';letter-spacing:.12em;text-transform:uppercase;color:#6B675F}
+h1{margin:22px 0 0;font:700 128px/.9 'Space Grotesk';letter-spacing:-.065em;white-space:nowrap}
+h1 .i{color:#FF5A2A}h1 .d{color:#FF5A2A}
+.tag{margin:30px 0 0;font:700 40px/1.12 'Space Grotesk';letter-spacing:-.035em;max-width:640px}
+.pills{position:absolute;left:72px;bottom:60px;display:flex;gap:12px}
+.pills span{padding:11px 20px;border:2px solid #111;border-radius:999px;background:#FFFDF6;font:700 20px 'DM Sans';box-shadow:3px 3px 0 #111}
+.pills span:first-child{background:#FF5A2A;color:#fff}
+.pills span:nth-child(2){background:#8FE3B0}
+.r{position:absolute;right:56px;top:96px;width:380px;height:380px}
+.r svg{position:absolute;inset:0}
+.ph{position:absolute;left:62px;top:62px;width:256px;height:256px;border-radius:50%;overflow:hidden;border:2px solid #111}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.url{position:absolute;right:64px;bottom:72px;font:700 19px 'DM Sans';color:#111}
 </style></head><body>
-<div class="mast"><span>A newsletter + live conversation series</span><span>hosted by Jeremiah Ajayi</span></div>
-<h1>What <span class="i">I</span>’d Do<span class="dot">.</span></h1>
-<p>Marketing is full of hard calls. Let’s work <u>through them.</u></p>
-<div class="foot"><span>thejeremiahajayi.com/what-id-do</span><span>Twice monthly · Live twice a month</span></div>
+<div class="l">
+<div class="by">By Jeremiah Ajayi</div>
+<h1>What <span class="i">I</span>’d Do<span class="d">.</span></h1>
+<p class="tag">A newsletter and live event series about solving marketing problems.</p>
+</div>
+<div class="r"><svg viewBox="0 0 380 380" aria-hidden="true"><g fill="#FF5A2A">
+<circle cx="190" cy="190" r="150"/>
+<circle cx="190" cy="62" r="62"/><circle cx="190" cy="318" r="62"/><circle cx="62" cy="190" r="62"/><circle cx="318" cy="190" r="62"/>
+<circle cx="99.5" cy="99.5" r="62"/><circle cx="280.5" cy="99.5" r="62"/><circle cx="99.5" cy="280.5" r="62"/><circle cx="280.5" cy="280.5" r="62"/>
+</g></svg><div class="ph"><img src="headshot.jpg" alt=""></div></div>
+<div class="pills"><span>2 newsletters a month</span><span>1 live event a month</span><span>Free</span></div>
+<div class="url">thejeremiahajayi.com/what-id-do</div>
 </body></html>
