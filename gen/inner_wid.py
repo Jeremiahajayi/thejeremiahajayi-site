@@ -117,6 +117,49 @@ CSS = r'''
 .wx-join.flash .wx-form{animation:wxflash 1.2s ease-out}
 @keyframes wxflash{0%{box-shadow:8px 8px 0 #FF5A2A,0 0 0 0 rgba(255,90,42,.6)}100%{box-shadow:8px 8px 0 #FF5A2A,0 0 0 24px rgba(255,90,42,0)}}
 .wx-join .k-foot{margin-top:clamp(64px,8vw,104px)}
+/* ── v2: plain-language sections ── */
+.wx-lede p{margin:0 0 12px}
+.wx-sum{margin:6px 0 0;font:700 clamp(19px,1.6vw,22px)/1.35 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:#111}
+.wx-sheet .wx-h2{color:#EAF6F1}
+.wx-intro{margin:18px 0 0;max-width:52ch;font-size:18px;line-height:1.65;color:#CFE3DC}
+.wx-issues{margin-top:clamp(28px,3vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2vw,28px)}
+.wx-issue{background:#FFFDF6;color:#111;border:1.5px solid #111;border-radius:24px;box-shadow:5px 5px 0 #111;padding:clamp(24px,2.6vw,34px)}
+.wx-issue .wx-n{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid #111;background:#FFC83D;font:700 16px 'Space Grotesk',system-ui,sans-serif}
+.wx-issue:nth-child(2) .wx-n{background:#8FE3B0}
+.wx-issue h3{margin:16px 0 0;font:700 clamp(26px,2.4vw,32px)/1.08 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em}
+.wx-issue p{margin:12px 0 0;max-width:46ch;font-size:17px;line-height:1.65;color:#2D2B27}
+.wx-meta{margin:clamp(26px,3vw,36px) 0 0;font:700 16px/1.4 'DM Sans',system-ui,sans-serif}
+.wx-sheet .wx-meta{color:#8FE3B0}
+.wx-sec-cta{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.wx-sec-cta .wx-small{font-size:14.5px;color:#6B675F}
+.wx-live{background:#F2EFE8;color:#111;padding:clamp(80px,9vw,128px) 0}
+.wx-live-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,80px);align-items:start}
+.wx-body p:not(.eyebrow){margin:16px 0 0;max-width:46ch;font-size:18px;line-height:1.65;color:#2D2B27}
+.wx-live .wx-body p.wx-meta{margin-top:24px;font:700 16px/1.4 'DM Sans',system-ui,sans-serif;color:#111}
+.wx-next{position:relative;background:#FFFDF6;border:1.5px solid #111;border-radius:28px;box-shadow:6px 6px 0 #111;padding:clamp(24px,3vw,40px)}
+.wx-next .eyebrow{margin:0}
+.wx-next-who{display:flex;align-items:center;gap:16px;margin-top:20px}
+.wx-av{position:relative;flex:none;display:grid;place-items:center;width:76px;height:76px;border-radius:50%;overflow:hidden;background:#0E2A2E;color:#8FE3B0;border:1.5px solid #111;font:700 28px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.04em}
+.wx-av img{width:100%;height:100%;object-fit:cover}
+.wx-next-who p{margin:0;font-size:16px;line-height:1.4;color:#45423C}
+.wx-next-who b{display:block;font:700 21px 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:#111}
+.wx-next-t{margin:22px 0 0;font:700 clamp(28px,2.8vw,40px)/1.05 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.045em;max-width:20ch}
+.wx-next p.wx-np{margin:14px 0 0;max-width:52ch;font-size:17.5px;line-height:1.65;color:#2D2B27}
+.wx-date{display:inline-block;margin-top:20px;padding:7px 14px;border:1.5px solid #111;border-radius:999px;background:#FFC83D;font:700 14.5px 'DM Sans',system-ui,sans-serif;transform:rotate(-1.5deg);box-shadow:2px 2px 0 #111}
+.wx-more{background:#FFF5D9;color:#111;padding:clamp(72px,8vw,112px) 0 clamp(112px,12vw,160px)}
+.wx-more-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,32px);align-items:stretch}
+.wx-box{border:1.5px solid #111;border-radius:28px;box-shadow:5px 5px 0 #111;padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start}
+.wx-box.pb{background:#FFC83D}.wx-box.me{background:#FFFDF6}
+.wx-box h2{margin:0;font:700 clamp(30px,3.2vw,46px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.05em}
+.wx-box p{margin:14px 0 0;max-width:44ch;font-size:17.5px;line-height:1.65;color:#2D2B27}
+.wx-box .wx-sec-cta{margin-top:auto;padding-top:26px}
+.wx-me-ph{width:76px;height:76px;margin-bottom:20px;border-radius:50%;overflow:hidden;border:1.5px solid #111;background:#FF5A2A}
+.wx-me-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.wx-join .wx-small2{margin:12px 0 0;font:700 16px 'DM Sans',system-ui,sans-serif;color:#FFC83D}
+@media (max-width:1080px){.wx-live-g{grid-template-columns:1fr}}
+@media (max-width:760px){.wx-issues,.wx-more-g{grid-template-columns:1fr}}
+.wx-x{}
+@media (max-width:640px){.wx-stage{width:min(100%,330px)}.wx-body p:not(.eyebrow):not(.wx-meta),.wx-intro,.wx-issue p,.wx-box p,.wx-next p.wx-np{font-size:17px}.wx-sec-cta .h-btn{width:100%;justify-content:center}}
 /* ── responsive ── */
 @media (max-width:1080px){
 .wx-hero-g,.wx-conv,.wx-join-g{grid-template-columns:1fr}
@@ -161,77 +204,97 @@ def page():
 <section class="wx-hero" data-wx-hero data-who="me" style="--who: #FF5A2A" aria-labelledby="wx-title">
 <div class="wrap wx-hero-g">
 <div>
-<p class="eyebrow">A newsletter and live series by Jeremiah Ajayi</p>
+<p class="eyebrow">By Jeremiah Ajayi</p>
 <h1 id="wx-title" class="wx-h1">What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h1>
-<p class="wx-tag">Marketing is full of hard calls. Let’s work through them.</p>
-<p class="wx-lede">Twice a month, one real marketing problem, taken apart: what’s happening, the options, and the call. Twice a month, we talk it through live with people who’ve had to make it.</p>
-<div class="wx-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Subscribe free <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#conversation">See the next conversation {ARR}</a></div>
+<p class="wx-tag">A newsletter and live event series about solving marketing problems.</p>
+<div class="wx-lede">
+<p>Every two weeks, I examine a marketing problem and share how I’d approach it. I also write about what I learn from conversations with marketing leaders.</p>
+<p>Once a month, I invite a founder or marketing leader to discuss a problem they’ve faced at work or work through a new one with me.</p>
+</div>
+<p class="wx-sum">Two newsletters. One live conversation. Every month.</p>
+<div class="wx-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Subscribe for free <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#live">Explore live events {ARR}</a></div>
 </div>
 <div class="wx-stage">
-<div class="wx-switch" role="tablist" aria-label="Whose call is it?">
-<button type="button" role="tab" id="wx-t0" aria-selected="true" aria-controls="wx-stage-p" data-who-tab="me">Jeremiah’s call</button>
-<button type="button" role="tab" id="wx-t1" aria-selected="false" aria-controls="wx-stage-p" tabindex="-1" data-who-tab="guest">A guest’s call</button>
+<div class="wx-switch" role="tablist" aria-label="What I’d Do has two parts">
+<button type="button" role="tab" id="wx-t0" aria-selected="true" aria-controls="wx-stage-p" data-who-tab="me">The newsletter</button>
+<button type="button" role="tab" id="wx-t1" aria-selected="false" aria-controls="wx-stage-p" tabindex="-1" data-who-tab="guest">The live event</button>
 </div>
 <div id="wx-stage-p" role="tabpanel" aria-labelledby="wx-t0">
 <div class="wx-faces">
-<div class="wx-face is-on" data-face="me"><span class="shp shp-flower" style="background: #FF5A2A" aria-hidden="true"></span><span class="wx-face-ph"><img src="{B(HEADSHOT)}" alt="Jeremiah Ajayi"></span><span class="wx-label"><b>I</b>Jeremiah · independent analysis</span></div>
+<div class="wx-face is-on" data-face="me"><span class="shp shp-flower" style="background: #FF5A2A" aria-hidden="true"></span><span class="wx-face-ph"><img src="{B(HEADSHOT)}" alt="Jeremiah Ajayi"></span><span class="wx-label"><b>I</b>Jeremiah Ajayi · newsletter</span></div>
 <div class="wx-face" data-face="guest" aria-hidden="true">
 <span class="shp shp-flower" style="background: #8FE3B0" aria-hidden="true"></span>
 <sc-if value="{{{{hasPhoto}}}}" hint-placeholder-val="{{{{ false }}}}"><span class="wx-face-ph"><img src="{{{{cfg.guestPhoto}}}}" alt="John Iwuozor"></span></sc-if>
 <sc-if value="{{{{noPhoto}}}}" hint-placeholder-val="{{{{ true }}}}"><span class="wx-mono" aria-hidden="true">JI</span></sc-if>
-<span class="wx-label"><b>I</b>John Iwuozor · guest case</span></div>
+<span class="wx-label"><b>I</b>John Iwuozor · next guest</span></div>
 </div>
-<button type="button" class="wx-bub" data-wx-bub aria-live="polite"><span class="wx-bub-k" data-wx-bub-k>The dilemma</span><span class="wx-bub-t" data-wx-bub-t>The launch got attention. Sales got nothing. What would you do?</span><span class="wx-bub-m" data-wx-bub-m>Another one ↻</span></button>
+<button type="button" class="wx-bub" data-wx-bub aria-live="polite"><span class="wx-bub-k" data-wx-bub-k>In the newsletter</span><span class="wx-bub-t" data-wx-bub-t>Why isn’t our product launch bringing in sales?</span><span class="wx-bub-m" data-wx-bub-m>Another one ↻</span></button>
 </div>
 </div>
 </div>
 </section>
 
-<section class="wx-sheet" id="conversation" aria-labelledby="wx-conv-t">
+<section class="wx-sheet" id="inbox" aria-labelledby="wx-inbox-t">
 <div class="wrap">
-<p class="eyebrow">The next conversation · What I’d Do: Live</p>
-<div class="wx-conv">
-<div class="wx-guest">
-<div class="wx-guest-f"><span class="shp shp-flower" aria-hidden="true"></span>
-<sc-if value="{{{{hasPhoto}}}}" hint-placeholder-val="{{{{ false }}}}"><span class="wx-face-ph"><img src="{{{{cfg.guestPhoto}}}}" alt="John Iwuozor" loading="lazy"></span></sc-if>
-<sc-if value="{{{{noPhoto}}}}" hint-placeholder-val="{{{{ true }}}}"><span class="wx-mono" aria-hidden="true">JI</span></sc-if>
-<span class="wx-tba" aria-hidden="true">Date<br>TBA</span></div>
-<p class="wx-who"><b>John Iwuozor</b>Content Lead, DualEntry</p>
-<div class="wx-pills"><span>Guest case</span><span>Online</span><span>45–50 min</span><span>Date to be announced</span></div>
+<p class="eyebrow">The newsletter</p>
+<h2 id="wx-inbox-t" class="wx-h2">What you’ll get in your inbox</h2>
+<p class="wx-intro">Twice a month, I’ll send you one of two things:</p>
+<div class="wx-issues">
+<div class="wx-issue"><span class="wx-n">01</span><h3>What I’d Do</h3><p>My analysis of a marketing problem, from why a product launch isn’t generating sales to what a company should do when customers keep leaving.</p><p>I’ll explain what’s happening, what I’d recommend, and why.</p></div>
+<div class="wx-issue"><span class="wx-n">02</span><h3>After the Conversation</h3><p>My takeaways from the month’s live event. I’ll cover the problem we discussed, how the guest approached it, and what I learned from our conversation.</p></div>
 </div>
-<div>
-<h2 id="wx-conv-t" class="wx-ct">Your first 90 days as Content Lead.<span>What do you fix first?</span></h2>
-<p class="wx-p">A new company, a new team, and everyone has an opinion about what marketing needs. John walks through his first 90 days at DualEntry: what he looked at, what he fixed first, and what he left alone.</p>
-<ul class="wx-notes" aria-label="Questions we’ll put to John">
-<li><small>On the table</small>Where do you look first?</li>
-<li><small>On the table</small>Whose opinion do you act on?</li>
-<li><small>On the table</small>What do you leave alone for now?</li>
-</ul>
-<div class="wx-conv-cta">
+<p class="wx-meta">First and third Wednesdays · 3 PM WAT · Free</p>
+<div class="wx-sec-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Subscribe to the newsletter <span class="arr arr-d" aria-hidden="true">↓</span></a></div>
+</div>
+</section>
+
+<section class="wx-live" id="live" aria-labelledby="wx-live-t">
+<div class="wrap wx-live-g">
+<div class="wx-body">
+<p class="eyebrow">The live event</p>
+<h2 id="wx-live-t" class="wx-h2">Let’s talk about it<span class="k-dot">.</span></h2>
+<p>Once a month, I sit down with a founder or marketing leader to discuss a marketing problem.</p>
+<p>We might revisit a challenge they’ve handled at work, examine the choices they made, and discuss what happened.</p>
+<p>Or we might take a new problem and figure out how we’d approach it together.</p>
+<p>You can join us, ask questions, and share your ideas.</p>
+<p class="wx-meta">Second Tuesday of every month · 7 PM WAT · Online</p>
+<div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="#next">See upcoming events {ARR}</a></div>
+</div>
+<div class="wx-next" id="next">
+<p class="eyebrow">Coming up next</p>
+<div class="wx-next-who">
+<span class="wx-av"><sc-if value="{{{{hasPhoto}}}}" hint-placeholder-val="{{{{ false }}}}"><img src="{{{{cfg.guestPhoto}}}}" alt="John Iwuozor" loading="lazy"></sc-if><sc-if value="{{{{noPhoto}}}}" hint-placeholder-val="{{{{ true }}}}"><span aria-hidden="true">JI</span></sc-if></span>
+<p><b>John Iwuozor</b>Content Lead at DualEntry</p>
+</div>
+<h3 class="wx-next-t">Your First 90 Days as Content Lead: Where Do You Start?</h3>
+<p class="wx-np">You’ve just joined a company to lead its content marketing. Where do you begin?</p>
+<p class="wx-np">John will join me to discuss his first 90 days at DualEntry: how he assessed what needed attention, chose his priorities, and approached the work.</p>
+<p class="wx-np">We’ll also discuss what he’d do differently with what he knows now.</p>
+<span class="wx-date">Date to be announced</span>
+<div class="wx-sec-cta">
 <sc-if value="{{{{hasEvent}}}}" hint-placeholder-val="{{{{ false }}}}"><a class="btn-o h-btn luma-checkout--button" href="{{{{lumaEventHref}}}}" data-luma-action="checkout" data-luma-event-id="{{{{cfg.lumaEventId}}}}">Register on Luma <span aria-hidden="true">↗</span></a><script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script></sc-if>
-<sc-if value="{{{{noEvent}}}}" hint-placeholder-val="{{{{ true }}}}"><a class="btn-o h-btn" href="#join" data-scroll-form>Get the date first <span class="arr arr-d" aria-hidden="true">↓</span></a><span class="wx-small">Registration opens on Luma once the date is set.</span></sc-if>
+<sc-if value="{{{{noEvent}}}}" hint-placeholder-val="{{{{ true }}}}"><a class="btn-o h-btn" href="#join" data-scroll-form>Get event updates <span class="arr arr-d" aria-hidden="true">↓</span></a><span class="wx-small">Subscribers hear first when the date is set.</span></sc-if>
 </div>
 </div>
 </div>
-<sc-if value="{{{{hasCal}}}}" hint-placeholder-val="{{{{ false }}}}"><div class="wx-cal"><iframe src="{{{{lumaSrc}}}}" title="Upcoming What I’d Do: Live sessions on Luma" loading="lazy" allowfullscreen></iframe></div></sc-if>
-</div>
+<sc-if value="{{{{hasCal}}}}" hint-placeholder-val="{{{{ false }}}}"><div class="wrap"><div class="wx-cal"><iframe src="{{{{lumaSrc}}}}" title="Upcoming What I’d Do live events on Luma" loading="lazy" allowfullscreen></iframe></div></div></sc-if>
 </section>
 
-<section class="wx-rhythm" aria-labelledby="wx-rh-t">
-<div class="wrap">
-<p class="eyebrow">Two ways in</p>
-<h2 id="wx-rh-t" class="wx-h2">Read it. Join it<span class="k-dot">.</span></h2>
-<div class="wx-month" aria-label="A month of What I’d Do">
-<ol>
-<li class="wx-stop read"><span class="wx-dot" aria-hidden="true">✉️</span><b>1st Wednesday</b><span>New issue · 3 PM WAT</span></li>
-<li class="wx-stop live"><span class="wx-dot" aria-hidden="true">🎙️</span><b>2nd Tuesday</b><span>Live session · 7 PM WAT</span></li>
-<li class="wx-stop read"><span class="wx-dot" aria-hidden="true">✉️</span><b>3rd Wednesday</b><span>New issue · 3 PM WAT</span></li>
-<li class="wx-stop live"><span class="wx-dot" aria-hidden="true">🎙️</span><b>4th Tuesday</b><span>Live session · 7 PM WAT</span></li>
-</ol>
+<section class="wx-more" aria-label="Send a problem, and who runs What I’d Do">
+<div class="wrap wx-more-g">
+<div class="wx-box pb">
+<h2>Got a marketing problem?</h2>
+<p>Maybe you’re struggling to attract customers, launch a product, or decide where to spend your budget.</p>
+<p>Tell me what’s happening. I might explore it in a newsletter or bring it to a guest during a live session.</p>
+<p>You can ask to remain anonymous.</p>
+<div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="{{{{submitHref}}}}">Submit a problem {ARR}</a></div>
 </div>
-<div class="wx-two">
-<div class="read"><h3><i aria-hidden="true"></i>Read it</h3><p>A problem, the options on the table, and the reasoning behind a call. Sometimes it’s my analysis. Sometimes it’s a guest’s decision, in their words.</p><p class="wx-when">Free · in your inbox</p><a class="h-link" href="#join" data-scroll-form>Get the newsletter {ARR}</a></div>
-<div class="live"><h3><i aria-hidden="true"></i>Join it</h3><p>A founder or marketing operator walks through a decision they made, or we work a real problem together. Candid, specific, under an hour.</p><p class="wx-when">Online · 45 to 50 minutes</p><a class="h-link" href="#conversation">See the next conversation {ARR}</a></div>
+<div class="wx-box me">
+<span class="wx-me-ph"><img src="{B(HEADSHOT)}" alt="" loading="lazy"></span>
+<h2>Who’s behind What I’d Do?</h2>
+<p>I’m Jeremiah Ajayi, a marketing strategist. I’ve worked with technology companies including RemotePass and Stears, helping them reach customers, launch products, and grow.</p>
+<p>I started What I’d Do to share how I’d approach marketing problems and explore how other people solve them.</p>
+<div class="wx-sec-cta"><a class="h-link" href="Site-About.dc.html">More about me {ARR}</a></div>
 </div>
 </div>
 </section>
@@ -241,14 +304,12 @@ def page():
 <div class="wrap">
 <div class="wx-join-g">
 <div>
-<p class="eyebrow" style="color: #8A867E">Free · twice a month</p>
-<h2 id="wx-join-t" class="wx-join-t">Join What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h2>
-<p class="wx-p">A real marketing problem in your inbox on the first and third Wednesday of every month, plus first access to each live session.</p>
-<ul><li><i style="background: #FFC83D" aria-hidden="true"></i>A real situation, with the options laid out</li><li><i style="background: #8FE3B0" aria-hidden="true"></i>The call, and the reasoning behind it</li><li><i style="background: #FF8FB6" aria-hidden="true"></i>Free, and easy to unsubscribe</li></ul>
+<h2 id="wx-join-t" class="wx-join-t">Subscribe to What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h2>
+<p class="wx-p">Get my analysis of marketing problems and lessons from conversations with marketing leaders.</p>
+<p class="wx-small2">Two newsletters a month. Free.</p>
 </div>
 <div class="wx-form">
-<h3>Subscribe</h3>
-<p>Newsletter only. Live sessions have their own sign-up.</p>
+<h3>Subscribe for free</h3>
 <div class="wx-bh" data-beehiiv-slot="486dd20f-f759-4e17-a148-6ae63a258dcf" aria-live="polite"><p class="wx-bh-wait">Loading the sign-up form…</p><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="486dd20f-f759-4e17-a148-6ae63a258dcf"></script></div>
 <p class="wx-fall">Form not showing? <sc-if value="{{{{hasSubPage}}}}" hint-placeholder-val="{{{{ false }}}}"><a href="{{{{cfg.beehiivSubscribeUrl}}}}">Subscribe on beehiiv ↗</a> or </sc-if><a href="{{{{notifyMail}}}}">email me</a> and you’ll be added.</p>
 </div>

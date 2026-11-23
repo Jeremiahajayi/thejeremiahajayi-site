@@ -2588,8 +2588,8 @@ if (window.ResizeObserver) {
   var wx = document.querySelector('[data-wx-hero]');
   if (wx) {
     var WXS = {
-      me: { color: '#FF5A2A', k: 'The dilemma · Jeremiah’s call', lines: ['The launch got attention. Sales got nothing. What would you do?', 'Users sign up, then vanish. Acquisition or retention?', 'Five priorities. Budget for two. What gets cut?'] },
-      guest: { color: '#1FA463', k: 'The dilemma · John Iwuozor’s call', lines: ['Day one as Content Lead at DualEntry. Everyone wants something. What do you fix first?'] }
+      me: { color: '#FF5A2A', k: 'In the newsletter', lines: ['Why isn’t our product launch bringing in sales?', 'Customers keep leaving. What should we do?', 'We can afford two priorities. Which two?'] },
+      guest: { color: '#1FA463', k: 'At the next live event', lines: ['John Iwuozor on his first 90 days as Content Lead at DualEntry.'] }
     };
     var wxWho = 'me', wxLi = 0, wxTouched = false;
     var wxTabs = [].slice.call(wx.querySelectorAll('[data-who-tab]')), wxFaces = [].slice.call(wx.querySelectorAll('[data-face]'));
@@ -2600,7 +2600,7 @@ if (window.ResizeObserver) {
       wxTabs.forEach(function (t) { var on = t.getAttribute('data-who-tab') === wxWho; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && wxPanel) wxPanel.setAttribute('aria-labelledby', t.id); });
       wxFaces.forEach(function (f) { var on = f.getAttribute('data-face') === wxWho; f.classList.toggle('is-on', on); f.setAttribute('aria-hidden', on ? 'false' : 'true'); });
       wxBk.textContent = wxSp.k; wxBt.textContent = wxSp.lines[wxLi % wxSp.lines.length];
-      var wxM = wxBub.querySelector('[data-wx-bub-m]'); if (wxM) wxM.textContent = wxSp.lines.length > 1 ? 'Another one ↻' : 'Back to Jeremiah ↻';
+      var wxM = wxBub.querySelector('[data-wx-bub-m]'); if (wxM) wxM.textContent = wxSp.lines.length > 1 ? 'Another one ↻' : 'Back to the newsletter ↻';
       wxBub.classList.remove('pop'); void wxBub.offsetWidth; wxBub.classList.add('pop');
     };
     var wxSet = function (w, focus) { wxTouched = true; if (w !== wxWho) { wxWho = w; wxLi = 0; wxPaint(); } if (focus) wxTabs.filter(function (t) { return t.getAttribute('data-who-tab') === w; })[0].focus(); };
