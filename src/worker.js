@@ -10,8 +10,19 @@
 // BLOG_LIVE = true: /blog/ itself is WordPress too.
 const BLOG_LIVE = false;
 const WP_ORIGIN = 'https://wp.thejeremiahajayi.com';
-const PUBLIC_BLOG = 'https://www.thejeremiahajayi.com/blog';
 const TEXT_TYPES = /text\/|javascript|json|xml/;
+
+// Turn any link to the hidden origin into its public /blog address. Links that already carry /blog
+// (WordPress builds them from its /blog address) keep a single /blog. Handles JSON-escaped slashes too.
+const ORIGIN_RE = /(https?:)?(\/\/|\\\/\\\/)wp\.thejeremiahajayi\.com((?:\/|\\\/)blog(?=\/|\\\/|["'?#\s<>]|$))?/g;
+function toPublic(s) {
+  return s.replace(ORIGIN_RE, (m, scheme, slashes) => {
+    const esc = slashes !== '//';
+    const sl = esc ? '\\/\\/' : '//';
+    const b = esc ? '\\/blog' : '/blog';
+    return (scheme ? 'https:' : '') + sl + 'www.thejeremiahajayi.com' + b;
+  });
+}
 
 function isBlogPath(pathname) {
   if (pathname !== '/blog' && !pathname.startsWith('/blog/')) return false;
@@ -35,7 +46,7 @@ async function proxyBlog(request, url) {
 
   const out = new Headers(res.headers);
   const loc = out.get('Location');
-  if (loc) out.set('Location', loc.replace(WP_ORIGIN, PUBLIC_BLOG));
+  if (loc) out.set('Location', toPublic(loc));
   // Cookies belong to www.thejeremiahajayi.com, never the hidden origin.
   const cookies = res.headers.getSetCookie ? res.headers.getSetCookie() : [];
   if (cookies.length) {
@@ -47,7 +58,7 @@ async function proxyBlog(request, url) {
 
   const type = out.get('Content-Type') || '';
   if (TEXT_TYPES.test(type) && res.body) {
-    const text = (await res.text()).split(WP_ORIGIN).join(PUBLIC_BLOG).split('//wp.thejeremiahajayi.com').join('//www.thejeremiahajayi.com/blog');
+    const text = toPublic(await res.text());
     out.delete('Content-Length');
     return new Response(text, { status: res.status, statusText: res.statusText, headers: out });
   }
@@ -66,4 +77,4 @@ export default {
   }
 };
 
-export { isBlogPath };
+export { isBlogPath, toPublic };
