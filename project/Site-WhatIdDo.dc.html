@@ -1240,6 +1240,9 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 @media (max-width:1080px){.wx-live-g{grid-template-columns:1fr}}
 @media (max-width:760px){.wx-issues,.wx-more-g{grid-template-columns:1fr}}
 .wx-x{}
+.wx-live .wx-cal{margin-top:clamp(48px,5vw,72px)}
+.wx-cal-t{margin:0 0 16px;font:700 clamp(26px,2.4vw,34px)/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em}
+.wx-live .wx-cal iframe{height:520px;border:1.5px solid #111;box-shadow:5px 5px 0 #111}
 @media (max-width:640px){.wx-stage{width:min(100%,330px)}.wx-body p:not(.eyebrow):not(.wx-meta),.wx-intro,.wx-issue p,.wx-box p,.wx-next p.wx-np{font-size:17px}.wx-sec-cta .h-btn{width:100%;justify-content:center}}
 /* ── responsive ── */
 @media (max-width:1080px){
@@ -1335,7 +1338,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <p>Or we might take a new problem and figure out how we’d approach it together.</p>
 <p>You can join us, ask questions, and share your ideas.</p>
 <p class="wx-meta">Second Tuesday of every month · 7 PM WAT · Online</p>
-<div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="#next">See upcoming events <span class="arr" aria-hidden="true">→</span></a></div>
+<div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="{{eventsHref}}">See upcoming events <span class="arr" aria-hidden="true">→</span></a></div>
 </div>
 <div class="wx-next" id="next">
 <p class="eyebrow">Coming up next</p>
@@ -1354,7 +1357,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 </div>
 </div>
 </div>
-<sc-if value="{{hasCal}}" hint-placeholder-val="{{ false }}"><div class="wrap"><div class="wx-cal"><iframe src="{{lumaSrc}}" title="Upcoming What I’d Do live events on Luma" loading="lazy" allowfullscreen></iframe></div></div></sc-if>
+<sc-if value="{{hasCal}}" hint-placeholder-val="{{ false }}"><div class="wrap"><div class="wx-cal" id="events"><h3 class="wx-cal-t">Upcoming events</h3><iframe src="{{lumaSrc}}" title="Upcoming What I’d Do live events on Luma" loading="lazy" allowfullscreen></iframe></div></div></sc-if>
 </section>
 
 <section class="wx-more" aria-label="Send a problem, and who runs What I’d Do">
@@ -1424,7 +1427,7 @@ class Component extends DCLogic {
       // e.g. https://whatiddo.beehiiv.com/subscribe (use the What I'd Do publication's address).
       beehiivSubscribeUrl: '',
       // Luma → Calendar → Settings → Embed. The calendar ID looks like cal-XXXXXXXX.
-      lumaCalendarId: '',
+      lumaCalendarId: 'cal-1i6etFX2KE5qTrA',
       // The featured event's ID on Luma (evt-XXXXXXXX). Set it only once the real event exists.
       lumaEventId: '',
       // A form for problem submissions (Tally, Typeform, Google Forms…). Until then, email is used.
@@ -1441,7 +1444,7 @@ class Component extends DCLogic {
     const mail = 'mailto:jeremiah@thejeremiahajayi.com';
     const submitMail = mail + '?subject=' + encodeURIComponent('What I’d Do: a problem to work through') + '&body=' + encodeURIComponent('What’s happening:\n\nWhat you’ve tried or considered:\n\nWhat’s at stake, and by when:\n\nCan we share identifying details? (We’ll always ask first.)\n');
     const notifyMail = mail + '?subject=' + encodeURIComponent('What I’d Do: tell me when issue one is out');
-    const luma = CONFIG.lumaCalendarId ? 'https://lu.ma/embed/calendar/' + CONFIG.lumaCalendarId + '/events' : '';
+    const luma = CONFIG.lumaCalendarId ? 'https://luma.com/embed/calendar/' + CONFIG.lumaCalendarId + '/events' : '';
     return {
       time: this.state.time,
       cfg: CONFIG,
@@ -1451,6 +1454,7 @@ class Component extends DCLogic {
       hasCal: !!luma,
       noCal: !luma,
       lumaSrc: luma,
+      eventsHref: luma ? '#events' : '#next',
       hasEvent: !!CONFIG.lumaEventId,
       noEvent: !CONFIG.lumaEventId,
       lumaEventHref: CONFIG.lumaEventId ? 'https://lu.ma/event/' + CONFIG.lumaEventId : '',

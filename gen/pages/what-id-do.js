@@ -11,7 +11,7 @@
       // e.g. https://whatiddo.beehiiv.com/subscribe (use the What I'd Do publication's address).
       beehiivSubscribeUrl: '',
       // Luma → Calendar → Settings → Embed. The calendar ID looks like cal-XXXXXXXX.
-      lumaCalendarId: '',
+      lumaCalendarId: 'cal-1i6etFX2KE5qTrA',
       // The featured event's ID on Luma (evt-XXXXXXXX). Set it only once the real event exists.
       lumaEventId: '',
       // A form for problem submissions (Tally, Typeform, Google Forms…). Until then, email is used.
@@ -28,7 +28,7 @@
     const mail = 'mailto:jeremiah@thejeremiahajayi.com';
     const submitMail = mail + '?subject=' + encodeURIComponent('What I’d Do: a problem to work through') + '&body=' + encodeURIComponent('What’s happening:\n\nWhat you’ve tried or considered:\n\nWhat’s at stake, and by when:\n\nCan we share identifying details? (We’ll always ask first.)\n');
     const notifyMail = mail + '?subject=' + encodeURIComponent('What I’d Do: tell me when issue one is out');
-    const luma = CONFIG.lumaCalendarId ? 'https://lu.ma/embed/calendar/' + CONFIG.lumaCalendarId + '/events' : '';
+    const luma = CONFIG.lumaCalendarId ? 'https://luma.com/embed/calendar/' + CONFIG.lumaCalendarId + '/events' : '';
     return {
       time: this.state.time,
       cfg: CONFIG,
@@ -38,6 +38,7 @@
       hasCal: !!luma,
       noCal: !luma,
       lumaSrc: luma,
+      eventsHref: luma ? '#events' : '#next',
       hasEvent: !!CONFIG.lumaEventId,
       noEvent: !CONFIG.lumaEventId,
       lumaEventHref: CONFIG.lumaEventId ? 'https://lu.ma/event/' + CONFIG.lumaEventId : '',

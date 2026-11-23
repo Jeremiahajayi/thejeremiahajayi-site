@@ -1262,6 +1262,9 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 @media (max-width:1080px){.wx-live-g{grid-template-columns:1fr}}
 @media (max-width:760px){.wx-issues,.wx-more-g{grid-template-columns:1fr}}
 .wx-x{}
+.wx-live .wx-cal{margin-top:clamp(48px,5vw,72px)}
+.wx-cal-t{margin:0 0 16px;font:700 clamp(26px,2.4vw,34px)/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em}
+.wx-live .wx-cal iframe{height:520px;border:1.5px solid #111;box-shadow:5px 5px 0 #111}
 @media (max-width:640px){.wx-stage{width:min(100%,330px)}.wx-body p:not(.eyebrow):not(.wx-meta),.wx-intro,.wx-issue p,.wx-box p,.wx-next p.wx-np{font-size:17px}.wx-sec-cta .h-btn{width:100%;justify-content:center}}
 /* ── responsive ── */
 @media (max-width:1080px){
@@ -1357,7 +1360,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <p>Or we might take a new problem and figure out how we’d approach it together.</p>
 <p>You can join us, ask questions, and share your ideas.</p>
 <p class="wx-meta">Second Tuesday of every month · 7 PM WAT · Online</p>
-<div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="#next">See upcoming events <span class="arr" aria-hidden="true">→</span></a></div>
+<div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="#events">See upcoming events <span class="arr" aria-hidden="true">→</span></a></div>
 </div>
 <div class="wx-next" id="next">
 <p class="eyebrow">Coming up next</p>
@@ -1376,7 +1379,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 </div>
 </div>
 </div>
-
+<div class="wrap"><div class="wx-cal" id="events"><h3 class="wx-cal-t">Upcoming events</h3><iframe src="https://luma.com/embed/calendar/cal-1i6etFX2KE5qTrA/events" title="Upcoming What I’d Do live events on Luma" loading="lazy" allowfullscreen></iframe></div></div>
 </section>
 
 <section class="wx-more" aria-label="Send a problem, and who runs What I’d Do">
