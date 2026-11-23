@@ -14,6 +14,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');</script>
 <!-- End Google Tag Manager -->`;
+// Google Analytics 4 (measurement ID G-537Y2VKCZ1), installed directly with gtag.js.
+const GA4_ID = 'G-537Y2VKCZ1';
+const GA4_HEAD = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${GA4_ID}');
+</script>`;
 const GTM_BODY = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
 const ROLE = 'Marketing consultant for B2B SaaS and technology companies';
 
@@ -170,6 +180,7 @@ for (const page of PAGES) {
   const doc = `<!doctype html>
 <html lang="en">
 <head>
+${GA4_HEAD}
 ${GTM_HEAD}
 ${page.out === 'index.html' ? "<script>try{if(sessionStorage.getItem('jgSeen')==='1')document.documentElement.classList.add('jg-skip')}catch(e){}</script>\n" : ''}<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
