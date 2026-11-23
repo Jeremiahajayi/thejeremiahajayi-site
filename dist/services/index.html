@@ -1749,6 +1749,23 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
     rimgs.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight * 0.9) el.classList.add('in'); else rio.observe(el); });
   }
 })();
+
+/* GA4: track Calendly booking clicks. Consulting calls send "book_call_click"; any other Calendly link sends "calendly_click". */
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="calendly.com"]') : null;
+    if (!a || typeof window.gtag !== 'function') return;
+    var url = a.href;
+    var consult = url.indexOf('calendly.com/jeremiahajayiconsultation/') !== -1;
+    var sec = a.closest('[id]');
+    window.gtag('event', consult ? 'book_call_click' : 'calendly_click', {
+      link_url: url.split('?')[0],
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100),
+      cta_location: sec ? sec.id : 'page',
+      transport_type: 'beacon'
+    });
+  }, true);
+})();
 </script>
 </body>
 </html>
