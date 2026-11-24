@@ -34,6 +34,7 @@ const PAGES = [
   { file: 'Site-Service-Launch.dc.html', out: 'services/product-launch-gtm/index.html', url: '/services/product-launch-gtm/', crumb: 'Launches & go-to-market', service: 'Product launch and go-to-market strategy', title: 'Product launch and GTM consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Product launches built for pipeline: a GTM brief, launch plan, sales enablement and launch-to-pipeline measurement. 20+ launches led.' },
   { file: 'Site-Service-Content.dc.html', out: 'services/content-growth/index.html', url: '/services/content-growth/', crumb: 'Content & organic growth', service: 'Content and organic growth', title: 'Content and organic growth consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Content strategy, SEO and AI search visibility for B2B SaaS, measured in pipeline. 174% organic growth at RemotePass.' },
   { file: 'Site-Work.dc.html', out: 'work/index.html', url: '/work/', crumb: 'Work', title: 'Work and case studies · Jeremiah Ajayi', desc: 'Case studies in positioning, launches and content: Stears, RemotePass, Certn, Xofu and more.' },
+  { file: 'Site-Portfolio.dc.html', out: 'portfolio/index.html', url: '/portfolio/', crumb: 'Portfolio', title: 'Portfolio: selected writing and content work · Jeremiah Ajayi', desc: 'Selected work by Jeremiah Ajayi: product launch pages, content engines, published essays, guides and customer stories for RemotePass, Xofu, Product Marketing Alliance and more.' },
   { file: 'Site-Writing.dc.html', out: 'writing/index.html', url: '/writing/', crumb: 'Writing', title: 'Writing and research · Jeremiah Ajayi', desc: 'Original research on AI search, launch and growth teardowns, and marketing playbooks.' },
   { file: 'Site-About.dc.html', out: 'about/index.html', url: '/about/', crumb: 'About', title: 'About Jeremiah Ajayi · Marketing consultant in Lagos', desc: 'Jeremiah Ajayi is a marketing consultant for B2B SaaS and technology companies, based in Lagos, and the co-founder of EmpowerQ.' },
   { file: 'Site-EmpowerQ.dc.html', out: 'empowerq/index.html', url: '/empowerq/', crumb: 'EmpowerQ', title: 'EmpowerQ · Co-founded by Jeremiah Ajayi', desc: 'EmpowerQ builds economic inclusion for LGBTQ+ professionals in Nigeria. Co-founded by Jeremiah Ajayi in 2025.' },
@@ -243,8 +244,6 @@ fs.writeFileSync(path.join(outDir, 'llms.txt'), `# Jeremiah Ajayi
 fs.writeFileSync(path.join(outDir, '_redirects'), `# Old Wix URLs
 /successstories /work/ 301
 /successstories/ /work/ 301
-/portfolio /work/ 301
-/portfolio/ /work/ 301
 /expertise /services/ 301
 /expertise/ /services/ 301
 # Before launch: migrate the Wix posts to /post/<slug> and the tool pages

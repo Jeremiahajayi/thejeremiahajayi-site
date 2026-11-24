@@ -1,8 +1,6 @@
 # Old Wix URLs
 /successstories /work/ 301
 /successstories/ /work/ 301
-/portfolio /work/ 301
-/portfolio/ /work/ 301
 /expertise /services/ 301
 /expertise/ /services/ 301
 # Blog posts live on WordPress at /blog/<slug>/; /post/<slug> redirects there (src/worker.js).

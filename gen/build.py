@@ -30,6 +30,7 @@ PAGES = {
     'contact': ('Site-Contact.dc.html', 'Contact · Jeremiah Ajayi', None, 2600),
     'empowerq': ('Site-EmpowerQ.dc.html', 'EmpowerQ · Jeremiah Ajayi', 'EmpowerQ', 6400),
     'writing': ('Site-Writing.dc.html', 'Writing & research · Jeremiah Ajayi', 'Writing', 5600),
+    'portfolio': ('Site-Portfolio.dc.html', 'Portfolio · Jeremiah Ajayi', 'Work', 7600),
     'about': ('Site-About.dc.html', 'About · Jeremiah Ajayi', 'About', 6600),
     'what-id-do': ('Site-WhatIdDo.dc.html', 'What I’d Do · Jeremiah Ajayi', 'What I’d Do', 8200),
 }
