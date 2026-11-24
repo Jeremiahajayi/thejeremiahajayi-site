@@ -39,6 +39,48 @@
       { k: 'content', client: 'Africa Fintech Marketing Report', year: 'Co-author', big: '30+', bigLabel: 'media outlets featured the report', title: 'Mapping how African fintechs market themselves', href: 'Site-Contact.dc.html' },
       { k: 'pos', client: 'Consulting', year: '2018–now', big: '5', bigLabel: 'Northzone, the Earthshot Prize, Africa Fintech Summit, SEON and Sokin', title: 'GTM and campaign projects for global organisations', href: 'Site-Contact.dc.html' }
     ];
+
+    const RP = 'https://www.remotepass.com';
+    const samples = [
+      { id: 'pw-launch', label: 'Launch pages and sales content', note: 'Copy that explains a product clearly enough for buyers to act on it.', items: [
+        { who: 'Xofu', t: 'Website and product messaging for an AI visibility platform', d: 'Homepage, free snapshot offer and product pages, all built around one buyer question: does AI recommend you when buyers shortlist vendors?', links: [ { l: 'Homepage', h: 'https://xofu.com/' }, { l: 'BOFU Visibility Snapshot', h: 'https://xofu.com/bofu' }, { l: 'How Xofu works', h: 'https://xofu.com/how-xofu-works' } ] },
+        { who: 'RemotePass', t: 'Ask AI launch page', h: RP + '/ai', d: 'Positioned an AI feature as a secure way to query workforce data, not another chatbot. Sales saw record MQLs after launch.' },
+        { who: 'RemotePass', t: 'APIs product page', h: RP + '/apis', d: 'Sells the outcome (fewer disconnected systems, cleaner workforce data) to buyers who will never read the API docs.' },
+        { who: 'RemotePass', t: 'How RemotePass solves global hiring for HR, finance and legal', h: RP + '/blog/how-remotepass-solves-the-global-hiring-headache-for-hr-finance-and-legal-teams', d: 'One article that answers three buying teams’ objections, so sales could send it before the first call.' },
+        { who: 'RemotePass', t: 'What the RemotePass EOR platform can and can’t do', h: RP + '/blog/what-remotepass-eor-platform-can-and-cant-do', d: 'Names the product’s limits up front, so prospects arrive with accurate expectations and leads fit better.' }
+      ] },
+      { id: 'pw-search', label: 'Content that ranks and brings in leads', note: 'Search assets built to win specific queries and turn readers into pipeline.', items: [
+        { who: 'RemotePass', t: 'Global Contractor Rate Index', h: RP + '/blog/global-contractor-rates-2025', d: '#1 on Google for “global contractor rates” and cited in the AI Overview. Inbound leads from 20+ markets.' },
+        { who: 'RemotePass', t: 'MENA HR & Payroll Hub', h: RP + '/mena-hr-payroll-hub', d: 'Strategy, site structure and technical SEO for UAE, Saudi, DIFC and ADGM topic clusters. Organic blog traffic grew to 50,000 visits a month and organic leads doubled.' },
+        { who: 'RemotePass', t: 'Country guides', h: RP + '/countryguide', d: 'A repeatable system that turns each market’s hiring, payroll, tax and compliance rules into searchable guides that lead to EOR and payroll.' },
+        { who: 'RemotePass', t: 'Remote work glossary', h: RP + '/remote-work-glossary', d: 'A to Z definitions built to win “what is” searches and build authority across EOR, payroll and contractor management.' },
+        { who: 'RemotePass', t: 'Hybrid work content cluster', d: 'Two linked articles that take HR leaders from choosing a hybrid model to writing and rolling out the policy.', links: [ { l: 'Part 1: Models and foundations', h: RP + '/blog/remote-vs-in-office-bridging-the-divide-with-a-winning-hybrid-work-strategy' }, { l: 'Part 2: Execution framework', h: RP + '/blog/how-to-create-a-win-win-hybrid-work-policy-for-your-team' } ] },
+        { who: 'Africa Fintech Summit', t: 'Fintech Marketing Report (co-author)', h: 'https://bitcoinke.io/wp-content/uploads/2024/03/Fintech-Marketing-Outlook-Nigeria-2024-BitKE.pdf', d: 'The first report on how Nigerian fintechs market themselves. Covered by 30+ media outlets.' }
+      ] },
+      { id: 'pw-bylines', label: 'Bylines and thought leadership', note: 'Frameworks from my own launches and teams, published where marketers read.', items: [
+        { who: 'Product Marketing Alliance', t: '7 systems that let me coordinate 15+ launches without burnout', h: 'https://www.productmarketingalliance.com/7-systems-that-let-me-coordinate-15-launches/', d: 'The operating systems behind 11+ RemotePass launches across EMEA, APAC and North America.' },
+        { who: 'Product Marketing Alliance', t: 'How I turned sales call chaos into GTM gold', h: 'https://www.productmarketingalliance.com/how-i-turned-sales-call-chaos-into-gtm-gold/', d: 'A three-step method for mining sales calls for buyer language, objections and positioning gaps.' },
+        { who: 'Product Marketing Alliance', t: 'The Compete or Carve framework', h: 'https://www.productmarketingalliance.com/the-compete-or-carve-framework/', d: 'Four questions for deciding whether to fight in an existing category or create a new one.' },
+        { who: 'Product Marketing Alliance', t: 'Messaging for multi-product companies', h: 'https://www.productmarketingalliance.com/messaging-for-multi-product-companies/', d: 'How to keep one clear story when several products and buyer types pull in different directions. Drawn from Stears and RemotePass.' },
+        { who: 'Product Marketing Alliance', t: 'The 5 steps that took me from content marketer to PMM', h: 'https://www.productmarketingalliance.com/the-5-steps-that-helped-me-go-from-content-marketer-to-pmm/', d: 'A first-hand account of the move, and one of the PMA community’s most-shared career pieces.' },
+        { who: 'ProductLed', t: 'Product-led marketing in a downturn', h: 'https://productled.com/blog/product-led-marketing-gtm-strategy', d: 'How to use the product itself to drive acquisition, activation and retention when budgets shrink.' },
+        { who: 'Buffer', t: '5 tips that made me a consistent content creator', h: 'https://buffer.com/resources/consistent-content-creator/', d: 'A systems-first way to publish consistently alongside a full-time job. Ranked #1 on Google for its main phrase.' },
+        { who: 'The Condia', t: 'How to execute community-led growth', h: 'https://thecondia.com/nigerian-startups-community-led-growth/', d: 'A playbook for Nigerian startups building an audience before they can afford to buy one.' },
+        { who: 'RemotePass', t: 'How SMBs can compete for global talent', h: RP + '/blog/how-smbs-can-compete-for-top-talent-in-a-global-hiring-market-in-2025', d: 'Positions RemotePass as a strategic partner for smaller companies, not just a payroll tool.' },
+        { who: 'RemotePass', t: 'The new $100K H-1B fee: a founder’s guide', h: RP + '/blog/the-new-100k-h1b-fee-a-founders-guide-to-global-talent-without-it', d: 'Published inside the news cycle to reach US founders rethinking how they hire.' },
+        { who: 'VEC Studio', t: 'VC content marketing: First Round Capital’s playbook', h: 'https://victoreduoh.com/vc-content-marketing-first-round-capital-content-playbook/', d: 'How First Round uses long-form content to earn founders’ trust, written for a client copying the model.' },
+        { who: 'Guide', t: 'Hiring global talent without Bay Area salaries', h: 'https://docs.google.com/document/d/1a_hWTNfAElKTLxcfhaSn74NzRteaix8n/edit', d: 'The financial case for early-stage founders to hire globally by default.' }
+      ] },
+      { id: 'pw-guides', label: 'Guides, toolkits and templates', note: 'Gated and downloadable assets built to capture demand.', items: [
+        { who: 'Toolkit · 50+ pages', t: 'Contractor hiring toolkit', h: 'https://drive.google.com/file/d/1pNuYLGgN9QxatTP4CMc3oOvbB8V3AZpI/view', d: 'Classification, compliance, onboarding, payments and country tax rules, with templates and checklists.' },
+        { who: 'Playbook', t: 'A founder’s playbook for hiring global talent', h: 'https://drive.google.com/file/d/1-T2xq4Wrd4cA5wELzKu0v-OhR_jaoI8r/view', d: 'Where, when and how to hire abroad, and when to use contractors, an EOR, a contractor of record or your own entity.' },
+        { who: 'Template', t: 'Strategic HR plan template', h: 'https://docs.google.com/document/d/1z6KgU_a2PijIEPuH4UCoTwZjMSYIzmxV/edit', d: 'An eight-step template that ties people priorities to business goals, from objectives to quarterly reviews.' },
+        { who: 'Report', t: 'The annual leave guide', h: 'https://drive.google.com/file/d/1VgkJhZ2X4i8tOGpQaAVP6wRilZtwx_Co/view', d: 'Statutory leave rules across 150+ countries, still bringing in organic traffic from HR teams.' }
+      ] },
+      { id: 'pw-stories', label: 'Customer stories', note: 'Proof sales could send to buyers.', items: [
+        { who: 'RemotePass', t: 'Customer case study series', d: 'Problem, solution and result stories that gave sales credible proof for buyers comparing platforms.', links: [ { l: 'Podeo: 32% headcount growth, AED 50K+ saved', h: RP + '/case-studies/podeo' }, { l: 'Pemo: 7× team growth, onboarding under 10 minutes', h: RP + '/case-studies/pemo' }, { l: 'Moniepoint: payroll from five days to one', h: RP + '/case-studies/moniepoint' } ] }
+      ] }
+    ];
     const f = this.state.f;
     const filters = [{ id: 'all', label: 'All' }, { id: 'pos', label: 'Positioning' }, { id: 'launch', label: 'Launches' }, { id: 'content', label: 'Content' }];
     return {
@@ -141,6 +183,8 @@
           { t: 'Launched the Citation Audit, with engagement-based onboarding emails.' }
         ]
       },
+      pwGroups: samples.map((g) => ({ ...g, count: g.items.length, items: g.items.map((x) => ({ ...x, hasH: !!x.h, noH: !x.h, hasL: !!(x.links && x.links.length), links: x.links || [] })) })),
+      pwCount: samples.reduce((n, g) => n + g.items.length, 0),
       filters: filters.map((x) => ({ id: x.id, label: x.label, count: x.id === 'all' ? projects.length : projects.filter((p) => p.k === x.id).length, pressed: x.id === f ? 'true' : 'false', bg: x.id === f ? '#111' : 'transparent', fg: x.id === f ? '#F2EFE8' : '#111', border: x.id === f ? '#111' : '#C9C3B6', pick: () => this.setState({ f: x.id }) })),
       shown: projects.filter((p) => f === 'all' || p.k === f).map((p) => ({ ...p, cls: p.dark ? 'is-deep' : '', tag: tags[p.k], cta: p.deep ? 'See the case →' : 'Ask me about it →', bg: p.dark ? '#111' : (p.orange ? '#E6E1D6' : '#F2EFE8'), fg: p.dark ? '#F2EFE8' : '#111', rule: p.dark ? '#3A3934' : 'rgba(17,17,17,.2)' }))
     };

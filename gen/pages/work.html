@@ -108,6 +108,24 @@
 .wk-grid .k-stk.is-deep .k-tag{color:#FFC83D}
 @media (max-width:1080px){.wk-en-big{grid-template-columns:1fr 1fr}.wk-pillars{grid-template-columns:1fr}.wk-st-more,.wk-log,.wk-en-imgs,.wk-en-res,.wk-xf{grid-template-columns:1fr}.wk-st-res{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-touch{grid-template-columns:1fr}.wk-ai-g{grid-template-columns:1fr}}
 @media (max-width:640px){.wk-pillars{gap:24px}.wk-en-big{gap:16px}.wk-touch{gap:20px}.wk-log{gap:24px}.wk-st-more{gap:28px}.wk-st-res{gap:12px}.wk-jumps a{min-height:56px}.wk-grid{gap:24px}.wk-fan{height:300px}.wk-cn-fan{height:220px}.wk-xf-fan{height:260px}.wk-ksa{height:240px}.wk-en-imgs .k-fig:nth-child(2){margin-top:0}}
+.pw-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 clamp(36px,4vw,52px)}
+.pw-jump a{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid #111;background:#FFFDF6;color:#111;font:700 14px 'DM Sans',system-ui,sans-serif;text-decoration:none;transition:transform .2s}
+.pw-jump a:hover{transform:translateY(-2px)}
+.pw-jump a span{opacity:.6;font-weight:600}
+.pw-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);padding:clamp(28px,3vw,40px) 0;border-top:2px solid #111;scroll-margin-top:90px}
+.pw-g h3{margin:0 0 10px;font:700 clamp(24px,2.4vw,32px)/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
+.pw-g>div:first-child p{margin:0;font-size:15px;line-height:1.55;color:#45423C;max-width:34ch}
+.pw-list{margin:0;padding:0;list-style:none}
+.pw-list li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid #E3D6B0}
+.pw-list li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.pw-who{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#6B675F;margin-bottom:4px}
+.pw-t{font:700 19px/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:#111;text-decoration:none}
+a.pw-t:hover{color:#C23A0E}
+.pw-d{margin:6px 0 0;font-size:15px;line-height:1.55;color:#45423C;max-width:64ch}
+.pw-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px}
+.pw-links a{font-size:14px;font-weight:700;color:#111;text-decoration:underline;text-decoration-color:#FF5A2A;text-underline-offset:4px;text-decoration-thickness:2px}
+.pw-links a:hover{color:#C23A0E}
+@media (max-width:900px){.pw-g{grid-template-columns:1fr}}
 </style>
 <section class="k-hero k-cream wk-hero">
 <div class="k-motif m-proof" aria-hidden="true"><div class="mo-grid"></div><svg class="mo-svg mo-proof" viewBox="0 0 800 420" preserveAspectRatio="xMaxYMax meet"><path class="mo-line" d="M10 400 L 140 360 L 250 372 L 360 300 L 470 280 L 580 190 L 690 150 L 790 30" fill="none" stroke="#FF5A2A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="790" cy="30" r="10" fill="#FF5A2A"/></svg></div>
@@ -115,8 +133,8 @@
 <div>
 <p class="eyebrow">Work · 2018 to 2026</p>
 <h1 class="sg k-h1">Eight years of making good products easier to choose<span class="k-dot">.</span></h1>
-<p class="k-lede">Six projects in depth, then the rest. For each one: what I was responsible for, what I made, and what changed.</p>
-<div class="k-cta"><a class="btn-o h-btn" href="#stears">Start with Stears <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#index">All projects <span class="arr" aria-hidden="true">→</span></a></div>
+<p class="k-lede">Six projects in depth, then every other project and the published work you can read for yourself. For each one: what I was responsible for, what I made, and what changed.</p>
+<div class="k-cta"><a class="btn-o h-btn" href="#stears">Start with Stears <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#published">Published work <span class="arr" aria-hidden="true">→</span></a></div>
 </div>
 <div class="k-fan wk-fan" aria-hidden="true">
 <img class="f1" src="/_blob/fc39c3db9800ffc1933e240a5186b657" alt="">
@@ -135,6 +153,7 @@
 <nav class="wrap" aria-label="Case studies on this page" style="margin-top: 22px"><p class="eyebrow">Jump to a case</p><div class="wk-jumps">
 <sc-for list="{{jumps}}" as="j" hint-placeholder-count="6"><a href="{{j.href}}"><b>{{j.n}}</b>{{j.t}}<span>{{j.s}}</span></a></sc-for>
 <a href="#index"><b>+</b>All projects</a>
+<a href="#published"><b>+</b>Published work</a>
 </div></nav>
 </div>
 
@@ -335,7 +354,23 @@
 <a class="k-stk {{p.cls}}" data-k="{{p.k}}" href="{{p.href}}"><span class="k-kicker">{{p.client}} · {{p.year}}</span><span class="k-big">{{p.big}}</span><span style="font-size: 14.5px; line-height: 1.45">{{p.bigLabel}}</span><span class="card-t">{{p.title}}</span><span class="k-tag">{{p.tag}}</span><span class="k-go">{{p.cta}}</span></a>
 </sc-for>
 </div>
-<p style="margin: 32px 0 0"><a class="h-link" href="Site-Portfolio.dc.html">See the full portfolio: landing pages, guides, essays and customer stories <span class="arr" aria-hidden="true">→</span></a></p>
+</div>
+</section>
+
+<section id="published" class="k-sec k-cream" aria-labelledby="pw-t">
+<div class="wrap">
+<div class="k-head"><p class="eyebrow">Portfolio</p><h2 id="pw-t" class="sg k-h2">The published work<span class="k-dot">.</span></h2><p class="k-sum">{{pwCount}} live pieces you can open and read: launch pages, search content, bylines, guides and customer stories.</p></div>
+<nav class="pw-jump" aria-label="Published work by type"><sc-for list="{{pwGroups}}" as="g" hint-placeholder-count="5"><a href="#{{g.id}}">{{g.label}} <span>{{g.count}}</span></a></sc-for></nav>
+<sc-for list="{{pwGroups}}" as="g" hint-placeholder-count="5">
+<div class="pw-g" id="{{g.id}}">
+<div><h3>{{g.label}}</h3><p>{{g.note}}</p></div>
+<ul class="pw-list">
+<sc-for list="{{g.items}}" as="x" hint-placeholder-count="4">
+<li><span class="pw-who">{{x.who}}</span><sc-if value="{{x.hasH}}"><a class="pw-t" href="{{x.h}}">{{x.t}} <span aria-hidden="true">↗</span></a></sc-if><sc-if value="{{x.noH}}"><span class="pw-t">{{x.t}}</span></sc-if><p class="pw-d">{{x.d}}</p><sc-if value="{{x.hasL}}"><div class="pw-links"><sc-for list="{{x.links}}" as="l"><a href="{{l.h}}">{{l.l}} <span aria-hidden="true">↗</span></a></sc-for></div></sc-if></li>
+</sc-for>
+</ul>
+</div>
+</sc-for>
 </div>
 </section>
 

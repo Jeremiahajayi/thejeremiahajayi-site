@@ -1221,6 +1221,24 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 .wk-grid .k-stk.is-deep .k-tag{color:#FFC83D}
 @media (max-width:1080px){.wk-en-big{grid-template-columns:1fr 1fr}.wk-pillars{grid-template-columns:1fr}.wk-st-more,.wk-log,.wk-en-imgs,.wk-en-res,.wk-xf{grid-template-columns:1fr}.wk-st-res{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-touch{grid-template-columns:1fr}.wk-ai-g{grid-template-columns:1fr}}
 @media (max-width:640px){.wk-pillars{gap:24px}.wk-en-big{gap:16px}.wk-touch{gap:20px}.wk-log{gap:24px}.wk-st-more{gap:28px}.wk-st-res{gap:12px}.wk-jumps a{min-height:56px}.wk-grid{gap:24px}.wk-fan{height:300px}.wk-cn-fan{height:220px}.wk-xf-fan{height:260px}.wk-ksa{height:240px}.wk-en-imgs .k-fig:nth-child(2){margin-top:0}}
+.pw-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 clamp(36px,4vw,52px)}
+.pw-jump a{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid #111;background:#FFFDF6;color:#111;font:700 14px 'DM Sans',system-ui,sans-serif;text-decoration:none;transition:transform .2s}
+.pw-jump a:hover{transform:translateY(-2px)}
+.pw-jump a span{opacity:.6;font-weight:600}
+.pw-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);padding:clamp(28px,3vw,40px) 0;border-top:2px solid #111;scroll-margin-top:90px}
+.pw-g h3{margin:0 0 10px;font:700 clamp(24px,2.4vw,32px)/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em}
+.pw-g>div:first-child p{margin:0;font-size:15px;line-height:1.55;color:#45423C;max-width:34ch}
+.pw-list{margin:0;padding:0;list-style:none}
+.pw-list li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid #E3D6B0}
+.pw-list li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.pw-who{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#6B675F;margin-bottom:4px}
+.pw-t{font:700 19px/1.3 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:#111;text-decoration:none}
+a.pw-t:hover{color:#C23A0E}
+.pw-d{margin:6px 0 0;font-size:15px;line-height:1.55;color:#45423C;max-width:64ch}
+.pw-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px}
+.pw-links a{font-size:14px;font-weight:700;color:#111;text-decoration:underline;text-decoration-color:#FF5A2A;text-underline-offset:4px;text-decoration-thickness:2px}
+.pw-links a:hover{color:#C23A0E}
+@media (max-width:900px){.pw-g{grid-template-columns:1fr}}
 </style>
 <section class="k-hero k-cream wk-hero">
 <div class="k-motif m-proof" aria-hidden="true"><div class="mo-grid"></div><svg class="mo-svg mo-proof" viewBox="0 0 800 420" preserveAspectRatio="xMaxYMax meet"><path class="mo-line" d="M10 400 L 140 360 L 250 372 L 360 300 L 470 280 L 580 190 L 690 150 L 790 30" fill="none" stroke="#FF5A2A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="790" cy="30" r="10" fill="#FF5A2A"/></svg></div>
@@ -1228,8 +1246,8 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <div>
 <p class="eyebrow">Work · 2018 to 2026</p>
 <h1 class="sg k-h1">Eight years of making good products easier to choose<span class="k-dot">.</span></h1>
-<p class="k-lede">Six projects in depth, then the rest. For each one: what I was responsible for, what I made, and what changed.</p>
-<div class="k-cta"><a class="btn-o h-btn" href="#stears">Start with Stears <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#index">All projects <span class="arr" aria-hidden="true">→</span></a></div>
+<p class="k-lede">Six projects in depth, then every other project and the published work you can read for yourself. For each one: what I was responsible for, what I made, and what changed.</p>
+<div class="k-cta"><a class="btn-o h-btn" href="#stears">Start with Stears <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#published">Published work <span class="arr" aria-hidden="true">→</span></a></div>
 </div>
 <div class="k-fan wk-fan" aria-hidden="true">
 <img class="f1" src="/_blob/fc39c3db9800ffc1933e240a5186b657" alt="">
@@ -1248,6 +1266,7 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <nav class="wrap" aria-label="Case studies on this page" style="margin-top: 22px"><p class="eyebrow">Jump to a case</p><div class="wk-jumps">
 <sc-for list="{{jumps}}" as="j" hint-placeholder-count="6"><a href="{{j.href}}"><b>{{j.n}}</b>{{j.t}}<span>{{j.s}}</span></a></sc-for>
 <a href="#index"><b>+</b>All projects</a>
+<a href="#published"><b>+</b>Published work</a>
 </div></nav>
 </div>
 
@@ -1448,7 +1467,23 @@ a.k-stk.s-ink:hover,a.k-stk.s-night:hover,a.k-stk.s-plum:hover{color:#F2EFE8}
 <a class="k-stk {{p.cls}}" data-k="{{p.k}}" href="{{p.href}}"><span class="k-kicker">{{p.client}} · {{p.year}}</span><span class="k-big">{{p.big}}</span><span style="font-size: 14.5px; line-height: 1.45">{{p.bigLabel}}</span><span class="card-t">{{p.title}}</span><span class="k-tag">{{p.tag}}</span><span class="k-go">{{p.cta}}</span></a>
 </sc-for>
 </div>
-<p style="margin: 32px 0 0"><a class="h-link" href="Site-Portfolio.dc.html">See the full portfolio: landing pages, guides, essays and customer stories <span class="arr" aria-hidden="true">→</span></a></p>
+</div>
+</section>
+
+<section id="published" class="k-sec k-cream" aria-labelledby="pw-t">
+<div class="wrap">
+<div class="k-head"><p class="eyebrow">Portfolio</p><h2 id="pw-t" class="sg k-h2">The published work<span class="k-dot">.</span></h2><p class="k-sum">{{pwCount}} live pieces you can open and read: launch pages, search content, bylines, guides and customer stories.</p></div>
+<nav class="pw-jump" aria-label="Published work by type"><sc-for list="{{pwGroups}}" as="g" hint-placeholder-count="5"><a href="#{{g.id}}">{{g.label}} <span>{{g.count}}</span></a></sc-for></nav>
+<sc-for list="{{pwGroups}}" as="g" hint-placeholder-count="5">
+<div class="pw-g" id="{{g.id}}">
+<div><h3>{{g.label}}</h3><p>{{g.note}}</p></div>
+<ul class="pw-list">
+<sc-for list="{{g.items}}" as="x" hint-placeholder-count="4">
+<li><span class="pw-who">{{x.who}}</span><sc-if value="{{x.hasH}}"><a class="pw-t" href="{{x.h}}">{{x.t}} <span aria-hidden="true">↗</span></a></sc-if><sc-if value="{{x.noH}}"><span class="pw-t">{{x.t}}</span></sc-if><p class="pw-d">{{x.d}}</p><sc-if value="{{x.hasL}}"><div class="pw-links"><sc-for list="{{x.links}}" as="l"><a href="{{l.h}}">{{l.l}} <span aria-hidden="true">↗</span></a></sc-for></div></sc-if></li>
+</sc-for>
+</ul>
+</div>
+</sc-for>
 </div>
 </section>
 
@@ -1518,6 +1553,48 @@ class Component extends DCLogic {
       { k: 'content', client: 'VEC Studio', year: '2021–22', big: '+49%', bigLabel: 'monthly organic traffic for a B2B SaaS client', title: 'Product-led content for SEON, Kittl and Blackthorn', href: 'Site-Contact.dc.html' },
       { k: 'content', client: 'Africa Fintech Marketing Report', year: 'Co-author', big: '30+', bigLabel: 'media outlets featured the report', title: 'Mapping how African fintechs market themselves', href: 'Site-Contact.dc.html' },
       { k: 'pos', client: 'Consulting', year: '2018–now', big: '5', bigLabel: 'Northzone, the Earthshot Prize, Africa Fintech Summit, SEON and Sokin', title: 'GTM and campaign projects for global organisations', href: 'Site-Contact.dc.html' }
+    ];
+
+    const RP = 'https://www.remotepass.com';
+    const samples = [
+      { id: 'pw-launch', label: 'Launch pages and sales content', note: 'Copy that explains a product clearly enough for buyers to act on it.', items: [
+        { who: 'Xofu', t: 'Website and product messaging for an AI visibility platform', d: 'Homepage, free snapshot offer and product pages, all built around one buyer question: does AI recommend you when buyers shortlist vendors?', links: [ { l: 'Homepage', h: 'https://xofu.com/' }, { l: 'BOFU Visibility Snapshot', h: 'https://xofu.com/bofu' }, { l: 'How Xofu works', h: 'https://xofu.com/how-xofu-works' } ] },
+        { who: 'RemotePass', t: 'Ask AI launch page', h: RP + '/ai', d: 'Positioned an AI feature as a secure way to query workforce data, not another chatbot. Sales saw record MQLs after launch.' },
+        { who: 'RemotePass', t: 'APIs product page', h: RP + '/apis', d: 'Sells the outcome (fewer disconnected systems, cleaner workforce data) to buyers who will never read the API docs.' },
+        { who: 'RemotePass', t: 'How RemotePass solves global hiring for HR, finance and legal', h: RP + '/blog/how-remotepass-solves-the-global-hiring-headache-for-hr-finance-and-legal-teams', d: 'One article that answers three buying teams’ objections, so sales could send it before the first call.' },
+        { who: 'RemotePass', t: 'What the RemotePass EOR platform can and can’t do', h: RP + '/blog/what-remotepass-eor-platform-can-and-cant-do', d: 'Names the product’s limits up front, so prospects arrive with accurate expectations and leads fit better.' }
+      ] },
+      { id: 'pw-search', label: 'Content that ranks and brings in leads', note: 'Search assets built to win specific queries and turn readers into pipeline.', items: [
+        { who: 'RemotePass', t: 'Global Contractor Rate Index', h: RP + '/blog/global-contractor-rates-2025', d: '#1 on Google for “global contractor rates” and cited in the AI Overview. Inbound leads from 20+ markets.' },
+        { who: 'RemotePass', t: 'MENA HR & Payroll Hub', h: RP + '/mena-hr-payroll-hub', d: 'Strategy, site structure and technical SEO for UAE, Saudi, DIFC and ADGM topic clusters. Organic blog traffic grew to 50,000 visits a month and organic leads doubled.' },
+        { who: 'RemotePass', t: 'Country guides', h: RP + '/countryguide', d: 'A repeatable system that turns each market’s hiring, payroll, tax and compliance rules into searchable guides that lead to EOR and payroll.' },
+        { who: 'RemotePass', t: 'Remote work glossary', h: RP + '/remote-work-glossary', d: 'A to Z definitions built to win “what is” searches and build authority across EOR, payroll and contractor management.' },
+        { who: 'RemotePass', t: 'Hybrid work content cluster', d: 'Two linked articles that take HR leaders from choosing a hybrid model to writing and rolling out the policy.', links: [ { l: 'Part 1: Models and foundations', h: RP + '/blog/remote-vs-in-office-bridging-the-divide-with-a-winning-hybrid-work-strategy' }, { l: 'Part 2: Execution framework', h: RP + '/blog/how-to-create-a-win-win-hybrid-work-policy-for-your-team' } ] },
+        { who: 'Africa Fintech Summit', t: 'Fintech Marketing Report (co-author)', h: 'https://bitcoinke.io/wp-content/uploads/2024/03/Fintech-Marketing-Outlook-Nigeria-2024-BitKE.pdf', d: 'The first report on how Nigerian fintechs market themselves. Covered by 30+ media outlets.' }
+      ] },
+      { id: 'pw-bylines', label: 'Bylines and thought leadership', note: 'Frameworks from my own launches and teams, published where marketers read.', items: [
+        { who: 'Product Marketing Alliance', t: '7 systems that let me coordinate 15+ launches without burnout', h: 'https://www.productmarketingalliance.com/7-systems-that-let-me-coordinate-15-launches/', d: 'The operating systems behind 11+ RemotePass launches across EMEA, APAC and North America.' },
+        { who: 'Product Marketing Alliance', t: 'How I turned sales call chaos into GTM gold', h: 'https://www.productmarketingalliance.com/how-i-turned-sales-call-chaos-into-gtm-gold/', d: 'A three-step method for mining sales calls for buyer language, objections and positioning gaps.' },
+        { who: 'Product Marketing Alliance', t: 'The Compete or Carve framework', h: 'https://www.productmarketingalliance.com/the-compete-or-carve-framework/', d: 'Four questions for deciding whether to fight in an existing category or create a new one.' },
+        { who: 'Product Marketing Alliance', t: 'Messaging for multi-product companies', h: 'https://www.productmarketingalliance.com/messaging-for-multi-product-companies/', d: 'How to keep one clear story when several products and buyer types pull in different directions. Drawn from Stears and RemotePass.' },
+        { who: 'Product Marketing Alliance', t: 'The 5 steps that took me from content marketer to PMM', h: 'https://www.productmarketingalliance.com/the-5-steps-that-helped-me-go-from-content-marketer-to-pmm/', d: 'A first-hand account of the move, and one of the PMA community’s most-shared career pieces.' },
+        { who: 'ProductLed', t: 'Product-led marketing in a downturn', h: 'https://productled.com/blog/product-led-marketing-gtm-strategy', d: 'How to use the product itself to drive acquisition, activation and retention when budgets shrink.' },
+        { who: 'Buffer', t: '5 tips that made me a consistent content creator', h: 'https://buffer.com/resources/consistent-content-creator/', d: 'A systems-first way to publish consistently alongside a full-time job. Ranked #1 on Google for its main phrase.' },
+        { who: 'The Condia', t: 'How to execute community-led growth', h: 'https://thecondia.com/nigerian-startups-community-led-growth/', d: 'A playbook for Nigerian startups building an audience before they can afford to buy one.' },
+        { who: 'RemotePass', t: 'How SMBs can compete for global talent', h: RP + '/blog/how-smbs-can-compete-for-top-talent-in-a-global-hiring-market-in-2025', d: 'Positions RemotePass as a strategic partner for smaller companies, not just a payroll tool.' },
+        { who: 'RemotePass', t: 'The new $100K H-1B fee: a founder’s guide', h: RP + '/blog/the-new-100k-h1b-fee-a-founders-guide-to-global-talent-without-it', d: 'Published inside the news cycle to reach US founders rethinking how they hire.' },
+        { who: 'VEC Studio', t: 'VC content marketing: First Round Capital’s playbook', h: 'https://victoreduoh.com/vc-content-marketing-first-round-capital-content-playbook/', d: 'How First Round uses long-form content to earn founders’ trust, written for a client copying the model.' },
+        { who: 'Guide', t: 'Hiring global talent without Bay Area salaries', h: 'https://docs.google.com/document/d/1a_hWTNfAElKTLxcfhaSn74NzRteaix8n/edit', d: 'The financial case for early-stage founders to hire globally by default.' }
+      ] },
+      { id: 'pw-guides', label: 'Guides, toolkits and templates', note: 'Gated and downloadable assets built to capture demand.', items: [
+        { who: 'Toolkit · 50+ pages', t: 'Contractor hiring toolkit', h: 'https://drive.google.com/file/d/1pNuYLGgN9QxatTP4CMc3oOvbB8V3AZpI/view', d: 'Classification, compliance, onboarding, payments and country tax rules, with templates and checklists.' },
+        { who: 'Playbook', t: 'A founder’s playbook for hiring global talent', h: 'https://drive.google.com/file/d/1-T2xq4Wrd4cA5wELzKu0v-OhR_jaoI8r/view', d: 'Where, when and how to hire abroad, and when to use contractors, an EOR, a contractor of record or your own entity.' },
+        { who: 'Template', t: 'Strategic HR plan template', h: 'https://docs.google.com/document/d/1z6KgU_a2PijIEPuH4UCoTwZjMSYIzmxV/edit', d: 'An eight-step template that ties people priorities to business goals, from objectives to quarterly reviews.' },
+        { who: 'Report', t: 'The annual leave guide', h: 'https://drive.google.com/file/d/1VgkJhZ2X4i8tOGpQaAVP6wRilZtwx_Co/view', d: 'Statutory leave rules across 150+ countries, still bringing in organic traffic from HR teams.' }
+      ] },
+      { id: 'pw-stories', label: 'Customer stories', note: 'Proof sales could send to buyers.', items: [
+        { who: 'RemotePass', t: 'Customer case study series', d: 'Problem, solution and result stories that gave sales credible proof for buyers comparing platforms.', links: [ { l: 'Podeo: 32% headcount growth, AED 50K+ saved', h: RP + '/case-studies/podeo' }, { l: 'Pemo: 7× team growth, onboarding under 10 minutes', h: RP + '/case-studies/pemo' }, { l: 'Moniepoint: payroll from five days to one', h: RP + '/case-studies/moniepoint' } ] }
+      ] }
     ];
     const f = this.state.f;
     const filters = [{ id: 'all', label: 'All' }, { id: 'pos', label: 'Positioning' }, { id: 'launch', label: 'Launches' }, { id: 'content', label: 'Content' }];
@@ -1621,6 +1698,8 @@ class Component extends DCLogic {
           { t: 'Launched the Citation Audit, with engagement-based onboarding emails.' }
         ]
       },
+      pwGroups: samples.map((g) => ({ ...g, count: g.items.length, items: g.items.map((x) => ({ ...x, hasH: !!x.h, noH: !x.h, hasL: !!(x.links && x.links.length), links: x.links || [] })) })),
+      pwCount: samples.reduce((n, g) => n + g.items.length, 0),
       filters: filters.map((x) => ({ id: x.id, label: x.label, count: x.id === 'all' ? projects.length : projects.filter((p) => p.k === x.id).length, pressed: x.id === f ? 'true' : 'false', bg: x.id === f ? '#111' : 'transparent', fg: x.id === f ? '#F2EFE8' : '#111', border: x.id === f ? '#111' : '#C9C3B6', pick: () => this.setState({ f: x.id }) })),
       shown: projects.filter((p) => f === 'all' || p.k === f).map((p) => ({ ...p, cls: p.dark ? 'is-deep' : '', tag: tags[p.k], cta: p.deep ? 'See the case →' : 'Ask me about it →', bg: p.dark ? '#111' : (p.orange ? '#E6E1D6' : '#F2EFE8'), fg: p.dark ? '#F2EFE8' : '#111', rule: p.dark ? '#3A3934' : 'rgba(17,17,17,.2)' }))
     };
