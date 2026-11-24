@@ -975,7 +975,7 @@ body:has(.nav-t:checked) .mbar,body:has(.gd-open) .mbar,body:has(.nav-t:checked)
 <p class="eyebrow">Writing & research</p>
 <h2 id="rs-title" class="sg rs-title">I write about how buyers find, judge and <span>choose.</span></h2>
 <ul class="rs-list">
-<sc-for list="{{writing}}" as="w" hint-placeholder-count="6"><li><a class="rs-row" href="{{w.href}}"><span class="rs-outlet">{{w.outlet}}</span><span class="rs-t">{{w.title}}</span><span class="rs-note">{{w.note}}</span></a></li></sc-for>
+<sc-for list="{{writing}}" as="w" hint-placeholder-count="8"><li><a class="rs-row" href="{{w.href}}"><span class="rs-outlet">{{w.outlet}}</span><span class="rs-t">{{w.title}}</span><span class="rs-note">{{w.note}}</span></a></li></sc-for>
 </ul>
 <p><a class="h-link" href="Site-Writing.dc.html">All writing and research <span class="arr" aria-hidden="true">→</span></a></p>
 </div>
@@ -1134,10 +1134,12 @@ class Component extends DCLogic {
       writing: [
         { outlet: 'Report · 2026', title: 'The State of AI Search in Nigeria', note: 'Co-author. The first report of its kind in the country.', href: 'https://stateofaisearchinnigeria.eo.page/download' },
         { outlet: 'Foundation Labs', title: 'The Ghost Citation', note: 'Traced 240 AI answers to find the sources AI uses to describe n8n. One of four AI-search studies I authored.', href: 'https://foundationinc.co/lab/' },
-        { outlet: 'Condia', title: 'Succeeding in tech as a non-technical talent', note: 'Insights from 20+ professionals. Condia’s 2nd most-read article of 2022.', href: 'http://benjamindada.com/succeeding-tech-non-technical-person-20-experts/' },
-        { outlet: 'Buffer', title: 'How to be a consistent content creator', note: 'Guest post. Ranked #1 on Google for its main search phrase.', href: 'https://buffer.com/resources/consistent-content-creator/' },
-        { outlet: 'Condia', title: 'The Investors’ Corner', note: 'A series I created to demystify African VC, with Kola Aina (Ventures Platform) and Basil Moftah (Nclude).', href: 'https://thecondia.com/category/the-investors-corner/' },
-        { outlet: 'My site', title: 'How to turn a product launch into sales conversations', note: 'A teardown of Arrows’ relaunch, and what sales needs from every launch.', href: 'https://www.thejeremiahajayi.com/post/saas-product-launch-proof-gap' }
+        { outlet: 'Report · Co-author', title: 'The Africa Fintech Marketing Report', note: 'The first study of how Nigerian fintechs market themselves. Covered by 30+ media outlets.', href: 'https://bitcoinke.io/wp-content/uploads/2024/03/Fintech-Marketing-Outlook-Nigeria-2024-BitKE.pdf' },
+        { outlet: 'PMA · Positioning', title: 'The ‘compete or carve’ framework', note: 'Four questions for choosing your positioning strategy before the wrong one costs you.', href: 'https://www.productmarketingalliance.com/the-compete-or-carve-framework/' },
+        { outlet: 'PMA · Messaging', title: 'Messaging for multi-product companies', note: 'How to keep one clear story when several products and buyers pull in different directions.', href: 'https://www.productmarketingalliance.com/messaging-for-multi-product-companies/' },
+        { outlet: 'PMA · Go-to-market', title: '7 systems that let me coordinate 15+ launches without burnout', note: 'The operating systems behind my RemotePass launches across EMEA, APAC and North America.', href: 'https://www.productmarketingalliance.com/7-systems-that-let-me-coordinate-15-launches/' },
+        { outlet: 'PMA · Go-to-market', title: 'How I turned sales call chaos into GTM gold', note: 'A three-step framework for mining sales calls for buyer language, objections and positioning gaps.', href: 'https://www.productmarketingalliance.com/how-i-turned-sales-call-chaos-into-gtm-gold/' },
+        { outlet: 'PMA · Careers', title: 'The 5 steps that helped me go from content marketer to PMM', note: 'A first-hand account of the move, and one of the community’s most-shared career pieces.', href: 'https://www.productmarketingalliance.com/the-5-steps-that-helped-me-go-from-content-marketer-to-pmm/' }
       ],
       doors: doors.map((d, i) => ({ ...d, selected: i === di ? 'true' : 'false', bg: i === di ? '#111' : 'transparent', fg: i === di ? '#F2EFE8' : '#111', border: i === di ? '#111' : '#C9C3B6', pick: () => this.setState({ door: i }) })),
       door: doors[di]

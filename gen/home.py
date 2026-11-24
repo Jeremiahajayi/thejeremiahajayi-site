@@ -273,7 +273,7 @@ def research():
 <p class="eyebrow">Writing & research</p>
 <h2 id="rs-title" class="sg rs-title">I write about how buyers find, judge and <span>choose.</span></h2>
 <ul class="rs-list">
-<sc-for list="{{{{writing}}}}" as="w" hint-placeholder-count="6"><li><a class="rs-row" href="{{{{w.href}}}}"><span class="rs-outlet">{{{{w.outlet}}}}</span><span class="rs-t">{{{{w.title}}}}</span><span class="rs-note">{{{{w.note}}}}</span></a></li></sc-for>
+<sc-for list="{{{{writing}}}}" as="w" hint-placeholder-count="8"><li><a class="rs-row" href="{{{{w.href}}}}"><span class="rs-outlet">{{{{w.outlet}}}}</span><span class="rs-t">{{{{w.title}}}}</span><span class="rs-note">{{{{w.note}}}}</span></a></li></sc-for>
 </ul>
 <p><a class="h-link" href="Site-Writing.dc.html">All writing and research {ARR}</a></p>
 </div>
