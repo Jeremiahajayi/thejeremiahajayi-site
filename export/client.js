@@ -428,7 +428,7 @@
   var wx = document.querySelector('[data-wx-hero]');
   if (wx) {
     var WXS = {
-      me: { color: '#FF5A2A', k: 'In the newsletter', lines: ['Why isn’t our product launch bringing in sales?', 'Customers keep leaving. What should we do?', 'We can afford two priorities. Which two?'] },
+      me: { color: '#FF5A2A', k: 'In the newsletter', lines: ['How I’d introduce The Stack Group without confusing Paystack’s customers.', 'What would I keep, change, or try?'] },
       guest: { color: '#1FA463', k: 'At the next live event', lines: ['John Iwuozor on his first 90 days as Content Lead at DualEntry.'] }
     };
     var wxWho = 'me', wxLi = 0, wxTouched = false;
