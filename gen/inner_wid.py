@@ -130,6 +130,7 @@ CSS = r'''
 .wx-issue p{margin:12px 0 0;max-width:46ch;font-size:17px;line-height:1.65;color:#2D2B27}
 .wx-meta{margin:clamp(26px,3vw,36px) 0 0;font:700 16px/1.4 'DM Sans',system-ui,sans-serif}
 .wx-sheet .wx-meta{color:#8FE3B0}
+.wx-first{background:#FFF5D9!important}.wx-first-k{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:#FF5A2A;color:#fff;font:700 13px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em}.wx-first .wx-sec-cta{margin-top:18px}.wx-soon b{color:#111}.wx-live .wx-body p.wx-meta-top{margin:14px 0 6px}.wx-box-wide{flex-direction:row!important;gap:clamp(20px,3vw,40px);max-width:980px;margin:0 auto}.wx-box-wide .wx-me-ph{flex:none;width:clamp(90px,10vw,130px);height:clamp(90px,10vw,130px)}.wx-box-wide p{max-width:62ch}@media (max-width:640px){.wx-box-wide{flex-direction:column!important}}
 .wx-soon{margin-top:14px!important;padding:12px 14px;border-radius:12px;background:rgba(143,227,176,.14)}
 .wx-sec-cta{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
 .wx-sec-cta .wx-small{font-size:14.5px;color:#6B675F}
@@ -210,12 +211,11 @@ def page():
 <div>
 <p class="eyebrow">By Jeremiah Ajayi</p>
 <h1 id="wx-title" class="wx-h1">What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h1>
-<p class="wx-tag">What would I do if I were on their marketing team?</p>
 <div class="wx-lede">
-<p>Every month, I choose a technology company, study how it markets its products, and explain what I’d keep, change, or try.</p>
-<p>I also host a conversation with a founder or marketing leader about a problem they’ve faced at work, or one we work through together. I share what I learned in the next newsletter.</p>
+<p>Every month, I choose a tech company, study how it markets its products, and share what I’d keep, change, or try.</p>
+<p>I also host monthly live events with marketing leaders. We discuss problems they’ve faced at work or work through new ones together. I then share my takeaways in the newsletter.</p>
 </div>
-<p class="wx-sum">Two newsletters and one live conversation every month.</p>
+<p class="wx-sum">Two newsletters. One live event. Every month.</p>
 <div class="wx-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Subscribe for free <span class="arr arr-d" aria-hidden="true">↓</span></a><a class="h-btn h-btn-ink" href="#live">Explore live events {ARR}</a></div>
 </div>
 <div class="wx-stage">
@@ -230,7 +230,7 @@ def page():
 <span class="shp shp-flower" style="background: #8FE3B0" aria-hidden="true"></span>
 <sc-if value="{{{{hasPhoto}}}}" hint-placeholder-val="{{{{ false }}}}"><span class="wx-face-ph"><img src="{{{{cfg.guestPhoto}}}}" alt="John Iwuozor"></span></sc-if>
 <sc-if value="{{{{noPhoto}}}}" hint-placeholder-val="{{{{ true }}}}"><span class="wx-mono" aria-hidden="true">JI</span></sc-if>
-<span class="wx-label"><b>I</b>John Iwuozor · next guest</span></div>
+<span class="wx-label"><b>I</b>John Iwuozor · first guest</span></div>
 </div>
 <button type="button" class="wx-bub" data-wx-bub aria-live="polite"><span class="wx-bub-k" data-wx-bub-k>In the newsletter</span><span class="wx-bub-t" data-wx-bub-t>How I’d introduce The Stack Group without confusing Paystack’s customers.</span><span class="wx-bub-m" data-wx-bub-m>Another one ↻</span></button>
 </div>
@@ -240,37 +240,34 @@ def page():
 
 <section class="wx-sheet" id="inbox" aria-labelledby="wx-inbox-t">
 <div class="wrap">
-<p class="eyebrow">The newsletter</p>
-<h2 id="wx-inbox-t" class="wx-h2">What you’ll read</h2>
+<p class="eyebrow">What I’d Do: The newsletter</p>
+<h2 id="wx-inbox-t" class="wx-h2">A look inside how I’d market a company<span class="k-dot">.</span></h2>
 <div class="wx-issues">
-<div class="wx-issue"><span class="wx-n">01</span><h3>If I were on their team…</h3><p>On the first Wednesday of every month, I examine a company’s marketing.</p><p>I’ll look at its messaging, product launches, campaigns, or content and explain what I’d do if I were responsible.</p><p class="wx-soon"><b>Coming December 2:</b> How I’d Introduce The Stack Group Without Confusing Paystack’s Customers</p><p>I’ll examine how Paystack communicates its expansion into banking, consumer payments, and other businesses, and what I’d recommend.</p></div>
-<div class="wx-issue"><span class="wx-n">02</span><h3>After the conversation</h3><p>On the third Wednesday, I share my takeaways from that month’s live event.</p><p>What problem did we discuss? How did the guest approach it? What would I take from the conversation?</p></div>
+<div class="wx-issue"><span class="wx-n">01</span><h3>First Wednesday: The company breakdown</h3><p>I pick a tech company and examine its marketing, from how it positions its products to how it attracts customers.</p><p>Then I explain what I’d do if I were on its marketing team, with examples of the changes I’d make.</p></div>
+<div class="wx-issue wx-first"><span class="wx-first-k">First up: Paystack</span><h3>How I’d Introduce The Stack Group Without Confusing Paystack’s Customers</h3><p>Paystack has expanded beyond its original payments business, with new companies and products under The Stack Group.</p><p>For the first issue, I’m looking at how these businesses fit together, how they’re presented to customers, and what I’d do if I were responsible for communicating the group’s expansion.</p><p class="wx-soon"><b>Coming December 2, 2026.</b></p><div class="wx-sec-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Get the first issue <span class="arr arr-d" aria-hidden="true">↓</span></a></div></div>
 </div>
-<p class="wx-meta">First and third Wednesdays · 3 PM WAT</p>
-<div class="wx-sec-cta"><a class="btn-o h-btn" href="#join" data-scroll-form>Get the newsletter <span class="arr arr-d" aria-hidden="true">↓</span></a></div>
 </div>
 </section>
 
 <section class="wx-live" id="live" aria-labelledby="wx-live-t">
 <div class="wrap wx-live-g">
 <div class="wx-body">
-<p class="eyebrow">The live event</p>
-<h2 id="wx-live-t" class="wx-h2">Join the conversation<span class="k-dot">.</span></h2>
-<p>Once a month, I invite a founder or marketing leader to discuss a marketing problem with me.</p>
-<p>Sometimes, we’ll examine a challenge they’ve handled at work, including what they did and what happened.</p>
-<p>Other times, we’ll work through a new problem together.</p>
-<p>You can join us, ask questions, and share what you’d do.</p>
-<p class="wx-meta">Second Tuesday of every month · 7 PM WAT · Online</p>
+<p class="eyebrow">What I’d Do: Live</p>
+<h2 id="wx-live-t" class="wx-h2">One guest. One marketing problem<span class="k-dot">.</span></h2>
+<p class="wx-meta wx-meta-top">Second Tuesday of every month · 7 PM WAT · Online</p>
+<p>Every month, I invite a founder or marketing leader to join me for a conversation.</p>
+<p>We might unpack a challenge they’ve faced at work, including what they tried and what happened. Or we might take a new problem and figure out how we’d solve it together.</p>
+<p>You can join us, ask questions, and contribute to the discussion.</p>
 <div class="wx-sec-cta"><a class="h-btn h-btn-ink" href="{{{{eventsHref}}}}">See upcoming events {ARR}</a></div>
 </div>
 <div class="wx-next" id="next">
-<p class="eyebrow">Our next guest</p>
+<p class="eyebrow">Our first guest</p>
 <div class="wx-next-who">
 <span class="wx-av"><sc-if value="{{{{hasPhoto}}}}" hint-placeholder-val="{{{{ false }}}}"><img src="{{{{cfg.guestPhoto}}}}" alt="John Iwuozor" loading="lazy"></sc-if><sc-if value="{{{{noPhoto}}}}" hint-placeholder-val="{{{{ true }}}}"><span aria-hidden="true">JI</span></sc-if></span>
 <p><b>John Iwuozor</b>Content Lead at DualEntry</p>
 </div>
 <h3 class="wx-next-t">Your First 90 Days as Content Lead: Where Do You Start?</h3>
-<p class="wx-np">John joins me to discuss his first 90 days at DualEntry, including how he approached the role, what he prioritized, and what he’d do differently.</p>
+<p class="wx-np">John joins me to discuss his first 90 days at DualEntry. We’ll explore how he decided what to prioritize, the challenges he encountered, and what he’d do differently.</p>
 <span class="wx-date">Date to be announced.</span>
 <div class="wx-sec-cta">
 <sc-if value="{{{{hasEvent}}}}" hint-placeholder-val="{{{{ false }}}}"><a class="btn-o h-btn luma-checkout--button" href="{{{{lumaEventHref}}}}" data-luma-action="checkout" data-luma-event-id="{{{{cfg.lumaEventId}}}}">Register on Luma <span aria-hidden="true">↗</span></a><script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script></sc-if>
@@ -281,13 +278,28 @@ def page():
 <sc-if value="{{{{hasCal}}}}" hint-placeholder-val="{{{{ false }}}}"><div class="wrap"><div class="wx-cal" id="events"><h3 class="wx-cal-t">Upcoming events</h3><iframe src="{{{{lumaSrc}}}}" title="Upcoming What I’d Do live events on Luma" loading="lazy" allowfullscreen></iframe></div></div></sc-if>
 </section>
 
+<section class="wx-more" aria-labelledby="wx-me-t">
+<div class="wrap">
+<div class="wx-box me wx-box-wide">
+<span class="wx-me-ph"><img src="{B(HEADSHOT)}" alt="" loading="lazy"></span>
+<div>
+<h2 id="wx-me-t">Who’s behind What I’d Do?</h2>
+<p>I’m Jeremiah Ajayi, a marketing strategist who’s worked with companies including RemotePass, PiggyVest and Stears.</p>
+<p>My work focuses on positioning, product launches, and content.</p>
+<p>I started What I’d Do to share how I’d approach marketing for different companies and learn from the people making those decisions every day.</p>
+<div class="wx-sec-cta"><a class="h-link" href="Site-About.dc.html">More about me {ARR}</a></div>
+</div>
+</div>
+</div>
+</section>
+
 <section class="wx-join" id="join" aria-labelledby="wx-join-t">
 <span class="shp shp-flower" aria-hidden="true"></span>
 <div class="wrap">
 <div class="wx-join-g">
 <div>
-<h2 id="wx-join-t" class="wx-join-t">Subscribe to What <span class="wx-i">I</span>’d Do<span class="k-dot">.</span></h2>
-<p class="wx-p">Every month, I’ll send you my analysis of a company’s marketing and what I learned from a conversation with a marketing leader.</p>
+<h2 id="wx-join-t" class="wx-join-t">Get What <span class="wx-i">I</span>’d Do in your inbox<span class="k-dot">.</span></h2>
+<p class="wx-p">One company breakdown and my takeaways from one marketing conversation, every month.</p>
 <p class="wx-small2">Two emails a month. Free.</p>
 </div>
 <div class="wx-form">
