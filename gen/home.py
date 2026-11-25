@@ -284,10 +284,10 @@ def research():
 def wid_band():
     return f'''<section class="wdb" aria-labelledby="wdb-t">
 <div class="wrap wdb-g">
-<p class="wdb-k">New · a newsletter + live series</p>
+<p class="wdb-k">New · a newsletter + live conversations</p>
 <h2 id="wdb-t" class="sg wdb-t">What <span class="wdb-i">I</span>’d Do<span class="k-dot">.</span></h2>
-<div class="wdb-c"><p class="wdb-s">Marketing is full of hard calls. Let’s work through them.</p>
-<p>Real marketing decisions, examined: the situation, the options and the reasoning behind the call. Twice a month in your inbox, twice a month live.</p>
+<div class="wdb-c"><p class="wdb-s">What would I do if I were on their marketing team?</p>
+<p>Every month, I study how a technology company markets its products and explain what I’d keep, change, or try. I also host a live conversation with a founder or marketing leader. Two newsletters and one live conversation every month.</p>
 <a class="h-link" href="Site-WhatIdDo.dc.html">Open What I’d Do {ARR}</a></div>
 </div>
 </section>'''
