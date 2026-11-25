@@ -28,7 +28,7 @@ const GTM_BODY = `<noscript><iframe src="https://www.googletagmanager.com/ns.htm
 const ROLE = 'Marketing consultant for B2B SaaS and technology companies';
 
 const PAGES = [
-  { file: 'Home-B2.dc.html', out: 'index.html', url: '/', title: 'Jeremiah Ajayi · Marketing consultant for B2B SaaS and technology companies', desc: 'Jeremiah Ajayi is a marketing consultant for B2B SaaS and technology companies, based in Lagos: positioning and messaging, product launches and GTM, and content and organic growth.' },
+  { file: 'Home-B2.dc.html', out: 'index.html', url: '/', og: '/og-home-v2.png', title: 'Jeremiah Ajayi · Marketing consultant for B2B SaaS and technology companies', desc: 'Jeremiah Ajayi is a marketing consultant for B2B SaaS and technology companies, based in Lagos: positioning and messaging, product launches and GTM, and content and organic growth.' },
   { file: 'Site-Services.dc.html', out: 'services/index.html', url: '/services/', crumb: 'Services', title: 'B2B SaaS marketing services · Jeremiah Ajayi', desc: 'Three services for B2B SaaS and technology companies: positioning and messaging, product launches and GTM, and content and organic growth.' },
   { file: 'Site-Service-Positioning.dc.html', out: 'services/positioning-messaging/index.html', url: '/services/positioning-messaging/', crumb: 'Positioning & messaging', service: 'Positioning and messaging', title: 'Positioning and messaging consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Positioning and messaging for B2B SaaS: customer research, a messaging framework and the website and sales copy that use it.' },
   { file: 'Site-Service-Launch.dc.html', out: 'services/product-launch-gtm/index.html', url: '/services/product-launch-gtm/', crumb: 'Launches & go-to-market', service: 'Product launch and go-to-market strategy', title: 'Product launch and GTM consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Product launches built for pipeline: a GTM brief, launch plan, sales enablement and launch-to-pipeline measurement. 20+ launches led.' },
@@ -274,7 +274,7 @@ console.log('done');
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '');
   fs.writeFileSync(path.join(outDir, '404.html'), page);
 }
-for (const f of ['og.png', 'og-what-id-do-v2.png']) { const og = path.join(__dirname, '..', 'og', f); if (fs.existsSync(og)) fs.copyFileSync(og, path.join(outDir, f)); }
+for (const f of ['og.png', 'og-home-v2.png', 'og-what-id-do-v2.png']) { const og = path.join(__dirname, '..', 'og', f); if (fs.existsSync(og)) fs.copyFileSync(og, path.join(outDir, f)); }
 
 // Free tools: the original scorecards, restyled, at their existing URLs.
 {
