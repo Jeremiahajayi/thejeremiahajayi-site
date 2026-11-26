@@ -1,0 +1,81 @@
+<!doctype html>
+<!--
+  What I'd Do: launch announcement template.
+  Formats: launch.html#portrait (1080x1350, LinkedIn) and launch.html#wide (1600x900, X).
+  To reuse for a future issue/event, edit only the two .rel blocks below and swap guest.jpg.
+  Render: node render.js   (writes PNGs at 2x into ./export)
+-->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+:root{--cream:#FFF5D9;--ink:#111;--orange:#FF5A2A;--teal:#0E2A2E;--mint:#8FE3B0;--muted:#9DB8B0;--paper:#EAF6F1}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* Masthead */
+.mast{position:absolute}
+h1{margin:0;font:700 var(--h1)/.82 'Space Grotesk';letter-spacing:-.072em;white-space:nowrap}
+h1 .i{display:inline-block;color:var(--orange);transform:translateY(-.05em) rotate(-5deg)}
+h1 .dot{color:var(--orange)}
+.dek{margin:var(--dek-gap) 0 0;font:500 var(--dek)/1.18 'Space Grotesk';letter-spacing:-.025em;color:#2D2B27;max-width:var(--dek-w)}
+
+/* Releases panel: the site's dark "sheet" */
+.sheet{position:absolute;background:var(--teal);color:var(--paper)}
+.rel{display:grid;grid-template-columns:1fr auto;column-gap:var(--av-gap);align-items:center}
+br.w{display:none}.wide br.w{display:inline}
+.rel + .rel{margin-top:var(--rel-gap);padding-top:var(--rel-gap);border-top:1px solid rgba(234,246,241,.16)}
+.when{margin:0 0 10px;font:500 var(--when)/1.2 'DM Sans';color:var(--muted)}
+.when b{font-weight:700;color:var(--mint)}
+.t{margin:0;font:700 var(--t)/1.04 'Space Grotesk';letter-spacing:-.04em}
+.s{margin:8px 0 0;font:500 var(--s)/1.25 'DM Sans';color:var(--paper);opacity:.78}
+.mark{width:var(--av);height:var(--av);border-radius:50%;overflow:hidden;align-self:center}
+.mark.n{background:var(--orange);display:grid;place-items:center}
+.mark.n span{font:700 calc(var(--av)*.5)/1 'Space Grotesk';color:var(--cream);letter-spacing:-.06em;transform:translateY(-.04em)}
+.mark img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+
+.url{position:absolute;font:500 var(--url)/1 'DM Sans';color:#6B675F}
+
+/* ---------- Portrait 1080 x 1350 ---------- */
+body.portrait{width:1080px;height:1350px;
+  --h1:262px;--dek:38px;--dek-gap:44px;--dek-w:560px;
+  --av:132px;--av-gap:30px;--when:27px;--t:50px;--s:28px;--rel-gap:40px;--url:22px}
+.portrait .mast{left:72px;top:108px}
+.portrait .sheet{left:0;right:0;bottom:0;height:560px;border-radius:48px 48px 0 0;padding:76px 72px 0 72px}
+.portrait .url{left:72px;bottom:56px;color:var(--muted)}
+
+/* ---------- Wide 1600 x 900 ---------- */
+body.wide{width:1600px;height:900px;
+  --h1:228px;--dek:38px;--dek-gap:40px;--dek-w:520px;
+  --av:104px;--av-gap:28px;--when:28px;--t:54px;--s:29px;--rel-gap:44px;--url:23px}
+.wide .mast{left:88px;top:150px}
+.wide .sheet{top:0;bottom:0;right:0;width:640px;border-radius:48px 0 0 48px;padding:0 64px;display:flex;flex-direction:column;justify-content:center}
+.wide .url{left:88px;bottom:64px}
+.wide .rel{grid-template-columns:1fr}.wide .mark{order:-1;margin-bottom:22px}
+</style></head>
+<body>
+<div class="mast">
+  <h1>What <span class="i">I</span>’d<br>Do<span class="dot">.</span></h1>
+  <p class="dek">A newsletter and live series about marketing.</p>
+</div>
+
+<div class="sheet">
+  <div class="rel">
+    <div>
+      <p class="when"><b>December 2</b> · Newsletter</p>
+      <p class="t">Paystack and <br class="w">The Stack Group</p>
+    </div>
+  </div>
+  <div class="rel">
+    <div>
+      <p class="when"><b>December 8</b> · Live conversation</p>
+      <p class="t">John Iwuozor</p>
+      <p class="s">His first 90 days at DualEntry</p>
+    </div>
+    <div class="mark"><img src="guest.jpg" alt="John Iwuozor"></div>
+  </div>
+</div>
+
+<div class="url">thejeremiahajayi.com/what-id-do</div>
+
+<script>document.body.className = location.hash === '#wide' ? 'wide' : 'portrait';</script>
+</body></html>
