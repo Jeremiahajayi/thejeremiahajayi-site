@@ -21,3 +21,13 @@ Each format also exports a 1x PNG at its native size.
    ```
 
 The design uses the site's fonts (Space Grotesk and DM Sans, bundled locally in `fonts/`) and its colours: cream #FFF5D9, ink #111, orange #FF5A2A, dark teal #0E2A2E and mint #8FE3B0.
+
+## Live event promo (`live.html`)
+
+The same identity applies to a single live event, with the guest's portrait in the teal panel.
+
+- LinkedIn: `live.html#portrait`, 1080 × 1350
+- X: `live.html#wide`, 1600 × 900
+- Render with `node render-live.js`. Exports go to `export/what-id-do-live_*`.
+
+For each new event, update the topic, the guest's name and role, the date line and `guest-full.jpg`.
