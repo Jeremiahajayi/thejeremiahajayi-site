@@ -17,7 +17,7 @@
       // A form for problem submissions (Tally, Typeform, Google Forms…). Until then, email is used.
       submitUrl: '',
       // An approved photo of the featured guest, e.g. /_blob/<id> or https://…
-      guestPhoto: ''
+      guestPhoto: '/_blob/5c727caeb4f013bf0163e51ee929bc39'
     };
     // ── The Decision Files ─────────────────────────────────────────────────
     // Add a published issue, guest case or live-session takeaway as an object, newest first:
