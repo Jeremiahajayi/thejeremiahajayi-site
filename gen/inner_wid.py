@@ -268,10 +268,10 @@ def page():
 </div>
 <h3 class="wx-next-t">Your First 90 Days as Content Lead: Where Do You Start?</h3>
 <p class="wx-np">John joins me to discuss his first 90 days at DualEntry. We’ll explore how he decided what to prioritize, the challenges he encountered, and what he’d do differently.</p>
-<span class="wx-date">Date to be announced.</span>
+<span class="wx-date">December 8, 2026 · 7 PM WAT · Online</span>
 <div class="wx-sec-cta">
 <sc-if value="{{{{hasEvent}}}}" hint-placeholder-val="{{{{ false }}}}"><a class="btn-o h-btn luma-checkout--button" href="{{{{lumaEventHref}}}}" data-luma-action="checkout" data-luma-event-id="{{{{cfg.lumaEventId}}}}">Register on Luma <span aria-hidden="true">↗</span></a><script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script></sc-if>
-<sc-if value="{{{{noEvent}}}}" hint-placeholder-val="{{{{ true }}}}"><a class="btn-o h-btn" href="#join" data-scroll-form>Get event updates <span class="arr arr-d" aria-hidden="true">↓</span></a><span class="wx-small">Subscribers hear first when the date is set.</span></sc-if>
+<sc-if value="{{{{noEvent}}}}" hint-placeholder-val="{{{{ true }}}}"><a class="btn-o h-btn" href="#join" data-scroll-form>Get event updates <span class="arr arr-d" aria-hidden="true">↓</span></a><span class="wx-small">Subscribers get the joining details.</span></sc-if>
 </div>
 </div>
 </div>
