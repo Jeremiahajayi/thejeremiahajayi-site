@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- What I'd Do launch graphic. Open #li (1080x1350) or #x (1600x900). Render: node wid-launch-shot.js -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+:root{--ink:#111;--cream:#FFF5D9;--sun:#FFC83D;--orange:#FF5A2A;--mint:#8FE3B0;--muted:#6B675F}
+body{width:var(--W);height:var(--H);overflow:hidden;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;position:relative;isolation:isolate}
+.rays{position:absolute;left:calc(var(--sx) - var(--rr));top:calc(var(--sy) - var(--rr));width:calc(var(--rr)*2);height:calc(var(--rr)*2);color:var(--sun);opacity:.5;z-index:-1;background:repeating-conic-gradient(from 0deg at 50% 50%,currentColor 0 4deg,transparent 4deg 11deg);-webkit-mask:radial-gradient(closest-side,#000 40%,transparent 100%);mask:radial-gradient(closest-side,#000 40%,transparent 100%)}
+.sun{position:absolute;left:var(--sx);top:var(--sy);width:var(--sun-d);aspect-ratio:1;border-radius:50%;background:var(--sun);transform:translate(-50%,-50%);box-shadow:0 0 0 22px rgba(255,200,61,.22),0 0 110px 36px rgba(255,200,61,.45);z-index:-1}
+.hd{position:absolute;left:var(--px);top:var(--ty)}
+h1{margin:0;font:700 var(--t)/.84 'Space Grotesk';letter-spacing:-.07em;white-space:nowrap}
+h1>span{display:block}
+h1 .i{display:inline-block;color:var(--orange);transform:translateY(-.05em) rotate(-5deg)}
+h1 .d{color:var(--orange)}
+.tag{margin:var(--tagm) 0 0;width:var(--tagw);font:500 var(--tg)/1.3 'DM Sans';color:var(--ink)}
+.rel{position:absolute;left:var(--rx);top:var(--ry);width:var(--rw);display:grid;gap:var(--rgap)}
+.item{display:block}.who{display:flex;align-items:center;gap:20px;margin-top:calc(var(--cf)*.9)}.who .ht{margin:0}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:9px 18px 9px 10px;border-radius:999px;background:var(--ink);color:var(--cream);font:700 var(--cf)/1 'DM Sans'}
+.chip i{width:calc(var(--cf)*1.15);height:calc(var(--cf)*1.15);border-radius:50%;background:var(--orange)}
+.chip.m i{background:var(--mint)}
+.ht{margin:calc(var(--cf)*.9) 0 0;font:700 var(--hf)/1.02 'Space Grotesk';letter-spacing:-.045em}
+.hs{margin:8px 0 0;font:500 var(--sf)/1.3 'DM Sans';color:var(--muted)}
+.ph{width:var(--pd);height:var(--pd);border-radius:50%;overflow:hidden;background:#2a7c88}
+.ph img{width:100%;height:100%;object-fit:cover}
+.url{position:absolute;left:var(--px);bottom:var(--ub);font:700 var(--uf)/1 'DM Sans';color:var(--muted)}
+</style></head><body>
+<div class="rays"></div><div class="sun"></div>
+<div class="hd"><h1><span>What <span class="i">I</span>’d</span><span>Do<span class="d">.</span></span></h1>
+<p class="tag">A newsletter and live series about marketing.</p></div>
+<div class="rel">
+<div class="item"><div><span class="chip"><i></i>December 2 · Newsletter</span><p class="ht">Paystack and The&nbsp;Stack&nbsp;Group</p></div></div>
+<div class="item"><div><span class="chip m"><i></i>December 8 · Live conversation</span><div class="who"><div class="ph"><img src="john.jpg" alt=""></div><div><p class="ht">John Iwuozor</p><p class="hs">His first 90 days at DualEntry</p></div></div></div></div>
+</div>
+<div class="url">thejeremiahajayi.com/what-id-do</div>
+<script>
+const F={
+ li:{W:'1080px',H:'1350px',px:'72px',t:'262px',ty:'112px',sx:'790px',sy:'470px',rr:'600px','sun-d':'150px',
+     tagm:'40px',tagw:'600px',tg:'36px',rx:'72px',ry:'818px',rw:'936px',rgap:'60px',cf:'26px',hf:'60px',sf:'29px',pd:'104px',ub:'64px',uf:'21px'},
+ x:{W:'1600px',H:'900px',px:'84px',t:'236px',ty:'118px',sx:'600px',sy:'430px',rr:'600px','sun-d':'128px',
+     tagm:'34px',tagw:'560px',tg:'32px',rx:'990px',ry:'262px',rw:'560px',rgap:'56px',cf:'25px',hf:'58px',sf:'28px',pd:'96px',ub:'72px',uf:'20px'}};
+const k=(location.hash||'#li').slice(1), v=F[k]; for(const p in v) document.documentElement.style.setProperty('--'+p,v[p]);
+</script>
+</body></html>
