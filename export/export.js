@@ -33,6 +33,7 @@ const PAGES = [
   { file: 'Site-Service-Positioning.dc.html', out: 'services/positioning-messaging/index.html', url: '/services/positioning-messaging/', crumb: 'Positioning & messaging', service: 'Positioning and messaging', title: 'Positioning and messaging consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Positioning and messaging for B2B SaaS: customer research, a messaging framework and the website and sales copy that use it.' },
   { file: 'Site-Service-Launch.dc.html', out: 'services/product-launch-gtm/index.html', url: '/services/product-launch-gtm/', crumb: 'Launches & go-to-market', service: 'Product launch and go-to-market strategy', title: 'Product launch and GTM consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Product launches built for pipeline: a GTM brief, launch plan, sales enablement and launch-to-pipeline measurement. 20+ launches led.' },
   { file: 'Site-Service-Content.dc.html', out: 'services/content-growth/index.html', url: '/services/content-growth/', crumb: 'Content & organic growth', service: 'Content and organic growth', title: 'Content and organic growth consultant for B2B SaaS · Jeremiah Ajayi', desc: 'Content strategy, SEO and AI search visibility for B2B SaaS, measured in pipeline. 174% organic growth at RemotePass.' },
+  { file: 'Site-Industry-Fintech.dc.html', out: 'industries/b2b-fintech/index.html', url: '/industries/b2b-fintech/', crumb: 'B2B fintech', service: 'B2B fintech and HR tech marketing', title: 'B2B fintech marketing consultant: an agency alternative · Jeremiah Ajayi', desc: 'Fintech marketing for B2B payments, payroll, EOR and spend management companies: positioning, battlecards, launches and content that passes legal review. 174% organic growth at RemotePass.' },
   { file: 'Site-Work.dc.html', out: 'work/index.html', url: '/work/', crumb: 'Work', title: 'Work, case studies and portfolio · Jeremiah Ajayi', desc: 'Case studies and published work: Stears, RemotePass, Certn, Xofu, plus launch pages, search content, bylines, guides and customer stories you can read.' },
   { file: 'Site-Writing.dc.html', out: 'writing/index.html', url: '/writing/', crumb: 'Writing', title: 'Writing and research · Jeremiah Ajayi', desc: 'Original research on AI search, launch and growth teardowns, and marketing playbooks.' },
   { file: 'Site-About.dc.html', out: 'about/index.html', url: '/about/', crumb: 'About', title: 'About Jeremiah Ajayi · Marketing consultant in Lagos', desc: 'Jeremiah Ajayi is a marketing consultant for B2B SaaS and technology companies, based in Lagos, and the co-founder of EmpowerQ.' },
@@ -145,7 +146,7 @@ const PERSON = {
 const crumbs = (page) => page.url === '/' ? null : ({
   '@type': 'BreadcrumbList',
   itemListElement: [{ name: 'Home', url: '/' }]
-    .concat(page.url.startsWith('/services/') && page.url !== '/services/' ? [{ name: 'Services', url: '/services/' }] : [])
+    .concat((page.url.startsWith('/services/') && page.url !== '/services/') || page.url.startsWith('/industries/') ? [{ name: 'Services', url: '/services/' }] : [])
     .concat([{ name: page.crumb, url: page.url }])
     .map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: SITE + c.url }))
 });
@@ -154,6 +155,7 @@ function schema(page, v) {
   if (page.url === '/') g.push(PERSON, { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE + '/', name: 'Jeremiah Ajayi', publisher: { '@id': PERSON_ID } });
   else if (page.url === '/about/') g.push({ '@type': 'ProfilePage', url: SITE + page.url, mainEntity: PERSON });
   else g.push({ '@type': 'WebPage', url: SITE + page.url, name: page.title, author: { '@id': PERSON_ID } });
+  if (page.url === '/services/') g.push({ '@type': 'ProfessionalService', '@id': SITE + '/services/#practice', name: 'Jeremiah Ajayi · Marketing consulting', url: SITE + '/services/', description: page.desc, founder: { '@id': PERSON_ID }, address: { '@type': 'PostalAddress', addressLocality: 'Lagos', addressCountry: 'NG' }, areaServed: ['Europe', 'North America', 'Middle East', 'Africa'], hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Marketing services', itemListElement: ['Positioning and messaging', 'Product launch and go-to-market strategy', 'Content and organic growth', 'B2B fintech and HR tech marketing'].map((n) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: n } })) } });
   if (page.service) g.push({ '@type': 'Service', name: page.service, serviceType: page.service, description: page.desc, url: SITE + page.url, provider: { '@id': PERSON_ID }, areaServed: ['Europe', 'North America', 'Middle East', 'Africa'], audience: { '@type': 'BusinessAudience', name: 'B2B SaaS and technology companies' } });
   if (page.url === '/empowerq/') g.push({ '@type': 'NGO', '@id': SITE + '/empowerq/#org', name: 'EmpowerQ', legalName: 'Career Growth Initiative for the Disadvantaged', foundingDate: '2025', address: { '@type': 'PostalAddress', addressLocality: 'Lagos', addressCountry: 'NG' }, founder: { '@id': PERSON_ID } });
   if (page.url === '/what-id-do/') g.push({ '@type': 'CreativeWorkSeries', '@id': SITE + '/what-id-do/#series', name: 'What I’d Do', description: page.desc, url: SITE + page.url, inLanguage: 'en', author: { '@id': PERSON_ID }, publisher: { '@id': PERSON_ID }, genre: 'Marketing', audience: { '@type': 'Audience', audienceType: 'Founders, marketing leaders and marketing operators at technology companies' } }, { '@type': 'EventSeries', '@id': SITE + '/what-id-do/#live', name: 'What I’d Do: Live', description: 'A monthly online conversation with a founder or marketing leader about a marketing problem.', eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode', organizer: { '@id': PERSON_ID }, location: { '@type': 'VirtualLocation', url: SITE + page.url } });
@@ -226,6 +228,13 @@ fs.writeFileSync(path.join(outDir, 'llms.txt'), `# Jeremiah Ajayi
 - [Positioning and messaging](${SITE}/services/positioning-messaging/): customer research, positioning, messaging frameworks, website and sales copy
 - [Product launch and GTM](${SITE}/services/product-launch-gtm/): GTM briefs, launch plans, sales enablement, launch-to-pipeline measurement; 20+ launches led
 - [Content and organic growth](${SITE}/services/content-growth/): content strategy, SEO and AI search visibility; 174% organic growth at RemotePass
+- [B2B fintech marketing](${SITE}/industries/b2b-fintech/): positioning, battlecards, launches and compliant content for B2B fintech and HR tech (payments, payroll, EOR, spend management)
+
+## Free tools
+
+- [GTM Readiness Scorecard](${SITE}/resources/gtm-scorecard/)
+- [Marketing Function Audit](${SITE}/resources/marketing-audit/)
+- [Category Visibility Audit](${SITE}/resources/category-visibility-audit/)
 
 ## Proof
 
@@ -282,24 +291,26 @@ for (const f of ['og.png', 'og-home-v2.png', 'og-what-id-do-v2.png']) { const og
   const start = shell.indexOf('<section');
   const end = shell.lastIndexOf('<section', shell.indexOf('<footer'));
   const tools = [
-    { id: 'gtm-scorecard', desc: 'A free 15-question self-assessment of go-to-market readiness across positioning, sales alignment, content, launches and team, with an action plan.' },
-    { id: 'marketingaudit', desc: 'A free 16-question audit of your marketing function across strategy, execution, alignment and measurement, with prioritised next steps.' },
-    { id: 'categoryvisibilityaudit', desc: 'A free diagnostic for B2B founders and CMOs: score your visibility across AI search, content, positioning and pipeline, with prioritised next steps.' }
+    { id: 'gtm-scorecard', slug: 'gtm-scorecard', desc: 'A free 15-question self-assessment of go-to-market readiness across positioning, sales alignment, content, launches and team, with an action plan.' },
+    { id: 'marketingaudit', slug: 'marketing-audit', desc: 'A free 16-question audit of your marketing function across strategy, execution, alignment and measurement, with prioritised next steps.' },
+    { id: 'categoryvisibilityaudit', slug: 'category-visibility-audit', desc: 'A free diagnostic for B2B founders and CMOs: score your visibility across AI search, content, positioning and pipeline, with prioritised next steps.' }
   ];
   const extraUrls = [];
+  const redirects = ['# Free tools moved to /resources/ (Nov 2026)'];
   for (const t of tools) {
     const body = fs.readFileSync(path.join(__dirname, '..', 'tools', t.id + '.html'), 'utf8');
     const title = fs.readFileSync(path.join(__dirname, '..', 'tools', t.id + '.title'), 'utf8').trim().replace(/\s*\|\s*Jeremiah Ajayi$/, '') + ' · Jeremiah Ajayi';
     let page = shell.slice(0, start) + body + shell.slice(end);
     page = page.replace(/<title>[^<]*<\/title>/, '<title>' + title + '</title>')
       .replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="' + t.desc + '">')
-      .replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + SITE + '/' + t.id + '">')
-      .replace(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + SITE + '/' + t.id + '">')
+      .replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + SITE + '/resources/' + t.slug + '/">')
+      .replace(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + SITE + '/resources/' + t.slug + '/">')
       .replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + title + '">')
-      .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '');
-    fs.mkdirSync(path.join(outDir, t.id), { recursive: true });
-    fs.writeFileSync(path.join(outDir, t.id, 'index.html'), page);
-    extraUrls.push(SITE + '/' + t.id);
+      .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '<script type="application/ld+json">' + JSON.stringify({ '@context': 'https://schema.org', '@graph': [{ '@type': 'WebApplication', name: title.replace(/ · Jeremiah Ajayi$/, ''), url: SITE + '/resources/' + t.slug + '/', description: t.desc, applicationCategory: 'BusinessApplication', operatingSystem: 'Any', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, author: { '@id': PERSON_ID } }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: title.replace(/ · Jeremiah Ajayi$/, ''), item: SITE + '/resources/' + t.slug + '/' }] }] }).replace(/</g, '\\u003c') + '</script>\n');
+    fs.mkdirSync(path.join(outDir, 'resources', t.slug), { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'resources', t.slug, 'index.html'), page);
+    extraUrls.push(SITE + '/resources/' + t.slug + '/');
+    redirects.push('/' + t.id + ' /resources/' + t.slug + '/ 301', '/' + t.id + '/ /resources/' + t.slug + '/ 301');
   }
   const smPath = path.join(outDir, 'sitemap.xml');
   if (fs.existsSync(smPath)) {
@@ -307,7 +318,7 @@ for (const f of ['og.png', 'og-home-v2.png', 'og-what-id-do-v2.png']) { const og
     fs.writeFileSync(smPath, sm.replace('</urlset>', extraUrls.map((u) => '  <url><loc>' + u + '</loc></url>\n').join('') + '</urlset>'));
   }
   const rd = path.join(outDir, '_redirects');
-  fs.writeFileSync(rd, fs.readFileSync(rd, 'utf8').replace('# (/gtm-scorecard, /categoryvisibilityaudit, /marketingaudit) at their current paths.', '# All three tools are built at their current paths.'));
+  fs.writeFileSync(rd, fs.readFileSync(rd, 'utf8').replace('# Before launch: migrate the Wix posts to /post/<slug> and the tool pages\n# (/gtm-scorecard, /categoryvisibilityaudit, /marketingaudit) at their current paths.\n', '') + redirects.join('\n') + '\n/resources /services/ 302\n/resources/ /services/ 302\n/industries /industries/b2b-fintech/ 302\n/industries/ /industries/b2b-fintech/ 302\n');
 }
 
 // Blog posts migrated from Wix, kept at their original /post/<slug> addresses.

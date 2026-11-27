@@ -14,6 +14,7 @@ EXPERTISE_MENU = [
     ('Positioning & messaging', 'Make it clear: a story buyers can repeat', 'Site-Service-Positioning.dc.html'),
     ('Launches & go-to-market', 'Make it land: launches built for pipeline', 'Site-Service-Launch.dc.html'),
     ('Content & storytelling', 'Make it travel: content, SEO and AI search', 'Site-Service-Content.dc.html'),
+    ('B2B fintech & HR tech', 'Marketing for payments, payroll and EOR', 'Site-Industry-Fintech.dc.html'),
 ]
 
 CHEV = '<span class="chev" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5 5 6.5 8 3.5"/></svg></span>'

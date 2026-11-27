@@ -35,7 +35,7 @@
         ],
         hasQuote: true, quote: 'From day one, he was full of ideas on how we could improve our product growth. He also demonstrated exemplary ownership to drive the execution and reporting on business impact.', quoteName: 'Adetoro Adeniran', quoteOrg: 'Stears',
         note: '',
-        tool: { name: 'Category Visibility Audit', line: 'See how visible your brand is in search and AI answers for your category.', href: 'https://www.thejeremiahajayi.com/categoryvisibilityaudit' },
+        tool: { name: 'Category Visibility Audit', line: 'See how visible your brand is in search and AI answers for your category.', href: '/resources/category-visibility-audit/' },
         paired: { name: 'Positioning & messaging', line: 'Content scales whatever story you have. Make sure it’s the right one.', href: 'Site-Service-Positioning.dc.html' },
         reading: [
           { title: 'AEO and GEO: a simple guide to how AI search works', where: 'My site', href: S + 'aeo-and-geo-a-simple-guide-to-how-ai-search-works' },

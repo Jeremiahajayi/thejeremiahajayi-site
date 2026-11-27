@@ -31,6 +31,7 @@ PAGES = {
     'empowerq': ('Site-EmpowerQ.dc.html', 'EmpowerQ · Jeremiah Ajayi', 'EmpowerQ', 6400),
     'writing': ('Site-Writing.dc.html', 'Writing & research · Jeremiah Ajayi', 'Writing', 5600),
     'about': ('Site-About.dc.html', 'About · Jeremiah Ajayi', 'About', 6600),
+    'ind-fintech': ('Site-Industry-Fintech.dc.html', 'B2B fintech marketing consultant · Jeremiah Ajayi', 'Expertise', 7200),
     'what-id-do': ('Site-WhatIdDo.dc.html', 'What I’d Do · Jeremiah Ajayi', 'What I’d Do', 8200),
 }
 
@@ -38,6 +39,7 @@ FOOT = [
     ('Positioning', 'Site-Service-Positioning.dc.html'),
     ('Launches & GTM', 'Site-Service-Launch.dc.html'),
     ('Content & growth', 'Site-Service-Content.dc.html'),
+    ('B2B fintech', 'Site-Industry-Fintech.dc.html'),
     ('Work', 'Site-Work.dc.html'),
     ('Writing', 'Site-Writing.dc.html'),
     ('About', 'Site-About.dc.html'),
@@ -46,7 +48,7 @@ FOOT = [
     ('LinkedIn', 'https://www.linkedin.com/in/jeremiah-ajayi/'),
 ]
 
-TEMPLATE = {}
+TEMPLATE = {'ind-fintech': 'service'}
 
 CAL = 'https://calendly.com/jeremiahajayiconsultation/strategy-call-with-jeremiah-ajayi'
 MAIL = 'jeremiah@thejeremiahajayi.com'

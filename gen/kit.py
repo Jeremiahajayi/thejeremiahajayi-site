@@ -17,6 +17,7 @@ FOOT = [
     ('Positioning', 'Site-Service-Positioning.dc.html'),
     ('Launches & GTM', 'Site-Service-Launch.dc.html'),
     ('Content & storytelling', 'Site-Service-Content.dc.html'),
+    ('B2B fintech', 'Site-Industry-Fintech.dc.html'),
     ('Work', 'Site-Work.dc.html'),
     ('What I’d Do', 'Site-WhatIdDo.dc.html'),
     ('Writing', 'Site-Writing.dc.html'),

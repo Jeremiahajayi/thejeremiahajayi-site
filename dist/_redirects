@@ -5,5 +5,14 @@
 /portfolio/ /work/#published 301
 /expertise /services/ 301
 /expertise/ /services/ 301
-# Blog posts live on WordPress at /blog/<slug>/; /post/<slug> redirects there (src/worker.js).
-# All three tools are built at their current paths.
+# Free tools moved to /resources/ (Nov 2026)
+/gtm-scorecard /resources/gtm-scorecard/ 301
+/gtm-scorecard/ /resources/gtm-scorecard/ 301
+/marketingaudit /resources/marketing-audit/ 301
+/marketingaudit/ /resources/marketing-audit/ 301
+/categoryvisibilityaudit /resources/category-visibility-audit/ 301
+/categoryvisibilityaudit/ /resources/category-visibility-audit/ 301
+/resources /services/ 302
+/resources/ /services/ 302
+/industries /industries/b2b-fintech/ 302
+/industries/ /industries/b2b-fintech/ 302

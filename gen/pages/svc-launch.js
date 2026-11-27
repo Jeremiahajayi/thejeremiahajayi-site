@@ -36,7 +36,7 @@
         ],
         hasQuote: true, quote: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', quoteName: 'Wesley Hattingh', quoteOrg: 'RemotePass',
         note: 'My Product Marketing Alliance piece covers the systems I built to coordinate the first 15 of these launches.',
-        tool: { name: 'GTM Readiness Scorecard', line: 'Check whether your next launch is ready to create sales conversations.', href: 'https://www.thejeremiahajayi.com/gtm-scorecard' },
+        tool: { name: 'GTM Readiness Scorecard', line: 'Check whether your next launch is ready to create sales conversations.', href: '/resources/gtm-scorecard/' },
         paired: { name: 'Positioning & messaging', line: 'A launch is only as strong as the story behind it.', href: 'Site-Service-Positioning.dc.html' },
         reading: [
           { title: 'How to turn a B2B product launch into sales conversations', where: 'My site', href: S + 'saas-product-launch-proof-gap' },
