@@ -12,7 +12,7 @@
         gets: [
           { n: '01', h: 'Positioning against incumbents', t: 'A clear reason to choose you over the bank, the global platform or doing nothing, backed by customer research.' },
           { n: '02', h: 'Competitive battlecards', t: 'Side-by-side answers sales can use on calls. At RemotePass I built them against Deel and Rippling.' },
-          { n: '03', h: 'Content that passes legal review', t: 'Guides and pages written to clear compliance the first time, like the country guides I wrote for RemotePass with its legal team.' },
+          { n: '03', h: 'Content that passes legal review', t: 'Guides and pages written to clear compliance the first time, like the 150+ country guides I wrote for RemotePass with its legal team.' },
           { n: '04', h: 'Market-entry content', t: 'Content for new regions and buyers, such as the English–Arabic MENA hub and DIFC payroll content at RemotePass.' },
           { n: '05', h: 'Launches and partnerships', t: 'Launch plans built for pipeline, not just press, like the RemotePass × Certn launch.' },
           { n: '06', h: 'Search and AI visibility', t: 'Pages that rank for buying searches and that AI assistants quote. At RemotePass, AI answer share grew from 10% to 40% of tracked prompts.' }
@@ -29,7 +29,7 @@
         ],
         proofTitle: 'Fintech and HR tech marketing that reached pipeline.',
         cases: [
-          { client: 'RemotePass', year: '2024–25', big: '174%', title: 'A content engine built for pipeline', result: 'Country guides and an English–Arabic MENA hub; $500K+ pipeline in under a year.', href: 'Site-Work.dc.html#engine', bg: 'var(--night)', fg: '#F2EFE8' },
+          { client: 'RemotePass', year: '2024–25', big: '174%', title: 'A content engine built for pipeline', result: '150+ country guides and an English–Arabic MENA hub; $500K+ pipeline in under a year.', href: 'Site-Work.dc.html#engine', bg: 'var(--night)', fg: '#F2EFE8' },
           { client: 'RemotePass × Certn', year: '2024', big: '270+', title: 'The partnership launch that went global', result: '270+ media pickups, including Yahoo Finance, Fox and NBC.', href: 'Site-Work.dc.html#certn', bg: 'var(--mint)', fg: '#111' }
         ],
         hasQuote: true, quote: 'He doesn’t just blur the lines between Sales and Marketing—he obliterates them.', quoteName: 'Wesley Hattingh', quoteOrg: 'RemotePass',
