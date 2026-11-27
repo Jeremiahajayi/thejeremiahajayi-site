@@ -1,150 +1,309 @@
-<style>
+<style>.lc-dlg,.lc-dlg *{box-sizing:border-box}
 .lc-wrap{background:#F2EFE8;color:#111}
-.lc{max-width:1120px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,28px) clamp(56px,8vw,112px)}
+.lc{max-width:1120px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(16px,5vw,28px) clamp(56px,8vw,112px)}
 .lc *{box-sizing:border-box}
-.lc-crumb{font-size:14px;color:#6B675F;margin:0 0 24px}
+.lc :focus-visible,.lc-dlg :focus-visible{outline:3px solid #111;outline-offset:2px;border-radius:6px}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.lc-crumb{font-size:14px;color:#55524B;margin:0 0 24px}
 .lc-crumb a{color:inherit}
-.lc h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(42px,6vw,88px);line-height:.94;letter-spacing:-.055em;margin:0;max-width:16ch}
+.lc h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,6vw,88px);line-height:.94;letter-spacing:-.055em;margin:0;max-width:16ch}
 .lc h1 span{color:#C23A0E}
-.lc-lede{margin:26px 0 0;max-width:680px;font-size:clamp(18px,1.6vw,20px);line-height:1.6;color:#3A3833}
-.lc-meta{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px}
-.lc-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1.5px solid #111;border-radius:999px;font-size:14px;font-weight:600;background:#FFFDF6}
-.lc h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,3.4vw,48px);line-height:1;letter-spacing:-.045em;margin:0 0 18px}
-.lc-sec{margin-top:clamp(56px,7vw,88px)}
-.lc-p{font-size:17px;line-height:1.65;color:#3A3833;max-width:720px;margin:0 0 16px}
-.lc-tiers{width:100%;border-collapse:collapse;background:#FFFDF6;border:1.5px solid #111;border-radius:18px;overflow:hidden;font-size:15px;line-height:1.5}
-.lc-tiers th,.lc-tiers td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid #DDD7CA}
-.lc-tiers th{background:#111;color:#F2EFE8;font-weight:700;font-size:14px}
-.lc-tiers tr:last-child td{border-bottom:none}
-.lc-tiers td:first-child{font-weight:700;white-space:nowrap}
-.lc-tw{overflow-x:auto;border-radius:18px}
-.lc-bar{position:sticky;top:76px;z-index:5;margin:0 0 22px;padding:14px 16px;background:#111;color:#F2EFE8;border-radius:18px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;box-shadow:6px 6px 0 #FF5A2A}
-.lc-tierbtns{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.lc-tierbtns span{font-size:13px;color:#B5B0A6;margin-right:4px}
-.lc-tb{font:600 14px 'DM Sans',sans-serif;padding:8px 14px;border-radius:999px;border:1.5px solid #4A4842;background:transparent;color:#F2EFE8;cursor:pointer}
-.lc-tb[aria-pressed="true"]{background:#FF5A2A;border-color:#FF5A2A;color:#111}
-.lc-prog{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;min-width:220px;flex:1;max-width:360px}
-.lc-track{flex:1;height:8px;border-radius:99px;background:#3A3934;overflow:hidden}
-.lc-fill{height:100%;width:0;background:#8FE3B0;transition:width .3s}
-.lc-acts{display:flex;gap:8px}
-.lc-act{font:600 13px 'DM Sans',sans-serif;padding:8px 12px;border-radius:999px;border:1.5px solid #4A4842;background:transparent;color:#F2EFE8;cursor:pointer}
-.lc-phase{margin:0 0 18px;background:#FFFDF6;border:1.5px solid #111;border-radius:22px;overflow:hidden}
-.lc-ph{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline;padding:18px 20px;border-bottom:1.5px solid #111;background:#FFF5D9}
-.lc-ph h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em}
-.lc-ph p{margin:0;font-size:14px;color:#6B675F;font-weight:600}
+.lc-lede{margin:24px 0 0;max-width:700px;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#3A3833}
+.lc-meta-pills{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.lc-pill{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid #111;border-radius:999px;font-size:14px;font-weight:600;background:#FFFDF6}
+.lc-pair{margin:22px 0 0;max-width:720px;font-size:16px;line-height:1.6;color:#3A3833;padding:14px 16px;border-left:4px solid #FF5A2A;background:#FFFDF6;border-radius:0 12px 12px 0}
+.lc-pair a,.lc-p a{color:#111;font-weight:700}
+.lc h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,46px);line-height:1.02;letter-spacing:-.045em;margin:0 0 14px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.lc-step{display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;border-radius:50%;background:#111;color:#FFF5D9;font-size:.62em;letter-spacing:0}
+.lc-opt{font:600 14px 'DM Sans',sans-serif;letter-spacing:0;padding:4px 10px;border-radius:999px;background:#EDE6D6;color:#55524B}
+.lc-sec{margin-top:clamp(52px,7vw,84px);scroll-margin-top:90px}
+.lc-p{font-size:17px;line-height:1.65;color:#3A3833;max-width:720px;margin:0 0 18px}
+.lc-btn{font:700 15px 'DM Sans',sans-serif;min-height:44px;padding:10px 18px;border-radius:999px;border:1.5px solid #111;background:#FF5A2A;color:#111;cursor:pointer}
+.lc-btn:hover{background:#ff7048}
+.lc-btn-s{min-height:38px;padding:7px 14px;font-size:14px;background:#FFFDF6}
+.lc-btn-s:hover{background:#FFF5D9}
+.lc-btn-ghost{background:transparent}
+.lc-btn-ghost:hover{background:#FFF5D9}
+/* tier guide */
+.lc-quiz{display:grid;gap:12px;max-width:820px;margin:0 0 22px}
+.lc-q{margin:0;padding:16px 18px;border:1.5px solid #111;border-radius:18px;background:#FFFDF6}
+.lc-q legend{padding:0;font-weight:700;font-size:16.5px;line-height:1.45;float:left;width:100%;margin-bottom:12px}
+.lc-yn{clear:both;display:flex;gap:10px}
+.lc-yn label{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 18px;border:1.5px solid #C9C3B6;border-radius:999px;font-weight:600;cursor:pointer;background:#fff}
+.lc-yn label:has(input:checked){border-color:#111;background:#FFF5D9}
+.lc-yn input{width:18px;height:18px;accent-color:#FF5A2A;margin:0}
+.lc-rec{padding:18px;border:1.5px solid #111;border-radius:18px;background:#111;color:#F2EFE8;box-shadow:6px 6px 0 #FF5A2A}
+.lc-rec-t{margin:0 0 6px;font:700 22px 'Space Grotesk',sans-serif;letter-spacing:-.03em}
+.lc-rec-w{margin:0 0 14px;font-size:15.5px;line-height:1.55;color:#D8D3C9}
+.lc-rec-a{display:flex;flex-wrap:wrap;gap:10px}
+.lc-rec .lc-btn-ghost{color:#F2EFE8;border-color:#5A5852}
+.lc-rec .lc-btn-ghost:hover{background:#2a2926}
+.lc-tcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lc-tc{padding:16px;border:1.5px solid #C9C3B6;border-radius:18px;background:#FFFDF6;font-size:15px;line-height:1.5}
+.lc-tc p{margin:0}
+.lc-tc-n{font-weight:700;margin-bottom:6px!important}
+.lc-tc-t{margin-top:8px!important;color:#55524B;font-weight:600;font-size:14px}
+.lc-tc.on{border-color:#111;box-shadow:4px 4px 0 #FF5A2A}
+/* details */
+.lc-det{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1000px}
+.lc-f{display:flex;flex-direction:column;gap:6px}
+.lc-f label{font-weight:700;font-size:14.5px}
+.lc-hint{font-size:13.5px;color:#55524B;line-height:1.45}
+.lc-f input,.lc-f textarea,.lc-mt input,.lc-own{font:16px 'DM Sans',sans-serif;color:#111;padding:10px 12px;min-height:44px;border:1.5px solid #8C877C;border-radius:12px;background:#fff;width:100%}
+.lc-f textarea{resize:vertical;line-height:1.5}
+.lc-save-note,.lc-saved{margin:12px 0 0;font-size:14px;color:#55524B}
+/* toolbar + status */
+.lc-toolbar{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;justify-content:space-between;margin:0 0 14px}
+.lc-tierbtns{display:flex;flex-wrap:wrap;gap:6px;padding:5px;border:1.5px solid #111;border-radius:999px;background:#FFFDF6}
+.lc-tb{font:700 14.5px 'DM Sans',sans-serif;min-height:40px;padding:8px 14px;border-radius:999px;border:0;background:transparent;color:#111;cursor:pointer}
+.lc-tb span{font-weight:500;color:#55524B}
+.lc-tb[aria-pressed="true"]{background:#111;color:#FFF5D9}
+.lc-tb[aria-pressed="true"] span{color:#D8D3C9}
+.lc-acts{display:flex;flex-wrap:wrap;gap:8px}
+.lc-act{font:600 14px 'DM Sans',sans-serif;min-height:40px;padding:8px 14px;border-radius:999px;border:1.5px solid #111;background:#FFFDF6;color:#111;cursor:pointer}
+.lc-act:hover{background:#FFF5D9}
+.lc-act-q{border-color:#C9C3B6;color:#55524B}
+.lc-banner{margin:0 0 14px;padding:14px 16px;border-radius:14px;border:1.5px solid #111;background:#FFF5D9;font-size:15.5px;line-height:1.55}
+.lc-banner.warn{background:#FDE3D9;border-color:#C23A0E}
+.lc-banner b{font-weight:700}
+.lc-status{position:sticky;top:76px;z-index:5;display:flex;align-items:center;gap:14px;margin:0 0 16px;padding:10px 16px;background:#111;color:#F2EFE8;border-radius:999px;font-size:14.5px;font-weight:600}
+.lc-track{flex:1;height:6px;border-radius:99px;background:#3A3934;overflow:hidden;min-width:60px}
+.lc-fill{display:block;height:100%;width:0;background:#8FE3B0;transition:width .3s}
+/* stages + tasks */
+.lc-phase{margin:0 0 16px;background:#FFFDF6;border:1.5px solid #111;border-radius:20px;overflow:hidden}
+.lc-ph{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline;padding:14px 18px;border-bottom:1.5px solid #111;background:#FFF5D9}
+.lc-ph h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(19px,2vw,24px);letter-spacing:-.03em}
+.lc-when{margin:0;font-size:14px;color:#3A3833;font-weight:600;grid-column:1}
+.lc-sd{font-weight:500;color:#55524B}
+.lc-sc{margin:0;font-size:13.5px;font-weight:700;color:#55524B;grid-column:2;grid-row:1/span 2;align-self:center;white-space:nowrap}
 .lc-items{list-style:none;margin:0;padding:0}
-.lc-items li{border-bottom:1px solid #E7E1D3}
-.lc-items li:last-child{border-bottom:none}
-.lc-items label{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:start;padding:16px 20px;cursor:pointer}
-.lc-items input{width:22px;height:22px;margin:2px 0 0;accent-color:#FF5A2A;cursor:pointer}
-.lc-items b{display:block;font-size:16px;line-height:1.4}
-.lc-items small{display:block;margin-top:4px;font-size:14.5px;line-height:1.55;color:#55524B}
-.lc-items li.done b{text-decoration:line-through;text-decoration-color:#C23A0E;color:#6B675F}
-.lc-tag{font-size:12px;font-weight:700;padding:4px 8px;border-radius:999px;background:#EDE6D6;color:#55524B;white-space:nowrap}
-.lc-items li[hidden]{display:none}
-.lc-cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.lc-card{padding:24px;border:1.5px solid #111;border-radius:22px;background:#FFFDF6;display:flex;flex-direction:column;gap:10px}
+.lc-task{border-bottom:1px solid #E7E1D3;padding:4px 0 12px;scroll-margin-top:140px}
+.lc-task:last-child{border-bottom:none}
+.lc-task[hidden]{display:none}
+.lc-main{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:12px 18px 4px;cursor:pointer}
+.lc-cb{width:24px;height:24px;margin:2px 0 0;accent-color:#FF5A2A;cursor:pointer}
+.lc-title{display:block;font-size:16.5px;line-height:1.4}
+.lc-desc{display:block;margin-top:4px;font-size:15px;line-height:1.55;color:#4A4842}
+.lc-task.done .lc-title{text-decoration:line-through;text-decoration-color:#C23A0E;color:#55524B}
+.lc-task.na .lc-title,.lc-task.na .lc-desc{color:#8C877C}
+.lc-task.na .lc-cb{opacity:.35;cursor:not-allowed}
+.lc-meta{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;padding:4px 18px 0 58px}
+.lc-chip{font-size:13px;font-weight:600;padding:5px 10px;border-radius:999px;background:#EDE6D6;color:#3A3833}
+.lc-chip.pri{background:#111;color:#FFF5D9}
+.lc-chip.late{background:#FDE3D9;color:#8E2A0A}
+.lc-chip.nastate{background:#E7E1D3;color:#55524B}
+.lc-ownw{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#55524B}
+.lc-own{min-height:34px!important;padding:4px 8px!important;font-size:13.5px!important;width:auto!important;border-radius:999px!important;border-color:#C9C3B6!important}
+.lc-mini{font:600 13px 'DM Sans',sans-serif;min-height:34px;padding:5px 11px;border-radius:999px;border:1.5px solid #C9C3B6;background:#fff;color:#3A3833;cursor:pointer}
+.lc-mini[aria-pressed="true"]{border-color:#111;background:#E7E1D3;color:#111}
+.lc-mini:hover{border-color:#111}
+.lc-notew{padding:8px 18px 0 58px}
+.lc-notew textarea{width:100%;font:15px 'DM Sans',sans-serif;padding:10px 12px;border:1.5px solid #8C877C;border-radius:12px;min-height:64px;resize:vertical}
+.lc-guide{margin:8px 18px 0 58px;border:1.5px solid #C9C3B6;border-radius:14px;background:#fff}
+.lc-guide summary{cursor:pointer;list-style:none;padding:9px 14px;font-weight:700;font-size:14px;display:flex;justify-content:space-between;gap:12px;min-height:40px;align-items:center}
+.lc-guide summary::-webkit-details-marker,.lc-practice summary::-webkit-details-marker,.lc-faq summary::-webkit-details-marker{display:none}
+.lc-guide summary::after{content:'+';font-size:18px}
+.lc-guide[open] summary::after{content:'–'}
+.lc-guide[open]{border-color:#111}
+.lc-guide-b{padding:0 14px 12px;font-size:14.5px;line-height:1.55;color:#2D2B27}
+.lc-guide-b p{margin:8px 0}
+.lc-guide-b ul{margin:4px 0 8px;padding-left:20px}
+.lc-guide-b li{margin:3px 0}
+.lc-ex{padding:10px 12px;background:#FFF5D9;border-radius:10px}
+.lc-own-static{}
+/* templates */
+.lc-tpls,.lc-cta,.lc-when-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.lc-when-g{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:18px}
+.lc-tpl,.lc-card,.lc-wc{padding:22px;border:1.5px solid #111;border-radius:20px;background:#FFFDF6;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.lc-wc{border-color:#C9C3B6}
+.lc-tpl h3,.lc-card h3,.lc-wc h3,.lc-case h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:-.03em}
+.lc-tpl p,.lc-card p,.lc-wc p{margin:0;font-size:15px;line-height:1.55;color:#3A3833;flex:1}
 .lc-card.dark{background:#111;color:#F2EFE8}
-.lc-card h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:-.03em}
-.lc-card p{margin:0;font-size:15px;line-height:1.55;opacity:.85;flex:1}
+.lc-card.dark p{color:#D8D3C9}
 .lc-card a{font-weight:700;color:inherit}
-.lc-faq details{border-top:1.5px solid #111;padding:18px 0}
-.lc-faq details:last-child{border-bottom:1.5px solid #111}
-.lc-faq summary{cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,22px);letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.lc-faq summary::after{content:'+';font-size:24px}
-.lc-faq details[open] summary::after{content:'–'}
-.lc-faq p{margin:12px 0 0;font-size:16px;line-height:1.65;color:#3A3833;max-width:760px}
-.lc-by{margin-top:clamp(40px,5vw,64px);display:flex;gap:16px;align-items:center;padding-top:24px;border-top:1.5px solid #111}
-.lc-by img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1.5px solid #111}
-.lc-by p{margin:0;font-size:15px;line-height:1.55;color:#3A3833;max-width:720px}
-.lc-join{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(28px,4vw,48px);border:1.5px solid #111;border-radius:26px;background:#FF5A2A;box-shadow:8px 8px 0 #111}
+.lc-case{padding:22px;border:1.5px solid #111;border-radius:20px;background:#fff;max-width:860px}
+.lc-case p,.lc-case li{font-size:15.5px;line-height:1.6;color:#2D2B27}
+.lc-case ul{padding-left:20px;margin:10px 0}
+.lc-case li{margin:6px 0}
+.lc-practice{border:1.5px solid #111;border-radius:20px;background:#FFFDF6;max-width:860px}
+.lc-practice summary{cursor:pointer;list-style:none;padding:16px 20px;font:700 19px 'Space Grotesk',sans-serif;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:12px}
+.lc-practice summary::after{content:'+'}
+.lc-practice[open] summary::after{content:'–'}
+.lc-practice-b{padding:0 20px 18px;font-size:15.5px;line-height:1.6}
+.lc-practice-b ol{padding-left:22px}
+.lc-practice-b li{margin:8px 0}
+.lc-practice-b a{color:#111;font-weight:700}
+/* dialogs */
+.lc-dlg{width:min(860px,calc(100vw - 24px));max-height:calc(100vh - 32px);padding:0;border:1.5px solid #111;border-radius:22px;background:#FFFDF6;color:#111;box-shadow:8px 8px 0 #111}
+.lc-dlg::backdrop{background:rgba(17,17,17,.55)}
+.lc-dlg-in{padding:22px clamp(16px,3vw,28px) 20px;font-family:'DM Sans',sans-serif}
+.lc-dlg-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:-22px;background:#FFFDF6;padding:8px 0;z-index:2}
+.lc-dlg h2{margin:0;font:700 clamp(24px,3vw,32px) 'Space Grotesk',sans-serif;letter-spacing:-.04em}
+.lc-x{font-size:28px;line-height:1;width:44px;height:44px;border-radius:50%;border:1.5px solid #111;background:#fff;cursor:pointer}
+.lc-dlg-intro{margin:6px 0 14px;font-size:15.5px;line-height:1.6;color:#3A3833}
+.lc-dlg-acts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.lc-exnote{margin:0 0 12px;padding:10px 12px;border-radius:10px;background:#FFF5D9;font-size:14px;font-weight:600}
+.lc-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lc-dlg-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px;padding-top:14px;border-top:1.5px solid #E7E1D3}
+.lc-msg{font-size:14px;font-weight:700;color:#2E6B0E}
+.lc-note-box{padding:12px 14px;border-radius:12px;background:#fff;border:1px solid #E7E1D3;font-size:14.5px;line-height:1.55;margin-bottom:12px}
+.lc-note-box p{margin:4px 0}
+.lc-mt-wrap{overflow-x:auto}
+.lc-mt{width:100%;border-collapse:collapse;font-size:14.5px;min-width:620px}
+.lc-mt th{text-align:left;padding:8px 6px;border-bottom:1.5px solid #111;font-size:13.5px}
+.lc-mt td{padding:6px;border-bottom:1px solid #E7E1D3;vertical-align:middle}
+.lc-mt td:first-child{width:32%}
+.lc-mt input[type=text]{min-height:40px;padding:8px 10px;font-size:15px}
+.lc-ml{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.lc-mi{display:flex;gap:8px;align-items:center;font-weight:600;cursor:pointer}
+.lc-mi input{width:20px;height:20px;accent-color:#FF5A2A;flex:none}
+/* newsletter + faq + byline (unchanged look) */
+.lc-join{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(24px,4vw,48px);border:1.5px solid #111;border-radius:26px;background:#FF5A2A;box-shadow:8px 8px 0 #111}
 .lc-join h2{margin:0 0 12px}
 .lc-join p{margin:0;font-size:17px;line-height:1.55;color:#111}
 .lc-join .wd-bh-wait{font-size:15px;opacity:.8}
 .lc-form{background:#FFFDF6;border:1.5px solid #111;border-radius:18px;padding:18px;min-height:120px}
 .lc-fall{margin-top:10px!important;font-size:14px!important}
 .lc-fall a{color:#111;font-weight:700}
-@media (max-width:760px){.lc-join{grid-template-columns:1fr}}
-@media (max-width:640px){.lc-tiers thead{display:none}.lc-tiers,.lc-tiers tbody,.lc-tiers tr,.lc-tiers td{display:block;width:100%}.lc-tiers tr{border-bottom:1.5px solid #111;padding:6px 0}.lc-tiers tr:last-child{border-bottom:none}.lc-tiers td{border:none;padding:6px 16px}.lc-tiers td:nth-child(3)::before{content:'Lead time: ';font-weight:700}.lc-tiers td:nth-child(4)::before{content:'Gets: ';font-weight:700}.lc-bar{top:64px}.lc-items label{grid-template-columns:24px 1fr}.lc-tag{grid-column:2;justify-self:start}}
-@media print{.site-h,.lc-bar .lc-acts,.lc-tierbtns,.lc-cta,.lc-faq,section[style*="background: #111"]{display:none!important}.lc-bar{position:static;box-shadow:none}.lc-phase{break-inside:avoid}}
+.lc-faq details{border-top:1.5px solid #111;padding:16px 0}
+.lc-faq details:last-child{border-bottom:1.5px solid #111}
+.lc-faq summary{cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,22px);letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:32px;align-items:center}
+.lc-faq summary::after{content:'+';font-size:24px}
+.lc-faq details[open] summary::after{content:'–'}
+.lc-faq p{margin:12px 0 0;font-size:16px;line-height:1.65;color:#3A3833;max-width:760px}
+.lc-by{margin-top:clamp(40px,5vw,64px);display:flex;gap:16px;align-items:center;padding-top:24px;border-top:1.5px solid #111}
+.lc-by img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1.5px solid #111;flex:none}
+.lc-by p{margin:0;font-size:15px;line-height:1.55;color:#3A3833;max-width:720px}
+.lc-print-head{display:none}
+/* without JavaScript the static Tier 1 checklist is shown and the interactive parts are hidden */
+.lc-wrap:not(.lc-on) .lc-js{display:none!important}
+@media (max-width:900px){.lc-det{grid-template-columns:repeat(2,minmax(0,1fr))}.lc-tcs{grid-template-columns:1fr}}
+@media (max-width:640px){
+ .lc-status{top:64px;border-radius:14px;padding:9px 12px;font-size:13.5px}
+ .lc-det,.lc-fields{grid-template-columns:1fr}
+ .lc-tierbtns{width:100%;justify-content:space-between}
+ .lc-tb{flex:1;padding:8px 6px}
+ .lc-tb span{display:none}
+ .lc-acts{width:100%}
+ .lc-act{flex:1}
+ .lc-main{padding:12px 14px 4px;grid-template-columns:28px 1fr}
+ .lc-meta,.lc-notew{padding-left:54px;padding-right:14px}
+ .lc-guide{margin:8px 14px 0 54px}
+ .lc-ph{padding:12px 14px}
+ .lc-join{grid-template-columns:1fr}
+ .lc-dlg{width:100vw;max-width:100vw;max-height:100dvh;height:100dvh;border-radius:0;box-shadow:none}
+ .lc-yn label{flex:1;justify-content:center}
+ .lc-mt{min-width:0}.lc-mt thead{display:none}.lc-mt,.lc-mt tbody{display:block}
+ .lc-mt tr{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 0;border-bottom:1px solid #E7E1D3}
+ .lc-mt td{display:block;border:0;padding:0;width:auto!important}
+ .lc-ml{position:static;width:auto;height:auto;clip:auto;display:block;font-size:12.5px;font-weight:700;color:#55524B;margin:0 0 4px}.lc-mt td:first-child{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){.lc *,.lc-dlg *{transition:none!important;scroll-behavior:auto!important}}
+@media print{
+ .site-h,.lc-toolbar,.lc-status,.lc-quiz,#details,#templates,#measure,#example,#subscribe,#help,.lc-faq,.lc-by,.lc-pair,.lc-meta-pills,.lc-crumb,.lc-guide,.lc-mini,.lc-notew:empty,.lc-dlg,.lc-tcs,#tier,section[style*="background: #111"],footer{display:none!important}
+ .lc{padding:0}
+ .lc h1{font-size:30px}
+ .lc-lede{font-size:13px}
+ .lc-print-head{display:block;margin:10px 0 14px;font-size:13px}
+ .lc-phase{break-inside:auto;border-width:1px}
+ .lc-task{break-inside:avoid}
+ .lc-own{border:0!important;padding:0!important;min-height:0!important;-webkit-appearance:none;appearance:none;background:none}
+ .lc-banner{border-width:1px}
+}
 </style>
 <section class="lc-wrap"><div class="lc">
 <p class="lc-crumb"><a href="/">Home</a> / <a href="/services/product-launch-gtm/">Launches &amp; GTM</a> / Launch checklist</p>
 <h1>B2B SaaS product launch checklist<span>.</span></h1>
-<p class="lc-lede">Most B2B launches get attention and then nothing happens in the pipeline. This checklist is built to make launches start sales conversations: 33 steps from the GTM brief to the 30-day review, scaled to how big your release really is. Tick items off as you go; your progress saves in this browser.</p>
-<div class="lc-meta"><span class="lc-pill">✅ Free, no signup</span><span class="lc-pill">🗓️ 6–8 weeks for a major launch</span><span class="lc-pill">🖨️ Print or save as PDF</span></div>
+<p class="lc-lede">Go from “we have a launch coming up” to knowing what needs to happen, who does it, when, and how you’ll know it worked. Pick a launch tier, get a checklist sized to it with owners and dates, use the templates, and export the plan for your team.</p>
+<div class="lc-meta-pills"><span class="lc-pill">Free, no signup</span><span class="lc-pill">33 tasks across six stages</span><span class="lc-pill">GTM brief, measurement and review templates</span><span class="lc-pill">Export to CSV or PDF</span></div>
+<p class="lc-pair">Not sure you’re ready to launch at all? The <a href="/resources/gtm-scorecard/" data-track="readiness_scorecard_clicked" data-loc="intro">GTM Readiness Scorecard</a> answers “are we ready?”. This checklist answers “what needs to happen, and when?”.</p>
 
-<div class="lc-sec">
-<h2>First, pick a launch tier</h2>
-<p class="lc-p">Not every release deserves a press release. Tier the launch first, then use the filter above the checklist to show only the steps that tier needs.</p>
-<div class="lc-tw"><table class="lc-tiers">
-<thead><tr><th>Tier</th><th>What it is</th><th>Lead time</th><th>What it gets</th></tr></thead>
-<tbody>
-<tr><td>Tier 1</td><td>A new product, a major feature that changes the pitch, a partnership or a new market</td><td>6–8 weeks</td><td>Everything: GTM brief, press, partner plan, full sales enablement, a landing page, and pipeline measures</td></tr>
-<tr><td>Tier 2</td><td>A notable feature that existing buyers asked for, or one that helps win deals</td><td>3–4 weeks</td><td>Messaging, a product page update, email, social, sales one-pager and FAQ, and pipeline measures</td></tr>
-<tr><td>Tier 3</td><td>An improvement or a smaller update</td><td>1 week</td><td>A changelog entry, a help doc, in-product messaging and a mention in the next customer email</td></tr>
-</tbody></table></div>
+<section class="lc-sec" id="tier" aria-labelledby="tier-h">
+<h2 id="tier-h"><span class="lc-step">1</span>How big a launch does this deserve?</h2>
+<p class="lc-p">Not every release needs a press release. Answer up to three questions and we’ll suggest a tier. You can always pick a different one.</p>
+<div class="lc-quiz lc-js">
+<fieldset class="lc-q" data-q="1"><legend>Does this release introduce a new product, market or partnership, or significantly change your positioning?</legend><div class="lc-yn"><label><input type="radio" name="q1" value="yes"> Yes</label><label><input type="radio" name="q1" value="no"> No</label></div></fieldset>
+<fieldset class="lc-q" data-q="2" hidden><legend>Will it materially affect purchase decisions, competitive differentiation or deals already in progress?</legend><div class="lc-yn"><label><input type="radio" name="q2" value="yes"> Yes</label><label><input type="radio" name="q2" value="no"> No</label></div></fieldset>
+<fieldset class="lc-q" data-q="3" hidden><legend>Is it mainly an improvement for existing users?</legend><div class="lc-yn"><label><input type="radio" name="q3" value="yes"> Yes</label><label><input type="radio" name="q3" value="no"> No</label></div></fieldset>
+<div class="lc-rec" hidden role="status" aria-live="polite"><p class="lc-rec-t"></p><p class="lc-rec-w"></p><div class="lc-rec-a"><button type="button" class="lc-btn" data-use-rec>Use this tier</button><button type="button" class="lc-btn lc-btn-ghost" data-quiz-reset>Start again</button></div></div>
 </div>
+<div class="lc-tcs"><div class="lc-tc" data-tc="1"><p class="lc-tc-n">Tier 1 · Major launch</p><p>A new product, a major feature that changes the pitch, a partnership or a new market.</p><p class="lc-tc-t">6–8 weeks</p></div><div class="lc-tc" data-tc="2"><p class="lc-tc-n">Tier 2 · Feature launch</p><p>A meaningful feature that solves an established customer problem or helps win deals.</p><p class="lc-tc-t">3–4 weeks</p></div><div class="lc-tc" data-tc="3"><p class="lc-tc-n">Tier 3 · Small update</p><p>An incremental improvement for existing users.</p><p class="lc-tc-t">About a week</p></div></div>
+</section>
 
-<div class="lc-sec" id="checklist">
-<h2>The checklist</h2>
-<div class="lc-bar">
-<div class="lc-tierbtns" role="group" aria-label="Show steps for"><span>Show steps for</span><button type="button" class="lc-tb" data-tier="1" aria-pressed="true">Tier 1</button><button type="button" class="lc-tb" data-tier="2" aria-pressed="false">Tier 2</button><button type="button" class="lc-tb" data-tier="3" aria-pressed="false">Tier 3</button></div>
-<div class="lc-prog"><span id="lc-count">0 of 33</span><div class="lc-track"><div class="lc-fill" id="lc-fill"></div></div></div>
-<div class="lc-acts"><button type="button" class="lc-act" id="lc-print">Print / PDF</button><button type="button" class="lc-act" id="lc-reset">Reset</button></div>
+<section class="lc-sec lc-js" id="details" aria-labelledby="details-h">
+<h2 id="details-h"><span class="lc-step">2</span>Your launch details <span class="lc-opt">optional</span></h2>
+<p class="lc-p">Add a launch date to get suggested due dates for every task. You can skip this and still use the checklist.</p>
+<div class="lc-det">
+<div class="lc-f"><label for="d-name">Launch name</label><input id="d-name" data-d="name" type="text" autocomplete="off" placeholder="e.g. Multi-entity approvals"></div>
+<div class="lc-f"><label for="d-company">Company or product</label><input id="d-company" data-d="company" type="text" autocomplete="organization"></div>
+<div class="lc-f"><label for="d-date">Target launch date</label><input id="d-date" data-d="date" type="date"></div>
+<div class="lc-f"><label for="d-owner">Launch owner</label><input id="d-owner" data-d="owner" type="text" autocomplete="name"></div>
 </div>
+<p class="lc-save-note">Everything you enter is saved in this browser on this device only. It isn’t sent to us and won’t sync to your other devices.</p>
+</section>
 
-<div class="lc-phase"><div class="lc-ph"><h3>1. Define the launch</h3><p>6–8 weeks before</p></div><ul class="lc-items">
-<li data-t="123"><label><input type="checkbox" data-id="brief"><span><b>Write the GTM brief</b><small>Who the release is for, the problem it solves, and how it changes what sales says. One page is enough.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="123"><label><input type="checkbox" data-id="tier"><span><b>Agree the launch tier with product</b><small>Use the table above. Tiering early stops a minor update from eating a major launch’s budget, and the reverse.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="123"><label><input type="checkbox" data-id="owner"><span><b>Name one owner and a launch date</b><small>One person accountable for the launch, and a date product has committed to, not a hope.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="measures"><span><b>Agree how you’ll measure it, before launch</b><small>Sourced and influenced pipeline, demo requests, sales usage of launch assets and early adoption. Write down the targets now.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="1"><label><input type="checkbox" data-id="research"><span><b>Talk to 3–5 customers and 2–3 sales reps</b><small>Ask about the problem the release solves and the objections reps hear. Their words become your messaging.</small></span><span class="lc-tag">Tier 1</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="position"><span><b>Check the positioning</b><small>Can you say in one sentence why a buyer would choose this over the alternative, including doing nothing?</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="1"><label><input type="checkbox" data-id="partner"><span><b>For partner launches: agree the story, timing and approvals</b><small>Settle whose story it is, who announces first and who signs off, with the partner’s marketing team, in writing.</small></span><span class="lc-tag">Tier 1</span></label></li>
-</ul></div>
-
-<div class="lc-phase"><div class="lc-ph"><h3>2. Build the message and the plan</h3><p>4–6 weeks before</p></div><ul class="lc-items">
-<li data-t="123"><label><input type="checkbox" data-id="msg"><span><b>Write the launch messaging</b><small>A headline, three proof points and one customer use case. Every asset borrows from this, so it all says the same thing.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="calendar"><span><b>Build the launch calendar</b><small>Every asset, channel, owner and due date in one place, working back from launch day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="design"><span><b>Brief design and video</b><small>Launch visuals, product screenshots and a short demo. Buyers want to see it working.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="page"><span><b>Draft the landing page, or update the product page</b><small>Check whether pricing, comparison and integration pages also need changes.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="1"><label><input type="checkbox" data-id="press"><span><b>Plan press</b><small>The release, target outlets and journalists, an embargo date, and regional versions where the market needs them, such as Arabic for the Middle East.</small></span><span class="lc-tag">Tier 1</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="accounts"><span><b>List the customers and open deals this release helps</b><small>These are your first sales conversations. Give the list to sales and customer success.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="search"><span><b>Plan for search and AI answers</b><small>What will buyers search for, or ask ChatGPT, when they need this? Make sure a page answers it clearly.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-</ul></div>
-
-<div class="lc-phase"><div class="lc-ph"><h3>3. Enable sales and customer success</h3><p>2–3 weeks before</p></div><ul class="lc-items">
-<li data-t="12"><label><input type="checkbox" data-id="kit"><span><b>Build the enablement kit</b><small>A deck slide, a one-pager, an FAQ and a short talk track. Keep it to what a rep will actually use on a call.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="battlecards"><span><b>Update battlecards</b><small>If the release changes how you answer “why not the competitor?”, change the battlecard before reps need it.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="training"><span><b>Run a 30-minute training and record it</b><small>Sales and customer success should hear about the launch before customers do.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="123"><label><input type="checkbox" data-id="docs"><span><b>Get help docs and in-product messages ready</b><small>The quickest way to adoption is telling users where they already are.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="tracking"><span><b>Set up tracking</b><small>UTM links, a campaign in your CRM and conversion events on the landing page, so pipeline can be traced back to the launch.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-</ul></div>
-
-<div class="lc-phase"><div class="lc-ph"><h3>4. Get ready</h3><p>Launch week</p></div><ul class="lc-items">
-<li data-t="123"><label><input type="checkbox" data-id="qa"><span><b>Check everything works</b><small>The feature is live for the right users, and every link, form and tracking event works.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="123"><label><input type="checkbox" data-id="brief-teams"><span><b>Confirm the date and time with every team</b><small>Leadership, sales, support and any partners know exactly when it goes out.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="social"><span><b>Prepare posts for founders and the team</b><small>People follow people. A founder’s post often reaches further than the company page.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="1"><label><input type="checkbox" data-id="embargo"><span><b>Send the press release under embargo</b><small>Give journalists time to write, and confirm what they can publish and when.</small></span><span class="lc-tag">Tier 1</span></label></li>
-</ul></div>
-
-<div class="lc-phase"><div class="lc-ph"><h3>5. Launch</h3><p>Launch day</p></div><ul class="lc-items">
-<li data-t="123"><label><input type="checkbox" data-id="publish"><span><b>Publish across your channels</b><small>The announcement, an email to customers and prospects, the landing page, social and in-app messages, scaled to the tier.</small></span><span class="lc-tag">All tiers</span></label></li>
-<li data-t="1"><label><input type="checkbox" data-id="press-live"><span><b>Go live with press and partners</b><small>The press release, partner posts and any co-marketing, at the agreed time.</small></span><span class="lc-tag">Tier 1</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="sales-note"><span><b>Send sales a “use this today” note</b><small>Which accounts to contact, what to say and which asset to send. This is where attention turns into conversations.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="watch"><span><b>Watch the first signals</b><small>Replies, demo requests, sign-ups and questions coming into sales and support. Fix anything confusing the same day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-</ul></div>
-
-<div class="lc-phase"><div class="lc-ph"><h3>6. Turn attention into pipeline</h3><p>2–30 days after</p></div><ul class="lc-items">
-<li data-t="12"><label><input type="checkbox" data-id="followup"><span><b>Follow up with everyone who engaged</b><small>People who clicked, visited pricing or watched the demo. Most launch pipeline comes from follow-up, not launch day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="stories"><span><b>Collect the first customer stories</b><small>A quote or a result from an early user is the strongest proof for the next round of content and sales.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="usage"><span><b>Check which assets sales actually used</b><small>Ask reps. Unused assets are a message problem, not a sales problem.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="report"><span><b>Report against the measures at 30 days</b><small>Pipeline, demo requests, adoption and sales usage, against the targets you set in step 1.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="12"><label><input type="checkbox" data-id="keep"><span><b>Keep it going</b><small>Plan two or three follow-up pieces: a use case, a customer story, a how-to. A launch is a starting point, not a single day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
-<li data-t="123"><label><input type="checkbox" data-id="retro"><span><b>Run a short retro and update your playbook</b><small>What to repeat, what to drop and what to do earlier next time.</small></span><span class="lc-tag">All tiers</span></label></li>
-</ul></div>
+<section class="lc-sec" id="checklist" aria-labelledby="checklist-h">
+<h2 id="checklist-h"><span class="lc-step">3</span>The checklist</h2>
+<div class="lc-toolbar lc-js">
+<div class="lc-tierbtns" role="group" aria-label="Launch tier"><button type="button" class="lc-tb" data-tier="1" aria-pressed="true">Tier 1<span> · Major</span></button><button type="button" class="lc-tb" data-tier="2" aria-pressed="false">Tier 2<span> · Feature</span></button><button type="button" class="lc-tb" data-tier="3" aria-pressed="false">Tier 3<span> · Small</span></button></div>
+<div class="lc-acts"><button type="button" class="lc-act" id="lc-csv">Download plan (CSV)</button><button type="button" class="lc-act" id="lc-print">Print / PDF</button><button type="button" class="lc-act lc-act-q" id="lc-reset">Reset</button></div>
 </div>
+<div class="lc-print-head" aria-hidden="true"></div>
+<div class="lc-banner" role="status" hidden></div>
+<div class="lc-status lc-js"><span class="lc-st-t" id="lc-st-t">Tier 1 · 0 of 33 complete</span><span class="lc-track" aria-hidden="true"><span class="lc-fill" id="lc-fill"></span></span></div>
+<p class="sr" id="lc-live" role="status" aria-live="polite"></p>
+<section class="lc-phase" data-stage="1" aria-labelledby="st1-h"><div class="lc-ph"><h3 id="st1-h"><span class="lc-sn">1.</span> <span class="lc-sh">Define the launch</span></h3><p class="lc-when"><span class="lc-sw">8–6 weeks before</span><span class="lc-sd"></span></p><p class="lc-sc"></p></div><ul class="lc-items"><li class="lc-task" id="task-brief" data-id="brief" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="brief"><span class="lc-txt"><b class="lc-title">Write the GTM brief</b><span class="lc-desc">One page on who the release is for, the problem it solves, what buyers use today, and how it changes what sales says.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> One page that product, marketing and sales all agree with before anyone writes an asset. If people disagree on it, they will disagree on everything after it.</p><p><b>A simple structure</b></p><ul><li>What we’re launching, in one sentence</li><li>Who it’s for, and who signs off on buying it</li><li>The problem, in the customer’s words</li><li>What they use today, including doing nothing</li><li>Why ours is different, and the proof</li><li>What we want the launch to achieve, and how we’ll measure it</li><li>Owner, date, dependencies and risks</li></ul><p><b>Common mistake.</b> Writing a feature spec. A brief explains why a buyer should care; the spec explains how it works.</p><p><button type="button" class="lc-btn lc-btn-s" data-open="brief">Open the GTM brief template</button></p></div></details></li><li class="lc-task" id="task-tier" data-id="tier" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="tier"><span class="lc-txt"><b class="lc-title">Agree the launch tier with product</b><span class="lc-desc">Use the tier guide above. Agreeing it early stops a small update from eating a major launch’s budget, and the reverse.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div></li><li class="lc-task" id="task-owner" data-id="owner" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="owner"><span class="lc-txt"><b class="lc-title">Name one owner and a launch date</b><span class="lc-desc">One person accountable for the launch, and a date product has committed to, not a hope.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Leadership</span></div></li><li class="lc-task" id="task-measures" data-id="measures" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="measures"><span class="lc-txt"><b class="lc-title">Agree how you’ll measure it, before launch</b><span class="lc-desc">Pick three to five measures, such as qualified demo requests, opportunities, pipeline, sales usage of assets and adoption. Write down the baseline and a target for each.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> Three to five measures with a baseline and a target, agreed before launch so the results can’t be reinterpreted afterwards.</p><p><b>A simple structure</b></p><ul><li>Choose measures that match the launch’s goal, not every metric you can track</li><li>Record the baseline: what does a normal month look like?</li><li>Set a realistic target and a date to check it</li><li>Say where each number will come from: CRM, product analytics, the sales team</li></ul><p><b>Common mistake.</b> Measuring only reach: impressions, likes and press mentions. They’re useful signals, but they don’t tell you whether the launch created sales conversations.</p><p><button type="button" class="lc-btn lc-btn-s" data-open="measure">Open the measurement template</button></p></div></details></li><li class="lc-task" id="task-research" data-id="research" data-t="1"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="research"><span class="lc-txt"><b class="lc-title">Talk to 3–5 customers and 2–3 sales reps</b><span class="lc-desc">Ask about the problem the release solves and the objections reps hear. Their words are often better messaging than anything written in a meeting.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> Short notes from 3–5 customer and 2–3 sales conversations, with the exact phrases people used.</p><p><b>A simple structure</b></p><ul><li>Customers: “Walk me through the last time this problem came up.”</li><li>Customers: “What did you do about it? What did that cost you?”</li><li>Reps: “Where do deals stall when this comes up?”</li><li>Reps: “What do buyers compare us with?”</li></ul><p><b>Common mistake.</b> Pitching the feature during the interview. You’ll hear polite agreement instead of how people actually describe the problem.</p></div></details></li><li class="lc-task" id="task-position" data-id="position" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="position"><span class="lc-txt"><b class="lc-title">Check the positioning</b><span class="lc-desc">Can you say in one sentence why a buyer would choose this over their current alternative, including doing nothing?</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> One sentence your whole team could repeat, plus a clear view of what you’re being compared with.</p><p><b>A simple structure</b></p><ul><li>For [target customer] who [problem],</li><li>[product] is the [category] that [key benefit].</li><li>Unlike [current alternative], it [main difference].</li></ul><p class="lc-ex"><b>Example.</b> For finance teams at multi-entity companies who approve spend in spreadsheets, Fernway (a fictional company) is the spend management platform that routes every request to the right approver. Unlike email and spreadsheets, it keeps a full audit trail.</p><p><b>Common mistake.</b> Positioning against a competitor buyers aren’t considering. Often the real alternative is a spreadsheet, an agency or doing nothing.</p></div></details></li><li class="lc-task" id="task-partner" data-id="partner" data-t="1"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="partner"><span class="lc-txt"><b class="lc-title">For partner launches: agree the story, timing and approvals</b><span class="lc-desc">Settle whose story it is, who announces first and who signs off, with the partner’s marketing team, in writing. Mark this not applicable if there’s no partner.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li></ul></section><section class="lc-phase" data-stage="2" aria-labelledby="st2-h"><div class="lc-ph"><h3 id="st2-h"><span class="lc-sn">2.</span> <span class="lc-sh">Build the message and the plan</span></h3><p class="lc-when"><span class="lc-sw">6–4 weeks before</span><span class="lc-sd"></span></p><p class="lc-sc"></p></div><ul class="lc-items"><li class="lc-task" id="task-msg" data-id="msg" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="msg"><span class="lc-txt"><b class="lc-title">Write the launch messaging</b><span class="lc-desc">A headline, three proof points and one customer use case. Every asset borrows from this, so everything says the same thing.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> A short messaging block that every asset borrows from.</p><p><b>A simple structure</b></p><ul><li>Headline: the outcome for the buyer, not the feature name</li><li>Three proof points, each backed by evidence: a number, a customer or a demo</li><li>One use case: a specific customer, situation and result</li></ul><p class="lc-ex"><b>Example.</b> Headline: “Approve spend across every entity in one place.” Proof: approvals routed by entity and amount; full audit trail for auditors; set up in a day with existing ERP data. (Fernway, a fictional company.)</p><p><b>Common mistake.</b> Proof points that are really features with nothing behind them. If you can’t show it, a buyer is unlikely to believe it.</p></div></details></li><li class="lc-task" id="task-calendar" data-id="calendar" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="calendar"><span class="lc-txt"><b class="lc-title">Build the launch calendar</b><span class="lc-desc">Every asset, channel, owner and due date in one place, working back from launch day. The action plan export below is a good starting point.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> One shared list of every launch task, with an owner and a due date, working back from launch day.</p><p><b>A simple structure</b></p><ul><li>Columns: task, channel, owner, due date, status, depends on</li><li>Start from launch day and work backwards</li><li>Add time for approvals: legal, partners, leadership</li></ul><p><b>Common mistake.</b> No room for approvals. Partner and legal sign-off are where launch dates usually slip.</p></div></details></li><li class="lc-task" id="task-design" data-id="design" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="design"><span class="lc-txt"><b class="lc-title">Brief design and video</b><span class="lc-desc">Launch visuals, product screenshots and a short demo. Buyers usually want to see it working before they ask for a call.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Design</span></div></li><li class="lc-task" id="task-page" data-id="page" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="page"><span class="lc-txt"><b class="lc-title">Draft the landing page, or update the product page</b><span class="lc-desc">Check whether pricing, comparison and integration pages also need changes.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li><li class="lc-task" id="task-press" data-id="press" data-t="1"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="press"><span class="lc-txt"><b class="lc-title">Plan press</b><span class="lc-desc">The release, target outlets and journalists, an embargo date, and regional versions where the market needs them, such as Arabic for the Middle East. Not every major launch needs press.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li><li class="lc-task" id="task-accounts" data-id="accounts" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="accounts"><span class="lc-txt"><b class="lc-title">List the customers and open deals this release helps</b><span class="lc-desc">These are your first sales conversations. Share the list with sales and customer success.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Sales</span></div></li><li class="lc-task" id="task-search" data-id="search" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="search"><span class="lc-txt"><b class="lc-title">Plan for search and AI answers</b><span class="lc-desc">What will buyers search for, or ask ChatGPT, when they need this? Make sure a page answers it clearly.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li></ul></section><section class="lc-phase" data-stage="3" aria-labelledby="st3-h"><div class="lc-ph"><h3 id="st3-h"><span class="lc-sn">3.</span> <span class="lc-sh">Enable sales and customer success</span></h3><p class="lc-when"><span class="lc-sw">3–2 weeks before</span><span class="lc-sd"></span></p><p class="lc-sc"></p></div><ul class="lc-items"><li class="lc-task" id="task-kit" data-id="kit" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="kit"><span class="lc-txt"><b class="lc-title">Build the sales enablement kit</b><span class="lc-desc">A deck slide, a one-pager, an FAQ and a short talk track. Keep it to what a rep will use on a call.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> The few things a rep needs to use the launch on a live call this week.</p><p><b>A simple structure</b></p><ul><li>One deck slide: the problem, what’s new, the proof</li><li>A one-page summary they can send after a call</li><li>FAQ: the five questions and objections you expect, with answers</li><li>A three-sentence talk track</li><li>Which accounts to contact first</li></ul><p><b>Common mistake.</b> A 20-slide deck nobody opens. If it isn’t short enough to use on a call, it probably won’t be used.</p></div></details></li><li class="lc-task" id="task-battlecards" data-id="battlecards" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="battlecards"><span class="lc-txt"><b class="lc-title">Update battlecards</b><span class="lc-desc">If the release changes how you answer “why not the competitor?”, update the battlecard before reps need it.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div></li><li class="lc-task" id="task-training" data-id="training" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="training"><span class="lc-txt"><b class="lc-title">Run a 30-minute training and record it</b><span class="lc-desc">Sales and customer success should hear about the launch before customers do.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div></li><li class="lc-task" id="task-docs" data-id="docs" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="docs"><span class="lc-txt"><b class="lc-title">Get help docs and in-product messages ready</b><span class="lc-desc">Telling users inside the product, where they already are, is often the quickest route to adoption.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Customer success</span></div></li><li class="lc-task" id="task-tracking" data-id="tracking" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="tracking"><span class="lc-txt"><b class="lc-title">Set up tracking</b><span class="lc-desc">UTM links, a campaign in your CRM and conversion events on the landing page, so engagement and pipeline can be traced back to the launch.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> Tracking in place before launch, so you can see what the launch did after it.</p><p><b>A simple structure</b></p><ul><li>UTM links for every channel, with one naming pattern (for example utm_campaign=launch-approvals-2027q1)</li><li>A launch campaign in your CRM that new and influenced opportunities can be tied to</li><li>Conversion events on the landing page and demo form</li><li>A “How did you hear about us?” field, since some buyers will come from posts and conversations that tracking can’t see</li></ul><p><b>Common mistake.</b> Setting up tracking after launch. The first days are often when interest is highest, and that data can’t be recovered.</p></div></details></li></ul></section><section class="lc-phase" data-stage="4" aria-labelledby="st4-h"><div class="lc-ph"><h3 id="st4-h"><span class="lc-sn">4.</span> <span class="lc-sh">Get ready</span></h3><p class="lc-when"><span class="lc-sw">Launch week</span><span class="lc-sd"></span></p><p class="lc-sc"></p></div><ul class="lc-items"><li class="lc-task" id="task-qa" data-id="qa" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="qa"><span class="lc-txt"><b class="lc-title">Check everything works</b><span class="lc-desc">The feature is live for the right users, and every link, form and tracking event works.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product</span></div></li><li class="lc-task" id="task-brief-teams" data-id="brief-teams" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="brief-teams"><span class="lc-txt"><b class="lc-title">Confirm the date and time with every team</b><span class="lc-desc">Leadership, sales, support and any partners know exactly when it goes out.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div></li><li class="lc-task" id="task-social" data-id="social" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="social"><span class="lc-txt"><b class="lc-title">Prepare posts for founders and the team</b><span class="lc-desc">Posts from people often reach further than the company page, especially on LinkedIn. Draft them now so they’re ready on the day.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Founder</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> Drafts for the founder and three to five team members, written in each person’s own voice.</p><p><b>A simple structure</b></p><ul><li>Start with the problem or a moment from a customer conversation</li><li>What changed, and who it’s for</li><li>One piece of proof</li><li>A soft next step: a link, a demo or “reply if this is you”</li></ul><p><b>Common mistake.</b> Everyone posting the same company text. Identical posts read like an ad and tend to get less reach than personal ones.</p></div></details></li><li class="lc-task" id="task-embargo" data-id="embargo" data-t="1"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="embargo"><span class="lc-txt"><b class="lc-title">Send the press release under embargo</b><span class="lc-desc">Give journalists time to write, and confirm what they can publish and when.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li></ul></section><section class="lc-phase" data-stage="5" aria-labelledby="st5-h"><div class="lc-ph"><h3 id="st5-h"><span class="lc-sn">5.</span> <span class="lc-sh">Launch</span></h3><p class="lc-when"><span class="lc-sw">Launch day</span><span class="lc-sd"></span></p><p class="lc-sc"></p></div><ul class="lc-items"><li class="lc-task" id="task-publish" data-id="publish" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="publish"><span class="lc-txt"><b class="lc-title">Publish across your channels</b><span class="lc-desc">The announcement, an email to customers and prospects, the landing page, social and in-app messages, scaled to the tier.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li><li class="lc-task" id="task-press-live" data-id="press-live" data-t="1"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="press-live"><span class="lc-txt"><b class="lc-title">Go live with press and partners</b><span class="lc-desc">The press release, partner posts and any co-marketing, at the agreed time.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li><li class="lc-task" id="task-sales-note" data-id="sales-note" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="sales-note"><span class="lc-txt"><b class="lc-title">Send sales a “use this today” note</b><span class="lc-desc">Which accounts to contact, what to say and which asset to send. This is where attention starts turning into conversations.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div></li><li class="lc-task" id="task-watch" data-id="watch" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="watch"><span class="lc-txt"><b class="lc-title">Watch the first signals</b><span class="lc-desc">Replies, demo requests, sign-ups and questions coming into sales and support. Fix anything confusing the same day.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Sales</span></div></li></ul></section><section class="lc-phase" data-stage="6" aria-labelledby="st6-h"><div class="lc-ph"><h3 id="st6-h"><span class="lc-sn">6.</span> <span class="lc-sh">Turn attention into pipeline</span></h3><p class="lc-when"><span class="lc-sw">2–30 days after</span><span class="lc-sd"></span></p><p class="lc-sc"></p></div><ul class="lc-items"><li class="lc-task" id="task-followup" data-id="followup" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="followup"><span class="lc-txt"><b class="lc-title">Follow up with everyone who engaged</b><span class="lc-desc">People who clicked, visited pricing or watched the demo. Timely, specific follow-up is often what turns early interest into a sales conversation.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Sales</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> A short follow-up plan by signal, so interested people hear from you while the launch is fresh.</p><p><b>A simple structure</b></p><ul><li>Visited pricing or the demo page: personal email from sales within 48 hours</li><li>Watched the demo or replied: offer a call</li><li>Existing customers who could use it: customer success shows them</li><li>Everyone else: add them to your next email or content piece</li></ul><p><b>Common mistake.</b> A generic “Did you see our launch?” email. Mention what they looked at and why it might matter to them.</p></div></details></li><li class="lc-task" id="task-stories" data-id="stories" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="stories"><span class="lc-txt"><b class="lc-title">Collect the first customer stories</b><span class="lc-desc">A quote or a result from an early user is strong proof for the next round of content and sales conversations.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Customer success</span></div></li><li class="lc-task" id="task-usage" data-id="usage" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="usage"><span class="lc-txt"><b class="lc-title">Check which assets sales actually used</b><span class="lc-desc">Ask reps. Unused assets can point to unclear messaging, too little training, assets that are hard to find, or a poor fit with real sales conversations.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div></li><li class="lc-task" id="task-report" data-id="report" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="report"><span class="lc-txt"><b class="lc-title">Report against your measures at 30 days</b><span class="lc-desc">Compare engagement, opportunities, pipeline, adoption and sales usage against the targets from step 1. Note which results need 60–90 days to read properly.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> A one-page report against the targets you set before launch, separating what you can know now from what needs more time.</p><p><b>A simple structure</b></p><ul><li>At 30 days: engagement, demo requests, opportunities created, sales usage of assets, early adoption</li><li>At 60–90 days or later: pipeline progression, revenue, retention and sustained adoption</li><li>For each measure: target, actual, and what you’ll do about the gap</li></ul><p><b>Common mistake.</b> Calling the launch a success or failure on revenue at 30 days. In B2B, and especially enterprise sales, many deals take longer than that to close.</p><p><button type="button" class="lc-btn lc-btn-s" data-open="measure">Open the measurement template</button></p></div></details></li><li class="lc-task" id="task-keep" data-id="keep" data-t="12"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="keep"><span class="lc-txt"><b class="lc-title">Keep it going</b><span class="lc-desc">Plan two or three follow-up pieces: a use case, a customer story, a how-to. Most buyers won’t have seen launch day.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Marketing</span></div></li><li class="lc-task" id="task-retro" data-id="retro" data-t="123"><label class="lc-main"><input type="checkbox" class="lc-cb" data-id="retro"><span class="lc-txt"><b class="lc-title">Run a short retro and update your playbook</b><span class="lc-desc">What to repeat, what to drop and what to do earlier next time.</span></span></label><div class="lc-meta"><span class="lc-chip lc-own-static">Suggested owner: Product marketing</span></div><details class="lc-guide"><summary>What good looks like</summary><div class="lc-guide-b"><p><b>What to produce.</b> A 30-minute review with everyone who worked on the launch, ending with named owners and dates.</p><p><b>A simple structure</b></p><ul><li>What worked, and why do we think so?</li><li>What underperformed, and what does the evidence say?</li><li>What will we do differently next time, who owns it and by when?</li></ul><p><b>Common mistake.</b> A retro that ends with observations and no owners. Write the changes into your launch playbook so the next launch is easier.</p><p><button type="button" class="lc-btn lc-btn-s" data-open="review">Open the 30-day review template</button></p></div></details></li></ul></section>
+</section>
+
+<section class="lc-sec" id="templates" aria-labelledby="templates-h">
+<h2 id="templates-h">Templates for the hard parts</h2>
+<p class="lc-p">Free, editable and saved in your browser. Each one has a worked example from a fictional company, so you can see what good looks like before you start.</p>
+<div class="lc-tpls">
+<div class="lc-tpl"><h3>One-page GTM brief</h3><p>Product, buyer, problem, alternative, positioning, proof, objectives, metrics, owner and risks. About 15–20 minutes.</p><button type="button" class="lc-btn" data-open="brief">Open the template</button></div>
+<div class="lc-tpl"><h3>Launch measurement</h3><p>Baseline, target and actual for the measures that fit your launch, with sourced and influenced pipeline explained.</p><button type="button" class="lc-btn" data-open="measure">Open the template</button></div>
+<div class="lc-tpl"><h3>30-day launch review</h3><p>Results against targets, what sales learned, what worked and what to do next, with owners and dates.</p><button type="button" class="lc-btn" data-open="review">Open the template</button></div>
+</div>
+</section>
+
+<section class="lc-sec" id="measure" aria-labelledby="measure-h">
+<h2 id="measure-h">How to tell whether the launch worked</h2>
+<p class="lc-p">Different things are knowable at different times. Judge each stage by what it can actually show you.</p>
+<div class="lc-when-g">
+<div class="lc-wc"><h3>Before launch</h3><p>Positioning tested with customers, a target account list, sales ready to use the launch, tracking working, and a baseline for every measure.</p></div>
+<div class="lc-wc"><h3>Launch week</h3><p>Qualified engagement, demo requests, customer questions, the first sales conversations, and any technical issues.</p></div>
+<div class="lc-wc"><h3>30 days after</h3><p>Opportunities created, sourced or influenced pipeline, how much sales used the assets, and early product adoption.</p></div>
+<div class="lc-wc"><h3>Later</h3><p>Pipeline progression, revenue, retention and sustained adoption. With longer sales cycles, 30 days is often too early to judge revenue.</p></div>
+</div>
+<div class="lc-case">
+<h3>Reading the numbers: a worked example</h3>
+<p>A launch gets strong social engagement: plenty of likes, comments and shares. But two weeks later, sales has had very few qualified conversations from it. Before deciding the launch “didn’t work”, check:</p>
+<ul>
+<li><b>Audience fit.</b> Who engaged? Peers and other marketers, or people who could buy?</li>
+<li><b>Messaging.</b> Did the posts explain the buyer’s problem, or mostly celebrate the feature?</li>
+<li><b>Call to action.</b> Was there a clear next step for a buyer, and was it easy to take?</li>
+<li><b>Lead quality.</b> Did the demo requests that came in match your target customer?</li>
+<li><b>Sales follow-up.</b> Did sales contact the engaged accounts quickly, with a relevant message?</li>
+<li><b>Measurement gaps.</b> Are conversations happening that tracking can’t see, such as buyers mentioning the launch on calls? A “How did you hear about us?” field helps here.</li>
+</ul>
+<p>Each answer points to a different fix: a different audience, sharper messaging, a better offer, or faster follow-up. That’s the point of measuring: to decide what to change next.</p>
+</div>
+<p class="lc-pair">Use the <a href="/resources/gtm-scorecard/" data-track="readiness_scorecard_clicked" data-loc="measurement">GTM Readiness Scorecard</a> before you start, to spot the gaps in positioning, sales alignment and distribution that most often hold a launch back.</p>
+</section>
+
+<section class="lc-sec" id="example" aria-labelledby="example-h">
+<h2 id="example-h">See how this works in practice</h2>
+<details class="lc-practice"><summary>The RemotePass × Certn partnership launch</summary><div class="lc-practice-b">
+<p>RemotePass integrated Certn’s background checks into its platform, and launched the partnership in 2024. Here’s how parts of this checklist showed up in that launch, based on the public case study.</p>
+<ol>
+<li><b>Positioning (stage 1).</b> The integration was framed as proof that RemotePass was the safer, more compliant choice for regulated industries.</li>
+<li><b>Partner alignment (stage 1).</b> The launch narrative and timing were agreed with Certn’s global marketing team.</li>
+<li><b>Distribution (stages 2 and 5).</b> Global and Middle East press releases, the announcement blog, email and social posts.</li>
+<li><b>Sales enablement (stage 3).</b> An enablement kit so the sales team could use the launch in live deals.</li>
+<li><b>Outcome.</b> 270+ media pickups, including Yahoo Finance, Fox and NBC.</li>
+</ol>
+<p><a href="/work/#certn" data-track="case_study_clicked" data-loc="practice">Read the full case study</a></p>
+</div></details>
+</section>
 
 <div class="lc-sec" id="subscribe"><div class="lc-join">
 <div><h2>Get one company breakdown a month.</h2><p>What I’d Do is my free newsletter. Each month I study how a technology company markets itself and say what I’d keep, change or try, plus takeaways from a live conversation with a marketing leader. Two emails a month.</p></div>
@@ -152,44 +311,417 @@
 <p class="lc-fall">Form not showing? <a href="mailto:jeremiah@thejeremiahajayi.com?subject=What%20I%E2%80%99d%20Do%3A%20please%20subscribe%20me">Email me</a> and I’ll add you.</p></div>
 </div></div>
 
-<div class="lc-sec">
-<h2>Want help with your next launch?</h2>
+<section class="lc-sec" id="help" aria-labelledby="help-h">
+<h2 id="help-h">If your launch needs more than a checklist</h2>
 <div class="lc-cta">
-<div class="lc-card dark"><h3>GTM Readiness Scorecard</h3><p>15 questions to check whether your next launch is ready to create sales conversations. Free, with an action plan.</p><a href="/resources/gtm-scorecard/">Take the scorecard →</a></div>
-<div class="lc-card"><h3>Product launches and GTM</h3><p>I plan and run B2B SaaS launches built for pipeline: the GTM brief, the plan, sales enablement and measurement.</p><a href="/services/product-launch-gtm/">See the service →</a></div>
-<div class="lc-card"><h3>The RemotePass × Certn launch</h3><p>How a partnership launch earned 270+ media pickups, and what sales did with it.</p><a href="/work/#certn">Read the case study →</a></div>
+<div class="lc-card dark"><h3>GTM Readiness Scorecard</h3><p>15 questions on whether your launch is ready to create sales conversations. Free, with an action plan.</p><a href="/resources/gtm-scorecard/" data-track="readiness_scorecard_clicked" data-loc="help">Take the scorecard →</a></div>
+<div class="lc-card"><h3>Product launches and GTM</h3><p>I plan and run B2B SaaS launches built for pipeline: the GTM brief, the plan, sales enablement and measurement.</p><a href="/services/product-launch-gtm/" data-track="gtm_service_clicked" data-loc="help">See how I work →</a></div>
+<div class="lc-card"><h3>The RemotePass × Certn launch</h3><p>How a partnership launch earned 270+ media pickups, and how sales used it.</p><a href="/work/#certn" data-track="case_study_clicked" data-loc="help">Read the case study →</a></div>
 </div>
-</div>
+</section>
 
 <div class="lc-sec lc-faq">
 <h2>Questions people ask</h2>
-<details><summary>What should a B2B SaaS product launch checklist include?</summary><p>Six stages: defining the launch (the GTM brief, tier, owner and measures), building the message and plan, enabling sales and customer success, launch-week checks, launch day itself, and the 30 days after, when most of the pipeline is created. Most checklists stop at launch day, which is why so many launches get attention but no sales conversations.</p></details>
-<details><summary>How far in advance should you plan a product launch?</summary><p>Six to eight weeks for a major (Tier 1) launch, three to four weeks for a notable feature, and about a week for a smaller update. Partner launches and press need the most lead time, because other people’s approvals set the pace.</p></details>
-<details><summary>What is a launch tier?</summary><p>A way of sizing a launch to the release. Tier 1 is a new product, a major feature, a partnership or a new market; Tier 2 is a notable feature; Tier 3 is an improvement. Tiering stops teams from overspending on small updates or underselling big ones.</p></details>
-<details><summary>Who should own a product launch?</summary><p>One person, usually product marketing, accountable for the plan and the date. Product owns what ships; sales and customer success own using it with customers. The owner makes sure all three are working to one timeline.</p></details>
-<details><summary>How do you measure whether a launch worked?</summary><p>Agree the measures before launch: sourced and influenced pipeline, demo requests, sales usage of launch assets and early adoption. Then report against them after 30 days. Press coverage and social reach are useful signals, but they aren’t the goal.</p></details>
+<details><summary>What should a B2B SaaS product launch checklist include?</summary><p>Six stages: defining the launch (the GTM brief, tier, owner and measures), building the message and plan, enabling sales and customer success, launch-week checks, launch day itself, and the weeks after, when follow-up turns interest into sales conversations. Many checklists stop at launch day, which is one reason launches get attention but few conversations.</p></details>
+<details><summary>How far in advance should you plan a product launch?</summary><p>As a guide, six to eight weeks for a major launch, three to four weeks for a feature launch, and about a week for a small update. Partner launches and press usually need the most lead time, because other people’s approvals set the pace. If your date is sooner, add it above and the checklist will compress the plan and show which tasks to do first.</p></details>
+<details><summary>What is a launch tier?</summary><p>A way of sizing the launch effort to the release. Tier 1 is a new product, a major feature that changes the pitch, a partnership or a new market. Tier 2 is a meaningful feature that solves an established customer problem or helps win deals. Tier 3 is an incremental improvement. Tiering stops teams from overspending on small updates or underselling big ones.</p></details>
+<details><summary>Who should own a product launch?</summary><p>One person accountable for the plan and the date, often product marketing, or a founder at an early-stage company. Product owns what ships; sales and customer success own using it with customers. The owner makes sure all three work to one timeline. The checklist suggests an owner for each task, which you can change.</p></details>
+<details><summary>How do you measure whether a launch worked?</summary><p>Agree the measures and targets before launch: for example qualified demo requests, opportunities created, sourced and influenced pipeline, sales usage of launch assets and adoption. Review them at 30 days, and again later for results that take longer, such as revenue. Press coverage and social reach are useful signals, but they don’t show on their own whether the launch created sales conversations.</p></details>
+<details><summary>Where is my progress saved?</summary><p>In your browser, on this device. Nothing you type is sent to us, and it won’t appear on your other devices. To share the plan with your team, download it as a CSV for Excel or Google Sheets, or print it to PDF.</p></details>
 </div>
 
-<div class="lc-by"><img src="/img/headshot.webp" alt="Jeremiah Ajayi" loading="lazy" onerror="this.remove()"><p><b>Built by Jeremiah Ajayi</b>, a marketing consultant for B2B SaaS and technology companies. It’s based on the process behind 20+ launches I’ve led, including 15+ at RemotePass and the RemotePass × Certn partnership launch, which earned 270+ media pickups.</p></div>
+<div class="lc-by"><img src="/img/headshot.webp" alt="Jeremiah Ajayi" width="64" height="64" loading="lazy" onerror="this.remove()"><p><b>Built by Jeremiah Ajayi</b>, a marketing consultant for B2B SaaS and technology companies. It’s based on the process behind 20+ launches I’ve led, including 15+ at RemotePass and the RemotePass × Certn partnership launch.</p></div>
 </div></section>
-<script>
-(function(){
-  var KEY='jaLaunchChecklist', TKEY='jaLaunchTier', state={}, tier='1';
-  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};tier=localStorage.getItem(TKEY)||'1';}catch(e){}
-  var boxes=[].slice.call(document.querySelectorAll('.lc-items input[type=checkbox]'));
-  var btns=[].slice.call(document.querySelectorAll('.lc-tb'));
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));localStorage.setItem(TKEY,tier);}catch(e){}}
-  function render(){
-    var shown=0,done=0;
-    boxes.forEach(function(b){var li=b.closest('li');var vis=li.getAttribute('data-t').indexOf(tier)>-1;li.hidden=!vis;b.checked=!!state[b.dataset.id];li.classList.toggle('done',b.checked);if(vis){shown++;if(b.checked)done++;}});
-    btns.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.tier===tier?'true':'false');});
-    document.getElementById('lc-count').textContent=done+' of '+shown+' done';
-    document.getElementById('lc-fill').style.width=(shown?Math.round(done/shown*100):0)+'%';
+<dialog class="lc-dlg" id="dlg-brief" aria-labelledby="dlg-brief-h">
+<form method="dialog" class="lc-dlg-in" data-tpl="brief">
+<div class="lc-dlg-top"><h2 id="dlg-brief-h">One-page GTM brief</h2><button type="submit" class="lc-x" aria-label="Close">×</button></div>
+<p class="lc-dlg-intro">Fill this in before anyone writes a launch asset. It should take a founder 15–20 minutes. Share it with product and sales and agree it together.</p>
+<div class="lc-dlg-acts"><button type="button" class="lc-btn lc-btn-s" data-act="example">Show the fictional example</button><button type="button" class="lc-btn lc-btn-s" data-act="clear">Clear</button></div>
+<p class="lc-exnote" hidden>Example only: Fernway is a fictional B2B SaaS company. Clear it before writing your own.</p>
+<div class="lc-fields"><div class="lc-f"><label for="f-b_product">Product or feature being launched</label><span class="lc-hint">One sentence. What is it, in plain words?</span><textarea id="f-b_product" name="b_product" rows="2"></textarea></div><div class="lc-f"><label for="f-b_customer">Target customer and buying roles</label><span class="lc-hint">Who uses it, who decides, who signs off?</span><textarea id="f-b_customer" name="b_customer" rows="2"></textarea></div><div class="lc-f"><label for="f-b_problem">Customer problem</label><span class="lc-hint">In the customer’s words, if you have them.</span><textarea id="f-b_problem" name="b_problem" rows="2"></textarea></div><div class="lc-f"><label for="f-b_alternative">Current alternative</label><span class="lc-hint">What they do today, including doing nothing.</span><textarea id="f-b_alternative" name="b_alternative" rows="2"></textarea></div><div class="lc-f"><label for="f-b_positioning">Positioning statement</label><span class="lc-hint">For [who] who [problem], [product] is the [category] that [benefit]. Unlike [alternative], it [difference].</span><textarea id="f-b_positioning" name="b_positioning" rows="3"></textarea></div><div class="lc-f"><label for="f-b_value">Primary value proposition</label><span class="lc-hint">The main outcome for the buyer.</span><textarea id="f-b_value" name="b_value" rows="2"></textarea></div><div class="lc-f"><label for="f-b_proof">Supporting proof</label><span class="lc-hint">Numbers, customers, demos: anything a buyer can check.</span><textarea id="f-b_proof" name="b_proof" rows="3"></textarea></div><div class="lc-f"><label for="f-b_usecase">Customer use case</label><span class="lc-hint">A specific customer, situation and result.</span><textarea id="f-b_usecase" name="b_usecase" rows="2"></textarea></div><div class="lc-f"><label for="f-b_tier">Launch tier</label><input id="f-b_tier" name="b_tier" type="text"></div><div class="lc-f"><label for="f-b_objectives">Launch objectives</label><span class="lc-hint">What should be different 30 days after launch?</span><textarea id="f-b_objectives" name="b_objectives" rows="2"></textarea></div><div class="lc-f"><label for="f-b_metrics">Success metrics</label><span class="lc-hint">Three to five, with targets. The measurement template can help.</span><textarea id="f-b_metrics" name="b_metrics" rows="2"></textarea></div><div class="lc-f"><label for="f-b_owner">Launch owner and date</label><input id="f-b_owner" name="b_owner" type="text"></div><div class="lc-f"><label for="f-b_risks">Dependencies and risks</label><span class="lc-hint">Approvals, engineering dates, partners, legal.</span><textarea id="f-b_risks" name="b_risks" rows="2"></textarea></div></div>
+<div class="lc-dlg-foot"><button type="button" class="lc-btn" data-act="copy">Copy</button><button type="button" class="lc-btn" data-act="download">Download</button><button type="submit" class="lc-btn lc-btn-ghost">Done</button><span class="lc-msg" role="status" aria-live="polite"></span></div>
+<p class="lc-saved">Saved in this browser as you type. Nothing is sent anywhere.</p>
+</form></dialog>
+<dialog class="lc-dlg" id="dlg-measure" aria-labelledby="dlg-measure-h">
+<form method="dialog" class="lc-dlg-in" data-tpl="measure">
+<div class="lc-dlg-top"><h2 id="dlg-measure-h">Launch measurement template</h2><button type="submit" class="lc-x" aria-label="Close">×</button></div>
+<p class="lc-dlg-intro">Set the baseline and target before launch, then fill in the actual results at 30 days. Download it as a CSV for Excel or Google Sheets.</p>
+<div class="lc-dlg-acts"><button type="button" class="lc-btn lc-btn-s" data-act="example">Show the fictional example</button><button type="button" class="lc-btn lc-btn-s" data-act="clear">Clear</button></div>
+<p class="lc-exnote" hidden>Example only: the numbers belong to Fernway, a fictional company. They are not benchmarks.</p>
+<div class="lc-note-box"><p><b>Sourced or influenced?</b> Sourced pipeline is from opportunities that started with the launch, for example a demo request from the launch page. Influenced pipeline is from opportunities that already existed or started elsewhere, where the launch played a part, for example a rep sending the launch one-pager in a live deal. Agree how you’ll count each one before launch, so the numbers aren’t argued about afterwards.</p>
+<p>These are examples, not requirements. Tick the measures that fit this launch and leave the rest.</p></div>
+<div class="lc-mt-wrap"><table class="lc-mt"><thead><tr><th scope="col">Metric</th><th scope="col">Baseline</th><th scope="col">Target</th><th scope="col">Actual</th><th scope="col">Source</th></tr></thead><tbody><tr data-m="demos"><td><label class="lc-mi"><input type="checkbox" name="m_demos_on" checked> <span>Qualified demo requests</span></label></td><td><label class="lc-ml" for="m_demos_base"><span class="sr">Qualified demo requests </span>Baseline</label><input id="m_demos_base" name="m_demos_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_demos_target"><span class="sr">Qualified demo requests </span>Target</label><input id="m_demos_target" name="m_demos_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_demos_actual"><span class="sr">Qualified demo requests </span>Actual</label><input id="m_demos_actual" name="m_demos_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_demos_src"><span class="sr">Qualified demo requests </span>Source</label><input id="m_demos_src" name="m_demos_src" type="text" placeholder="CRM"></td></tr><tr data-m="opps"><td><label class="lc-mi"><input type="checkbox" name="m_opps_on" checked> <span>Opportunities created</span></label></td><td><label class="lc-ml" for="m_opps_base"><span class="sr">Opportunities created </span>Baseline</label><input id="m_opps_base" name="m_opps_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_opps_target"><span class="sr">Opportunities created </span>Target</label><input id="m_opps_target" name="m_opps_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_opps_actual"><span class="sr">Opportunities created </span>Actual</label><input id="m_opps_actual" name="m_opps_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_opps_src"><span class="sr">Opportunities created </span>Source</label><input id="m_opps_src" name="m_opps_src" type="text" placeholder="CRM"></td></tr><tr data-m="sourced"><td><label class="lc-mi"><input type="checkbox" name="m_sourced_on" checked> <span>Sourced pipeline</span></label></td><td><label class="lc-ml" for="m_sourced_base"><span class="sr">Sourced pipeline </span>Baseline</label><input id="m_sourced_base" name="m_sourced_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_sourced_target"><span class="sr">Sourced pipeline </span>Target</label><input id="m_sourced_target" name="m_sourced_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_sourced_actual"><span class="sr">Sourced pipeline </span>Actual</label><input id="m_sourced_actual" name="m_sourced_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_sourced_src"><span class="sr">Sourced pipeline </span>Source</label><input id="m_sourced_src" name="m_sourced_src" type="text" placeholder="CRM"></td></tr><tr data-m="influenced"><td><label class="lc-mi"><input type="checkbox" name="m_influenced_on" checked> <span>Influenced pipeline</span></label></td><td><label class="lc-ml" for="m_influenced_base"><span class="sr">Influenced pipeline </span>Baseline</label><input id="m_influenced_base" name="m_influenced_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_influenced_target"><span class="sr">Influenced pipeline </span>Target</label><input id="m_influenced_target" name="m_influenced_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_influenced_actual"><span class="sr">Influenced pipeline </span>Actual</label><input id="m_influenced_actual" name="m_influenced_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_influenced_src"><span class="sr">Influenced pipeline </span>Source</label><input id="m_influenced_src" name="m_influenced_src" type="text" placeholder="CRM"></td></tr><tr data-m="adoption"><td><label class="lc-mi"><input type="checkbox" name="m_adoption_on" checked> <span>Product adoption</span></label></td><td><label class="lc-ml" for="m_adoption_base"><span class="sr">Product adoption </span>Baseline</label><input id="m_adoption_base" name="m_adoption_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_adoption_target"><span class="sr">Product adoption </span>Target</label><input id="m_adoption_target" name="m_adoption_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_adoption_actual"><span class="sr">Product adoption </span>Actual</label><input id="m_adoption_actual" name="m_adoption_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_adoption_src"><span class="sr">Product adoption </span>Source</label><input id="m_adoption_src" name="m_adoption_src" type="text" placeholder="Product analytics"></td></tr><tr data-m="usage"><td><label class="lc-mi"><input type="checkbox" name="m_usage_on"> <span>Sales usage of launch assets</span></label></td><td><label class="lc-ml" for="m_usage_base"><span class="sr">Sales usage of launch assets </span>Baseline</label><input id="m_usage_base" name="m_usage_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_usage_target"><span class="sr">Sales usage of launch assets </span>Target</label><input id="m_usage_target" name="m_usage_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_usage_actual"><span class="sr">Sales usage of launch assets </span>Actual</label><input id="m_usage_actual" name="m_usage_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_usage_src"><span class="sr">Sales usage of launch assets </span>Source</label><input id="m_usage_src" name="m_usage_src" type="text" placeholder="Sales team"></td></tr><tr data-m="questions"><td><label class="lc-mi"><input type="checkbox" name="m_questions_on"> <span>Customer questions and support tickets</span></label></td><td><label class="lc-ml" for="m_questions_base"><span class="sr">Customer questions and support tickets </span>Baseline</label><input id="m_questions_base" name="m_questions_base" type="text" placeholder="Baseline"></td><td><label class="lc-ml" for="m_questions_target"><span class="sr">Customer questions and support tickets </span>Target</label><input id="m_questions_target" name="m_questions_target" type="text" placeholder="Target"></td><td><label class="lc-ml" for="m_questions_actual"><span class="sr">Customer questions and support tickets </span>Actual</label><input id="m_questions_actual" name="m_questions_actual" type="text" placeholder="Actual"></td><td><label class="lc-ml" for="m_questions_src"><span class="sr">Customer questions and support tickets </span>Source</label><input id="m_questions_src" name="m_questions_src" type="text" placeholder="Support desk"></td></tr></tbody></table></div>
+<div class="lc-dlg-foot"><button type="button" class="lc-btn" data-act="copy">Copy</button><button type="button" class="lc-btn" data-act="download">Download</button><button type="submit" class="lc-btn lc-btn-ghost">Done</button><span class="lc-msg" role="status" aria-live="polite"></span></div>
+<p class="lc-saved">Saved in this browser as you type. Nothing is sent anywhere.</p>
+</form></dialog>
+<dialog class="lc-dlg" id="dlg-review" aria-labelledby="dlg-review-h">
+<form method="dialog" class="lc-dlg-in" data-tpl="review">
+<div class="lc-dlg-top"><h2 id="dlg-review-h">30-day launch review</h2><button type="submit" class="lc-x" aria-label="Close">×</button></div>
+<p class="lc-dlg-intro">Run this with everyone who worked on the launch. At 30 days you can usually read engagement, demo requests, opportunities created, sales usage and early adoption. Pipeline progression, revenue and retention often need 60–90 days or longer, especially with enterprise sales cycles, so note what you’ll check again and when.</p>
+<div class="lc-dlg-acts"><button type="button" class="lc-btn lc-btn-s" data-act="example">Show the fictional example</button><button type="button" class="lc-btn lc-btn-s" data-act="clear">Clear</button></div>
+<p class="lc-exnote" hidden>Example only: Fernway is a fictional company and these results are invented to show the format.</p>
+<div class="lc-fields"><div class="lc-f"><label for="f-r_launched">What we launched</label><textarea id="f-r_launched" name="r_launched" rows="2"></textarea></div><div class="lc-f"><label for="f-r_objectives">Original objectives</label><span class="lc-hint">Copy them from the GTM brief.</span><textarea id="f-r_objectives" name="r_objectives" rows="2"></textarea></div><div class="lc-f"><label for="f-r_results">Results against targets</label><span class="lc-hint">Target, actual and the gap for each measure.</span><textarea id="f-r_results" name="r_results" rows="3"></textarea></div><div class="lc-f"><label for="f-r_channels">Channels that brought qualified engagement</label><span class="lc-hint">Not just the most reach: which channels led to conversations?</span><textarea id="f-r_channels" name="r_channels" rows="2"></textarea></div><div class="lc-f"><label for="f-r_sales">What sales learned from conversations</label><span class="lc-hint">Objections, questions, deals it helped or didn’t.</span><textarea id="f-r_sales" name="r_sales" rows="2"></textarea></div><div class="lc-f"><label for="f-r_adoption">Early adoption signals</label><span class="lc-hint">Who used it, how often, and what they asked support.</span><textarea id="f-r_adoption" name="r_adoption" rows="2"></textarea></div><div class="lc-f"><label for="f-r_worked">What worked</label><textarea id="f-r_worked" name="r_worked" rows="2"></textarea></div><div class="lc-f"><label for="f-r_under">What underperformed</label><textarea id="f-r_under" name="r_under" rows="2"></textarea></div><div class="lc-f"><label for="f-r_next">What we’ll do next</label><textarea id="f-r_next" name="r_next" rows="2"></textarea></div><div class="lc-f"><label for="f-r_owners">Owners and dates for follow-up actions</label><span class="lc-hint">Name, action, date.</span><textarea id="f-r_owners" name="r_owners" rows="2"></textarea></div></div>
+<div class="lc-dlg-foot"><button type="button" class="lc-btn" data-act="copy">Copy</button><button type="button" class="lc-btn" data-act="download">Download</button><button type="submit" class="lc-btn lc-btn-ghost">Done</button><span class="lc-msg" role="status" aria-live="polite"></span></div>
+<p class="lc-saved">Saved in this browser as you type. Nothing is sent anywhere.</p>
+</form></dialog>
+<script type="application/json" id="lc-data">{"owners": ["Product marketing", "Marketing", "Product", "Sales", "Customer success", "Design", "Engineering", "Leadership", "Founder"], "tiers": {"1": {"name": "Major launch", "lead": 56, "what": "A new product, a major feature that changes the pitch, a partnership or a new market.", "time": "6–8 weeks"}, "2": {"name": "Feature launch", "lead": 28, "what": "A meaningful feature that solves an established customer problem or helps win deals.", "time": "3–4 weeks"}, "3": {"name": "Small update", "lead": 7, "what": "An incremental improvement for existing users.", "time": "About a week"}}, "stages": [{"n": 1, "h": "Define the launch", "h3": "Define the update", "w": {"1": ["8–6 weeks before", -56, -42], "2": ["4–3 weeks before", -28, -21], "3": ["About a week before", -7, -5]}}, {"n": 2, "h": "Build the message and the plan", "h3": "Write what changed", "w": {"1": ["6–4 weeks before", -42, -28], "2": ["3–2 weeks before", -21, -14], "3": ["3–4 days before", -4, -3]}}, {"n": 3, "h": "Enable sales and customer success", "h3": "Prepare help docs", "w": {"1": ["3–2 weeks before", -21, -14], "2": ["2 weeks to 1 week before", -14, -7], "3": ["2–3 days before", -3, -2]}}, {"n": 4, "h": "Get ready", "h3": "Get ready", "w": {"1": ["Launch week", -7, -1], "2": ["Launch week", -5, -1], "3": ["The day before", -1, -1]}}, {"n": 5, "h": "Launch", "h3": "Ship it", "w": {"1": ["Launch day", 0, 0], "2": ["Launch day", 0, 0], "3": ["Launch day", 0, 0]}}, {"n": 6, "h": "Turn attention into pipeline", "h3": "Check how it landed", "w": {"1": ["2–30 days after", 2, 30], "2": ["2–30 days after", 2, 30], "3": ["The week after", 1, 7]}}], "tasks": [{"id": "brief", "stage": 1, "tiers": "123", "owner": "Product marketing", "t": "Write the GTM brief", "d": "One page on who the release is for, the problem it solves, what buyers use today, and how it changes what sales says.", "t3": "Write a three-line release note brief", "d3": "What changed, who it helps and why it matters. Three lines is enough for a small update.", "na": false, "pri": true}, {"id": "tier", "stage": 1, "tiers": "123", "owner": "Product marketing", "t": "Agree the launch tier with product", "d": "Use the tier guide above. Agreeing it early stops a small update from eating a major launch’s budget, and the reverse.", "t3": "Confirm with product that this is a small update", "d3": "If it changes the pitch or affects live deals, it probably deserves Tier 2.", "na": false, "pri": true}, {"id": "owner", "stage": 1, "tiers": "123", "owner": "Leadership", "t": "Name one owner and a launch date", "d": "One person accountable for the launch, and a date product has committed to, not a hope.", "t3": "Name an owner and a ship date", "d3": "Someone who will make sure the release note, help doc and in-app message go out together.", "na": false, "pri": true}, {"id": "measures", "stage": 1, "tiers": "12", "owner": "Product marketing", "t": "Agree how you’ll measure it, before launch", "d": "Pick three to five measures, such as qualified demo requests, opportunities, pipeline, sales usage of assets and adoption. Write down the baseline and a target for each.", "na": false, "pri": true}, {"id": "research", "stage": 1, "tiers": "1", "owner": "Product marketing", "t": "Talk to 3–5 customers and 2–3 sales reps", "d": "Ask about the problem the release solves and the objections reps hear. Their words are often better messaging than anything written in a meeting.", "na": false, "pri": false}, {"id": "position", "stage": 1, "tiers": "12", "owner": "Product marketing", "t": "Check the positioning", "d": "Can you say in one sentence why a buyer would choose this over their current alternative, including doing nothing?", "na": false, "pri": true}, {"id": "partner", "stage": 1, "tiers": "1", "owner": "Marketing", "t": "For partner launches: agree the story, timing and approvals", "d": "Settle whose story it is, who announces first and who signs off, with the partner’s marketing team, in writing. Mark this not applicable if there’s no partner.", "na": true, "pri": true}, {"id": "msg", "stage": 2, "tiers": "123", "owner": "Product marketing", "t": "Write the launch messaging", "d": "A headline, three proof points and one customer use case. Every asset borrows from this, so everything says the same thing.", "t3": "Write one sentence on what changed and why it matters", "d3": "Use it in the changelog, the help doc and the in-app message so they all match.", "na": false, "pri": true}, {"id": "calendar", "stage": 2, "tiers": "12", "owner": "Product marketing", "t": "Build the launch calendar", "d": "Every asset, channel, owner and due date in one place, working back from launch day. The action plan export below is a good starting point.", "na": false, "pri": false}, {"id": "design", "stage": 2, "tiers": "12", "owner": "Design", "t": "Brief design and video", "d": "Launch visuals, product screenshots and a short demo. Buyers usually want to see it working before they ask for a call.", "na": true, "pri": false}, {"id": "page", "stage": 2, "tiers": "12", "owner": "Marketing", "t": "Draft the landing page, or update the product page", "d": "Check whether pricing, comparison and integration pages also need changes.", "na": true, "pri": true}, {"id": "press", "stage": 2, "tiers": "1", "owner": "Marketing", "t": "Plan press", "d": "The release, target outlets and journalists, an embargo date, and regional versions where the market needs them, such as Arabic for the Middle East. Not every major launch needs press.", "na": true, "pri": false}, {"id": "accounts", "stage": 2, "tiers": "12", "owner": "Sales", "t": "List the customers and open deals this release helps", "d": "These are your first sales conversations. Share the list with sales and customer success.", "na": false, "pri": true}, {"id": "search", "stage": 2, "tiers": "12", "owner": "Marketing", "t": "Plan for search and AI answers", "d": "What will buyers search for, or ask ChatGPT, when they need this? Make sure a page answers it clearly.", "na": true, "pri": false}, {"id": "kit", "stage": 3, "tiers": "12", "owner": "Product marketing", "t": "Build the sales enablement kit", "d": "A deck slide, a one-pager, an FAQ and a short talk track. Keep it to what a rep will use on a call.", "na": false, "pri": true}, {"id": "battlecards", "stage": 3, "tiers": "12", "owner": "Product marketing", "t": "Update battlecards", "d": "If the release changes how you answer “why not the competitor?”, update the battlecard before reps need it.", "na": true, "pri": false}, {"id": "training", "stage": 3, "tiers": "12", "owner": "Product marketing", "t": "Run a 30-minute training and record it", "d": "Sales and customer success should hear about the launch before customers do.", "na": false, "pri": false}, {"id": "docs", "stage": 3, "tiers": "123", "owner": "Customer success", "t": "Get help docs and in-product messages ready", "d": "Telling users inside the product, where they already are, is often the quickest route to adoption.", "t3": "Update the help doc and write the in-app message", "d3": "Keep the in-app message to one or two lines and link to the help doc.", "na": false, "pri": true}, {"id": "tracking", "stage": 3, "tiers": "12", "owner": "Marketing", "t": "Set up tracking", "d": "UTM links, a campaign in your CRM and conversion events on the landing page, so engagement and pipeline can be traced back to the launch.", "na": false, "pri": true}, {"id": "qa", "stage": 4, "tiers": "123", "owner": "Product", "t": "Check everything works", "d": "The feature is live for the right users, and every link, form and tracking event works.", "t3": "Check it works for the right users", "d3": "Including any links in the release note and in-app message.", "na": false, "pri": true}, {"id": "brief-teams", "stage": 4, "tiers": "123", "owner": "Product marketing", "t": "Confirm the date and time with every team", "d": "Leadership, sales, support and any partners know exactly when it goes out.", "t3": "Tell support and sales it’s shipping", "d3": "A short message with what changed and a link to the help doc.", "na": false, "pri": true}, {"id": "social", "stage": 4, "tiers": "12", "owner": "Founder", "t": "Prepare posts for founders and the team", "d": "Posts from people often reach further than the company page, especially on LinkedIn. Draft them now so they’re ready on the day.", "na": true, "pri": false}, {"id": "embargo", "stage": 4, "tiers": "1", "owner": "Marketing", "t": "Send the press release under embargo", "d": "Give journalists time to write, and confirm what they can publish and when.", "na": true, "pri": false}, {"id": "publish", "stage": 5, "tiers": "123", "owner": "Marketing", "t": "Publish across your channels", "d": "The announcement, an email to customers and prospects, the landing page, social and in-app messages, scaled to the tier.", "t3": "Publish the changelog, help doc and in-app message", "d3": "Then mention it in your next customer email rather than sending one just for this.", "na": false, "pri": true}, {"id": "press-live", "stage": 5, "tiers": "1", "owner": "Marketing", "t": "Go live with press and partners", "d": "The press release, partner posts and any co-marketing, at the agreed time.", "na": true, "pri": false}, {"id": "sales-note", "stage": 5, "tiers": "12", "owner": "Product marketing", "t": "Send sales a “use this today” note", "d": "Which accounts to contact, what to say and which asset to send. This is where attention starts turning into conversations.", "na": false, "pri": true}, {"id": "watch", "stage": 5, "tiers": "12", "owner": "Sales", "t": "Watch the first signals", "d": "Replies, demo requests, sign-ups and questions coming into sales and support. Fix anything confusing the same day.", "na": false, "pri": false}, {"id": "followup", "stage": 6, "tiers": "12", "owner": "Sales", "t": "Follow up with everyone who engaged", "d": "People who clicked, visited pricing or watched the demo. Timely, specific follow-up is often what turns early interest into a sales conversation.", "due": {"1": 3, "2": 3}, "na": false, "pri": true}, {"id": "stories", "stage": 6, "tiers": "12", "owner": "Customer success", "t": "Collect the first customer stories", "d": "A quote or a result from an early user is strong proof for the next round of content and sales conversations.", "due": {"1": 21, "2": 21}, "na": true, "pri": false}, {"id": "usage", "stage": 6, "tiers": "12", "owner": "Product marketing", "t": "Check which assets sales actually used", "d": "Ask reps. Unused assets can point to unclear messaging, too little training, assets that are hard to find, or a poor fit with real sales conversations.", "due": {"1": 14, "2": 14}, "na": false, "pri": false}, {"id": "report", "stage": 6, "tiers": "12", "owner": "Product marketing", "t": "Report against your measures at 30 days", "d": "Compare engagement, opportunities, pipeline, adoption and sales usage against the targets from step 1. Note which results need 60–90 days to read properly.", "due": {"1": 30, "2": 30}, "na": false, "pri": true}, {"id": "keep", "stage": 6, "tiers": "12", "owner": "Marketing", "t": "Keep it going", "d": "Plan two or three follow-up pieces: a use case, a customer story, a how-to. Most buyers won’t have seen launch day.", "due": {"1": 21, "2": 21}, "na": true, "pri": false}, {"id": "retro", "stage": 6, "tiers": "123", "owner": "Product marketing", "t": "Run a short retro and update your playbook", "d": "What to repeat, what to drop and what to do earlier next time.", "t3": "Note how it landed", "d3": "Usage, support questions and anything users said. Two lines in your launch log is enough.", "due": {"1": 30, "2": 30, "3": 7}, "na": false, "pri": true}], "measures": [{"k": "demos", "n": "Qualified demo requests", "s": "CRM"}, {"k": "opps", "n": "Opportunities created", "s": "CRM"}, {"k": "sourced", "n": "Sourced pipeline", "s": "CRM"}, {"k": "influenced", "n": "Influenced pipeline", "s": "CRM"}, {"k": "adoption", "n": "Product adoption", "s": "Product analytics"}, {"k": "usage", "n": "Sales usage of launch assets", "s": "Sales team"}, {"k": "questions", "n": "Customer questions and support tickets", "s": "Support desk"}], "brief": [["b_product", "Product or feature being launched"], ["b_customer", "Target customer and buying roles"], ["b_problem", "Customer problem"], ["b_alternative", "Current alternative"], ["b_positioning", "Positioning statement"], ["b_value", "Primary value proposition"], ["b_proof", "Supporting proof"], ["b_usecase", "Customer use case"], ["b_tier", "Launch tier"], ["b_objectives", "Launch objectives"], ["b_metrics", "Success metrics"], ["b_owner", "Launch owner and date"], ["b_risks", "Dependencies and risks"]], "review": [["r_launched", "What we launched"], ["r_objectives", "Original objectives"], ["r_results", "Results against targets"], ["r_channels", "Channels that brought qualified engagement"], ["r_sales", "What sales learned from conversations"], ["r_adoption", "Early adoption signals"], ["r_worked", "What worked"], ["r_under", "What underperformed"], ["r_next", "What we’ll do next"], ["r_owners", "Owners and dates for follow-up actions"]]}</script>
+<script>(function () {
+  var wrap = document.querySelector('.lc-wrap');
+  var dataEl = document.getElementById('lc-data');
+  if (!wrap || !dataEl) return;
+  var D = JSON.parse(dataEl.textContent);
+  var TASK = {}; D.tasks.forEach(function (t) { TASK[t.id] = t; });
+  var STAGE = {}; D.stages.forEach(function (s) { STAGE[s.n] = s; });
+  var KEY = 'jaLaunchPlan.v2';
+  var TPL_TYPE = { brief: 'gtm_brief', measure: 'launch_measurement', review: 'launch_review' };
+
+  /* ---------- state (browser only) ---------- */
+  var S = { tier: '1', tasks: {}, owners: {}, notes: {}, details: {}, fired: {}, tpl: { brief: {}, measure: {}, review: {} } };
+  var store = null;
+  try { store = window.localStorage; store.getItem(KEY); } catch (e) { store = null; }
+  if (store) {
+    try {
+      var saved = JSON.parse(store.getItem(KEY) || 'null');
+      if (saved && typeof saved === 'object') { for (var k in S) if (saved[k] != null) S[k] = saved[k]; }
+      else {
+        // migrate the first version of the checklist: { id: true } and a separate tier key
+        var old = JSON.parse(store.getItem('jaLaunchChecklist') || '{}') || {};
+        Object.keys(old).forEach(function (id) { if (old[id] && TASK[id]) S.tasks[id] = 'done'; });
+        var ot = store.getItem('jaLaunchTier'); if (ot && D.tiers[ot]) S.tier = ot;
+      }
+    } catch (e) {}
   }
-  boxes.forEach(function(b){b.addEventListener('change',function(){state[b.dataset.id]=b.checked;save();render();});});
-  btns.forEach(function(x){x.addEventListener('click',function(){tier=x.dataset.tier;save();render();});});
-  document.getElementById('lc-print').addEventListener('click',function(){window.print();});
-  document.getElementById('lc-reset').addEventListener('click',function(){state={};save();render();});
+  ['brief', 'measure', 'review'].forEach(function (k) { if (!S.tpl[k]) S.tpl[k] = {}; });
+  if (!D.tiers[S.tier]) S.tier = '1';
+  var saveT;
+  function save() { if (!store) return; clearTimeout(saveT); saveT = setTimeout(function () { try { store.setItem(KEY, JSON.stringify(S)); } catch (e) {} }, 150); }
+
+  /* ---------- analytics: the site's existing GA4 gtag; no personal or typed content is sent ---------- */
+  function track(name, params) { try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {} }
+
+  /* ---------- dates ---------- */
+  function parseDay(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ''); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
+  function today() { var d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function addDays(d, n) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); }
+  function diffDays(a, b) { return Math.round((a - b) / 864e5); }
+  function fmt(d) { return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }); }
+  function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+
+  function plan() {
+    var launch = parseDay(S.details.date), t0 = today();
+    if (!launch) return { launch: null };
+    var lead = D.tiers[S.tier].lead, left = diffDays(launch, t0);
+    return { launch: launch, left: left, lead: lead, compressed: left >= 0 && left < lead, past: left < 0, today: t0 };
+  }
+  function offsetFor(t, tier) { return (t.due && t.due[tier] != null) ? t.due[tier] : STAGE[t.stage].w[tier][2]; }
+  function dueFor(t, p) {
+    if (!p.launch) return null;
+    var off = offsetFor(t, S.tier);
+    if (p.compressed && off < 0) off = Math.round(off * p.left / p.lead);
+    return addDays(p.launch, off);
+  }
+  function stageRange(st, p) {
+    if (!p.launch) return '';
+    var w = st.w[S.tier], a = w[1], b = w[2];
+    if (p.compressed) { if (a < 0) a = Math.round(a * p.left / p.lead); if (b < 0) b = Math.round(b * p.left / p.lead); }
+    var da = addDays(p.launch, a), db = addDays(p.launch, b);
+    return ' · ' + (a === b ? fmt(da) : fmt(da) + ' – ' + fmt(db));
+  }
+
+  /* ---------- build the interactive task controls ---------- */
+  var ownerOpts = D.owners.map(function (o) { return '<option>' + o + '</option>'; }).join('');
+  var items = [].slice.call(document.querySelectorAll('.lc-task'));
+  items.forEach(function (li) {
+    var id = li.dataset.id, t = TASK[id], meta = li.querySelector('.lc-meta');
+    meta.innerHTML =
+      '<span class="lc-chip lc-due" hidden></span><span class="lc-chip pri lc-pri" hidden>Priority</span><span class="lc-chip nastate lc-nas" hidden>Not applicable</span>' +
+      '<label class="lc-ownw"><span>Owner</span><select class="lc-own" data-id="' + id + '" aria-label="Owner for: ' + t.t.replace(/"/g, '&quot;') + '">' + ownerOpts + '</select></label>' +
+      (t.na ? '<button type="button" class="lc-mini lc-na" data-id="' + id + '" aria-pressed="false">Not applicable</button>' : '') +
+      '<button type="button" class="lc-mini lc-nt" data-id="' + id + '" aria-expanded="false">Note</button>';
+    var nw = document.createElement('div'); nw.className = 'lc-notew'; nw.hidden = true;
+    nw.innerHTML = '<label class="sr" for="note-' + id + '">Note for this task</label><textarea id="note-' + id + '" data-id="' + id + '" rows="2" placeholder="Add a note: links, decisions, who’s helping"></textarea>';
+    meta.after(nw);
+    var ta = nw.querySelector('textarea'); ta.value = S.notes[id] || ''; if (ta.value) nw.hidden = false;
+  });
+  wrap.classList.add('lc-on');
+
+  /* ---------- render ---------- */
+  var announce = false, lastLive = '';
+  function render() {
+    var tier = S.tier, p = plan(), t0 = today(), tot = 0, done = 0, na = 0;
+    document.querySelectorAll('.lc-tb').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.tier === tier ? 'true' : 'false'); });
+    document.querySelectorAll('.lc-tc').forEach(function (c) { c.classList.toggle('on', c.dataset.tc === tier); });
+    var byStage = {};
+    items.forEach(function (li) {
+      var id = li.dataset.id, t = TASK[id], vis = t.tiers.indexOf(tier) > -1, st = S.tasks[id];
+      li.hidden = !vis;
+      li.querySelector('.lc-title').textContent = (tier === '3' && t.t3) ? t.t3 : t.t;
+      li.querySelector('.lc-desc').textContent = (tier === '3' && t.d3) ? t.d3 : t.d;
+      var cb = li.querySelector('.lc-cb');
+      cb.checked = st === 'done'; cb.disabled = st === 'na';
+      li.classList.toggle('done', st === 'done'); li.classList.toggle('na', st === 'na');
+      var nab = li.querySelector('.lc-na'); if (nab) { nab.setAttribute('aria-pressed', st === 'na' ? 'true' : 'false'); nab.textContent = st === 'na' ? 'Undo not applicable' : 'Not applicable'; }
+      li.querySelector('.lc-nas').hidden = st !== 'na';
+      var sel = li.querySelector('.lc-own'); sel.value = S.owners[id] || t.owner;
+      var due = dueFor(t, p), dc = li.querySelector('.lc-due');
+      if (due && st !== 'na') { dc.hidden = false; var late = due < t0 && st !== 'done'; dc.textContent = (late ? 'Overdue · ' : 'Due ') + fmt(due); dc.classList.toggle('late', late); }
+      else dc.hidden = true;
+      li.querySelector('.lc-pri').hidden = !(p.compressed && t.pri && vis && st !== 'na' && st !== 'done');
+      if (!vis) return;
+      var b = byStage[t.stage] || (byStage[t.stage] = { tot: 0, done: 0 });
+      if (st === 'na') { na++; return; }
+      tot++; b.tot++; if (st === 'done') { done++; b.done++; }
+    });
+    document.querySelectorAll('.lc-phase').forEach(function (sec) {
+      var st = STAGE[+sec.dataset.stage], b = byStage[st.n];
+      sec.hidden = !b;
+      sec.querySelector('.lc-sh').textContent = tier === '3' ? st.h3 : st.h;
+      sec.querySelector('.lc-sw').textContent = st.w[tier][0];
+      sec.querySelector('.lc-sd').textContent = stageRange(st, p);
+      sec.querySelector('.lc-sc').textContent = b ? b.done + ' of ' + b.tot + ' done' : '';
+    });
+    var name = D.tiers[tier].name, txt = 'Tier ' + tier + ' · ' + done + ' of ' + tot + ' complete' + (na ? ' · ' + na + ' not applicable' : '');
+    document.getElementById('lc-st-t').textContent = txt;
+    document.getElementById('lc-fill').style.width = (tot ? Math.round(done / tot * 100) : 0) + '%';
+    if (announce && txt !== lastLive) { document.getElementById('lc-live').textContent = done + ' of ' + tot + ' tasks complete for a ' + name.toLowerCase() + '.'; }
+    lastLive = txt; announce = false;
+    // milestones, once per tier
+    var pct = tot ? done / tot * 100 : 0;
+    [25, 50, 75, 100].forEach(function (m) { var k = tier + ':' + m; if (pct >= m && !S.fired[k]) { S.fired[k] = 1; track('checklist_progress_milestone', { launch_tier: tier, milestone: m }); save(); } });
+    // timing banner
+    var bn = document.querySelector('.lc-banner');
+    if (!p.launch) { bn.hidden = true; }
+    else if (p.past) { bn.hidden = false; bn.className = 'lc-banner warn'; bn.innerHTML = '<b>That launch date has passed.</b> The due dates below are in the past. If the launch is still ahead, update the date in step 2.'; }
+    else if (p.compressed) {
+      bn.hidden = false; bn.className = 'lc-banner warn';
+      bn.innerHTML = '<b>Your launch is ' + (p.left === 0 ? 'today' : 'in ' + p.left + ' day' + (p.left === 1 ? '' : 's')) + '.</b> A ' + name.toLowerCase() + ' usually needs about ' + D.tiers[tier].time.toLowerCase() + ', so the dates below are compressed to fit. Do the tasks marked <b>Priority</b> first, mark anything that doesn’t apply, and consider moving the date or launching with a smaller scope.';
+    } else { bn.hidden = false; bn.className = 'lc-banner'; bn.innerHTML = '<b>Planned back from ' + fmt(p.launch) + '.</b> Suggested due dates are a starting point. Adjust them to how your team works.'; }
+    // print header
+    var d = S.details, ph = document.querySelector('.lc-print-head');
+    ph.textContent = [d.name || 'Launch plan', d.company, 'Tier ' + tier + ' · ' + name, p.launch ? 'Launch date: ' + fmt(p.launch) : '', d.owner ? 'Owner: ' + d.owner : '', txt].filter(Boolean).join('  ·  ');
+    // brief tier field mirrors the selection
+    var bt = document.getElementById('f-b_tier'); if (bt && !S.tpl.brief.b_tier) bt.placeholder = 'Tier ' + tier + ' · ' + name;
+  }
+
+  function setTier(t, how) {
+    if (!D.tiers[t]) return;
+    var changed = S.tier !== t; S.tier = t; announce = true; save(); render();
+    if (changed || how === 'guide') track('launch_tier_selected', { launch_tier: t, method: how });
+  }
+
+  /* ---------- checklist events ---------- */
+  document.getElementById('checklist').addEventListener('change', function (e) {
+    var el = e.target;
+    if (el.classList.contains('lc-cb')) {
+      var id = el.dataset.id;
+      if (el.checked) { S.tasks[id] = 'done'; track('checklist_task_completed', { launch_tier: S.tier, task_id: id, stage: TASK[id].stage }); }
+      else delete S.tasks[id];
+      announce = true; save(); render();
+    } else if (el.classList.contains('lc-own')) {
+      var oid = el.dataset.id; if (el.value === TASK[oid].owner) delete S.owners[oid]; else S.owners[oid] = el.value; save();
+    }
+  });
+  document.getElementById('checklist').addEventListener('input', function (e) {
+    var el = e.target; if (el.tagName === 'TEXTAREA' && el.dataset.id) { if (el.value) S.notes[el.dataset.id] = el.value; else delete S.notes[el.dataset.id]; save(); }
+  });
+  document.getElementById('checklist').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.classList.contains('lc-na')) { var id = b.dataset.id; if (S.tasks[id] === 'na') delete S.tasks[id]; else S.tasks[id] = 'na'; announce = true; save(); render(); }
+    else if (b.classList.contains('lc-nt')) { var w = b.closest('.lc-task').querySelector('.lc-notew'); w.hidden = !w.hidden; b.setAttribute('aria-expanded', w.hidden ? 'false' : 'true'); if (!w.hidden) w.querySelector('textarea').focus(); }
+    else if (b.classList.contains('lc-tb')) setTier(b.dataset.tier, 'button');
+  });
+
+  /* ---------- tier guide ---------- */
+  var quiz = document.querySelector('.lc-quiz'), rec = quiz.querySelector('.lc-rec'), recTier = null;
+  var WHY = {
+    '1': 'It changes what you sell, who you sell to or how you’re positioned, so it’s worth the full plan: GTM brief, sales enablement, partner and press planning, and measures agreed in advance. Plan on about 6–8 weeks.',
+    '2': 'It matters to buyers and live deals, but doesn’t change your positioning. Give it messaging, sales enablement and a product page update, without press or partner work. Plan on about 3–4 weeks.',
+    '3': 'It mainly improves things for existing users. A short release note, a help doc, an in-app message and a mention in your next customer email is usually enough. Plan on about a week.',
+    '3x': 'It’s not a big change in positioning or sales, and not mainly for existing users either. Start with Tier 3, and move up to Tier 2 if sales expects to use it in deals.'
+  };
+  function val(n) { var c = quiz.querySelector('input[name="' + n + '"]:checked'); return c ? c.value : null; }
+  quiz.addEventListener('change', function () {
+    var a = val('q1'), b = val('q2'), c = val('q3');
+    quiz.querySelector('[data-q="2"]').hidden = a !== 'no';
+    quiz.querySelector('[data-q="3"]').hidden = !(a === 'no' && b === 'no');
+    var r = null, why = '';
+    if (a === 'yes') { r = '1'; why = WHY['1']; }
+    else if (a === 'no' && b === 'yes') { r = '2'; why = WHY['2']; }
+    else if (a === 'no' && b === 'no' && c) { r = '3'; why = c === 'yes' ? WHY['3'] : WHY['3x']; }
+    recTier = r; rec.hidden = !r;
+    if (r) { rec.querySelector('.lc-rec-t').textContent = 'We suggest Tier ' + r + ': ' + D.tiers[r].name.toLowerCase(); rec.querySelector('.lc-rec-w').textContent = why; rec.querySelector('[data-use-rec]').textContent = S.tier === r ? 'Tier ' + r + ' is selected' : 'Use Tier ' + r; }
+  });
+  rec.querySelector('[data-use-rec]').addEventListener('click', function () {
+    if (!recTier) return; setTier(recTier, 'guide'); this.textContent = 'Tier ' + recTier + ' is selected';
+    document.getElementById('details').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  });
+  quiz.querySelector('[data-quiz-reset]').addEventListener('click', function () {
+    quiz.querySelectorAll('input').forEach(function (i) { i.checked = false; });
+    quiz.querySelector('[data-q="2"]').hidden = true; quiz.querySelector('[data-q="3"]').hidden = true; rec.hidden = true; recTier = null;
+    quiz.querySelector('input[name="q1"]').focus();
+  });
+
+  /* ---------- launch details ---------- */
+  document.querySelectorAll('[data-d]').forEach(function (inp) {
+    inp.value = S.details[inp.dataset.d] || '';
+    inp.addEventListener('input', function () { S.details[inp.dataset.d] = inp.value; save(); if (inp.dataset.d === 'date' || inp.dataset.d === 'name') render(); });
+    inp.addEventListener('change', function () { render(); });
+  });
+
+  /* ---------- export, print, reset ---------- */
+  function csvCell(v) { v = v == null ? '' : String(v); return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+  function download(name, text, type) {
+    var blob = new Blob([text], { type: type }), a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+  function slug(s) { return (s || 'launch').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'launch'; }
+  document.getElementById('lc-csv').addEventListener('click', function () {
+    var p = plan(), d = S.details, tier = S.tier, rows = [];
+    rows.push(['Launch', 'Company', 'Tier', 'Launch date', 'Launch owner', 'Stage', 'Stage timing', 'Task', 'What it involves', 'Owner', 'Due date', 'Priority', 'Status', 'Notes']);
+    D.tasks.forEach(function (t) {
+      if (t.tiers.indexOf(tier) < 0) return;
+      var st = S.tasks[t.id], due = dueFor(t, p), stage = STAGE[t.stage];
+      rows.push([d.name || '', d.company || '', 'Tier ' + tier + ' · ' + D.tiers[tier].name, p.launch ? iso(p.launch) : '', d.owner || '',
+        t.stage + '. ' + (tier === '3' ? stage.h3 : stage.h), stage.w[tier][0],
+        (tier === '3' && t.t3) ? t.t3 : t.t, (tier === '3' && t.d3) ? t.d3 : t.d,
+        S.owners[t.id] || t.owner, due && st !== 'na' ? iso(due) : '', p.compressed && t.pri ? 'Yes' : '',
+        st === 'done' ? 'Done' : st === 'na' ? 'Not applicable' : 'To do', S.notes[t.id] || '']);
+    });
+    download('launch-plan-' + slug(d.name) + '-tier-' + tier + '.csv', '﻿' + rows.map(function (r) { return r.map(csvCell).join(','); }).join('\r\n'), 'text/csv;charset=utf-8');
+    track('launch_plan_exported', { launch_tier: tier, format: 'csv', has_date: !!p.launch });
+  });
+  document.getElementById('lc-print').addEventListener('click', function () { track('launch_plan_exported', { launch_tier: S.tier, format: 'print' }); window.print(); });
+  document.getElementById('lc-reset').addEventListener('click', function () {
+    if (!window.confirm('Clear all ticked tasks, not-applicable marks, owners and notes for this checklist? Your launch details and templates stay. This can’t be undone.')) return;
+    S.tasks = {}; S.owners = {}; S.notes = {}; S.fired = {};
+    document.querySelectorAll('.lc-notew textarea').forEach(function (t) { t.value = ''; t.closest('.lc-notew').hidden = true; });
+    announce = true; save(); render();
+  });
+
+  /* ---------- templates ---------- */
+  var EX = {
+    brief: {
+      b_product: 'Multi-entity approvals: route every spend request to the right approver in each legal entity.',
+      b_customer: 'Finance teams at companies with 3–20 legal entities. Users: finance managers. Decision: the Financial Controller. Sign-off: the CFO.',
+      b_problem: '“Every entity has its own approval rules, so we chase approvals over email and fix mistakes at month-end.”',
+      b_alternative: 'Email and spreadsheets, approvals inside the ERP, or doing nothing and fixing problems at close.',
+      b_positioning: 'For finance teams at multi-entity companies who approve spend over email, Fernway is the spend management platform that routes every request to the right approver. Unlike email and ERP workflows, it keeps one audit trail across every entity.',
+      b_value: 'Close the month faster, with every approval recorded.',
+      b_proof: 'Beta: 6 customers. Example: one beta customer cut month-end approval chasing from 3 days to 1. Demo video of a cross-entity approval.',
+      b_usecase: 'A logistics company with 7 entities moved approvals out of email; auditors now get one report instead of 7 spreadsheets.',
+      b_tier: 'Tier 1 · Major launch',
+      b_objectives: 'Create conversations with multi-entity prospects; move open deals that stalled on approvals; get 30% of multi-entity customers using it.',
+      b_metrics: '40 qualified demo requests; 12 opportunities; adoption by 30% of eligible customers in 60 days.',
+      b_owner: 'Ada (product marketing), 3 March',
+      b_risks: 'ERP sync must ship by 17 February; legal review of the audit trail claims; partner logo approval from the ERP partner.'
+    },
+    review: {
+      r_launched: 'Multi-entity approvals, Tier 1, launched 3 March.',
+      r_objectives: 'Conversations with multi-entity prospects; unblock stalled deals; 30% adoption among eligible customers in 60 days.',
+      r_results: 'Demo requests: 31 vs a target of 40. Opportunities: 9 vs 12. Adoption at 30 days: 18%, on track for 30% at 60 days.',
+      r_channels: 'Founder posts and the customer email brought most qualified demo requests. Paid social brought clicks but few qualified buyers.',
+      r_sales: 'Buyers asked about ERP sync more than approvals. Two stalled deals restarted after the demo video.',
+      r_adoption: 'Customers with 5+ entities adopted first. Most support questions were about setting approval limits.',
+      r_worked: 'The use case story from the logistics customer; the sales one-pager.',
+      r_under: 'The landing page: visitors left before the demo. Paid social.',
+      r_next: 'Rewrite the landing page around ERP sync; build a setup guide for approval limits; check pipeline again at 60 and 90 days.',
+      r_owners: 'Ada: landing page by 31 March. Tunde: setup guide by 24 March. Ada: 60-day pipeline check on 2 May.'
+    },
+    measure: {
+      demos: ['25 a month', '40', '31'], opps: ['8 a month', '12', '9'], sourced: ['$60K a month', '$120K', '$95K'],
+      influenced: ['n/a', '$300K', '$240K'], adoption: ['0%', '30% at 60 days', '18% at 30 days'], usage: ['', '80% of reps', '65% of reps'], questions: ['', '', '']
+    }
+  };
+  var activeDlg = null, lastFocus = null;
+  function fillForm(k, form) {
+    var v = S.tpl[k] || {};
+    form.querySelectorAll('input,textarea').forEach(function (f) {
+      if (!f.name) return;
+      if (f.type === 'checkbox') { if (v[f.name] != null) f.checked = !!v[f.name]; }
+      else f.value = v[f.name] || '';
+    });
+  }
+  function openTpl(k, trigger) {
+    var dlg = document.getElementById('dlg-' + k); if (!dlg) return;
+    var form = dlg.querySelector('form'); fillForm(k, form);
+    lastFocus = trigger || document.activeElement; activeDlg = dlg;
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    var first = form.querySelector('textarea,input[type=text]'); if (first) first.focus();
+    if (k === 'review') track('launch_review_template_opened', { launch_tier: S.tier });
+    else track('gtm_template_opened', { template_type: TPL_TYPE[k], launch_tier: S.tier });
+  }
+  document.addEventListener('click', function (e) { var b = e.target.closest('[data-open]'); if (b) { e.preventDefault(); openTpl(b.dataset.open, b); } });
+  function textFor(k, form) {
+    var d = S.details, head = (d.name ? d.name + ' · ' : '') + (d.company || '');
+    if (k === 'measure') {
+      var lines = ['Launch measurement' + (head ? ' · ' + head : ''), '', '| Metric | Baseline | Target | Actual | Source |', '| --- | --- | --- | --- | --- |'];
+      D.measures.forEach(function (m) {
+        if (!form.querySelector('[name="m_' + m.k + '_on"]').checked) return;
+        var g = function (s) { return (form.querySelector('[name="m_' + m.k + '_' + s + '"]').value || '').replace(/\|/g, '/'); };
+        lines.push('| ' + m.n + ' | ' + g('base') + ' | ' + g('target') + ' | ' + g('actual') + ' | ' + (g('src') || m.s) + ' |');
+      });
+      return lines.join('\n');
+    }
+    var title = k === 'brief' ? 'GTM brief' : '30-day launch review', out = [title + (head ? ' · ' + head : ''), ''];
+    D[k].forEach(function (f) { var v = form.querySelector('[name="' + f[0] + '"]').value.trim(); out.push(f[1].toUpperCase()); out.push(v || '—'); out.push(''); });
+    return out.join('\n');
+  }
+  function measureCsv(form) {
+    var rows = [['Metric', 'Baseline', 'Target', 'Actual', 'Source']];
+    D.measures.forEach(function (m) {
+      if (!form.querySelector('[name="m_' + m.k + '_on"]').checked) return;
+      var g = function (s) { return form.querySelector('[name="m_' + m.k + '_' + s + '"]').value; };
+      rows.push([m.n, g('base'), g('target'), g('actual'), g('src') || m.s]);
+    });
+    return '﻿' + rows.map(function (r) { return r.map(csvCell).join(','); }).join('\r\n');
+  }
+  document.querySelectorAll('.lc-dlg').forEach(function (dlg) {
+    var form = dlg.querySelector('form'), k = form.dataset.tpl, msg = dlg.querySelector('.lc-msg'), note = dlg.querySelector('.lc-exnote');
+    function flash(t) { msg.textContent = t; setTimeout(function () { if (msg.textContent === t) msg.textContent = ''; }, 2500); }
+    function persist() {
+      var v = {}; form.querySelectorAll('input,textarea').forEach(function (f) { if (f.name) v[f.name] = f.type === 'checkbox' ? f.checked : f.value; });
+      S.tpl[k] = v; save();
+    }
+    form.addEventListener('input', persist); form.addEventListener('change', persist);
+    form.addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.tagName === 'INPUT') e.preventDefault(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', function () { activeDlg = null; if (lastFocus && lastFocus.focus) lastFocus.focus(); render(); });
+    form.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-act]'); if (!b) return;
+      var act = b.dataset.act;
+      if (act === 'example') {
+        var has = [].some.call(form.querySelectorAll('input[type=text],textarea'), function (f) { return f.value.trim(); });
+        if (has && !window.confirm('Replace what you’ve written with the fictional example?')) return;
+        if (k === 'measure') D.measures.forEach(function (m) { var x = EX.measure[m.k]; form.querySelector('[name="m_' + m.k + '_base"]').value = x[0]; form.querySelector('[name="m_' + m.k + '_target"]').value = x[1]; form.querySelector('[name="m_' + m.k + '_actual"]').value = x[2]; });
+        else Object.keys(EX[k]).forEach(function (n) { var f = form.querySelector('[name="' + n + '"]'); if (f) f.value = EX[k][n]; });
+        note.hidden = false; persist();
+      } else if (act === 'clear') {
+        if (!window.confirm('Clear this template?')) return;
+        form.querySelectorAll('input[type=text],textarea').forEach(function (f) { f.value = ''; }); note.hidden = true; persist();
+      } else if (act === 'copy') {
+        var text = textFor(k, form);
+        var done = function () { flash('Copied'); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text) ? done() : flash('Copy didn’t work here. Use Download.'); });
+        else fallbackCopy(text) ? done() : flash('Copy didn’t work here. Use Download.');
+      } else if (act === 'download') {
+        var base = slug(S.details.name);
+        if (k === 'measure') download('launch-measurement-' + base + '.csv', measureCsv(form), 'text/csv;charset=utf-8');
+        else download((k === 'brief' ? 'gtm-brief-' : 'launch-review-') + base + '.txt', textFor(k, form), 'text/plain;charset=utf-8');
+        flash('Downloaded');
+      }
+    });
+  });
+  function fallbackCopy(text) {
+    var t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand('copy'); } catch (e) {} t.remove(); return ok;
+  }
+
+  /* ---------- outbound link events ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-track]'); if (a) track(a.dataset.track, { link_location: a.dataset.loc || 'page', launch_tier: S.tier });
+  });
+
   render();
 })();
 </script>

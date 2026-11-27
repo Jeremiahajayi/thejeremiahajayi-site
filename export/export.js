@@ -294,7 +294,7 @@ for (const f of ['og.png', 'og-home-v2.png', 'og-what-id-do-v2.png']) { const og
   const tools = [
     { id: 'gtm-scorecard', slug: 'gtm-scorecard', desc: 'A free 15-question self-assessment of go-to-market readiness across positioning, sales alignment, content, launches and team, with an action plan.' },
     { id: 'marketingaudit', slug: 'marketing-audit', desc: 'A free 16-question audit of your marketing function across strategy, execution, alignment and measurement, with prioritised next steps.' },
-    { id: 'b2b-saas-launch-checklist', slug: 'b2b-saas-launch-checklist', isNew: true, kind: 'checklist', desc: 'A free B2B SaaS product launch checklist: 33 steps from the GTM brief to the 30-day review, with launch tiers, so your launch creates sales conversations. Interactive, printable and free.' },
+    { id: 'b2b-saas-launch-checklist', slug: 'b2b-saas-launch-checklist', isNew: true, kind: 'checklist', desc: 'A free B2B SaaS product launch checklist: pick a launch tier, get tasks with owners and due dates, use the GTM brief, measurement and 30-day review templates, and export your plan to CSV. No signup.' },
     { id: 'categoryvisibilityaudit', slug: 'category-visibility-audit', desc: 'A free diagnostic for B2B founders and CMOs: score your visibility across AI search, content, positioning and pipeline, with prioritised next steps.' }
   ];
   const faqOf = (b) => { const qs = [...b.matchAll(/<details><summary>([\s\S]*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)].map((m) => ({ '@type': 'Question', name: m[1], acceptedAnswer: { '@type': 'Answer', text: m[2] } })); return qs.length ? [{ '@type': 'FAQPage', mainEntity: qs }] : []; };
