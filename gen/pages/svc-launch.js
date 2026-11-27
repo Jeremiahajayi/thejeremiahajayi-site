@@ -39,6 +39,7 @@
         tool: { name: 'GTM Readiness Scorecard', line: 'Check whether your next launch is ready to create sales conversations.', href: '/resources/gtm-scorecard/' },
         paired: { name: 'Positioning & messaging', line: 'A launch is only as strong as the story behind it.', href: 'Site-Service-Positioning.dc.html' },
         reading: [
+          { title: 'B2B SaaS product launch checklist (free template)', where: 'Free tool', href: '/resources/b2b-saas-launch-checklist/' },
           { title: 'How to turn a B2B product launch into sales conversations', where: 'My site', href: S + 'saas-product-launch-proof-gap' },
           { title: '7 systems that let me coordinate 15 launches', where: 'Product Marketing Alliance', href: 'https://www.productmarketingalliance.com/7-systems-that-let-me-coordinate-15-launches/' }
         ]

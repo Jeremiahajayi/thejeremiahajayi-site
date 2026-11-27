@@ -1,0 +1,181 @@
+<style>
+.lc-wrap{background:#F2EFE8;color:#111}
+.lc{max-width:1120px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,28px) clamp(56px,8vw,112px)}
+.lc *{box-sizing:border-box}
+.lc-crumb{font-size:14px;color:#6B675F;margin:0 0 24px}
+.lc-crumb a{color:inherit}
+.lc h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(42px,6vw,88px);line-height:.94;letter-spacing:-.055em;margin:0;max-width:16ch}
+.lc h1 span{color:#C23A0E}
+.lc-lede{margin:26px 0 0;max-width:680px;font-size:clamp(18px,1.6vw,20px);line-height:1.6;color:#3A3833}
+.lc-meta{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.lc-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1.5px solid #111;border-radius:999px;font-size:14px;font-weight:600;background:#FFFDF6}
+.lc h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,3.4vw,48px);line-height:1;letter-spacing:-.045em;margin:0 0 18px}
+.lc-sec{margin-top:clamp(56px,7vw,88px)}
+.lc-p{font-size:17px;line-height:1.65;color:#3A3833;max-width:720px;margin:0 0 16px}
+.lc-tiers{width:100%;border-collapse:collapse;background:#FFFDF6;border:1.5px solid #111;border-radius:18px;overflow:hidden;font-size:15px;line-height:1.5}
+.lc-tiers th,.lc-tiers td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid #DDD7CA}
+.lc-tiers th{background:#111;color:#F2EFE8;font-weight:700;font-size:14px}
+.lc-tiers tr:last-child td{border-bottom:none}
+.lc-tiers td:first-child{font-weight:700;white-space:nowrap}
+.lc-tw{overflow-x:auto;border-radius:18px}
+.lc-bar{position:sticky;top:76px;z-index:5;margin:0 0 22px;padding:14px 16px;background:#111;color:#F2EFE8;border-radius:18px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;box-shadow:6px 6px 0 #FF5A2A}
+.lc-tierbtns{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lc-tierbtns span{font-size:13px;color:#B5B0A6;margin-right:4px}
+.lc-tb{font:600 14px 'DM Sans',sans-serif;padding:8px 14px;border-radius:999px;border:1.5px solid #4A4842;background:transparent;color:#F2EFE8;cursor:pointer}
+.lc-tb[aria-pressed="true"]{background:#FF5A2A;border-color:#FF5A2A;color:#111}
+.lc-prog{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;min-width:220px;flex:1;max-width:360px}
+.lc-track{flex:1;height:8px;border-radius:99px;background:#3A3934;overflow:hidden}
+.lc-fill{height:100%;width:0;background:#8FE3B0;transition:width .3s}
+.lc-acts{display:flex;gap:8px}
+.lc-act{font:600 13px 'DM Sans',sans-serif;padding:8px 12px;border-radius:999px;border:1.5px solid #4A4842;background:transparent;color:#F2EFE8;cursor:pointer}
+.lc-phase{margin:0 0 18px;background:#FFFDF6;border:1.5px solid #111;border-radius:22px;overflow:hidden}
+.lc-ph{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline;padding:18px 20px;border-bottom:1.5px solid #111;background:#FFF5D9}
+.lc-ph h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em}
+.lc-ph p{margin:0;font-size:14px;color:#6B675F;font-weight:600}
+.lc-items{list-style:none;margin:0;padding:0}
+.lc-items li{border-bottom:1px solid #E7E1D3}
+.lc-items li:last-child{border-bottom:none}
+.lc-items label{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:start;padding:16px 20px;cursor:pointer}
+.lc-items input{width:22px;height:22px;margin:2px 0 0;accent-color:#FF5A2A;cursor:pointer}
+.lc-items b{display:block;font-size:16px;line-height:1.4}
+.lc-items small{display:block;margin-top:4px;font-size:14.5px;line-height:1.55;color:#55524B}
+.lc-items li.done b{text-decoration:line-through;text-decoration-color:#C23A0E;color:#6B675F}
+.lc-tag{font-size:12px;font-weight:700;padding:4px 8px;border-radius:999px;background:#EDE6D6;color:#55524B;white-space:nowrap}
+.lc-items li[hidden]{display:none}
+.lc-cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.lc-card{padding:24px;border:1.5px solid #111;border-radius:22px;background:#FFFDF6;display:flex;flex-direction:column;gap:10px}
+.lc-card.dark{background:#111;color:#F2EFE8}
+.lc-card h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:-.03em}
+.lc-card p{margin:0;font-size:15px;line-height:1.55;opacity:.85;flex:1}
+.lc-card a{font-weight:700;color:inherit}
+.lc-faq details{border-top:1.5px solid #111;padding:18px 0}
+.lc-faq details:last-child{border-bottom:1.5px solid #111}
+.lc-faq summary{cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,22px);letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.lc-faq summary::after{content:'+';font-size:24px}
+.lc-faq details[open] summary::after{content:'–'}
+.lc-faq p{margin:12px 0 0;font-size:16px;line-height:1.65;color:#3A3833;max-width:760px}
+.lc-by{margin-top:clamp(40px,5vw,64px);display:flex;gap:16px;align-items:center;padding-top:24px;border-top:1.5px solid #111}
+.lc-by img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1.5px solid #111}
+.lc-by p{margin:0;font-size:15px;line-height:1.55;color:#3A3833;max-width:720px}
+@media (max-width:640px){.lc-tiers thead{display:none}.lc-tiers,.lc-tiers tbody,.lc-tiers tr,.lc-tiers td{display:block;width:100%}.lc-tiers tr{border-bottom:1.5px solid #111;padding:6px 0}.lc-tiers tr:last-child{border-bottom:none}.lc-tiers td{border:none;padding:6px 16px}.lc-tiers td:nth-child(3)::before{content:'Lead time: ';font-weight:700}.lc-tiers td:nth-child(4)::before{content:'Gets: ';font-weight:700}.lc-bar{top:64px}.lc-items label{grid-template-columns:24px 1fr}.lc-tag{grid-column:2;justify-self:start}}
+@media print{.site-h,.lc-bar .lc-acts,.lc-tierbtns,.lc-cta,.lc-faq,section[style*="background: #111"]{display:none!important}.lc-bar{position:static;box-shadow:none}.lc-phase{break-inside:avoid}}
+</style>
+<section class="lc-wrap"><div class="lc">
+<p class="lc-crumb"><a href="/">Home</a> / <a href="/services/product-launch-gtm/">Launches &amp; GTM</a> / Launch checklist</p>
+<h1>B2B SaaS product launch checklist<span>.</span></h1>
+<p class="lc-lede">Most B2B launches get attention and then nothing happens in the pipeline. This checklist is built to make launches start sales conversations: 33 steps from the GTM brief to the 30-day review, scaled to how big your release really is. Tick items off as you go; your progress saves in this browser.</p>
+<div class="lc-meta"><span class="lc-pill">✅ Free, no signup</span><span class="lc-pill">🗓️ 6–8 weeks for a major launch</span><span class="lc-pill">🖨️ Print or save as PDF</span></div>
+
+<div class="lc-sec">
+<h2>First, pick a launch tier</h2>
+<p class="lc-p">Not every release deserves a press release. Tier the launch first, then use the filter above the checklist to show only the steps that tier needs.</p>
+<div class="lc-tw"><table class="lc-tiers">
+<thead><tr><th>Tier</th><th>What it is</th><th>Lead time</th><th>What it gets</th></tr></thead>
+<tbody>
+<tr><td>Tier 1</td><td>A new product, a major feature that changes the pitch, a partnership or a new market</td><td>6–8 weeks</td><td>Everything: GTM brief, press, partner plan, full sales enablement, a landing page, and pipeline measures</td></tr>
+<tr><td>Tier 2</td><td>A notable feature that existing buyers asked for, or one that helps win deals</td><td>3–4 weeks</td><td>Messaging, a product page update, email, social, sales one-pager and FAQ, and pipeline measures</td></tr>
+<tr><td>Tier 3</td><td>An improvement or a smaller update</td><td>1 week</td><td>A changelog entry, a help doc, in-product messaging and a mention in the next customer email</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="lc-sec" id="checklist">
+<h2>The checklist</h2>
+<div class="lc-bar">
+<div class="lc-tierbtns" role="group" aria-label="Show steps for"><span>Show steps for</span><button type="button" class="lc-tb" data-tier="1" aria-pressed="true">Tier 1</button><button type="button" class="lc-tb" data-tier="2" aria-pressed="false">Tier 2</button><button type="button" class="lc-tb" data-tier="3" aria-pressed="false">Tier 3</button></div>
+<div class="lc-prog"><span id="lc-count">0 of 33</span><div class="lc-track"><div class="lc-fill" id="lc-fill"></div></div></div>
+<div class="lc-acts"><button type="button" class="lc-act" id="lc-print">Print / PDF</button><button type="button" class="lc-act" id="lc-reset">Reset</button></div>
+</div>
+
+<div class="lc-phase"><div class="lc-ph"><h3>1. Define the launch</h3><p>6–8 weeks before</p></div><ul class="lc-items">
+<li data-t="123"><label><input type="checkbox" data-id="brief"><span><b>Write the GTM brief</b><small>Who the release is for, the problem it solves, and how it changes what sales says. One page is enough.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="123"><label><input type="checkbox" data-id="tier"><span><b>Agree the launch tier with product</b><small>Use the table above. Tiering early stops a minor update from eating a major launch’s budget, and the reverse.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="123"><label><input type="checkbox" data-id="owner"><span><b>Name one owner and a launch date</b><small>One person accountable for the launch, and a date product has committed to, not a hope.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="measures"><span><b>Agree how you’ll measure it, before launch</b><small>Sourced and influenced pipeline, demo requests, sales usage of launch assets and early adoption. Write down the targets now.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="1"><label><input type="checkbox" data-id="research"><span><b>Talk to 3–5 customers and 2–3 sales reps</b><small>Ask about the problem the release solves and the objections reps hear. Their words become your messaging.</small></span><span class="lc-tag">Tier 1</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="position"><span><b>Check the positioning</b><small>Can you say in one sentence why a buyer would choose this over the alternative, including doing nothing?</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="1"><label><input type="checkbox" data-id="partner"><span><b>For partner launches: agree the story, timing and approvals</b><small>Settle whose story it is, who announces first and who signs off, with the partner’s marketing team, in writing.</small></span><span class="lc-tag">Tier 1</span></label></li>
+</ul></div>
+
+<div class="lc-phase"><div class="lc-ph"><h3>2. Build the message and the plan</h3><p>4–6 weeks before</p></div><ul class="lc-items">
+<li data-t="123"><label><input type="checkbox" data-id="msg"><span><b>Write the launch messaging</b><small>A headline, three proof points and one customer use case. Every asset borrows from this, so it all says the same thing.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="calendar"><span><b>Build the launch calendar</b><small>Every asset, channel, owner and due date in one place, working back from launch day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="design"><span><b>Brief design and video</b><small>Launch visuals, product screenshots and a short demo. Buyers want to see it working.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="page"><span><b>Draft the landing page, or update the product page</b><small>Check whether pricing, comparison and integration pages also need changes.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="1"><label><input type="checkbox" data-id="press"><span><b>Plan press</b><small>The release, target outlets and journalists, an embargo date, and regional versions where the market needs them, such as Arabic for the Middle East.</small></span><span class="lc-tag">Tier 1</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="accounts"><span><b>List the customers and open deals this release helps</b><small>These are your first sales conversations. Give the list to sales and customer success.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="search"><span><b>Plan for search and AI answers</b><small>What will buyers search for, or ask ChatGPT, when they need this? Make sure a page answers it clearly.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+</ul></div>
+
+<div class="lc-phase"><div class="lc-ph"><h3>3. Enable sales and customer success</h3><p>2–3 weeks before</p></div><ul class="lc-items">
+<li data-t="12"><label><input type="checkbox" data-id="kit"><span><b>Build the enablement kit</b><small>A deck slide, a one-pager, an FAQ and a short talk track. Keep it to what a rep will actually use on a call.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="battlecards"><span><b>Update battlecards</b><small>If the release changes how you answer “why not the competitor?”, change the battlecard before reps need it.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="training"><span><b>Run a 30-minute training and record it</b><small>Sales and customer success should hear about the launch before customers do.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="123"><label><input type="checkbox" data-id="docs"><span><b>Get help docs and in-product messages ready</b><small>The quickest way to adoption is telling users where they already are.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="tracking"><span><b>Set up tracking</b><small>UTM links, a campaign in your CRM and conversion events on the landing page, so pipeline can be traced back to the launch.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+</ul></div>
+
+<div class="lc-phase"><div class="lc-ph"><h3>4. Get ready</h3><p>Launch week</p></div><ul class="lc-items">
+<li data-t="123"><label><input type="checkbox" data-id="qa"><span><b>Check everything works</b><small>The feature is live for the right users, and every link, form and tracking event works.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="123"><label><input type="checkbox" data-id="brief-teams"><span><b>Confirm the date and time with every team</b><small>Leadership, sales, support and any partners know exactly when it goes out.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="social"><span><b>Prepare posts for founders and the team</b><small>People follow people. A founder’s post often reaches further than the company page.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="1"><label><input type="checkbox" data-id="embargo"><span><b>Send the press release under embargo</b><small>Give journalists time to write, and confirm what they can publish and when.</small></span><span class="lc-tag">Tier 1</span></label></li>
+</ul></div>
+
+<div class="lc-phase"><div class="lc-ph"><h3>5. Launch</h3><p>Launch day</p></div><ul class="lc-items">
+<li data-t="123"><label><input type="checkbox" data-id="publish"><span><b>Publish across your channels</b><small>The announcement, an email to customers and prospects, the landing page, social and in-app messages, scaled to the tier.</small></span><span class="lc-tag">All tiers</span></label></li>
+<li data-t="1"><label><input type="checkbox" data-id="press-live"><span><b>Go live with press and partners</b><small>The press release, partner posts and any co-marketing, at the agreed time.</small></span><span class="lc-tag">Tier 1</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="sales-note"><span><b>Send sales a “use this today” note</b><small>Which accounts to contact, what to say and which asset to send. This is where attention turns into conversations.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="watch"><span><b>Watch the first signals</b><small>Replies, demo requests, sign-ups and questions coming into sales and support. Fix anything confusing the same day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+</ul></div>
+
+<div class="lc-phase"><div class="lc-ph"><h3>6. Turn attention into pipeline</h3><p>2–30 days after</p></div><ul class="lc-items">
+<li data-t="12"><label><input type="checkbox" data-id="followup"><span><b>Follow up with everyone who engaged</b><small>People who clicked, visited pricing or watched the demo. Most launch pipeline comes from follow-up, not launch day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="stories"><span><b>Collect the first customer stories</b><small>A quote or a result from an early user is the strongest proof for the next round of content and sales.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="usage"><span><b>Check which assets sales actually used</b><small>Ask reps. Unused assets are a message problem, not a sales problem.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="report"><span><b>Report against the measures at 30 days</b><small>Pipeline, demo requests, adoption and sales usage, against the targets you set in step 1.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="12"><label><input type="checkbox" data-id="keep"><span><b>Keep it going</b><small>Plan two or three follow-up pieces: a use case, a customer story, a how-to. A launch is a starting point, not a single day.</small></span><span class="lc-tag">Tier 1–2</span></label></li>
+<li data-t="123"><label><input type="checkbox" data-id="retro"><span><b>Run a short retro and update your playbook</b><small>What to repeat, what to drop and what to do earlier next time.</small></span><span class="lc-tag">All tiers</span></label></li>
+</ul></div>
+</div>
+
+<div class="lc-sec">
+<h2>Want help with your next launch?</h2>
+<div class="lc-cta">
+<div class="lc-card dark"><h3>GTM Readiness Scorecard</h3><p>15 questions to check whether your next launch is ready to create sales conversations. Free, with an action plan.</p><a href="/resources/gtm-scorecard/">Take the scorecard →</a></div>
+<div class="lc-card"><h3>Product launches and GTM</h3><p>I plan and run B2B SaaS launches built for pipeline: the GTM brief, the plan, sales enablement and measurement.</p><a href="/services/product-launch-gtm/">See the service →</a></div>
+<div class="lc-card"><h3>What I’d Do</h3><p>A free newsletter: each month I study how a technology company markets itself and say what I’d keep, change or try.</p><a href="/what-id-do/">Subscribe free →</a></div>
+</div>
+</div>
+
+<div class="lc-sec lc-faq">
+<h2>Questions people ask</h2>
+<details><summary>What should a B2B SaaS product launch checklist include?</summary><p>Six stages: defining the launch (the GTM brief, tier, owner and measures), building the message and plan, enabling sales and customer success, launch-week checks, launch day itself, and the 30 days after, when most of the pipeline is created. Most checklists stop at launch day, which is why so many launches get attention but no sales conversations.</p></details>
+<details><summary>How far in advance should you plan a product launch?</summary><p>Six to eight weeks for a major (Tier 1) launch, three to four weeks for a notable feature, and about a week for a smaller update. Partner launches and press need the most lead time, because other people’s approvals set the pace.</p></details>
+<details><summary>What is a launch tier?</summary><p>A way of sizing a launch to the release. Tier 1 is a new product, a major feature, a partnership or a new market; Tier 2 is a notable feature; Tier 3 is an improvement. Tiering stops teams from overspending on small updates or underselling big ones.</p></details>
+<details><summary>Who should own a product launch?</summary><p>One person, usually product marketing, accountable for the plan and the date. Product owns what ships; sales and customer success own using it with customers. The owner makes sure all three are working to one timeline.</p></details>
+<details><summary>How do you measure whether a launch worked?</summary><p>Agree the measures before launch: sourced and influenced pipeline, demo requests, sales usage of launch assets and early adoption. Then report against them after 30 days. Press coverage and social reach are useful signals, but they aren’t the goal.</p></details>
+</div>
+
+<div class="lc-by"><img src="/img/headshot.webp" alt="Jeremiah Ajayi" loading="lazy" onerror="this.remove()"><p><b>Built by Jeremiah Ajayi</b>, a marketing consultant for B2B SaaS and technology companies. It’s based on the process behind 20+ launches I’ve led, including 15+ at RemotePass and the RemotePass × Certn partnership launch, which earned 270+ media pickups.</p></div>
+</div></section>
+<script>
+(function(){
+  var KEY='jaLaunchChecklist', TKEY='jaLaunchTier', state={}, tier='1';
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};tier=localStorage.getItem(TKEY)||'1';}catch(e){}
+  var boxes=[].slice.call(document.querySelectorAll('.lc-items input[type=checkbox]'));
+  var btns=[].slice.call(document.querySelectorAll('.lc-tb'));
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));localStorage.setItem(TKEY,tier);}catch(e){}}
+  function render(){
+    var shown=0,done=0;
+    boxes.forEach(function(b){var li=b.closest('li');var vis=li.getAttribute('data-t').indexOf(tier)>-1;li.hidden=!vis;b.checked=!!state[b.dataset.id];li.classList.toggle('done',b.checked);if(vis){shown++;if(b.checked)done++;}});
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.tier===tier?'true':'false');});
+    document.getElementById('lc-count').textContent=done+' of '+shown+' done';
+    document.getElementById('lc-fill').style.width=(shown?Math.round(done/shown*100):0)+'%';
+  }
+  boxes.forEach(function(b){b.addEventListener('change',function(){state[b.dataset.id]=b.checked;save();render();});});
+  btns.forEach(function(x){x.addEventListener('click',function(){tier=x.dataset.tier;save();render();});});
+  document.getElementById('lc-print').addEventListener('click',function(){window.print();});
+  document.getElementById('lc-reset').addEventListener('click',function(){state={};save();render();});
+  render();
+})();
+</script>

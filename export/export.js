@@ -235,6 +235,7 @@ fs.writeFileSync(path.join(outDir, 'llms.txt'), `# Jeremiah Ajayi
 - [GTM Readiness Scorecard](${SITE}/resources/gtm-scorecard/)
 - [Marketing Function Audit](${SITE}/resources/marketing-audit/)
 - [Category Visibility Audit](${SITE}/resources/category-visibility-audit/)
+- [B2B SaaS product launch checklist](${SITE}/resources/b2b-saas-launch-checklist/): 33 steps with launch tiers, from GTM brief to 30-day review
 
 ## Proof
 
@@ -293,8 +294,10 @@ for (const f of ['og.png', 'og-home-v2.png', 'og-what-id-do-v2.png']) { const og
   const tools = [
     { id: 'gtm-scorecard', slug: 'gtm-scorecard', desc: 'A free 15-question self-assessment of go-to-market readiness across positioning, sales alignment, content, launches and team, with an action plan.' },
     { id: 'marketingaudit', slug: 'marketing-audit', desc: 'A free 16-question audit of your marketing function across strategy, execution, alignment and measurement, with prioritised next steps.' },
+    { id: 'b2b-saas-launch-checklist', slug: 'b2b-saas-launch-checklist', isNew: true, kind: 'checklist', desc: 'A free B2B SaaS product launch checklist: 33 steps from the GTM brief to the 30-day review, with launch tiers, so your launch creates sales conversations. Interactive, printable and free.' },
     { id: 'categoryvisibilityaudit', slug: 'category-visibility-audit', desc: 'A free diagnostic for B2B founders and CMOs: score your visibility across AI search, content, positioning and pipeline, with prioritised next steps.' }
   ];
+  const faqOf = (b) => { const qs = [...b.matchAll(/<details><summary>([\s\S]*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)].map((m) => ({ '@type': 'Question', name: m[1], acceptedAnswer: { '@type': 'Answer', text: m[2] } })); return qs.length ? [{ '@type': 'FAQPage', mainEntity: qs }] : []; };
   const extraUrls = [];
   const redirects = ['# Free tools moved to /resources/ (Nov 2026)'];
   for (const t of tools) {
@@ -306,11 +309,11 @@ for (const f of ['og.png', 'og-home-v2.png', 'og-what-id-do-v2.png']) { const og
       .replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + SITE + '/resources/' + t.slug + '/">')
       .replace(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + SITE + '/resources/' + t.slug + '/">')
       .replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + title + '">')
-      .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '<script type="application/ld+json">' + JSON.stringify({ '@context': 'https://schema.org', '@graph': [{ '@type': 'WebApplication', name: title.replace(/ · Jeremiah Ajayi$/, ''), url: SITE + '/resources/' + t.slug + '/', description: t.desc, applicationCategory: 'BusinessApplication', operatingSystem: 'Any', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, author: { '@id': PERSON_ID } }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: title.replace(/ · Jeremiah Ajayi$/, ''), item: SITE + '/resources/' + t.slug + '/' }] }] }).replace(/</g, '\\u003c') + '</script>\n');
+      .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/, '<script type="application/ld+json">' + JSON.stringify({ '@context': 'https://schema.org', '@graph': [(t.kind === 'checklist' ? { '@type': 'WebPage', name: title.replace(/ · Jeremiah Ajayi$/, ''), url: SITE + '/resources/' + t.slug + '/', description: t.desc, isAccessibleForFree: true, author: { '@id': PERSON_ID }, datePublished: '2026-11-27' } : { '@type': 'WebApplication', name: title.replace(/ · Jeremiah Ajayi$/, ''), url: SITE + '/resources/' + t.slug + '/', description: t.desc, applicationCategory: 'BusinessApplication', operatingSystem: 'Any', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, author: { '@id': PERSON_ID } })].concat(faqOf(body)).concat([{ '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: title.replace(/ · Jeremiah Ajayi$/, ''), item: SITE + '/resources/' + t.slug + '/' }] }]) }).replace(/</g, '\\u003c') + '</script>\n');
     fs.mkdirSync(path.join(outDir, 'resources', t.slug), { recursive: true });
     fs.writeFileSync(path.join(outDir, 'resources', t.slug, 'index.html'), page);
     extraUrls.push(SITE + '/resources/' + t.slug + '/');
-    redirects.push('/' + t.id + ' /resources/' + t.slug + '/ 301', '/' + t.id + '/ /resources/' + t.slug + '/ 301');
+    if (!t.isNew) redirects.push('/' + t.id + ' /resources/' + t.slug + '/ 301', '/' + t.id + '/ /resources/' + t.slug + '/ 301');
   }
   const smPath = path.join(outDir, 'sitemap.xml');
   if (fs.existsSync(smPath)) {
